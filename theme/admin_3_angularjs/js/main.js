@@ -253,7 +253,34 @@ MetronicApp.config(['$stateProvider', '$urlRouterProvider', function($stateProvi
                     return $ocLazyLoad.load([{
                         name: 'MetronicApp',
                         files: [
+                            '../assets/global/plugins/clockface/css/clockface.css',
+                            '../assets/global/plugins/bootstrap-datepicker/css/bootstrap-datepicker3.min.css',
+                            '../assets/global/plugins/bootstrap-timepicker/css/bootstrap-timepicker.min.css',
+                            '../assets/global/plugins/bootstrap-colorpicker/css/colorpicker.css',
+                            '../assets/global/plugins/bootstrap-daterangepicker/daterangepicker-bs3.css',
+                            '../assets/global/plugins/bootstrap-datetimepicker/css/bootstrap-datetimepicker.min.css',
+
+                            '../assets/global/plugins/bootstrap-datepicker/js/bootstrap-datepicker.min.js',
+                            '../assets/global/plugins/bootstrap-timepicker/js/bootstrap-timepicker.min.js',
+                            '../assets/global/plugins/clockface/js/clockface.js',
+                            '../assets/global/plugins/moment.min.js',
+                            '../assets/global/plugins/bootstrap-daterangepicker/daterangepicker.js',
+                            '../assets/global/plugins/bootstrap-colorpicker/js/bootstrap-colorpicker.js',
+                            '../assets/global/plugins/bootstrap-datetimepicker/js/bootstrap-datetimepicker.min.js',
+
+                            '../assets/pages/scripts/components-date-time-pickers.min.js',
+                            '../assets/global/plugins/bootstrap-select/css/bootstrap-select.min.css',
+                            '../assets/global/plugins/select2/css/select2.min.css',
+                            '../assets/global/plugins/select2/css/select2-bootstrap.min.css',
+
+                            '../assets/global/plugins/bootstrap-select/js/bootstrap-select.min.js',
+                            '../assets/global/plugins/select2/js/select2.full.min.js',
+
+                            '../assets/pages/scripts/components-bootstrap-select.min.js',
+                            '../assets/pages/scripts/components-select2.min.js',
+
                             'js/controllers/GeneralPageController.js'
+
                         ]
                     }]);
                 }]
