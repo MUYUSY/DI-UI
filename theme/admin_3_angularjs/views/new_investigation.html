@@ -17,10 +17,9 @@
             <div class="portlet-body">
                 <div class="row">
                     <div class="col-md-2">
-                        <a class="btn white" href="#" data-target="#daterangepicker_modal" data-toggle="modal"> 选择时间...
-                            <i class="fa fa-share"></i>
+                        <a class="btn white" style="width:100%; border:1px solid #cccccc" href="#" data-target="#daterangepicker_modal" data-toggle="modal"> 选择时间...
+                            <i class="caret"></i>
                         </a>
-
                         <div id="daterangepicker_modal" class="modal fade" role="dialog" aria-hidden="true">
                             <div class="modal-dialog">
                                 <div class="modal-content">
@@ -55,7 +54,24 @@
                             </div>
                         </div>
                     </div>
+                    <div class="col-md-2">
+                        <select class="form-control input-large select2me" data-placeholder="选择探针设备...">
+                            <option value=""></option>
+                            <option value="AL">Alabama</option>
+                            <option value="WY">Wyoming</option>
+                        </select>
+                    </div>
+                    <div class="col-md-4">
+                        <button class="btn white pull-left" style="width:25%; border:1px solid #cccccc">高级</button>
+                        <button class="btn white" style="margin-left:5%; width:32.5%; border:1px solid #cccccc">搜索</button>
+                        <button class="btn white pull-right" style="width:32.5%; border:1px solid #cccccc">
+                            <img src="./icon/save.png">保存规则</button>
+                    </div>
+                    <div class="col-md-4">
+                        <button class="btn white pull-right" style="width:35%; border:1px solid #cccccc">导出结果</button>
+                    </div>
                 </div>
+
             </div>
             <div class="row">
                 <div class="col-md-12">
@@ -1600,6 +1616,8 @@
 <!-- END MAIN CONTENT -->
 <script>
     ComponentsDateTimePickers.init();
+    ComponentsSelect2.init();
+    ComponentsBootstrapSelect.init();
 </script>
 <!-- BEGIN MAIN JS -->
 <script>
