@@ -14,7 +14,7 @@
                 </div>
             </div>
 
-            <div class="portlet-body">
+            <div class="portlet-body" ng-controller="HighLevelToggle">
                 <div class="row">
                     <div class="col-md-2">
                         <a class="btn white" style="width:100%; border:1px solid #cccccc" href="#" data-target="#daterangepicker_modal" data-toggle="modal"> 选择时间...
@@ -54,25 +54,28 @@
                             </div>
                         </div>
                     </div>
-                    <div class="col-md-2">
-                        <select class="form-control input-large select2me" data-placeholder="选择探针设备...">
+                    <div class="col-md-3">
+                        <select class="form-control input-large select2me" data-placeholder="所有探针设备">
                             <option value=""></option>
                             <option value="AL">Alabama</option>
                             <option value="WY">Wyoming</option>
                         </select>
                     </div>
                     <div class="col-md-4">
-                        <button class="btn white pull-left" style="width:25%; border:1px solid #cccccc">高级</button>
-                        <button class="btn white" style="margin-left:5%; width:32.5%; border:1px solid #cccccc">搜索</button>
-                        <button class="btn white pull-right" style="width:32.5%; border:1px solid #cccccc">
-                            <img src="./icon/save.png">保存规则</button>
+                        <button class="btn pull-left" style="width:25%; border:1px solid #cccccc;" ng-click="toggle()">高级</button>
+                        <button class="btn" style="margin-left:5%; width:32.5%; background-color:#0076e1; color: #ffffff; padding-right: 32px">
+                            <img src="./icon/search.png" style="margin: 0 8px 1px 0;">搜索</button>
+                        <button class="btn pull-right" style="width:32.5%; border:1px solid #cccccc">
+                            <img src="./icon/save.png" style="margin: 0 4px 1px 0">保存规则</button>
                     </div>
-                    <div class="col-md-4">
-                        <button class="btn white pull-right" style="width:35%; border:1px solid #cccccc">导出结果</button>
+                    <div class="col-md-3">
+                        <button class="btn white pull-right" style="width:45%; border:1px solid #cccccc">导出结果</button>
                     </div>
                 </div>
-
+                <div class="high-level" ng-hide="myHide"></div>
             </div>
+
+
             <div class="row">
                 <div class="col-md-12">
                     <div ng-controller="AccordionDemoCtrl">
@@ -1621,6 +1624,15 @@
 </script>
 <!-- BEGIN MAIN JS -->
 <script>
+    function HighLevelToggle($scope) {
+        $scope.myHide = false;
+        console.log($scope.myHide);
+        $scope.toggle = function() {
+            console.log($scope.myHide);
+            $scope.myHide = !$scope.myHide;
+        };
+    };
+
     // Accordion demo controller
     function AccordionDemoCtrl($scope) {
         $scope.oneAtATime = true;

@@ -17,7 +17,7 @@ body, h1, h2, h3, h4, h5, h6 {
 a, button, code, div, img, input, label, li, p, pre, select, span, svg, table, td, textarea, th, ul {
     -webkit-border-radius: 0 !important;
     -moz-border-radius: 0 !important;
-    border-radius: 0 !important
+    border-radius: 4px !important
 }
 
 .img-circle {
@@ -1752,8 +1752,21 @@ li [class*=" fa-"].icon-large, li [class*=" glyphicon-"].icon-large, li [class*=
     border-radius: 0 !important
 }
 
+.high-level {
+    transition: all linear 0.5s;
+    background-color: lightblue;
+    height: 100px;
+}
+.high-level.ng-hide {
+    height: 0;
+    width: 0;
+    background-color: transparent;
+    top:-200px;
+    left: 200px;
+}
+
 .btn {
-    outline: 0 !important
+    outline: 0 !important;
 }
 
 .btn:hover {
