@@ -56,9 +56,9 @@
                     </div>
                     <div class="col-md-3">
                         <select class="form-control input-large select2me" data-placeholder="所有探针设备">
-                            <option value=""></option>
-                            <option value="AL">Alabama</option>
-                            <option value="WY">Wyoming</option>
+                            <option></option>
+                            <option>Alabama</option>
+                            <option>Wyoming</option>
                         </select>
                     </div>
                     <div class="col-md-4">
@@ -72,7 +72,24 @@
                         <button class="btn white pull-right" style="width:45%; border:1px solid #cccccc">导出结果</button>
                     </div>
                 </div>
-                <div class="high-level" ng-hide="myHide"></div>
+                <div class="high-level" ng-hide="myHide">
+                    <div class="row search-condition" ng-controller="ConditionController">
+                        <div class="col-md-2">
+                            <select class="form-control input-large select2me" data-placeholder="请选择查询条件...">
+                                <option></option>
+                                <option>进程用户名</option>
+                                <option>进程ID</option>
+                                <option>进程名</option>
+                                <option>IP地址</option>
+                                <option>网络协议名</option>
+                            </select>
+                        </div>
+                    </div>
+                    <div class="row search-condition">
+                        <button class="add-condition" ng-click="addCondition()">+ 增加条件</button>
+                    </div>
+
+                </div>
             </div>
 
 
@@ -1631,7 +1648,28 @@
             console.log($scope.myHide);
             $scope.myHide = !$scope.myHide;
         };
-    };
+    }
+
+    function ConditionController($scope) {
+        $scope.alerts = [
+            {
+                type: 'danger',
+                msg: 'Oh snap! Change a few things up and try submitting again.'
+            },
+            {
+                type: 'success',
+                msg: 'Well done! You successfully read this important alert message.'
+            }];
+        $scope.addAlert = function () {
+            $scope.alerts.push(
+                {
+                    msg: 'Another alert!'
+                });
+        };
+        $scope.closeAlert = function (index) {
+            $scope.alerts.splice(index, 1);
+        };
+    }
 
     // Accordion demo controller
     function AccordionDemoCtrl($scope) {

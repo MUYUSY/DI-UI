@@ -1753,16 +1753,27 @@ li [class*=" fa-"].icon-large, li [class*=" glyphicon-"].icon-large, li [class*=
 }
 
 .high-level {
-    transition: all linear 0.5s;
-    background-color: lightblue;
-    height: 100px;
+    transition: all linear;
+    background-color: #F9F9F9;
+    border: 1px solid #dddddd;
+    margin-top: 5px;
 }
 .high-level.ng-hide {
     height: 0;
     width: 0;
     background-color: transparent;
-    top:-200px;
-    left: 200px;
+}
+
+.search-condition {
+    margin: 4px 10px 2px 10px;
+}
+
+.add-condition {
+    background-color: #F9F9F9;
+    border: 0;
+    color: #0076e1;
+    font-size: 14px;
+    margin: 4px 0 2px 0;
 }
 
 .btn {
