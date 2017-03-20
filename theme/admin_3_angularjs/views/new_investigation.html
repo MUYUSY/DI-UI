@@ -72,9 +72,9 @@
                         <button class="btn white pull-right" style="width:45%; border:1px solid #cccccc">导出结果</button>
                     </div>
                 </div>
-                <div class="high-level" ng-show="myHide">
-                    <div class="add-condition" ng-controller="ConditionController">
-                        <div class="row check-condition">
+                <div class="col-md-12 high-level" ng-show="myHide">
+                    <div class="col-md-12 add-condition" ng-controller="ConditionController">
+                        <div class="check-condition">
                             <div class="col-md-2">选择检索条件</div>
                             <div class="col-md-2">
                                 <input type="checkbox" ng-model="processUsername" !checked>进程用户名
@@ -92,7 +92,7 @@
                                 <input type="checkbox" ng-model="protocolName" !checked>网络协议名
                             </div>
                         </div>
-                        <div class="row" ng-show="processUsername">
+                        <div class="col-md-12" ng-show="processUsername">
                             <div class="col-md-2">进程用户名</div>
                             <div class="col-md-2">
                                 <select class="form-control">
@@ -103,7 +103,7 @@
                                 <input type="text">
                             </div>
                         </div>
-                        <div class="row" ng-show="processId">
+                        <div class="col-md-12" ng-show="processId">
                             <div class="col-md-2">进程ID</div>
                             <div class="col-md-2">
                                 <select class="form-control">
@@ -114,7 +114,7 @@
                                 <input type="text">
                             </div>
                         </div>
-                        <div class="row" ng-show="processName">
+                        <div class="col-md-12" ng-show="processName">
                             <div class="col-md-2">进程名</div>
                             <div class="col-md-2">
                                 <select class="form-control">
@@ -125,7 +125,7 @@
                                 <input type="text">
                             </div>
                         </div>
-                        <div class="row" ng-show="ipAddress">
+                        <div class="col-md-12" ng-show="ipAddress">
                             <div class="col-md-2">IP地址</div>
                             <div class="col-md-2">
                                 <select class="form-control">
@@ -136,7 +136,7 @@
                                 <input type="text">
                             </div>
                         </div>
-                        <div class="row" ng-show="protocolName">
+                        <div class="col-md-12" ng-show="protocolName">
                             <div class="col-md-2">网络协议名</div>
                             <div class="col-md-2">
                                 <select class="form-control">
@@ -150,12 +150,14 @@
                     </div>
                 </div>
                 <div class="row">
-                    <div class="col-md-2">时间戳</div>
-                    <div class="col-md-1">探针名</div>
-                    <div class="col-md-2">进程用户名</div>
-                    <div class="col-md-1">进程ID</div>
-                    <div class="col-md-4">进程映像路径</div>
-                    <div class="col-md-2">事件类型</div>
+                    <div class="col-md-12">
+                            <div class="col-md-2">时间戳</div>
+                            <div class="col-md-2">探针名</div>
+                            <div class="col-md-2">进程用户名</div>
+                            <div class="col-md-1">进程ID</div>
+                            <div class="col-md-4">进程映像路径</div>
+                            <div class="col-md-1">事件类型</div>
+                    </div>
                 </div>
                 <div class="row">
                     <div class="col-md-12">
@@ -163,12 +165,12 @@
                             <accordion>
                                 <accordion-group ng-repeat="result in results">
                                     <accordion-heading>
-                                        <p class="col-md-2">{{result.timestamp}}</p>
-                                        <p class="col-md-1">{{result.deviceName}}</p>
-                                        <p class="col-md-2">{{result.processUsername}}</p>
-                                        <p class="col-md-1">{{result.processId}}</p>
-                                        <p class="col-md-4">{{result.processPath}}</p>
-                                        <p class="col-md-2">{{result.eventType}}</p>
+                                        <div class="col-md-2">{{result.timestamp}}</div>
+                                        <div class="col-md-2">{{result.deviceName}}</div>
+                                        <div class="col-md-2">{{result.processUsername}}</div>
+                                        <div class="col-md-1">{{result.processId}}</div>
+                                        <div class="col-md-4">{{result.processPath}}</div>
+                                        <div class="col-md-1">{{result.eventType}}</div>
                                     </accordion-heading>
                                     {{result.content}}
                                 </accordion-group>

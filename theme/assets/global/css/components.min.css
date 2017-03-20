@@ -1769,7 +1769,7 @@ li [class*=" fa-"].icon-large, li [class*=" glyphicon-"].icon-large, li [class*=
     border: 0;
     color: #0076e1;
     font-size: 14px;
-    margin: 4px 0 2px 0;
+    margin: 4px 15px 2px 15px;
 }
 
 .check-condition {
