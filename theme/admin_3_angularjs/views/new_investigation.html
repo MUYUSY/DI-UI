@@ -148,6 +148,32 @@
                             </div>
                         </div>
                     </div>
+                    <div class="col-md-12" ng-controller="NewConditionController">
+                        <div class="col-md-12 search-condition" ng-repeat="condition in conditions">
+                            <div class="col-md-2">
+                                <select class="btn white" style="width:100%; border:1px solid #cccccc" ng-model="selected.text" ng-init="selected.text = conditionName[0]"  ng-options="x for x in conditionName" ng-change="change()">
+                                </select>
+                            </div>
+                            <div class="col-md-1" ng-show="class1">
+                                <a class="btn white" style="width:100%; border:1px solid #cccccc">包含</a>
+                            </div>
+                            <div class="col-md-4" ng-show="class1">
+                                <input type="text" class="search-input">
+                            </div>
+                            <div class="col-md-1" ng-show="class2">
+                                <a class="btn white" style="width:100%; border:1px solid #cccccc">等于</a>
+                            </div>
+                            <div class="col-md-4" ng-show="class2">
+                                <input type="text" class="search-input">
+                            </div>
+                            <div class="col-md-1" ng-show="class3">
+                                <a class="btn white" style="width:100%; border:1px solid #cccccc">等于</a>
+                            </div>
+                            <div class="col-md-4" ng-show="class3">
+                                <input type="text" class="search-input">
+                            </div>
+                        </div>
+                    </div>
                 </div>
                 <div class="row">
                     <div class="col-md-12 search-result">
@@ -250,6 +276,35 @@
             isFirstOpen: true,
             isFirstDisabled: false
         };
+    }
+
+    function NewConditionController($scope) {
+        $scope.selected = {text: ''};
+        $scope.conditions = [1,2,3,4];
+        $scope.conditionName = ["进程用户名", "进程ID", "进程名", "IP地址", "网络协议名"];
+        $scope.class1 = true;
+        $scope.class2 = false;
+        $scope.class3 = false;
+        $scope.change = function() {
+            console.log('111');
+            if ($scope.selected.text == "IP地址") {
+                $scope.class1 = false;
+                $scope.class2 = true;
+                $scope.class3 = false;
+            }
+            else if ($scope.selected.text == "网络协议名") {
+                $scope.class1 = false;
+                $scope.class2 = false;
+                $scope.class3 = true;
+            }
+            else {
+                $scope.class1 = true;
+                $scope.class2 = false;
+                $scope.class3 = false;
+            }
+            console.log($scope.selected.text)
+            console.log($scope.class1)
+        }
     }
 </script>
 <!-- END MAIN JS -->
