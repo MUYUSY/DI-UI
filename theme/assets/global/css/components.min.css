@@ -1756,7 +1756,7 @@ li [class*=" fa-"].icon-large, li [class*=" glyphicon-"].icon-large, li [class*=
     transition: all linear;
     background-color: #F9F9F9;
     border: 1px solid #dddddd;
-    margin-top: 5px;
+    margin-top: 8px;
 }
 .high-level.ng-hide {
     height: 0;
@@ -1767,7 +1767,7 @@ li [class*=" fa-"].icon-large, li [class*=" glyphicon-"].icon-large, li [class*=
 .add-condition {
     background-color: #F9F9F9;
     border: 0;
-    color: #0076e1;
+    color: #333333;
     font-size: 14px;
     margin: 4px 15px 2px 15px;
 }
@@ -1776,6 +1776,19 @@ li [class*=" fa-"].icon-large, li [class*=" glyphicon-"].icon-large, li [class*=
     border-bottom: 1px solid #F9F9F9;
     padding-bottom: 10px;
     margin-bottom: 10px;
+}
+
+.search-condition {
+    margin-top: 10px;
+}
+
+.search-input {
+    margin-top: 1px;
+    line-height: 26px;
+}
+
+.search-result {
+    margin-top: 20px;
 }
 
 .btn {
