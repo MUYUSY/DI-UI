@@ -1764,12 +1764,20 @@ li [class*=" fa-"].icon-large, li [class*=" glyphicon-"].icon-large, li [class*=
     background-color: transparent;
 }
 
-.add-condition {
+.condition {
     background-color: #F9F9F9;
     border: 0;
     color: #333333;
     font-size: 14px;
     margin: 4px 15px 2px 15px;
+}
+
+.add-condition {
+    margin: 7px 0 7px 10px;
+    background-color: #F9F9F9;
+    border: 0;
+    color: #0076e1;
+    font-size: 14px;
 }
 
 .check-condition {
@@ -1783,8 +1791,8 @@ li [class*=" fa-"].icon-large, li [class*=" glyphicon-"].icon-large, li [class*=
 }
 
 .search-input {
-    margin-top: 1px;
-    line-height: 26px;
+    line-height: 30px;
+    width: 100%;
 }
 
 .search-result {
@@ -4839,7 +4847,7 @@ li [class*=" fa-"].icon-large, li [class*=" glyphicon-"].icon-large, li [class*=
 
 .close {
     display: inline-block;
-    margin-top: 0;
+    margin-top: 12px;
     margin-right: 0;
     width: 9px;
     height: 9px;

@@ -73,7 +73,7 @@
                     </div>
                 </div>
                 <div class="col-md-12 high-level" ng-show="myHide">
-                    <div class="col-md-12 add-condition" ng-controller="ConditionController">
+                    <div class="col-md-12 condition" ng-controller="ConditionController">
                         <div class="check-condition">
                             <div class="col-md-2">请选择检索条件</div>
                             <div class="col-md-2">
@@ -148,7 +148,7 @@
                             </div>
                         </div>
                     </div>
-                    <div class="col-md-12" ng-controller="NewConditionController">
+                    <div class="col-md-12 condition" ng-controller="NewConditionController">
                         <div class="col-md-12 search-condition" ng-repeat="id in conditions">
                             <div class="col-md-2">
                                 <select class="btn white" style="width:100%; border:1px solid #cccccc"
@@ -156,22 +156,22 @@
                                         ng-options="x for x in conditionName" ng-change="change(id)">
                                 </select>
                             </div>
-                            <div class="col-md-1" ng-show="id.class1">
+                            <div class="col-md-2" ng-show="id.class1">
                                 <a class="btn white" style="width:100%; border:1px solid #cccccc">包含</a>
                             </div>
-                            <div class="col-md-4" ng-show="id.class1">
+                            <div class="col-md-3" ng-show="id.class1">
                                 <input type="text" class="search-input">
                             </div>
-                            <div class="col-md-1" ng-show="id.class2">
+                            <div class="col-md-2" ng-show="id.class2">
                                 <a class="btn white" style="width:100%; border:1px solid #cccccc">等于</a>
                             </div>
-                            <div class="col-md-4" ng-show="id.class2">
+                            <div class="col-md-3" ng-show="id.class2">
                                 <input type="text" class="search-input">
                             </div>
                             <div class="col-md-2" ng-show="id.class3">
                                 <select class="btn white" style="width:100%; border:1px solid #cccccc"
                                         ng-model="protocolName.father" ng-init="protocolName.father = protocolFathers[0]"
-                                        ng-change="protocolInit()"
+                                        ng-change="protocolInit(protocolName.father)"
                                         ng-options="x for x in protocolFathers"></select>
                             </div>
                             <div class="col-md-2" ng-show="id.class3">
@@ -180,6 +180,13 @@
                                         ng-options="y for y in protocolChildren[protocolName.father]">
                                 </select>
                             </div>
+                            <button ng-show="closeable" type="button" class="close" ng-click="closeCondition($index)">
+                                <span aria-hidden="true">×</span>
+                                <span class="sr-only">Close</span>
+                            </button>
+                        </div>
+                        <div class="col-md-2">
+                            <button class="add-condition" ng-disabled="maxCondition" ng-click="addCondition()" >+增加条件</button>
                         </div>
                     </div>
                 </div>
@@ -284,13 +291,7 @@
 
     function NewConditionController($scope) {
         $scope.conditions = [
-            {key: 1, value:"test1", class1:true, class2:false, class3:false},
-            {key: 2, value:"test2", class1:true, class2:false, class3:false},
-            {key: 3, value:"test3", class1:true, class2:false, class3:false},
-            {key: 4, value:"test4", class1:true, class2:false, class3:false},
-            {key: 5, value:"test5", class1:true, class2:false, class3:false},
-            {key: 6, value:"test6", class1:true, class2:false, class3:false},
-            {key: 7, value:"test7", class1:true, class2:false, class3:false}
+            {key: 1, value:"test1", class1:true, class2:false, class3:false}
         ];
         $scope.conditionName = ["进程用户名", "进程ID", "进程名", "IP地址", "网络协议名","Url", "文件名"];
         $scope.protocolName = {
@@ -319,6 +320,29 @@
                 item.class3 = false;
             }
         };
+        $scope.protocolInit = function(item) {
+            $scope.protocolName.child = $scope.protocolChildren[item][0];
+        };
+        $scope.index = 2;
+        $scope.maxCondition = false;
+        $scope.closeable = false;
+        $scope.addCondition = function() {
+            $scope.conditions.push(
+                {key: $scope.index, value:"test2", class1:true, class2:false, class3:false}
+            );
+            $scope.index += 1;
+            $scope.closeable = true;
+            if ($scope.conditions.length == 7) {
+                $scope.maxCondition = true;
+            }
+        };
+        $scope.closeCondition = function(index) {
+            $scope.conditions.splice(index, 1);
+            if ($scope.conditions.length == 1) {
+                $scope.closeable = false;
+            }
+            $scope.maxCondition = false;
+        }
     }
 </script>
 <!-- END MAIN JS -->

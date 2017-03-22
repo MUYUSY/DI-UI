@@ -124,7 +124,8 @@ button, html input[type=button], input[type=reset], input[type=submit] {
 }
 
 button[disabled], html input[disabled] {
-    cursor: default
+    cursor: not-allowed;
+    color: #cccccc;
 }
 
 button::-moz-focus-inner, input::-moz-focus-inner {
@@ -5836,7 +5837,7 @@ a.list-group-item-danger.active, a.list-group-item-danger.active:focus, a.list-g
 }
 
 .close {
-    float: right;
+    float: left;
     font-size: 21px;
     line-height: 1;
     color: #000;
