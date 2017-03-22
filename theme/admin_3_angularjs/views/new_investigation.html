@@ -149,28 +149,36 @@
                         </div>
                     </div>
                     <div class="col-md-12" ng-controller="NewConditionController">
-                        <div class="col-md-12 search-condition" ng-repeat="condition in conditions">
+                        <div class="col-md-12 search-condition" ng-repeat="id in conditions">
                             <div class="col-md-2">
-                                <select class="btn white" style="width:100%; border:1px solid #cccccc" ng-model="selected.text" ng-init="selected.text = conditionName[0]"  ng-options="x for x in conditionName" ng-change="change()">
+                                <select class="btn white" style="width:100%; border:1px solid #cccccc"
+                                        ng-model="id.value" ng-init="id.value = conditionName[0]"
+                                        ng-options="x for x in conditionName" ng-change="change(id)">
                                 </select>
                             </div>
-                            <div class="col-md-1" ng-show="class1">
+                            <div class="col-md-1" ng-show="id.class1">
                                 <a class="btn white" style="width:100%; border:1px solid #cccccc">包含</a>
                             </div>
-                            <div class="col-md-4" ng-show="class1">
+                            <div class="col-md-4" ng-show="id.class1">
                                 <input type="text" class="search-input">
                             </div>
-                            <div class="col-md-1" ng-show="class2">
+                            <div class="col-md-1" ng-show="id.class2">
                                 <a class="btn white" style="width:100%; border:1px solid #cccccc">等于</a>
                             </div>
-                            <div class="col-md-4" ng-show="class2">
+                            <div class="col-md-4" ng-show="id.class2">
                                 <input type="text" class="search-input">
                             </div>
-                            <div class="col-md-1" ng-show="class3">
-                                <a class="btn white" style="width:100%; border:1px solid #cccccc">等于</a>
+                            <div class="col-md-2" ng-show="id.class3">
+                                <select class="btn white" style="width:100%; border:1px solid #cccccc"
+                                        ng-model="protocolName.father" ng-init="protocolName.father = protocolFathers[0]"
+                                        ng-change="protocolInit()"
+                                        ng-options="x for x in protocolFathers"></select>
                             </div>
-                            <div class="col-md-4" ng-show="class3">
-                                <input type="text" class="search-input">
+                            <div class="col-md-2" ng-show="id.class3">
+                                <select class="btn white" style="width:100%; border:1px solid #cccccc"
+                                        ng-model="protocolName.child" ng-init="protocolName.child"
+                                        ng-options="y for y in protocolChildren[protocolName.father]">
+                                </select>
                             </div>
                         </div>
                     </div>
@@ -209,10 +217,7 @@
         </div>
     </div>
 </div>
-    <!-- END: ACCORDION DEMO -->
-    <!-- BEGIN ALERT DEMO -->
 
-<!-- END MAIN CONTENT -->
 <script>
     ComponentsDateTimePickers.init();
     ComponentsSelect2.init();
@@ -250,7 +255,6 @@
         };
     }
 
-    // Accordion demo controller
     function AccordionDemoCtrl($scope) {
         $scope.results = [
             {
@@ -279,32 +283,42 @@
     }
 
     function NewConditionController($scope) {
-        $scope.selected = {text: ''};
-        $scope.conditions = [1,2,3,4];
-        $scope.conditionName = ["进程用户名", "进程ID", "进程名", "IP地址", "网络协议名"];
-        $scope.class1 = true;
-        $scope.class2 = false;
-        $scope.class3 = false;
-        $scope.change = function() {
-            console.log('111');
-            if ($scope.selected.text == "IP地址") {
-                $scope.class1 = false;
-                $scope.class2 = true;
-                $scope.class3 = false;
+        $scope.conditions = [
+            {key: 1, value:"test1", class1:true, class2:false, class3:false},
+            {key: 2, value:"test2", class1:true, class2:false, class3:false},
+            {key: 3, value:"test3", class1:true, class2:false, class3:false},
+            {key: 4, value:"test4", class1:true, class2:false, class3:false},
+            {key: 5, value:"test5", class1:true, class2:false, class3:false},
+            {key: 6, value:"test6", class1:true, class2:false, class3:false},
+            {key: 7, value:"test7", class1:true, class2:false, class3:false}
+        ];
+        $scope.conditionName = ["进程用户名", "进程ID", "进程名", "IP地址", "网络协议名","Url", "文件名"];
+        $scope.protocolName = {
+            father: '分类一',
+            child: 'HTTP'
+            };
+        $scope.protocolFathers = ["分类一","分类二"];
+        $scope.protocolChildren = {
+            "分类一": ["HTTP","HTTPS"],
+            "分类二": ["FTP","SSH"]
+        };
+        $scope.change = function(item) {
+            if (item.value == "IP地址") {
+                item.class1 = false;
+                item.class2 = true;
+                item.class3 = false;
             }
-            else if ($scope.selected.text == "网络协议名") {
-                $scope.class1 = false;
-                $scope.class2 = false;
-                $scope.class3 = true;
+            else if (item.value == "网络协议名") {
+                item.class1 = false;
+                item.class2 = false;
+                item.class3 = true;
             }
             else {
-                $scope.class1 = true;
-                $scope.class2 = false;
-                $scope.class3 = false;
+                item.class1 = true;
+                item.class2 = false;
+                item.class3 = false;
             }
-            console.log($scope.selected.text)
-            console.log($scope.class1)
-        }
+        };
     }
 </script>
 <!-- END MAIN JS -->
