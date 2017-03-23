@@ -261,15 +261,35 @@
     }
 
     function AccordionDemoCtrl($scope) {
+        var data = {
+            key: [
+                "CLF_EventTime=1288393354",
+                "CLF_DeviceName=Gonzalez",
+                "CLF_User=Administrator",
+                "CLF_Pid=6165",
+                "CLF_ProcessName=consectetur.mp3",
+                "CLF_EventType=2"
+            ],
+            data: "CLF_EventType=2  CLF_User=Administrator	CLF_ProcessName=consectetur.mp3	CLF_Pid=6165	CLF_File=None	CLF_Url=None	CLF_Ip=None	CLF_NetProtocal=None	CLF_EventTime=1288393354	CLF_DeviceName=Gonzalez, Newman and Ramirez	CLF_SourcePort=9884	CLF_DestIP=215.123.157.168	CLF_RspCode=200	CLF_SourceIP=211.185.203.89	CLF_DestPort=7473"
+        };
+
+        var getValue = function(item) {
+            return item.split("=")[1];
+        };
+
+        var formatData = function(data) {
+            return data.replace(/\t/g," | ")
+        };
+
         $scope.results = [
             {
-                timestamp: "1234567890",
-                deviceName: "Calderon-Ryan",
-                processUsername: "NickTang",
-                processId: "6627",
-                processPath: "/usr/vtm/consectetur.mp3",
-                eventType: "2",
-                content: "CLF_EventType=2	CLF_User=Administrator	CLF_ProcessName=consectetur.mp3	CLF_Pid=6165	CLF_File=None	CLF_Url=None	CLF_Ip=None	CLF_NetProtocal=None	CLF_EventTime=1288393354	CLF_DeviceName=Gonzalez, Newman and Ramirez	CLF_SourcePort=9884	CLF_DestIP=215.123.157.168	CLF_RspCode=200	CLF_SourceIP=211.185.203.89	CLF_DestPort=7473"
+                timestamp: getValue(data.key[0]),
+                deviceName: getValue(data.key[1]),
+                processUsername: getValue(data.key[2]),
+                processId: getValue(data.key[3]),
+                processPath: getValue(data.key[4]),
+                eventType: getValue(data.key[5]),
+                content: formatData(data.data)
             },
             {
                 timestamp: "1234567890",
@@ -278,7 +298,7 @@
                 processId: "6627",
                 processPath: "/usr/vtm/consectetur.mp3",
                 eventType: "2",
-                content: "CLF_EventType=2	CLF_User=Administrator	CLF_ProcessName=consectetur.mp3	CLF_Pid=6165	CLF_File=None	CLF_Url=None	CLF_Ip=None	CLF_NetProtocal=None	CLF_EventTime=1288393354	CLF_DeviceName=Gonzalez, Newman and Ramirez	CLF_SourcePort=9884	CLF_DestIP=215.123.157.168	CLF_RspCode=200	CLF_SourceIP=211.185.203.89	CLF_DestPort=7473"
+                content: "CLF_EventType=2   CLF_User=Administrator	CLF_ProcessName=consectetur.mp3	CLF_Pid=6165	CLF_File=None	CLF_Url=None	CLF_Ip=None	CLF_NetProtocal=None	CLF_EventTime=1288393354	CLF_DeviceName=Gonzalez, Newman and Ramirez	CLF_SourcePort=9884	CLF_DestIP=215.123.157.168	CLF_RspCode=200	CLF_SourceIP=211.185.203.89	CLF_DestPort=7473"
             }
         ];
         $scope.status = {

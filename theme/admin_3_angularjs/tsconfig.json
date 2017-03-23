@@ -1,0 +1,12 @@
+
+{
+  key: [
+    "CLF_EventTime=1288393354",
+    "CLF_DeviceName=Gonzalez",
+    "CLF_User=Administrator",
+    "CLF_Pid=6165",
+    "CLF_ProcessName=consectetur.mp3",
+    "CLF_EventType=2"
+  ],
+  data: "CLF_EventTime=1288393354  CLF_DeviceName=Gonzalez CLF_User=Administrator  CLF_Pid=6165  CLF_ProcessName=consectetur.mp3 CLF_EventType=2 CLF_File=None	CLF_Url=None  CLF_Ip=None CLF_NetProtocal=None  CLF_SourcePort=9884 CLF_DestIP=215.123.157.168  CLF_RspCode=200 CLF_SourceIP=211.185.203.89 CLF_DestPort=7473"
+}
