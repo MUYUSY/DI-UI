@@ -1757,6 +1757,7 @@ li [class*=" fa-"].icon-large, li [class*=" glyphicon-"].icon-large, li [class*=
     background-color: #F9F9F9;
     border: 1px solid #dddddd;
     margin-top: 8px;
+    margin-bottom: 8px;
 }
 .high-level.ng-hide {
     height: 0;

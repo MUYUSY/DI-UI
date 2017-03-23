@@ -280,6 +280,9 @@ MetronicApp.config(['$stateProvider', '$urlRouterProvider', function($stateProvi
                             '../assets/pages/scripts/components-bootstrap-select.min.js',
                             '../assets/pages/scripts/components-select2.min.js',
 
+                            '../assets/global/plugins/jstree/dist/jstree.min.js',
+                            '../assets/pages/scripts/ui-tree.min.js',
+
                             'js/controllers/GeneralPageController.js'
 
                         ]
