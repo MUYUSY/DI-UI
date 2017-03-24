@@ -1765,6 +1765,21 @@ li [class*=" fa-"].icon-large, li [class*=" glyphicon-"].icon-large, li [class*=
     background-color: transparent;
 }
 
+.select {
+    width:100%;
+    border:1px solid #cccccc;
+
+    appearance:none !important;
+    -moz-appearance:none !important;
+    -webkit-appearance:none !important;
+
+    background: url("../../../admin_3_angularjs/icon/arrow.png") no-repeat scroll right 10px center transparent;
+
+    padding-right: 14px;
+}
+
+.select::-ms-expand { display: none; }
+
 .condition {
     background-color: #F9F9F9;
     border: 0;

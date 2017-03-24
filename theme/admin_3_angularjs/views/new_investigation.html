@@ -17,7 +17,8 @@
             <div class="portlet-body" ng-controller="HighLevelToggle">
                 <div class="col-md-12">
                     <div class="col-md-2">
-                        <a class="btn white" style="width:100%; border:1px solid #cccccc" href="#" data-target="#daterangepicker_modal" data-toggle="modal"> 选择时间...
+                        <a class="btn white" style="width:100%; border:1px solid #cccccc" href="#"
+                           data-target="#daterangepicker_modal" data-toggle="modal"> 选择时间...
                             <i class="caret"></i>
                         </a>
                         <div id="daterangepicker_modal" class="modal fade" role="dialog" aria-hidden="true">
@@ -62,162 +63,148 @@
                         </select>
                     </div>
                     <div class="col-md-1">
-                        <button class="btn" style="width:100px; border:1px solid #cccccc;" ng-click="toggle()">高级</button>
+                        <button class="btn" style="width:100px; border:1px solid #cccccc;" ng-click="toggle()">高级
+                        </button>
                     </div>
                     <div class="col-md-12 high-level" ng-show="myHide">
-                        <div class="col-md-12 condition" ng-controller="ConditionController">
-                            <div class="check-condition">
-                                <div class="col-md-2">请选择检索条件</div>
-                                <div class="col-md-2">
-                                    <input type="checkbox" ng-model="processUsername" !checked>进程用户名
-                                </div>
-                                <div class="col-md-2">
-                                    <input type="checkbox" ng-model="processId" !checked>进程ID
-                                </div>
-                                <div class="col-md-2">
-                                    <input type="checkbox" ng-model="processName" !checked>进程名
-                                </div>
-                                <div class="col-md-2">
-                                    <input type="checkbox" ng-model="ipAddress" !checked>IP地址
-                                </div>
-                                <div class="col-md-2">
-                                    <input type="checkbox" ng-model="protocolName" !checked>网络协议名
-                                </div>
-                            </div>
-                            <div class="col-md-12 search-condition" ng-show="processUsername">
-                                <div class="col-md-2 h5">进程用户名</div>
-                                <div class="col-md-2">
-                                    <select class="form-control">
-                                        <option>包含</option>
-                                    </select>
-                                </div>
-                                <div class="col-md-4">
-                                    <input type="text" class="search-input">
-                                </div>
-                            </div>
-                            <div class="col-md-12 search-condition" ng-show="processId">
-                                <div class="col-md-2 h5">进程ID</div>
-                                <div class="col-md-2">
-                                    <select class="form-control">
-                                        <option>包含</option>
-                                    </select>
-                                </div>
-                                <div class="col-md-4">
-                                    <input type="text" class="search-input">
-                                </div>
-                            </div>
-                            <div class="col-md-12 search-condition" ng-show="processName">
-                                <div class="col-md-2 h5">进程名</div>
-                                <div class="col-md-2">
-                                    <select class="form-control">
-                                        <option>包含</option>
-                                    </select>
-                                </div>
-                                <div class="col-md-4">
-                                    <input type="text" class="search-input">
-                                </div>
-                            </div>
-                            <div class="col-md-12 search-condition" ng-show="ipAddress">
-                                <div class="col-md-2 h5">IP地址</div>
-                                <div class="col-md-2">
-                                    <select class="form-control">
-                                        <option>包含</option>
-                                    </select>
-                                </div>
-                                <div class="col-md-4">
-                                    <input type="text" class="search-input">
-                                </div>
-                            </div>
-                            <div class="col-md-12 search-condition" ng-show="protocolName">
-                                <div class="col-md-2 h5">网络协议名</div>
-                                <div class="col-md-2">
-                                    <select class="form-control">
-                                        <option>包含</option>
-                                    </select>
-                                </div>
-                                <div class="col-md-4">
-                                    <input type="text" class="search-input">
-                                </div>
-                            </div>
-                        </div>
                         <div class="col-md-12 condition" ng-controller="NewConditionController">
                             <div class="col-md-12 search-condition" ng-repeat="id in conditions">
                                 <div class="col-md-2">
-                                    <select class="btn white" style="width:100%; border:1px solid #cccccc"
+                                    <select class="select form-control"
                                             ng-model="id.value" ng-init="id.value = conditionName[0]"
                                             ng-options="x for x in conditionName" ng-change="change(id)">
                                     </select>
                                 </div>
                                 <div class="col-md-3" ng-show="id.class1">
-                                    <input type="text" class="search-input form-control ng-pristine ng-valid ng-touched">
+                                    <input type="text"
+                                           class="search-input form-control ng-pristine ng-valid ng-touched">
                                 </div>
                                 <div class="col-md-3" ng-show="id.class2">
-                                    <input type="text" class="search-input form-control ng-pristine ng-valid ng-touched">
+                                    <input type="text"
+                                           class="search-input form-control ng-pristine ng-valid ng-touched">
                                 </div>
                                 <div class="col-md-2" ng-show="id.class3">
-                                    <select class="btn white" style="width:100%; border:1px solid #cccccc"
-                                            ng-model="protocolName.father" ng-init="protocolName.father = protocolFathers[0]"
+                                    <select class="select form-control"
+                                            ng-model="protocolName.father"
+                                            ng-init="protocolName.father = protocolFathers[0]"
                                             ng-change="protocolInit(protocolName.father)"
                                             ng-options="x for x in protocolFathers"></select>
                                 </div>
                                 <div class="col-md-2" ng-show="id.class3">
-                                    <select class="btn white" style="width:100%; border:1px solid #cccccc"
+                                    <select class="select form-control"
                                             ng-model="protocolName.child" ng-init="protocolName.child"
                                             ng-options="y for y in protocolChildren[protocolName.father]">
                                     </select>
                                 </div>
-                                <button ng-show="closeable" type="button" class="close" ng-click="closeCondition($index)">
+                                <button ng-show="closeable" type="button" class="close"
+                                        ng-click="closeCondition($index)">
                                     <span aria-hidden="true">×</span>
                                     <span class="sr-only">Close</span>
                                 </button>
                             </div>
                             <div class="col-md-2">
-                                <button class="add-condition" ng-disabled="maxCondition" ng-click="addCondition()" >+增加条件</button>
+                                <button class="add-condition" ng-disabled="maxCondition" ng-click="addCondition()">
+                                    +增加条件
+                                </button>
                             </div>
                         </div>
                     </div>
                     <div class="col-md-3">
-                        <button class="btn" style="margin-left:10%; width:100px; background-color:#0076e1; color: #ffffff; padding-right: 32px">
-                            <img src="./icon/search.png" style="margin: 0 8px 1px 0;">搜索</button>
+                        <button class="btn"
+                                style="margin-left:10%; width:100px; background-color:#0076e1; color: #ffffff; padding-right: 32px">
+                            <img src="./icon/search.png" style="margin: 0 8px 1px 0;">搜索
+                        </button>
                         <button class="btn pull-right" style="width:100px; border:1px solid #cccccc">
-                            <img src="./icon/save.png" style="margin: 0 4px 1px 0">保存规则</button>
+                            <img src="./icon/save.png" style="margin: 0 4px 1px 0">保存规则
+                        </button>
                     </div>
 
                     <button class="btn white pull-right" style="width:121px; border:1px solid #cccccc">导出结果</button>
 
                 </div>
-
-                <div class="row">
-                    <div class="col-md-12 search-result">
-                            <div class="col-md-2 h5">时间戳</div>
-                            <div class="col-md-2 h5">探针名</div>
-                            <div class="col-md-2 h5">进程用户名</div>
-                            <div class="col-md-1 h5">进程ID</div>
-                            <div class="col-md-4 h5">进程映像路径</div>
-                            <div class="col-md-1 h5">事件类型</div>
-                    </div>
+            </div>
+            <div class="row">
+                <div class="col-md-12 search-result">
+                    <div class="col-md-2 h5">时间戳</div>
+                    <div class="col-md-2 h5">探针名</div>
+                    <div class="col-md-2 h5">进程用户名</div>
+                    <div class="col-md-1 h5">进程ID</div>
+                    <div class="col-md-4 h5">进程映像路径</div>
+                    <div class="col-md-1 h5">事件类型</div>
                 </div>
-                <div class="row">
-                    <div class="col-md-12">
-                        <div ng-controller="AccordionDemoCtrl">
-                            <accordion close-others="false">
-                                <accordion-group ng-repeat="result in results">
-                                    <accordion-heading>
-                                        <div class="col-md-2">{{result.timestamp}}</div>
-                                        <div class="col-md-2">{{result.deviceName}}</div>
-                                        <div class="col-md-2">{{result.processUsername}}</div>
-                                        <div class="col-md-1">{{result.processId}}</div>
-                                        <div class="col-md-4">{{result.processPath}}</div>
-                                        <div class="col-md-1">{{result.eventType}}</div>
-                                    </accordion-heading>
-                                    {{result.content}}
-                                </accordion-group>
-                            </accordion>
-                        </div>
+            </div>
+            <div class="row">
+                <div class="col-md-12">
+                    <div ng-controller="AccordionDemoCtrl">
+                        <accordion close-others="false">
+                            <accordion-group ng-repeat="result in results">
+                                <accordion-heading>
+                                    <div class="col-md-2">{{result.timestamp}}</div>
+                                    <div class="col-md-2">{{result.deviceName}}</div>
+                                    <div class="col-md-2">{{result.processUsername}}</div>
+                                    <div class="col-md-1">{{result.processId}}</div>
+                                    <div class="col-md-4">{{result.processPath}}</div>
+                                    <div class="col-md-1">{{result.eventType}}</div>
+                                </accordion-heading>
+                                {{result.content}}
+                            </accordion-group>
+                        </accordion>
                     </div>
                 </div>
             </div>
+            <div class="row">
+                <div class="col-md-12" id="search-result">
+                    <!-- BEGIN EXAMPLE TABLE PORTLET-->
 
+                </div>
+            </div>
+            <div class="row">
+                <div class="col-md-12">
+                    <table class="table table-striped table-bordered table-hover dt-responsive" width="100%"
+                           id="sample_1">
+                        <thead>
+                        <tr>
+                            <th class="all">时间戳</th>
+                            <th class="min-phone-l">探针名</th>
+                            <th class="min-phone-l">进程用户名</th>
+                            <th class="min-phone-l">进程ID</th>
+                            <th class="min-tablet">进程映像路径</th>
+                            <th class="desktop">事件类型</th>
+                            <th class="none"></th>
+                        </tr>
+                        </thead>
+                        <tbody>
+                        <tr>
+                            <td>1288393354</td>
+                            <td>Gonzalez</td>
+                            <td>Administrator</td>
+                            <td>6165</td>
+                            <td>consectetur.mp3</td>
+                            <td>2</td>
+                            <td>CLF_EventType=2 CLF_User=Administrator | CLF_ProcessName=consectetur.mp3 | CLF_Pid=6165
+                                | CLF_File=None | CLF_Url=None | CLF_Ip=None | CLF_NetProtocal=None |
+                                CLF_EventTime=1288393354 | CLF_DeviceName=Gonzalez, Newman and Ramirez |
+                                CLF_SourcePort=9884 | CLF_DestIP=215.123.157.168 | CLF_RspCode=200 |
+                                CLF_SourceIP=211.185.203.89 | CLF_DestPort=7473
+                            </td>
+                        </tr>
+                        <tr>
+                            <td>1234567890</td>
+                            <td>Calderon-Ryan</td>
+                            <td>NickTang</td>
+                            <td>6627</td>
+                            <td>/usr/vtm/consectetur.mp3</td>
+                            <td>2</td>
+                            <td>CLF_EventType=2 CLF_User=Administrator CLF_ProcessName=consectetur.mp3 CLF_Pid=6165
+                                CLF_File=None CLF_Url=None CLF_Ip=None CLF_NetProtocal=None CLF_EventTime=1288393354
+                                CLF_DeviceName=Gonzalez, Newman and Ramirez CLF_SourcePort=9884
+                                CLF_DestIP=215.123.157.168 CLF_RspCode=200 CLF_SourceIP=211.185.203.89 CLF_DestPort=7473
+                            </td>
+                        </tr>
+                        </tbody>
+                    </table>
+                </div>
+            </div>
         </div>
     </div>
 </div>
@@ -227,14 +214,13 @@
     ComponentsSelect2.init();
     ComponentsBootstrapSelect.init();
     UITree.init();
+    TableDatatablesManaged.init();
 </script>
 <!-- BEGIN MAIN JS -->
 <script>
     function HighLevelToggle($scope) {
         $scope.myHide = false;
-        console.log($scope.myHide);
-        $scope.toggle = function() {
-            console.log($scope.myHide);
+        $scope.toggle = function () {
             $scope.myHide = !$scope.myHide;
         };
     }
@@ -273,12 +259,12 @@
             data: "CLF_EventType=2  CLF_User=Administrator	CLF_ProcessName=consectetur.mp3	CLF_Pid=6165	CLF_File=None	CLF_Url=None	CLF_Ip=None	CLF_NetProtocal=None	CLF_EventTime=1288393354	CLF_DeviceName=Gonzalez, Newman and Ramirez	CLF_SourcePort=9884	CLF_DestIP=215.123.157.168	CLF_RspCode=200	CLF_SourceIP=211.185.203.89	CLF_DestPort=7473"
         };
 
-        var getValue = function(item) {
+        var getValue = function (item) {
             return item.split("=")[1];
         };
 
-        var formatData = function(data) {
-            return data.replace(/\t/g," | ")
+        var formatData = function (data) {
+            return data.replace(/\t/g, " | ")
         };
 
         $scope.results = [
@@ -307,21 +293,104 @@
         };
     }
 
+    var getValue = function (item) {
+        return item.split("=")[1];
+    };
+
+    var formatData = function (item) {
+        return item.replace(/\t/g, " | ")
+    };
+
+    var SearchResultCtrl = function () {
+        var data = {
+                   key: [
+            "CLF_EventTime=1288393354",
+            "CLF_DeviceName=Gonzalez",
+            "CLF_User=Administrator",
+            "CLF_Pid=6165",
+            "CLF_ProcessName=consectetur.mp3",
+            "CLF_EventType=2"
+        ],
+            data: "CLF_EventType=2  CLF_User=Administrator	CLF_ProcessName=consectetur.mp3	CLF_Pid=6165	CLF_File=None	CLF_Url=None	CLF_Ip=None	CLF_NetProtocal=None	CLF_EventTime=1288393354	CLF_DeviceName=Gonzalez, Newman and Ramirez	CLF_SourcePort=9884	CLF_DestIP=215.123.157.168	CLF_RspCode=200	CLF_SourceIP=211.185.203.89	CLF_DestPort=7473"
+    };
+
+
+        results = [
+            {
+                timestamp: getValue(data.key[0]),
+                deviceName: getValue(data.key[1]),
+                processUsername: getValue(data.key[2]),
+                processId: getValue(data.key[3]),
+                processPath: getValue(data.key[4]),
+                eventType: getValue(data.key[5]),
+                content: formatData(data.data)
+            },
+            {
+                timestamp: "1234567890",
+                deviceName: "Calderon-Ryan",
+                processUsername: "NickTang",
+                processId: "6627",
+                processPath: "/usr/vtm/consectetur.mp3",
+                eventType: "2",
+                content: "CLF_EventType=2   CLF_User=Administrator	CLF_ProcessName=consectetur.mp3	CLF_Pid=6165	CLF_File=None	CLF_Url=None	CLF_Ip=None	CLF_NetProtocal=None	CLF_EventTime=1288393354	CLF_DeviceName=Gonzalez, Newman and Ramirez	CLF_SourcePort=9884	CLF_DestIP=215.123.157.168	CLF_RspCode=200	CLF_SourceIP=211.185.203.89	CLF_DestPort=7473"
+            }
+        ];
+
+        var html = '<table class="table table-striped table-bordered table-hover dt-responsive" width="100%" id="sample_1">';
+
+        html += '<thead>';
+        html += '<tr>';
+        html += '<th class="all">时间戳</th>';
+        html += '<th class="min-phone-l">探针名</th>';
+        html += '<th class="min-phone-l">进程用户名</th>';
+        html += '<th class="min-phone-l">进程ID</th>';
+        html += '<th class="min-tablet">进程映像路径</th>';
+        html += '<th class="desktop">事件类型</th>';
+        html += '<th class="none"></th>';
+        html += '</tr>';
+        html += '</thead>';
+        html += '<tbody>';
+
+        for (var i = 0; i < results.length; i++) {
+            var item = results[i];
+            html += '<tr>';
+            html += '<td>' + item.timestamp + '</td>';
+            html += '<td>' + item.deviceName + '</td>';
+            html += '<td>' + item.processUsername + '</td>';
+            html += '<td>' + item.processId + '</td>';
+            html += '<td>' + item.processPath + '</td>';
+            html += '<td>' + item.eventType + '</td>';
+            html += '<td>' + item.content + '</td>';
+            html += '</tr>';
+        }
+        html += '</tbody>';
+        html += '</table>';
+
+        console.log("html=====", html);
+
+        $('#search-result').append(html);
+
+        TableDatatablesResponsive.init()
+    };
+
+    SearchResultCtrl();
+
+
     function NewConditionController($scope) {
         $scope.conditions = [
-            {key: 1, value:"test1", class1:true, class2:false, class3:false}
+            {key: 1, value: "test1", class1: true, class2: false, class3: false}
         ];
-        $scope.conditionName = ["进程用户名", "进程ID", "进程名", "IP地址", "网络协议名","Url", "文件名"];
+        $scope.conditionName = ["进程用户名", "进程ID", "进程名", "IP地址", "网络协议名", "Url", "文件名"];
         $scope.protocolName = {
             father: '分类一',
             child: 'HTTP'
-            };
-        $scope.protocolFathers = ["分类一","分类二"];
-        $scope.protocolChildren = {
-            "分类一": ["HTTP","HTTPS"],
-            "分类二": ["FTP","SSH"]
         };
-        $scope.change = function(item) {
+        $scope.protocolFathers = ["分类一", "分类二"];
+        $scope.protocolChildren = {
+            "分类一": ["HTTP", "HTTPS"],
+            "分类二": ["FTP", "SSH"]
+        };
+        $scope.change = function (item) {
             if (item.value == "IP地址") {
                 item.class1 = false;
                 item.class2 = true;
@@ -338,15 +407,15 @@
                 item.class3 = false;
             }
         };
-        $scope.protocolInit = function(item) {
+        $scope.protocolInit = function (item) {
             $scope.protocolName.child = $scope.protocolChildren[item][0];
         };
         $scope.index = 2;
         $scope.maxCondition = false;
         $scope.closeable = false;
-        $scope.addCondition = function() {
+        $scope.addCondition = function () {
             $scope.conditions.push(
-                {key: $scope.index, value:"test2", class1:true, class2:false, class3:false}
+                {key: $scope.index, value: "test2", class1: true, class2: false, class3: false}
             );
             $scope.index += 1;
             $scope.closeable = true;
@@ -354,7 +423,7 @@
                 $scope.maxCondition = true;
             }
         };
-        $scope.closeCondition = function(index) {
+        $scope.closeCondition = function (index) {
             $scope.conditions.splice(index, 1);
             if ($scope.conditions.length == 1) {
                 $scope.closeable = false;
