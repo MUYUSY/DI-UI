@@ -10,13 +10,13 @@ var TableDatatablesResponsive = function () {
                     "sortAscending": ": activate to sort column ascending",
                     "sortDescending": ": activate to sort column descending"
                 },
-                "emptyTable": "No data available in table",
+                "emptyTable": "无匹配的数据可显示",
                 "info": "Showing _START_ to _END_ of _TOTAL_ entries",
                 "infoEmpty": "No entries found",
                 "infoFiltered": "(filtered1 from _MAX_ total entries)",
                 "lengthMenu": "_MENU_ entries",
                 "search": "Search:",
-                "zeroRecords": "No matching records found"
+                "zeroRecords": "无匹配的数据可显示"
             },
 
             // Or you can use remote translation file
