@@ -103,16 +103,19 @@
                                     +增加条件
                                 </button>
                             </div>
-                            <div class="col-md-3">
-                                <button class="btn" ng-click="search()"
-                                        style="margin-left:10%; width:100px; background-color:#0076e1; color: #ffffff; padding-right: 32px">
-                                    <img src="./icon/search.png" style="margin: 0 8px 1px 0;">搜索
-                                </button>
-                            </div>
+
                         </div>
                     </div>
 
-
+                    <div class="col-md-3" ng-controller="SearchCtrl">
+                        <button class="btn" ng-click="search()"
+                                style="margin-left:10%; width:100px; background-color:#0076e1; color: #ffffff; padding-right: 32px">
+                            <img src="./icon/search.png" style="margin: 0 8px 1px 0;">搜索
+                        </button>
+                        <button class="btn pull-right" style="width:100px; border:1px solid #cccccc">
+                            <img src="./icon/save.png" style="margin: 0 4px 1px 0">保存规则
+                        </button>
+                    </div>
                     <button class="btn white pull-right" style="width:121px; border:1px solid #cccccc">导出结果</button>
 
                 </div>
@@ -179,6 +182,9 @@
         $scope.toggle = function () {
             $scope.myHide = !$scope.myHide;
         };
+        $scope.conditions = [
+            {key: 1, value: "test1", class1: true, class2: false, class3: false, input:"", father:"分类一", child:"HTTP"}
+        ];
     }
 
     function AccordionDemoCtrl($scope) {
@@ -266,7 +272,7 @@
     };
 
     var SearchResultCtrl = function (search_condition) {
-        $.getJSON('./views/data.js', function (data) {
+        $.getJSON('./views/data1W.js', function (data) {
             var results = [];
             for (var i = 0; i < data.length; i++) {
                 results.push({
@@ -290,7 +296,7 @@
             html += '<th class="min-phone-l">进程ID</th>';
             html += '<th class="min-tablet">进程映像路径</th>';
             html += '<th class="desktop">事件类型</th>';
-            html += '<th class="none">详细日志：</th>';
+            html += '<th class="none">详细日志</th>';
             html += '</tr>';
             html += '</thead>';
             html += '<tbody>';
@@ -318,9 +324,6 @@
     };
 
     function NewConditionController($scope) {
-        $scope.conditions = [
-            {key: 1, value: "test1", class1: true, class2: false, class3: false, input:"", father:"分类一", child:"HTTP"}
-        ];
         $scope.conditionName = ["进程用户名", "进程ID", "进程名", "IP地址", "网络协议名", "Url", "文件名"];
 //        $scope.protocolName = {
 //            father: '分类一',
@@ -364,9 +367,12 @@
             }
             $scope.maxCondition = false;
         };
+    }
+
+    function SearchCtrl($scope) {
         $scope.search_condition = [];
         $scope.search = function () {
-            for (var i = 0; i < $scope.conditions.length; i++) {
+            for (var i = 0; i < $scope.$parent.conditions.length; i++) {
                 if ($scope.conditions[i].value == "网络协议名") {
                     $scope.search_condition.push({key: $scope.conditions[i].value, input:$scope.conditions[i].child});
                 }
