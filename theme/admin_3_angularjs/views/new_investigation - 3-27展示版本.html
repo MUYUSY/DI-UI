@@ -1,0 +1,387 @@
+<!-- BEGIN MAIN CONTENT -->
+<div class="row">
+    <div class="col-md-12">
+        <!-- BEGIN: ACCORDION DEMO -->
+        <div class="portlet light">
+            <div class="portlet-title">
+                <div class="caption font-green-sharp">
+                    <span class="caption-subject bold uppercase">新建调查</span>
+                </div>
+                <div class="tools">
+                    <a href="" class="collapse"> </a>
+                    <a href="" class="reload"> </a>
+                    <a href="" class="fullscreen"> </a>
+                </div>
+            </div>
+
+            <div class="portlet-body" ng-controller="HighLevelToggle">
+                <div class="col-md-12">
+                    <div class="col-md-2">
+                        <a class="btn white" style="width:100%; border:1px solid #cccccc" href="#"
+                           data-target="#daterangepicker_modal" data-toggle="modal"> 选择时间...
+                            <i class="caret"></i>
+                        </a>
+                        <div id="daterangepicker_modal" class="modal fade" role="dialog" aria-hidden="true">
+                            <div class="modal-dialog">
+                                <div class="modal-content">
+                                    <div class="modal-header">
+                                        <button type="button" class="close" data-dismiss="modal"
+                                                aria-hidden="true"></button>
+                                        <h4 class="modal-title">Daterange Picker in Modal</h4>
+                                    </div>
+                                    <div class="modal-body">
+                                        <form action="#" class="form-horizontal">
+                                            <div class="form-group">
+                                                <label class="control-label col-md-4">Default Date Ranges</label>
+                                                <div class="col-md-8">
+                                                    <div class="input-group" id="defaultrange">
+                                                        <input type="text" class="form-control">
+                                                        <span class="input-group-btn">
+                                                        <button class="btn default date-range-toggle" type="button">
+                                                            <i class="fa fa-calendar"></i>
+                                                        </button>
+                                                        </span>
+                                                    </div>
+                                                </div>
+                                            </div>
+                                        </form>
+                                    </div>
+                                    <div class="modal-footer">
+                                        <button class="btn" data-dismiss="modal" aria-hidden="true">Close</button>
+                                        <button class="btn green btn-primary" data-dismiss="modal">Save changes
+                                        </button>
+                                    </div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="col-md-3">
+                        <select class="form-control input-large select2me" data-placeholder="所有探针设备">
+                            <option></option>
+                            <option>Alabama</option>
+                            <option>Wyoming</option>
+                        </select>
+                    </div>
+                    <div class="col-md-1">
+                        <button class="btn" style="width:100px; border:1px solid #cccccc;" ng-click="toggle()">高级
+                        </button>
+                    </div>
+                    <div class="col-md-12 high-level" ng-show="myHide">
+                        <div class="col-md-12 condition" ng-controller="NewConditionController">
+                            <div class="col-md-12 search-condition" ng-repeat="id in conditions">
+                                <div class="col-md-2">
+                                    <select class="select form-control"
+                                            ng-model="id.value" ng-init="id.value = conditionName[0]"
+                                            ng-options="x for x in conditionName" ng-change="change(id)">
+                                    </select>
+                                </div>
+                                <div class="col-md-3" ng-show="id.class1">
+                                    <input type="text" ng-model="id.input"
+                                           class="search-input form-control ng-pristine ng-valid ng-touched">
+                                </div>
+                                <div class="col-md-2" ng-show="id.class3">
+                                    <select class="select form-control"
+                                            ng-model="id.father"
+                                            ng-init="id.father = protocolFathers[0]"
+                                            ng-change="protocolInit(protocolName.father)"
+                                            ng-options="x for x in protocolFathers"></select>
+                                </div>
+                                <div class="col-md-2" ng-show="id.class3">
+                                    <select class="select form-control"
+                                            ng-model="id.child" ng-init="id.child"
+                                            ng-options="y for y in protocolChildren[protocolName.father]">
+                                    </select>
+                                </div>
+                                <button ng-show="closeable" type="button" class="close"
+                                        ng-click="closeCondition($index)">
+                                    <span aria-hidden="true">×</span>
+                                    <span class="sr-only">Close</span>
+                                </button>
+                            </div>
+                            <div class="col-md-2">
+                                <button class="add-condition" ng-disabled="maxCondition" ng-click="addCondition()">
+                                    +增加条件
+                                </button>
+                            </div>
+
+                        </div>
+                    </div>
+
+                    <div class="col-md-3" ng-controller="SearchCtrl">
+                        <button class="btn" ng-click="search()"
+                                style="margin-left:10%; width:100px; background-color:#0076e1; color: #ffffff; padding-right: 32px">
+                            <img src="./icon/search.png" style="margin: 0 8px 1px 0;">搜索
+                        </button>
+                        <button class="btn pull-right" style="width:100px; border:1px solid #cccccc">
+                            <img src="./icon/save.png" style="margin: 0 4px 1px 0">保存规则
+                        </button>
+                    </div>
+                    <button class="btn white pull-right" style="width:121px; border:1px solid #cccccc">导出结果</button>
+
+                </div>
+            </div>
+            <!--<div class="row">-->
+            <!--<div class="col-md-12 search-result">-->
+            <!--<div class="col-md-2 h5">时间戳</div>-->
+            <!--<div class="col-md-2 h5">探针名</div>-->
+            <!--<div class="col-md-2 h5">进程用户名</div>-->
+            <!--<div class="col-md-1 h5">进程ID</div>-->
+            <!--<div class="col-md-4 h5">进程映像路径</div>-->
+            <!--<div class="col-md-1 h5">事件类型</div>-->
+            <!--</div>-->
+            <!--</div>-->
+            <!--<div class="row">-->
+            <!--<div class="col-md-12">-->
+            <!--<div ng-controller="AccordionDemoCtrl">-->
+            <!--<accordion close-others="false">-->
+            <!--<accordion-group ng-repeat="result in results">-->
+            <!--<accordion-heading>-->
+            <!--<div class="col-md-2">{{result.timestamp}}</div>-->
+            <!--<div class="col-md-2">{{result.deviceName}}</div>-->
+            <!--<div class="col-md-2">{{result.processUsername}}</div>-->
+            <!--<div class="col-md-1">{{result.processId}}</div>-->
+            <!--<div class="col-md-4">{{result.processPath}}</div>-->
+            <!--<div class="col-md-1">{{result.eventType}}</div>-->
+            <!--</accordion-heading>-->
+            <!--{{result.content}}-->
+            <!--</accordion-group>-->
+            <!--</accordion>-->
+            <!--</div>-->
+            <!--</div>-->
+            <!--</div>-->
+            <div class="row">
+                <div class="col-md-12">
+                    <div class="portlet light ">
+                        <div class="portlet-title">
+                            <div class="caption font-dark">
+                                <span class="caption-subject bold uppercase">调查结果</span>
+                            </div>
+                            <div class="tools">
+                            </div>
+                        </div>
+                        <div class="portlet-body" id="search-result">
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    ComponentsDateTimePickers.init();
+    ComponentsSelect2.init();
+    ComponentsBootstrapSelect.init();
+    UITree.init();
+    TableDatatablesManaged.init();
+</script>
+<!-- BEGIN MAIN JS -->
+<script>
+    function HighLevelToggle($scope) {
+        $scope.myHide = false;
+        $scope.toggle = function () {
+            $scope.myHide = !$scope.myHide;
+        };
+        $scope.conditions = [
+            {key: 1, value: "test1", class1: true, class2: false, class3: false, input:"", father:"分类一", child:"HTTP"}
+        ];
+    }
+
+    function AccordionDemoCtrl($scope) {
+        var data = {
+            key: [
+                "CLF_EventTime=1288393354",
+                "CLF_DeviceName=Gonzalez",
+                "CLF_User=Administrator",
+                "CLF_Pid=6165",
+                "CLF_ProcessName=consectetur.mp3",
+                "CLF_EventType=2"
+            ],
+            data: "CLF_EventType=2  CLF_User=Administrator	CLF_ProcessName=consectetur.mp3	CLF_Pid=6165	CLF_File=None	CLF_Url=None	CLF_Ip=None	CLF_NetProtocal=None	CLF_EventTime=1288393354	CLF_DeviceName=Gonzalez, Newman and Ramirez	CLF_SourcePort=9884	CLF_DestIP=215.123.157.168	CLF_RspCode=200	CLF_SourceIP=211.185.203.89	CLF_DestPort=7473"
+        };
+
+        var getValue = function (item) {
+            return item.split("=")[1];
+        };
+
+        var formatData = function (data) {
+            return data.replace(/\t/g, " | ")
+        };
+
+        $scope.results = [
+            {
+                timestamp: getValue(data.key[0]),
+                deviceName: getValue(data.key[1]),
+                processUsername: getValue(data.key[2]),
+                processId: getValue(data.key[3]),
+                processPath: getValue(data.key[4]),
+                eventType: getValue(data.key[5]),
+                content: formatData(data.data)
+            },
+            {
+                timestamp: "1234567890",
+                deviceName: "Calderon-Ryan",
+                processUsername: "NickTang",
+                processId: "6627",
+                processPath: "/usr/vtm/consectetur.mp3",
+                eventType: "2",
+                content: "CLF_EventType=2   CLF_User=Administrator	CLF_ProcessName=consectetur.mp3	CLF_Pid=6165	CLF_File=None	CLF_Url=None	CLF_Ip=None	CLF_NetProtocal=None	CLF_EventTime=1288393354	CLF_DeviceName=Gonzalez, Newman and Ramirez	CLF_SourcePort=9884	CLF_DestIP=215.123.157.168	CLF_RspCode=200	CLF_SourceIP=211.185.203.89	CLF_DestPort=7473"
+            }
+        ];
+        $scope.status = {
+            isFirstOpen: true,
+            isFirstDisabled: false
+        };
+    }
+
+    var getValue = function (item) {
+        return item.split("=")[1];
+    };
+
+    var highlightStr = function (str, keyword) {
+        if (keyword == "") {
+            return str
+        }
+        else {
+            list = str.split(keyword);
+            var result = list[0];
+            for (var i = 1; i < list.length; i++) {
+                result += '<mark>';
+                result += keyword;
+                result += '</mark>';
+                result += list[i];
+            }
+            return result;
+        }
+    };
+
+    var formatData = function (item, condition) {
+        var list = item.split('\t');
+        var result = "";
+        for (var i = 0; i < list.length; i++) {
+            for (var j = 0; j < condition.length; j++) {
+                result += ' | ';
+                result += '<b>';
+                result += list[i].split("=")[0];
+                result += '</b>';
+                result += ':';
+                result += highlightStr(list[i].substring(list[i].indexOf("=")+1), condition[j].input);
+            }
+        }
+        return result.substring(2);
+    };
+
+    var SearchResultCtrl = function (search_condition) {
+        $.getJSON('./views/data1W.js', function (data) {
+            var results = [];
+            for (var i = 0; i < data.length; i++) {
+                results.push({
+                    timestamp: getValue(data[i].key[0]),
+                    deviceName: getValue(data[i].key[1]),
+                    processUsername: getValue(data[i].key[2]),
+                    processId: getValue(data[i].key[3]),
+                    processPath: getValue(data[i].key[4]),
+                    eventType: getValue(data[i].key[5]),
+                    content: formatData(data[i].data, search_condition)
+                })
+            }
+
+            var html = '<table class="table table-striped table-bordered table-hover dt-responsive" width="100%" id="sample_1">';
+
+            html += '<thead>';
+            html += '<tr>';
+            html += '<th class="all">时间戳</th>';
+            html += '<th class="min-phone-l">探针名</th>';
+            html += '<th class="min-phone-l">进程用户名</th>';
+            html += '<th class="min-phone-l">进程ID</th>';
+            html += '<th class="min-tablet">进程映像路径</th>';
+            html += '<th class="desktop">事件类型</th>';
+            html += '<th class="none">详细日志</th>';
+            html += '</tr>';
+            html += '</thead>';
+            html += '<tbody>';
+
+            for (var i = 0; i < results.length; i++) {
+                var item = results[i];
+                html += '<tr>';
+                html += '<td>' + item.timestamp + '</td>';
+                html += '<td>' + item.deviceName + '</td>';
+                html += '<td>' + item.processUsername + '</td>';
+                html += '<td>' + item.processId + '</td>';
+                html += '<td>' + item.processPath + '</td>';
+                html += '<td>' + item.eventType + '</td>';
+                html += '<td>' + item.content + '</td>';
+                html += '</tr>';
+            }
+            html += '</tbody>';
+            html += '</table>';
+
+            $('#search-result').append(html);
+
+            TableDatatablesResponsive.init();
+
+        })
+    };
+
+    function NewConditionController($scope) {
+        $scope.conditionName = ["进程用户名", "进程ID", "进程名", "IP地址", "网络协议名", "Url", "文件名"];
+        $scope.protocolName = {
+            father: '分类一',
+            child: 'HTTP'
+        };
+        $scope.protocolFathers = ["分类一", "分类二"];
+        $scope.protocolChildren = {
+            "分类一": ["HTTP", "HTTPS"],
+            "分类二": ["FTP", "SSH"]
+        };
+        $scope.change = function (item) {
+            if (item.value == "网络协议名") {
+                item.class1 = false;
+                item.class3 = true;
+            }
+            else {
+                item.class1 = true;
+                item.class3 = false;
+            }
+        };
+        $scope.protocolInit = function (item) {
+            $scope.protocolName.child = $scope.protocolChildren[item][0];
+        };
+        $scope.index = 2;
+        $scope.maxCondition = false;
+        $scope.closeable = false;
+        $scope.addCondition = function () {
+            $scope.conditions.push(
+                {key: $scope.index, value: "test2", class1: true, class2: false, class3: false}
+            );
+            $scope.index += 1;
+            $scope.closeable = true;
+            if ($scope.conditions.length == 7) {
+                $scope.maxCondition = true;
+            }
+        };
+        $scope.closeCondition = function (index) {
+            $scope.conditions.splice(index, 1);
+            if ($scope.conditions.length == 1) {
+                $scope.closeable = false;
+            }
+            $scope.maxCondition = false;
+        };
+    }
+
+    function SearchCtrl($scope) {
+        $scope.search_condition = [];
+        $scope.search = function () {
+            for (var i = 0; i < $scope.$parent.conditions.length; i++) {
+                if ($scope.conditions[i].value == "网络协议名") {
+                    $scope.search_condition.push({key: $scope.conditions[i].value, input:$scope.conditions[i].child});
+                }
+                else {
+                    $scope.search_condition.push({key: $scope.conditions[i].value, input:$scope.conditions[i].input});
+                }
+            }
+            SearchResultCtrl($scope.search_condition);
+        }
+    }
+</script>
+<!-- END MAIN JS -->
