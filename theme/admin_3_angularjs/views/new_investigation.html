@@ -325,10 +325,10 @@
 
     function NewConditionController($scope) {
         $scope.conditionName = ["进程用户名", "进程ID", "进程名", "IP地址", "网络协议名", "Url", "文件名"];
-//        $scope.protocolName = {
-//            father: '分类一',
-//            child: 'HTTP'
-//        };
+        $scope.protocolName = {
+            father: '分类一',
+            child: 'HTTP'
+        };
         $scope.protocolFathers = ["分类一", "分类二"];
         $scope.protocolChildren = {
             "分类一": ["HTTP", "HTTPS"],
