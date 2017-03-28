@@ -274,7 +274,6 @@
                 order: [1, 'asc']
             };
 
-            console.log(config);
             var table = $('#search-result').DataTable(config);
 
             $('#search-result tbody').on('click', 'td.details-control', function () {
@@ -290,7 +289,6 @@
                     tr.addClass('shown');
 
                 }
-                console.log(row);
             });
 
 //            var html = '<tbody>';
