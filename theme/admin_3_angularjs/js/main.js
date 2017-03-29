@@ -281,7 +281,7 @@ MetronicApp.config(['$stateProvider', '$urlRouterProvider', function($stateProvi
                             './assets/global/plugins/jstree/dist/jstree.min.js',
                             './assets/pages/scripts/ui-tree.min.js',
                             "./assets/global/scripts/datatable.js",
-                            './assets/global/plugins/datatables/datatables.all.js',
+                            './assets/global/plugins/datatables/datatables.all.min.js',
                             './assets/pages/scripts/table-datatables-managed.min.js',
                             "./assets/pages/scripts/table-datatables-responsive.min.js",
                             "./assets/global/plugins/datatables/plugins/bootstrap/datatables.bootstrap.js",
