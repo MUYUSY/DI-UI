@@ -148,14 +148,14 @@ MetronicApp.controller('FooterController', ['$scope', function($scope) {
 /* Setup Rounting For All Pages */
 MetronicApp.config(['$stateProvider', '$urlRouterProvider', function($stateProvider, $urlRouterProvider) {
     // Redirect any unmatched url
-    $urlRouterProvider.otherwise("/dashboard.html");  
+    $urlRouterProvider.otherwise("/dashboard");
     
     $stateProvider
 
         // Dashboard
         .state('dashboard', {
-            url: "/dashboard.html",
-            templateUrl: "views/dashboard.html",            
+            url: "/dashboard",
+            templateUrl: "views/dashboard.html",
             data: {pageTitle: 'Admin Dashboard Template'},
             controller: "DashboardController",
             resolve: {
@@ -179,7 +179,7 @@ MetronicApp.config(['$stateProvider', '$urlRouterProvider', function($stateProvi
 
         // AngularJS plugins
         .state('fileupload', {
-            url: "/file_upload.html",
+            url: "/file_upload",
             templateUrl: "views/file_upload.html",
             data: {pageTitle: 'AngularJS File Upload'},
             controller: "GeneralPageController",
@@ -202,7 +202,7 @@ MetronicApp.config(['$stateProvider', '$urlRouterProvider', function($stateProvi
 
         // UI Select
         .state('uiselect', {
-            url: "/ui_select.html",
+            url: "/ui_select",
             templateUrl: "views/ui_select.html",
             data: {pageTitle: 'AngularJS Ui Select'},
             controller: "UISelectController",
@@ -228,7 +228,7 @@ MetronicApp.config(['$stateProvider', '$urlRouterProvider', function($stateProvi
         // UI Bootstrap
         .state('uibootstrap', {
             url: "/ui_bootstrap.html",
-            templateUrl: "views/ui_bootstrap.html",
+            templateUrl: "views/ui_bootstrap",
             data: {pageTitle: 'AngularJS UI Bootstrap'},
             controller: "GeneralPageController",
             resolve: {
@@ -245,7 +245,7 @@ MetronicApp.config(['$stateProvider', '$urlRouterProvider', function($stateProvi
 
         // New Investigation
         .state('newinvestigation', {
-            url: "/new_investigation.html",
+            url: "/new_investigation",
             templateUrl: "views/new_investigation.html",
             data: {pageTitle: '新建调查'},
             controller: "GeneralPageController",
