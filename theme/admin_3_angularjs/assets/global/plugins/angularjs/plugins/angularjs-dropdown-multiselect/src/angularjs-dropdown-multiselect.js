@@ -178,7 +178,7 @@ directiveModule.directive('ngDropdownMultiselect', ['$filter', '$document', '$co
 			}
 
 			$scope.selectCurrentGroup = function(currentGroup) {
-				$scope.selectedModel.splice(0, $scope.selectedModel.length);
+				//$scope.selectedModel.splice(0, $scope.selectedModel.length);
 				if ($scope.orderedItems) {
 					$scope.orderedItems.forEach(function(item) {
 						if (item[$scope.groupBy] === currentGroup) {
@@ -391,7 +391,10 @@ directiveModule.directive('ngDropdownMultiselect', ['$filter', '$document', '$co
 						$scope.externalEvents.onItemDeselect(findObj);
 						if ($scope.settings.closeOnDeselect) $scope.close();
 					} else if (!exists && ($scope.settings.selectionLimit === 0 || $scope.selectedModel.length < $scope.settings.selectionLimit)) {
+						console.log(JSON.stringify($scope.selectedModel));
+						console.log(JSON.stringify($scope.finalObj));
 						$scope.selectedModel.push(finalObj);
+                        console.log(JSON.stringify($scope.selectedModel));
 						if (fireSelectionChange) {
 							$scope.externalEvents.onItemSelect(finalObj);
 						}

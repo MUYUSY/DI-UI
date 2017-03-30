@@ -2,11 +2,7 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="a672439e-4cd3-4004-919f-310f18dd76c3" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/theme/admin_3_angularjs/assets/global/plugins/bootstrap/css/bootstrap.css" afterPath="$PROJECT_DIR$/theme/admin_3_angularjs/assets/global/plugins/bootstrap/css/bootstrap.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/theme/admin_3_angularjs/index.html" afterPath="$PROJECT_DIR$/theme/admin_3_angularjs/index.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/theme/admin_3_angularjs/js/main.js" afterPath="$PROJECT_DIR$/theme/admin_3_angularjs/js/main.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/theme/admin_3_angularjs/views/new_investigation.html" afterPath="$PROJECT_DIR$/theme/admin_3_angularjs/views/new_investigation.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/theme/admin_3_angularjs/assets/global/plugins/angularjs/plugins/angularjs-dropdown-multiselect/src/angularjs-dropdown-multiselect.js" afterPath="$PROJECT_DIR$/theme/admin_3_angularjs/assets/global/plugins/angularjs/plugins/angularjs-dropdown-multiselect/src/angularjs-dropdown-multiselect.js" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -62,16 +58,17 @@
       <file leaf-file-name="angularjs-dropdown-multiselect.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/theme/admin_3_angularjs/assets/global/plugins/angularjs/plugins/angularjs-dropdown-multiselect/src/angularjs-dropdown-multiselect.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="413">
-              <caret line="389" column="24" lean-forward="false" selection-start-line="389" selection-start-column="24" selection-end-line="389" selection-end-column="24" />
+            <state relative-caret-position="451">
+              <caret line="180" column="18" lean-forward="false" selection-start-line="180" selection-start-column="18" selection-end-line="180" selection-end-column="18" />
               <folding>
-                <element signature="e#9612#9750#0" expanded="false" />
-                <element signature="e#9788#10384#0" expanded="false" />
-                <element signature="e#10433#10586#0" expanded="false" />
-                <element signature="e#10617#11072#0" expanded="false" />
-                <element signature="e#11111#13372#0" expanded="false" />
-                <element signature="e#14785#15067#0" expanded="false" />
-                <marker date="1490867151468" expanded="true" signature="1148:1154" ph=" " />
+                <element signature="e#9614#9752#0" expanded="false" />
+                <element signature="e#9790#10386#0" expanded="false" />
+                <element signature="e#10435#10588#0" expanded="false" />
+                <element signature="e#10619#11074#0" expanded="false" />
+                <element signature="e#11113#13374#0" expanded="false" />
+                <element signature="e#14787#15069#0" expanded="false" />
+                <element signature="e#16034#16097#0" expanded="false" />
+                <marker date="1490867664192" expanded="true" signature="1148:1154" ph=" " />
               </folding>
             </state>
           </provider>
@@ -402,12 +399,12 @@
       <workItem from="1489975479933" duration="35295000" />
       <workItem from="1490168675539" duration="33649000" />
       <workItem from="1490577434553" duration="52339000" />
-      <workItem from="1490838610615" duration="14648000" />
+      <workItem from="1490838610615" duration="15243000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="152630000" />
+    <option name="totallyTimeSpent" value="153225000" />
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1932" height="1056" extended-state="0" />
@@ -720,16 +717,17 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/theme/admin_3_angularjs/assets/global/plugins/angularjs/plugins/angularjs-dropdown-multiselect/src/angularjs-dropdown-multiselect.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="413">
-          <caret line="389" column="24" lean-forward="false" selection-start-line="389" selection-start-column="24" selection-end-line="389" selection-end-column="24" />
+        <state relative-caret-position="451">
+          <caret line="180" column="18" lean-forward="false" selection-start-line="180" selection-start-column="18" selection-end-line="180" selection-end-column="18" />
           <folding>
-            <element signature="e#9612#9750#0" expanded="false" />
-            <element signature="e#9788#10384#0" expanded="false" />
-            <element signature="e#10433#10586#0" expanded="false" />
-            <element signature="e#10617#11072#0" expanded="false" />
-            <element signature="e#11111#13372#0" expanded="false" />
-            <element signature="e#14785#15067#0" expanded="false" />
-            <marker date="1490867151468" expanded="true" signature="1148:1154" ph=" " />
+            <element signature="e#9614#9752#0" expanded="false" />
+            <element signature="e#9790#10386#0" expanded="false" />
+            <element signature="e#10435#10588#0" expanded="false" />
+            <element signature="e#10619#11074#0" expanded="false" />
+            <element signature="e#11113#13374#0" expanded="false" />
+            <element signature="e#14787#15069#0" expanded="false" />
+            <element signature="e#16034#16097#0" expanded="false" />
+            <marker date="1490867664192" expanded="true" signature="1148:1154" ph=" " />
           </folding>
         </state>
       </provider>
