@@ -1,0 +1,118 @@
+{
+  "_args": [
+    [
+      {
+        "raw": "angularjs-dropdown-multiselect",
+        "scope": null,
+        "escapedName": "angularjs-dropdown-multiselect",
+        "name": "angularjs-dropdown-multiselect",
+        "rawSpec": "",
+        "spec": "latest",
+        "type": "tag"
+      },
+      "/root/Downloads"
+    ]
+  ],
+  "_from": "angularjs-dropdown-multiselect@latest",
+  "_id": "angularjs-dropdown-multiselect@1.11.8",
+  "_inCache": true,
+  "_location": "/angularjs-dropdown-multiselect",
+  "_nodeVersion": "5.7.0",
+  "_npmOperationalInternal": {
+    "host": "packages-18-east.internal.npmjs.com",
+    "tmp": "tmp/angularjs-dropdown-multiselect-1.11.8.tgz_1490682865777_0.5205145028885454"
+  },
+  "_npmUser": {
+    "name": "myforce",
+    "email": "webdev@myforce.be"
+  },
+  "_npmVersion": "3.6.0",
+  "_phantomChildren": {},
+  "_requested": {
+    "raw": "angularjs-dropdown-multiselect",
+    "scope": null,
+    "escapedName": "angularjs-dropdown-multiselect",
+    "name": "angularjs-dropdown-multiselect",
+    "rawSpec": "",
+    "spec": "latest",
+    "type": "tag"
+  },
+  "_requiredBy": [
+    "#USER"
+  ],
+  "_resolved": "https://registry.npmjs.org/angularjs-dropdown-multiselect/-/angularjs-dropdown-multiselect-1.11.8.tgz",
+  "_shasum": "4b6709d916ba47e0d8ab61c6cbade387863375a7",
+  "_shrinkwrap": null,
+  "_spec": "angularjs-dropdown-multiselect",
+  "_where": "/root/Downloads",
+  "author": {
+    "name": "pkempenaers@myforce.be"
+  },
+  "bugs": {
+    "url": "https://github.com/dotansimha/angularjs-dropdown-multiselect/issues"
+  },
+  "dependencies": {
+    "angular": "~1"
+  },
+  "description": "This directive gives you a Bootstrap Dropdown with the power of AngularJS directives.",
+  "devDependencies": {
+    "express": "~3.4.4",
+    "grunt": "^0.4.5",
+    "grunt-build-control": "^0.1.3",
+    "grunt-contrib-concat": "~0.3.0",
+    "grunt-contrib-cssmin": "~0.7.0",
+    "grunt-contrib-jshint": "~0.7.0",
+    "grunt-contrib-less": "~0.8.1",
+    "grunt-contrib-uglify": "~0.2.5",
+    "grunt-karma": "~0.6.2"
+  },
+  "directories": {},
+  "dist": {
+    "shasum": "4b6709d916ba47e0d8ab61c6cbade387863375a7",
+    "tarball": "https://registry.npmjs.org/angularjs-dropdown-multiselect/-/angularjs-dropdown-multiselect-1.11.8.tgz"
+  },
+  "engines": {
+    "node": "0.10.10"
+  },
+  "gitHead": "98abfaecfa8d3b23f39daf9db7f4295d04fec1fe",
+  "homepage": "http://dotansimha.github.io/angularjs-dropdown-multiselect/#/",
+  "keywords": [
+    "angular",
+    "multiselect"
+  ],
+  "license": "MIT",
+  "main": "src/angularjs-dropdown-multiselect.js",
+  "maintainers": [
+    {
+      "name": "myforce",
+      "email": "webdev@myforce.be"
+    }
+  ],
+  "name": "angularjs-dropdown-multiselect",
+  "optionalDependencies": {},
+  "readme": "ERROR: No README data found!",
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/dotansimha/angularjs-dropdown-multiselect.git"
+  },
+  "scripts": {
+    "test": "echo \"Error: no test specified\" && exit 1"
+  },
+  "version": "1.11.8",
+  "warnings": [
+    {
+      "code": "ENOTSUP",
+      "required": {
+        "node": "0.10.10"
+      },
+      "pkgid": "angularjs-dropdown-multiselect@1.11.8"
+    },
+    {
+      "code": "ENOTSUP",
+      "required": {
+        "node": "0.10.10"
+      },
+      "pkgid": "angularjs-dropdown-multiselect@1.11.8"
+    }
+  ]
+}

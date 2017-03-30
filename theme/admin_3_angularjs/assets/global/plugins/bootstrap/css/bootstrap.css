@@ -2806,6 +2806,10 @@ select[multiple].input-lg, .input-group-lg > select[multiple].form-control,
   -moz-user-select: none;
   -ms-user-select: none;
   user-select: none; }
+
+.terminate-select {
+  width:
+}
   .btn:focus,
   .btn.focus,
   .btn:active:focus,

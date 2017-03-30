@@ -54,12 +54,12 @@
                             </div>
                         </div>
                     </div>
-                    <div class="col-md-3 col-sm-6 col-xs-12">
-                        <select class="form-control input-large select2me" data-placeholder="所有探针设备">
-                            <option></option>
-                            <option>Alabama</option>
-                            <option>Wyoming</option>
-                        </select>
+                    <div class="col-md-3 col-sm-6 col-xs-12" ng-dropdown-multiselect
+                         options="selectByGroupData"
+                         selected-model="selectByGroupModel"
+                         extra-settings="selectByGroupSettings"
+                         group-by="gender"
+                         translation-texts="selectByGroupTexts">
                     </div>
                     <div class="col-md-2 col-sm-6 col-xs-12">
                         <button class="btn" style="width:100px; border:1px solid #cccccc;" ng-click="toggle()">高级
@@ -120,35 +120,6 @@
 
                 </div>
             </div>
-            <!--<div class="row">-->
-            <!--<div class="col-md-12 search-result">-->
-            <!--<div class="col-md-2 h5">时间戳</div>-->
-            <!--<div class="col-md-2 h5">探针名</div>-->
-            <!--<div class="col-md-2 h5">进程用户名</div>-->
-            <!--<div class="col-md-1 h5">进程ID</div>-->
-            <!--<div class="col-md-4 h5">进程映像路径</div>-->
-            <!--<div class="col-md-1 h5">事件类型</div>-->
-            <!--</div>-->
-            <!--</div>-->
-            <!--<div class="row">-->
-            <!--<div class="col-md-12">-->
-            <!--<div ng-controller="AccordionDemoCtrl">-->
-            <!--<accordion close-others="false">-->
-            <!--<accordion-group ng-repeat="result in results">-->
-            <!--<accordion-heading>-->
-            <!--<div class="col-md-2">{{result.timestamp}}</div>-->
-            <!--<div class="col-md-2">{{result.deviceName}}</div>-->
-            <!--<div class="col-md-2">{{result.processUsername}}</div>-->
-            <!--<div class="col-md-1">{{result.processId}}</div>-->
-            <!--<div class="col-md-4">{{result.processPath}}</div>-->
-            <!--<div class="col-md-1">{{result.eventType}}</div>-->
-            <!--</accordion-heading>-->
-            <!--{{result.content}}-->
-            <!--</accordion-group>-->
-            <!--</accordion>-->
-            <!--</div>-->
-            <!--</div>-->
-            <!--</div>-->
             <div class="row">
                 <div class="col-xs-12">
                     <div class="portlet light ">
@@ -210,6 +181,80 @@
                 child: "HTTP"
             }
         ];
+        $scope.selectByGroupModel = [];
+        $scope.selectByGroupData = [
+            { id: 1, label: "David", gender: 'M' },
+            { id: 2, label: "Jhon", gender: 'M' },
+            { id: 3, label: "Lisa", gender: 'F' },
+            { id: 4, label: "Nicole", gender: 'F' },
+            { id: 5, label: "Danny", gender: 'M' },
+            { id: 6, label: "Danny", gender: 'M' },
+            { id: 7, label: "Danny", gender: 'M' },
+            { id: 8, label: "Danny", gender: 'M' },
+            { id: 9, label: "Danny", gender: 'M' },
+            { id: 10, label: "Danny", gender: 'M' },
+            { id: 11, label: "Danny", gender: 'M' },
+            { id: 12, label: "Danny", gender: 'M' },
+            { id: 13, label: "Danny", gender: 'M' },
+            { id: 14, label: "Danny", gender: 'M' },
+            { id: 15, label: "Danny", gender: 'M' },
+            { id: 16, label: "Danny", gender: 'M' },
+            { id: 17, label: "Danny", gender: 'M' },
+            { id: 18, label: "Danny", gender: 'M' },
+            { id: 19, label: "Danny", gender: 'M' },
+            { id: 20, label: "Danny", gender: 'M' },
+            { id: 21, label: "Danny", gender: 'M' },
+            { id: 22, label: "Danny", gender: 'M' },
+            { id: 23, label: "Danny", gender: 'M' },
+            { id: 24, label: "Danny", gender: 'M' },
+            { id: 25, label: "Danny", gender: 'M' },
+            { id: 26, label: "Danny", gender: 'M' },
+            { id: 27, label: "Danny", gender: 'M' },
+            { id: 28, label: "Danny", gender: 'M' },
+            { id: 29, label: "Danny", gender: 'M' },
+            { id: 30, label: "Danny", gender: 'M' },
+            { id: 31, label: "Danny", gender: 'M' },
+            { id: 32, label: "Danny", gender: 'M' },
+            { id: 33, label: "Danny", gender: 'M' },
+            { id: 34, label: "Danny", gender: 'M' },
+            { id: 35, label: "Danny", gender: 'M' },
+            { id: 36, label: "Danny", gender: 'M' },
+            { id: 37, label: "Danny", gender: 'M' },
+            { id: 38, label: "Danny", gender: 'M' },
+            { id: 39, label: "Danny", gender: 'M' },
+            { id: 40, label: "Danny", gender: 'M' },
+            { id: 41, label: "Danny", gender: 'M' },
+            { id: 42, label: "Danny", gender: 'M' },
+            { id: 43, label: "Danny", gender: 'M' },
+            { id: 44, label: "Danny", gender: 'M' },
+            { id: 45, label: "Unknown", gender: 'O' }];
+
+        $scope.selectByGroupSettings = {
+            selectByGroups: ['F', 'M'],
+            groupByTextProvider: function(groupValue) {
+                switch (groupValue) {
+                    case 'M':
+                        return 'Male';
+                    case 'F':
+                        return 'Female';
+                    case 'O':
+                        return 'Other';
+                }
+            },
+            scrollableHeight: '400px',
+            scrollable: true,
+            enableSearch: true
+        };
+
+        $scope.selectByGroupTexts = {
+            buttonDefaultText: "所有探针设备...",
+            selectGroup: '选择所有:',
+            allSelectedText: '全部',
+            searchPlaceholder: '检索...',
+            checkAll: '选择所有',
+            uncheckAll: '取消所有选择',
+            selectionCount: '被选中'
+        }
     }
 
     var getValue = function (item) {
@@ -393,5 +438,6 @@
             SearchResultCtrl($scope.search_condition);
         }
     }
+
 </script>
 <!-- END MAIN JS -->
