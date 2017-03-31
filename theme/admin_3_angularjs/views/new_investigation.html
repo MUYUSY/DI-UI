@@ -15,53 +15,18 @@
 
             <div class="portlet-body" ng-controller="HighLevelToggle">
                 <div class="col-md-12 col-sm-12 col-xs-12">
-                    <div class="col-md-2 col-sm-6 col-xs-12">
-                        <a class="btn white" style="width:100%; border:1px solid #cccccc" href="#"
-                           data-target="#daterangepicker_modal" data-toggle="modal"> 选择时间...
-                            <i class="caret"></i>
-                        </a>
-                        <div id="daterangepicker_modal" class="modal fade" role="dialog" aria-hidden="true">
-                            <div class="modal-dialog">
-                                <div class="modal-content">
-                                    <div class="modal-header">
-                                        <button type="button" class="close" data-dismiss="modal"
-                                                aria-hidden="true"></button>
-                                        <h4 class="modal-title">Daterange Picker in Modal</h4>
-                                    </div>
-                                    <div class="modal-body">
-                                        <form action="#" class="form-horizontal">
-                                            <div class="form-group">
-                                                <label class="control-label col-xs-4">Default Date Ranges</label>
-                                                <div class="col-xs-8">
-                                                    <div class="input-group" id="defaultrange">
-                                                        <input type="text" class="form-control">
-                                                        <span class="input-group-btn">
-                                                        <button class="btn default date-range-toggle" type="button">
-                                                            <i class="fa fa-calendar"></i>
-                                                        </button>
-                                                        </span>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </form>
-                                    </div>
-                                    <div class="modal-footer">
-                                        <button class="btn" data-dismiss="modal" aria-hidden="true">Close</button>
-                                        <button class="btn green btn-primary" data-dismiss="modal">Save changes
-                                        </button>
-                                    </div>
-                                </div>
-                            </div>
-                        </div>
+                    <div class="col-md-3 col-sm-12 col-xs-12 searchDatePicker">
+                        <input type="text" id="searchDateRange" class="form-control">
+                        <i class="fa fa-calendar"></i>
                     </div>
-                    <div class="col-md-3 col-sm-6 col-xs-12" ng-dropdown-multiselect
+                    <div class="col-md-2 col-sm-12 col-xs-12" ng-dropdown-multiselect
                          options="selectByGroupData"
                          selected-model="selectByGroupModel"
                          extra-settings="selectByGroupSettings"
                          group-by="gender"
                          translation-texts="selectByGroupTexts">
                     </div>
-                    <div class="col-md-2 col-sm-6 col-xs-12">
+                    <div class="col-md-1 col-sm-12 col-xs-12" style="margin-right: 15px;">
                         <button class="btn" style="width:100px; border:1px solid #cccccc;" ng-click="toggle()">高级
                         </button>
                     </div>
@@ -106,14 +71,21 @@
                         </div>
                     </div>
 
-                    <div class="col-md-3 col-sm-6 col-xs-12" ng-controller="SearchCtrl">
+                    <div class="col-md-5 col-sm-12 col-xs-12" ng-controller="SearchCtrl" ng-hide="myHide">
+                        <button class="btn" ng-click="search()"
+                                style="width: 100px; background-color:#0076e1; color: #ffffff; padding-right: 32px;">
+                            <img src="./icon/search.png" style="margin: 0 4px 1px 0;">搜索
+                        </button>
+                        <button class="btn" style="width:100px; border:1px solid #cccccc">
+                            <img src="./icon/save.png" style="margin: 0 4px 1px 0">保存规则
+                        </button>
+                    </div>
+                    <div class="col-md-6 col-sm-12 col-xs-12" ng-controller="SearchCtrl" ng-show="myHide">
                         <button class="btn" ng-click="search()"
                                 style="width: 100px; background-color:#0076e1; color: #ffffff; padding-right: 32px">
                             <img src="./icon/search.png" style="margin: 0 4px 1px 0;">搜索
                         </button>
-                    </div>
-                    <div class="col-md-2 col-sm-6 col-xs-12">
-                        <button class="btn pull-right" style="width:100px; border:1px solid #cccccc">
+                        <button class="btn" style="width:100px; border:1px solid #cccccc">
                             <img src="./icon/save.png" style="margin: 0 4px 1px 0">保存规则
                         </button>
                     </div>
@@ -121,13 +93,14 @@
                 </div>
             </div>
             <div class="row">
-                <div class="col-xs-12">
-                    <div class="portlet light ">
+                <div class="col-md-12 col-sm-12 col-xs-12">
+                    <div class="portlet light">
                         <div class="portlet-title">
-                            <div class="caption font-dark">
+                            <div class="caption font-dark col-md-6 col-sm-6 col-xs-12">
                                 <span class="caption-subject bold uppercase">调查结果</span>
                             </div>
-                            <div class="tools">
+                            <div class="col-md-6 col-sm-6 col-xs-12">
+                                <button class="btn dark btn-outline pull-right">导出结果</button>
                             </div>
                         </div>
                         <div class="portlet-body">
@@ -154,7 +127,6 @@
 </div>
 
 <script>
-    ComponentsDateTimePickers.init();
     ComponentsSelect2.init();
     ComponentsBootstrapSelect.init();
     UITree.init();
@@ -163,6 +135,61 @@
 <!-- BEGIN MAIN JS -->
 <script>
     var dtable;
+
+    $('.searchDatePicker i').click(function () {
+        $(this).parent().find('input').click();
+    });
+
+    $('#searchDateRange').daterangepicker({
+        "timePicker": true,
+        "timePicker24Hour": true,
+        "ranges": {
+            "今天": [moment().startOf('day'), moment()],
+            "昨天": [moment().subtract('days', 1).startOf('day'), moment().subtract('days', 1).endOf('day')],
+            "过去7天": [moment().subtract('days', 6), moment()],
+            "本周": [moment().startOf('week'), moment()],
+            "过去30天": [moment().subtract('days', 29), moment()],
+            "本月": [moment().startOf('month'), moment()]
+        },
+        "locale": {
+            "format": "DD/MM/YYYY",
+            "separator": " 至 ",
+            "applyLabel": "应用",
+            "cancelLabel": "取消",
+            "fromLabel": "从",
+            "toLabel": "至",
+            "customRangeLabel": "自定义",
+            "weekLabel": "周",
+            "daysOfWeek": [
+                "日",
+                "一",
+                "二",
+                "三",
+                "四",
+                "五",
+                "六"
+            ],
+            "monthNames": [
+                "一月",
+                "二月",
+                "三月",
+                "四月",
+                "五月",
+                "六月",
+                "七月",
+                "八月",
+                "九月",
+                "十月",
+                "十一月",
+                "十二月"
+            ],
+            "firstDay": 1
+        },
+        "startDate": moment().startOf('day'),
+        "endDate": moment()
+    }, function (start, end, label) {
+        console.log("New date range selected: " + start + ' to ' + end.format('YYYY-MM-DD  hh:mm') + ' (predefined range: ' + label + ')');
+    });
 
     function HighLevelToggle($scope) {
         $scope.myHide = false;
@@ -183,55 +210,55 @@
         ];
         $scope.selectByGroupModel = [];
         $scope.selectByGroupData = [
-            { id: 1, label: "David", gender: 'M' },
-            { id: 2, label: "Jhon", gender: 'M' },
-            { id: 3, label: "Lisa", gender: 'F' },
-            { id: 4, label: "Nicole", gender: 'F' },
-            { id: 5, label: "Danny", gender: 'M' },
-            { id: 6, label: "Danny", gender: 'M' },
-            { id: 7, label: "Danny", gender: 'M' },
-            { id: 8, label: "Danny", gender: 'M' },
-            { id: 9, label: "Danny", gender: 'M' },
-            { id: 10, label: "Danny", gender: 'M' },
-            { id: 11, label: "Danny", gender: 'M' },
-            { id: 12, label: "Danny", gender: 'M' },
-            { id: 13, label: "Danny", gender: 'M' },
-            { id: 14, label: "Danny", gender: 'M' },
-            { id: 15, label: "Danny", gender: 'M' },
-            { id: 16, label: "Danny", gender: 'M' },
-            { id: 17, label: "Danny", gender: 'M' },
-            { id: 18, label: "Danny", gender: 'M' },
-            { id: 19, label: "Danny", gender: 'M' },
-            { id: 20, label: "Danny", gender: 'M' },
-            { id: 21, label: "Danny", gender: 'M' },
-            { id: 22, label: "Danny", gender: 'M' },
-            { id: 23, label: "Danny", gender: 'M' },
-            { id: 24, label: "Danny", gender: 'M' },
-            { id: 25, label: "Danny", gender: 'M' },
-            { id: 26, label: "Danny", gender: 'M' },
-            { id: 27, label: "Danny", gender: 'M' },
-            { id: 28, label: "Danny", gender: 'M' },
-            { id: 29, label: "Danny", gender: 'M' },
-            { id: 30, label: "Danny", gender: 'M' },
-            { id: 31, label: "Danny", gender: 'M' },
-            { id: 32, label: "Danny", gender: 'M' },
-            { id: 33, label: "Danny", gender: 'M' },
-            { id: 34, label: "Danny", gender: 'M' },
-            { id: 35, label: "Danny", gender: 'M' },
-            { id: 36, label: "Danny", gender: 'M' },
-            { id: 37, label: "Danny", gender: 'M' },
-            { id: 38, label: "Danny", gender: 'M' },
-            { id: 39, label: "Danny", gender: 'M' },
-            { id: 40, label: "Danny", gender: 'M' },
-            { id: 41, label: "Danny", gender: 'M' },
-            { id: 42, label: "Danny", gender: 'M' },
-            { id: 43, label: "Danny", gender: 'M' },
-            { id: 44, label: "Danny", gender: 'M' },
-            { id: 45, label: "Unknown", gender: 'O' }];
+            {id: 1, label: "David", gender: 'M'},
+            {id: 2, label: "Jhon", gender: 'M'},
+            {id: 3, label: "Lisa", gender: 'F'},
+            {id: 4, label: "Nicole", gender: 'F'},
+            {id: 5, label: "Danny1", gender: 'M'},
+            {id: 6, label: "Danny2", gender: 'M'},
+            {id: 7, label: "Danny3", gender: 'M'},
+            {id: 8, label: "Danny4", gender: 'M'},
+            {id: 9, label: "Danny5", gender: 'M'},
+            {id: 10, label: "Danny6", gender: 'M'},
+            {id: 11, label: "Danny7", gender: 'M'},
+            {id: 12, label: "Danny8", gender: 'M'},
+            {id: 13, label: "Danny9", gender: 'M'},
+            {id: 14, label: "Danny10", gender: 'M'},
+            {id: 15, label: "Danny11", gender: 'M'},
+            {id: 16, label: "Danny12", gender: 'M'},
+            {id: 17, label: "Danny13", gender: 'M'},
+            {id: 18, label: "Danny14", gender: 'M'},
+            {id: 19, label: "Danny15", gender: 'M'},
+            {id: 20, label: "Danny16", gender: 'M'},
+            {id: 21, label: "Danny17", gender: 'M'},
+            {id: 22, label: "Danny18", gender: 'M'},
+            {id: 23, label: "Danny19", gender: 'M'},
+            {id: 24, label: "Danny20", gender: 'M'},
+            {id: 25, label: "Danny21", gender: 'M'},
+            {id: 26, label: "Danny22", gender: 'M'},
+            {id: 27, label: "Danny23", gender: 'M'},
+            {id: 28, label: "Danny24", gender: 'M'},
+            {id: 29, label: "Danny25", gender: 'M'},
+            {id: 30, label: "Danny26", gender: 'M'},
+            {id: 31, label: "Danny27", gender: 'M'},
+            {id: 32, label: "Danny28", gender: 'M'},
+            {id: 33, label: "Danny29", gender: 'M'},
+            {id: 34, label: "Danny30", gender: 'M'},
+            {id: 35, label: "Danny31", gender: 'M'},
+            {id: 36, label: "Danny32", gender: 'M'},
+            {id: 37, label: "Danny33", gender: 'M'},
+            {id: 38, label: "Danny34", gender: 'M'},
+            {id: 39, label: "Danny35", gender: 'M'},
+            {id: 40, label: "Danny36", gender: 'M'},
+            {id: 41, label: "Danny37", gender: 'M'},
+            {id: 42, label: "Danny38", gender: 'M'},
+            {id: 43, label: "Danny39", gender: 'M'},
+            {id: 44, label: "Danny40", gender: 'M'},
+            {id: 45, label: "Unknown", gender: 'O'}];
 
         $scope.selectByGroupSettings = {
             selectByGroups: ['F', 'M'],
-            groupByTextProvider: function(groupValue) {
+            groupByTextProvider: function (groupValue) {
                 switch (groupValue) {
                     case 'M':
                         return 'Male';
@@ -327,13 +354,8 @@
                     {data: "processId"},
                     {data: "processPath"},
                     {data: "eventType"}],
-                buttons: [
-                    {extend: 'print', className: 'btn dark btn-outline'},
-                    {extend: 'pdf', className: 'btn green btn-outline'},
-                    {extend: 'csv', className: 'btn purple btn-outline'}
-                ],
                 order: [],
-                sPaginationType : "full_numbers",
+                sPaginationType: "full_numbers",
                 language: {
                     aria: {
                         sortAscending: ": activate to sort column ascending",
@@ -349,7 +371,7 @@
                 },
                 lengthMenu: [
                     [20, 50, 100, -1],
-                    [20, 50, 100, "All"] // change per page values here
+                    [20, 50, 100, "全部"] // change per page values here
                 ],
                 "dom": "<'row' <'col-md-12'B>><'row'<'col-md-6 col-sm-12'l><'col-md-6 col-sm-12'f>r><t><'row'<'col-md-5 col-sm-12'i><'col-md-7 col-sm-12'p>>"
             };

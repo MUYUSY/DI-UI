@@ -17755,6 +17755,16 @@ Color library demo
 /***
 Page new_investigation.html
 ***/
+.searchDatePicker { position: relative; }
+
+.searchDatePicker i {
+  position: absolute;
+  bottom: 10px;
+  right: 24px;
+  top: auto;
+  cursor: pointer;
+}
+
 .high-level {
   transition: all linear;
   background-color: #f9f9f9;
@@ -17776,7 +17786,7 @@ Page new_investigation.html
   -moz-appearance: none !important;
   appearance: none !important;
 
-  background: url("../../../admin_3_angularjs/icon/arrow.png") no-repeat scroll right 10px center transparent;
+  background: url("../../../icon/arrow.png") no-repeat scroll right 10px center transparent;
 
   padding-right: 14px;
 }
