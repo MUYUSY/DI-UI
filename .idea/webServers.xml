@@ -1,0 +1,10 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<project version="4">
+  <component name="WebServers">
+    <option name="servers">
+      <webServer id="767afdf0-2ccd-41d9-a237-fb195fd49ccf" name="di-ui" url="http://localhost">
+        <fileTransfer port="0" mountedRoot="D:\code\DI\DI2.5\server\diserver\uiservice" accessType="MOUNT" />
+      </webServer>
+    </option>
+  </component>
+</project>

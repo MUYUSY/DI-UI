@@ -15,7 +15,7 @@
 
             <div class="portlet-body" ng-controller="HighLevelToggle">
                 <div class="col-md-12 col-sm-12 col-xs-12">
-                    <div class="col-md-3 col-sm-12 col-xs-12 searchDatePicker">
+                    <div class="col-md-4 col-sm-12 col-xs-12 searchDatePicker">
                         <input type="text" id="searchDateRange" class="form-control">
                         <i class="fa fa-calendar"></i>
                     </div>
@@ -39,7 +39,17 @@
                                             ng-options="x for x in conditionName" ng-change="change(id)">
                                     </select>
                                 </div>
-                                <div class="col-xs-3" ng-show="id.class1">
+                                <div class="col-xs-2" ng-show="id.class1">
+                                    <select class="select form-control" ng-model="id.include"
+                                            ng-options="x for x in include" ng-init="id.include = include[0]">
+                                    </select>
+                                </div>
+                                <div class="col-xs-2" ng-show="id.class2">
+                                    <select class="select form-control" ng-model="id.equal"
+                                            ng-options="x for x in equal" ng-init="id.equal = equal[0]">
+                                    </select>
+                                </div>
+                                <div class="col-xs-3" ng-hide="id.class3">
                                     <input type="text" ng-model="id.input"
                                            class="search-input form-control ng-pristine ng-valid ng-touched">
                                 </div>
@@ -47,13 +57,13 @@
                                     <select class="select form-control"
                                             ng-model="id.father"
                                             ng-init="id.father = protocolFathers[0]"
-                                            ng-change="protocolInit(protocolName.father)"
+                                            ng-change="protocolInit(id)"
                                             ng-options="x for x in protocolFathers"></select>
                                 </div>
                                 <div class="col-xs-2" ng-show="id.class3">
                                     <select class="select form-control"
                                             ng-model="id.child" ng-init="id.child"
-                                            ng-options="y for y in protocolChildren[protocolName.father]">
+                                            ng-options="y for y in protocolChildren[id.father]">
                                     </select>
                                 </div>
                                 <button ng-show="closeable" type="button" class="close"
@@ -71,7 +81,7 @@
                         </div>
                     </div>
 
-                    <div class="col-md-5 col-sm-12 col-xs-12" ng-controller="SearchCtrl" ng-hide="myHide">
+                    <div class="col-md-4 col-sm-12 col-xs-12" ng-hide="myHide">
                         <button class="btn" ng-click="search()"
                                 style="width: 100px; background-color:#0076e1; color: #ffffff; padding-right: 32px;">
                             <img src="./icon/search.png" style="margin: 0 4px 1px 0;">搜索
@@ -80,7 +90,7 @@
                             <img src="./icon/save.png" style="margin: 0 4px 1px 0">保存规则
                         </button>
                     </div>
-                    <div class="col-md-6 col-sm-12 col-xs-12" ng-controller="SearchCtrl" ng-show="myHide">
+                    <div class="col-md-6 col-sm-12 col-xs-12" ng-show="myHide">
                         <button class="btn" ng-click="search()"
                                 style="width: 100px; background-color:#0076e1; color: #ffffff; padding-right: 32px">
                             <img src="./icon/search.png" style="margin: 0 4px 1px 0;">搜索
@@ -89,7 +99,6 @@
                             <img src="./icon/save.png" style="margin: 0 4px 1px 0">保存规则
                         </button>
                     </div>
-
                 </div>
             </div>
             <div class="row">
@@ -100,7 +109,7 @@
                                 <span class="caption-subject bold uppercase">调查结果</span>
                             </div>
                             <div class="col-md-6 col-sm-6 col-xs-12">
-                                <button class="btn dark btn-outline pull-right">导出结果</button>
+                                <button class="btn dark btn-outline pull-right" id="exportResult">导出结果</button>
                             </div>
                         </div>
                         <div class="portlet-body">
@@ -135,6 +144,7 @@
 <!-- BEGIN MAIN JS -->
 <script>
     var dtable;
+    $('#exportResult').hide();
 
     $('.searchDatePicker i').click(function () {
         $(this).parent().find('input').click();
@@ -143,6 +153,7 @@
     $('#searchDateRange').daterangepicker({
         "timePicker": true,
         "timePicker24Hour": true,
+        "maxDate" : moment(),
         "ranges": {
             "今天": [moment().startOf('day'), moment()],
             "昨天": [moment().subtract('days', 1).startOf('day'), moment().subtract('days', 1).endOf('day')],
@@ -152,7 +163,7 @@
             "本月": [moment().startOf('month'), moment()]
         },
         "locale": {
-            "format": "DD/MM/YYYY",
+            "format": "YYYY/MM/DD hh:mm",
             "separator": " 至 ",
             "applyLabel": "应用",
             "cancelLabel": "取消",
@@ -205,7 +216,9 @@
                 class3: false,
                 input: "",
                 father: "分类一",
-                child: "HTTP"
+                child: "HTTP",
+                include: "包含",
+                equal: "等于"
             }
         ];
         $scope.selectByGroupModel = [];
@@ -281,6 +294,20 @@
             checkAll: '选择所有',
             uncheckAll: '取消所有选择',
             selectionCount: '被选中'
+        }
+
+        $scope.search = function () {
+            $scope.search_condition = [];
+            for (var i = 0; i < $scope.conditions.length; i++) {
+                if ($scope.conditions[i].value == "网络协议名") {
+                    $scope.search_condition.push({key: $scope.conditions[i].value, input: $scope.conditions[i].child});
+                }
+                else {
+                    $scope.search_condition.push({key: $scope.conditions[i].value, input: $scope.conditions[i].input});
+                }
+            }
+            SearchResultCtrl($scope.search_condition);
+            $scope.myHide = false;
         }
     }
 
@@ -397,32 +424,45 @@
                     tr.addClass('shown');
                 }
             })
+
+            if (dtable == null) {
+                $('#exportResult').hide();
+            }
+            else {
+                $('#exportResult').show();
+            }
         })
     };
 
     function NewConditionController($scope) {
         $scope.conditionName = ["进程用户名", "进程ID", "进程名", "IP地址", "网络协议名", "Url", "文件名"];
-        $scope.protocolName = {
-            father: '分类一',
-            child: 'HTTP'
-        };
         $scope.protocolFathers = ["分类一", "分类二"];
         $scope.protocolChildren = {
             "分类一": ["HTTP", "HTTPS"],
             "分类二": ["FTP", "SSH"]
         };
+        $scope.include = ["包含", "不包含"];
+        $scope.equal = ["等于", "不等于"];
         $scope.change = function (item) {
             if (item.value == "网络协议名") {
                 item.class1 = false;
+                item.class2 = false;
                 item.class3 = true;
+            }
+            else if (item.value == "进程ID" || item.value == "IP地址") {
+                item.class1 = false;
+                item.class2 = true;
+                item.class3 = false;
             }
             else {
                 item.class1 = true;
+                item.class2 = false;
                 item.class3 = false;
             }
         };
+
         $scope.protocolInit = function (item) {
-            $scope.protocolName.child = $scope.protocolChildren[item][0];
+            item.child = $scope.protocolChildren[item.father][0];
         };
         $scope.index = 2;
         $scope.maxCondition = false;
@@ -444,21 +484,6 @@
             }
             $scope.maxCondition = false;
         };
-    }
-
-    function SearchCtrl($scope) {
-        $scope.search = function () {
-            $scope.search_condition = [];
-            for (var i = 0; i < $scope.$parent.conditions.length; i++) {
-                if ($scope.conditions[i].value == "网络协议名") {
-                    $scope.search_condition.push({key: $scope.conditions[i].value, input: $scope.conditions[i].child});
-                }
-                else {
-                    $scope.search_condition.push({key: $scope.conditions[i].value, input: $scope.conditions[i].input});
-                }
-            }
-            SearchResultCtrl($scope.search_condition);
-        }
     }
 
 </script>
