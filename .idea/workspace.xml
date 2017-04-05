@@ -1,7 +1,12 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project version="4">
   <component name="ChangeListManager">
-    <list default="true" id="a672439e-4cd3-4004-919f-310f18dd76c3" name="Default" comment="" />
+    <list default="true" id="a672439e-4cd3-4004-919f-310f18dd76c3" name="Default" comment="">
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/theme/admin_3_angularjs/assets/global/plugins/bootstrap/css/bootstrap.css" afterPath="$PROJECT_DIR$/theme/admin_3_angularjs/assets/global/plugins/bootstrap/css/bootstrap.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/theme/admin_3_angularjs/assets/global/plugins/bootstrap/css/bootstrap.min.css" afterPath="$PROJECT_DIR$/theme/admin_3_angularjs/assets/global/plugins/bootstrap/css/bootstrap.min.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/theme/admin_3_angularjs/views/new_investigation.html" afterPath="$PROJECT_DIR$/theme/admin_3_angularjs/views/new_investigation.html" />
+    </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
     <option name="SHOW_DIALOG" value="false" />
@@ -18,8 +23,8 @@
       <file leaf-file-name="main.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/theme/admin_3_angularjs/js/main.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="4842">
-              <caret line="271" column="79" lean-forward="false" selection-start-line="271" selection-start-column="79" selection-end-line="271" selection-end-column="79" />
+            <state relative-caret-position="4734">
+              <caret line="265" column="90" lean-forward="false" selection-start-line="265" selection-start-column="90" selection-end-line="265" selection-end-column="90" />
               <folding>
                 <element signature="n#!!doc" expanded="true" />
               </folding>
@@ -50,31 +55,40 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="new_investigation.html" pinned="false" current-in-tab="true">
+      <file leaf-file-name="new_investigation.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/theme/admin_3_angularjs/views/new_investigation.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="366">
-              <caret line="434" column="6" lean-forward="true" selection-start-line="434" selection-start-column="6" selection-end-line="434" selection-end-column="6" />
+            <state relative-caret-position="324">
+              <caret line="33" column="55" lean-forward="false" selection-start-line="33" selection-start-column="46" selection-end-line="33" selection-end-column="55" />
               <folding>
                 <element signature="n#div#0;n#div#0;n#div#1;n#div#0;n#div#0;n#div#0;n#!!top" expanded="false" />
                 <element signature="n#style#0;n#button#0;n#div#2;n#div#0;n#div#1;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
                 <element signature="n#div#1;n#div#0;n#div#0;n#div#3;n#div#0;n#div#1;n#div#0;n#div#0;n#div#0;n#!!top" expanded="false" />
                 <element signature="n#div#2;n#div#0;n#div#0;n#div#3;n#div#0;n#div#1;n#div#0;n#div#0;n#div#0;n#!!top" expanded="false" />
                 <element signature="n#div#3;n#div#0;n#div#0;n#div#3;n#div#0;n#div#1;n#div#0;n#div#0;n#div#0;n#!!top" expanded="false" />
-                <element signature="n#div#4;n#div#0;n#div#0;n#div#3;n#div#0;n#div#1;n#div#0;n#div#0;n#div#0;n#!!top" expanded="false" />
-                <element signature="n#button#0;n#div#0;n#div#0;n#div#3;n#div#0;n#div#1;n#div#0;n#div#0;n#div#0;n#!!top" expanded="false" />
-                <element signature="e#8228#9653#0" expanded="false" />
-                <element signature="e#10438#12797#0" expanded="false" />
-                <element signature="e#12839#13328#0" expanded="false" />
-                <element signature="e#13367#13629#0" expanded="false" />
-                <element signature="e#14292#14334#0" expanded="false" />
-                <element signature="e#14384#14787#0" expanded="false" />
-                <element signature="e#14838#15357#0" expanded="false" />
-                <element signature="e#15392#15457#0" expanded="false" />
-                <element signature="e#15515#18709#0" expanded="false" />
-                <element signature="e#18756#20507#0" expanded="false" />
-                <element signature="e#18929#19012#0" expanded="false" />
+                <element signature="e#8320#8375#0" expanded="false" />
+                <element signature="e#10717#13076#0" expanded="false" />
+                <element signature="e#13118#13607#0" expanded="false" />
+                <element signature="e#13646#13908#0" expanded="false" />
+                <element signature="e#13947#15990#0" expanded="false" />
+                <element signature="e#16033#16075#0" expanded="false" />
+                <element signature="e#16134#16667#0" expanded="false" />
+                <element signature="e#17309#19671#0" expanded="false" />
+                <element signature="e#19722#20101#0" expanded="false" />
+                <element signature="e#20247#20718#0" expanded="false" />
+                <element signature="e#24643#26680#0" expanded="false" />
+                <element signature="e#24816#24899#0" expanded="false" />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="components.min.css" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/theme/admin_3_angularjs/assets/global/css/components.min.css">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="394">
+              <caret line="1804" column="19" lean-forward="true" selection-start-line="1804" selection-start-column="19" selection-end-line="1804" selection-end-column="19" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -101,8 +115,18 @@
       <file leaf-file-name="bootstrap.css" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/theme/admin_3_angularjs/assets/global/plugins/bootstrap/css/bootstrap.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="50580">
-              <caret line="2810" column="8" lean-forward="false" selection-start-line="2810" selection-start-column="8" selection-end-line="2810" selection-end-column="8" />
+            <state relative-caret-position="22608">
+              <caret line="1256" column="27" lean-forward="false" selection-start-line="1256" selection-start-column="21" selection-end-line="1256" selection-end-column="27" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="bootstrap.min.css" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/theme/admin_3_angularjs/assets/global/plugins/bootstrap/css/bootstrap.min.css">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="26856">
+              <caret line="1492" column="29" lean-forward="false" selection-start-line="1492" selection-start-column="29" selection-end-line="1492" selection-end-column="29" />
               <folding />
             </state>
           </provider>
@@ -111,8 +135,8 @@
       <file leaf-file-name="index.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/theme/admin_3_angularjs/index.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="370">
-              <caret line="113" column="65" lean-forward="true" selection-start-line="113" selection-start-column="65" selection-end-line="113" selection-end-column="65" />
+            <state relative-caret-position="2034">
+              <caret line="113" column="65" lean-forward="false" selection-start-line="113" selection-start-column="65" selection-end-line="113" selection-end-column="65" />
               <folding />
             </state>
           </provider>
@@ -140,9 +164,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>table.dataTable tbody td</find>
-      <find>td</find>
-      <find>tablet</find>
       <find>assets</find>
       <find>gfonts</find>
       <find>../assets</find>
@@ -170,6 +191,9 @@
       <find>moment</find>
       <find>myHide</find>
       <find>protocolInit</find>
+      <find>mark</find>
+      <find>back</find>
+      <find>data</find>
     </findStrings>
     <dirStrings>
       <dir>D:\code\DI\DI-UI\_resources</dir>
@@ -204,17 +228,18 @@
         <option value="$PROJECT_DIR$/theme/admin_3_angularjs/assets/global/plugins/angularjs/angular.min.js" />
         <option value="$PROJECT_DIR$/theme/admin_3_angularjs/assets/pages/scripts/table-datatables-responsive.js" />
         <option value="$PROJECT_DIR$/theme/admin_3_angularjs/assets/global/plugins/datatables/datatables.min.css" />
-        <option value="$PROJECT_DIR$/theme/admin_3_angularjs/assets/global/plugins/datatables/plugins/bootstrap/dataTables.bootstrap.css" />
         <option value="$PROJECT_DIR$/theme/admin_3_angularjs/views/data1.js" />
         <option value="$PROJECT_DIR$/theme/admin_3_angularjs/assets/global/plugins/angularjs/plugins/angularjs-dropdown-multiselect-master/src/app/main/main.controller.js" />
         <option value="$PROJECT_DIR$/theme/admin_3_angularjs/index.html" />
-        <option value="$PROJECT_DIR$/theme/admin_3_angularjs/assets/global/plugins/bootstrap/css/bootstrap.css" />
         <option value="$PROJECT_DIR$/theme/admin_3_angularjs/assets/global/plugins/angularjs/plugins/angularjs-dropdown-multiselect/src/angularjs-dropdown-multiselect.js" />
         <option value="$PROJECT_DIR$/theme/admin_3_angularjs/tpl/header.html" />
         <option value="$PROJECT_DIR$/theme/admin_3_angularjs/js/main.js" />
         <option value="$PROJECT_DIR$/theme/admin_3_angularjs/assets/global/css/components.css" />
         <option value="$PROJECT_DIR$/theme/admin_3_angularjs/assets/global/css/components.min.css" />
+        <option value="$PROJECT_DIR$/theme/admin_3_angularjs/assets/global/plugins/bootstrap/css/bootstrap.css" />
+        <option value="$PROJECT_DIR$/theme/admin_3_angularjs/assets/global/plugins/bootstrap/css/bootstrap.min.css" />
         <option value="$PROJECT_DIR$/theme/admin_3_angularjs/views/new_investigation.html" />
+        <option value="$PROJECT_DIR$/theme/admin_3_angularjs/assets/global/plugins/datatables/plugins/bootstrap/dataTables.bootstrap.css" />
       </list>
     </option>
   </component>
@@ -246,9 +271,19 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scope" />
+      <pane id="Scratches" />
       <pane id="ProjectPane">
         <subPane>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="DI-UI" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="DI-UI" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+          </PATH>
           <PATH>
             <PATH_ELEMENT>
               <option name="myItemId" value="DI-UI" />
@@ -305,7 +340,7 @@
           </PATH>
         </subPane>
       </pane>
-      <pane id="Scratches" />
+      <pane id="Scope" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -390,12 +425,14 @@
       <workItem from="1490577434553" duration="52339000" />
       <workItem from="1490838610615" duration="18296000" />
       <workItem from="1491010408331" duration="9636000" />
-      <workItem from="1491031713523" duration="4144000" />
+      <workItem from="1491031713523" duration="4219000" />
+      <workItem from="1491355857382" duration="5436000" />
+      <workItem from="1491372300104" duration="3624000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="170058000" />
+    <option name="totallyTimeSpent" value="179193000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -408,13 +445,13 @@
   </component>
   <component name="ToolWindowManager">
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
-    <editor active="false" />
+    <editor active="true" />
     <layout>
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.19616205" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.20042644" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32936078" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32936078" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="File Transfer" active="true" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32936078" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="File Transfer" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32936078" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32936078" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32936078" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
@@ -446,12 +483,16 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="javascript">
           <url>file://$PROJECT_DIR$/theme/admin_3_angularjs/views/new_investigation.html</url>
-          <line>436</line>
-          <properties />
+          <line>456</line>
           <option name="timeStamp" value="2" />
         </line-breakpoint>
+        <line-breakpoint enabled="true" type="javascript">
+          <url>file://$PROJECT_DIR$/theme/admin_3_angularjs/views/new_investigation.html</url>
+          <line>292</line>
+          <option name="timeStamp" value="3" />
+        </line-breakpoint>
       </breakpoints>
-      <option name="time" value="3" />
+      <option name="time" value="4" />
     </breakpoint-manager>
     <watches-manager />
   </component>
@@ -536,9 +577,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="309">
           <caret line="2659" column="40" lean-forward="true" selection-start-line="2659" selection-start-column="40" selection-end-line="2659" selection-end-column="40" />
-          <folding>
-            <element signature="n#!!doc" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -567,13 +605,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="2" lean-forward="false" selection-start-line="0" selection-start-column="2" selection-end-line="0" selection-end-column="10" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/theme/admin_3_angularjs/assets/global/plugins/datatables/plugins/bootstrap/dataTables.bootstrap.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="378">
-          <caret line="21" column="44" lean-forward="false" selection-start-line="21" selection-start-column="44" selection-end-line="21" selection-end-column="44" />
         </state>
       </provider>
     </entry>
@@ -614,38 +645,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/theme/admin_3_angularjs/assets/global/plugins/bootstrap/css/bootstrap.min.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/theme/admin_3_angularjs/assets/global/plugins/bootstrap/css/bootstrap.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="50580">
-          <caret line="2810" column="8" lean-forward="false" selection-start-line="2810" selection-start-column="8" selection-end-line="2810" selection-end-column="8" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/theme/admin_3_angularjs/assets/global/plugins/angularjs/plugins/angularjs-dropdown-multiselect/src/angularjs-dropdown-multiselect.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="3240">
-          <caret line="180" column="18" lean-forward="false" selection-start-line="180" selection-start-column="18" selection-end-line="180" selection-end-column="18" />
-          <folding>
-            <element signature="e#9614#9752#0" expanded="false" />
-            <element signature="e#9790#10386#0" expanded="false" />
-            <element signature="e#10435#10588#0" expanded="false" />
-            <element signature="e#10619#11074#0" expanded="false" />
-            <element signature="e#11113#13374#0" expanded="false" />
-            <element signature="e#14787#15069#0" expanded="false" />
-            <element signature="e#16034#16097#0" expanded="false" />
-            <marker date="1490867664192" expanded="true" signature="1148:1154" ph=" " />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/theme/admin_3_angularjs/tpl/header.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="414">
@@ -678,13 +677,6 @@
         <state />
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/theme/admin_3_angularjs/assets/global/css/components.min.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="287">
-          <caret line="1775" column="29" lean-forward="false" selection-start-line="1775" selection-start-column="29" selection-end-line="1775" selection-end-column="29" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/theme/admin_3_angularjs/assets/global/css/components.css">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="287">
@@ -692,48 +684,96 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/theme/admin_3_angularjs/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="2034">
+          <caret line="113" column="65" lean-forward="false" selection-start-line="113" selection-start-column="65" selection-end-line="113" selection-end-column="65" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/theme/admin_3_angularjs/js/main.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="4842">
-          <caret line="271" column="79" lean-forward="false" selection-start-line="271" selection-start-column="79" selection-end-line="271" selection-end-column="79" />
+        <state relative-caret-position="4734">
+          <caret line="265" column="90" lean-forward="false" selection-start-line="265" selection-start-column="90" selection-end-line="265" selection-end-column="90" />
           <folding>
             <element signature="n#!!doc" expanded="true" />
           </folding>
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/theme/admin_3_angularjs/index.html">
+    <entry file="file://$PROJECT_DIR$/theme/admin_3_angularjs/assets/global/plugins/angularjs/plugins/angularjs-dropdown-multiselect/src/angularjs-dropdown-multiselect.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="370">
-          <caret line="113" column="65" lean-forward="true" selection-start-line="113" selection-start-column="65" selection-end-line="113" selection-end-column="65" />
+        <state relative-caret-position="3240">
+          <caret line="180" column="18" lean-forward="false" selection-start-line="180" selection-start-column="18" selection-end-line="180" selection-end-column="18" />
+          <folding>
+            <element signature="e#9614#9752#0" expanded="false" />
+            <element signature="e#9790#10386#0" expanded="false" />
+            <element signature="e#10435#10588#0" expanded="false" />
+            <element signature="e#10619#11074#0" expanded="false" />
+            <element signature="e#11113#13374#0" expanded="false" />
+            <element signature="e#14787#15069#0" expanded="false" />
+            <element signature="e#16034#16097#0" expanded="false" />
+            <marker date="1490867664192" expanded="true" signature="1148:1154" ph=" " />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/theme/admin_3_angularjs/assets/global/plugins/bootstrap/css/bootstrap.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="22608">
+          <caret line="1256" column="27" lean-forward="false" selection-start-line="1256" selection-start-column="21" selection-end-line="1256" selection-end-column="27" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/theme/admin_3_angularjs/assets/global/plugins/bootstrap/css/bootstrap.min.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="26856">
+          <caret line="1492" column="29" lean-forward="false" selection-start-line="1492" selection-start-column="29" selection-end-line="1492" selection-end-column="29" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/theme/admin_3_angularjs/assets/global/plugins/datatables/plugins/bootstrap/dataTables.bootstrap.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="498">
+          <caret line="31" column="28" lean-forward="false" selection-start-line="31" selection-start-column="28" selection-end-line="31" selection-end-column="28" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/theme/admin_3_angularjs/views/new_investigation.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="366">
-          <caret line="434" column="6" lean-forward="true" selection-start-line="434" selection-start-column="6" selection-end-line="434" selection-end-column="6" />
+        <state relative-caret-position="324">
+          <caret line="33" column="55" lean-forward="false" selection-start-line="33" selection-start-column="46" selection-end-line="33" selection-end-column="55" />
           <folding>
             <element signature="n#div#0;n#div#0;n#div#1;n#div#0;n#div#0;n#div#0;n#!!top" expanded="false" />
             <element signature="n#style#0;n#button#0;n#div#2;n#div#0;n#div#1;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
             <element signature="n#div#1;n#div#0;n#div#0;n#div#3;n#div#0;n#div#1;n#div#0;n#div#0;n#div#0;n#!!top" expanded="false" />
             <element signature="n#div#2;n#div#0;n#div#0;n#div#3;n#div#0;n#div#1;n#div#0;n#div#0;n#div#0;n#!!top" expanded="false" />
             <element signature="n#div#3;n#div#0;n#div#0;n#div#3;n#div#0;n#div#1;n#div#0;n#div#0;n#div#0;n#!!top" expanded="false" />
-            <element signature="n#div#4;n#div#0;n#div#0;n#div#3;n#div#0;n#div#1;n#div#0;n#div#0;n#div#0;n#!!top" expanded="false" />
-            <element signature="n#button#0;n#div#0;n#div#0;n#div#3;n#div#0;n#div#1;n#div#0;n#div#0;n#div#0;n#!!top" expanded="false" />
-            <element signature="e#8228#9653#0" expanded="false" />
-            <element signature="e#10438#12797#0" expanded="false" />
-            <element signature="e#12839#13328#0" expanded="false" />
-            <element signature="e#13367#13629#0" expanded="false" />
-            <element signature="e#14292#14334#0" expanded="false" />
-            <element signature="e#14384#14787#0" expanded="false" />
-            <element signature="e#14838#15357#0" expanded="false" />
-            <element signature="e#15392#15457#0" expanded="false" />
-            <element signature="e#15515#18709#0" expanded="false" />
-            <element signature="e#18756#20507#0" expanded="false" />
-            <element signature="e#18929#19012#0" expanded="false" />
+            <element signature="e#8320#8375#0" expanded="false" />
+            <element signature="e#10717#13076#0" expanded="false" />
+            <element signature="e#13118#13607#0" expanded="false" />
+            <element signature="e#13646#13908#0" expanded="false" />
+            <element signature="e#13947#15990#0" expanded="false" />
+            <element signature="e#16033#16075#0" expanded="false" />
+            <element signature="e#16134#16667#0" expanded="false" />
+            <element signature="e#17309#19671#0" expanded="false" />
+            <element signature="e#19722#20101#0" expanded="false" />
+            <element signature="e#20247#20718#0" expanded="false" />
+            <element signature="e#24643#26680#0" expanded="false" />
+            <element signature="e#24816#24899#0" expanded="false" />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/theme/admin_3_angularjs/assets/global/css/components.min.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="394">
+          <caret line="1804" column="19" lean-forward="true" selection-start-line="1804" selection-start-column="19" selection-end-line="1804" selection-end-column="19" />
+          <folding />
         </state>
       </provider>
     </entry>

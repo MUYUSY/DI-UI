@@ -14,12 +14,22 @@ table.dataTable td, table.dataTable th {
 }
 
 table.dataTable td.details-control {
-    background: url('../../images/forward_enabled.png') no-repeat center center;
+    background: url('../../images/show_ico.png') no-repeat center center ;
+    transform: rotate(270deg);
+    -ms-transform: rotate(270deg); /* IE 9 */
+    -webkit-transform: rotate(270deg); /* Safari and Chrome */
+    -o-transform: rotate(270deg); /* Opera */
+    -moz-transform: rotate(270deg); /* Firefox */
     cursor: pointer;
 }
 
 table.dataTable tr.shown td.details-control {
-    background: url('../../images/sort_desc.png') no-repeat center center;
+    background: url('../../images/show_ico.png') no-repeat center center;
+    transform: rotate(0deg);
+    -ms-transform: rotate(0deg); /* IE 9 */
+    -webkit-transform: rotate(0deg); /* Safari and Chrome */
+    -o-transform: rotate(0deg); /* Opera */
+    -moz-transform: rotate(0deg); /* Firefox */
     cursor: pointer;
 }
 

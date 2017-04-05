@@ -1229,8 +1229,32 @@ small,
   font-size: 85%; }
 
 mark,
-.mark {
-  background-color: #f9e491; }
+.mark-user {
+  background-color: #f0f993; }
+
+mark,
+.mark-pid {
+  background-color: #9bf9b9; }
+
+mark,
+.mark-pname {
+  background-color: #fd9cb9; }
+
+mark,
+.mark-ip {
+  background-color: #6fd8f9; }
+
+mark,
+.mark-protocol {
+  background-color: #88eeff; }
+
+mark,
+.mark-url {
+  background-color: #b2a7f9; }
+
+mark,
+.mark-fname {
+  background-color: #f9cda8; }
 
 .text-left {
   text-align: left; }
