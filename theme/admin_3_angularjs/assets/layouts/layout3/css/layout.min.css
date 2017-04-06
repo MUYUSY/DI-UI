@@ -1248,9 +1248,10 @@
 }
 
 .page-footer {
-    font-size: 13px;
+    font-size: 12px;
     font-weight: 300;
-    padding: 17px 0
+    text-align: center;
+    padding-bottom: 8px;
 }
 
 .page-footer a {

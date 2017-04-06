@@ -1401,7 +1401,7 @@ Pace - Page Progress
 .page-footer {
     font-size: 13px;
     font-weight: 300;
-    padding: 17px 0;
+    text-align: center;
 }
 
 .page-footer a {
