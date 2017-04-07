@@ -1313,8 +1313,9 @@ Pace - Page Progress
 }
 
 .page-content {
-    background: #eff3f8;
+    background: #ffffff;
     padding: 15px 0 15px;
+    min-height: 830px;
 }
 
 @media (min-width: 992px) {

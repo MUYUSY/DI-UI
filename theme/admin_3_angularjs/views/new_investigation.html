@@ -201,9 +201,10 @@
         "startDate": moment().startOf('day'),
         "endDate": moment()
     }, function (start, end, label) {
-        var utcOffset = Date.parse('1970-01-01 00:00:00');
-        startTime = (start + utcOffset) / 1000;
-        endTime = Math.ceil((end + utcOffset) / 1000);
+//        var utcOffset = Date.parse('1970-01-01 00:00:00');
+//        console.log(utcOffset);
+        startTime = start / 1000;
+        endTime = Math.ceil(end / 1000);
         console.log("New date range selected: " + startTime + ' to ' + endTime + ' (predefined range: ' + label + ')');
     });
 
@@ -403,22 +404,22 @@
                 if (keyword.length > 0) {
                     switch (condition[i].key) {
                         case "进程用户名":
-                            if (keyValue[0] == "CLF_User") {
+                            if (keyValue[0] == "clf_user") {
                                 result = highlightInclude(result, keyword, key = "user");
                             }
                             break;
                         case "进程ID":
-                            if (keyValue[0] == "CLF_Pid") {
+                            if (keyValue[0] == "clf_pid") {
                                 result = highlightEqual(result, keyword, key = "pid");
                             }
                             break;
                         case "进程名":
-                            if (keyValue[0] == "CLF_ProcessName") {
+                            if (keyValue[0] == "clf_processName") {
                                 result = highlightInclude(result, keyword, key = "pname");
                             }
                             break;
                         case "IP地址":
-                            if (keyValue[0] == "CLF_SourceIP" || keyValue[0] == "CLF_DestIP" || keyValue[0] == "CLF_Ip") {
+                            if (keyValue[0] == "clf_src_ip" || keyValue[0] == "clf_dst_ip") {
                                 result = highlightEqual(result, keyword, key = "ip");
                             }
                             break;
@@ -445,15 +446,14 @@
     };
 
     var formatData = function (item, condition) {
-        var list = item.split('\t');
         var result = "";
-        for (var i = 0; i < list.length; i++) {
+        for (var i = 0; i < item.length; i++) {
             result += ' | ';
             result += '<b>';
-            result += list[i].split("=")[0];
+            result += item[i].split("=")[0];
             result += '</b>';
             result += ':';
-            result += highlightStr(list[i], condition);
+            result += highlightStr(item[i], condition);
         }
         return result.substring(2);
     };
@@ -487,24 +487,20 @@
         }
 
         var postJson = {
-            "begin_time": 1491408000,
-            "end_time": 1491494399,
-//            "device_id": device_id,
-            "device_id": [0],
+            "begin_time": startTime,
+            "end_time": endTime,
+            "device_id": ["abc123"],
+//            "device_id": [0],
             "event_type": 0,
 //            "filter_condition": filter_condition
             "filter_condition": {
-                "process_user": {
-                    "include": ["Nick", "Admin"],
-                    "exclude": []
-                },
-                "pid":{
-                    "include": [3565, 251, 2409, 2024]
+                "process_user": {},
+                "pid": {
+                    "include": [864]
                 }
 
             }
         };
-        console.log(JSON.stringify(postJson));
 
         $.ajax({
             type: "POST",
@@ -512,29 +508,114 @@
             url: 'http://10.21.140.129:8080/logquery',
             data: JSON.stringify(postJson),
             success: function (data) {
-                console.log('success');
-                if (data != "") {
-                    console.log(data);
+                var results = [];
+                for (var k = 0; k < data.data.length; k++) {
+                    var rows = data.data[k];
+                    for (var i = 0; i < rows.raw.length; i++) {
+                        var list = rows.raw[i].split('\t');
+                        results.push({
+                            timestamp: timeStamp2String(getValue(list[0])),
+                            deviceName: getValue(list[1]),
+                            processUsername: getValue(list[2]),
+                            processId: getValue(list[3]),
+                            processPath: getValue(list[4]),
+                            eventType: getValue(list[5]),
+                            content: formatData(list.slice(12), search_condition)
+                        })
+                    }
                 }
-            },
-            error: function(XMLHttpRequest, textStatus, errorThrown) {
-                console.log(XMLHttpRequest)
+
+                var config = {
+                    data: results,
+                    columns: [
+                        {
+                            "class": 'details-control',
+                            "orderable": false,
+                            "data": null,
+                            "defaultContent": ''
+                        },
+                        {data: "timestamp"},
+                        {data: "deviceName"},
+                        {data: "processUsername"},
+                        {data: "processId"},
+                        {data: "processPath"},
+                        {data: "eventType"}],
+                    order: [],
+                    sPaginationType: "full_numbers",
+                    language: {
+                        aria: {
+                            sortAscending: ": activate to sort column ascending",
+                            sortDescending: ": activate to sort column descending"
+                        },
+                        emptyTable: "无匹配的数据可显示",
+                        info: "显示 _TOTAL_ 条目中的第 _START_ 至 _END_ 条",
+                        infoEmpty: "没有匹配的条目",
+                        infoFiltered: "(过滤出 filtered1 条目，总计 _MAX_ 条目)",
+                        lengthMenu: "_MENU_ 项",
+                        search: "搜索:",
+                        zeroRecords: "无匹配的数据可显示",
+                        paginate: {
+                            last: "末页",
+                            next: "下一页",
+                            previous: "上一页",
+                            first: "首页"
+                        }
+                    },
+                    lengthMenu: [
+                        [20, 50, 100],
+                        ["20条", "50条", "100条"] // change per page values here
+                    ],
+                    "dom": "<'row' <'col-md-12'B>><'row'<'col-md-2 col-sm-12'l><'col-md-3 col-sm-12'f><'col-md-7 col-sm-12'p>r><t><'row'<'col-md-4 col-sm-12'i><'col-md-8 col-sm-12'p>>"
+                };
+
+                if (dtable != null) {
+                    dtable.fnClearTable();
+                    dtable.fnDestroy();
+                    $("tbody").remove();
+                }
+
+                dtable = $('#search-result').dataTable(config);
+                $("tbody").on('click', 'td.details-control', function () {
+                    var tr = $(this).closest('tr');
+                    var row = dtable.api().row(tr);
+                    if (row.child.isShown()) {
+                        // This row is already open - close it
+                        row.child.hide();
+                        tr.removeClass('shown');
+                    }
+                    else {
+                        row.child(format((row.data().content))).show();
+                        tr.addClass('shown');
+                    }
+                });
+
+                if (dtable == null) {
+                    $('#exportResult').hide();
+                }
+                else {
+                    $('#exportResult').show();
+                }
             }
         });
 
 //        $.getJSON('./views/data1.js', function (data) {
 //            var results = [];
-//            for (var i = 0; i < data.length; i++) {
-//                results.push({
-//                    timestamp: timeStamp2String(getValue(data[i].key[0])),
-//                    deviceName: getValue(data[i].key[1]),
-//                    processUsername: getValue(data[i].key[2]),
-//                    processId: getValue(data[i].key[3]),
-//                    processPath: getValue(data[i].key[4]),
-//                    eventType: getValue(data[i].key[5]),
-//                    content: formatData(data[i].data, search_condition)
-//                })
+//            for (var k = 0; k < data.data.length; k++) {
+//                var rows = data.data[k];
+//                for (var i = 0; i < rows.rows.length; i++) {
+//                    var list = rows.rows[i].split('\t');
+//                    results.push({
+//                        timestamp: timeStamp2String(getValue(list[0])),
+//                        deviceName: getValue(list[1]),
+//                        processUsername: getValue(list[2]),
+//                        processId: getValue(list[3]),
+//                        processPath: getValue(list[4]),
+//                        eventType: getValue(list[5]),
+//                        content: formatData(list.slice(12), search_condition)
+//                    })
+//                }
 //            }
+//
 //            var config = {
 //                data: results,
 //                columns: [
@@ -563,7 +644,13 @@
 //                    infoFiltered: "(过滤出 filtered1 条目，总计 _MAX_ 条目)",
 //                    lengthMenu: "_MENU_ 项",
 //                    search: "搜索:",
-//                    zeroRecords: "无匹配的数据可显示"
+//                    zeroRecords: "无匹配的数据可显示",
+//                    paginate:{
+//                        last: "末页",
+//                        next: "下一页",
+//                        previous: "上一页",
+//                        first: "首页"
+//                    }
 //                },
 //                lengthMenu: [
 //                    [20, 50, 100],
@@ -591,7 +678,7 @@
 //                    row.child(format((row.data().content))).show();
 //                    tr.addClass('shown');
 //                }
-//            })
+//            });
 //
 //            if (dtable == null) {
 //                $('#exportResult').hide();
@@ -602,68 +689,68 @@
 //        })
     };
 
-    function NewConditionController($scope) {
-        $scope.conditionName = ["进程用户名", "进程ID", "进程名", "IP地址", "网络协议名", "Url", "文件名"];
-        $scope.protocolFathers = ["分类一", "分类二"];
-        $scope.protocolChildren = {
-            "分类一": ["HTTP", "HTTPS"],
-            "分类二": ["FTP", "SSH"]
-        };
-        $scope.include = ["包含", "不包含"];
-        $scope.equal = ["等于", "不等于"];
-        $scope.change = function (item) {
-            if (item.value == "网络协议名") {
-                item.class1 = false;
-                item.class2 = false;
-                item.class3 = true;
-            }
-            else if (item.value == "进程ID" || item.value == "IP地址") {
-                item.class1 = false;
-                item.class2 = true;
-                item.class3 = false;
-            }
-            else {
-                item.class1 = true;
-                item.class2 = false;
-                item.class3 = false;
-            }
-        };
-
-        $scope.protocolInit = function (item) {
-            item.child = $scope.protocolChildren[item.father][0];
-        };
-        $scope.index = 2;
-        $scope.maxCondition = false;
-        $scope.closeable = false;
-        $scope.addCondition = function () {
-            $scope.conditions.push(
-                {
-                    key: $scope.index,
-                    value: "test",
-                    class1: true,
-                    class2: false,
-                    class3: false,
-                    input: "",
-                    father: "分类一",
-                    child: "HTTP",
-                    include: "包含",
-                    equal: "等于"
+        function NewConditionController($scope) {
+            $scope.conditionName = ["进程用户名", "进程ID", "进程名", "IP地址", "网络协议名", "Url", "文件名"];
+            $scope.protocolFathers = ["分类一", "分类二"];
+            $scope.protocolChildren = {
+                "分类一": ["HTTP", "HTTPS"],
+                "分类二": ["FTP", "SSH"]
+            };
+            $scope.include = ["包含", "不包含"];
+            $scope.equal = ["等于", "不等于"];
+            $scope.change = function (item) {
+                if (item.value == "网络协议名") {
+                    item.class1 = false;
+                    item.class2 = false;
+                    item.class3 = true;
                 }
-            );
-            $scope.index += 1;
-            $scope.closeable = true;
-            if ($scope.conditions.length == 7) {
-                $scope.maxCondition = true;
-            }
-        };
-        $scope.closeCondition = function (index) {
-            $scope.conditions.splice(index, 1);
-            if ($scope.conditions.length == 1) {
-                $scope.closeable = false;
-            }
+                else if (item.value == "进程ID" || item.value == "IP地址") {
+                    item.class1 = false;
+                    item.class2 = true;
+                    item.class3 = false;
+                }
+                else {
+                    item.class1 = true;
+                    item.class2 = false;
+                    item.class3 = false;
+                }
+            };
+
+            $scope.protocolInit = function (item) {
+                item.child = $scope.protocolChildren[item.father][0];
+            };
+            $scope.index = 2;
             $scope.maxCondition = false;
-        };
-    }
+            $scope.closeable = false;
+            $scope.addCondition = function () {
+                $scope.conditions.push(
+                    {
+                        key: $scope.index,
+                        value: "test",
+                        class1: true,
+                        class2: false,
+                        class3: false,
+                        input: "",
+                        father: "分类一",
+                        child: "HTTP",
+                        include: "包含",
+                        equal: "等于"
+                    }
+                );
+                $scope.index += 1;
+                $scope.closeable = true;
+                if ($scope.conditions.length == 7) {
+                    $scope.maxCondition = true;
+                }
+            };
+            $scope.closeCondition = function (index) {
+                $scope.conditions.splice(index, 1);
+                if ($scope.conditions.length == 1) {
+                    $scope.closeable = false;
+                }
+                $scope.maxCondition = false;
+            };
+        }
 
 </script>
 <!-- END MAIN JS -->

@@ -1985,7 +1985,7 @@ li [class*=" fa-"].icon-large, li [class*=" glyphicon-"].icon-large, li [class*=
 
 .btn.blue:not(.btn-outline).active, .btn.blue:not(.btn-outline).focus, .btn.blue:not(.btn-outline):active, .btn.blue:not(.btn-outline):focus, .btn.blue:not(.btn-outline):hover, .open > .btn.blue:not(.btn-outline).dropdown-toggle {
     color: #FFF;
-    background-color: #217ebd;
+    background-color: #0076e1;;
     border-color: #217ebd
 }
 
@@ -7162,7 +7162,8 @@ body[ng-controller] .modal {
 }
 
 .pagination {
-    margin: 10px 0
+    margin: 10px 0;
+    font-size: 12px;
 }
 
 .pagination.pagination-circle > li:first-child > a {
