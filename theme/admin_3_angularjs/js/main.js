@@ -264,7 +264,7 @@ MetronicApp.config(['$stateProvider', '$urlRouterProvider', function($stateProvi
                             './assets/global/plugins/select2/css/select2-bootstrap.min.css',
 
                             './assets/global/plugins/bootstrap-daterangepicker/moment.min.js',
-                            './assets/global/plugins/bootstrap-daterangepicker/moment.js',
+                            './assets/global/plugins/moment.min.js',
                             './assets/global/plugins/clockface/js/clockface.js',
                             './assets/global/plugins/bootstrap-daterangepicker/daterangepicker.js',
                             './assets/global/plugins/bootstrap-select/js/bootstrap-select.min.js',
@@ -276,7 +276,6 @@ MetronicApp.config(['$stateProvider', '$urlRouterProvider', function($stateProvi
                             "./assets/global/scripts/datatable.js",
                             './assets/global/plugins/datatables/datatables.all.js',
                             "./assets/global/plugins/datatables/plugins/bootstrap/datatables.bootstrap.js",
-
 
                             'js/controllers/GeneralPageController.js'
 

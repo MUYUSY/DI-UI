@@ -23,7 +23,7 @@
                          options="selectByGroupData"
                          selected-model="selectByGroupModel"
                          extra-settings="selectByGroupSettings"
-                         group-by="gender"
+                         group-by="group"
                          translation-texts="selectByGroupTexts">
                     </div>
                     <div class="col-md-1 col-sm-12 col-xs-12" style="margin-right: 15px;">
@@ -135,17 +135,14 @@
     </div>
 </div>
 
+<!-- BEGIN MAIN JS -->
 <script>
     ComponentsSelect2.init();
     ComponentsBootstrapSelect.init();
-    UITree.init();
-    //TableDatatablesResponsive.init();
-</script>
-<!-- BEGIN MAIN JS -->
-<script>
     var dtable;
     var startTime = moment().startOf('day').format('X');
     var endTime = moment().format('X');
+
     $('#exportResult').hide();
 
     $('.searchDatePicker i').click(function () {
@@ -204,11 +201,10 @@
 //        var utcOffset = Date.parse('1970-01-01 00:00:00');
 //        console.log(utcOffset);
         startTime = start / 1000;
-        endTime = Math.ceil(end / 1000);
+        endTime = Math.ceil(end / 60000) * 60;
         console.log("New date range selected: " + startTime + ' to ' + endTime + ' (predefined range: ' + label + ')');
         console.log(moment().minute());
     });
-
 
     function HighLevelToggle($scope) {
         $scope.myHide = false;
@@ -230,63 +226,112 @@
             }
         ];
         $scope.selectByGroupModel = [];
-        $scope.selectByGroupData = [
-            {id: 1, label: "David", gender: 'M'},
-            {id: 2, label: "Jhon", gender: 'M'},
-            {id: 3, label: "Lisa", gender: 'F'},
-            {id: 4, label: "Nicole", gender: 'F'},
-            {id: 5, label: "Danny1", gender: 'M'},
-            {id: 6, label: "Danny2", gender: 'M'},
-            {id: 7, label: "Danny3", gender: 'M'},
-            {id: 8, label: "Danny4", gender: 'M'},
-            {id: 9, label: "Danny5", gender: 'M'},
-            {id: 10, label: "Danny6", gender: 'M'},
-            {id: 11, label: "Danny7", gender: 'M'},
-            {id: 12, label: "Danny8", gender: 'M'},
-            {id: 13, label: "Danny9", gender: 'M'},
-            {id: 14, label: "Danny10", gender: 'M'},
-            {id: 15, label: "Danny11", gender: 'M'},
-            {id: 16, label: "Danny12", gender: 'M'},
-            {id: 17, label: "Danny13", gender: 'M'},
-            {id: 18, label: "Danny14", gender: 'M'},
-            {id: 19, label: "Danny15", gender: 'M'},
-            {id: 20, label: "Danny16", gender: 'M'},
-            {id: 21, label: "Danny17", gender: 'M'},
-            {id: 22, label: "Danny18", gender: 'M'},
-            {id: 23, label: "Danny19", gender: 'M'},
-            {id: 24, label: "Danny20", gender: 'M'},
-            {id: 25, label: "Danny21", gender: 'M'},
-            {id: 26, label: "Danny22", gender: 'M'},
-            {id: 27, label: "Danny23", gender: 'M'},
-            {id: 28, label: "Danny24", gender: 'M'},
-            {id: 29, label: "Danny25", gender: 'M'},
-            {id: 30, label: "Danny26", gender: 'M'},
-            {id: 31, label: "Danny27", gender: 'M'},
-            {id: 32, label: "Danny28", gender: 'M'},
-            {id: 33, label: "Danny29", gender: 'M'},
-            {id: 34, label: "Danny30", gender: 'M'},
-            {id: 35, label: "Danny31", gender: 'M'},
-            {id: 36, label: "Danny32", gender: 'M'},
-            {id: 37, label: "Danny33", gender: 'M'},
-            {id: 38, label: "Danny34", gender: 'M'},
-            {id: 39, label: "Danny35", gender: 'M'},
-            {id: 40, label: "Danny36", gender: 'M'},
-            {id: 41, label: "Danny37", gender: 'M'},
-            {id: 42, label: "Danny38", gender: 'M'},
-            {id: 43, label: "Danny39", gender: 'M'},
-            {id: 44, label: "Danny40", gender: 'M'},
-            {id: 45, label: "Unknown", gender: 'O'}];
+
+        var device_info = [
+            {
+                "groupname": "group1",
+                "devices": [{
+                    "deviceid": 1,
+                    "devicename": "EndPoint1",
+                    "ip": "127.0.0.1",
+                    "os": "Linux",
+                    "assettag": "Lab",
+                    "status": "online",
+                    "lastcontacttime": "2017-04-06 18:05:39"
+                }, {
+                    "deviceid": 2,
+                    "devicename": "EndPoint2",
+                    "ip": "127.0.0.1",
+                    "os": "Linux",
+                    "assettag": "Lab",
+                    "status": "online",
+                    "lastcontacttime": "2017-04-06 18:05:39"
+                }]
+            },
+            {
+                "groupname": "group2",
+                "devices": [
+                    {
+                        "deviceid": 3,
+                        "devicename": "EndPoint3",
+                        "ip": "127.0.0.1",
+                        "os": "Linux",
+                        "assettag": "Lab",
+                        "status": "online",
+                        "lastcontacttime": "2017-04-06 18:05:39"
+                    }]
+            }
+        ];
+
+        $scope.selectByGroupData = [];
+        $scope.groupInfo = [];
+        for (var i = 0; i < device_info.length; i++) {
+            var devices = device_info[i].devices;
+            $scope.groupInfo.push(device_info[i].groupname);
+            for (var k = 0; k < devices.length; k++) {
+                var device = {
+                    id: devices[k].deviceid,
+                    label: devices[k].devicename,
+                    group: device_info[i].groupname
+                };
+                $scope.selectByGroupData.push(device)
+            }
+        }
+//        $scope.selectByGroupData = [
+//            {id: 1, label: "David", gender: 'M'},
+//            {id: 2, label: "Jhon", gender: 'M'},
+//            {id: 3, label: "Lisa", gender: 'F'},
+//            {id: 4, label: "Nicole", gender: 'F'},
+//            {id: 5, label: "Danny1", gender: 'M'},
+//            {id: 6, label: "Danny2", gender: 'M'},
+//            {id: 7, label: "Danny3", gender: 'M'},
+//            {id: 8, label: "Danny4", gender: 'M'},
+//            {id: 9, label: "Danny5", gender: 'M'},
+//            {id: 10, label: "Danny6", gender: 'M'},
+//            {id: 11, label: "Danny7", gender: 'M'},
+//            {id: 12, label: "Danny8", gender: 'M'},
+//            {id: 13, label: "Danny9", gender: 'M'},
+//            {id: 14, label: "Danny10", gender: 'M'},
+//            {id: 15, label: "Danny11", gender: 'M'},
+//            {id: 16, label: "Danny12", gender: 'M'},
+//            {id: 17, label: "Danny13", gender: 'M'},
+//            {id: 18, label: "Danny14", gender: 'M'},
+//            {id: 19, label: "Danny15", gender: 'M'},
+//            {id: 20, label: "Danny16", gender: 'M'},
+//            {id: 21, label: "Danny17", gender: 'M'},
+//            {id: 22, label: "Danny18", gender: 'M'},
+//            {id: 23, label: "Danny19", gender: 'M'},
+//            {id: 24, label: "Danny20", gender: 'M'},
+//            {id: 25, label: "Danny21", gender: 'M'},
+//            {id: 26, label: "Danny22", gender: 'M'},
+//            {id: 27, label: "Danny23", gender: 'M'},
+//            {id: 28, label: "Danny24", gender: 'M'},
+//            {id: 29, label: "Danny25", gender: 'M'},
+//            {id: 30, label: "Danny26", gender: 'M'},
+//            {id: 31, label: "Danny27", gender: 'M'},
+//            {id: 32, label: "Danny28", gender: 'M'},
+//            {id: 33, label: "Danny29", gender: 'M'},
+//            {id: 34, label: "Danny30", gender: 'M'},
+//            {id: 35, label: "Danny31", gender: 'M'},
+//            {id: 36, label: "Danny32", gender: 'M'},
+//            {id: 37, label: "Danny33", gender: 'M'},
+//            {id: 38, label: "Danny34", gender: 'M'},
+//            {id: 39, label: "Danny35", gender: 'M'},
+//            {id: 40, label: "Danny36", gender: 'M'},
+//            {id: 41, label: "Danny37", gender: 'M'},
+//            {id: 42, label: "Danny38", gender: 'M'},
+//            {id: 43, label: "Danny39", gender: 'M'},
+//            {id: 44, label: "Danny40", gender: 'M'},
+//            {id: 45, label: "Unknown", gender: 'O'}];
 
         $scope.selectByGroupSettings = {
-            selectByGroups: ['F', 'M'],
+            selectByGroups: $scope.groupInfo,
             groupByTextProvider: function (groupValue) {
                 switch (groupValue) {
-                    case 'M':
-                        return 'Male';
-                    case 'F':
-                        return 'Female';
-                    case 'O':
-                        return 'Other';
+                    case 'group1':
+                        return '分组一';
+                    case 'group2':
+                        return '分组二';
                 }
             },
             scrollableHeight: '400px',
@@ -351,7 +396,7 @@
                         }
                         $scope.filter_condition["process_user"] = {};
                         input_list = $scope.conditions[i].input.split(',');
-                        for(var a = 0; a < input_list.length; a++) {
+                        for (var a = 0; a < input_list.length; a++) {
                             if (input_list[a] == "") {
                                 continue
                             }
@@ -375,7 +420,7 @@
                         }
                         $scope.filter_condition["pid"] = {};
                         input_list = $scope.conditions[i].input.split(',');
-                        for(var b = 0; b < input_list.length; b++) {
+                        for (var b = 0; b < input_list.length; b++) {
                             if (input_list[b] == "") {
                                 continue
                             }
@@ -399,7 +444,7 @@
                         }
                         $scope.filter_condition["process_name"] = {};
                         input_list = $scope.conditions[i].input.split(',');
-                        for(var c = 0; c < input_list.length; c++) {
+                        for (var c = 0; c < input_list.length; c++) {
                             if (input_list[c] == "") {
                                 continue
                             }
@@ -423,7 +468,7 @@
                         }
                         $scope.filter_condition["ip"] = {};
                         input_list = $scope.conditions[i].input.split(',');
-                        for(var d = 0; d < input_list.length; d++) {
+                        for (var d = 0; d < input_list.length; d++) {
                             if (input_list[d] == "") {
                                 continue
                             }
@@ -452,7 +497,7 @@
                         }
                         $scope.filter_condition["file_name"] = {};
                         input_list = $scope.conditions[i].input.split(',');
-                        for(var f = 0; f < input_list.length; f++) {
+                        for (var f = 0; f < input_list.length; f++) {
                             if (input_list[f] == "") {
                                 continue
                             }
@@ -476,7 +521,7 @@
                         }
                         $scope.filter_condition["url"] = {};
                         input_list = $scope.conditions[i].input.split(',');
-                        for(var g = 0; g < input_list.length; g++) {
+                        for (var g = 0; g < input_list.length; g++) {
                             if (input_list[g] == "") {
                                 continue
                             }
@@ -503,6 +548,48 @@
 
     var getValue = function (item) {
         return item.split("=")[1];
+    };
+
+    var getEventType = function (eventType, subType) {
+        data = {
+            1: {
+                1: "创建文件",
+                2: "打开文件",
+                3: "读文件",
+                4: "写文件",
+                5: "删除文件",
+                6: "重命名文件",
+                7: "查询文件信息",
+                8: "修改文件信息",
+                9: "关闭文件"
+            },
+            2: {
+                1: "进程加载",
+                2: "进程终止"
+            },
+            3: {
+                1: "网页",
+                2: "邮件",
+                3: "文件传输",
+                4: "其他应用程序"
+            },
+            4: {
+                1: "系统登录",
+                2: "挂载",
+                3: "取消挂载",
+                4: "网络连接",
+                5: "断开网络连接",
+                6: "修改密码"
+            },
+            5: {
+                1: "注册表创建",
+                2: "注册表打开",
+                3: "注册表删除",
+                4: "注册表查询",
+                5: "注册表设置"
+            }
+        }
+        var result = data[eventType][subType];
     };
 
     var highlightInclude = function (str, keyword, key) {
@@ -556,37 +643,37 @@
                 if (keyword.length > 0) {
                     switch (condition[i].key) {
                         case "进程用户名":
-                            if (keyValue[0] == "clf_user") {
+                            if (keyValue[0] == "subject_user_account") {
                                 result = highlightInclude(result, keyword, key = "user");
                             }
                             break;
                         case "进程ID":
-                            if (keyValue[0] == "clf_pid") {
+                            if (keyValue[0] == "subject_proc_id") {
                                 result = highlightEqual(result, keyword, key = "pid");
                             }
                             break;
                         case "进程名":
-                            if (keyValue[0] == "clf_processName") {
+                            if (keyValue[0] == "subject_process") {
                                 result = highlightInclude(result, keyword, key = "pname");
                             }
                             break;
                         case "IP地址":
-                            if (keyValue[0] == "clf_src_ip" || keyValue[0] == "clf_dst_ip") {
+                            if (keyValue[0] == "source_ip" || keyValue[0] == "dest_ip") {
                                 result = highlightEqual(result, keyword, key = "ip");
                             }
                             break;
                         case "网络协议名":
-                            if (keyValue[0] == "CLF_NetProtocol") {
+                            if (keyValue[0] == "protocol_name") {
                                 result = highlightEqual(result, keyword, key = "protocol");
                             }
                             break;
                         case "Url":
-                            if (keyValue[0] == "CLF_Url") {
+                            if (keyValue[0] == "detail_info") {
                                 result = highlightInclude(result, keyword, key = "url");
                             }
                             break;
                         case "文件名":
-                            if (keyValue[0] == "CLF_File") {
+                            if (keyValue[0] == "file_src_path" || keyValue[0] == "file_dst_path") {
                                 result = highlightInclude(result, keyword, key = "fname");
                             }
                             break;
@@ -656,7 +743,7 @@
         $.ajax({
             type: "POST",
             dataType: "json",
-            url: 'http://10.21.140.129:8080/logquery',
+            url: 'http://127.0.0.1:6022/logquery',
             data: JSON.stringify(postJson),
             success: function (data) {
                 var results = [];
@@ -667,6 +754,9 @@
                     for (var k = 0; k < data.data.length; k++) {
                         var rows = data.data[k];
                         for (var i = 0; i < rows.rows.length; i++) {
+                            if (rows.rows[i] == "") {
+                                continue
+                            }
                             var list = rows.rows[i].split('\t');
                             results.push({
                                 timestamp: timeStamp2String(getValue(list[0])),
@@ -674,8 +764,8 @@
                                 processUsername: getValue(list[2]),
                                 processId: getValue(list[3]),
                                 processPath: getValue(list[4]),
-                                eventType: getValue(list[5]),
-                                content: formatData(list.slice(12), search_condition)
+                                eventType: getEventType(list[12], list[5]),
+                                content: formatData(list.slice(13), search_condition)
                             })
                         }
                     }
@@ -845,68 +935,67 @@
 //        })
     };
 
-        function NewConditionController($scope) {
-            $scope.conditionName = ["进程用户名", "进程ID", "进程名", "IP地址", "网络协议名", "Url", "文件名"];
-            $scope.protocolFathers = ["分类一", "分类二"];
-            $scope.protocolChildren = {
-                "分类一": ["HTTP", "HTTPS"],
-                "分类二": ["FTP", "SSH"]
-            };
-            $scope.include = ["包含", "不包含"];
-            $scope.equal = ["等于", "不等于"];
-            $scope.change = function (item) {
-                if (item.value == "网络协议名") {
-                    item.class1 = false;
-                    item.class2 = false;
-                    item.class3 = true;
-                }
-                else if (item.value == "进程ID" || item.value == "IP地址") {
-                    item.class1 = false;
-                    item.class2 = true;
-                    item.class3 = false;
-                }
-                else {
-                    item.class1 = true;
-                    item.class2 = false;
-                    item.class3 = false;
-                }
-            };
+    function NewConditionController($scope) {
+        $scope.conditionName = ["进程用户名", "进程ID", "进程名", "IP地址", "网络协议名", "Url", "文件名"];
+        $scope.protocolFathers = ["分类一", "分类二"];
+        $scope.protocolChildren = {
+            "分类一": ["HTTP", "HTTPS"],
+            "分类二": ["FTP", "SSH"]
+        };
+        $scope.include = ["包含", "不包含"];
+        $scope.equal = ["等于", "不等于"];
+        $scope.change = function (item) {
+            if (item.value == "网络协议名") {
+                item.class1 = false;
+                item.class2 = false;
+                item.class3 = true;
+            }
+            else if (item.value == "进程ID" || item.value == "IP地址") {
+                item.class1 = false;
+                item.class2 = true;
+                item.class3 = false;
+            }
+            else {
+                item.class1 = true;
+                item.class2 = false;
+                item.class3 = false;
+            }
+        };
 
-            $scope.protocolInit = function (item) {
-                item.child = $scope.protocolChildren[item.father][0];
-            };
-            $scope.index = 2;
+        $scope.protocolInit = function (item) {
+            item.child = $scope.protocolChildren[item.father][0];
+        };
+        $scope.index = 2;
+        $scope.maxCondition = false;
+        $scope.closeable = false;
+        $scope.addCondition = function () {
+            $scope.conditions.push(
+                {
+                    key: $scope.index,
+                    value: "test",
+                    class1: true,
+                    class2: false,
+                    class3: false,
+                    input: "",
+                    father: "分类一",
+                    child: "HTTP",
+                    include: "包含",
+                    equal: "等于"
+                }
+            );
+            $scope.index += 1;
+            $scope.closeable = true;
+            if ($scope.conditions.length == 7) {
+                $scope.maxCondition = true;
+            }
+        };
+        $scope.closeCondition = function (index) {
+            $scope.conditions.splice(index, 1);
+            if ($scope.conditions.length == 1) {
+                $scope.closeable = false;
+            }
             $scope.maxCondition = false;
-            $scope.closeable = false;
-            $scope.addCondition = function () {
-                $scope.conditions.push(
-                    {
-                        key: $scope.index,
-                        value: "test",
-                        class1: true,
-                        class2: false,
-                        class3: false,
-                        input: "",
-                        father: "分类一",
-                        child: "HTTP",
-                        include: "包含",
-                        equal: "等于"
-                    }
-                );
-                $scope.index += 1;
-                $scope.closeable = true;
-                if ($scope.conditions.length == 7) {
-                    $scope.maxCondition = true;
-                }
-            };
-            $scope.closeCondition = function (index) {
-                $scope.conditions.splice(index, 1);
-                if ($scope.conditions.length == 1) {
-                    $scope.closeable = false;
-                }
-                $scope.maxCondition = false;
-            };
-        }
-
+        };
+    }
 </script>
 <!-- END MAIN JS -->
