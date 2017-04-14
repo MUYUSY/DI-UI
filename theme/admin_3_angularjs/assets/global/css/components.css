@@ -8459,7 +8459,7 @@ Portlets
     min-height: 48px; }
     .portlet.light > .portlet-title > .caption {
       color: #666;
-      padding: 10px 0; }
+      padding: 10px 0 0 15px; }
       .portlet.light > .portlet-title > .caption > .caption-subject {
         font-size: 16px; }
       .portlet.light > .portlet-title > .caption > i {
@@ -17770,7 +17770,7 @@ Page new_investigation.html
   transition: all linear;
   background-color: #f9f9f9;
   border: 1px solid #dddddd;
-  margin: 8px 0 8px 0;
+  margin: 8px 15px 8px 15px;
 }
 
 .high-level.ng-hide {
@@ -17820,6 +17820,7 @@ Page new_investigation.html
 
 .search-condition {
   margin-top: 10px;
+  margin-left: -15px;
 }
 
 .search-input {

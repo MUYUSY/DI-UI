@@ -1766,8 +1766,7 @@ li [class*=" fa-"].icon-large, li [class*=" glyphicon-"].icon-large, li [class*=
     transition: all linear;
     background-color: #F9F9F9;
     border: 1px solid #dddddd;
-    margin-top: 8px;
-    margin-bottom: 8px;
+    margin: 8px 30px 8px 15px;
 }
 .high-level.ng-hide {
     height: 0;
@@ -1814,6 +1813,7 @@ li [class*=" fa-"].icon-large, li [class*=" glyphicon-"].icon-large, li [class*=
 
 .search-condition {
     margin-top: 10px;
+    margin-left: -15px;
 }
 
 .search-input {
@@ -7241,7 +7241,7 @@ body[ng-controller] .modal {
 }
 
 .portlet {
-    margin-top: 0;
+    margin-top: 10px;
     margin-bottom: 25px;
     padding: 0;
     border-radius: 4px
@@ -7610,7 +7610,7 @@ body[ng-controller] .modal {
 
 .portlet.light > .portlet-title > .caption {
     color: #666;
-    padding: 10px 0
+    padding: 10px 0 0 15px;
 }
 
 .portlet.light > .portlet-title > .caption > .caption-subject {

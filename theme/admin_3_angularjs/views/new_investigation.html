@@ -14,92 +14,92 @@
             </div>
 
             <div class="portlet-body" ng-controller="HighLevelToggle">
-                <div class="col-md-12 col-sm-12 col-xs-12">
-                    <div class="col-md-4 col-sm-12 col-xs-12 searchDatePicker">
-                        <input type="text" id="searchDateRange" class="form-control">
-                        <i class="fa fa-calendar"></i>
-                    </div>
-                    <div class="col-md-2 col-sm-12 col-xs-12" ng-dropdown-multiselect
-                         options="selectByGroupData"
-                         selected-model="selectByGroupModel"
-                         extra-settings="selectByGroupSettings"
-                         group-by="group"
-                         translation-texts="selectByGroupTexts">
-                    </div>
-                    <div class="col-md-1 col-sm-12 col-xs-12" style="margin-right: 15px;">
-                        <button class="btn" style="width:100px; border:1px solid #cccccc;" ng-click="toggle()">高级
-                        </button>
-                    </div>
-                    <div class="col-md-12 col-sm-12 col-xs-12 high-level" ng-show="myHide">
-                        <div class="col-xs-12 condition" ng-controller="NewConditionController">
-                            <div class="col-xs-12 search-condition" ng-repeat="id in conditions">
-                                <div class="col-xs-2">
-                                    <select class="select form-control"
-                                            ng-model="id.value" ng-init="id.value = conditionName[0]"
-                                            ng-options="x for x in conditionName" ng-change="change(id)">
-                                    </select>
-                                </div>
-                                <div class="col-xs-2" ng-show="id.class1">
-                                    <select class="select form-control" ng-model="id.include"
-                                            ng-options="x for x in include" ng-init="id.include = include[0]">
-                                    </select>
-                                </div>
-                                <div class="col-xs-2" ng-show="id.class2">
-                                    <select class="select form-control" ng-model="id.equal"
-                                            ng-options="x for x in equal" ng-init="id.equal = equal[0]">
-                                    </select>
-                                </div>
-                                <div class="col-xs-3" ng-hide="id.class3">
-                                    <input type="text" ng-model="id.input"
-                                           class="search-input form-control ng-pristine ng-valid ng-touched">
-                                </div>
-                                <div class="col-xs-2" ng-show="id.class3">
-                                    <select class="select form-control"
-                                            ng-model="id.father"
-                                            ng-init="id.father"
-                                            ng-change="protocolInit(id)"
-                                            ng-options="x for x in protocolFathers"></select>
-                                </div>
-                                <div class="col-xs-2" ng-show="id.class3">
-                                    <select class="select form-control"
-                                            ng-model="id.child" ng-init="id.child"
-                                            ng-options="y for y in protocolChildren[id.father]">
-                                    </select>
-                                </div>
-                                <button ng-show="closeable" type="button" class="close"
-                                        ng-click="closeCondition($index)">
-                                    <span aria-hidden="true">×</span>
-                                    <span class="sr-only">关闭</span>
-                                </button>
-                            </div>
-                            <div class="col-xs-2">
-                                <button class="add-condition" ng-disabled="maxCondition" ng-click="addCondition()">
-                                    +增加条件
-                                </button>
-                            </div>
 
-                        </div>
-                    </div>
-
-                    <div class="col-md-4 col-sm-12 col-xs-12" ng-hide="myHide">
-                        <button class="btn" ng-click="search()"
-                                style="width: 100px; background-color:#0076e1; color: #ffffff; padding-right: 32px;">
-                            <img src="./icon/search.png" style="margin: 0 4px 1px 0;">搜索
-                        </button>
-                        <button class="btn" style="width:100px; border:1px solid #cccccc">
-                            <img src="./icon/save.png" style="margin: 0 4px 1px 0">保存规则
-                        </button>
-                    </div>
-                    <div class="col-md-6 col-sm-12 col-xs-12" ng-show="myHide">
-                        <button class="btn" ng-click="search()"
-                                style="width: 100px; background-color:#0076e1; color: #ffffff; padding-right: 32px">
-                            <img src="./icon/search.png" style="margin: 0 4px 1px 0;">搜索
-                        </button>
-                        <button class="btn" style="width:100px; border:1px solid #cccccc">
-                            <img src="./icon/save.png" style="margin: 0 4px 1px 0">保存规则
-                        </button>
-                    </div>
+                <div class="col-md-4 col-sm-12 col-xs-12 searchDatePicker">
+                    <input type="text" id="searchDateRange" class="form-control">
+                    <i class="fa fa-calendar"></i>
                 </div>
+                <div class="col-md-2 col-sm-12 col-xs-12" ng-dropdown-multiselect
+                     options="selectByGroupData"
+                     selected-model="selectByGroupModel"
+                     extra-settings="selectByGroupSettings"
+                     group-by="group"
+                     translation-texts="selectByGroupTexts">
+                </div>
+                <div class="col-md-1 col-sm-12 col-xs-12" style="margin-right: 15px;">
+                    <button class="btn" style="width:100px; border:1px solid #cccccc; background-color: #FFFFFF" ng-click="toggle()">高级
+                    </button>
+                </div>
+                <div class="col-md-12 col-sm-12 col-xs-12 high-level" ng-show="myHide" ng-controller="NewConditionController">
+
+                    <div class="col-xs-12 search-condition" ng-repeat="id in conditions">
+                            <div class="col-xs-2">
+                                <select class="select form-control"
+                                        ng-model="id.value" ng-init="id.value = conditionName[0]"
+                                        ng-options="x for x in conditionName" ng-change="change(id)">
+                                </select>
+                            </div>
+                            <div class="col-xs-2" ng-show="id.class1">
+                                <select class="select form-control" ng-model="id.include"
+                                        ng-options="x for x in include" ng-init="id.include = include[0]">
+                                </select>
+                            </div>
+                            <div class="col-xs-2" ng-show="id.class2">
+                                <select class="select form-control" ng-model="id.equal"
+                                        ng-options="x for x in equal" ng-init="id.equal = equal[0]">
+                                </select>
+                            </div>
+                            <div class="col-xs-3" ng-hide="id.class3">
+                                <input type="text" ng-model="id.input"
+                                       class="search-input form-control ng-pristine ng-valid ng-touched">
+                            </div>
+                            <div class="col-xs-2" ng-show="id.class3">
+                                <select class="select form-control"
+                                        ng-model="id.father"
+                                        ng-init="id.father"
+                                        ng-change="protocolInit(id)"
+                                        ng-options="x for x in protocolFathers"></select>
+                            </div>
+                            <div class="col-xs-2" ng-show="id.class3">
+                                <select class="select form-control"
+                                        ng-model="id.child" ng-init="id.child"
+                                        ng-options="y for y in protocolChildren[id.father]">
+                                </select>
+                            </div>
+                            <button ng-show="closeable" type="button" class="close"
+                                    ng-click="closeCondition($index)">
+                                <span aria-hidden="true">×</span>
+                                <span class="sr-only">关闭</span>
+                            </button>
+                        </div>
+                    <div class="col-xs-2">
+                            <button class="add-condition" ng-disabled="maxCondition" ng-click="addCondition()">
+                                +增加条件
+                            </button>
+                        </div>
+
+
+                </div>
+
+                <div class="col-md-4 col-sm-12 col-xs-12" ng-hide="myHide">
+                    <button class="btn" ng-click="search()"
+                            style="width: 100px; background-color:#0076e1; color: #ffffff; padding-right: 32px;">
+                        <img src="./icon/search.png" style="margin: 0 4px 1px 0;">搜索
+                    </button>
+                    <button class="btn" style="width:100px; border:1px solid #cccccc; background-color: #FFFFFF">
+                        <img src="./icon/save.png" style="margin: 0 4px 1px 0">保存规则
+                    </button>
+                </div>
+                <div class="col-md-6 col-sm-12 col-xs-12" ng-show="myHide">
+                    <button class="btn" ng-click="search()"
+                            style="width: 100px; background-color:#0076e1; color: #ffffff; padding-right: 32px">
+                        <img src="./icon/search.png" style="margin: 0 4px 1px 0;">搜索
+                    </button>
+                    <button class="btn" style="width:100px; border:1px solid #cccccc; background-color: #FFFFFF">
+                        <img src="./icon/save.png" style="margin: 0 4px 1px 0">保存规则
+                    </button>
+                </div>
+
                 <div class="row">
                     <div class="col-md-12 col-sm-12 col-xs-12">
                         <div class="portlet light">
@@ -203,7 +203,6 @@
         startTime = start / 1000;
         endTime = Math.ceil(end / 60000) * 60;
         console.log("New date range selected: " + startTime + ' to ' + endTime + ' (predefined range: ' + label + ')');
-        console.log(moment().minute());
     });
 
     function HighLevelToggle($scope) {
@@ -277,52 +276,6 @@
                 $scope.selectByGroupData.push(device)
             }
         }
-//        $scope.selectByGroupData = [
-//            {id: 1, label: "David", gender: 'M'},
-//            {id: 2, label: "Jhon", gender: 'M'},
-//            {id: 3, label: "Lisa", gender: 'F'},
-//            {id: 4, label: "Nicole", gender: 'F'},
-//            {id: 5, label: "Danny1", gender: 'M'},
-//            {id: 6, label: "Danny2", gender: 'M'},
-//            {id: 7, label: "Danny3", gender: 'M'},
-//            {id: 8, label: "Danny4", gender: 'M'},
-//            {id: 9, label: "Danny5", gender: 'M'},
-//            {id: 10, label: "Danny6", gender: 'M'},
-//            {id: 11, label: "Danny7", gender: 'M'},
-//            {id: 12, label: "Danny8", gender: 'M'},
-//            {id: 13, label: "Danny9", gender: 'M'},
-//            {id: 14, label: "Danny10", gender: 'M'},
-//            {id: 15, label: "Danny11", gender: 'M'},
-//            {id: 16, label: "Danny12", gender: 'M'},
-//            {id: 17, label: "Danny13", gender: 'M'},
-//            {id: 18, label: "Danny14", gender: 'M'},
-//            {id: 19, label: "Danny15", gender: 'M'},
-//            {id: 20, label: "Danny16", gender: 'M'},
-//            {id: 21, label: "Danny17", gender: 'M'},
-//            {id: 22, label: "Danny18", gender: 'M'},
-//            {id: 23, label: "Danny19", gender: 'M'},
-//            {id: 24, label: "Danny20", gender: 'M'},
-//            {id: 25, label: "Danny21", gender: 'M'},
-//            {id: 26, label: "Danny22", gender: 'M'},
-//            {id: 27, label: "Danny23", gender: 'M'},
-//            {id: 28, label: "Danny24", gender: 'M'},
-//            {id: 29, label: "Danny25", gender: 'M'},
-//            {id: 30, label: "Danny26", gender: 'M'},
-//            {id: 31, label: "Danny27", gender: 'M'},
-//            {id: 32, label: "Danny28", gender: 'M'},
-//            {id: 33, label: "Danny29", gender: 'M'},
-//            {id: 34, label: "Danny30", gender: 'M'},
-//            {id: 35, label: "Danny31", gender: 'M'},
-//            {id: 36, label: "Danny32", gender: 'M'},
-//            {id: 37, label: "Danny33", gender: 'M'},
-//            {id: 38, label: "Danny34", gender: 'M'},
-//            {id: 39, label: "Danny35", gender: 'M'},
-//            {id: 40, label: "Danny36", gender: 'M'},
-//            {id: 41, label: "Danny37", gender: 'M'},
-//            {id: 42, label: "Danny38", gender: 'M'},
-//            {id: 43, label: "Danny39", gender: 'M'},
-//            {id: 44, label: "Danny40", gender: 'M'},
-//            {id: 45, label: "Unknown", gender: 'O'}];
 
         $scope.selectByGroupSettings = {
             selectByGroups: $scope.groupInfo,
@@ -476,13 +429,13 @@
                                 if (!$scope.filter_condition["ip"]["include"]) {
                                     $scope.filter_condition["ip"]["include"] = [];
                                 }
-                                $scope.filter_condition["ip"]["include"].push($.trim(input_list[d]));
+                                $scope.filter_condition["ip"]["include"].push(ipToNumber($.trim(input_list[d])));
                             }
                             else {
                                 if (!$scope.filter_condition["ip"]["exclude"]) {
                                     $scope.filter_condition["ip"]["exclude"] = [];
                                 }
-                                $scope.filter_condition["ip"]["exclude"].push($.trim(input_list[d]));
+                                $scope.filter_condition["ip"]["exclude"].push(ipToNumber($.trim(input_list[d])));
                             }
                         }
                         break;
@@ -568,7 +521,7 @@
                 2: "进程终止"
             },
             3: {
-                1: "网页",
+                1: "Web",
                 2: "邮件",
                 3: "文件传输",
                 4: "其他应用程序"
@@ -588,8 +541,48 @@
                 4: "注册表查询",
                 5: "注册表设置"
             }
+        };
+
+        var res;
+        if (eventType in data && subType in data[eventType]) {
+            res = data[eventType][subType];
         }
-        var result = data[eventType][subType];
+        else {
+            res = "unknown";
+        }
+        return res;
+    };
+
+    var ipToNumber = function (ip) {
+        var num = 0;
+        if(ip == "") {
+            return num;
+        }
+        var aNum = ip.split(".");
+        if(aNum.length != 4) {
+            return num;
+        }
+        num += parseInt(aNum[0]) << 24;
+        num += parseInt(aNum[1]) << 16;
+        num += parseInt(aNum[2]) << 8;
+        num += parseInt(aNum[3]) << 0;
+        num = num >>> 0;//这个很关键，不然可能会出现负数的情况
+        return num;
+    };
+
+    var numberToIp = function (number) {
+        var ip = "";
+        if(number <= 0) {
+            return ip;
+        }
+        var ip3 = (number << 0 ) >>> 24;
+        var ip2 = (number << 8 ) >>> 24;
+        var ip1 = (number << 16) >>> 24;
+        var ip0 = (number << 24) >>> 24
+
+        ip += ip3 + "." + ip2 + "." + ip1 + "." + ip0;
+
+        return ip;
     };
 
     var highlightInclude = function (str, keyword, key) {
@@ -632,8 +625,17 @@
 
     var highlightStr = function (str, condition) {
         //TODO: pid & ip 等于，not 包含！
-        var keyValue = str.split('=');
+        var keyValue = [];
+        var index = str.indexOf('=');
+        keyValue.push(str.slice(0,index));
+        keyValue.push(str.slice(index+1));
         var result = keyValue[1];
+        if (keyValue[0] == "source_ip" || keyValue[0] == "dest_ip") {
+            result = numberToIp(keyValue[1]);
+        }
+        if (keyValue[0] == "time") {
+            result = timeStamp2String(keyValue[1]);
+        }
         for (var i = 0; i < condition.length; i++) {
             if (condition[i].input == "") {
                 result = keyValue[1];
@@ -659,6 +661,7 @@
                             break;
                         case "IP地址":
                             if (keyValue[0] == "source_ip" || keyValue[0] == "dest_ip") {
+                                result = numberToIp(result);
                                 result = highlightEqual(result, keyword, key = "ip");
                             }
                             break;
@@ -701,17 +704,37 @@
         return '<tr>' + '<td>' + obj + '</td>' + '</tr>';
     };
 
+    Date.prototype.format = function(fmt) {
+        var o = {
+            "M+" : this.getMonth()+1,                 //月份
+            "d+" : this.getDate(),                    //日
+            "h+" : this.getHours(),                   //小时
+            "m+" : this.getMinutes(),                 //分
+            "s+" : this.getSeconds(),                 //秒
+            "q+" : Math.floor((this.getMonth()+3)/3), //季度
+            "S"  : this.getMilliseconds()             //毫秒
+        };
+        if(/(y+)/.test(fmt)) {
+            fmt=fmt.replace(RegExp.$1, (this.getFullYear()+"").substr(4 - RegExp.$1.length));
+        }
+        for(var k in o) {
+            if(new RegExp("("+ k +")").test(fmt)){
+                fmt = fmt.replace(RegExp.$1, (RegExp.$1.length==1) ? (o[k]) : (("00"+ o[k]).substr((""+ o[k]).length)));
+            }
+        }
+        return fmt;
+    };
+
     var timeStamp2String = function (time) {
+        if (time.length != 10 && time.length != 13) {
+            return time;
+        }
+        if (time.length == 10) {
+            time = time * 1000;
+        }
         var datetime = new Date();
         datetime.setTime(time);
-        var year = datetime.getFullYear();
-        var month = datetime.getMonth() + 1;
-        var date = datetime.getDate();
-        var hour = datetime.getHours();
-        var minute = datetime.getMinutes();
-        var second = datetime.getSeconds();
-        var mseconds = datetime.getMilliseconds();
-        return year + "-" + month + "-" + date + " " + hour + ":" + minute + ":" + second;
+        return datetime.format("yyyy-MM-dd hh:mm:ss");
     };
 
     var SearchResultCtrl = function (device, filter_condition, search_condition) {
@@ -725,6 +748,11 @@
             }
         }
 
+        if (dtable != null) {
+            dtable.fnClearTable();
+            dtable.fnDestroy();
+            $("tbody").remove();
+        }
         var postJson = {
             "begin_time": startTime,
             "end_time": endTime,
@@ -743,7 +771,7 @@
         $.ajax({
             type: "POST",
             dataType: "json",
-            url: 'http://127.0.0.1:6022/logquery',
+            url: 'http://10.21.140.111:6022/logquery',
             data: JSON.stringify(postJson),
             success: function (data) {
                 var results = [];
@@ -764,7 +792,7 @@
                                 processUsername: getValue(list[2]),
                                 processId: getValue(list[3]),
                                 processPath: getValue(list[4]),
-                                eventType: getEventType(list[12], list[5]),
+                                eventType: getEventType(getValue(list[12]), getValue(list[5])),
                                 content: formatData(list.slice(13), search_condition)
                             })
                         }
@@ -797,7 +825,7 @@
                         info: "显示 _TOTAL_ 条目中的第 _START_ 至 _END_ 条",
                         infoEmpty: "没有匹配的条目",
                         infoFiltered: "(过滤出 filtered1 条目，总计 _MAX_ 条目)",
-                        lengthMenu: "_MENU_ 项",
+                        lengthMenu: "每页 _MENU_ 条",
                         search: "搜索:",
                         zeroRecords: "无匹配的数据可显示",
                         paginate: {
@@ -809,16 +837,10 @@
                     },
                     lengthMenu: [
                         [20, 50, 100],
-                        ["20条", "50条", "100条"] // change per page values here
+                        ["20", "50", "100"] // change per page values here
                     ],
-                    "dom": "<'row' <'col-md-12'B>><'row'<'col-md-2 col-sm-12'l><'col-md-3 col-sm-12'f><'col-md-7 col-sm-12'p>r><t><'row'<'col-md-4 col-sm-12'i><'col-md-8 col-sm-12'p>>"
+                    "dom": "<'row'<'col-md-12'B>><'row'<'col-md-3 col-sm-12'f><'col-md-2 col-sm-12'l><'col-md-7 col-sm-12'p>r><t><'row'<'col-md-4 col-sm-12'i><'col-md-8 col-sm-12'p>>"
                 };
-
-                if (dtable != null) {
-                    dtable.fnClearTable();
-                    dtable.fnDestroy();
-                    $("tbody").remove();
-                }
 
                 dtable = $('#search-result').dataTable(config);
                 $("tbody").on('click', 'td.details-control', function () {
@@ -835,7 +857,7 @@
                     }
                 });
 
-                if (dtable == null) {
+                if (dtable == null || results == []) {
                     $('#exportResult').hide();
                 }
                 else {
@@ -843,96 +865,6 @@
                 }
             }
         });
-
-//        $.getJSON('./views/data1.js', function (data) {
-//            var results = [];
-//            for (var k = 0; k < data.data.length; k++) {
-//                var rows = data.data[k];
-//                for (var i = 0; i < rows.rows.length; i++) {
-//                    var list = rows.rows[i].split('\t');
-//                    results.push({
-//                        timestamp: timeStamp2String(getValue(list[0])),
-//                        deviceName: getValue(list[1]),
-//                        processUsername: getValue(list[2]),
-//                        processId: getValue(list[3]),
-//                        processPath: getValue(list[4]),
-//                        eventType: getValue(list[5]),
-//                        content: formatData(list.slice(12), search_condition)
-//                    })
-//                }
-//            }
-//
-//            var config = {
-//                data: results,
-//                columns: [
-//                    {
-//                        "class": 'details-control',
-//                        "orderable": false,
-//                        "data": null,
-//                        "defaultContent": ''
-//                    },
-//                    {data: "timestamp"},
-//                    {data: "deviceName"},
-//                    {data: "processUsername"},
-//                    {data: "processId"},
-//                    {data: "processPath"},
-//                    {data: "eventType"}],
-//                order: [],
-//                sPaginationType: "full_numbers",
-//                language: {
-//                    aria: {
-//                        sortAscending: ": activate to sort column ascending",
-//                        sortDescending: ": activate to sort column descending"
-//                    },
-//                    emptyTable: "无匹配的数据可显示",
-//                    info: "显示 _TOTAL_ 条目中的第 _START_ 至 _END_ 条",
-//                    infoEmpty: "没有匹配的条目",
-//                    infoFiltered: "(过滤出 filtered1 条目，总计 _MAX_ 条目)",
-//                    lengthMenu: "_MENU_ 项",
-//                    search: "搜索:",
-//                    zeroRecords: "无匹配的数据可显示",
-//                    paginate:{
-//                        last: "末页",
-//                        next: "下一页",
-//                        previous: "上一页",
-//                        first: "首页"
-//                    }
-//                },
-//                lengthMenu: [
-//                    [20, 50, 100],
-//                    ["20条", "50条", "100条"] // change per page values here
-//                ],
-//                "dom": "<'row' <'col-md-12'B>><'row'<'col-md-2 col-sm-12'l><'col-md-3 col-sm-12'f><'col-md-7 col-sm-12'p>r><t><'row'<'col-md-4 col-sm-12'i><'col-md-8 col-sm-12'p>>"
-//            };
-//
-//            if (dtable != null) {
-//                dtable.fnClearTable();
-//                dtable.fnDestroy();
-//                $("tbody").remove();
-//            }
-//
-//            dtable = $('#search-result').dataTable(config);
-//            $("tbody").on('click', 'td.details-control', function () {
-//                var tr = $(this).closest('tr');
-//                var row = dtable.api().row(tr);
-//                if (row.child.isShown()) {
-//                    // This row is already open - close it
-//                    row.child.hide();
-//                    tr.removeClass('shown');
-//                }
-//                else {
-//                    row.child(format((row.data().content))).show();
-//                    tr.addClass('shown');
-//                }
-//            });
-//
-//            if (dtable == null) {
-//                $('#exportResult').hide();
-//            }
-//            else {
-//                $('#exportResult').show();
-//            }
-//        })
     };
 
     function NewConditionController($scope) {

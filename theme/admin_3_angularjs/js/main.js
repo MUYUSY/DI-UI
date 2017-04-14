@@ -263,19 +263,19 @@ MetronicApp.config(['$stateProvider', '$urlRouterProvider', function($stateProvi
                             './assets/global/plugins/select2/css/select2.min.css',
                             './assets/global/plugins/select2/css/select2-bootstrap.min.css',
 
+                            './assets/global/plugins/clockface/js/clockface.js',
                             './assets/global/plugins/bootstrap-daterangepicker/moment.min.js',
                             './assets/global/plugins/moment.min.js',
-                            './assets/global/plugins/clockface/js/clockface.js',
-                            './assets/global/plugins/bootstrap-daterangepicker/daterangepicker.js',
                             './assets/global/plugins/bootstrap-select/js/bootstrap-select.min.js',
                             './assets/global/plugins/select2/js/select2.full.min.js',
                             './assets/pages/scripts/components-bootstrap-select.min.js',
                             './assets/pages/scripts/components-select2.min.js',
                             './assets/global/plugins/jstree/dist/jstree.min.js',
                             './assets/pages/scripts/ui-tree.min.js',
-                            "./assets/global/scripts/datatable.js",
+                            './assets/global/scripts/datatable.js',
                             './assets/global/plugins/datatables/datatables.all.js',
-                            "./assets/global/plugins/datatables/plugins/bootstrap/datatables.bootstrap.js",
+                            './assets/global/plugins/datatables/plugins/bootstrap/datatables.bootstrap.js',
+                            './assets/global/plugins/bootstrap-daterangepicker/daterangepicker.js',
 
                             'js/controllers/GeneralPageController.js'
 
