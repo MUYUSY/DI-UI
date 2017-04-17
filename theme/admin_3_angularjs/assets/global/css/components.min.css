@@ -1752,6 +1752,21 @@ li [class*=" fa-"].icon-large, li [class*=" glyphicon-"].icon-large, li [class*=
     border-radius: 0 !important
 }
 
+.time-selected {
+    font-size: 14px;
+    color:#999999;
+    margin-left: 20px;
+}
+
+.date-range {
+    text-align: left;
+}
+
+.date-range-caret{
+    float: right;
+    margin-top: 9px;
+}
+
 .searchDatePicker { position: relative; }
 
 .searchDatePicker i {
@@ -1760,6 +1775,10 @@ li [class*=" fa-"].icon-large, li [class*=" glyphicon-"].icon-large, li [class*=
     right: 24px;
     top: auto;
     cursor: pointer;
+}
+
+.multi-dropdown {
+    margin-left: -15px;
 }
 
 .high-level {

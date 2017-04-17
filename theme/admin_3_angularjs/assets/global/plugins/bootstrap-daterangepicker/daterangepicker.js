@@ -1202,6 +1202,7 @@
 
         clickRange: function(e) {
             var label = e.target.getAttribute('data-range-key');
+            $('#searchDateRange').html(label);
             this.chosenLabel = label;
             if (label == this.locale.customRangeLabel) {
                 this.showCalendars();

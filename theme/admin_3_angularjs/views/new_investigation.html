@@ -6,27 +6,27 @@
             <div class="portlet-title">
                 <div class="caption font-dark">
                     <span class="caption-subject bold uppercase">新建调查</span>
-                </div>
-                <div class="tools">
-                    <a href="" class="collapse"> </a>
-                    <a href="" class="fullscreen"> </a>
+                    <span id="time-selected" class="time-selected"></span>
                 </div>
             </div>
 
             <div class="portlet-body" ng-controller="HighLevelToggle">
 
-                <div class="col-md-4 col-sm-12 col-xs-12 searchDatePicker">
-                    <input type="text" id="searchDateRange" class="form-control">
-                    <i class="fa fa-calendar"></i>
+                <div class="col-md-2 col-sm-6 col-xs-12 searchDatePicker">
+                    <button id="searchDateRange" class="form-control date-range btn-default">选择时间...<span class="caret date-range-caret"></span></button>
+
                 </div>
-                <div class="col-md-2 col-sm-12 col-xs-12" ng-dropdown-multiselect
-                     options="selectByGroupData"
-                     selected-model="selectByGroupModel"
-                     extra-settings="selectByGroupSettings"
-                     group-by="group"
-                     translation-texts="selectByGroupTexts">
+                <div class="col-md-2 col-sm-6 col-xs-12">
+                     <div class="multi-dropdown"
+                         ng-dropdown-multiselect
+                         options="selectByGroupData"
+                         selected-model="selectByGroupModel"
+                         extra-settings="selectByGroupSettings"
+                         group-by="group"
+                         translation-texts="selectByGroupTexts">
+                     </div>
                 </div>
-                <div class="col-md-1 col-sm-12 col-xs-12" style="margin-right: 15px;">
+                <div class="col-md-1 col-sm-6 col-xs-12" style="margin-right: 22px;">
                     <button class="btn" style="width:100px; border:1px solid #cccccc; background-color: #FFFFFF" ng-click="toggle()">高级
                     </button>
                 </div>
@@ -81,16 +81,16 @@
 
                 </div>
 
-                <div class="col-md-4 col-sm-12 col-xs-12" ng-hide="myHide">
+                <div class="col-md-4 col-sm-6 col-xs-12" ng-hide="myHide">
                     <button class="btn" ng-click="search()"
-                            style="width: 100px; background-color:#0076e1; color: #ffffff; padding-right: 32px;">
+                            style="width: 121px; background-color:#0076e1; color: #ffffff; padding-right: 32px; margin-right: 10px">
                         <img src="./icon/search.png" style="margin: 0 4px 1px 0;">搜索
                     </button>
-                    <button class="btn" style="width:100px; border:1px solid #cccccc; background-color: #FFFFFF">
+                    <button class="btn" style="width:121px; border:1px solid #cccccc; background-color: #FFFFFF">
                         <img src="./icon/save.png" style="margin: 0 4px 1px 0">保存规则
                     </button>
                 </div>
-                <div class="col-md-6 col-sm-12 col-xs-12" ng-show="myHide">
+                <div class="col-md-6 col-sm-6 col-xs-12" ng-show="myHide">
                     <button class="btn" ng-click="search()"
                             style="width: 100px; background-color:#0076e1; color: #ffffff; padding-right: 32px">
                         <img src="./icon/search.png" style="margin: 0 4px 1px 0;">搜索
@@ -143,6 +143,44 @@
     var startTime = moment().startOf('day').format('X');
     var endTime = moment().format('X');
 
+    Date.prototype.format = function(fmt) {
+        var o = {
+            "M+" : this.getMonth()+1,                 //月份
+            "d+" : this.getDate(),                    //日
+            "h+" : this.getHours(),                   //小时
+            "m+" : this.getMinutes(),                 //分
+            "s+" : this.getSeconds(),                 //秒
+            "q+" : Math.floor((this.getMonth()+3)/3), //季度
+            "S"  : this.getMilliseconds()             //毫秒
+        };
+        if(/(y+)/.test(fmt)) {
+            fmt=fmt.replace(RegExp.$1, (this.getFullYear()+"").substr(4 - RegExp.$1.length));
+        }
+        for(var k in o) {
+            if(new RegExp("("+ k +")").test(fmt)){
+                fmt = fmt.replace(RegExp.$1, (RegExp.$1.length==1) ? (o[k]) : (("00"+ o[k]).substr((""+ o[k]).length)));
+            }
+        }
+        return fmt;
+    };
+
+    var timeStamp2String = function (time, format) {
+        if (typeof(time) == "number") {
+            time = time.toString();
+        }
+        if (time.length != 10 && time.length != 13) {
+            return time;
+        }
+        if (time.length == 10) {
+            time = time * 1000;
+        }
+        var datetime = new Date();
+        datetime.setTime(time);
+        return datetime.format(format);
+    };
+
+    $("#time-selected").html(timeStamp2String(startTime, "yyyy-MM-dd hh:mm") + ' 至 ' + timeStamp2String(endTime, "yyyy-MM-dd hh:mm"));
+
     $('#exportResult').hide();
 
     $('.searchDatePicker i').click(function () {
@@ -194,15 +232,11 @@
                 "十二月"
             ],
             "firstDay": 1
-        },
-        "startDate": moment().startOf('day'),
-        "endDate": moment()
+        }
     }, function (start, end, label) {
-//        var utcOffset = Date.parse('1970-01-01 00:00:00');
-//        console.log(utcOffset);
         startTime = start / 1000;
         endTime = Math.ceil(end / 60000) * 60;
-        console.log("New date range selected: " + startTime + ' to ' + endTime + ' (predefined range: ' + label + ')');
+        $("#time-selected").html(timeStamp2String(startTime, "yyyy-MM-dd hh:mm") + ' 至 ' + timeStamp2String(endTime, "yyyy-MM-dd hh:mm"));
     });
 
     function HighLevelToggle($scope) {
@@ -634,7 +668,7 @@
             result = numberToIp(keyValue[1]);
         }
         if (keyValue[0] == "time") {
-            result = timeStamp2String(keyValue[1]);
+            result = timeStamp2String(keyValue[1], "yyyy-MM-dd hh:mm:ss");
         }
         for (var i = 0; i < condition.length; i++) {
             if (condition[i].input == "") {
@@ -704,39 +738,6 @@
         return '<tr>' + '<td>' + obj + '</td>' + '</tr>';
     };
 
-    Date.prototype.format = function(fmt) {
-        var o = {
-            "M+" : this.getMonth()+1,                 //月份
-            "d+" : this.getDate(),                    //日
-            "h+" : this.getHours(),                   //小时
-            "m+" : this.getMinutes(),                 //分
-            "s+" : this.getSeconds(),                 //秒
-            "q+" : Math.floor((this.getMonth()+3)/3), //季度
-            "S"  : this.getMilliseconds()             //毫秒
-        };
-        if(/(y+)/.test(fmt)) {
-            fmt=fmt.replace(RegExp.$1, (this.getFullYear()+"").substr(4 - RegExp.$1.length));
-        }
-        for(var k in o) {
-            if(new RegExp("("+ k +")").test(fmt)){
-                fmt = fmt.replace(RegExp.$1, (RegExp.$1.length==1) ? (o[k]) : (("00"+ o[k]).substr((""+ o[k]).length)));
-            }
-        }
-        return fmt;
-    };
-
-    var timeStamp2String = function (time) {
-        if (time.length != 10 && time.length != 13) {
-            return time;
-        }
-        if (time.length == 10) {
-            time = time * 1000;
-        }
-        var datetime = new Date();
-        datetime.setTime(time);
-        return datetime.format("yyyy-MM-dd hh:mm:ss");
-    };
-
     var SearchResultCtrl = function (device, filter_condition, search_condition) {
         if (device.length == 0) {
             var device_id = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44, 45];
@@ -787,7 +788,7 @@
                             }
                             var list = rows.rows[i].split('\t');
                             results.push({
-                                timestamp: timeStamp2String(getValue(list[0])),
+                                timestamp: timeStamp2String(getValue(list[0]), "yyyy-MM-dd hh:mm:ss"),
                                 deviceName: getValue(list[1]),
                                 processUsername: getValue(list[2]),
                                 processId: getValue(list[3]),
@@ -814,7 +815,7 @@
                         {data: "processId"},
                         {data: "processPath"},
                         {data: "eventType"}],
-                    order: [],
+                    order: [[1, "asc"]],
                     sPaginationType: "full_numbers",
                     language: {
                         aria: {
@@ -826,20 +827,20 @@
                         infoEmpty: "没有匹配的条目",
                         infoFiltered: "(过滤出 filtered1 条目，总计 _MAX_ 条目)",
                         lengthMenu: "每页 _MENU_ 条",
-                        search: "搜索:",
+                        search: "过滤:",
                         zeroRecords: "无匹配的数据可显示",
                         paginate: {
-                            last: "末页",
-                            next: "下一页",
-                            previous: "上一页",
-                            first: "首页"
+                            last: ">>",
+                            next: ">",
+                            previous: "<",
+                            first: "<<"
                         }
                     },
                     lengthMenu: [
                         [20, 50, 100],
                         ["20", "50", "100"] // change per page values here
                     ],
-                    "dom": "<'row'<'col-md-12'B>><'row'<'col-md-3 col-sm-12'f><'col-md-2 col-sm-12'l><'col-md-7 col-sm-12'p>r><t><'row'<'col-md-4 col-sm-12'i><'col-md-8 col-sm-12'p>>"
+                    "dom": "<'row'<'col-md-12'B>><'row'<'col-md-3 col-sm-12'<'pull-left'f>><'col-md-9 col-sm-12'p>r><t><'row'<'col-md-2 col-sm-12'l><'col-md-2 col-sm-12'i><'col-md-8 col-sm-12'p>>"
                 };
 
                 dtable = $('#search-result').dataTable(config);
@@ -857,7 +858,7 @@
                     }
                 });
 
-                if (dtable == null || results == []) {
+                if (dtable == null || data.data == "") {
                     $('#exportResult').hide();
                 }
                 else {

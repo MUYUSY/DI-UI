@@ -2839,7 +2839,7 @@ legend {
 label {
     display: inline-block;
     max-width: 100%;
-    margin-bottom: 5px
+    /*margin-bottom: 5px*/
 }
 
 input[type=search] {
@@ -4777,8 +4777,7 @@ tbody.collapse.in {
 
 .pagination > li > a, .pagination > li > span {
     position: relative;
-    float: left;
-    padding: 6px 12px;
+    padding: 4px 8px;
     line-height: 1.42857;
     text-decoration: none;
     color: #337ab7;
