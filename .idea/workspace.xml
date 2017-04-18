@@ -2,12 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="a672439e-4cd3-4004-919f-310f18dd76c3" name="Default" comment="">
+      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/theme/admin_3_angularjs/views/investigation_record.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/theme/admin_3_angularjs/assets/global/css/components.css" afterPath="$PROJECT_DIR$/theme/admin_3_angularjs/assets/global/css/components.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/theme/admin_3_angularjs/assets/global/css/components.min.css" afterPath="$PROJECT_DIR$/theme/admin_3_angularjs/assets/global/css/components.min.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/theme/admin_3_angularjs/assets/global/plugins/angularjs/plugins/angularjs-dropdown-multiselect/src/angularjs-dropdown-multiselect.js" afterPath="$PROJECT_DIR$/theme/admin_3_angularjs/assets/global/plugins/angularjs/plugins/angularjs-dropdown-multiselect/src/angularjs-dropdown-multiselect.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/theme/admin_3_angularjs/assets/global/plugins/bootstrap-daterangepicker/daterangepicker.js" afterPath="$PROJECT_DIR$/theme/admin_3_angularjs/assets/global/plugins/bootstrap-daterangepicker/daterangepicker.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/theme/admin_3_angularjs/assets/global/plugins/bootstrap/css/bootstrap.min.css" afterPath="$PROJECT_DIR$/theme/admin_3_angularjs/assets/global/plugins/bootstrap/css/bootstrap.min.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/theme/admin_3_angularjs/assets/global/plugins/datatables/plugins/bootstrap/datatables.bootstrap.css" afterPath="$PROJECT_DIR$/theme/admin_3_angularjs/assets/global/plugins/datatables/plugins/bootstrap/datatables.bootstrap.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/theme/admin_3_angularjs/js/main.js" afterPath="$PROJECT_DIR$/theme/admin_3_angularjs/js/main.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/theme/admin_3_angularjs/tpl/header.html" afterPath="$PROJECT_DIR$/theme/admin_3_angularjs/tpl/header.html" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/theme/admin_3_angularjs/views/new_investigation.html" afterPath="$PROJECT_DIR$/theme/admin_3_angularjs/views/new_investigation.html" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -26,9 +26,11 @@
       <file leaf-file-name="main.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/theme/admin_3_angularjs/js/main.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="2" column="4" lean-forward="true" selection-start-line="2" selection-start-column="4" selection-end-line="2" selection-end-column="4" />
-              <folding />
+            <state relative-caret-position="255">
+              <caret line="297" column="32" lean-forward="false" selection-start-line="297" selection-start-column="32" selection-end-line="297" selection-end-column="32" />
+              <folding>
+                <element signature="e#8759#11182#0" expanded="false" />
+              </folding>
             </state>
           </provider>
         </entry>
@@ -36,18 +38,28 @@
       <file leaf-file-name="angularjs-dropdown-multiselect.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/theme/admin_3_angularjs/assets/global/plugins/angularjs/plugins/angularjs-dropdown-multiselect/src/angularjs-dropdown-multiselect.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-5453">
-              <caret line="180" column="18" lean-forward="false" selection-start-line="180" selection-start-column="18" selection-end-line="180" selection-end-column="18" />
+            <state relative-caret-position="288">
+              <caret line="46" column="496" lean-forward="false" selection-start-line="46" selection-start-column="496" selection-end-line="46" selection-end-column="496" />
               <folding>
-                <element signature="e#9614#9752#0" expanded="false" />
-                <element signature="e#9790#10386#0" expanded="false" />
-                <element signature="e#10435#10588#0" expanded="false" />
-                <element signature="e#10619#11074#0" expanded="false" />
-                <element signature="e#11113#13374#0" expanded="false" />
-                <element signature="e#14787#15069#0" expanded="false" />
-                <element signature="e#16034#16097#0" expanded="false" />
-                <marker date="1490867664192" expanded="true" signature="1148:1154" ph=" " />
+                <element signature="e#9772#9910#0" expanded="false" />
+                <element signature="e#9948#10544#0" expanded="false" />
+                <element signature="e#10593#10746#0" expanded="false" />
+                <element signature="e#10777#11232#0" expanded="false" />
+                <element signature="e#11271#13532#0" expanded="false" />
+                <element signature="e#14945#15227#0" expanded="false" />
+                <element signature="e#16192#16255#0" expanded="false" />
+                <marker date="1492483815088" expanded="true" signature="1148:1154" ph=" " />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="header.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/theme/admin_3_angularjs/tpl/header.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="180">
+              <caret line="34" column="59" lean-forward="false" selection-start-line="34" selection-start-column="39" selection-end-line="34" selection-end-column="59" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -55,8 +67,8 @@
       <file leaf-file-name="new_investigation.html" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/theme/admin_3_angularjs/views/new_investigation.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="178">
-              <caret line="318" column="34" lean-forward="false" selection-start-line="318" selection-start-column="32" selection-end-line="318" selection-end-column="34" />
+            <state relative-caret-position="216">
+              <caret line="12" column="37" lean-forward="false" selection-start-line="12" selection-start-column="12" selection-end-line="12" selection-end-column="37" />
               <folding>
                 <element signature="n#style#0;n#div#2;n#div#1;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#button#0;n#div#2;n#div#1;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
@@ -71,29 +83,24 @@
                 <element signature="n#style#0;n#img#0;n#button#0;n#div#5;n#div#1;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#button#1;n#div#5;n#div#1;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#img#0;n#button#1;n#div#5;n#div#1;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
-                <element signature="n#div#6;n#div#1;n#div#0;n#div#0;n#div#0;n#!!top" expanded="false" />
-                <element signature="e#7847#8670#0" expanded="false" />
-                <element signature="e#9407#10762#0" expanded="false" />
-                <element signature="e#14244#15137#0" expanded="false" />
-                <element signature="e#15244#24147#0" expanded="false" />
-                <element signature="e#24342#24384#0" expanded="false" />
-                <element signature="e#24440#25547#0" expanded="false" />
-                <element signature="e#24457#25331#0" expanded="false" />
-                <element signature="e#25585#25992#0" expanded="false" />
-                <element signature="e#26034#26360#0" expanded="false" />
-                <element signature="e#26419#26952#0" expanded="false" />
-                <element signature="e#27009#27542#0" expanded="false" />
-                <element signature="e#27594#30405#0" expanded="false" />
-                <element signature="e#30456#30798#0" expanded="false" />
-                <element signature="e#30833#30898#0" expanded="false" />
-                <element signature="e#30982#36262#0" expanded="false" />
-                <element signature="e#31016#31228#0" expanded="false" />
-                <element signature="e#31242#31398#0" expanded="false" />
-                <element signature="e#31428#31539#0" expanded="false" />
-                <element signature="e#31563#31970#0" expanded="false" />
-                <element signature="e#33411#35364#0" expanded="false" />
-                <element signature="e#35504#36017#0" expanded="false" />
-                <element signature="e#36309#38346#0" expanded="false" />
+                <element signature="e#7884#8707#0" expanded="false" />
+                <element signature="e#9444#10799#0" expanded="false" />
+                <element signature="e#14281#15174#0" expanded="false" />
+                <element signature="e#24526#25633#0" expanded="false" />
+                <element signature="e#24543#25417#0" expanded="false" />
+                <element signature="e#25671#26078#0" expanded="false" />
+                <element signature="e#26120#26446#0" expanded="false" />
+                <element signature="e#27111#27644#0" expanded="false" />
+                <element signature="e#30558#30900#0" expanded="false" />
+                <element signature="e#30935#31000#0" expanded="false" />
+                <element signature="e#31084#36375#0" expanded="false" />
+                <element signature="e#31118#31330#0" expanded="false" />
+                <element signature="e#31344#31500#0" expanded="false" />
+                <element signature="e#31530#31641#0" expanded="false" />
+                <element signature="e#31665#32083#0" expanded="false" />
+                <element signature="e#33524#35477#0" expanded="false" />
+                <element signature="e#35617#36130#0" expanded="false" />
+                <element signature="e#36422#38459#0" expanded="false" />
               </folding>
             </state>
           </provider>
@@ -102,28 +109,8 @@
       <file leaf-file-name="bootstrap.min.css" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/theme/admin_3_angularjs/assets/global/plugins/bootstrap/css/bootstrap.min.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="169">
+            <state relative-caret-position="-1181">
               <caret line="3355" column="138" lean-forward="false" selection-start-line="3355" selection-start-column="109" selection-end-line="3355" selection-end-column="138" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="header.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/theme/admin_3_angularjs/tpl/header.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="234">
-              <caret line="28" column="78" lean-forward="true" selection-start-line="28" selection-start-column="51" selection-end-line="28" selection-end-column="78" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="daterangepicker.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/theme/admin_3_angularjs/assets/global/plugins/bootstrap-daterangepicker/daterangepicker.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="169">
-              <caret line="1204" column="31" lean-forward="false" selection-start-line="1204" selection-start-column="31" selection-end-line="1204" selection-end-column="31" />
               <folding />
             </state>
           </provider>
@@ -171,15 +158,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>search</find>
-      <find>search(</find>
-      <find>ip</find>
-      <find>filter_con</find>
-      <find>aj</find>
-      <find>consol</find>
-      <find>timeS</find>
-      <find>至</find>
-      <find>1:</find>
       <find>conf</find>
       <find>div.dataTables_wrapper div.dataTables_length label</find>
       <find>filter</find>
@@ -196,11 +174,20 @@
       <find>high</find>
       <find>新建</find>
       <find>.caret</find>
-      <find>.btn-default.dropdown-toggle</find>
       <find>high-</find>
       <find>console.log</find>
-      <find>angularjs-dropdown-multiselect</find>
       <find>data-range-key</find>
+      <find>search</find>
+      <find>UTC</find>
+      <find>searchResult</find>
+      <find>abc</find>
+      <find>.btn-default.dropdown-toggle</find>
+      <find>filter_condition</find>
+      <find>cons</find>
+      <find>group-by</find>
+      <find>getPropertyForObject</find>
+      <find>group</find>
+      <find>angularjs-dropdown-multiselect</find>
     </findStrings>
     <dirStrings>
       <dir>D:\code\DI\DI-UI\_resources</dir>
@@ -234,7 +221,6 @@
         <option value="$PROJECT_DIR$/theme/admin_3_angularjs/assets/global/plugins/angularjs/angular.min.js" />
         <option value="$PROJECT_DIR$/theme/admin_3_angularjs/assets/pages/scripts/table-datatables-responsive.js" />
         <option value="$PROJECT_DIR$/theme/admin_3_angularjs/assets/global/plugins/angularjs/plugins/angularjs-dropdown-multiselect-master/src/app/main/main.controller.js" />
-        <option value="$PROJECT_DIR$/theme/admin_3_angularjs/assets/global/plugins/angularjs/plugins/angularjs-dropdown-multiselect/src/angularjs-dropdown-multiselect.js" />
         <option value="$PROJECT_DIR$/theme/admin_3_angularjs/tpl/footer.html" />
         <option value="$PROJECT_DIR$/theme/admin_3_angularjs/assets/layouts/layout3/css/themes/default.css" />
         <option value="$PROJECT_DIR$/theme/admin_3_angularjs/assets/layouts/layout3/css/themes/default.min.css" />
@@ -244,20 +230,22 @@
         <option value="$PROJECT_DIR$/theme/admin_3_angularjs/assets/pages/css/login-4.min.css" />
         <option value="$PROJECT_DIR$/theme/admin_3_angularjs/views/page_user_login_4.html" />
         <option value="$PROJECT_DIR$/theme/admin_3_angularjs/assets/pages/scripts/login-4.js" />
-        <option value="$PROJECT_DIR$/theme/admin_3_angularjs/tpl/header.html" />
         <option value="$PROJECT_DIR$/theme/admin_3_angularjs/js/NewInvestigation.js" />
         <option value="$PROJECT_DIR$/theme/admin_3_angularjs/index.html" />
         <option value="$PROJECT_DIR$/theme/admin_3_angularjs/assets/global/plugins/datatables/datatables.css" />
         <option value="$PROJECT_DIR$/theme/admin_3_angularjs/assets/global/plugins/datatables/datatables.min.css" />
-        <option value="$PROJECT_DIR$/theme/admin_3_angularjs/js/main.js" />
         <option value="$PROJECT_DIR$/theme/admin_3_angularjs/views/data1.js" />
         <option value="$PROJECT_DIR$/test.html" />
         <option value="$PROJECT_DIR$/theme/admin_3_angularjs/assets/global/plugins/datatables/plugins/bootstrap/dataTables.bootstrap.css" />
-        <option value="$PROJECT_DIR$/theme/admin_3_angularjs/assets/global/plugins/bootstrap-daterangepicker/daterangepicker.js" />
         <option value="$PROJECT_DIR$/theme/admin_3_angularjs/assets/global/plugins/bootstrap/css/bootstrap.min.css" />
         <option value="$PROJECT_DIR$/theme/admin_3_angularjs/assets/global/css/components.css" />
         <option value="$PROJECT_DIR$/theme/admin_3_angularjs/assets/global/css/components.min.css" />
+        <option value="$PROJECT_DIR$/theme/admin_3_angularjs/tpl/header.html" />
+        <option value="$PROJECT_DIR$/theme/admin_3_angularjs/assets/global/plugins/bootstrap-daterangepicker/daterangepicker.js" />
         <option value="$PROJECT_DIR$/theme/admin_3_angularjs/views/new_investigation.html" />
+        <option value="$PROJECT_DIR$/theme/admin_3_angularjs/assets/global/plugins/angularjs/plugins/angularjs-dropdown-multiselect/src/angularjs-dropdown-multiselect.js" />
+        <option value="$PROJECT_DIR$/theme/admin_3_angularjs/js/main.js" />
+        <option value="$PROJECT_DIR$/theme/admin_3_angularjs/views/investigation_record.html" />
       </list>
     </option>
   </component>
@@ -494,12 +482,12 @@
       <workItem from="1491355857382" duration="5436000" />
       <workItem from="1491372300104" duration="79323000" />
       <workItem from="1492048168060" duration="28797000" />
-      <workItem from="1492393055674" duration="15137000" />
+      <workItem from="1492393055674" duration="22662000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="298826000" />
+    <option name="totallyTimeSpent" value="306351000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -519,19 +507,19 @@
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32936078" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32936078" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="File Transfer" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32936078" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="File Transfer" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.33044422" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32936078" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32936078" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
     </layout>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
@@ -550,18 +538,18 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="javascript">
           <url>file://$PROJECT_DIR$/theme/admin_3_angularjs/views/new_investigation.html</url>
-          <line>771</line>
+          <line>770</line>
           <option name="timeStamp" value="5" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="javascript">
           <url>file://$PROJECT_DIR$/theme/admin_3_angularjs/views/new_investigation.html</url>
-          <line>870</line>
+          <line>869</line>
           <properties />
           <option name="timeStamp" value="6" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="javascript">
           <url>file://$PROJECT_DIR$/theme/admin_3_angularjs/views/new_investigation.html</url>
-          <line>589</line>
+          <line>588</line>
           <properties />
           <option name="timeStamp" value="7" />
         </line-breakpoint>
@@ -571,18 +559,13 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/theme/assets/global/plugins/codemirror/mode/factor/index.html" />
-    <entry file="file://$PROJECT_DIR$/theme/admin_3_angularjs/assets/pages/scripts/table-datatables-managed.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="4" lean-forward="false" selection-start-line="0" selection-start-column="4" selection-end-line="0" selection-end-column="4" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/theme/admin_3_angularjs/assets/global/plugins/angularjs/angular.min.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="309">
           <caret line="2659" column="40" lean-forward="true" selection-start-line="2659" selection-start-column="40" selection-end-line="2659" selection-end-column="40" />
+          <folding>
+            <element signature="n#!!doc" expanded="false" />
+          </folding>
         </state>
       </provider>
     </entry>
@@ -873,26 +856,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/theme/admin_3_angularjs/tpl/header.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="234">
-          <caret line="28" column="78" lean-forward="true" selection-start-line="28" selection-start-column="51" selection-end-line="28" selection-end-column="78" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/theme/admin_3_angularjs/assets/global/css/components.css">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="472">
           <caret line="17785" column="1" lean-forward="false" selection-start-line="17785" selection-start-column="1" selection-end-line="17785" selection-end-column="1" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/theme/admin_3_angularjs/assets/global/plugins/bootstrap/css/bootstrap.min.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="169">
-          <caret line="3355" column="138" lean-forward="false" selection-start-line="3355" selection-start-column="109" selection-end-line="3355" selection-end-column="138" />
           <folding />
         </state>
       </provider>
@@ -905,14 +872,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/theme/admin_3_angularjs/js/main.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="2" column="4" lean-forward="true" selection-start-line="2" selection-start-column="4" selection-end-line="2" selection-end-column="4" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/theme/admin_3_angularjs/index.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="178">
@@ -921,35 +880,77 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/theme/admin_3_angularjs/views/dashboard.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-26875">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/theme/admin_3_angularjs/assets/global/plugins/bootstrap-daterangepicker/daterangepicker.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="169">
-          <caret line="1204" column="31" lean-forward="false" selection-start-line="1204" selection-start-column="31" selection-end-line="1204" selection-end-column="31" />
+        <state relative-caret-position="187">
+          <caret line="1209" column="1" lean-forward="false" selection-start-line="1209" selection-start-column="1" selection-end-line="1209" selection-end-column="1" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/theme/admin_3_angularjs/assets/global/plugins/bootstrap/css/bootstrap.min.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-1181">
+          <caret line="3355" column="138" lean-forward="false" selection-start-line="3355" selection-start-column="109" selection-end-line="3355" selection-end-column="138" />
           <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/theme/admin_3_angularjs/assets/global/plugins/angularjs/plugins/angularjs-dropdown-multiselect/src/angularjs-dropdown-multiselect.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-5453">
-          <caret line="180" column="18" lean-forward="false" selection-start-line="180" selection-start-column="18" selection-end-line="180" selection-end-column="18" />
+        <state relative-caret-position="288">
+          <caret line="46" column="496" lean-forward="false" selection-start-line="46" selection-start-column="496" selection-end-line="46" selection-end-column="496" />
           <folding>
-            <element signature="e#9614#9752#0" expanded="false" />
-            <element signature="e#9790#10386#0" expanded="false" />
-            <element signature="e#10435#10588#0" expanded="false" />
-            <element signature="e#10619#11074#0" expanded="false" />
-            <element signature="e#11113#13374#0" expanded="false" />
-            <element signature="e#14787#15069#0" expanded="false" />
-            <element signature="e#16034#16097#0" expanded="false" />
-            <marker date="1490867664192" expanded="true" signature="1148:1154" ph=" " />
+            <element signature="e#9772#9910#0" expanded="false" />
+            <element signature="e#9948#10544#0" expanded="false" />
+            <element signature="e#10593#10746#0" expanded="false" />
+            <element signature="e#10777#11232#0" expanded="false" />
+            <element signature="e#11271#13532#0" expanded="false" />
+            <element signature="e#14945#15227#0" expanded="false" />
+            <element signature="e#16192#16255#0" expanded="false" />
+            <marker date="1492483815088" expanded="true" signature="1148:1154" ph=" " />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/theme/admin_3_angularjs/js/main.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="255">
+          <caret line="297" column="32" lean-forward="false" selection-start-line="297" selection-start-column="32" selection-end-line="297" selection-end-column="32" />
+          <folding>
+            <element signature="e#8759#11182#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/theme/admin_3_angularjs/views/investigation_record.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="216">
+          <caret line="12" column="16" lean-forward="false" selection-start-line="12" selection-start-column="16" selection-end-line="12" selection-end-column="16" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/theme/admin_3_angularjs/tpl/header.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="180">
+          <caret line="34" column="59" lean-forward="false" selection-start-line="34" selection-start-column="39" selection-end-line="34" selection-end-column="59" />
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/theme/admin_3_angularjs/views/new_investigation.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="178">
-          <caret line="318" column="34" lean-forward="false" selection-start-line="318" selection-start-column="32" selection-end-line="318" selection-end-column="34" />
+        <state relative-caret-position="216">
+          <caret line="12" column="37" lean-forward="false" selection-start-line="12" selection-start-column="12" selection-end-line="12" selection-end-column="37" />
           <folding>
             <element signature="n#style#0;n#div#2;n#div#1;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#button#0;n#div#2;n#div#1;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
@@ -964,29 +965,24 @@
             <element signature="n#style#0;n#img#0;n#button#0;n#div#5;n#div#1;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#button#1;n#div#5;n#div#1;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#img#0;n#button#1;n#div#5;n#div#1;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
-            <element signature="n#div#6;n#div#1;n#div#0;n#div#0;n#div#0;n#!!top" expanded="false" />
-            <element signature="e#7847#8670#0" expanded="false" />
-            <element signature="e#9407#10762#0" expanded="false" />
-            <element signature="e#14244#15137#0" expanded="false" />
-            <element signature="e#15244#24147#0" expanded="false" />
-            <element signature="e#24342#24384#0" expanded="false" />
-            <element signature="e#24440#25547#0" expanded="false" />
-            <element signature="e#24457#25331#0" expanded="false" />
-            <element signature="e#25585#25992#0" expanded="false" />
-            <element signature="e#26034#26360#0" expanded="false" />
-            <element signature="e#26419#26952#0" expanded="false" />
-            <element signature="e#27009#27542#0" expanded="false" />
-            <element signature="e#27594#30405#0" expanded="false" />
-            <element signature="e#30456#30798#0" expanded="false" />
-            <element signature="e#30833#30898#0" expanded="false" />
-            <element signature="e#30982#36262#0" expanded="false" />
-            <element signature="e#31016#31228#0" expanded="false" />
-            <element signature="e#31242#31398#0" expanded="false" />
-            <element signature="e#31428#31539#0" expanded="false" />
-            <element signature="e#31563#31970#0" expanded="false" />
-            <element signature="e#33411#35364#0" expanded="false" />
-            <element signature="e#35504#36017#0" expanded="false" />
-            <element signature="e#36309#38346#0" expanded="false" />
+            <element signature="e#7884#8707#0" expanded="false" />
+            <element signature="e#9444#10799#0" expanded="false" />
+            <element signature="e#14281#15174#0" expanded="false" />
+            <element signature="e#24526#25633#0" expanded="false" />
+            <element signature="e#24543#25417#0" expanded="false" />
+            <element signature="e#25671#26078#0" expanded="false" />
+            <element signature="e#26120#26446#0" expanded="false" />
+            <element signature="e#27111#27644#0" expanded="false" />
+            <element signature="e#30558#30900#0" expanded="false" />
+            <element signature="e#30935#31000#0" expanded="false" />
+            <element signature="e#31084#36375#0" expanded="false" />
+            <element signature="e#31118#31330#0" expanded="false" />
+            <element signature="e#31344#31500#0" expanded="false" />
+            <element signature="e#31530#31641#0" expanded="false" />
+            <element signature="e#31665#32083#0" expanded="false" />
+            <element signature="e#33524#35477#0" expanded="false" />
+            <element signature="e#35617#36130#0" expanded="false" />
+            <element signature="e#36422#38459#0" expanded="false" />
           </folding>
         </state>
       </provider>

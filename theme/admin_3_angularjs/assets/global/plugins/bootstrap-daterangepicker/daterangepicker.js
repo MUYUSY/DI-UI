@@ -1202,7 +1202,7 @@
 
         clickRange: function(e) {
             var label = e.target.getAttribute('data-range-key');
-            $('#searchDateRange').html(label);
+            $('#searchDateRange').html(label + '<span class="caret date-range-caret">');
             this.chosenLabel = label;
             if (label == this.locale.customRangeLabel) {
                 this.showCalendars();

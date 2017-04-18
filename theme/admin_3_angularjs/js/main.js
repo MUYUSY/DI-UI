@@ -285,6 +285,26 @@ MetronicApp.config(['$stateProvider', '$urlRouterProvider', function($stateProvi
             }
         })
 
+        // Investigation Record
+        .state('investivationrecord', {
+            url: "/investigation_record",
+            templateUrl: "views/investigation_record.html",
+            data: {pageTitle: '调查记录'},
+            controller: "GeneralPageController",
+            resolve: {
+                deps: ['$ocLazyLoad', function($ocLazyLoad) {
+                    return $ocLazyLoad.load([{
+                        name: 'MetronicApp',
+                        files: [
+
+                            'js/controllers/GeneralPageController.js'
+
+                        ]
+                    }]);
+                }]
+            }
+        })
+
         // Tree View
         .state('tree', {
             url: "/tree",

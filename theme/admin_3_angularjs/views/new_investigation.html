@@ -14,7 +14,6 @@
 
                 <div class="col-md-2 col-sm-6 col-xs-12 searchDatePicker">
                     <button id="searchDateRange" class="form-control date-range btn-default">选择时间...<span class="caret date-range-caret"></span></button>
-
                 </div>
                 <div class="col-md-2 col-sm-6 col-xs-12">
                      <div class="multi-dropdown"
@@ -92,10 +91,10 @@
                 </div>
                 <div class="col-md-6 col-sm-6 col-xs-12" ng-show="myHide">
                     <button class="btn" ng-click="search()"
-                            style="width: 100px; background-color:#0076e1; color: #ffffff; padding-right: 32px">
+                            style="width: 121px; background-color:#0076e1; color: #ffffff; padding-right: 32px; margin-right: 10px">
                         <img src="./icon/search.png" style="margin: 0 4px 1px 0;">搜索
                     </button>
-                    <button class="btn" style="width:100px; border:1px solid #cccccc; background-color: #FFFFFF">
+                    <button class="btn" style="width:121px; border:1px solid #cccccc; background-color: #FFFFFF">
                         <img src="./icon/save.png" style="margin: 0 4px 1px 0">保存规则
                     </button>
                 </div>
@@ -105,7 +104,7 @@
                         <div class="portlet light">
                             <div class="portlet-title">
                                 <div class="caption font-dark col-md-6 col-sm-6 col-xs-12">
-                                    <span class="caption-subject bold uppercase">调查结果</span>
+                                    <span id="searchResult" class="caption-subject bold uppercase">调查结果</span>
                                 </div>
                                 <div class="col-md-6 col-sm-6 col-xs-12">
                                     <button class="btn dark btn-outline pull-right" id="exportResult">导出结果</button>
@@ -118,9 +117,9 @@
                                     <tr>
                                         <th width="3%"></th>
                                         <th width="17%">时间戳</th>
-                                        <th width="15%">探针名</th>
+                                        <th width="13%">探针名</th>
                                         <th width="15%">进程用户名</th>
-                                        <th width="10%">进程ID</th>
+                                        <th width="12%">进程ID</th>
                                         <th width="25%">进程映像路径</th>
                                         <th width="15%">事件类型</th>
                                     </tr>
@@ -529,7 +528,7 @@
                 }
             }
             SearchResultCtrl($scope.selectByGroupModel, $scope.filter_condition, $scope.search_condition);
-            $scope.myHide = false;
+            $('html,body').animate({scrollTop:$('#searchResult').offset().top}, 0);
         }
     }
 
@@ -625,11 +624,11 @@
                 continue;
             }
             else {
-                list = str.split(keyword[i]);
+                list = str.split($.trim(keyword[i]));
                 str = list[0];
                 for (var j = 1; j < list.length; j++) {
                     str += '<mark-' + key + '>';
-                    str += keyword[i];
+                    str += $.trim(keyword[i]);
                     str += '</mark-' + key + '>';
                     str += list[j];
                 }
@@ -757,7 +756,7 @@
         var postJson = {
             "begin_time": startTime,
             "end_time": endTime,
-            "device_id": ["abc123"],
+            "device_id": ["abc123","diclient"],
 //            "device_id": [0],
             "event_type": 0,
             "filter_condition": filter_condition
