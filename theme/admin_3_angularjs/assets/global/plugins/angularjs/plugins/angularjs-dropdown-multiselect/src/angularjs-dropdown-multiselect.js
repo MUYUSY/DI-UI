@@ -44,8 +44,8 @@ directiveModule.directive('ngDropdownMultiselect', ['$filter', '$document', '$co
 			template += '<li ng-if="settings.enableSearch" class="divider"></li>';
 
 			if (groups) {
-				template += '<li ng-repeat-start="option in orderedItems | filter:getFilter(input.searchFilter)" ng-show="getPropertyForObject(option, settings.groupBy) !== getPropertyForObject(orderedItems[$index - 1], settings.groupBy)" role="presentation" ng-click="selectCurrentGroup(settings.groupBy)" class="dropdown-header"><a ng-class="{\'dropdown-selected-group\': selectedGroup === settings.groupBy}" tabindex="-1">{{ getGroupLabel(getPropertyForObject(option, settings.groupBy)) }}</a></li>';
-				template += '<li ng-class="{\'active\': isChecked(getPropertyForObject(option,settings.idProp)) && settings.styleActive}" ng-repeat-end role="presentation">';
+				template += '<li ng-repeat-start="option in orderedItems | filter:getFilter(input.searchFilter)" ng-show="getPropertyForObject(option, settings.groupBy) !== getPropertyForObject(orderedItems[$index - 1], settings.groupBy)" role="presentation" ng-click="selectCurrentGroup(getPropertyForObject(option, settings.groupBy))"><a ng-class="{\'dropdown-selected-group\': selectedGroup === getPropertyForObject(option, settings.groupBy)}" tabindex="-1">{{ getGroupLabel(getPropertyForObject(option, settings.groupBy)) }}</a></li>';
+				template += '<li ng-class="{\'active\': isChecked(getPropertyForObject(option,settings.idProp)) && settings.styleActive}" class="dropdown-header" ng-repeat-end role="presentation">';
 			} else {
 				template += '<li ng-class="{\'active\': isChecked(getPropertyForObject(option,settings.idProp)) && settings.styleActive}" role="presentation" ng-repeat="option in options | filter:getFilter(input.searchFilter)">';
 			}

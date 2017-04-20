@@ -2,12 +2,8 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="a672439e-4cd3-4004-919f-310f18dd76c3" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/theme/admin_3_angularjs/views/investigation_record.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/theme/admin_3_angularjs/assets/global/plugins/angularjs/plugins/angularjs-dropdown-multiselect/src/angularjs-dropdown-multiselect.js" afterPath="$PROJECT_DIR$/theme/admin_3_angularjs/assets/global/plugins/angularjs/plugins/angularjs-dropdown-multiselect/src/angularjs-dropdown-multiselect.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/theme/admin_3_angularjs/assets/global/plugins/bootstrap-daterangepicker/daterangepicker.js" afterPath="$PROJECT_DIR$/theme/admin_3_angularjs/assets/global/plugins/bootstrap-daterangepicker/daterangepicker.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/theme/admin_3_angularjs/js/main.js" afterPath="$PROJECT_DIR$/theme/admin_3_angularjs/js/main.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/theme/admin_3_angularjs/tpl/header.html" afterPath="$PROJECT_DIR$/theme/admin_3_angularjs/tpl/header.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/theme/admin_3_angularjs/assets/global/plugins/bootstrap/css/bootstrap.min.css" afterPath="$PROJECT_DIR$/theme/admin_3_angularjs/assets/global/plugins/bootstrap/css/bootstrap.min.css" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/theme/admin_3_angularjs/views/new_investigation.html" afterPath="$PROJECT_DIR$/theme/admin_3_angularjs/views/new_investigation.html" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
@@ -38,17 +34,17 @@
       <file leaf-file-name="angularjs-dropdown-multiselect.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/theme/admin_3_angularjs/assets/global/plugins/angularjs/plugins/angularjs-dropdown-multiselect/src/angularjs-dropdown-multiselect.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="288">
-              <caret line="46" column="496" lean-forward="false" selection-start-line="46" selection-start-column="496" selection-end-line="46" selection-end-column="496" />
+            <state relative-caret-position="306">
+              <caret line="47" column="137" lean-forward="false" selection-start-line="47" selection-start-column="137" selection-end-line="47" selection-end-column="137" />
               <folding>
-                <element signature="e#9772#9910#0" expanded="false" />
-                <element signature="e#9948#10544#0" expanded="false" />
-                <element signature="e#10593#10746#0" expanded="false" />
-                <element signature="e#10777#11232#0" expanded="false" />
-                <element signature="e#11271#13532#0" expanded="false" />
-                <element signature="e#14945#15227#0" expanded="false" />
-                <element signature="e#16192#16255#0" expanded="false" />
-                <marker date="1492483815088" expanded="true" signature="1148:1154" ph=" " />
+                <element signature="e#9832#9970#0" expanded="false" />
+                <element signature="e#10008#10604#0" expanded="false" />
+                <element signature="e#10653#10806#0" expanded="false" />
+                <element signature="e#10837#11292#0" expanded="false" />
+                <element signature="e#11331#13592#0" expanded="false" />
+                <element signature="e#15005#15287#0" expanded="false" />
+                <element signature="e#16252#16315#0" expanded="false" />
+                <marker date="1492505133606" expanded="true" signature="1148:1154" ph=" " />
               </folding>
             </state>
           </provider>
@@ -67,15 +63,13 @@
       <file leaf-file-name="new_investigation.html" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/theme/admin_3_angularjs/views/new_investigation.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="216">
-              <caret line="12" column="37" lean-forward="false" selection-start-line="12" selection-start-column="12" selection-end-line="12" selection-end-column="37" />
+            <state relative-caret-position="250">
+              <caret line="468" column="82" lean-forward="true" selection-start-line="468" selection-start-column="82" selection-end-line="468" selection-end-column="82" />
               <folding>
                 <element signature="n#style#0;n#div#2;n#div#1;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#button#0;n#div#2;n#div#1;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
-                <element signature="n#div#3;n#div#1;n#div#0;n#div#0;n#div#0;n#!!top" expanded="false" />
                 <element signature="n#div#1;n#div#0;n#div#3;n#div#1;n#div#0;n#div#0;n#div#0;n#!!top" expanded="false" />
                 <element signature="n#div#2;n#div#0;n#div#3;n#div#1;n#div#0;n#div#0;n#div#0;n#!!top" expanded="false" />
-                <element signature="n#div#3;n#div#0;n#div#3;n#div#1;n#div#0;n#div#0;n#div#0;n#!!top" expanded="false" />
                 <element signature="n#div#1;n#div#3;n#div#1;n#div#0;n#div#0;n#div#0;n#!!top" expanded="false" />
                 <element signature="n#style#0;n#button#0;n#div#4;n#div#1;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#button#1;n#div#4;n#div#1;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
@@ -83,24 +77,137 @@
                 <element signature="n#style#0;n#img#0;n#button#0;n#div#5;n#div#1;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#button#1;n#div#5;n#div#1;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#img#0;n#button#1;n#div#5;n#div#1;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
-                <element signature="e#7884#8707#0" expanded="false" />
-                <element signature="e#9444#10799#0" expanded="false" />
-                <element signature="e#14281#15174#0" expanded="false" />
-                <element signature="e#24526#25633#0" expanded="false" />
-                <element signature="e#24543#25417#0" expanded="false" />
-                <element signature="e#25671#26078#0" expanded="false" />
-                <element signature="e#26120#26446#0" expanded="false" />
-                <element signature="e#27111#27644#0" expanded="false" />
-                <element signature="e#30558#30900#0" expanded="false" />
-                <element signature="e#30935#31000#0" expanded="false" />
-                <element signature="e#31084#36375#0" expanded="false" />
-                <element signature="e#31118#31330#0" expanded="false" />
-                <element signature="e#31344#31500#0" expanded="false" />
-                <element signature="e#31530#31641#0" expanded="false" />
-                <element signature="e#31665#32083#0" expanded="false" />
-                <element signature="e#33524#35477#0" expanded="false" />
-                <element signature="e#35617#36130#0" expanded="false" />
-                <element signature="e#36422#38459#0" expanded="false" />
+                <element signature="n#div#6;n#div#1;n#div#0;n#div#0;n#div#0;n#!!top" expanded="false" />
+                <element signature="e#7914#8737#0" expanded="false" />
+                <element signature="e#9474#10829#0" expanded="false" />
+                <element signature="e#14317#15210#0" expanded="false" />
+                <element signature="e#24538#25645#0" expanded="false" />
+                <element signature="e#24555#25429#0" expanded="false" />
+                <element signature="e#25683#26090#0" expanded="false" />
+                <element signature="e#26132#26458#0" expanded="false" />
+                <element signature="e#27123#27656#0" expanded="false" />
+                <element signature="e#31138#31350#0" expanded="false" />
+                <element signature="e#31364#31520#0" expanded="false" />
+                <element signature="e#31652#32091#0" expanded="false" />
+                <element signature="e#36660#38697#0" expanded="false" />
+              </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="datatables.all.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/theme/admin_3_angularjs/assets/global/plugins/datatables/datatables.all.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="192">
+              <caret line="10945" column="21" lean-forward="true" selection-start-line="10945" selection-start-column="21" selection-end-line="10945" selection-end-column="21" />
+              <folding>
+                <element signature="e#74773#75038#0" expanded="false" />
+                <element signature="e#75044#75303#0" expanded="false" />
+                <element signature="e#82579#85797#0" expanded="false" />
+                <element signature="e#86038#86088#0" expanded="false" />
+                <element signature="e#86247#86375#0" expanded="false" />
+                <element signature="e#86652#86943#0" expanded="false" />
+                <element signature="e#87771#89388#0" expanded="false" />
+                <element signature="e#90308#92359#0" expanded="false" />
+                <element signature="e#92847#94688#0" expanded="false" />
+                <element signature="e#95001#95586#0" expanded="false" />
+                <element signature="e#95767#97658#0" expanded="false" />
+                <element signature="e#98522#100740#0" expanded="false" />
+                <element signature="e#100935#104848#0" expanded="false" />
+                <element signature="e#105205#105838#0" expanded="false" />
+                <element signature="e#106035#109739#0" expanded="false" />
+                <element signature="e#110283#112002#0" expanded="false" />
+                <element signature="e#112443#112898#0" expanded="false" />
+                <element signature="e#113365#116726#0" expanded="false" />
+                <element signature="e#116960#117242#0" expanded="false" />
+                <element signature="e#123332#125456#0" expanded="false" />
+                <element signature="e#125835#127367#0" expanded="false" />
+                <element signature="e#127546#128179#0" expanded="false" />
+                <element signature="e#128707#129118#0" expanded="false" />
+                <element signature="e#128735#128751#0" expanded="false" />
+                <element signature="e#129698#130946#0" expanded="false" />
+                <element signature="e#131418#132161#0" expanded="false" />
+                <element signature="e#132639#134369#0" expanded="false" />
+                <element signature="e#134623#134781#0" expanded="false" />
+                <element signature="e#135082#135240#0" expanded="false" />
+                <element signature="e#135477#136006#0" expanded="false" />
+                <element signature="e#136197#136961#0" expanded="false" />
+                <element signature="e#137009#137789#0" expanded="false" />
+                <element signature="e#137999#140313#0" expanded="false" />
+                <element signature="e#140672#141051#0" expanded="false" />
+                <element signature="e#141563#142820#0" expanded="false" />
+                <element signature="e#143246#144530#0" expanded="false" />
+                <element signature="e#144997#146019#0" expanded="false" />
+                <element signature="e#146267#146504#0" expanded="false" />
+                <element signature="e#161634#169047#0" expanded="false" />
+                <element signature="e#169387#169655#0" expanded="false" />
+                <element signature="e#177057#178229#0" expanded="false" />
+                <element signature="e#178718#180622#0" expanded="false" />
+                <element signature="e#180998#181819#0" expanded="false" />
+                <element signature="e#182089#182832#0" expanded="false" />
+                <element signature="e#182989#183899#0" expanded="false" />
+                <element signature="e#187806#187963#0" expanded="false" />
+                <element signature="e#188327#189050#0" expanded="false" />
+                <element signature="e#189425#189781#0" expanded="false" />
+                <element signature="e#191774#192162#0" expanded="false" />
+                <element signature="e#192699#192793#0" expanded="false" />
+                <element signature="e#193526#193875#0" expanded="false" />
+                <element signature="e#193922#194348#0" expanded="false" />
+                <element signature="e#194394#194904#0" expanded="false" />
+                <element signature="e#201019#201677#0" expanded="false" />
+                <element signature="e#201834#206481#0" expanded="false" />
+                <element signature="e#206534#207366#0" expanded="false" />
+                <element signature="e#208466#209336#0" expanded="false" />
+                <element signature="e#209430#210064#0" expanded="false" />
+                <element signature="e#222439#224216#0" expanded="false" />
+                <element signature="e#238467#238542#0" expanded="false" />
+                <element signature="e#238649#238800#0" expanded="false" />
+                <element signature="e#238870#241237#0" expanded="false" />
+                <element signature="e#241300#242274#0" expanded="false" />
+                <element signature="e#242337#242807#0" expanded="false" />
+                <element signature="e#242394#242417#0" expanded="false" />
+                <element signature="e#242906#243028#0" expanded="false" />
+                <element signature="e#243127#243249#0" expanded="false" />
+                <element signature="e#243328#243390#0" expanded="false" />
+                <element signature="e#243475#243599#0" expanded="false" />
+                <element signature="e#243686#243898#0" expanded="false" />
+                <element signature="e#243979#244145#0" expanded="false" />
+                <element signature="e#244241#244834#0" expanded="false" />
+                <element signature="e#244923#245096#0" expanded="false" />
+                <element signature="e#245150#245259#0" expanded="false" />
+                <element signature="e#245322#245622#0" expanded="false" />
+                <element signature="e#245684#245748#0" expanded="false" />
+                <element signature="e#245820#247632#0" expanded="false" />
+                <element signature="e#247716#248973#0" expanded="false" />
+                <element signature="e#249051#249251#0" expanded="false" />
+                <element signature="e#249305#249439#0" expanded="false" />
+                <element signature="e#249524#249721#0" expanded="false" />
+                <element signature="e#249808#249948#0" expanded="false" />
+                <element signature="e#250029#250227#0" expanded="false" />
+                <element signature="e#250321#250449#0" expanded="false" />
+                <element signature="e#250532#250613#0" expanded="false" />
+                <element signature="e#250672#251038#0" expanded="false" />
+                <element signature="e#255094#255687#0" expanded="false" />
+                <element signature="e#255766#255843#0" expanded="false" />
+                <element signature="e#255896#256065#0" expanded="false" />
+                <element signature="e#256119#256197#0" expanded="false" />
+                <element signature="e#256249#256346#0" expanded="false" />
+                <element signature="e#256997#257421#0" expanded="false" />
+                <element signature="e#258030#258426#0" expanded="false" />
+                <element signature="e#259018#259330#0" expanded="false" />
+                <element signature="e#260075#260270#0" expanded="false" />
+                <element signature="e#260375#260806#0" expanded="false" />
+                <element signature="e#260853#260951#0" expanded="false" />
+                <element signature="e#261001#261054#0" expanded="false" />
+                <element signature="e#261100#261173#0" expanded="false" />
+                <element signature="e#261219#261344#0" expanded="false" />
+                <element signature="e#261401#264857#0" expanded="false" />
+                <element signature="e#264999#265619#0" expanded="false" />
+                <element signature="e#265777#266170#0" expanded="false" />
+                <element signature="e#271450#278604#0" expanded="false" />
+                <marker date="1481008594000" expanded="true" signature="157165:157190" ph="..." />
+                <marker date="1481008594000" expanded="true" signature="157412:157437" ph="..." />
+                <marker date="1481008594000" expanded="true" signature="425712:425720" ph="..." />
               </folding>
             </state>
           </provider>
@@ -109,8 +216,8 @@
       <file leaf-file-name="bootstrap.min.css" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/theme/admin_3_angularjs/assets/global/plugins/bootstrap/css/bootstrap.min.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-1181">
-              <caret line="3355" column="138" lean-forward="false" selection-start-line="3355" selection-start-column="109" selection-end-line="3355" selection-end-column="138" />
+            <state relative-caret-position="169">
+              <caret line="3721" column="18" lean-forward="false" selection-start-line="3721" selection-start-column="18" selection-end-line="3721" selection-end-column="18" />
               <folding />
             </state>
           </provider>
@@ -121,6 +228,16 @@
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="-2700">
               <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="index.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/theme/admin_3_angularjs/index.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="394">
+              <caret line="114" column="88" lean-forward="true" selection-start-line="114" selection-start-column="67" selection-end-line="114" selection-end-column="88" />
               <folding />
             </state>
           </provider>
@@ -158,12 +275,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>conf</find>
-      <find>div.dataTables_wrapper div.dataTables_length label</find>
-      <find>filter</find>
-      <find>label {</find>
-      <find>label</find>
-      <find>.label {</find>
       <find>.pagination &gt; li &gt; a, .pagination &gt; li &gt; span</find>
       <find>dataTables_filter</find>
       <find>paginate_button</find>
@@ -181,13 +292,19 @@
       <find>UTC</find>
       <find>searchResult</find>
       <find>abc</find>
-      <find>.btn-default.dropdown-toggle</find>
       <find>filter_condition</find>
       <find>cons</find>
       <find>group-by</find>
       <find>getPropertyForObject</find>
       <find>group</find>
+      <find>.btn-default.dropdown-toggle</find>
+      <find>selectCurrentGroup</find>
+      <find>endTime</find>
+      <find>dropdown-header</find>
       <find>angularjs-dropdown-multiselect</find>
+      <find>glyphicon-ok</find>
+      <find>分组</find>
+      <find>DataTable.ext.pager</find>
     </findStrings>
     <dirStrings>
       <dir>D:\code\DI\DI-UI\_resources</dir>
@@ -236,16 +353,16 @@
         <option value="$PROJECT_DIR$/theme/admin_3_angularjs/assets/global/plugins/datatables/datatables.min.css" />
         <option value="$PROJECT_DIR$/theme/admin_3_angularjs/views/data1.js" />
         <option value="$PROJECT_DIR$/test.html" />
-        <option value="$PROJECT_DIR$/theme/admin_3_angularjs/assets/global/plugins/datatables/plugins/bootstrap/dataTables.bootstrap.css" />
-        <option value="$PROJECT_DIR$/theme/admin_3_angularjs/assets/global/plugins/bootstrap/css/bootstrap.min.css" />
         <option value="$PROJECT_DIR$/theme/admin_3_angularjs/assets/global/css/components.css" />
         <option value="$PROJECT_DIR$/theme/admin_3_angularjs/assets/global/css/components.min.css" />
         <option value="$PROJECT_DIR$/theme/admin_3_angularjs/tpl/header.html" />
         <option value="$PROJECT_DIR$/theme/admin_3_angularjs/assets/global/plugins/bootstrap-daterangepicker/daterangepicker.js" />
-        <option value="$PROJECT_DIR$/theme/admin_3_angularjs/views/new_investigation.html" />
-        <option value="$PROJECT_DIR$/theme/admin_3_angularjs/assets/global/plugins/angularjs/plugins/angularjs-dropdown-multiselect/src/angularjs-dropdown-multiselect.js" />
         <option value="$PROJECT_DIR$/theme/admin_3_angularjs/js/main.js" />
         <option value="$PROJECT_DIR$/theme/admin_3_angularjs/views/investigation_record.html" />
+        <option value="$PROJECT_DIR$/theme/admin_3_angularjs/assets/global/plugins/bootstrap/css/bootstrap.min.css" />
+        <option value="$PROJECT_DIR$/theme/admin_3_angularjs/assets/global/plugins/angularjs/plugins/angularjs-dropdown-multiselect/src/angularjs-dropdown-multiselect.js" />
+        <option value="$PROJECT_DIR$/theme/admin_3_angularjs/assets/global/plugins/datatables/plugins/bootstrap/dataTables.bootstrap.css" />
+        <option value="$PROJECT_DIR$/theme/admin_3_angularjs/views/new_investigation.html" />
       </list>
     </option>
   </component>
@@ -482,12 +599,12 @@
       <workItem from="1491355857382" duration="5436000" />
       <workItem from="1491372300104" duration="79323000" />
       <workItem from="1492048168060" duration="28797000" />
-      <workItem from="1492393055674" duration="22662000" />
+      <workItem from="1492393055674" duration="48312000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="306351000" />
+    <option name="totallyTimeSpent" value="332001000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -505,9 +622,9 @@
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.20469083" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32936078" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32936078" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32936078" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32936078" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="File Transfer" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.33044422" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="File Transfer" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33044422" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32936078" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
@@ -538,12 +655,12 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="javascript">
           <url>file://$PROJECT_DIR$/theme/admin_3_angularjs/views/new_investigation.html</url>
-          <line>770</line>
+          <line>769</line>
           <option name="timeStamp" value="5" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="javascript">
           <url>file://$PROJECT_DIR$/theme/admin_3_angularjs/views/new_investigation.html</url>
-          <line>869</line>
+          <line>874</line>
           <properties />
           <option name="timeStamp" value="6" />
         </line-breakpoint>
@@ -553,8 +670,26 @@
           <properties />
           <option name="timeStamp" value="7" />
         </line-breakpoint>
+        <line-breakpoint enabled="true" type="javascript">
+          <url>file://$PROJECT_DIR$/theme/admin_3_angularjs/assets/global/plugins/datatables/datatables.all.js</url>
+          <line>4845</line>
+          <properties />
+          <option name="timeStamp" value="8" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="javascript">
+          <url>file://$PROJECT_DIR$/theme/admin_3_angularjs/assets/global/plugins/datatables/datatables.all.js</url>
+          <line>6223</line>
+          <properties />
+          <option name="timeStamp" value="9" />
+        </line-breakpoint>
+        <line-breakpoint enabled="true" type="javascript">
+          <url>file://$PROJECT_DIR$/theme/admin_3_angularjs/assets/global/plugins/datatables/datatables.all.js</url>
+          <line>8374</line>
+          <properties />
+          <option name="timeStamp" value="10" />
+        </line-breakpoint>
       </breakpoints>
-      <option name="time" value="8" />
+      <option name="time" value="11" />
     </breakpoint-manager>
     <watches-manager />
   </component>
@@ -802,33 +937,11 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/theme/admin_3_angularjs/assets/global/plugins/datatables/plugins/bootstrap/dataTables.bootstrap.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="196">
-          <caret line="64" column="18" lean-forward="false" selection-start-line="64" selection-start-column="18" selection-end-line="64" selection-end-column="18" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/../DI2.5/server/diserver/uiservice/app/assets/global/css/components.min.css">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="124">
           <caret line="1752" column="1" lean-forward="true" selection-start-line="1752" selection-start-column="1" selection-end-line="1752" selection-end-column="1" />
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/theme/admin_3_angularjs/assets/global/plugins/datatables/datatables.all.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-3053">
-          <caret line="14366" column="37" lean-forward="false" selection-start-line="14366" selection-start-column="37" selection-end-line="14366" selection-end-column="37" />
-          <folding>
-            <element signature="e#2629#2730#0" expanded="false" />
-            <element signature="e#2772#3202#0" expanded="false" />
-            <marker date="1481008594000" expanded="true" signature="157165:157190" ph="..." />
-            <marker date="1481008594000" expanded="true" signature="157412:157437" ph="..." />
-            <marker date="1481008594000" expanded="true" signature="425712:425720" ph="..." />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -872,14 +985,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/theme/admin_3_angularjs/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="178">
-          <caret line="102" column="93" lean-forward="false" selection-start-line="102" selection-start-column="63" selection-end-line="102" selection-end-column="93" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/theme/admin_3_angularjs/views/dashboard.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-26875">
@@ -893,31 +998,6 @@
         <state relative-caret-position="187">
           <caret line="1209" column="1" lean-forward="false" selection-start-line="1209" selection-start-column="1" selection-end-line="1209" selection-end-column="1" />
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/theme/admin_3_angularjs/assets/global/plugins/bootstrap/css/bootstrap.min.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-1181">
-          <caret line="3355" column="138" lean-forward="false" selection-start-line="3355" selection-start-column="109" selection-end-line="3355" selection-end-column="138" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/theme/admin_3_angularjs/assets/global/plugins/angularjs/plugins/angularjs-dropdown-multiselect/src/angularjs-dropdown-multiselect.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="288">
-          <caret line="46" column="496" lean-forward="false" selection-start-line="46" selection-start-column="496" selection-end-line="46" selection-end-column="496" />
-          <folding>
-            <element signature="e#9772#9910#0" expanded="false" />
-            <element signature="e#9948#10544#0" expanded="false" />
-            <element signature="e#10593#10746#0" expanded="false" />
-            <element signature="e#10777#11232#0" expanded="false" />
-            <element signature="e#11271#13532#0" expanded="false" />
-            <element signature="e#14945#15227#0" expanded="false" />
-            <element signature="e#16192#16255#0" expanded="false" />
-            <marker date="1492483815088" expanded="true" signature="1148:1154" ph=" " />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -939,6 +1019,14 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/theme/admin_3_angularjs/assets/global/plugins/bootstrap/css/bootstrap.min.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="169">
+          <caret line="3721" column="18" lean-forward="false" selection-start-line="3721" selection-start-column="18" selection-end-line="3721" selection-end-column="18" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/theme/admin_3_angularjs/tpl/header.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="180">
@@ -947,17 +1035,164 @@
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/theme/admin_3_angularjs/assets/global/plugins/datatables/plugins/bootstrap/dataTables.bootstrap.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="360">
+          <caret line="26" column="45" lean-forward="true" selection-start-line="26" selection-start-column="45" selection-end-line="26" selection-end-column="45" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/theme/admin_3_angularjs/assets/global/plugins/angularjs/plugins/angularjs-dropdown-multiselect/src/angularjs-dropdown-multiselect.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="306">
+          <caret line="47" column="137" lean-forward="false" selection-start-line="47" selection-start-column="137" selection-end-line="47" selection-end-column="137" />
+          <folding>
+            <element signature="e#9832#9970#0" expanded="false" />
+            <element signature="e#10008#10604#0" expanded="false" />
+            <element signature="e#10653#10806#0" expanded="false" />
+            <element signature="e#10837#11292#0" expanded="false" />
+            <element signature="e#11331#13592#0" expanded="false" />
+            <element signature="e#15005#15287#0" expanded="false" />
+            <element signature="e#16252#16315#0" expanded="false" />
+            <marker date="1492505133606" expanded="true" signature="1148:1154" ph=" " />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/theme/admin_3_angularjs/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="394">
+          <caret line="114" column="88" lean-forward="true" selection-start-line="114" selection-start-column="67" selection-end-line="114" selection-end-column="88" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/theme/admin_3_angularjs/assets/global/plugins/datatables/datatables.all.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="192">
+          <caret line="10945" column="21" lean-forward="true" selection-start-line="10945" selection-start-column="21" selection-end-line="10945" selection-end-column="21" />
+          <folding>
+            <element signature="e#74773#75038#0" expanded="false" />
+            <element signature="e#75044#75303#0" expanded="false" />
+            <element signature="e#82579#85797#0" expanded="false" />
+            <element signature="e#86038#86088#0" expanded="false" />
+            <element signature="e#86247#86375#0" expanded="false" />
+            <element signature="e#86652#86943#0" expanded="false" />
+            <element signature="e#87771#89388#0" expanded="false" />
+            <element signature="e#90308#92359#0" expanded="false" />
+            <element signature="e#92847#94688#0" expanded="false" />
+            <element signature="e#95001#95586#0" expanded="false" />
+            <element signature="e#95767#97658#0" expanded="false" />
+            <element signature="e#98522#100740#0" expanded="false" />
+            <element signature="e#100935#104848#0" expanded="false" />
+            <element signature="e#105205#105838#0" expanded="false" />
+            <element signature="e#106035#109739#0" expanded="false" />
+            <element signature="e#110283#112002#0" expanded="false" />
+            <element signature="e#112443#112898#0" expanded="false" />
+            <element signature="e#113365#116726#0" expanded="false" />
+            <element signature="e#116960#117242#0" expanded="false" />
+            <element signature="e#123332#125456#0" expanded="false" />
+            <element signature="e#125835#127367#0" expanded="false" />
+            <element signature="e#127546#128179#0" expanded="false" />
+            <element signature="e#128707#129118#0" expanded="false" />
+            <element signature="e#128735#128751#0" expanded="false" />
+            <element signature="e#129698#130946#0" expanded="false" />
+            <element signature="e#131418#132161#0" expanded="false" />
+            <element signature="e#132639#134369#0" expanded="false" />
+            <element signature="e#134623#134781#0" expanded="false" />
+            <element signature="e#135082#135240#0" expanded="false" />
+            <element signature="e#135477#136006#0" expanded="false" />
+            <element signature="e#136197#136961#0" expanded="false" />
+            <element signature="e#137009#137789#0" expanded="false" />
+            <element signature="e#137999#140313#0" expanded="false" />
+            <element signature="e#140672#141051#0" expanded="false" />
+            <element signature="e#141563#142820#0" expanded="false" />
+            <element signature="e#143246#144530#0" expanded="false" />
+            <element signature="e#144997#146019#0" expanded="false" />
+            <element signature="e#146267#146504#0" expanded="false" />
+            <element signature="e#161634#169047#0" expanded="false" />
+            <element signature="e#169387#169655#0" expanded="false" />
+            <element signature="e#177057#178229#0" expanded="false" />
+            <element signature="e#178718#180622#0" expanded="false" />
+            <element signature="e#180998#181819#0" expanded="false" />
+            <element signature="e#182089#182832#0" expanded="false" />
+            <element signature="e#182989#183899#0" expanded="false" />
+            <element signature="e#187806#187963#0" expanded="false" />
+            <element signature="e#188327#189050#0" expanded="false" />
+            <element signature="e#189425#189781#0" expanded="false" />
+            <element signature="e#191774#192162#0" expanded="false" />
+            <element signature="e#192699#192793#0" expanded="false" />
+            <element signature="e#193526#193875#0" expanded="false" />
+            <element signature="e#193922#194348#0" expanded="false" />
+            <element signature="e#194394#194904#0" expanded="false" />
+            <element signature="e#201019#201677#0" expanded="false" />
+            <element signature="e#201834#206481#0" expanded="false" />
+            <element signature="e#206534#207366#0" expanded="false" />
+            <element signature="e#208466#209336#0" expanded="false" />
+            <element signature="e#209430#210064#0" expanded="false" />
+            <element signature="e#222439#224216#0" expanded="false" />
+            <element signature="e#238467#238542#0" expanded="false" />
+            <element signature="e#238649#238800#0" expanded="false" />
+            <element signature="e#238870#241237#0" expanded="false" />
+            <element signature="e#241300#242274#0" expanded="false" />
+            <element signature="e#242337#242807#0" expanded="false" />
+            <element signature="e#242394#242417#0" expanded="false" />
+            <element signature="e#242906#243028#0" expanded="false" />
+            <element signature="e#243127#243249#0" expanded="false" />
+            <element signature="e#243328#243390#0" expanded="false" />
+            <element signature="e#243475#243599#0" expanded="false" />
+            <element signature="e#243686#243898#0" expanded="false" />
+            <element signature="e#243979#244145#0" expanded="false" />
+            <element signature="e#244241#244834#0" expanded="false" />
+            <element signature="e#244923#245096#0" expanded="false" />
+            <element signature="e#245150#245259#0" expanded="false" />
+            <element signature="e#245322#245622#0" expanded="false" />
+            <element signature="e#245684#245748#0" expanded="false" />
+            <element signature="e#245820#247632#0" expanded="false" />
+            <element signature="e#247716#248973#0" expanded="false" />
+            <element signature="e#249051#249251#0" expanded="false" />
+            <element signature="e#249305#249439#0" expanded="false" />
+            <element signature="e#249524#249721#0" expanded="false" />
+            <element signature="e#249808#249948#0" expanded="false" />
+            <element signature="e#250029#250227#0" expanded="false" />
+            <element signature="e#250321#250449#0" expanded="false" />
+            <element signature="e#250532#250613#0" expanded="false" />
+            <element signature="e#250672#251038#0" expanded="false" />
+            <element signature="e#255094#255687#0" expanded="false" />
+            <element signature="e#255766#255843#0" expanded="false" />
+            <element signature="e#255896#256065#0" expanded="false" />
+            <element signature="e#256119#256197#0" expanded="false" />
+            <element signature="e#256249#256346#0" expanded="false" />
+            <element signature="e#256997#257421#0" expanded="false" />
+            <element signature="e#258030#258426#0" expanded="false" />
+            <element signature="e#259018#259330#0" expanded="false" />
+            <element signature="e#260075#260270#0" expanded="false" />
+            <element signature="e#260375#260806#0" expanded="false" />
+            <element signature="e#260853#260951#0" expanded="false" />
+            <element signature="e#261001#261054#0" expanded="false" />
+            <element signature="e#261100#261173#0" expanded="false" />
+            <element signature="e#261219#261344#0" expanded="false" />
+            <element signature="e#261401#264857#0" expanded="false" />
+            <element signature="e#264999#265619#0" expanded="false" />
+            <element signature="e#265777#266170#0" expanded="false" />
+            <element signature="e#271450#278604#0" expanded="false" />
+            <marker date="1481008594000" expanded="true" signature="157165:157190" ph="..." />
+            <marker date="1481008594000" expanded="true" signature="157412:157437" ph="..." />
+            <marker date="1481008594000" expanded="true" signature="425712:425720" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/theme/admin_3_angularjs/views/new_investigation.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="216">
-          <caret line="12" column="37" lean-forward="false" selection-start-line="12" selection-start-column="12" selection-end-line="12" selection-end-column="37" />
+        <state relative-caret-position="250">
+          <caret line="468" column="82" lean-forward="true" selection-start-line="468" selection-start-column="82" selection-end-line="468" selection-end-column="82" />
           <folding>
             <element signature="n#style#0;n#div#2;n#div#1;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#button#0;n#div#2;n#div#1;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
-            <element signature="n#div#3;n#div#1;n#div#0;n#div#0;n#div#0;n#!!top" expanded="false" />
             <element signature="n#div#1;n#div#0;n#div#3;n#div#1;n#div#0;n#div#0;n#div#0;n#!!top" expanded="false" />
             <element signature="n#div#2;n#div#0;n#div#3;n#div#1;n#div#0;n#div#0;n#div#0;n#!!top" expanded="false" />
-            <element signature="n#div#3;n#div#0;n#div#3;n#div#1;n#div#0;n#div#0;n#div#0;n#!!top" expanded="false" />
             <element signature="n#div#1;n#div#3;n#div#1;n#div#0;n#div#0;n#div#0;n#!!top" expanded="false" />
             <element signature="n#style#0;n#button#0;n#div#4;n#div#1;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#button#1;n#div#4;n#div#1;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
@@ -965,24 +1200,19 @@
             <element signature="n#style#0;n#img#0;n#button#0;n#div#5;n#div#1;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#button#1;n#div#5;n#div#1;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#img#0;n#button#1;n#div#5;n#div#1;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
-            <element signature="e#7884#8707#0" expanded="false" />
-            <element signature="e#9444#10799#0" expanded="false" />
-            <element signature="e#14281#15174#0" expanded="false" />
-            <element signature="e#24526#25633#0" expanded="false" />
-            <element signature="e#24543#25417#0" expanded="false" />
-            <element signature="e#25671#26078#0" expanded="false" />
-            <element signature="e#26120#26446#0" expanded="false" />
-            <element signature="e#27111#27644#0" expanded="false" />
-            <element signature="e#30558#30900#0" expanded="false" />
-            <element signature="e#30935#31000#0" expanded="false" />
-            <element signature="e#31084#36375#0" expanded="false" />
-            <element signature="e#31118#31330#0" expanded="false" />
-            <element signature="e#31344#31500#0" expanded="false" />
-            <element signature="e#31530#31641#0" expanded="false" />
-            <element signature="e#31665#32083#0" expanded="false" />
-            <element signature="e#33524#35477#0" expanded="false" />
-            <element signature="e#35617#36130#0" expanded="false" />
-            <element signature="e#36422#38459#0" expanded="false" />
+            <element signature="n#div#6;n#div#1;n#div#0;n#div#0;n#div#0;n#!!top" expanded="false" />
+            <element signature="e#7914#8737#0" expanded="false" />
+            <element signature="e#9474#10829#0" expanded="false" />
+            <element signature="e#14317#15210#0" expanded="false" />
+            <element signature="e#24538#25645#0" expanded="false" />
+            <element signature="e#24555#25429#0" expanded="false" />
+            <element signature="e#25683#26090#0" expanded="false" />
+            <element signature="e#26132#26458#0" expanded="false" />
+            <element signature="e#27123#27656#0" expanded="false" />
+            <element signature="e#31138#31350#0" expanded="false" />
+            <element signature="e#31364#31520#0" expanded="false" />
+            <element signature="e#31652#32091#0" expanded="false" />
+            <element signature="e#36660#38697#0" expanded="false" />
           </folding>
         </state>
       </provider>

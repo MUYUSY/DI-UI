@@ -13,7 +13,7 @@
             <div class="portlet-body" ng-controller="HighLevelToggle">
 
                 <div class="col-md-2 col-sm-6 col-xs-12 searchDatePicker">
-                    <button id="searchDateRange" class="form-control date-range btn-default">选择时间...<span class="caret date-range-caret"></span></button>
+                    <button id="searchDateRange" class="form-control date-range btn-default">今天<span class="caret date-range-caret"></span></button>
                 </div>
                 <div class="col-md-2 col-sm-6 col-xs-12">
                      <div class="multi-dropdown"
@@ -48,8 +48,8 @@
                                         ng-options="x for x in equal" ng-init="id.equal = equal[0]">
                                 </select>
                             </div>
-                            <div class="col-xs-3" ng-hide="id.class3">
-                                <input type="text" ng-model="id.input"
+                            <div class="col-xs-4" ng-hide="id.class3">
+                                <input type="text" ng-model="id.input" placeholder="请输入关键词,输入多个时用' , '分隔"
                                        class="search-input form-control ng-pristine ng-valid ng-touched">
                             </div>
                             <div class="col-xs-2" ng-show="id.class3">
@@ -315,9 +315,9 @@
             groupByTextProvider: function (groupValue) {
                 switch (groupValue) {
                     case 'group1':
-                        return '分组一';
+                        return '选择:分组一';
                     case 'group2':
-                        return '分组二';
+                        return '选择:分组二';
                 }
             },
             scrollableHeight: '400px',
@@ -462,13 +462,13 @@
                                 if (!$scope.filter_condition["ip"]["include"]) {
                                     $scope.filter_condition["ip"]["include"] = [];
                                 }
-                                $scope.filter_condition["ip"]["include"].push(ipToNumber($.trim(input_list[d])));
+                                $scope.filter_condition["ip"]["include"].push($.trim(input_list[d]));
                             }
                             else {
                                 if (!$scope.filter_condition["ip"]["exclude"]) {
                                     $scope.filter_condition["ip"]["exclude"] = [];
                                 }
-                                $scope.filter_condition["ip"]["exclude"].push(ipToNumber($.trim(input_list[d])));
+                                $scope.filter_condition["ip"]["exclude"].push($.trim(input_list[d]));
                             }
                         }
                         break;
@@ -663,9 +663,9 @@
         keyValue.push(str.slice(0,index));
         keyValue.push(str.slice(index+1));
         var result = keyValue[1];
-        if (keyValue[0] == "source_ip" || keyValue[0] == "dest_ip") {
-            result = numberToIp(keyValue[1]);
-        }
+//        if (keyValue[0] == "source_ip" || keyValue[0] == "dest_ip") {
+//            result = numberToIp(keyValue[1]);
+//        }
         if (keyValue[0] == "time") {
             result = timeStamp2String(keyValue[1], "yyyy-MM-dd hh:mm:ss");
         }
@@ -694,7 +694,7 @@
                             break;
                         case "IP地址":
                             if (keyValue[0] == "source_ip" || keyValue[0] == "dest_ip") {
-                                result = numberToIp(result);
+//                                result = numberToIp(result);
                                 result = highlightEqual(result, keyword, key = "ip");
                             }
                             break;
@@ -751,11 +751,10 @@
         if (dtable != null) {
             dtable.fnClearTable();
             dtable.fnDestroy();
-            $("tbody").remove();
         }
         var postJson = {
             "begin_time": startTime,
-            "end_time": endTime,
+            "end_time": Math.ceil(endTime / 60) * 60,
             "device_id": ["abc123","diclient"],
 //            "device_id": [0],
             "event_type": 0,
@@ -815,7 +814,7 @@
                         {data: "processPath"},
                         {data: "eventType"}],
                     order: [[1, "asc"]],
-                    sPaginationType: "full_numbers",
+//                    sPaginationType: "full_numbers",
                     language: {
                         aria: {
                             sortAscending: ": activate to sort column ascending",
@@ -843,6 +842,12 @@
                 };
 
                 dtable = $('#search-result').dataTable(config);
+
+                var firstTr = $("tbody tr:first");
+                var firstRow = dtable.api().row(firstTr);
+                firstRow.child(format((firstRow.data().content))).show();
+                firstTr.addClass('shown');
+
                 $("tbody").on('click', 'td.details-control', function () {
                     var tr = $(this).closest('tr');
                     var row = dtable.api().row(tr);
