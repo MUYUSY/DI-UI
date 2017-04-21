@@ -663,9 +663,9 @@
         keyValue.push(str.slice(0,index));
         keyValue.push(str.slice(index+1));
         var result = keyValue[1];
-//        if (keyValue[0] == "source_ip" || keyValue[0] == "dest_ip") {
-//            result = numberToIp(keyValue[1]);
-//        }
+        if (keyValue[0] == "source_ip" || keyValue[0] == "dest_ip") {
+            result = numberToIp(keyValue[1]);
+        }
         if (keyValue[0] == "time") {
             result = timeStamp2String(keyValue[1], "yyyy-MM-dd hh:mm:ss");
         }
@@ -694,7 +694,7 @@
                             break;
                         case "IP地址":
                             if (keyValue[0] == "source_ip" || keyValue[0] == "dest_ip") {
-//                                result = numberToIp(result);
+                                result = numberToIp(result);
                                 result = highlightEqual(result, keyword, key = "ip");
                             }
                             break;
@@ -751,6 +751,7 @@
         if (dtable != null) {
             dtable.fnClearTable();
             dtable.fnDestroy();
+            $("tbody").remove();
         }
         var postJson = {
             "begin_time": startTime,

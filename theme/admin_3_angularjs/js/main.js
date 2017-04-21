@@ -7,7 +7,7 @@ var MetronicApp = angular.module("MetronicApp", [
     "ui.bootstrap", 
     "oc.lazyLoad",  
     "ngSanitize",
-    "ngAnimate",
+    // "ngAnimate",
     "angularjs-dropdown-multiselect"
 ]); 
 
@@ -299,6 +299,31 @@ MetronicApp.config(['$stateProvider', '$urlRouterProvider', function($stateProvi
 
                             'js/controllers/GeneralPageController.js'
 
+                        ]
+                    }]);
+                }]
+            }
+        })
+
+        // Endpoint Management
+        .state('endpointmanagement', {
+            url: "/endpoint_management",
+            templateUrl: "views/endpoint_management.html",
+            data: {pageTitle: '探针管理'},
+            controller: "GeneralPageController",
+            resolve: {
+                deps: ['$ocLazyLoad', function($ocLazyLoad) {
+                    return $ocLazyLoad.load([{
+                        name: 'MetronicApp',
+                        files: [
+                            './assets/global/plugins/DataTables-1.10.15/media/css/jquery.dataTables.css',
+                            './assets/global/plugins/datatables/plugins/bootstrap/datatables.bootstrap.css',
+                            './assets/global/plugins/DataTables-1.10.15/extensions/RowGroup/css/rowGroup.dataTables.css',
+
+                            './assets/global/plugins/DataTables-1.10.15/media/js/jquery.dataTables.js',
+                            './assets/global/plugins/DataTables-1.10.15/media/js/datatables.bootstrap.js',
+                            './assets/global/plugins/DataTables-1.10.15/extensions/RowGroup/js/dataTables.rowGroup.js',
+                            'js/controllers/GeneralPageController.js'
                         ]
                     }]);
                 }]

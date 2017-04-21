@@ -1,0 +1,137 @@
+<div class="row">
+    <div class="col-md-12">
+        <!-- BEGIN: ACCORDION DEMO -->
+        <div class="portlet light">
+            <div class="portlet-title">
+                <div class="caption font-dark">
+                    <span class="caption-subject bold uppercase">探针管理</span>
+                    <span id="time-selected" class="time-selected"></span>
+                </div>
+            </div>
+
+            <div class="portlet-body">
+                <div class="col-md-12 col-sm-12 col-xs-12">
+                    <button class="btn"
+                            style="width: 120px; background-color:#ffffff; border:1px solid #cccccc; margin-right:10px;">
+                        <img src="./icon/add.png" style="margin: 0 10px 1px 0;">创建新组
+                    </button>
+                    <button class="btn"
+                            style="width:100px; border:1px solid #cccccc; background-color: #FFFFFF; margin-right:10px">
+                        <img src="./icon/update.png" style="margin: 0 10px 1px 0">更新
+                    </button>
+                    <button class="btn"
+                            style="width:100px; border:1px solid #cccccc; background-color: #FFFFFF; margin-right:10px">
+                        <img src="./icon/move.png" style="margin: 0 10px 1px 0">移动
+                    </button>
+                    <button class="btn"
+                            style="width:100px; border:1px solid #cccccc; background-color: #FFFFFF; margin-right:10px">
+                        <img src="./icon/delete.png" style="margin: 0 10px 1px 0">卸载
+                    </button>
+                    <button class="btn"
+                            style="width:120px; border:1px solid #cccccc; background-color: #FFFFFF; margin-right:10px">
+                        更多操作<span class="caret" style="margin-left: 20px"></span>
+                    </button>
+                    <button class="btn pull-right"
+                            style="width:36px; border:1px solid #cccccc; background-color: #FFFFFF; margin-right:10px">
+                        <img src="./icon/refresh.png">
+                    </button>
+                    <button class="btn pull-right"
+                            style="width:36px; border:1px solid #cccccc; background-color: #FFFFFF; margin-right:10px">
+                        <img src="./icon/search2.png">
+                    </button>
+                </div>
+                <div class="col-md-12 col-sm-12 col-xs-12">
+                    <table class="table table-striped table-bordered table-hover endpoint-table" width="100%"
+                           id="endpoint-table">
+                        <thead>
+                        <tr>
+                            <th width="5%">
+                                <input type="checkbox" class="checkall">
+                            </th>
+                            <th width="17%">组名/探针名</th>
+                            <th width="13%">操作系统</th>
+                            <th width="20%">IP地址</th>
+                            <th width="12%">设备状态</th>
+                            <th width="20%">最近通信时间</th>
+                            <th width="13%">资产标记</th>
+                            <th>组名</th>
+                        </tr>
+                        </thead>
+                    </table>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script>
+    $.getJSON("./views/endpoint.js", function (data) {
+//        console.log(JSON.stringify(data));
+        var devices = [];
+        for (var i = 0; i < data.length; i++) {
+            for (var k = 0; k < data[i].devices.length; k++) {
+                devices.push({
+                    group: data[i].groupname,
+                    devicename: data[i].devices[k].devicename,
+                    os: data[i].devices[k].os,
+                    ip: data[i].devices[k].ip,
+                    status: data[i].devices[k].status,
+                    lastcontacttime: data[i].devices[k].lastcontacttime,
+                    assettag: data[i].devices[k].assettag,
+                    did: data[i].devices[k].deviceid
+                })
+            }
+        }
+        console.log(JSON.stringify(devices));
+
+        var config = {
+            data: devices,
+            order: [[7, "asc"]],
+            rowGroup: {
+                dataSrc: "group"
+            },
+            columns: [
+                {
+                    "sClass": "text-center",
+                    "data": "did",
+                    "render": function (data, type, full, meta) {
+                        return '<input type="checkbox"  class="checkchild"  value="' + data + '" />';
+                    },
+                    "bSortable": false
+                },
+                {data: "devicename"},
+                {data: "os"},
+                {data: "ip"},
+                {data: "status"},
+                {data: "lastcontacttime"},
+                {data: "assettag"},
+                {data: "group",
+                 visible: false}
+            ],
+            sPaginationType: "full_numbers",
+            language: {
+                aria: {
+                    sortAscending: ": activate to sort column ascending",
+                    sortDescending: ": activate to sort column descending"
+                },
+                emptyTable: "没有探针信息",
+                info: "显示 _TOTAL_ 个探针中的第 _START_ 至 _END_ 个",
+                infoEmpty: "没有匹配的探针",
+                infoFiltered: "(过滤出 filtered1 个探针，总计 _MAX_ 个探针)",
+                lengthMenu: "每页 _MENU_ 条",
+                search: "过滤:",
+                zeroRecords: "没有探针信息",
+                paginate: {
+                    last: ">>",
+                    next: ">",
+                    previous: "<",
+                    first: "<<"
+                }
+            },
+            lengthMenu: 50,
+            "dom": "<'row'<'col-md-12 col-sm-12'f>r><t><'row'<'col-md-3 col-sm-12'i><'col-md-9 col-sm-12'p>>"
+        };
+
+        dtable = $('#endpoint-table').DataTable(config);
+    })
+</script>

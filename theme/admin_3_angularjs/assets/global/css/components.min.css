@@ -1844,6 +1844,10 @@ li [class*=" fa-"].icon-large, li [class*=" glyphicon-"].icon-large, li [class*=
     margin-top: 20px;
 }
 
+.endpoint-table {
+    margin-top: 20px;
+}
+
 .btn {
     outline: 0 !important;
 }
