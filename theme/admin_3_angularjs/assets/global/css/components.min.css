@@ -1848,6 +1848,10 @@ li [class*=" fa-"].icon-large, li [class*=" glyphicon-"].icon-large, li [class*=
     margin-top: 20px;
 }
 
+.status-image {
+    margin: 0 10px 0 6px !important;
+}
+
 .btn {
     outline: 0 !important;
 }

@@ -46,7 +46,7 @@
                         <thead>
                         <tr>
                             <th width="5%">
-                                <input type="checkbox" class="checkall">
+                                <input type="checkbox" id="checkall" onclick="checkAll(this)">
                             </th>
                             <th width="17%">组名/探针名</th>
                             <th width="13%">操作系统</th>
@@ -65,7 +65,9 @@
 </div>
 
 <script>
-    $.getJSON("./views/endpoint.js", function (data) {
+    var dtable;
+
+    $.get("http://10.21.140.111:6543/deviceinfo", function (data) {
 //        console.log(JSON.stringify(data));
         var devices = [];
         for (var i = 0; i < data.length; i++) {
@@ -78,11 +80,11 @@
                     status: data[i].devices[k].status,
                     lastcontacttime: data[i].devices[k].lastcontacttime,
                     assettag: data[i].devices[k].assettag,
-                    did: data[i].devices[k].deviceid
+                    did: data[i].devices[k].deviceid,
+                    id: ""
                 })
             }
         }
-        console.log(JSON.stringify(devices));
 
         var config = {
             data: devices,
@@ -90,30 +92,54 @@
             rowGroup: {
                 dataSrc: "group"
             },
+            select: {
+                style: 'multi',
+                selector: 'td:first-child'
+            },
             columns: [
+//                {
+////                    "sClass": "text-center",
+////                    "data": "did",
+////                    "render": function (data, type, full, meta) {
+////                        return '<input type="checkbox" class="checkchild" value="' + data + '" />';
+////                    },
+////                    "bSortable": false
                 {
-                    "sClass": "text-center",
-                    "data": "did",
-                    "render": function (data, type, full, meta) {
-                        return '<input type="checkbox"  class="checkchild"  value="' + data + '" />';
-                    },
-                    "bSortable": false
+                    orderable: false,
+                    bSortable : false,
+                    className: 'select-checkbox',
+                    data: "id",
+                    targets: 0
+//                    data:   "did",
+//                    render : function(data, type, row, meta) {
+//                        var content = '<label class="mt-checkbox mt-checkbox-single mt-checkbox-outline">';
+//                        content += '<input type="checkbox" class="group-checkable" value="' + data + '" />';
+//                        content += '</label>';
+//                        return content;
+//                    }
                 },
                 {data: "devicename"},
                 {data: "os"},
                 {data: "ip"},
-                {data: "status"},
+                {
+                    data: "status",
+                    render: function(data, type, row, meta) {
+                        if (data == "online") {
+                            return '<img src="./icon/online.png" class="status-image">监控';
+                        }
+                       else {
+                            return '<img src="./icon/offline.png" class="status-image">离线'
+                        }
+                    }
+                },
                 {data: "lastcontacttime"},
                 {data: "assettag"},
-                {data: "group",
-                 visible: false}
+                {data: "group", visible: false}
             ],
+            rowId: "did",
             sPaginationType: "full_numbers",
+            ordering: false,
             language: {
-                aria: {
-                    sortAscending: ": activate to sort column ascending",
-                    sortDescending: ": activate to sort column descending"
-                },
                 emptyTable: "没有探针信息",
                 info: "显示 _TOTAL_ 个探针中的第 _START_ 至 _END_ 个",
                 infoEmpty: "没有匹配的探针",
@@ -126,12 +152,27 @@
                     next: ">",
                     previous: "<",
                     first: "<<"
+                },
+                select: {
+                    rows: {
+                        _: "您选择了 %d 个探针。",
+                        0: "点击选择探针!"
+                    }
                 }
             },
-            lengthMenu: 50,
-            "dom": "<'row'<'col-md-12 col-sm-12'f>r><t><'row'<'col-md-3 col-sm-12'i><'col-md-9 col-sm-12'p>>"
+            displayLength: 50,
+            "dom": "<'row'<'col-md-3 col-sm-12'i><'col-md-9 col-sm-12'f>r><t><'row'<'col-md-12 col-sm-12'p>>"
         };
 
         dtable = $('#endpoint-table').DataTable(config);
-    })
+    });
+
+    var checkAll = function(obj) {
+        if( obj.checked ) {
+            dtable.rows().select();
+        }
+        else {
+            dtable.rows().deselect();
+        }
+    }
 </script>

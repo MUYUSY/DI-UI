@@ -17850,3 +17850,11 @@ Page new_investigation.html
 .serach-result {
   margin-top: 20px;
 }
+
+.endpoint-table {
+  margin-top: 20px;
+}
+
+.status-image {
+  margin: 0 10px 0 6px !important;
+}

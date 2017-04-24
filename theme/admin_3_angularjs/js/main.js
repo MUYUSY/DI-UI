@@ -319,10 +319,12 @@ MetronicApp.config(['$stateProvider', '$urlRouterProvider', function($stateProvi
                             './assets/global/plugins/DataTables-1.10.15/media/css/jquery.dataTables.css',
                             './assets/global/plugins/datatables/plugins/bootstrap/datatables.bootstrap.css',
                             './assets/global/plugins/DataTables-1.10.15/extensions/RowGroup/css/rowGroup.dataTables.css',
+                            './assets/global/plugins/DataTables-1.10.15/extensions/Select/css/select.dataTables.css',
 
                             './assets/global/plugins/DataTables-1.10.15/media/js/jquery.dataTables.js',
                             './assets/global/plugins/DataTables-1.10.15/media/js/datatables.bootstrap.js',
                             './assets/global/plugins/DataTables-1.10.15/extensions/RowGroup/js/dataTables.rowGroup.js',
+                            './assets/global/plugins/DataTables-1.10.15/extensions/Select/js/dataTables.select.js',
                             'js/controllers/GeneralPageController.js'
                         ]
                     }]);

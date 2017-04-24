@@ -274,6 +274,7 @@ table.dataTable td {
  * Control feature layout
  */
 .dataTables_wrapper {
+  margin-top: 12px;
   position: relative;
   clear: both;
   *zoom: 1;

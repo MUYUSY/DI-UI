@@ -2,13 +2,29 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="a672439e-4cd3-4004-919f-310f18dd76c3" name="Default" comment="">
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/theme/admin_3_angularjs/views/endpoint.js" />
-      <change type="NEW" beforePath="" afterPath="$PROJECT_DIR$/theme/admin_3_angularjs/views/endpoint_management.html" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/theme/admin_3_angularjs/demo/ecommerce_order_credit_memos.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/theme/admin_3_angularjs/demo/ecommerce_order_history.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/theme/admin_3_angularjs/demo/ecommerce_order_invoices.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/theme/admin_3_angularjs/demo/ecommerce_order_shipment.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/theme/admin_3_angularjs/demo/ecommerce_orders.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/theme/admin_3_angularjs/demo/ecommerce_product_history.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/theme/admin_3_angularjs/demo/ecommerce_product_reviews.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/theme/admin_3_angularjs/demo/ecommerce_products.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/theme/admin_3_angularjs/demo/idletimeout_keepalive.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/theme/admin_3_angularjs/demo/jstree_ajax_data.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/theme/admin_3_angularjs/demo/table_ajax.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/theme/admin_3_angularjs/demo/timeout-keep-alive.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/theme/admin_3_angularjs/demo/typeahead_countries.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/theme/admin_3_angularjs/demo/typeahead_custom.php" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/theme/admin_3_angularjs/demo/typeahead_nba.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/theme/admin_3_angularjs/demo/typeahead_nhl.json" afterPath="" />
+      <change type="DELETED" beforePath="$PROJECT_DIR$/theme/admin_3_angularjs/demo/username_checker.php" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/theme/admin_3_angularjs/assets/global/css/components.css" afterPath="$PROJECT_DIR$/theme/admin_3_angularjs/assets/global/css/components.css" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/theme/admin_3_angularjs/assets/global/css/components.min.css" afterPath="$PROJECT_DIR$/theme/admin_3_angularjs/assets/global/css/components.min.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/theme/admin_3_angularjs/assets/global/plugins/DataTables-1.10.15/media/css/jquery.dataTables.css" afterPath="$PROJECT_DIR$/theme/admin_3_angularjs/assets/global/plugins/DataTables-1.10.15/media/css/jquery.dataTables.css" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/theme/admin_3_angularjs/js/main.js" afterPath="$PROJECT_DIR$/theme/admin_3_angularjs/js/main.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/theme/admin_3_angularjs/views/data1.js" afterPath="$PROJECT_DIR$/theme/admin_3_angularjs/views/data1.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/theme/admin_3_angularjs/views/new_investigation.html" afterPath="$PROJECT_DIR$/theme/admin_3_angularjs/views/new_investigation.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/theme/admin_3_angularjs/views/endpoint_management.html" afterPath="$PROJECT_DIR$/theme/admin_3_angularjs/views/endpoint_management.html" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -26,8 +42,8 @@
       <file leaf-file-name="main.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/theme/admin_3_angularjs/js/main.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="342">
-              <caret line="318" column="28" lean-forward="false" selection-start-line="318" selection-start-column="28" selection-end-line="318" selection-end-column="105" />
+            <state relative-caret-position="396">
+              <caret line="321" column="117" lean-forward="true" selection-start-line="321" selection-start-column="117" selection-end-line="321" selection-end-column="117" />
               <folding />
             </state>
           </provider>
@@ -36,8 +52,8 @@
       <file leaf-file-name="endpoint_management.html" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/theme/admin_3_angularjs/views/endpoint_management.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="473">
-              <caret line="95" column="32" lean-forward="false" selection-start-line="95" selection-start-column="32" selection-end-line="95" selection-end-column="32" />
+            <state relative-caret-position="221">
+              <caret line="66" column="8" lean-forward="true" selection-start-line="66" selection-start-column="8" selection-end-line="66" selection-end-column="8" />
               <folding>
                 <element signature="n#style#0;n#button#0;n#div#0;n#div#1;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#img#0;n#button#0;n#div#0;n#div#1;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
@@ -51,7 +67,18 @@
                 <element signature="n#style#0;n#span#0;n#button#4;n#div#0;n#div#1;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#button#5;n#div#0;n#div#1;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#button#6;n#div#0;n#div#1;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
+                <marker date="1493022696337" expanded="true" signature="6013:6025" ph="..." />
               </folding>
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="jquery.dataTables.css" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/theme/admin_3_angularjs/assets/global/plugins/DataTables-1.10.15/media/css/jquery.dataTables.css">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="18">
+              <caret line="276" column="16" lean-forward="false" selection-start-line="276" selection-start-column="16" selection-end-line="276" selection-end-column="16" />
+              <folding />
             </state>
           </provider>
         </entry>
@@ -185,31 +212,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="data1.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/theme/admin_3_angularjs/views/data1.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="54">
-              <caret line="3" column="2" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="3" selection-end-column="2" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="managed.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/theme/admin_3_angularjs/views/datatables/managed.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
       <file leaf-file-name="new_investigation.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/theme/admin_3_angularjs/views/new_investigation.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="13428">
-              <caret line="844" column="63" lean-forward="false" selection-start-line="844" selection-start-column="16" selection-end-line="844" selection-end-column="63" />
+            <state relative-caret-position="311">
+              <caret line="773" column="43" lean-forward="false" selection-start-line="773" selection-start-column="39" selection-end-line="773" selection-end-column="43" />
               <folding>
                 <element signature="n#style#0;n#div#2;n#div#1;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#button#0;n#div#2;n#div#1;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
@@ -232,8 +239,8 @@
       <file leaf-file-name="components.css" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/theme/admin_3_angularjs/assets/global/css/components.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="320130">
-              <caret line="17785" column="1" lean-forward="false" selection-start-line="17785" selection-start-column="1" selection-end-line="17785" selection-end-column="1" />
+            <state relative-caret-position="806">
+              <caret line="17858" column="2" lean-forward="false" selection-start-line="17858" selection-start-column="2" selection-end-line="17858" selection-end-column="2" />
               <folding />
             </state>
           </provider>
@@ -242,8 +249,8 @@
       <file leaf-file-name="components.min.css" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/theme/admin_3_angularjs/assets/global/css/components.min.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="33156">
-              <caret line="1842" column="14" lean-forward="false" selection-start-line="1842" selection-start-column="1" selection-end-line="1842" selection-end-column="14" />
+            <state relative-caret-position="234">
+              <caret line="1851" column="4" lean-forward="false" selection-start-line="1851" selection-start-column="4" selection-end-line="1851" selection-end-column="36" />
               <folding />
             </state>
           </provider>
@@ -261,7 +268,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>search-result_filter</find>
       <find>high</find>
       <find>新建</find>
       <find>.caret</find>
@@ -291,6 +297,7 @@
       <find>search-result</find>
       <find>rowGroup</find>
       <find>angularjs-dropdown-multiselect</find>
+      <find>dataTables_wrapper</find>
     </findStrings>
     <dirStrings>
       <dir>D:\code\DI\DI-UI\_resources</dir>
@@ -338,19 +345,20 @@
         <option value="$PROJECT_DIR$/theme/admin_3_angularjs/assets/global/plugins/datatables/datatables.css" />
         <option value="$PROJECT_DIR$/theme/admin_3_angularjs/assets/global/plugins/datatables/datatables.min.css" />
         <option value="$PROJECT_DIR$/test.html" />
-        <option value="$PROJECT_DIR$/theme/admin_3_angularjs/assets/global/css/components.css" />
         <option value="$PROJECT_DIR$/theme/admin_3_angularjs/tpl/header.html" />
         <option value="$PROJECT_DIR$/theme/admin_3_angularjs/assets/global/plugins/bootstrap-daterangepicker/daterangepicker.js" />
         <option value="$PROJECT_DIR$/theme/admin_3_angularjs/views/investigation_record.html" />
         <option value="$PROJECT_DIR$/theme/admin_3_angularjs/assets/global/plugins/bootstrap/css/bootstrap.min.css" />
         <option value="$PROJECT_DIR$/theme/admin_3_angularjs/assets/global/plugins/angularjs/plugins/angularjs-dropdown-multiselect/src/angularjs-dropdown-multiselect.js" />
         <option value="$PROJECT_DIR$/theme/admin_3_angularjs/assets/global/plugins/datatables/plugins/bootstrap/dataTables.bootstrap.css" />
-        <option value="$PROJECT_DIR$/theme/admin_3_angularjs/views/new_investigation.html" />
         <option value="$PROJECT_DIR$/theme/admin_3_angularjs/views/profile/endpoint_management.html" />
-        <option value="$PROJECT_DIR$/theme/admin_3_angularjs/assets/global/css/components.min.css" />
         <option value="$PROJECT_DIR$/theme/admin_3_angularjs/views/data1.js" />
         <option value="$PROJECT_DIR$/theme/admin_3_angularjs/views/endpoint.js" />
         <option value="$PROJECT_DIR$/theme/admin_3_angularjs/js/main.js" />
+        <option value="$PROJECT_DIR$/theme/admin_3_angularjs/assets/global/plugins/DataTables-1.10.15/media/css/jquery.dataTables.css" />
+        <option value="$PROJECT_DIR$/theme/admin_3_angularjs/assets/global/css/components.min.css" />
+        <option value="$PROJECT_DIR$/theme/admin_3_angularjs/assets/global/css/components.css" />
+        <option value="$PROJECT_DIR$/theme/admin_3_angularjs/views/new_investigation.html" />
         <option value="$PROJECT_DIR$/theme/admin_3_angularjs/views/endpoint_management.html" />
       </list>
     </option>
@@ -515,54 +523,6 @@
               <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
-              <option name="myItemId" value="js" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="DI-UI" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="DI-UI" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="theme" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="admin_3_angularjs" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="js" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="controllers" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="DI-UI" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="DI-UI" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="theme" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="admin_3_angularjs" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
               <option name="myItemId" value="assets" />
               <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
             </PATH_ELEMENT>
@@ -668,12 +628,12 @@
       <workItem from="1491372300104" duration="79323000" />
       <workItem from="1492048168060" duration="28797000" />
       <workItem from="1492393055674" duration="65847000" />
-      <workItem from="1492739460827" duration="4138000" />
+      <workItem from="1492739460827" duration="15854000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="353674000" />
+    <option name="totallyTimeSpent" value="365390000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -685,7 +645,7 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
+    <frame x="-8" y="-8" width="1936" height="1056" extended-state="7" />
     <editor active="true" />
     <layout>
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.20682302" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
@@ -694,19 +654,39 @@
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="File Transfer" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.33044422" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32936078" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32936078" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32936078" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
     </layout>
+    <layout-to-restore>
+      <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32936078" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
+      <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
+      <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
+      <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32936078" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
+      <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="File Transfer" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.33044422" sideWeight="0.5" order="10" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32936078" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32936078" sideWeight="0.5" order="9" side_tool="false" content_ui="tabs" />
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.20682302" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
+      <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
+      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32936078" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
+      <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+    </layout-to-restore>
   </component>
   <component name="TypeScriptGeneratedFilesManager">
     <option name="processedProjectFiles" value="true" />
@@ -744,7 +724,7 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="javascript">
           <url>file://$PROJECT_DIR$/theme/admin_3_angularjs/views/endpoint_management.html</url>
-          <line>111</line>
+          <line>141</line>
           <properties />
           <option name="timeStamp" value="11" />
         </line-breakpoint>
@@ -754,13 +734,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/theme/admin_3_angularjs/views/new_investigation - 3-27展示版本.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="3960">
-          <caret line="220" column="13" lean-forward="false" selection-start-line="220" selection-start-column="13" selection-end-line="220" selection-end-column="13" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/theme/admin_3_angularjs/assets/global/plugins/angularjs/plugins/angularjs-dropdown-multiselect-master/src/app/main/main.controller.js" />
     <entry file="file://$PROJECT_DIR$/theme/admin_3_angularjs/icon/arrow.png">
       <provider selected="true" editor-type-id="images">
@@ -778,6 +751,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="169">
           <caret line="492" column="63" lean-forward="false" selection-start-line="492" selection-start-column="62" selection-end-line="492" selection-end-column="63" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -785,6 +759,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-650">
           <caret line="3043" column="18" lean-forward="false" selection-start-line="3043" selection-start-column="18" selection-end-line="3043" selection-end-column="18" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -905,6 +880,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="196">
           <caret line="351" column="28" lean-forward="true" selection-start-line="351" selection-start-column="2" selection-end-line="351" selection-end-column="28" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -919,6 +895,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-49">
           <caret line="351" column="30" lean-forward="false" selection-start-line="351" selection-start-column="30" selection-end-line="351" selection-end-column="30" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -971,17 +948,11 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/theme/admin_3_angularjs/views/investigation_record.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="216">
-          <caret line="12" column="16" lean-forward="false" selection-start-line="12" selection-start-column="16" selection-end-line="12" selection-end-column="16" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/theme/admin_3_angularjs/assets/global/plugins/bootstrap/css/bootstrap.min.css">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="169">
           <caret line="3721" column="18" lean-forward="false" selection-start-line="3721" selection-start-column="18" selection-end-line="3721" selection-end-column="18" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -989,6 +960,7 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="360">
           <caret line="26" column="45" lean-forward="true" selection-start-line="26" selection-start-column="45" selection-end-line="26" selection-end-column="45" />
+          <folding />
         </state>
       </provider>
     </entry>
@@ -1010,29 +982,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="270">
           <caret line="39" column="50" lean-forward="false" selection-start-line="39" selection-start-column="31" selection-end-line="39" selection-end-column="50" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/theme/admin_3_angularjs/js/controllers/GeneralPageController.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/theme/admin_3_angularjs/assets/global/css/components.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="320130">
-          <caret line="17785" column="1" lean-forward="false" selection-start-line="17785" selection-start-column="1" selection-end-line="17785" selection-end-column="1" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/theme/admin_3_angularjs/assets/global/css/components.min.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="33156">
-          <caret line="1842" column="14" lean-forward="false" selection-start-line="1842" selection-start-column="1" selection-end-line="1842" selection-end-column="14" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1058,28 +1007,6 @@
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/theme/admin_3_angularjs/views/new_investigation.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="13428">
-          <caret line="844" column="63" lean-forward="false" selection-start-line="844" selection-start-column="16" selection-end-line="844" selection-end-column="63" />
-          <folding>
-            <element signature="n#style#0;n#div#2;n#div#1;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#button#0;n#div#2;n#div#1;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
-            <element signature="n#div#1;n#div#3;n#div#1;n#div#0;n#div#0;n#div#0;n#!!top" expanded="false" />
-            <element signature="n#style#0;n#button#0;n#div#4;n#div#1;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#button#1;n#div#4;n#div#1;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#button#0;n#div#5;n#div#1;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#img#0;n#button#0;n#div#5;n#div#1;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#button#1;n#div#5;n#div#1;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#img#0;n#button#1;n#div#5;n#div#1;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
-            <element signature="e#7914#8737#0" expanded="false" />
-            <element signature="e#9474#10829#0" expanded="false" />
-            <element signature="e#14317#15210#0" expanded="false" />
-            <element signature="e#36685#38722#0" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1209,16 +1136,80 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/theme/admin_3_angularjs/js/main.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="342">
-          <caret line="318" column="28" lean-forward="false" selection-start-line="318" selection-start-column="28" selection-end-line="318" selection-end-column="105" />
+        <state relative-caret-position="396">
+          <caret line="321" column="117" lean-forward="true" selection-start-line="321" selection-start-column="117" selection-end-line="321" selection-end-column="117" />
           <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/theme/admin_3_angularjs/assets/global/plugins/DataTables-1.10.15/media/css/jquery.dataTables.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="18">
+          <caret line="276" column="16" lean-forward="false" selection-start-line="276" selection-start-column="16" selection-end-line="276" selection-end-column="16" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/theme/admin_3_angularjs/assets/global/css/components.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="806">
+          <caret line="17858" column="2" lean-forward="false" selection-start-line="17858" selection-start-column="2" selection-end-line="17858" selection-end-column="2" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/theme/admin_3_angularjs/assets/global/css/components.min.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="234">
+          <caret line="1851" column="4" lean-forward="false" selection-start-line="1851" selection-start-column="4" selection-end-line="1851" selection-end-column="36" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/theme/admin_3_angularjs/views/new_investigation.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="311">
+          <caret line="773" column="43" lean-forward="false" selection-start-line="773" selection-start-column="39" selection-end-line="773" selection-end-column="43" />
+          <folding>
+            <element signature="n#style#0;n#div#2;n#div#1;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#button#0;n#div#2;n#div#1;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#div#1;n#div#3;n#div#1;n#div#0;n#div#0;n#div#0;n#!!top" expanded="false" />
+            <element signature="n#style#0;n#button#0;n#div#4;n#div#1;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#button#1;n#div#4;n#div#1;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#button#0;n#div#5;n#div#1;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#img#0;n#button#0;n#div#5;n#div#1;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#button#1;n#div#5;n#div#1;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#img#0;n#button#1;n#div#5;n#div#1;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="e#7914#8737#0" expanded="false" />
+            <element signature="e#9474#10829#0" expanded="false" />
+            <element signature="e#14317#15210#0" expanded="false" />
+            <element signature="e#36685#38722#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/theme/admin_3_angularjs/views/investigation_record.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="216">
+          <caret line="12" column="0" lean-forward="true" selection-start-line="12" selection-start-column="0" selection-end-line="12" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/theme/admin_3_angularjs/js/controllers/GeneralPageController.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="216">
+          <caret line="12" column="0" lean-forward="true" selection-start-line="12" selection-start-column="0" selection-end-line="12" selection-end-column="0" />
+          <folding>
+            <element signature="n#!!doc" expanded="true" />
+          </folding>
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/theme/admin_3_angularjs/views/endpoint_management.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="473">
-          <caret line="95" column="32" lean-forward="false" selection-start-line="95" selection-start-column="32" selection-end-line="95" selection-end-column="32" />
+        <state relative-caret-position="221">
+          <caret line="66" column="8" lean-forward="true" selection-start-line="66" selection-start-column="8" selection-end-line="66" selection-end-column="8" />
           <folding>
             <element signature="n#style#0;n#button#0;n#div#0;n#div#1;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#img#0;n#button#0;n#div#0;n#div#1;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
@@ -1232,6 +1223,7 @@
             <element signature="n#style#0;n#span#0;n#button#4;n#div#0;n#div#1;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#button#5;n#div#0;n#div#1;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#button#6;n#div#0;n#div#1;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
+            <marker date="1493022696337" expanded="true" signature="6013:6025" ph="..." />
           </folding>
         </state>
       </provider>
