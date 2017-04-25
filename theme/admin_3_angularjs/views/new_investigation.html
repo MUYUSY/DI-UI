@@ -13,69 +13,72 @@
             <div class="portlet-body" ng-controller="HighLevelToggle">
 
                 <div class="col-md-2 col-sm-6 col-xs-12 searchDatePicker">
-                    <button id="searchDateRange" class="form-control date-range btn-default">今天<span class="caret date-range-caret"></span></button>
+                    <button id="searchDateRange" class="form-control date-range btn-default">今天<span
+                            class="caret date-range-caret"></span></button>
                 </div>
                 <div class="col-md-2 col-sm-6 col-xs-12">
-                     <div class="multi-dropdown"
+                    <div class="multi-dropdown"
                          ng-dropdown-multiselect
                          options="selectByGroupData"
                          selected-model="selectByGroupModel"
                          extra-settings="selectByGroupSettings"
                          group-by="group"
                          translation-texts="selectByGroupTexts">
-                     </div>
+                    </div>
                 </div>
                 <div class="col-md-1 col-sm-6 col-xs-12" style="margin-right: 22px;">
-                    <button class="btn" style="width:100px; border:1px solid #cccccc; background-color: #FFFFFF" ng-click="toggle()">高级
+                    <button class="btn" style="width:100px; border:1px solid #cccccc; background-color: #FFFFFF"
+                            ng-click="toggle()">高级
                     </button>
                 </div>
-                <div class="col-md-12 col-sm-12 col-xs-12 high-level" ng-show="myHide" ng-controller="NewConditionController">
+                <div class="col-md-12 col-sm-12 col-xs-12 high-level" ng-show="myHide"
+                     ng-controller="NewConditionController">
 
                     <div class="col-xs-12 search-condition" ng-repeat="id in conditions">
-                            <div class="col-xs-2">
-                                <select class="select form-control"
-                                        ng-model="id.value" ng-init="id.value = conditionName[0]"
-                                        ng-options="x for x in conditionName" ng-change="change(id)">
-                                </select>
-                            </div>
-                            <div class="col-xs-2" ng-show="id.class1">
-                                <select class="select form-control" ng-model="id.include"
-                                        ng-options="x for x in include" ng-init="id.include = include[0]">
-                                </select>
-                            </div>
-                            <div class="col-xs-2" ng-show="id.class2">
-                                <select class="select form-control" ng-model="id.equal"
-                                        ng-options="x for x in equal" ng-init="id.equal = equal[0]">
-                                </select>
-                            </div>
-                            <div class="col-xs-4" ng-hide="id.class3">
-                                <input type="text" ng-model="id.input" placeholder="请输入关键词,输入多个时用' , '分隔"
-                                       class="search-input form-control ng-pristine ng-valid ng-touched">
-                            </div>
-                            <div class="col-xs-2" ng-show="id.class3">
-                                <select class="select form-control"
-                                        ng-model="id.father"
-                                        ng-init="id.father"
-                                        ng-change="protocolInit(id)"
-                                        ng-options="x for x in protocolFathers"></select>
-                            </div>
-                            <div class="col-xs-2" ng-show="id.class3">
-                                <select class="select form-control"
-                                        ng-model="id.child" ng-init="id.child"
-                                        ng-options="y for y in protocolChildren[id.father]">
-                                </select>
-                            </div>
-                            <button ng-show="closeable" type="button" class="close"
-                                    ng-click="closeCondition($index)">
-                                <span aria-hidden="true">×</span>
-                                <span class="sr-only">关闭</span>
-                            </button>
+                        <div class="col-xs-2">
+                            <select class="select form-control"
+                                    ng-model="id.value" ng-init="id.value = conditionName[0]"
+                                    ng-options="x for x in conditionName" ng-change="change(id)">
+                            </select>
                         </div>
+                        <div class="col-xs-2" ng-show="id.class1">
+                            <select class="select form-control" ng-model="id.include"
+                                    ng-options="x for x in include" ng-init="id.include = include[0]">
+                            </select>
+                        </div>
+                        <div class="col-xs-2" ng-show="id.class2">
+                            <select class="select form-control" ng-model="id.equal"
+                                    ng-options="x for x in equal" ng-init="id.equal = equal[0]">
+                            </select>
+                        </div>
+                        <div class="col-xs-4" ng-hide="id.class3">
+                            <input type="text" ng-model="id.input" placeholder="请输入关键词,输入多个时用' , '分隔"
+                                   class="search-input form-control ng-pristine ng-valid ng-touched">
+                        </div>
+                        <div class="col-xs-2" ng-show="id.class3">
+                            <select class="select form-control"
+                                    ng-model="id.father"
+                                    ng-init="id.father"
+                                    ng-change="protocolInit(id)"
+                                    ng-options="x for x in protocolFathers"></select>
+                        </div>
+                        <div class="col-xs-2" ng-show="id.class3">
+                            <select class="select form-control"
+                                    ng-model="id.child" ng-init="id.child"
+                                    ng-options="y for y in protocolChildren[id.father]">
+                            </select>
+                        </div>
+                        <button ng-show="closeable" type="button" class="close"
+                                ng-click="closeCondition($index)">
+                            <span aria-hidden="true">×</span>
+                            <span class="sr-only">关闭</span>
+                        </button>
+                    </div>
                     <div class="col-xs-2">
-                            <button class="add-condition" ng-disabled="maxCondition" ng-click="addCondition()">
-                                +增加条件
-                            </button>
-                        </div>
+                        <button class="add-condition" ng-disabled="maxCondition" ng-click="addCondition()">
+                            +增加条件
+                        </button>
+                    </div>
 
 
                 </div>
@@ -142,22 +145,22 @@
     var startTime = moment().startOf('day').format('X');
     var endTime = moment().format('X');
 
-    Date.prototype.format = function(fmt) {
+    Date.prototype.format = function (fmt) {
         var o = {
-            "M+" : this.getMonth()+1,                 //月份
-            "d+" : this.getDate(),                    //日
-            "h+" : this.getHours(),                   //小时
-            "m+" : this.getMinutes(),                 //分
-            "s+" : this.getSeconds(),                 //秒
-            "q+" : Math.floor((this.getMonth()+3)/3), //季度
-            "S"  : this.getMilliseconds()             //毫秒
+            "M+": this.getMonth() + 1,                 //月份
+            "d+": this.getDate(),                    //日
+            "h+": this.getHours(),                   //小时
+            "m+": this.getMinutes(),                 //分
+            "s+": this.getSeconds(),                 //秒
+            "q+": Math.floor((this.getMonth() + 3) / 3), //季度
+            "S": this.getMilliseconds()             //毫秒
         };
-        if(/(y+)/.test(fmt)) {
-            fmt=fmt.replace(RegExp.$1, (this.getFullYear()+"").substr(4 - RegExp.$1.length));
+        if (/(y+)/.test(fmt)) {
+            fmt = fmt.replace(RegExp.$1, (this.getFullYear() + "").substr(4 - RegExp.$1.length));
         }
-        for(var k in o) {
-            if(new RegExp("("+ k +")").test(fmt)){
-                fmt = fmt.replace(RegExp.$1, (RegExp.$1.length==1) ? (o[k]) : (("00"+ o[k]).substr((""+ o[k]).length)));
+        for (var k in o) {
+            if (new RegExp("(" + k + ")").test(fmt)) {
+                fmt = fmt.replace(RegExp.$1, (RegExp.$1.length == 1) ? (o[k]) : (("00" + o[k]).substr(("" + o[k]).length)));
             }
         }
         return fmt;
@@ -186,16 +189,17 @@
         $(this).parent().find('input').click();
     });
 
+
     $('#searchDateRange').daterangepicker({
         "timePicker": true,
         "timePicker24Hour": true,
         "maxDate": moment(),
         "ranges": {
             "今天": [moment().startOf('day'), moment()],
-//            "昨天": [moment().subtract('days', 1).startOf('day'), moment().subtract('days', 1).endOf('day')],
-//            "过去7天": [moment().subtract('days', 6), moment()],
+            //            "昨天": [moment().subtract('days', 1).startOf('day'), moment().subtract('days', 1).endOf('day')],
+            //            "过去7天": [moment().subtract('days', 6), moment()],
             "本周": [moment().startOf('week'), moment()],
-//            "过去30天": [moment().subtract('days', 29), moment()],
+            //            "过去30天": [moment().subtract('days', 29), moment()],
             "本月": [moment().startOf('month'), moment()]
         },
         "locale": {
@@ -237,6 +241,7 @@
         endTime = Math.ceil(end / 60000) * 60;
         $("#time-selected").html(timeStamp2String(startTime, "yyyy-MM-dd hh:mm") + ' 至 ' + timeStamp2String(endTime, "yyyy-MM-dd hh:mm"));
     });
+
 
     function HighLevelToggle($scope) {
         $scope.myHide = false;
@@ -528,7 +533,7 @@
                 }
             }
             SearchResultCtrl($scope.selectByGroupModel, $scope.filter_condition, $scope.search_condition);
-            $('html,body').animate({scrollTop:$('#searchResult').offset().top}, 0);
+            $('html,body').animate({scrollTop: $('#searchResult').offset().top}, 0);
         }
     }
 
@@ -588,11 +593,11 @@
 
     var ipToNumber = function (ip) {
         var num = 0;
-        if(ip == "") {
+        if (ip == "") {
             return num;
         }
         var aNum = ip.split(".");
-        if(aNum.length != 4) {
+        if (aNum.length != 4) {
             return num;
         }
         num += parseInt(aNum[0]) << 24;
@@ -605,7 +610,7 @@
 
     var numberToIp = function (number) {
         var ip = "";
-        if(number <= 0) {
+        if (number <= 0) {
             return ip;
         }
         var ip3 = (number << 0 ) >>> 24;
@@ -660,8 +665,8 @@
         //TODO: pid & ip 等于，not 包含！
         var keyValue = [];
         var index = str.indexOf('=');
-        keyValue.push(str.slice(0,index));
-        keyValue.push(str.slice(index+1));
+        keyValue.push(str.slice(0, index));
+        keyValue.push(str.slice(index + 1));
         var result = keyValue[1];
         if (keyValue[0] == "source_ip" || keyValue[0] == "dest_ip") {
             result = numberToIp(keyValue[1]);
@@ -756,7 +761,7 @@
         var postJson = {
             "begin_time": startTime,
             "end_time": Math.ceil(endTime / 60) * 60,
-            "device_id": ["abc123","diclient"],
+            "device_id": ["abc123", "diclient"],
 //            "device_id": [0],
             "event_type": 0,
             "filter_condition": filter_condition
@@ -811,7 +816,24 @@
                         {data: "timestamp"},
                         {data: "deviceName"},
                         {data: "processUsername"},
-                        {data: "processId"},
+                        {
+                            data: data,
+                            render: function (data) {
+                                var passJson =
+                                    {
+                                        timestamp: {
+                                            start: startTime,
+                                            end: endTime
+                                        },
+                                        pid: data.processId,
+                                        deviceName: data.deviceName,
+                                        processUsername: data.processUsername,
+                                        processPath: data.processPath
+                                    };
+                                var content = "<a href='#/investigation_record?json=" + JSON.stringify(passJson) + "'>" + data.processId;
+                                return content;
+                            }
+                        },
                         {data: "processPath"},
                         {data: "eventType"}],
                     order: [[1, "asc"]],

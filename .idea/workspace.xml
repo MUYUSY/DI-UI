@@ -2,29 +2,11 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="a672439e-4cd3-4004-919f-310f18dd76c3" name="Default" comment="">
-      <change type="DELETED" beforePath="$PROJECT_DIR$/theme/admin_3_angularjs/demo/ecommerce_order_credit_memos.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/theme/admin_3_angularjs/demo/ecommerce_order_history.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/theme/admin_3_angularjs/demo/ecommerce_order_invoices.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/theme/admin_3_angularjs/demo/ecommerce_order_shipment.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/theme/admin_3_angularjs/demo/ecommerce_orders.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/theme/admin_3_angularjs/demo/ecommerce_product_history.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/theme/admin_3_angularjs/demo/ecommerce_product_reviews.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/theme/admin_3_angularjs/demo/ecommerce_products.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/theme/admin_3_angularjs/demo/idletimeout_keepalive.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/theme/admin_3_angularjs/demo/jstree_ajax_data.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/theme/admin_3_angularjs/demo/table_ajax.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/theme/admin_3_angularjs/demo/timeout-keep-alive.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/theme/admin_3_angularjs/demo/typeahead_countries.json" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/theme/admin_3_angularjs/demo/typeahead_custom.php" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/theme/admin_3_angularjs/demo/typeahead_nba.json" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/theme/admin_3_angularjs/demo/typeahead_nhl.json" afterPath="" />
-      <change type="DELETED" beforePath="$PROJECT_DIR$/theme/admin_3_angularjs/demo/username_checker.php" afterPath="" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/theme/admin_3_angularjs/assets/global/css/components.css" afterPath="$PROJECT_DIR$/theme/admin_3_angularjs/assets/global/css/components.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/theme/admin_3_angularjs/assets/global/css/components.min.css" afterPath="$PROJECT_DIR$/theme/admin_3_angularjs/assets/global/css/components.min.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/theme/admin_3_angularjs/assets/global/plugins/DataTables-1.10.15/media/css/jquery.dataTables.css" afterPath="$PROJECT_DIR$/theme/admin_3_angularjs/assets/global/plugins/DataTables-1.10.15/media/css/jquery.dataTables.css" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/theme/admin_3_angularjs/js/main.js" afterPath="$PROJECT_DIR$/theme/admin_3_angularjs/js/main.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/theme/admin_3_angularjs/assets/global/plugins/bootstrap-daterangepicker/daterangepicker.js" afterPath="$PROJECT_DIR$/theme/admin_3_angularjs/assets/global/plugins/bootstrap-daterangepicker/daterangepicker.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/theme/admin_3_angularjs/js/controllers/GeneralPageController.js" afterPath="$PROJECT_DIR$/theme/admin_3_angularjs/js/controllers/GeneralPageController.js" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/theme/admin_3_angularjs/views/endpoint_management.html" afterPath="$PROJECT_DIR$/theme/admin_3_angularjs/views/endpoint_management.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/theme/admin_3_angularjs/views/new_investigation.html" afterPath="$PROJECT_DIR$/theme/admin_3_angularjs/views/new_investigation.html" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -42,18 +24,38 @@
       <file leaf-file-name="main.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/theme/admin_3_angularjs/js/main.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="396">
-              <caret line="321" column="117" lean-forward="true" selection-start-line="321" selection-start-column="117" selection-end-line="321" selection-end-column="117" />
+            <state relative-caret-position="464">
+              <caret line="289" column="39" lean-forward="false" selection-start-line="289" selection-start-column="19" selection-end-line="289" selection-end-column="39" />
               <folding />
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="endpoint_management.html" pinned="false" current-in-tab="true">
+      <file leaf-file-name="daterangepicker.js" pinned="false" current-in-tab="true">
+        <entry file="file://$PROJECT_DIR$/theme/admin_3_angularjs/assets/global/plugins/bootstrap-daterangepicker/daterangepicker.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="198">
+              <caret line="1207" column="40" lean-forward="false" selection-start-line="1207" selection-start-column="40" selection-end-line="1207" selection-end-column="40" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="DOMCore.js" pinned="false" current-in-tab="false">
+        <entry file="jar://$APPLICATION_HOME_DIR$/plugins/JavaScriptLanguage/lib/JavaScriptLanguage.jar!/com/intellij/lang/javascript/index/predefined/DOMCore.js">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="196">
+              <caret line="731" column="0" lean-forward="false" selection-start-line="731" selection-start-column="0" selection-end-line="731" selection-end-column="0" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="endpoint_management.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/theme/admin_3_angularjs/views/endpoint_management.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="221">
-              <caret line="66" column="8" lean-forward="true" selection-start-line="66" selection-start-column="8" selection-end-line="66" selection-end-column="8" />
+            <state relative-caret-position="-1554">
+              <caret line="67" column="6" lean-forward="false" selection-start-line="67" selection-start-column="6" selection-end-line="67" selection-end-column="39" />
               <folding>
                 <element signature="n#style#0;n#button#0;n#div#0;n#div#1;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#img#0;n#button#0;n#div#0;n#div#1;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
@@ -67,146 +69,17 @@
                 <element signature="n#style#0;n#span#0;n#button#4;n#div#0;n#div#1;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#button#5;n#div#0;n#div#1;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#button#6;n#div#0;n#div#1;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
-                <marker date="1493022696337" expanded="true" signature="6013:6025" ph="..." />
+                <marker date="1493107577699" expanded="true" signature="6053:6065" ph="..." />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="jquery.dataTables.css" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/theme/admin_3_angularjs/assets/global/plugins/DataTables-1.10.15/media/css/jquery.dataTables.css">
+      <file leaf-file-name="GeneralPageController.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/theme/admin_3_angularjs/js/controllers/GeneralPageController.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="18">
-              <caret line="276" column="16" lean-forward="false" selection-start-line="276" selection-start-column="16" selection-end-line="276" selection-end-column="16" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="datatables.all.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/theme/admin_3_angularjs/assets/global/plugins/datatables/datatables.all.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="18">
-              <caret line="10948" column="70" lean-forward="false" selection-start-line="10948" selection-start-column="70" selection-end-line="10948" selection-end-column="70" />
-              <folding>
-                <element signature="n#!!doc" expanded="true" />
-                <element signature="e#74773#75038#0" expanded="false" />
-                <element signature="e#75044#75303#0" expanded="false" />
-                <element signature="e#82579#85797#0" expanded="false" />
-                <element signature="e#86038#86088#0" expanded="false" />
-                <element signature="e#86247#86375#0" expanded="false" />
-                <element signature="e#86652#86943#0" expanded="false" />
-                <element signature="e#87771#89388#0" expanded="false" />
-                <element signature="e#90308#92359#0" expanded="false" />
-                <element signature="e#92847#94688#0" expanded="false" />
-                <element signature="e#95001#95586#0" expanded="false" />
-                <element signature="e#95767#97658#0" expanded="false" />
-                <element signature="e#98522#100740#0" expanded="false" />
-                <element signature="e#100935#104848#0" expanded="false" />
-                <element signature="e#105205#105838#0" expanded="false" />
-                <element signature="e#106035#109739#0" expanded="false" />
-                <element signature="e#110283#112002#0" expanded="false" />
-                <element signature="e#112443#112898#0" expanded="false" />
-                <element signature="e#113365#116726#0" expanded="false" />
-                <element signature="e#116960#117242#0" expanded="false" />
-                <element signature="e#123332#125456#0" expanded="false" />
-                <element signature="e#125835#127367#0" expanded="false" />
-                <element signature="e#127546#128179#0" expanded="false" />
-                <element signature="e#128707#129118#0" expanded="false" />
-                <element signature="e#128735#128751#0" expanded="false" />
-                <element signature="e#129698#130946#0" expanded="false" />
-                <element signature="e#131418#132161#0" expanded="false" />
-                <element signature="e#132639#134369#0" expanded="false" />
-                <element signature="e#134623#134781#0" expanded="false" />
-                <element signature="e#135082#135240#0" expanded="false" />
-                <element signature="e#135477#136006#0" expanded="false" />
-                <element signature="e#136197#136961#0" expanded="false" />
-                <element signature="e#137009#137789#0" expanded="false" />
-                <element signature="e#137999#140313#0" expanded="false" />
-                <element signature="e#140672#141051#0" expanded="false" />
-                <element signature="e#141563#142820#0" expanded="false" />
-                <element signature="e#143246#144530#0" expanded="false" />
-                <element signature="e#144997#146019#0" expanded="false" />
-                <element signature="e#146267#146504#0" expanded="false" />
-                <element signature="e#161634#169047#0" expanded="false" />
-                <element signature="e#169387#169655#0" expanded="false" />
-                <element signature="e#177057#178229#0" expanded="false" />
-                <element signature="e#178718#180622#0" expanded="false" />
-                <element signature="e#180998#181819#0" expanded="false" />
-                <element signature="e#182089#182832#0" expanded="false" />
-                <element signature="e#182989#183899#0" expanded="false" />
-                <element signature="e#187806#187963#0" expanded="false" />
-                <element signature="e#188327#189050#0" expanded="false" />
-                <element signature="e#189425#189781#0" expanded="false" />
-                <element signature="e#191774#192162#0" expanded="false" />
-                <element signature="e#192699#192793#0" expanded="false" />
-                <element signature="e#193526#193875#0" expanded="false" />
-                <element signature="e#193922#194348#0" expanded="false" />
-                <element signature="e#194394#194904#0" expanded="false" />
-                <element signature="e#201019#201677#0" expanded="false" />
-                <element signature="e#201834#206481#0" expanded="false" />
-                <element signature="e#206534#207366#0" expanded="false" />
-                <element signature="e#208466#209336#0" expanded="false" />
-                <element signature="e#209430#210064#0" expanded="false" />
-                <element signature="e#222439#224216#0" expanded="false" />
-                <element signature="e#238467#238542#0" expanded="false" />
-                <element signature="e#238649#238800#0" expanded="false" />
-                <element signature="e#238870#241237#0" expanded="false" />
-                <element signature="e#241300#242274#0" expanded="false" />
-                <element signature="e#242337#242807#0" expanded="false" />
-                <element signature="e#242394#242417#0" expanded="false" />
-                <element signature="e#242906#243028#0" expanded="false" />
-                <element signature="e#243127#243249#0" expanded="false" />
-                <element signature="e#243328#243390#0" expanded="false" />
-                <element signature="e#243475#243599#0" expanded="false" />
-                <element signature="e#243686#243898#0" expanded="false" />
-                <element signature="e#243979#244145#0" expanded="false" />
-                <element signature="e#244241#244834#0" expanded="false" />
-                <element signature="e#244923#245096#0" expanded="false" />
-                <element signature="e#245150#245259#0" expanded="false" />
-                <element signature="e#245322#245622#0" expanded="false" />
-                <element signature="e#245684#245748#0" expanded="false" />
-                <element signature="e#245820#247632#0" expanded="false" />
-                <element signature="e#247716#248973#0" expanded="false" />
-                <element signature="e#249051#249251#0" expanded="false" />
-                <element signature="e#249305#249439#0" expanded="false" />
-                <element signature="e#249524#249721#0" expanded="false" />
-                <element signature="e#249808#249948#0" expanded="false" />
-                <element signature="e#250029#250227#0" expanded="false" />
-                <element signature="e#250321#250449#0" expanded="false" />
-                <element signature="e#250532#250613#0" expanded="false" />
-                <element signature="e#250672#251038#0" expanded="false" />
-                <element signature="e#255094#255687#0" expanded="false" />
-                <element signature="e#255766#255843#0" expanded="false" />
-                <element signature="e#255896#256065#0" expanded="false" />
-                <element signature="e#256119#256197#0" expanded="false" />
-                <element signature="e#256249#256346#0" expanded="false" />
-                <element signature="e#256997#257421#0" expanded="false" />
-                <element signature="e#258030#258426#0" expanded="false" />
-                <element signature="e#259018#259330#0" expanded="false" />
-                <element signature="e#260075#260270#0" expanded="false" />
-                <element signature="e#260375#260806#0" expanded="false" />
-                <element signature="e#260853#260951#0" expanded="false" />
-                <element signature="e#261001#261054#0" expanded="false" />
-                <element signature="e#261100#261173#0" expanded="false" />
-                <element signature="e#261219#261344#0" expanded="false" />
-                <element signature="e#261401#264857#0" expanded="false" />
-                <element signature="e#264999#265619#0" expanded="false" />
-                <element signature="e#265777#266170#0" expanded="false" />
-                <element signature="e#271450#278604#0" expanded="false" />
-                <marker date="1481008594000" expanded="true" signature="157165:157190" ph="..." />
-                <marker date="1481008594000" expanded="true" signature="157412:157437" ph="..." />
-                <marker date="1481008594000" expanded="true" signature="425712:425720" ph="..." />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="endpoint.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/theme/admin_3_angularjs/views/endpoint.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="0">
-              <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+            <state relative-caret-position="126">
+              <caret line="7" column="18" lean-forward="false" selection-start-line="7" selection-start-column="8" selection-end-line="7" selection-end-column="18" />
               <folding />
             </state>
           </provider>
@@ -215,8 +88,8 @@
       <file leaf-file-name="new_investigation.html" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/theme/admin_3_angularjs/views/new_investigation.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="311">
-              <caret line="773" column="43" lean-forward="false" selection-start-line="773" selection-start-column="39" selection-end-line="773" selection-end-column="43" />
+            <state relative-caret-position="499">
+              <caret line="243" column="0" lean-forward="true" selection-start-line="243" selection-start-column="0" selection-end-line="243" selection-end-column="0" />
               <folding>
                 <element signature="n#style#0;n#div#2;n#div#1;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#button#0;n#div#2;n#div#1;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
@@ -227,20 +100,32 @@
                 <element signature="n#style#0;n#img#0;n#button#0;n#div#5;n#div#1;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#button#1;n#div#5;n#div#1;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
                 <element signature="n#style#0;n#img#0;n#button#1;n#div#5;n#div#1;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
-                <element signature="e#7914#8737#0" expanded="false" />
-                <element signature="e#9474#10829#0" expanded="false" />
-                <element signature="e#14317#15210#0" expanded="false" />
-                <element signature="e#36685#38722#0" expanded="false" />
+                <element signature="e#7818#8653#0" expanded="false" />
+                <element signature="e#14271#15164#0" expanded="false" />
+                <element signature="e#24395#24437#0" expanded="false" />
+                <element signature="e#24493#25600#0" expanded="false" />
+                <element signature="e#25638#26047#0" expanded="false" />
+                <element signature="e#26089#26416#0" expanded="false" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="components.css" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/theme/admin_3_angularjs/assets/global/css/components.css">
+      <file leaf-file-name="pickers.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/theme/admin_3_angularjs/views/pickers.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="806">
-              <caret line="17858" column="2" lean-forward="false" selection-start-line="17858" selection-start-column="2" selection-end-line="17858" selection-end-column="2" />
+            <state relative-caret-position="437">
+              <caret line="677" column="25" lean-forward="false" selection-start-line="677" selection-start-column="25" selection-end-line="677" selection-end-column="25" />
+              <folding />
+            </state>
+          </provider>
+        </entry>
+      </file>
+      <file leaf-file-name="header.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/theme/admin_3_angularjs/tpl/header.html">
+          <provider selected="true" editor-type-id="text-editor">
+            <state relative-caret-position="270">
+              <caret line="39" column="50" lean-forward="false" selection-start-line="39" selection-start-column="31" selection-end-line="39" selection-end-column="50" />
               <folding />
             </state>
           </provider>
@@ -268,17 +153,6 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>high</find>
-      <find>新建</find>
-      <find>.caret</find>
-      <find>console.log</find>
-      <find>data-range-key</find>
-      <find>search</find>
-      <find>UTC</find>
-      <find>searchResult</find>
-      <find>abc</find>
-      <find>filter_condition</find>
-      <find>cons</find>
       <find>group-by</find>
       <find>getPropertyForObject</find>
       <find>group</find>
@@ -298,6 +172,17 @@
       <find>rowGroup</find>
       <find>angularjs-dropdown-multiselect</find>
       <find>dataTables_wrapper</find>
+      <find>$rootScope</find>
+      <find>pass</find>
+      <find>searchDateRange</find>
+      <find>timepicker</find>
+      <find>click</find>
+      <find>console.log($rootScope.passJson);</find>
+      <find>daterangepicker</find>
+      <find>moment</find>
+      <find>max</find>
+      <find>herf</find>
+      <find>label</find>
     </findStrings>
     <dirStrings>
       <dir>D:\code\DI\DI-UI\_resources</dir>
@@ -346,7 +231,6 @@
         <option value="$PROJECT_DIR$/theme/admin_3_angularjs/assets/global/plugins/datatables/datatables.min.css" />
         <option value="$PROJECT_DIR$/test.html" />
         <option value="$PROJECT_DIR$/theme/admin_3_angularjs/tpl/header.html" />
-        <option value="$PROJECT_DIR$/theme/admin_3_angularjs/assets/global/plugins/bootstrap-daterangepicker/daterangepicker.js" />
         <option value="$PROJECT_DIR$/theme/admin_3_angularjs/views/investigation_record.html" />
         <option value="$PROJECT_DIR$/theme/admin_3_angularjs/assets/global/plugins/bootstrap/css/bootstrap.min.css" />
         <option value="$PROJECT_DIR$/theme/admin_3_angularjs/assets/global/plugins/angularjs/plugins/angularjs-dropdown-multiselect/src/angularjs-dropdown-multiselect.js" />
@@ -354,12 +238,14 @@
         <option value="$PROJECT_DIR$/theme/admin_3_angularjs/views/profile/endpoint_management.html" />
         <option value="$PROJECT_DIR$/theme/admin_3_angularjs/views/data1.js" />
         <option value="$PROJECT_DIR$/theme/admin_3_angularjs/views/endpoint.js" />
-        <option value="$PROJECT_DIR$/theme/admin_3_angularjs/js/main.js" />
         <option value="$PROJECT_DIR$/theme/admin_3_angularjs/assets/global/plugins/DataTables-1.10.15/media/css/jquery.dataTables.css" />
         <option value="$PROJECT_DIR$/theme/admin_3_angularjs/assets/global/css/components.min.css" />
         <option value="$PROJECT_DIR$/theme/admin_3_angularjs/assets/global/css/components.css" />
-        <option value="$PROJECT_DIR$/theme/admin_3_angularjs/views/new_investigation.html" />
+        <option value="$PROJECT_DIR$/theme/admin_3_angularjs/js/main.js" />
+        <option value="$PROJECT_DIR$/theme/admin_3_angularjs/js/controllers/GeneralPageController.js" />
         <option value="$PROJECT_DIR$/theme/admin_3_angularjs/views/endpoint_management.html" />
+        <option value="$PROJECT_DIR$/theme/admin_3_angularjs/views/new_investigation.html" />
+        <option value="$PROJECT_DIR$/theme/admin_3_angularjs/assets/global/plugins/bootstrap-daterangepicker/daterangepicker.js" />
       </list>
     </option>
   </component>
@@ -523,6 +409,54 @@
               <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
             </PATH_ELEMENT>
             <PATH_ELEMENT>
+              <option name="myItemId" value="js" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="DI-UI" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="DI-UI" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="theme" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="admin_3_angularjs" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="js" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="controllers" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+          </PATH>
+          <PATH>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="DI-UI" />
+              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="DI-UI" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="theme" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
+              <option name="myItemId" value="admin_3_angularjs" />
+              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
+            </PATH_ELEMENT>
+            <PATH_ELEMENT>
               <option name="myItemId" value="assets" />
               <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
             </PATH_ELEMENT>
@@ -628,12 +562,12 @@
       <workItem from="1491372300104" duration="79323000" />
       <workItem from="1492048168060" duration="28797000" />
       <workItem from="1492393055674" duration="65847000" />
-      <workItem from="1492739460827" duration="15854000" />
+      <workItem from="1492739460827" duration="32146000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="365390000" />
+    <option name="totallyTimeSpent" value="381682000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -645,14 +579,15 @@
     </todo-panel>
   </component>
   <component name="ToolWindowManager">
-    <frame x="-8" y="-8" width="1936" height="1056" extended-state="7" />
+    <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
     <editor active="true" />
     <layout>
       <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.20682302" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32936078" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32936078" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
       <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
-      <window_info id="File Transfer" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.33044422" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32936078" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="File Transfer" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33044422" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32936078" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
@@ -664,7 +599,6 @@
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
-      <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.32936078" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
     </layout>
     <layout-to-restore>
@@ -704,7 +638,7 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="javascript">
           <url>file://$PROJECT_DIR$/theme/admin_3_angularjs/views/new_investigation.html</url>
-          <line>875</line>
+          <line>897</line>
           <option name="timeStamp" value="6" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="javascript">
@@ -724,7 +658,7 @@
         </line-breakpoint>
         <line-breakpoint enabled="true" type="javascript">
           <url>file://$PROJECT_DIR$/theme/admin_3_angularjs/views/endpoint_management.html</url>
-          <line>141</line>
+          <line>142</line>
           <properties />
           <option name="timeStamp" value="11" />
         </line-breakpoint>
@@ -734,19 +668,6 @@
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/theme/admin_3_angularjs/assets/global/plugins/angularjs/plugins/angularjs-dropdown-multiselect-master/src/app/main/main.controller.js" />
-    <entry file="file://$PROJECT_DIR$/theme/admin_3_angularjs/icon/arrow.png">
-      <provider selected="true" editor-type-id="images">
-        <state />
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/theme/admin_3_angularjs/assets/layouts/layout3/css/themes/default.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="196">
-          <caret line="385" column="18" lean-forward="false" selection-start-line="385" selection-start-column="18" selection-end-line="385" selection-end-column="18" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/theme/admin_3_angularjs/assets/layouts/layout3/css/themes/default.min.css">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="169">
@@ -869,13 +790,6 @@
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/theme/admin_3_angularjs/js/NewInvestigation.js" />
-    <entry file="file://$PROJECT_DIR$/theme/admin_3_angularjs/assets/pages/scripts/components-date-time-pickers.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="4" lean-forward="false" selection-start-line="0" selection-start-column="4" selection-end-line="0" selection-end-column="4" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/theme/admin_3_angularjs/assets/global/plugins/datatables/datatables.css">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="196">
@@ -913,13 +827,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/theme/admin_3_angularjs/views/pickers.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="2445">
-          <caret line="677" column="21" lean-forward="false" selection-start-line="677" selection-start-column="21" selection-end-line="677" selection-end-column="21" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/theme/admin_3_angularjs/views/dropdowns.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-2700">
@@ -927,24 +834,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/theme/admin_3_angularjs/assets/global/plugins/bootstrap-daterangepicker-master/daterangepicker.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="197">
-          <caret line="1202" column="8" lean-forward="false" selection-start-line="1202" selection-start-column="8" selection-end-line="1202" selection-end-column="8" />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/theme/admin_3_angularjs/views/dashboard.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="-26875">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/theme/admin_3_angularjs/assets/global/plugins/bootstrap-daterangepicker/daterangepicker.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="187">
-          <caret line="1209" column="1" lean-forward="false" selection-start-line="1209" selection-start-column="1" selection-end-line="1209" selection-end-column="1" />
         </state>
       </provider>
     </entry>
@@ -975,13 +868,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="306">
           <caret line="47" column="137" lean-forward="false" selection-start-line="47" selection-start-column="137" selection-end-line="47" selection-end-column="137" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/theme/admin_3_angularjs/tpl/header.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="270">
-          <caret line="39" column="50" lean-forward="false" selection-start-line="39" selection-start-column="31" selection-end-line="39" selection-end-column="50" />
         </state>
       </provider>
     </entry>
@@ -1022,7 +908,7 @@
         <state relative-caret-position="18">
           <caret line="10948" column="70" lean-forward="false" selection-start-line="10948" selection-start-column="70" selection-end-line="10948" selection-end-column="70" />
           <folding>
-            <element signature="n#!!doc" expanded="true" />
+            <element signature="n#!!doc" expanded="false" />
             <element signature="e#74773#75038#0" expanded="false" />
             <element signature="e#75044#75303#0" expanded="false" />
             <element signature="e#82579#85797#0" expanded="false" />
@@ -1134,14 +1020,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/theme/admin_3_angularjs/js/main.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="396">
-          <caret line="321" column="117" lean-forward="true" selection-start-line="321" selection-start-column="117" selection-end-line="321" selection-end-column="117" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/theme/admin_3_angularjs/assets/global/plugins/DataTables-1.10.15/media/css/jquery.dataTables.css">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="18">
@@ -1166,28 +1044,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/theme/admin_3_angularjs/views/new_investigation.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="311">
-          <caret line="773" column="43" lean-forward="false" selection-start-line="773" selection-start-column="39" selection-end-line="773" selection-end-column="43" />
-          <folding>
-            <element signature="n#style#0;n#div#2;n#div#1;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#button#0;n#div#2;n#div#1;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
-            <element signature="n#div#1;n#div#3;n#div#1;n#div#0;n#div#0;n#div#0;n#!!top" expanded="false" />
-            <element signature="n#style#0;n#button#0;n#div#4;n#div#1;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#button#1;n#div#4;n#div#1;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#button#0;n#div#5;n#div#1;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#img#0;n#button#0;n#div#5;n#div#1;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#button#1;n#div#5;n#div#1;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#img#0;n#button#1;n#div#5;n#div#1;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
-            <element signature="e#7914#8737#0" expanded="false" />
-            <element signature="e#9474#10829#0" expanded="false" />
-            <element signature="e#14317#15210#0" expanded="false" />
-            <element signature="e#36685#38722#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/theme/admin_3_angularjs/views/investigation_record.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="216">
@@ -1196,20 +1052,73 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/theme/admin_3_angularjs/js/controllers/GeneralPageController.js">
+    <entry file="file://$PROJECT_DIR$/theme/admin_3_angularjs/tpl/header.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="216">
-          <caret line="12" column="0" lean-forward="true" selection-start-line="12" selection-start-column="0" selection-end-line="12" selection-end-column="0" />
+        <state relative-caret-position="270">
+          <caret line="39" column="50" lean-forward="false" selection-start-line="39" selection-start-column="31" selection-end-line="39" selection-end-column="50" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/theme/admin_3_angularjs/assets/pages/scripts/components-date-time-pickers.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-216">
+          <caret line="0" column="4" lean-forward="false" selection-start-line="0" selection-start-column="4" selection-end-line="0" selection-end-column="4" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/theme/admin_3_angularjs/views/pickers.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="437">
+          <caret line="677" column="25" lean-forward="false" selection-start-line="677" selection-start-column="25" selection-end-line="677" selection-end-column="25" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/theme/admin_3_angularjs/assets/global/plugins/bootstrap-daterangepicker-master/daterangepicker.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="324">
+          <caret line="1619" column="51" lean-forward="false" selection-start-line="1619" selection-start-column="51" selection-end-line="1619" selection-end-column="51" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/theme/admin_3_angularjs/assets/global/plugins/revo-slider/js/jquery.themepunch.tools.min.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="268">
+          <caret line="22" column="0" lean-forward="true" selection-start-line="22" selection-start-column="0" selection-end-line="22" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/theme/admin_3_angularjs/assets/global/plugins/bootstrap-timepicker/js/bootstrap-timepicker.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="196">
+          <caret line="1059" column="2" lean-forward="false" selection-start-line="1059" selection-start-column="2" selection-end-line="1059" selection-end-column="2" />
           <folding>
-            <element signature="n#!!doc" expanded="true" />
+            <marker date="1489653087935" expanded="true" signature="7882:7888" ph=" " />
+            <marker date="1489653087935" expanded="true" signature="8063:8069" ph=" " />
+            <marker date="1489653087935" expanded="true" signature="8265:8271" ph=" " />
+            <marker date="1489653087935" expanded="true" signature="8793:8799" ph=" " />
+            <marker date="1489653087935" expanded="true" signature="9217:9223" ph=" " />
+            <marker date="1489653087935" expanded="true" signature="9419:9425" ph=" " />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/theme/admin_3_angularjs/js/main.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="464">
+          <caret line="289" column="39" lean-forward="false" selection-start-line="289" selection-start-column="19" selection-end-line="289" selection-end-column="39" />
+          <folding />
         </state>
       </provider>
     </entry>
     <entry file="file://$PROJECT_DIR$/theme/admin_3_angularjs/views/endpoint_management.html">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="221">
-          <caret line="66" column="8" lean-forward="true" selection-start-line="66" selection-start-column="8" selection-end-line="66" selection-end-column="8" />
+        <state relative-caret-position="-1554">
+          <caret line="67" column="6" lean-forward="false" selection-start-line="67" selection-start-column="6" selection-end-line="67" selection-end-column="39" />
           <folding>
             <element signature="n#style#0;n#button#0;n#div#0;n#div#1;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#img#0;n#button#0;n#div#0;n#div#1;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
@@ -1223,8 +1132,56 @@
             <element signature="n#style#0;n#span#0;n#button#4;n#div#0;n#div#1;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#button#5;n#div#0;n#div#1;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
             <element signature="n#style#0;n#button#6;n#div#0;n#div#1;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
-            <marker date="1493022696337" expanded="true" signature="6013:6025" ph="..." />
+            <marker date="1493107577699" expanded="true" signature="6053:6065" ph="..." />
           </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="jar://$APPLICATION_HOME_DIR$/plugins/JavaScriptLanguage/lib/JavaScriptLanguage.jar!/com/intellij/lang/javascript/index/predefined/DOMCore.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="196">
+          <caret line="731" column="0" lean-forward="false" selection-start-line="731" selection-start-column="0" selection-end-line="731" selection-end-column="0" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/theme/admin_3_angularjs/js/controllers/GeneralPageController.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="126">
+          <caret line="7" column="18" lean-forward="false" selection-start-line="7" selection-start-column="8" selection-end-line="7" selection-end-column="18" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/theme/admin_3_angularjs/views/new_investigation.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="499">
+          <caret line="243" column="0" lean-forward="true" selection-start-line="243" selection-start-column="0" selection-end-line="243" selection-end-column="0" />
+          <folding>
+            <element signature="n#style#0;n#div#2;n#div#1;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#button#0;n#div#2;n#div#1;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#div#1;n#div#3;n#div#1;n#div#0;n#div#0;n#div#0;n#!!top" expanded="false" />
+            <element signature="n#style#0;n#button#0;n#div#4;n#div#1;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#button#1;n#div#4;n#div#1;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#button#0;n#div#5;n#div#1;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#img#0;n#button#0;n#div#5;n#div#1;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#button#1;n#div#5;n#div#1;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#img#0;n#button#1;n#div#5;n#div#1;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="e#7818#8653#0" expanded="false" />
+            <element signature="e#14271#15164#0" expanded="false" />
+            <element signature="e#24395#24437#0" expanded="false" />
+            <element signature="e#24493#25600#0" expanded="false" />
+            <element signature="e#25638#26047#0" expanded="false" />
+            <element signature="e#26089#26416#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/theme/admin_3_angularjs/assets/global/plugins/bootstrap-daterangepicker/daterangepicker.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="198">
+          <caret line="1207" column="40" lean-forward="false" selection-start-line="1207" selection-start-column="40" selection-end-line="1207" selection-end-column="40" />
+          <folding />
         </state>
       </provider>
     </entry>

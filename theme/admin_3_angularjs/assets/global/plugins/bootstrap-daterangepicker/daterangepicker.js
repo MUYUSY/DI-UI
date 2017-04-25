@@ -1205,10 +1205,12 @@
             $('#searchDateRange').html(label + '<span class="caret date-range-caret">');
             this.chosenLabel = label;
             if (label == this.locale.customRangeLabel) {
+                this.maxDate = moment();
                 this.showCalendars();
             } else {
                 var dates = this.ranges[label];
                 this.startDate = dates[0];
+                dates[1] = moment();
                 this.endDate = dates[1];
 
                 if (!this.timePicker) {
