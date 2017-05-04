@@ -65,10 +65,9 @@
 </div>
 
 <script>
-//    console.log($rootScope.passJson);
     var dtable;
 
-    $.get("http://10.21.140.111:6543/deviceinfo", function (data) {
+    $.getJSON("./views/endpoint.js", function (data) {
 //        console.log(JSON.stringify(data));
         var devices = [];
         for (var i = 0; i < data.length; i++) {

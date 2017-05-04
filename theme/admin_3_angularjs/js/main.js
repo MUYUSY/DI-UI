@@ -248,7 +248,7 @@ MetronicApp.config(['$stateProvider', '$urlRouterProvider', function($stateProvi
             url: "/new_investigation",
             templateUrl: "views/new_investigation.html",
             data: {pageTitle: '新建调查'},
-            controller: "GeneralPageController",
+            controller: "NewInvestigationController",
             resolve: {
                 deps: ['$ocLazyLoad', function($ocLazyLoad) {
                     return $ocLazyLoad.load([{
@@ -277,7 +277,7 @@ MetronicApp.config(['$stateProvider', '$urlRouterProvider', function($stateProvi
                             './assets/global/plugins/datatables/plugins/bootstrap/datatables.bootstrap.js',
                             './assets/global/plugins/bootstrap-daterangepicker/daterangepicker.js',
 
-                            'js/controllers/GeneralPageController.js'
+                            'js/controllers/NewInvestigationController.js'
 
                         ]
                     }]);
@@ -286,18 +286,21 @@ MetronicApp.config(['$stateProvider', '$urlRouterProvider', function($stateProvi
         })
 
         // Investigation Record
-        .state('investivationrecord', {
+        .state('investigationrecord', {
             url: "/investigation_record",
             templateUrl: "views/investigation_record.html",
             data: {pageTitle: '调查记录'},
-            controller: "GeneralPageController",
+            controller: "InvestigationRecordController",
             resolve: {
                 deps: ['$ocLazyLoad', function($ocLazyLoad) {
                     return $ocLazyLoad.load([{
                         name: 'MetronicApp',
                         files: [
 
-                            'js/controllers/GeneralPageController.js'
+                            'tree/d3.v3.js',
+                            'js/controllers/GeneralPageController.js',
+                            'tree/dndTree.js',
+                            'tree/mindmap.css'
 
                         ]
                     }]);

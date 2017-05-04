@@ -1205,12 +1205,12 @@
             $('#searchDateRange').html(label + '<span class="caret date-range-caret">');
             this.chosenLabel = label;
             if (label == this.locale.customRangeLabel) {
-                this.maxDate = moment();
+                this.maxDate = moment();    //add: to let the max time in calender always be the current time.
                 this.showCalendars();
             } else {
                 var dates = this.ranges[label];
                 this.startDate = dates[0];
-                dates[1] = moment();
+                dates[1] = moment();    //add: to let the end time of today, this week and this month be the current time.
                 this.endDate = dates[1];
 
                 if (!this.timePicker) {

@@ -5,7 +5,7 @@
             <div class="portlet-title">
                 <div class="caption font-dark">
                     <span class="caption-subject bold uppercase">调查记录</span>
-                    <span id="time-selected" class="time-selected"></span>
+                    <span id="time-selected" class="time-selected" ng-controller="Test"></span>
                 </div>
             </div>
 
@@ -13,5 +13,46 @@
 
             </div>
         </div>
+    </div>
+</div>
+
+<div class="popover popover-mindmap ng-scope am-flip-x bottom" role="tooltip" style="top: 337.5px; left: 201px; display: none; visibility: visible;">
+    <h3 class="popover-title ng-binding">
+        {name}
+        <!-- ngIf: objectsMeta[detectedObjects[mindmapNodePopoverObjectId].metaId].rating && objectsMeta[detectedObjects[mindmapNodePopoverObjectId].metaId].rating > 60 -->
+    </h3>
+    <div class="popover-content">
+        <table class="table ddes-table table-mindmap-popover">
+            <tbody><tr>
+                <td>ID</td>
+                <td class="ng-binding">72057594037927936</td>
+            </tr>
+            <tr>
+                <td><span class="__l10n ng-binding ng-isolate-scope" ng-bind-html="compiled" key="NAME">名称</span></td>
+                <td class="ng-binding">tmumevt.dll</td>
+            </tr>
+            <tr>
+                <td><span class="__l10n ng-binding ng-isolate-scope" ng-bind-html="compiled" key="TYPE">类型</span></td>
+                <td>
+                    <span class="detectedObjectType ng-binding ng-isolate-scope" object-type="detectedObjects[mindmapNodePopoverObjectId].objectType">文件</span>
+                </td>
+            </tr>
+            <!-- ngIf: detectedObjects[mindmapNodePopoverObjectId].time != '1970-01-01 00:00:00' --><tr ng-if="detectedObjects[mindmapNodePopoverObjectId].time != '1970-01-01 00:00:00'" class="ng-scope">
+                <td><span>时间</span></td>
+                <td class="ng-binding">2016/04/21 19:31</td>
+            </tr><!-- end ngIf: detectedObjects[mindmapNodePopoverObjectId].time != '1970-01-01 00:00:00' -->
+            <tr>
+                <td><span>活动</span></td>
+                <td>
+                    <span>已访问</span>
+                </td>
+            </tr>
+            <tr>
+                <td><span>详细信息</span></td>
+                <td>
+                    <div class="detectedObjectMeta object-detail ng-isolate-scope" object-meta="objectsMeta[detectedObjects[mindmapNodePopoverObjectId].metaId]"><!-- ngRepeat: (key, value) in meta --><p ng-repeat="(key, value) in meta" class="ng-scope"><span class="ng-binding">类型: </span><br><span style="" class="ng-binding">OBJECT_FILE</span></p><!-- end ngRepeat: (key, value) in meta --><p ng-repeat="(key, value) in meta" class="ng-scope"><span class="ng-binding">活动: </span><br><span style="" class="ng-binding">OPERATION_ACCESS</span></p><!-- end ngRepeat: (key, value) in meta --><p ng-repeat="(key, value) in meta" class="ng-scope"><span class="ng-binding">首次记录: </span><br><span style="" class="ng-binding">2016/04/14 17:09:52</span></p><!-- end ngRepeat: (key, value) in meta --><p ng-repeat="(key, value) in meta" class="ng-scope"><span class="ng-binding">文件名: </span><br><span style="" class="ng-binding">tmumevt.dll</span></p><!-- end ngRepeat: (key, value) in meta --><p ng-repeat="(key, value) in meta" class="ng-scope"><span class="ng-binding">路径: </span><br><span style="" class="ng-binding">C:\Windows\SysWOW64\tmums\20016\AddOn\1.7.0.1052\tmumevt.dll</span></p><!-- end ngRepeat: (key, value) in meta --><p ng-repeat="(key, value) in meta" class="ng-scope"><span class="ng-binding">SHA-1 哈希值: </span><br><span style="" class="ng-binding">6E934C81BF9A405CB9DB5CC2D8E771FC89E55BEE</span></p><!-- end ngRepeat: (key, value) in meta --><p ng-repeat="(key, value) in meta" class="ng-scope"><span class="ng-binding">创建时间: </span><br><span style="" class="ng-binding">2016/04/21 19:31:24</span></p><!-- end ngRepeat: (key, value) in meta --><p ng-repeat="(key, value) in meta" class="ng-scope"><span class="ng-binding">MD5 哈希值: </span><br><span style="" class="ng-binding">04F48B738254FF576EAC1309644E9746</span></p><!-- end ngRepeat: (key, value) in meta --></div>
+                </td>
+            </tr>
+        </tbody></table>
     </div>
 </div>

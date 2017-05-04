@@ -141,6 +141,7 @@
 <script>
     ComponentsSelect2.init();
     ComponentsBootstrapSelect.init();
+
     var dtable;
     var startTime = moment().startOf('day').format('X');
     var endTime = moment().format('X');
@@ -693,7 +694,7 @@
                             }
                             break;
                         case "进程名":
-                            if (keyValue[0] == "subject_process") {
+                            if (keyValue[0] == "subject_process" || keyValue[0] == "target_file_path") {
                                 result = highlightInclude(result, keyword, key = "pname");
                             }
                             break;
@@ -780,6 +781,7 @@
             data: JSON.stringify(postJson),
             success: function (data) {
                 var results = [];
+
                 if (data == "") {
                     results = [];
                 }
@@ -797,7 +799,7 @@
                                 processUsername: getValue(list[2]),
                                 processId: getValue(list[3]),
                                 processPath: getValue(list[4]),
-                                eventType: getEventType(getValue(list[12]), getValue(list[5])),
+                                eventType: getEventType(getValue(list[10]), getValue(list[5])),
                                 content: formatData(list.slice(13), search_condition)
                             })
                         }
@@ -831,6 +833,7 @@
                                         processPath: data.processPath
                                     };
                                 var content = "<a href='#/investigation_record?json=" + JSON.stringify(passJson) + "'>" + data.processId;
+//                                var content = '<span  ng-click="passJson(' + "'111'" + ')">' + data.processId + '</span>';
                                 return content;
                             }
                         },
