@@ -64,11 +64,16 @@
     </div>
 </div>
 
+<script src="../assets/global/plugins/DataTables-1.10.15/media/js/jquery.dataTables.js" type="text/javascript"></script>
+<script src="../assets/global/plugins/DataTables-1.10.15/extensions/RowGroup/js/dataTables.rowGroup.js" type="text/javascript"></script>
+<script src="../assets/global/plugins/DataTables-1.10.15/extensions/Select/js/dataTables.select.js" type="text/javascript"></script>
+
 <script>
     var dtable;
 
-    $.getJSON("./views/endpoint.js", function (data) {
+    $.get("deviceinfo", function (data) {
 //        console.log(JSON.stringify(data));
+        data = data.data;
         var devices = [];
         for (var i = 0; i < data.length; i++) {
             for (var k = 0; k < data[i].devices.length; k++) {

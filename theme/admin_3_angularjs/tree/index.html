@@ -1,0 +1,62 @@
+<!DOCTYPE html>
+<meta charset="utf-8">
+<style type="text/css">
+  
+	.node {
+    cursor: pointer;
+  }
+
+  .overlay{
+      background-color:#EEE;
+  }
+   
+  .node circle {
+    fill: #fff;
+    stroke: steelblue;
+    stroke-width: 1.5px;
+  }
+   
+  .node text {
+    font-size:10px; 
+    font-family:sans-serif;
+  }
+   
+  .link {
+    fill: none;
+    stroke: #ccc;
+    stroke-width: 1.5px;
+  }
+
+  .templink {
+    fill: none;
+    stroke: red;
+    stroke-width: 3px;
+  }
+
+  .ghostCircle.show{
+      display:block;
+  }
+
+  .ghostCircle, .activeDrag .ghostCircle{
+       display: none;
+  }
+
+</style>
+<script type="application/javascript"  src="d3.v3.js" ></script>
+<script type="application/javascript"  src="dndTree.js"></script>
+<script type="application/javascript"  src="jquery-1.10.2.min.js" ></script>
+<script src="//ajax.googleapis.com/ajax/libs/angularjs/1.5.8/angular.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/angular-strap/v2.3.8/angular-strap.min.js"></script>
+<script src="//cdnjs.cloudflare.com/ajax/libs/angular-strap/v2.3.8/angular-strap.tpl.min.js"></script>
+
+
+<body ng-app="myApp">
+   <div class="dropdown-header"><input type="text" class="form-control searchField ng-pristine ng-valid ng-touched" ng-keydown="keyDownSearchDefault($event); keyDownSearch($event, input.searchFilter);" ng-style="{width: '100%'}" ng-model="input.searchFilter" placeholder="检索..." style="width: 100%;"></div>
+    <div id="tree-container"></div>
+</body>
+<script type="application/javascript">
+    angular.module('myApp', ['mgcrea.ngStrap']);
+    // Get JSON data
+      treeJSON = d3.json("easy.json",renderTree);
+</script>
+</html>

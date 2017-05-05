@@ -239,7 +239,7 @@
         }
     }, function (start, end, label) {
         startTime = start / 1000;
-        endTime = Math.ceil(end / 60000) * 60;
+        endTime = Math.floor(end / 60000) * 60;
         $("#time-selected").html(timeStamp2String(startTime, "yyyy-MM-dd hh:mm") + ' 至 ' + timeStamp2String(endTime, "yyyy-MM-dd hh:mm"));
     });
 
@@ -677,7 +677,7 @@
         }
         for (var i = 0; i < condition.length; i++) {
             if (condition[i].input == "") {
-                result = keyValue[1];
+                continue;
             }
             else {
                 var keyword = condition[i].input.split(',');
@@ -761,7 +761,7 @@
         }
         var postJson = {
             "begin_time": startTime,
-            "end_time": Math.ceil(endTime / 60) * 60,
+            "end_time": Math.floor(endTime / 60) * 60,
             "device_id": ["abc123", "diclient"],
 //            "device_id": [0],
             "event_type": 0,
@@ -777,7 +777,7 @@
         $.ajax({
             type: "POST",
             dataType: "json",
-            url: 'http://10.21.140.111:6022/logquery',
+            url: 'logquery',
             data: JSON.stringify(postJson),
             success: function (data) {
                 var results = [];
@@ -800,7 +800,8 @@
                                 processId: getValue(list[3]),
                                 processPath: getValue(list[4]),
                                 eventType: getEventType(getValue(list[10]), getValue(list[5])),
-                                content: formatData(list.slice(13), search_condition)
+                                content: formatData(list.slice(13), search_condition),
+                                timeStamp: getValue(list[0])
                             })
                         }
                     }
@@ -823,16 +824,18 @@
                             render: function (data) {
                                 var passJson =
                                     {
-                                        timestamp: {
+                                        timeRange: {
                                             start: startTime,
                                             end: endTime
                                         },
+                                        timestamp: data.timeStamp,
                                         pid: data.processId,
                                         deviceName: data.deviceName,
                                         processUsername: data.processUsername,
                                         processPath: data.processPath
                                     };
-                                var content = "<a href='#/investigation_record?json=" + JSON.stringify(passJson) + "'>" + data.processId;
+                                var content = "<a target='_blank' href='#/event_tree?json=" + JSON.stringify(passJson) + "'>" + data.processId + "</a>";
+//                                console.log(content);
 //                                var content = '<span  ng-click="passJson(' + "'111'" + ')">' + data.processId + '</span>';
                                 return content;
                             }

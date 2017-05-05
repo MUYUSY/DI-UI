@@ -287,20 +287,19 @@ MetronicApp.config(['$stateProvider', '$urlRouterProvider', function($stateProvi
 
         // Investigation Record
         .state('investigationrecord', {
-            url: "/investigation_record",
+            url: "/event_tree",
             templateUrl: "views/investigation_record.html",
             data: {pageTitle: '调查记录'},
-            controller: "InvestigationRecordController",
+            controller: "GeneralPageController",
             resolve: {
                 deps: ['$ocLazyLoad', function($ocLazyLoad) {
                     return $ocLazyLoad.load([{
                         name: 'MetronicApp',
                         files: [
-
                             'tree/d3.v3.js',
-                            'js/controllers/GeneralPageController.js',
+                            'tree/mindmap.css',
                             'tree/dndTree.js',
-                            'tree/mindmap.css'
+                            'js/controllers/EventTreeController.js'
 
                         ]
                     }]);
@@ -324,10 +323,10 @@ MetronicApp.config(['$stateProvider', '$urlRouterProvider', function($stateProvi
                             './assets/global/plugins/DataTables-1.10.15/extensions/RowGroup/css/rowGroup.dataTables.css',
                             './assets/global/plugins/DataTables-1.10.15/extensions/Select/css/select.dataTables.css',
 
-                            './assets/global/plugins/DataTables-1.10.15/media/js/jquery.dataTables.js',
-                            './assets/global/plugins/DataTables-1.10.15/media/js/datatables.bootstrap.js',
-                            './assets/global/plugins/DataTables-1.10.15/extensions/RowGroup/js/dataTables.rowGroup.js',
-                            './assets/global/plugins/DataTables-1.10.15/extensions/Select/js/dataTables.select.js',
+                            // './assets/global/plugins/DataTables-1.10.15/media/js/jquery.dataTables.js',
+                            // './assets/global/plugins/DataTables-1.10.15/media/js/datatables.bootstrap.js',
+                            // './assets/global/plugins/DataTables-1.10.15/extensions/RowGroup/js/dataTables.rowGroup.js',
+                            // './assets/global/plugins/DataTables-1.10.15/extensions/Select/js/dataTables.select.js',
                             'js/controllers/GeneralPageController.js'
                         ]
                     }]);
