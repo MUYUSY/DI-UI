@@ -486,8 +486,8 @@
                     this.startDate.minute(Math.floor(this.startDate.minute() / this.timePickerIncrement) * this.timePickerIncrement);
             }
 
-            if (!this.isShowing)
-                this.updateElement();
+            // if (!this.isShowing)
+            //     this.updateElement();
 
             this.updateMonthsInView();
         },
@@ -516,8 +516,8 @@
 
             this.previousRightTime = this.endDate.clone();
 
-            if (!this.isShowing)
-                this.updateElement();
+            // if (!this.isShowing)
+            //     this.updateElement();
 
             this.updateMonthsInView();
         },
@@ -1139,7 +1139,7 @@
                 this.callback(this.startDate, this.endDate, this.chosenLabel);
 
             //if picker is attached to a text input, update it
-            this.updateElement();
+            // this.updateElement();
 
             $(document).off('.daterangepicker');
             $(window).off('.daterangepicker');
@@ -1202,7 +1202,8 @@
 
         clickRange: function(e) {
             var label = e.target.getAttribute('data-range-key');
-            $('#searchDateRange').html(label + '<span class="caret date-range-caret">');
+            // $('#searchDateRange').html(label + '<span class="caret date-range-caret">');
+            this.updateElement(label);
             this.chosenLabel = label;
             if (label == this.locale.customRangeLabel) {
                 this.maxDate = moment();    //add: to let the max time in calender always be the current time.
@@ -1597,13 +1598,15 @@
             }
         },
 
-        updateElement: function() {
-            if (this.element.is('input') && !this.singleDatePicker && this.autoUpdateInput) {
-                this.element.val(this.startDate.format(this.locale.format) + this.locale.separator + this.endDate.format(this.locale.format));
-                this.element.trigger('change');
-            } else if (this.element.is('input') && this.autoUpdateInput) {
-                this.element.val(this.startDate.format(this.locale.format));
-                this.element.trigger('change');
+        updateElement: function(label) {
+            if (this.element.is('button') && !this.singleDatePicker && this.autoUpdateInput) {
+                // this.element.val(this.startDate.format(this.locale.format) + this.locale.separator + this.endDate.format(this.locale.format));
+                // this.element.trigger('change');
+                this.element.html(label + '<span class="caret date-range-caret">');
+            } else if (this.element.is('button') && this.autoUpdateInput) {
+                // this.element.val(this.startDate.format(this.locale.format));
+                // this.element.trigger('change');
+                this.element.html(label + '<span class="caret date-range-caret">')
             }
         },
 

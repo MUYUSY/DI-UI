@@ -527,6 +527,12 @@
     border-right: 1px solid #9b9c9d
 }
 
+/*.page-header .page-header-menu .hor-menu .navbar-nav .header-logo .divider {*/
+    /*border-right: 1px solid #cbcbcb;*/
+    /*margin: 0 14px 0 10px;*/
+    /*lind-height: initial !important;*/
+/*}*/
+
 .page-header .page-header-menu .hor-menu .navbar-nav .dashboard {
     margin-left: 10px;
 }

@@ -146,6 +146,48 @@
     var startTime = moment().startOf('day').format('X');
     var endTime = moment().format('X');
 
+    $.fn.DataTable.ext.pager.simple_numbers_no_ellipses = function(page, pages){
+        var numbers = [];
+        var buttons = $.fn.DataTable.ext.pager.numbers_length;
+        var half = Math.floor( buttons / 2 );
+
+        var _range = function ( len, start ){
+            var end;
+
+            if ( typeof start === "undefined" ){
+                start = 0;
+                end = len;
+
+            } else {
+                end = start;
+                start = len;
+            }
+
+            var out = [];
+            for ( var i = start ; i < end; i++ ){ out.push(i); }
+
+            return out;
+        };
+
+
+        if ( pages <= buttons ) {
+            numbers = _range( 0, pages );
+
+        } else if ( page <= half ) {
+            numbers = _range( 0, buttons);
+
+        } else if ( page >= pages - 1 - half ) {
+            numbers = _range( pages - buttons, pages );
+
+        } else {
+            numbers = _range( page - half, page + half + 1);
+        }
+
+        numbers.DT_el = 'span';
+
+        return [ 'previous', numbers, 'next' ];
+    };
+
     Date.prototype.format = function (fmt) {
         var o = {
             "M+": this.getMonth() + 1,                 //月份
@@ -843,7 +885,7 @@
                         {data: "processPath"},
                         {data: "eventType"}],
                     order: [[1, "asc"]],
-//                    sPaginationType: "full_numbers",
+                    pagingType: "simple_numbers_no_ellipses",
                     language: {
                         aria: {
                             sortAscending: ": activate to sort column ascending",

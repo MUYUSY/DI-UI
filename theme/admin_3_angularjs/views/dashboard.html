@@ -1,1565 +1,1545 @@
-<!-- BEGIN PAGE BREADCRUMB -->
-<ul class="page-breadcrumb breadcrumb hide">
-    <li>
-        <a href="#">Home</a>
-        <i class="fa fa-circle"></i>
-    </li>
-    <li class="active"> Dashboard </li>
-</ul>
-<!-- END PAGE BREADCRUMB -->
-<!-- BEGIN MAIN CONTENT -->
-<div ng-controller="DashboardController">
-    <div class="note note-info">
-        <h3>Meet Metronic AngularJS Version!
-            <span class="close" data-close="note"></span>
-        </h3>
-        <p> AngularJS version of Metronic gives an extremely fast browsing experience to users. It uses lazy loading of dependency resources(modules, controllers, templates, jquery plugins, javascripts and even css files) on demand. UI-Router is used for
-            flexible routing with nested views. UI Bootstrap enables using all Bootstrap framework components with pure AngularJS directives. </p>
-        <span class="label label-danger">NOTE:</span> All Metronic features from the HTML version(pages, layout options, components, plugins, etc) are fully compatible in the AngularJS version.</span>
-        </p>
-    </div>
-    <!-- BEGIN DASHBOARD STATS -->
-    <div class="row">
-        <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
-            <div class="dashboard-stat blue">
-                <div class="visual">
-                    <i class="fa fa-comments"></i>
-                </div>
-                <div class="details">
-                    <div class="number"> 1349 </div>
-                    <div class="desc"> New Feedbacks </div>
-                </div>
-                <a class="more" href="#"> View more
-                    <i class="m-icon-swapright m-icon-white"></i>
-                </a>
-            </div>
-        </div>
-        <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
-            <div class="dashboard-stat red">
-                <div class="visual">
-                    <i class="fa fa-bar-chart-o"></i>
-                </div>
-                <div class="details">
-                    <div class="number"> 12,5M$ </div>
-                    <div class="desc"> Total Profit </div>
-                </div>
-                <a class="more" href="#"> View more
-                    <i class="m-icon-swapright m-icon-white"></i>
-                </a>
-            </div>
-        </div>
-        <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
-            <div class="dashboard-stat green">
-                <div class="visual">
-                    <i class="fa fa-shopping-cart"></i>
-                </div>
-                <div class="details">
-                    <div class="number"> 549 </div>
-                    <div class="desc"> New Orders </div>
-                </div>
-                <a class="more" href="#"> View more
-                    <i class="m-icon-swapright m-icon-white"></i>
-                </a>
-            </div>
-        </div>
-        <div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">
-            <div class="dashboard-stat purple">
-                <div class="visual">
-                    <i class="fa fa-globe"></i>
-                </div>
-                <div class="details">
-                    <div class="number"> +89% </div>
-                    <div class="desc"> Brand Popularity </div>
-                </div>
-                <a class="more" href="#"> View more
-                    <i class="m-icon-swapright m-icon-white"></i>
-                </a>
-            </div>
+<div class="portlet light row">
+    <div class="portlet-title">
+        <div class="caption font-dark">
+            <span class="caption-subject bold uppercase">仪表盘</span>
         </div>
     </div>
-    <!-- END DASHBOARD STATS -->
-    <div class="row">
-        <div class="col-md-6 col-sm-12">
-            <!-- BEGIN PORTLET-->
-            <div class="portlet light bordered ">
-                <div class="portlet-title">
-                    <div class="caption caption-md">
-                        <i class="icon-settings font-green"></i>
-                        <span class="caption-subject font-green bold uppercase">Sales Summary</span>
-                        <span class="caption-helper hide">weekly stats...</span>
+    <div ng-controller="DashboardController">
+        <div class="row">
+            <div class="col-md-6 col-sm-6 col-xs-12">
+                <div class="col-md-4 col-sm-4 col-xs-4 dashboard-stat white">
+                    <div class="visual">
+                        <i class="fa"></i>
                     </div>
-                    <div class="actions">
-                        <div class="btn-group btn-group-devided" data-toggle="buttons">
-                            <label class="btn dark btn-outline btn-circle btn-sm active">
-                                <input type="radio" name="options" class="toggle" id="option1">Today</label>
-                            <label class="btn dark btn-outline btn-circle btn-sm">
-                                <input type="radio" name="options" class="toggle" id="option2">Week</label>
-                            <label class="btn dark btn-outline btn-circle btn-sm">
-                                <input type="radio" name="options" class="toggle" id="option2">Month</label>
-                        </div>
+                    <div class="details">
+                        <div class="number"> 5430万 </div>
+                        <div class="desc"> 总数据量 </div>
                     </div>
                 </div>
-                <div class="portlet-body">
-                    <div class="row list-separated">
-                        <div class="col-md-3 col-sm-3 col-xs-6">
-                            <div class="font-grey-mint font-sm"> Total Sales </div>
-                            <div class="uppercase font-hg font-red-flamingo"> 13760
-                                <span class="font-lg font-grey-mint">$</span>
-                            </div>
-                        </div>
-                        <div class="col-md-3 col-sm-3 col-xs-6">
-                            <div class="font-grey-mint font-sm"> Revenue </div>
-                            <div class="uppercase font-hg font-green"> 4760
-                                <span class="font-lg font-grey-mint">$</span>
-                            </div>
-                        </div>
-                        <div class="col-md-3 col-sm-3 col-xs-6">
-                            <div class="font-grey-mint font-sm"> Expenses </div>
-                            <div class="uppercase font-hg font-purple"> 1760
-                                <span class="font-lg font-grey-mint">$</span>
-                            </div>
-                        </div>
-                        <div class="col-md-3 col-sm-3 col-xs-6">
-                            <div class="font-grey-mint font-sm"> Growth </div>
-                            <div class="uppercase font-hg font-blue"> 9760
-                                <span class="font-lg font-grey-mint">$</span>
-                            </div>
-                        </div>
+                <div class="col-md-4 col-sm-4 col-xs-4 dashboard-stat white">
+                    <div class="visual">
+                        <i class="fa"></i>
                     </div>
-                    <ul class="list-separated list-inline-xs hide">
-                        <li>
-                            <div class="font-grey-mint font-sm"> Total Sales </div>
-                            <div class="uppercase font-hg font-red-flamingo"> 13760
-                                <span class="font-lg font-grey-mint">$</span>
-                            </div>
-                        </li>
-                        <li> </li>
-                        <li class="border">
-                            <div class="font-grey-mint font-sm"> Revenue </div>
-                            <div class="uppercase font-hg font-green"> 4760
-                                <span class="font-lg font-grey-mint">$</span>
-                            </div>
-                        </li>
-                        <li class="divider"> </li>
-                        <li>
-                            <div class="font-grey-mint font-sm"> Expenses </div>
-                            <div class="uppercase font-hg font-purple"> 1760
-                                <span class="font-lg font-grey-mint">$</span>
-                            </div>
-                        </li>
-                        <li class="divider"> </li>
-                        <li>
-                            <div class="font-grey-mint font-sm"> Growth </div>
-                            <div class="uppercase font-hg font-blue"> 9760
-                                <span class="font-lg font-grey-mint">$</span>
-                            </div>
-                        </li>
-                    </ul>
-                    <div id="sales_statistics" class="portlet-body-morris-fit morris-chart" style="height: 260px"> </div>
-                </div>
-            </div>
-            <!-- END PORTLET-->
-        </div>
-        <div class="col-md-6 col-sm-12">
-            <!-- BEGIN PORTLET-->
-            <div class="portlet light bordered ">
-                <div class="portlet-title">
-                    <div class="caption caption-md">
-                        <i class="icon-bar-chart font-red"></i>
-                        <span class="caption-subject font-red bold uppercase">Member Activity</span>
-                        <span class="caption-helper hide">weekly stats...</span>
-                    </div>
-                    <div class="actions">
-                        <div class="btn-group btn-group-devided" data-toggle="buttons">
-                            <label class="btn green btn-outline btn-circle btn-sm active">
-                                <input type="radio" name="options" class="toggle" id="option1">Today</label>
-                            <label class="btn red btn-outline btn-circle btn-sm">
-                                <input type="radio" name="options" class="toggle" id="option2">Week</label>
-                            <label class="btn blue btn-outline btn-circle btn-sm">
-                                <input type="radio" name="options" class="toggle" id="option2">Month</label>
-                        </div>
+                    <div class="details">
+                        <div class="number"> +1630 </div>
+                        <div class="desc"> 近一月增加 </div>
                     </div>
                 </div>
-                <div class="portlet-body">
-                    <div class="row number-stats margin-bottom-30">
-                        <div class="col-md-6 col-sm-6 col-xs-6">
-                            <div class="stat-left">
-                                <div class="stat-chart">
-                                    <!-- do not line break "sparkline_bar" div. sparkline chart has an issue when the container div has line break -->
-                                    <div id="sparkline_bar"></div>
-                                </div>
-                                <div class="stat-number">
-                                    <div class="title"> Total </div>
-                                    <div class="number"> 2460 </div>
-                                </div>
-                            </div>
-                        </div>
-                        <div class="col-md-6 col-sm-6 col-xs-6">
-                            <div class="stat-right">
-                                <div class="stat-chart">
-                                    <!-- do not line break "sparkline_bar" div. sparkline chart has an issue when the container div has line break -->
-                                    <div id="sparkline_bar2"></div>
-                                </div>
-                                <div class="stat-number">
-                                    <div class="title"> New </div>
-                                    <div class="number"> 719 </div>
-                                </div>
-                            </div>
-                        </div>
+                <div class="col-md-4 col-sm-4 col-xs-4 dashboard-stat white">
+                    <div class="visual">
+                        <i class="fa"></i>
                     </div>
-                    <div class="table-scrollable table-scrollable-borderless">
-                        <table class="table table-hover table-light">
-                            <thead>
-                                <tr class="uppercase">
-                                    <th colspan="2"> MEMBER </th>
-                                    <th> Earnings </th>
-                                    <th> CASES </th>
-                                    <th> CLOSED </th>
-                                    <th> RATE </th>
-                                </tr>
-                            </thead>
-                            <tr>
-                                <td class="fit">
-                                    <img class="user-pic rounded" src="./assets/pages/media/users/avatar4.jpg"> </td>
-                                <td>
-                                    <a href="javascript:;" class="primary-link">Brain</a>
-                                </td>
-                                <td> $345 </td>
-                                <td> 45 </td>
-                                <td> 124 </td>
-                                <td>
-                                    <span class="bold font-green">80%</span>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td class="fit">
-                                    <img class="user-pic rounded" src="./assets/pages/media/users/avatar5.jpg"> </td>
-                                <td>
-                                    <a href="javascript:;" class="primary-link">Nick</a>
-                                </td>
-                                <td> $560 </td>
-                                <td> 12 </td>
-                                <td> 24 </td>
-                                <td>
-                                    <span class="bold font-green">67%</span>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td class="fit">
-                                    <img class="user-pic rounded" src="./assets/pages/media/users/avatar6.jpg"> </td>
-                                <td>
-                                    <a href="javascript:;" class="primary-link">Tim</a>
-                                </td>
-                                <td> $1,345 </td>
-                                <td> 450 </td>
-                                <td> 46 </td>
-                                <td>
-                                    <span class="bold font-green">98%</span>
-                                </td>
-                            </tr>
-                            <tr>
-                                <td class="fit">
-                                    <img class="user-pic rounded" src="./assets/pages/media/users/avatar7.jpg"> </td>
-                                <td>
-                                    <a href="javascript:;" class="primary-link">Tom</a>
-                                </td>
-                                <td> $645 </td>
-                                <td> 50 </td>
-                                <td> 89 </td>
-                                <td>
-                                    <span class="bold font-green">58%</span>
-                                </td>
-                            </tr>
-                        </table>
+                    <div class="details">
+                        <div class="number"> +740 </div>
+                        <div class="desc"> 近一周增加 </div>
                     </div>
                 </div>
             </div>
-            <!-- END PORTLET-->
-        </div>
-    </div>
-    <div class="row">
-        <div class="col-md-6 col-sm-12">
-            <!-- BEGIN PORTLET-->
-            <div class="portlet light bordered tasks-widget">
-                <div class="portlet-title">
-                    <div class="caption caption-md">
-                        <i class="icon-bar-chart font-green hide"></i>
-                        <span class="caption-subject font-green bold uppercase">TASKS</span>
-                        <span class="caption-helper">16 pending</span>
+            <div class="col-md-6 col-sm-6 col-xs-12">
+                <div class="col-md-4 col-sm-4 col-xs-4 dashboard-stat white">
+                    <div class="visual">
+                        <i class="fa"></i>
                     </div>
-                    <div class="inputs">
-                        <div class="portlet-input input-small input-inline">
-                            <div class="input-icon right">
-                                <i class="icon-magnifier"></i>
-                                <input type="text" class="form-control form-control-solid" placeholder="search..."> </div>
-                        </div>
+                    <div class="details">
+                        <div class="number"> 70 </div>
+                        <div class="desc"> 总探针设备 </div>
                     </div>
                 </div>
-                <div class="portlet-body">
-                    <div class="task-content">
-                        <div class="scroller" style="height: 282px;" data-always-visible="1" data-rail-visible1="0" data-handle-color="#D7DCE2">
-                            <!-- START TASK LIST -->
-                            <ul class="task-list">
-                                <li>
-                                    <div class="task-checkbox">
-                                        <input type="hidden" value="1" name="test" />
-                                        <input type="checkbox" class="liChild" value="2" name="test" /> </div>
-                                    <div class="task-title">
-                                        <span class="task-title-sp"> Present 2013 Year IPO Statistics at Board Meeting </span>
-                                        <span class="label label-sm label-success">Company</span>
-                                        <span class="task-bell">
-                                            <i class="fa fa-bell-o"></i>
-                                        </span>
-                                    </div>
-                                    <div class="task-config">
-                                        <div class="task-config-btn btn-group">
-                                            <a class="btn btn-xs default" href="javascript:;" data-toggle="dropdown" dropdown-menu-hover data-close-others="true">
-                                                <i class="fa fa-cog"></i>
-                                                <i class="fa fa-angle-down"></i>
-                                            </a>
-                                            <ul class="dropdown-menu pull-right">
-                                                <li>
-                                                    <a href="javascript:;">
-                                                        <i class="fa fa-check"></i> Complete </a>
-                                                </li>
-                                                <li>
-                                                    <a href="javascript:;">
-                                                        <i class="fa fa-pencil"></i> Edit </a>
-                                                </li>
-                                                <li>
-                                                    <a href="javascript:;">
-                                                        <i class="fa fa-trash-o"></i> Cancel </a>
-                                                </li>
-                                            </ul>
-                                        </div>
-                                    </div>
-                                </li>
-                                <li>
-                                    <div class="task-checkbox">
-                                        <input type="checkbox" class="liChild" value="" /> </div>
-                                    <div class="task-title">
-                                        <span class="task-title-sp"> Hold An Interview for Marketing Manager Position </span>
-                                        <span class="label label-sm label-danger">Marketing</span>
-                                    </div>
-                                    <div class="task-config">
-                                        <div class="task-config-btn btn-group">
-                                            <a class="btn btn-xs default" href="javascript:;" data-toggle="dropdown" dropdown-menu-hover data-close-others="true">
-                                                <i class="fa fa-cog"></i>
-                                                <i class="fa fa-angle-down"></i>
-                                            </a>
-                                            <ul class="dropdown-menu pull-right">
-                                                <li>
-                                                    <a href="javascript:;">
-                                                        <i class="fa fa-check"></i> Complete </a>
-                                                </li>
-                                                <li>
-                                                    <a href="javascript:;">
-                                                        <i class="fa fa-pencil"></i> Edit </a>
-                                                </li>
-                                                <li>
-                                                    <a href="javascript:;">
-                                                        <i class="fa fa-trash-o"></i> Cancel </a>
-                                                </li>
-                                            </ul>
-                                        </div>
-                                    </div>
-                                </li>
-                                <li>
-                                    <div class="task-checkbox">
-                                        <input type="checkbox" class="liChild" value="" /> </div>
-                                    <div class="task-title">
-                                        <span class="task-title-sp"> AirAsia Intranet System Project Internal Meeting </span>
-                                        <span class="label label-sm label-success">AirAsia</span>
-                                        <span class="task-bell">
-                                            <i class="fa fa-bell-o"></i>
-                                        </span>
-                                    </div>
-                                    <div class="task-config">
-                                        <div class="task-config-btn btn-group">
-                                            <a class="btn btn-xs default" href="javascript:;" data-toggle="dropdown" dropdown-menu-hover data-close-others="true">
-                                                <i class="fa fa-cog"></i>
-                                                <i class="fa fa-angle-down"></i>
-                                            </a>
-                                            <ul class="dropdown-menu pull-right">
-                                                <li>
-                                                    <a href="javascript:;">
-                                                        <i class="fa fa-check"></i> Complete </a>
-                                                </li>
-                                                <li>
-                                                    <a href="javascript:;">
-                                                        <i class="fa fa-pencil"></i> Edit </a>
-                                                </li>
-                                                <li>
-                                                    <a href="javascript:;">
-                                                        <i class="fa fa-trash-o"></i> Cancel </a>
-                                                </li>
-                                            </ul>
-                                        </div>
-                                    </div>
-                                </li>
-                                <li>
-                                    <div class="task-checkbox">
-                                        <input type="checkbox" class="liChild" value="" /> </div>
-                                    <div class="task-title">
-                                        <span class="task-title-sp"> Technical Management Meeting </span>
-                                        <span class="label label-sm label-warning">Company</span>
-                                    </div>
-                                    <div class="task-config">
-                                        <div class="task-config-btn btn-group">
-                                            <a class="btn btn-xs default" href="javascript:;" data-toggle="dropdown" dropdown-menu-hover data-close-others="true">
-                                                <i class="fa fa-cog"></i>
-                                                <i class="fa fa-angle-down"></i>
-                                            </a>
-                                            <ul class="dropdown-menu pull-right">
-                                                <li>
-                                                    <a href="javascript:;">
-                                                        <i class="fa fa-check"></i> Complete </a>
-                                                </li>
-                                                <li>
-                                                    <a href="javascript:;">
-                                                        <i class="fa fa-pencil"></i> Edit </a>
-                                                </li>
-                                                <li>
-                                                    <a href="javascript:;">
-                                                        <i class="fa fa-trash-o"></i> Cancel </a>
-                                                </li>
-                                            </ul>
-                                        </div>
-                                    </div>
-                                </li>
-                                <li>
-                                    <div class="task-checkbox">
-                                        <input type="checkbox" class="liChild" value="" /> </div>
-                                    <div class="task-title">
-                                        <span class="task-title-sp"> Kick-off Company CRM Mobile App Development </span>
-                                        <span class="label label-sm label-info">Internal Products</span>
-                                    </div>
-                                    <div class="task-config">
-                                        <div class="task-config-btn btn-group">
-                                            <a class="btn btn-xs default" href="javascript:;" data-toggle="dropdown" dropdown-menu-hover data-close-others="true">
-                                                <i class="fa fa-cog"></i>
-                                                <i class="fa fa-angle-down"></i>
-                                            </a>
-                                            <ul class="dropdown-menu pull-right">
-                                                <li>
-                                                    <a href="javascript:;">
-                                                        <i class="fa fa-check"></i> Complete </a>
-                                                </li>
-                                                <li>
-                                                    <a href="javascript:;">
-                                                        <i class="fa fa-pencil"></i> Edit </a>
-                                                </li>
-                                                <li>
-                                                    <a href="javascript:;">
-                                                        <i class="fa fa-trash-o"></i> Cancel </a>
-                                                </li>
-                                            </ul>
-                                        </div>
-                                    </div>
-                                </li>
-                                <li>
-                                    <div class="task-checkbox">
-                                        <input type="checkbox" class="liChild" value="" /> </div>
-                                    <div class="task-title">
-                                        <span class="task-title-sp"> Prepare Commercial Offer For SmartVision Website Rewamp </span>
-                                        <span class="label label-sm label-danger">SmartVision</span>
-                                    </div>
-                                    <div class="task-config">
-                                        <div class="task-config-btn btn-group">
-                                            <a class="btn btn-xs default" href="javascript:;" data-toggle="dropdown" dropdown-menu-hover data-close-others="true">
-                                                <i class="fa fa-cog"></i>
-                                                <i class="fa fa-angle-down"></i>
-                                            </a>
-                                            <ul class="dropdown-menu pull-right">
-                                                <li>
-                                                    <a href="javascript:;">
-                                                        <i class="fa fa-check"></i> Complete </a>
-                                                </li>
-                                                <li>
-                                                    <a href="javascript:;">
-                                                        <i class="fa fa-pencil"></i> Edit </a>
-                                                </li>
-                                                <li>
-                                                    <a href="javascript:;">
-                                                        <i class="fa fa-trash-o"></i> Cancel </a>
-                                                </li>
-                                            </ul>
-                                        </div>
-                                    </div>
-                                </li>
-                                <li>
-                                    <div class="task-checkbox">
-                                        <input type="checkbox" class="liChild" value="" /> </div>
-                                    <div class="task-title">
-                                        <span class="task-title-sp"> Sign-Off The Comercial Agreement With AutoSmart </span>
-                                        <span class="label label-sm label-default">AutoSmart</span>
-                                        <span class="task-bell">
-                                            <i class="fa fa-bell-o"></i>
-                                        </span>
-                                    </div>
-                                    <div class="task-config">
-                                        <div class="task-config-btn btn-group">
-                                            <a class="btn btn-xs default" href="javascript:;" data-toggle="dropdown" dropdown-menu-hover data-close-others="true">
-                                                <i class="fa fa-cog"></i>
-                                                <i class="fa fa-angle-down"></i>
-                                            </a>
-                                            <ul class="dropdown-menu pull-right">
-                                                <li>
-                                                    <a href="javascript:;">
-                                                        <i class="fa fa-check"></i> Complete </a>
-                                                </li>
-                                                <li>
-                                                    <a href="javascript:;">
-                                                        <i class="fa fa-pencil"></i> Edit </a>
-                                                </li>
-                                                <li>
-                                                    <a href="javascript:;">
-                                                        <i class="fa fa-trash-o"></i> Cancel </a>
-                                                </li>
-                                            </ul>
-                                        </div>
-                                    </div>
-                                </li>
-                                <li>
-                                    <div class="task-checkbox">
-                                        <input type="checkbox" class="liChild" value="" /> </div>
-                                    <div class="task-title">
-                                        <span class="task-title-sp"> Company Staff Meeting </span>
-                                        <span class="label label-sm label-success">Cruise</span>
-                                        <span class="task-bell">
-                                            <i class="fa fa-bell-o"></i>
-                                        </span>
-                                    </div>
-                                    <div class="task-config">
-                                        <div class="task-config-btn btn-group">
-                                            <a class="btn btn-xs default" href="javascript:;" data-toggle="dropdown" dropdown-menu-hover data-close-others="true">
-                                                <i class="fa fa-cog"></i>
-                                                <i class="fa fa-angle-down"></i>
-                                            </a>
-                                            <ul class="dropdown-menu pull-right">
-                                                <li>
-                                                    <a href="javascript:;">
-                                                        <i class="fa fa-check"></i> Complete </a>
-                                                </li>
-                                                <li>
-                                                    <a href="javascript:;">
-                                                        <i class="fa fa-pencil"></i> Edit </a>
-                                                </li>
-                                                <li>
-                                                    <a href="javascript:;">
-                                                        <i class="fa fa-trash-o"></i> Cancel </a>
-                                                </li>
-                                            </ul>
-                                        </div>
-                                    </div>
-                                </li>
-                                <li class="last-line">
-                                    <div class="task-checkbox">
-                                        <input type="checkbox" class="liChild" value="" /> </div>
-                                    <div class="task-title">
-                                        <span class="task-title-sp"> KeenThemes Investment Discussion </span>
-                                        <span class="label label-sm label-warning">KeenThemes </span>
-                                    </div>
-                                    <div class="task-config">
-                                        <div class="task-config-btn btn-group">
-                                            <a class="btn btn-xs default" href="javascript:;" data-toggle="dropdown" dropdown-menu-hover data-close-others="true">
-                                                <i class="fa fa-cog"></i>
-                                                <i class="fa fa-angle-down"></i>
-                                            </a>
-                                            <ul class="dropdown-menu pull-right">
-                                                <li>
-                                                    <a href="javascript:;">
-                                                        <i class="fa fa-check"></i> Complete </a>
-                                                </li>
-                                                <li>
-                                                    <a href="javascript:;">
-                                                        <i class="fa fa-pencil"></i> Edit </a>
-                                                </li>
-                                                <li>
-                                                    <a href="javascript:;">
-                                                        <i class="fa fa-trash-o"></i> Cancel </a>
-                                                </li>
-                                            </ul>
-                                        </div>
-                                    </div>
-                                </li>
-                            </ul>
-                            <!-- END START TASK LIST -->
-                        </div>
+                <div class="col-md-4 col-sm-4 col-xs-4 dashboard-stat white">
+                    <div class="visual">
+                        <i class="fa"></i>
                     </div>
-                    <div class="task-footer">
-                        <div class="btn-arrow-link pull-right">
-                            <a href="javascript:;">See All Tasks</a>
-                        </div>
+                    <div class="details">
+                        <div class="number"> 65 </div>
+                        <div class="desc"> 在线探针设备 </div>
+                    </div>
+                </div>
+                <div class="col-md-4 col-sm-4 col-xs-4 dashboard-stat white">
+                    <div class="visual">
+                        <i class="fa"></i>
+                    </div>
+                    <div class="details">
+                        <div class="number"> +6 </div>
+                        <div class="desc"> 近一周增加 </div>
                     </div>
                 </div>
             </div>
-            <!-- END PORTLET-->
         </div>
-        <div class="col-md-6 col-sm-12">
-            <!-- BEGIN PORTLET-->
-            <div class="portlet light bordered">
-                <div class="portlet-title tabbable-line">
-                    <div class="caption caption-md">
-                        <i class="icon-globe font-green hide"></i>
-                        <span class="caption-subject font-green bold uppercase">Feeds</span>
-                    </div>
-                    <ul class="nav nav-tabs">
-                        <li class="active">
-                            <a href="#" data-target="#tab_1_1" data-toggle="tab"> System </a>
-                        </li>
-                        <li>
-                            <a href="#" data-target="#tab_1_2" data-toggle="tab"> Activities </a>
-                        </li>
-                    </ul>
+        <!-- BEGIN DASHBOARD STATS -->
+        <!--<div class="row">-->
+            <!--<div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">-->
+                <!--<div class="dashboard-stat white">-->
+                    <!--<div class="visual">-->
+                        <!--<i class="fa fa-comments"></i>-->
+                    <!--</div>-->
+                    <!--<div class="details">-->
+                        <!--<div class="number"> 1349 </div>-->
+                        <!--<div class="desc"> New Feedbacks </div>-->
+                    <!--</div>-->
+                    <!--<a class="more" href="#"> View more-->
+                        <!--<i class="m-icon-swapright m-icon-white"></i>-->
+                    <!--</a>-->
+                <!--</div>-->
+            <!--</div>-->
+            <!--<div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">-->
+                <!--<div class="dashboard-stat red">-->
+                    <!--<div class="visual">-->
+                        <!--<i class="fa fa-bar-chart-o"></i>-->
+                    <!--</div>-->
+                    <!--<div class="details">-->
+                        <!--<div class="number"> 12,5M$ </div>-->
+                        <!--<div class="desc"> Total Profit </div>-->
+                    <!--</div>-->
+                    <!--<a class="more" href="#"> View more-->
+                        <!--<i class="m-icon-swapright m-icon-white"></i>-->
+                    <!--</a>-->
+                <!--</div>-->
+            <!--</div>-->
+            <!--<div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">-->
+                <!--<div class="dashboard-stat green">-->
+                    <!--<div class="visual">-->
+                        <!--<i class="fa fa-shopping-cart"></i>-->
+                    <!--</div>-->
+                    <!--<div class="details">-->
+                        <!--<div class="number"> 549 </div>-->
+                        <!--<div class="desc"> New Orders </div>-->
+                    <!--</div>-->
+                    <!--<a class="more" href="#"> View more-->
+                        <!--<i class="m-icon-swapright m-icon-white"></i>-->
+                    <!--</a>-->
+                <!--</div>-->
+            <!--</div>-->
+            <!--<div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">-->
+                <!--<div class="dashboard-stat purple">-->
+                    <!--<div class="visual">-->
+                        <!--<i class="fa fa-globe"></i>-->
+                    <!--</div>-->
+                    <!--<div class="details">-->
+                        <!--<div class="number"> +89% </div>-->
+                        <!--<div class="desc"> Brand Popularity </div>-->
+                    <!--</div>-->
+                    <!--<a class="more" href="#"> View more-->
+                        <!--<i class="m-icon-swapright m-icon-white"></i>-->
+                    <!--</a>-->
+                <!--</div>-->
+            <!--</div>-->
+        <!--</div>-->
+        <!-- END DASHBOARD STATS -->
+        <div class="row">
+            <div class="col-md-9 col-sm-9 col-xs-9" ng-controller="networkController">
+                <div class="col-md-12 col-sm-12 col-xs-12 chart-title">
+                    <span>网络操作</span>
+                    <span id="network-time-selected"></span>
+                    <img class="pull-right" src="../icon/line_chart.png">
+                    <img class="pull-right" src="../icon/bar_chart.png">
                 </div>
-                <div class="portlet-body">
-                    <!--BEGIN TABS-->
-                    <div class="tab-content">
-                        <div class="tab-pane active" id="tab_1_1">
-                            <div class="scroller" style="height: 306px;" data-always-visible="1" data-rail-visible1="0" data-handle-color="#D7DCE2">
-                                <ul class="feeds">
-                                    <li>
-                                        <div class="col1">
-                                            <div class="cont">
-                                                <div class="cont-col1">
-                                                    <div class="label label-sm label-success">
-                                                        <i class="fa fa-bell-o"></i>
-                                                    </div>
-                                                </div>
-                                                <div class="cont-col2">
-                                                    <div class="desc"> You have 4 pending tasks.
-                                                        <span class="label label-sm label-info"> Take action
-                                                            <i class="fa fa-share"></i>
-                                                        </span>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="col2">
-                                            <div class="date"> Just now </div>
-                                        </div>
-                                    </li>
-                                    <li>
-                                        <a href="javascript:;">
-                                            <div class="col1">
-                                                <div class="cont">
-                                                    <div class="cont-col1">
-                                                        <div class="label label-sm label-success">
-                                                            <i class="fa fa-bell-o"></i>
-                                                        </div>
-                                                    </div>
-                                                    <div class="cont-col2">
-                                                        <div class="desc"> New version v1.4 just lunched! </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="col2">
-                                                <div class="date"> 20 mins </div>
-                                            </div>
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <div class="col1">
-                                            <div class="cont">
-                                                <div class="cont-col1">
-                                                    <div class="label label-sm label-danger">
-                                                        <i class="fa fa-bolt"></i>
-                                                    </div>
-                                                </div>
-                                                <div class="cont-col2">
-                                                    <div class="desc"> Database server #12 overloaded. Please fix the issue. </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="col2">
-                                            <div class="date"> 24 mins </div>
-                                        </div>
-                                    </li>
-                                    <li>
-                                        <div class="col1">
-                                            <div class="cont">
-                                                <div class="cont-col1">
-                                                    <div class="label label-sm label-info">
-                                                        <i class="fa fa-bullhorn"></i>
-                                                    </div>
-                                                </div>
-                                                <div class="cont-col2">
-                                                    <div class="desc"> New order received and pending for process. </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="col2">
-                                            <div class="date"> 30 mins </div>
-                                        </div>
-                                    </li>
-                                    <li>
-                                        <div class="col1">
-                                            <div class="cont">
-                                                <div class="cont-col1">
-                                                    <div class="label label-sm label-success">
-                                                        <i class="fa fa-bullhorn"></i>
-                                                    </div>
-                                                </div>
-                                                <div class="cont-col2">
-                                                    <div class="desc"> New payment refund and pending approval. </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="col2">
-                                            <div class="date"> 40 mins </div>
-                                        </div>
-                                    </li>
-                                    <li>
-                                        <div class="col1">
-                                            <div class="cont">
-                                                <div class="cont-col1">
-                                                    <div class="label label-sm label-warning">
-                                                        <i class="fa fa-plus"></i>
-                                                    </div>
-                                                </div>
-                                                <div class="cont-col2">
-                                                    <div class="desc"> New member registered. Pending approval. </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="col2">
-                                            <div class="date"> 1.5 hours </div>
-                                        </div>
-                                    </li>
-                                    <li>
-                                        <div class="col1">
-                                            <div class="cont">
-                                                <div class="cont-col1">
-                                                    <div class="label label-sm label-success">
-                                                        <i class="fa fa-bell-o"></i>
-                                                    </div>
-                                                </div>
-                                                <div class="cont-col2">
-                                                    <div class="desc"> Web server hardware needs to be upgraded.
-                                                        <span class="label label-sm label-default "> Overdue </span>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="col2">
-                                            <div class="date"> 2 hours </div>
-                                        </div>
-                                    </li>
-                                    <li>
-                                        <div class="col1">
-                                            <div class="cont">
-                                                <div class="cont-col1">
-                                                    <div class="label label-sm label-default">
-                                                        <i class="fa fa-bullhorn"></i>
-                                                    </div>
-                                                </div>
-                                                <div class="cont-col2">
-                                                    <div class="desc"> Prod01 database server is overloaded 90%. </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="col2">
-                                            <div class="date"> 3 hours </div>
-                                        </div>
-                                    </li>
-                                    <li>
-                                        <div class="col1">
-                                            <div class="cont">
-                                                <div class="cont-col1">
-                                                    <div class="label label-sm label-warning">
-                                                        <i class="fa fa-bullhorn"></i>
-                                                    </div>
-                                                </div>
-                                                <div class="cont-col2">
-                                                    <div class="desc"> New group created. Pending manager review. </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="col2">
-                                            <div class="date"> 5 hours </div>
-                                        </div>
-                                    </li>
-                                    <li>
-                                        <div class="col1">
-                                            <div class="cont">
-                                                <div class="cont-col1">
-                                                    <div class="label label-sm label-info">
-                                                        <i class="fa fa-bullhorn"></i>
-                                                    </div>
-                                                </div>
-                                                <div class="cont-col2">
-                                                    <div class="desc"> Order payment failed. </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="col2">
-                                            <div class="date"> 18 hours </div>
-                                        </div>
-                                    </li>
-                                    <li>
-                                        <div class="col1">
-                                            <div class="cont">
-                                                <div class="cont-col1">
-                                                    <div class="label label-sm label-default">
-                                                        <i class="fa fa-bullhorn"></i>
-                                                    </div>
-                                                </div>
-                                                <div class="cont-col2">
-                                                    <div class="desc"> New application received. </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="col2">
-                                            <div class="date"> 21 hours </div>
-                                        </div>
-                                    </li>
-                                    <li>
-                                        <div class="col1">
-                                            <div class="cont">
-                                                <div class="cont-col1">
-                                                    <div class="label label-sm label-info">
-                                                        <i class="fa fa-bullhorn"></i>
-                                                    </div>
-                                                </div>
-                                                <div class="cont-col2">
-                                                    <div class="desc"> Dev90 web server restarted. Pending overall system check. </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="col2">
-                                            <div class="date"> 22 hours </div>
-                                        </div>
-                                    </li>
-                                    <li>
-                                        <div class="col1">
-                                            <div class="cont">
-                                                <div class="cont-col1">
-                                                    <div class="label label-sm label-default">
-                                                        <i class="fa fa-bullhorn"></i>
-                                                    </div>
-                                                </div>
-                                                <div class="cont-col2">
-                                                    <div class="desc"> New member registered. Pending approval </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="col2">
-                                            <div class="date"> 21 hours </div>
-                                        </div>
-                                    </li>
-                                    <li>
-                                        <div class="col1">
-                                            <div class="cont">
-                                                <div class="cont-col1">
-                                                    <div class="label label-sm label-info">
-                                                        <i class="fa fa-bullhorn"></i>
-                                                    </div>
-                                                </div>
-                                                <div class="cont-col2">
-                                                    <div class="desc"> L45 Network failure. Schedule maintenance. </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="col2">
-                                            <div class="date"> 22 hours </div>
-                                        </div>
-                                    </li>
-                                    <li>
-                                        <div class="col1">
-                                            <div class="cont">
-                                                <div class="cont-col1">
-                                                    <div class="label label-sm label-default">
-                                                        <i class="fa fa-bullhorn"></i>
-                                                    </div>
-                                                </div>
-                                                <div class="cont-col2">
-                                                    <div class="desc"> Order canceled with failed payment. </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="col2">
-                                            <div class="date"> 21 hours </div>
-                                        </div>
-                                    </li>
-                                    <li>
-                                        <div class="col1">
-                                            <div class="cont">
-                                                <div class="cont-col1">
-                                                    <div class="label label-sm label-info">
-                                                        <i class="fa fa-bullhorn"></i>
-                                                    </div>
-                                                </div>
-                                                <div class="cont-col2">
-                                                    <div class="desc"> Web-A2 clound instance created. Schedule full scan. </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="col2">
-                                            <div class="date"> 22 hours </div>
-                                        </div>
-                                    </li>
-                                    <li>
-                                        <div class="col1">
-                                            <div class="cont">
-                                                <div class="cont-col1">
-                                                    <div class="label label-sm label-default">
-                                                        <i class="fa fa-bullhorn"></i>
-                                                    </div>
-                                                </div>
-                                                <div class="cont-col2">
-                                                    <div class="desc"> Member canceled. Schedule account review. </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="col2">
-                                            <div class="date"> 21 hours </div>
-                                        </div>
-                                    </li>
-                                    <li>
-                                        <div class="col1">
-                                            <div class="cont">
-                                                <div class="cont-col1">
-                                                    <div class="label label-sm label-info">
-                                                        <i class="fa fa-bullhorn"></i>
-                                                    </div>
-                                                </div>
-                                                <div class="cont-col2">
-                                                    <div class="desc"> New order received. Please take care of it. </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="col2">
-                                            <div class="date"> 22 hours </div>
-                                        </div>
-                                    </li>
-                                </ul>
-                            </div>
-                        </div>
-                        <div class="tab-pane" id="tab_1_2">
-                            <div class="scroller" style="height: 337px;" data-always-visible="1" data-rail-visible1="0" data-handle-color="#D7DCE2">
-                                <ul class="feeds">
-                                    <li>
-                                        <a href="javascript:;">
-                                            <div class="col1">
-                                                <div class="cont">
-                                                    <div class="cont-col1">
-                                                        <div class="label label-sm label-success">
-                                                            <i class="fa fa-bell-o"></i>
-                                                        </div>
-                                                    </div>
-                                                    <div class="cont-col2">
-                                                        <div class="desc"> New user registered </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="col2">
-                                                <div class="date"> Just now </div>
-                                            </div>
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="javascript:;">
-                                            <div class="col1">
-                                                <div class="cont">
-                                                    <div class="cont-col1">
-                                                        <div class="label label-sm label-success">
-                                                            <i class="fa fa-bell-o"></i>
-                                                        </div>
-                                                    </div>
-                                                    <div class="cont-col2">
-                                                        <div class="desc"> New order received </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="col2">
-                                                <div class="date"> 10 mins </div>
-                                            </div>
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <div class="col1">
-                                            <div class="cont">
-                                                <div class="cont-col1">
-                                                    <div class="label label-sm label-danger">
-                                                        <i class="fa fa-bolt"></i>
-                                                    </div>
-                                                </div>
-                                                <div class="cont-col2">
-                                                    <div class="desc"> Order #24DOP4 has been rejected.
-                                                        <span class="label label-sm label-danger "> Take action
-                                                            <i class="fa fa-share"></i>
-                                                        </span>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                        </div>
-                                        <div class="col2">
-                                            <div class="date"> 24 mins </div>
-                                        </div>
-                                    </li>
-                                    <li>
-                                        <a href="javascript:;">
-                                            <div class="col1">
-                                                <div class="cont">
-                                                    <div class="cont-col1">
-                                                        <div class="label label-sm label-success">
-                                                            <i class="fa fa-bell-o"></i>
-                                                        </div>
-                                                    </div>
-                                                    <div class="cont-col2">
-                                                        <div class="desc"> New user registered </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="col2">
-                                                <div class="date"> Just now </div>
-                                            </div>
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="javascript:;">
-                                            <div class="col1">
-                                                <div class="cont">
-                                                    <div class="cont-col1">
-                                                        <div class="label label-sm label-success">
-                                                            <i class="fa fa-bell-o"></i>
-                                                        </div>
-                                                    </div>
-                                                    <div class="cont-col2">
-                                                        <div class="desc"> New user registered </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="col2">
-                                                <div class="date"> Just now </div>
-                                            </div>
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="javascript:;">
-                                            <div class="col1">
-                                                <div class="cont">
-                                                    <div class="cont-col1">
-                                                        <div class="label label-sm label-success">
-                                                            <i class="fa fa-bell-o"></i>
-                                                        </div>
-                                                    </div>
-                                                    <div class="cont-col2">
-                                                        <div class="desc"> New user registered </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="col2">
-                                                <div class="date"> Just now </div>
-                                            </div>
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="javascript:;">
-                                            <div class="col1">
-                                                <div class="cont">
-                                                    <div class="cont-col1">
-                                                        <div class="label label-sm label-success">
-                                                            <i class="fa fa-bell-o"></i>
-                                                        </div>
-                                                    </div>
-                                                    <div class="cont-col2">
-                                                        <div class="desc"> New user registered </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="col2">
-                                                <div class="date"> Just now </div>
-                                            </div>
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="javascript:;">
-                                            <div class="col1">
-                                                <div class="cont">
-                                                    <div class="cont-col1">
-                                                        <div class="label label-sm label-success">
-                                                            <i class="fa fa-bell-o"></i>
-                                                        </div>
-                                                    </div>
-                                                    <div class="cont-col2">
-                                                        <div class="desc"> New user registered </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="col2">
-                                                <div class="date"> Just now </div>
-                                            </div>
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="javascript:;">
-                                            <div class="col1">
-                                                <div class="cont">
-                                                    <div class="cont-col1">
-                                                        <div class="label label-sm label-success">
-                                                            <i class="fa fa-bell-o"></i>
-                                                        </div>
-                                                    </div>
-                                                    <div class="cont-col2">
-                                                        <div class="desc"> New user registered </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="col2">
-                                                <div class="date"> Just now </div>
-                                            </div>
-                                        </a>
-                                    </li>
-                                    <li>
-                                        <a href="javascript:;">
-                                            <div class="col1">
-                                                <div class="cont">
-                                                    <div class="cont-col1">
-                                                        <div class="label label-sm label-success">
-                                                            <i class="fa fa-bell-o"></i>
-                                                        </div>
-                                                    </div>
-                                                    <div class="cont-col2">
-                                                        <div class="desc"> New user registered </div>
-                                                    </div>
-                                                </div>
-                                            </div>
-                                            <div class="col2">
-                                                <div class="date"> Just now </div>
-                                            </div>
-                                        </a>
-                                    </li>
-                                </ul>
-                            </div>
+                <div class="col-md-12 col-sm-12 col-xs-12 chart-option">
+                    <div class="col-md-2 col-sm-2 col-xs-2">
+                        <div>
+                            <button class="date-range btn-default form-control"
+                                    id="network-timerange">今天<span class="caret date-range-caret"></span>
+                            </button>
                         </div>
                     </div>
-                    <!--END TABS-->
+                    <div class="col-md-3 col-sm-3 col-xs-3">
+                        <div class="multi-dropdown"
+                             ng-dropdown-multiselect
+                             options="selectByGroupData"
+                             selected-model="selectByGroupModel"
+                             extra-settings="selectByGroupSettings"
+                             group-by="group"
+                             translation-texts="selectByGroupTexts">
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-12 col-sm-12 col-xs-12" id="network-chart" style="height: 300px"></div>
+            </div>
+            <div class="col-md-3 col-sm-3 col-xs-3">
+                <div class="col-md-12 col-sm-12 col-xs-12 chart-title">容量</div>
+                <div class="col-md-12 col-sm-12 col-xs-12" id="volume-chart" style="height:200px">Loading</div>
+                <div class="col-md-6 col-sm-6 col-xs-6 volume-des">
+                    <span class="row">153GB</span>
+                    <span class="row">可用空间</span>
+                </div>
+                <div class="col-md-6 col-sm-6 col-xs-6 volume-des">
+                    <span class="row">1022GB</span>
+                    <span class="row">已用空间</span>
+                </div>
+                <div class="col-md-6 col-sm-6 col-xs-6 col-md-offset-3 col-sm-offset-3 col-xs-offset-3">
+                    <button class="btn-default form-control">管理空间</button>
                 </div>
             </div>
-            <!-- END PORTLET-->
-        </div>
-    </div>
-    <div class="row">
-        <div class="col-md-6 col-sm-6">
-            <!-- BEGIN REGIONAL STATS PORTLET-->
-            <div class="portlet light bordered ">
-                <div class="portlet-title">
-                    <div class="caption">
-                        <i class="icon-share font-green"></i>
-                        <span class="caption-subject font-green bold uppercase">Recent Activities</span>
-                    </div>
-                    <div class="actions">
-                        <div class="btn-group">
-                            <a class="btn btn-sm btn-default btn-circle" href="#" data-toggle="dropdown" dropdown-menu-hover data-close-others="true"> Filter By
-                                <i class="fa fa-angle-down"></i>
-                            </a>
-                            <div class="dropdown-menu hold-on-click dropdown-checkboxes pull-right">
-                                <label>
-                                    <input type="checkbox" /> Finance</label>
-                                <label>
-                                    <input type="checkbox" checked="" /> Membership</label>
-                                <label>
-                                    <input type="checkbox" /> Customer Support</label>
-                                <label>
-                                    <input type="checkbox" checked="" /> HR</label>
-                                <label>
-                                    <input type="checkbox" /> System</label>
-                            </div>
-                        </div>
-                        <a class="btn btn-circle btn-icon-only btn-default fullscreen" href="#"> </a>
-                    </div>
+            <div class="col-md-6 col-sm-6 col-xs-12" ng-controller="systemController">
+                <div class="col-md-12 col-sm-12 col-xs-12 chart-title">
+                    <span>系统操作</span>
+                    <span id="system-time-selected"></span>
+                    <img class="pull-right" src="../icon/line_chart.png">
+                    <img class="pull-right" src="../icon/bar_chart.png">
                 </div>
-                <div class="portlet-body">
-                    <div class="scroller" style="height: 300px;" data-always-visible="1" data-rail-visible="0">
-                        <ul class="feeds">
-                            <li>
-                                <div class="col1">
-                                    <div class="cont">
-                                        <div class="cont-col1">
-                                            <div class="label label-sm label-info">
-                                                <i class="fa fa-check"></i>
-                                            </div>
-                                        </div>
-                                        <div class="cont-col2">
-                                            <div class="desc"> You have 4 pending tasks.
-                                                <span class="label label-sm label-warning "> Take action
-                                                    <i class="fa fa-share"></i>
-                                                </span>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col2">
-                                    <div class="date"> Just now </div>
-                                </div>
-                            </li>
-                            <li>
-                                <a href="#">
-                                    <div class="col1">
-                                        <div class="cont">
-                                            <div class="cont-col1">
-                                                <div class="label label-sm label-success">
-                                                    <i class="fa fa-bar-chart-o"></i>
-                                                </div>
-                                            </div>
-                                            <div class="cont-col2">
-                                                <div class="desc"> Finance Report for year 2013 has been released. </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="col2">
-                                        <div class="date"> 20 mins </div>
-                                    </div>
-                                </a>
-                            </li>
-                            <li>
-                                <div class="col1">
-                                    <div class="cont">
-                                        <div class="cont-col1">
-                                            <div class="label label-sm label-danger">
-                                                <i class="fa fa-user"></i>
-                                            </div>
-                                        </div>
-                                        <div class="cont-col2">
-                                            <div class="desc"> You have 5 pending membership that requires a quick review. </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col2">
-                                    <div class="date"> 24 mins </div>
-                                </div>
-                            </li>
-                            <li>
-                                <div class="col1">
-                                    <div class="cont">
-                                        <div class="cont-col1">
-                                            <div class="label label-sm label-info">
-                                                <i class="fa fa-shopping-cart"></i>
-                                            </div>
-                                        </div>
-                                        <div class="cont-col2">
-                                            <div class="desc"> New order received with
-                                                <span class="label label-sm label-success"> Reference Number: DR23923 </span>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col2">
-                                    <div class="date"> 30 mins </div>
-                                </div>
-                            </li>
-                            <li>
-                                <div class="col1">
-                                    <div class="cont">
-                                        <div class="cont-col1">
-                                            <div class="label label-sm label-success">
-                                                <i class="fa fa-user"></i>
-                                            </div>
-                                        </div>
-                                        <div class="cont-col2">
-                                            <div class="desc"> You have 5 pending membership that requires a quick review. </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col2">
-                                    <div class="date"> 24 mins </div>
-                                </div>
-                            </li>
-                            <li>
-                                <div class="col1">
-                                    <div class="cont">
-                                        <div class="cont-col1">
-                                            <div class="label label-sm label-default">
-                                                <i class="fa fa-bell-o"></i>
-                                            </div>
-                                        </div>
-                                        <div class="cont-col2">
-                                            <div class="desc"> Web server hardware needs to be upgraded.
-                                                <span class="label label-sm label-default "> Overdue </span>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col2">
-                                    <div class="date"> 2 hours </div>
-                                </div>
-                            </li>
-                            <li>
-                                <a href="#">
-                                    <div class="col1">
-                                        <div class="cont">
-                                            <div class="cont-col1">
-                                                <div class="label label-sm label-default">
-                                                    <i class="fa fa-briefcase"></i>
-                                                </div>
-                                            </div>
-                                            <div class="cont-col2">
-                                                <div class="desc"> IPO Report for year 2013 has been released. </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="col2">
-                                        <div class="date"> 20 mins </div>
-                                    </div>
-                                </a>
-                            </li>
-                            <li>
-                                <div class="col1">
-                                    <div class="cont">
-                                        <div class="cont-col1">
-                                            <div class="label label-sm label-info">
-                                                <i class="fa fa-check"></i>
-                                            </div>
-                                        </div>
-                                        <div class="cont-col2">
-                                            <div class="desc"> You have 4 pending tasks.
-                                                <span class="label label-sm label-warning "> Take action
-                                                    <i class="fa fa-share"></i>
-                                                </span>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col2">
-                                    <div class="date"> Just now </div>
-                                </div>
-                            </li>
-                            <li>
-                                <a href="#">
-                                    <div class="col1">
-                                        <div class="cont">
-                                            <div class="cont-col1">
-                                                <div class="label label-sm label-danger">
-                                                    <i class="fa fa-bar-chart-o"></i>
-                                                </div>
-                                            </div>
-                                            <div class="cont-col2">
-                                                <div class="desc"> Finance Report for year 2013 has been released. </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="col2">
-                                        <div class="date"> 20 mins </div>
-                                    </div>
-                                </a>
-                            </li>
-                            <li>
-                                <div class="col1">
-                                    <div class="cont">
-                                        <div class="cont-col1">
-                                            <div class="label label-sm label-default">
-                                                <i class="fa fa-user"></i>
-                                            </div>
-                                        </div>
-                                        <div class="cont-col2">
-                                            <div class="desc"> You have 5 pending membership that requires a quick review. </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col2">
-                                    <div class="date"> 24 mins </div>
-                                </div>
-                            </li>
-                            <li>
-                                <div class="col1">
-                                    <div class="cont">
-                                        <div class="cont-col1">
-                                            <div class="label label-sm label-info">
-                                                <i class="fa fa-shopping-cart"></i>
-                                            </div>
-                                        </div>
-                                        <div class="cont-col2">
-                                            <div class="desc"> New order received with
-                                                <span class="label label-sm label-success"> Reference Number: DR23923 </span>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col2">
-                                    <div class="date"> 30 mins </div>
-                                </div>
-                            </li>
-                            <li>
-                                <div class="col1">
-                                    <div class="cont">
-                                        <div class="cont-col1">
-                                            <div class="label label-sm label-success">
-                                                <i class="fa fa-user"></i>
-                                            </div>
-                                        </div>
-                                        <div class="cont-col2">
-                                            <div class="desc"> You have 5 pending membership that requires a quick review. </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col2">
-                                    <div class="date"> 24 mins </div>
-                                </div>
-                            </li>
-                            <li>
-                                <div class="col1">
-                                    <div class="cont">
-                                        <div class="cont-col1">
-                                            <div class="label label-sm label-warning">
-                                                <i class="fa fa-bell-o"></i>
-                                            </div>
-                                        </div>
-                                        <div class="cont-col2">
-                                            <div class="desc"> Web server hardware needs to be upgraded.
-                                                <span class="label label-sm label-default "> Overdue </span>
-                                            </div>
-                                        </div>
-                                    </div>
-                                </div>
-                                <div class="col2">
-                                    <div class="date"> 2 hours </div>
-                                </div>
-                            </li>
-                            <li>
-                                <a href="#">
-                                    <div class="col1">
-                                        <div class="cont">
-                                            <div class="cont-col1">
-                                                <div class="label label-sm label-info">
-                                                    <i class="fa fa-briefcase"></i>
-                                                </div>
-                                            </div>
-                                            <div class="cont-col2">
-                                                <div class="desc"> IPO Report for year 2013 has been released. </div>
-                                            </div>
-                                        </div>
-                                    </div>
-                                    <div class="col2">
-                                        <div class="date"> 20 mins </div>
-                                    </div>
-                                </a>
-                            </li>
-                        </ul>
+                <div class="col-md-12 col-sm-12 col-xs-12 chart-option">
+                    <div class="col-md-3 col-sm-3 col-xs-3">
+                        <div>
+                            <button class="date-range btn-default form-control"
+                                    id="system-timerange">今天<span class="caret date-range-caret"></span>
+                            </button>
+                        </div>
                     </div>
-                    <div class="scroller-footer">
-                        <div class="btn-arrow-link pull-right">
-                            <a href="#">See All Records</a>
-                            <i class="icon-arrow-right"></i>
+                    <div class="col-md-3 col-sm-3 col-xs-3">
+                        <div class="multi-dropdown"
+                             ng-dropdown-multiselect
+                             options="selectByGroupData"
+                             selected-model="selectByGroupModel"
+                             extra-settings="selectByGroupSettings"
+                             group-by="group"
+                             translation-texts="selectByGroupTexts">
                         </div>
                     </div>
                 </div>
+                <div class="col-md-12 col-sm-12 col-xs-12" id="system-chart" style="height: 300px"></div>
             </div>
-            <!-- END REGIONAL STATS PORTLET-->
-        </div>
-        <div class="col-md-6 col-sm-6">
-            <!-- BEGIN PORTLET-->
-            <div class="portlet light bordered">
-                <div class="portlet-title">
-                    <div class="caption caption-md">
-                        <i class="icon-bar-chart font-green"></i>
-                        <span class="caption-subject font-green bold uppercase">Customer Support</span>
-                        <span class="caption-helper">45 pending</span>
+            <div class="col-md-6 col-sm-6 col-xs-12" ng-controller="processController">
+                <div class="col-md-12 col-sm-12 col-xs-12 chart-title">
+                    <span>进程操作</span>
+                    <span id="process-time-selected"></span>
+                    <img class="pull-right" src="../icon/line_chart.png">
+                    <img class="pull-right" src="../icon/bar_chart.png">
+                </div>
+                <div class="col-md-12 col-sm-12 col-xs-12 chart-option">
+                    <div class="col-md-3 col-sm-3 col-xs-3">
+                        <div>
+                            <button class="date-range btn-default form-control"
+                                    id="process-timerange">今天<span class="caret date-range-caret"></span>
+                            </button>
+                        </div>
                     </div>
-                    <div class="inputs">
-                        <div class="portlet-input input-inline input-small ">
-                            <div class="input-icon right">
-                                <i class="icon-magnifier"></i>
-                                <input type="text" class="form-control form-control-solid input-circle" placeholder="search..."> </div>
+                    <div class="col-md-3 col-sm-3 col-xs-3">
+                        <div class="multi-dropdown"
+                             ng-dropdown-multiselect
+                             options="selectByGroupData"
+                             selected-model="selectByGroupModel"
+                             extra-settings="selectByGroupSettings"
+                             group-by="group"
+                             translation-texts="selectByGroupTexts">
                         </div>
                     </div>
                 </div>
-                <div class="portlet-body">
-                    <div class="scroller" style="height: 329px;" data-always-visible="1" data-rail-visible1="0" data-handle-color="#D7DCE2">
-                        <div class="general-item-list">
-                            <div class="item">
-                                <div class="item-head">
-                                    <div class="item-details">
-                                        <img class="item-pic rounded" src="./assets/pages/media/users/avatar4.jpg">
-                                        <a href="" class="item-name primary-link">Nick Larson</a>
-                                        <span class="item-label">3 hrs ago</span>
-                                    </div>
-                                    <span class="item-status">
-                                        <span class="badge badge-empty badge-success"></span> Open</span>
-                                </div>
-                                <div class="item-body"> Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. </div>
-                            </div>
-                            <div class="item">
-                                <div class="item-head">
-                                    <div class="item-details">
-                                        <img class="item-pic rounded" src="./assets/pages/media/users/avatar3.jpg">
-                                        <a href="" class="item-name primary-link">Mark</a>
-                                        <span class="item-label">5 hrs ago</span>
-                                    </div>
-                                    <span class="item-status">
-                                        <span class="badge badge-empty badge-warning"></span> Pending</span>
-                                </div>
-                                <div class="item-body"> Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat tincidunt ut laoreet. </div>
-                            </div>
-                            <div class="item">
-                                <div class="item-head">
-                                    <div class="item-details">
-                                        <img class="item-pic rounded" src="./assets/pages/media/users/avatar6.jpg">
-                                        <a href="" class="item-name primary-link">Nick Larson</a>
-                                        <span class="item-label">8 hrs ago</span>
-                                    </div>
-                                    <span class="item-status">
-                                        <span class="badge badge-empty badge-primary"></span> Closed</span>
-                                </div>
-                                <div class="item-body"> Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh. </div>
-                            </div>
-                            <div class="item">
-                                <div class="item-head">
-                                    <div class="item-details">
-                                        <img class="item-pic rounded" src="./assets/pages/media/users/avatar7.jpg">
-                                        <a href="" class="item-name primary-link">Nick Larson</a>
-                                        <span class="item-label">12 hrs ago</span>
-                                    </div>
-                                    <span class="item-status">
-                                        <span class="badge badge-empty badge-danger"></span> Pending</span>
-                                </div>
-                                <div class="item-body"> Consectetuer adipiscing elit Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. </div>
-                            </div>
-                            <div class="item">
-                                <div class="item-head">
-                                    <div class="item-details">
-                                        <img class="item-pic rounded" src="./assets/pages/media/users/avatar9.jpg">
-                                        <a href="" class="item-name primary-link">Richard Stone</a>
-                                        <span class="item-label">2 days ago</span>
-                                    </div>
-                                    <span class="item-status">
-                                        <span class="badge badge-empty badge-danger"></span> Open</span>
-                                </div>
-                                <div class="item-body"> Lorem ipsum dolor sit amet, consectetuer adipiscing elit, ut laoreet dolore magna aliquam erat volutpat. </div>
-                            </div>
-                            <div class="item">
-                                <div class="item-head">
-                                    <div class="item-details">
-                                        <img class="item-pic rounded" src="./assets/pages/media/users/avatar8.jpg">
-                                        <a href="" class="item-name primary-link">Dan</a>
-                                        <span class="item-label">3 days ago</span>
-                                    </div>
-                                    <span class="item-status">
-                                        <span class="badge badge-empty badge-warning"></span> Pending</span>
-                                </div>
-                                <div class="item-body"> Lorem ipsum dolor sit amet, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. </div>
-                            </div>
-                            <div class="item">
-                                <div class="item-head">
-                                    <div class="item-details">
-                                        <img class="item-pic rounded" src="./assets/pages/media/users/avatar2.jpg">
-                                        <a href="" class="item-name primary-link">Larry</a>
-                                        <span class="item-label">4 hrs ago</span>
-                                    </div>
-                                    <span class="item-status">
-                                        <span class="badge badge-empty badge-success"></span> Open</span>
-                                </div>
-                                <div class="item-body"> Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam erat volutpat. </div>
-                            </div>
-                        </div>
-                    </div>
-                </div>
+                <div class="col-md-12 col-sm-12 col-xs-12" id="process-chart" style="height: 300px"></div>
             </div>
-            <!-- END PORTLET-->
+            <div class="col-md-6 col-sm-6 col-xs-12" ng-controller="fileController">
+                <div class="col-md-12 col-sm-12 col-xs-12 chart-title">
+                    <span>文件操作</span>
+                    <span id="file-time-selected"></span>
+                    <img class="pull-right" src="../icon/line_chart.png">
+                    <img class="pull-right" src="../icon/bar_chart.png">
+                </div>
+                <div class="col-md-12 col-sm-12 col-xs-12 chart-option">
+                    <div class="col-md-3 col-sm-3 col-xs-3">
+                        <div>
+                            <button class="date-range btn-default form-control"
+                                    id="file-timerange">今天<span class="caret date-range-caret"></span>
+                            </button>
+                        </div>
+                    </div>
+                    <div class="col-md-3 col-sm-3 col-xs-3">
+                        <div class="multi-dropdown"
+                             ng-dropdown-multiselect
+                             options="selectByGroupData"
+                             selected-model="selectByGroupModel"
+                             extra-settings="selectByGroupSettings"
+                             group-by="group"
+                             translation-texts="selectByGroupTexts">
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-12 col-sm-12 col-xs-12" id="file-chart" style="height: 300px"></div>
+            </div>
+            <div class="col-md-6 col-sm-6 col-xs-12" ng-controller="registryController">
+                <div class="col-md-12 col-sm-12 col-xs-12 chart-title">
+                    <span>注册表操作</span>
+                    <span id="registry-time-selected"></span>
+                    <img class="pull-right" src="../icon/line_chart.png">
+                    <img class="pull-right" src="../icon/bar_chart.png">
+                </div>
+                <div class="col-md-12 col-sm-12 col-xs-12 chart-option">
+                    <div class="col-md-3 col-sm-3 col-xs-3">
+                        <div>
+                            <button class="date-range btn-default form-control"
+                                    id="registry-timerange">今天<span class="caret date-range-caret"></span>
+                            </button>
+                        </div>
+                    </div>
+                    <div class="col-md-3 col-sm-3 col-xs-3">
+                        <div class="multi-dropdown"
+                             ng-dropdown-multiselect
+                             options="selectByGroupData"
+                             selected-model="selectByGroupModel"
+                             extra-settings="selectByGroupSettings"
+                             group-by="group"
+                             translation-texts="selectByGroupTexts">
+                        </div>
+                    </div>
+                </div>
+                <div class="col-md-12 col-sm-12 col-xs-12" id="registry-chart" style="height: 300px"></div>
+            </div>
         </div>
+
     </div>
 </div>
+<!-- BEGIN MAIN CONTENT -->
+<script>
+    var initialStartTime = moment().startOf('day').format('X');
+    var initialEndTime = moment().format('X');
+
+    Date.prototype.format = function (fmt) {
+        var o = {
+            "M+": this.getMonth() + 1,                 //月份
+            "d+": this.getDate(),                    //日
+            "h+": this.getHours(),                   //小时
+            "m+": this.getMinutes(),                 //分
+            "s+": this.getSeconds(),                 //秒
+            "q+": Math.floor((this.getMonth() + 3) / 3), //季度
+            "S": this.getMilliseconds()             //毫秒
+        };
+        if (/(y+)/.test(fmt)) {
+            fmt = fmt.replace(RegExp.$1, (this.getFullYear() + "").substr(4 - RegExp.$1.length));
+        }
+        for (var k in o) {
+            if (new RegExp("(" + k + ")").test(fmt)) {
+                fmt = fmt.replace(RegExp.$1, (RegExp.$1.length == 1) ? (o[k]) : (("00" + o[k]).substr(("" + o[k]).length)));
+            }
+        }
+        return fmt;
+    };
+
+    var timeStamp2String = function (time, format) {
+        if (typeof(time) == "number") {
+            time = time.toString();
+        }
+        if (time.length != 10 && time.length != 13) {
+            return time;
+        }
+        if (time.length == 10) {
+            time = time * 1000;
+        }
+        var datetime = new Date();
+        datetime.setTime(time);
+        return datetime.format(format);
+    };
+
+    $('#network-time-selected').html(timeStamp2String(initialStartTime, "yyyy-MM-dd hh:mm") + ' 至 ' + timeStamp2String(initialEndTime, "yyyy-MM-dd hh:mm"));
+    $('#system-time-selected').html(timeStamp2String(initialStartTime, "yyyy-MM-dd hh:mm") + ' 至 ' + timeStamp2String(initialEndTime, "yyyy-MM-dd hh:mm"));
+    $('#process-time-selected').html(timeStamp2String(initialStartTime, "yyyy-MM-dd hh:mm") + ' 至 ' + timeStamp2String(initialEndTime, "yyyy-MM-dd hh:mm"));
+
+//    $('.networkDatePicker i').click(function () {
+//        $(this).parent().find('input').click();
+//    });
+
+
+    var networkDraw = function() {
+        var dom = document.getElementById("network-chart");
+        var myChart = echarts.init(dom);
+        var app = {};
+        option = null;
+        option = {
+            tooltip: {
+                trigger: 'axis',
+                axisPointer: {
+                    type: 'cross',
+                    label: {
+                        backgroundColor: '#283b56'
+                    }
+                }
+            },
+            legend: {
+                data:['最新成交价', '预购队列']
+            },
+            toolbox: {
+                show: true,
+                feature: {
+                    dataView: {readOnly: false},
+                    restore: {},
+                    saveAsImage: {}
+                }
+            },
+            dataZoom: {
+                show: false,
+                start: 0,
+                end: 100
+            },
+            xAxis: [
+                {
+                    type: 'category',
+                    boundaryGap: true,
+                    data: (function (){
+                        var now = new Date();
+                        var res = [];
+                        var len = 10;
+                        while (len--) {
+                            res.unshift(now.toLocaleTimeString().replace(/^\D*/,''));
+                            now = new Date(now - 2000);
+                        }
+                        return res;
+                    })()
+                },
+                {
+                    type: 'category',
+                    boundaryGap: true,
+                    data: (function (){
+                        var res = [];
+                        var len = 10;
+                        while (len--) {
+                            res.push(len + 1);
+                        }
+                        return res;
+                    })()
+                }
+            ],
+            yAxis: [
+                {
+                    type: 'value',
+                    scale: true,
+                    name: '价格',
+                    max: 30,
+                    min: 0,
+                    boundaryGap: [0.2, 0.2]
+                },
+                {
+                    type: 'value',
+                    scale: true,
+                    name: '预购量',
+                    max: 1200,
+                    min: 0,
+                    boundaryGap: [0.2, 0.2]
+                }
+            ],
+            series: [
+                {
+                    name:'预购队列',
+                    type:'bar',
+                    xAxisIndex: 1,
+                    yAxisIndex: 1,
+                    data:(function (){
+                        var res = [];
+                        var len = 10;
+                        while (len--) {
+                            res.push(Math.round(Math.random() * 1000));
+                        }
+                        return res;
+                    })()
+                },
+                {
+                    name:'最新成交价',
+                    type:'line',
+                    data:(function (){
+                        var res = [];
+                        var len = 0;
+                        while (len < 10) {
+                            res.push((Math.random()*10 + 5).toFixed(1) - 0);
+                            len++;
+                        }
+                        return res;
+                    })()
+                }
+            ]
+        };
+
+        app.count = 11;
+        setInterval(function (){
+            axisData = (new Date()).toLocaleTimeString().replace(/^\D*/,'');
+
+            var data0 = option.series[0].data;
+            var data1 = option.series[1].data;
+            data0.shift();
+            data0.push(Math.round(Math.random() * 1000));
+            data1.shift();
+            data1.push((Math.random() * 10 + 5).toFixed(1) - 0);
+
+            option.xAxis[0].data.shift();
+            option.xAxis[0].data.push(axisData);
+            option.xAxis[1].data.shift();
+            option.xAxis[1].data.push(app.count++);
+
+            myChart.setOption(option);
+        }, 2100);
+        ;
+        if (option && typeof option === "object") {
+            myChart.setOption(option, true);
+        }
+    };
+
+    networkDraw();
+
+    $('#network-timerange').daterangepicker({
+        "showCustomRangeLabel": false,
+        "autoApply": true,
+        "ranges": {
+            "今天": [moment().startOf('day'), moment()],
+            //            "昨天": [moment().subtract('days', 1).startOf('day'), moment().subtract('days', 1).endOf('day')],
+            //            "过去7天": [moment().subtract('days', 6), moment()],
+            "本周": [moment().startOf('week'), moment()],
+            //            "过去30天": [moment().subtract('days', 29), moment()],
+            "本月": [moment().startOf('month'), moment()]
+        },
+        "locale": {
+            "format": "YYYY/MM/DD HH:mm"
+        }
+    }, function (start, end, label) {
+        var startTime = start / 1000;
+        var endTime = Math.floor(end / 60000) * 60;
+        $("#network-time-selected").html(timeStamp2String(startTime, "yyyy-MM-dd hh:mm") + ' 至 ' + timeStamp2String(endTime, "yyyy-MM-dd hh:mm"));
+
+        networkDraw();
+    });
+
+function networkController($scope) {
+    $scope.selectByGroupModel = [];
+
+    var device_info = [
+        {
+            "groupname": "group1",
+            "devices": [{
+                "deviceid": 1,
+                "devicename": "EndPoint1",
+                "ip": "127.0.0.1",
+                "os": "Linux",
+                "assettag": "Lab",
+                "status": "online",
+                "lastcontacttime": "2017-04-06 18:05:39"
+            }, {
+                "deviceid": 2,
+                "devicename": "EndPoint2",
+                "ip": "127.0.0.1",
+                "os": "Linux",
+                "assettag": "Lab",
+                "status": "online",
+                "lastcontacttime": "2017-04-06 18:05:39"
+            }]
+        },
+        {
+            "groupname": "group2",
+            "devices": [
+                {
+                    "deviceid": 3,
+                    "devicename": "EndPoint3",
+                    "ip": "127.0.0.1",
+                    "os": "Linux",
+                    "assettag": "Lab",
+                    "status": "online",
+                    "lastcontacttime": "2017-04-06 18:05:39"
+                }]
+        }
+    ];
+
+    $scope.selectByGroupData = [];
+    $scope.groupInfo = [];
+    for (var i = 0; i < device_info.length; i++) {
+        var devices = device_info[i].devices;
+        $scope.groupInfo.push(device_info[i].groupname);
+        for (var k = 0; k < devices.length; k++) {
+            var device = {
+                id: devices[k].deviceid,
+                label: devices[k].devicename,
+                group: device_info[i].groupname
+            };
+            $scope.selectByGroupData.push(device)
+        }
+    }
+
+    $scope.selectByGroupSettings = {
+        selectByGroups: $scope.groupInfo,
+        groupByTextProvider: function (groupValue) {
+            switch (groupValue) {
+                case 'group1':
+                    return '选择:分组一';
+                case 'group2':
+                    return '选择:分组二';
+            }
+        },
+        scrollableHeight: '400px',
+        scrollable: true,
+        enableSearch: true
+    };
+
+    $scope.selectByGroupTexts = {
+        buttonDefaultText: "所有探针设备...",
+        selectGroup: '选择所有:',
+        allSelectedText: '全部',
+        searchPlaceholder: '检索...',
+        checkAll: '选择所有',
+        uncheckAll: '取消所有选择',
+        selectionCount: '被选中'
+    };
+}
+
+    var volumeDraw = function() {
+        var dom = document.getElementById("volume-chart");
+        var myChart = echarts.init(dom);
+        var option = {
+            series: [{
+                type: 'liquidFill',
+                radius: '80%',
+                data: [0.5],
+                label: {
+                    normal: {
+                        textStyle: {
+                            color: 'red',
+                            insideColor: 'yellow',
+                            fontSize: 50
+                        }
+                    }
+                }
+            }]
+        };
+        myChart.setOption(option);
+    };
+
+function systemController($scope) {
+        $scope.selectByGroupModel = [];
+
+        var device_info = [
+            {
+                "groupname": "group1",
+                "devices": [{
+                    "deviceid": 1,
+                    "devicename": "EndPoint1",
+                    "ip": "127.0.0.1",
+                    "os": "Linux",
+                    "assettag": "Lab",
+                    "status": "online",
+                    "lastcontacttime": "2017-04-06 18:05:39"
+                }, {
+                    "deviceid": 2,
+                    "devicename": "EndPoint2",
+                    "ip": "127.0.0.1",
+                    "os": "Linux",
+                    "assettag": "Lab",
+                    "status": "online",
+                    "lastcontacttime": "2017-04-06 18:05:39"
+                }]
+            },
+            {
+                "groupname": "group2",
+                "devices": [
+                    {
+                        "deviceid": 3,
+                        "devicename": "EndPoint3",
+                        "ip": "127.0.0.1",
+                        "os": "Linux",
+                        "assettag": "Lab",
+                        "status": "online",
+                        "lastcontacttime": "2017-04-06 18:05:39"
+                    }]
+            }
+        ];
+
+        $scope.selectByGroupData = [];
+        $scope.groupInfo = [];
+        for (var i = 0; i < device_info.length; i++) {
+            var devices = device_info[i].devices;
+            $scope.groupInfo.push(device_info[i].groupname);
+            for (var k = 0; k < devices.length; k++) {
+                var device = {
+                    id: devices[k].deviceid,
+                    label: devices[k].devicename,
+                    group: device_info[i].groupname
+                };
+                $scope.selectByGroupData.push(device)
+            }
+        }
+
+        $scope.selectByGroupSettings = {
+            selectByGroups: $scope.groupInfo,
+            groupByTextProvider: function (groupValue) {
+                switch (groupValue) {
+                    case 'group1':
+                        return '选择:分组一';
+                    case 'group2':
+                        return '选择:分组二';
+                }
+            },
+            scrollableHeight: '400px',
+            scrollable: true,
+            enableSearch: true
+        };
+
+        $scope.selectByGroupTexts = {
+            buttonDefaultText: "所有探针设备...",
+            selectGroup: '选择所有:',
+            allSelectedText: '全部',
+            searchPlaceholder: '检索...',
+            checkAll: '选择所有',
+            uncheckAll: '取消所有选择',
+            selectionCount: '被选中'
+        };
+    }
+
+    var systemDraw = function() {
+        var dom = document.getElementById("system-chart");
+        var myChart = echarts.init(dom);
+        var app = {};
+        option = null;
+        option = {
+            tooltip: {
+                trigger: 'axis',
+                axisPointer: {
+                    type: 'cross',
+                    label: {
+                        backgroundColor: '#283b56'
+                    }
+                }
+            },
+            legend: {
+                data:['最新成交价', '预购队列']
+            },
+            toolbox: {
+                show: true,
+                feature: {
+                    dataView: {readOnly: false},
+                    restore: {},
+                    saveAsImage: {}
+                }
+            },
+            dataZoom: {
+                show: false,
+                start: 0,
+                end: 100
+            },
+            xAxis: [
+                {
+                    type: 'category',
+                    boundaryGap: true,
+                    data: (function (){
+                        var now = new Date();
+                        var res = [];
+                        var len = 10;
+                        while (len--) {
+                            res.unshift(now.toLocaleTimeString().replace(/^\D*/,''));
+                            now = new Date(now - 2000);
+                        }
+                        return res;
+                    })()
+                },
+                {
+                    type: 'category',
+                    boundaryGap: true,
+                    data: (function (){
+                        var res = [];
+                        var len = 10;
+                        while (len--) {
+                            res.push(len + 1);
+                        }
+                        return res;
+                    })()
+                }
+            ],
+            yAxis: [
+                {
+                    type: 'value',
+                    scale: true,
+                    name: '价格',
+                    max: 30,
+                    min: 0,
+                    boundaryGap: [0.2, 0.2]
+                },
+                {
+                    type: 'value',
+                    scale: true,
+                    name: '预购量',
+                    max: 1200,
+                    min: 0,
+                    boundaryGap: [0.2, 0.2]
+                }
+            ],
+            series: [
+                {
+                    name:'预购队列',
+                    type:'bar',
+                    xAxisIndex: 1,
+                    yAxisIndex: 1,
+                    data:(function (){
+                        var res = [];
+                        var len = 10;
+                        while (len--) {
+                            res.push(Math.round(Math.random() * 1000));
+                        }
+                        return res;
+                    })()
+                },
+                {
+                    name:'最新成交价',
+                    type:'line',
+                    data:(function (){
+                        var res = [];
+                        var len = 0;
+                        while (len < 10) {
+                            res.push((Math.random()*10 + 5).toFixed(1) - 0);
+                            len++;
+                        }
+                        return res;
+                    })()
+                }
+            ]
+        };
+
+        app.count = 11;
+        setInterval(function (){
+            axisData = (new Date()).toLocaleTimeString().replace(/^\D*/,'');
+
+            var data0 = option.series[0].data;
+            var data1 = option.series[1].data;
+            data0.shift();
+            data0.push(Math.round(Math.random() * 1000));
+            data1.shift();
+            data1.push((Math.random() * 10 + 5).toFixed(1) - 0);
+
+            option.xAxis[0].data.shift();
+            option.xAxis[0].data.push(axisData);
+            option.xAxis[1].data.shift();
+            option.xAxis[1].data.push(app.count++);
+
+            myChart.setOption(option);
+        }, 2100);
+        ;
+        if (option && typeof option === "object") {
+            myChart.setOption(option, true);
+        }
+    };
+
+    systemDraw();
+
+    $('#system-timerange').daterangepicker({
+        "showCustomRangeLabel": false,
+        "autoApply": true,
+        "ranges": {
+            "今天": [moment().startOf('day'), moment()],
+            //            "昨天": [moment().subtract('days', 1).startOf('day'), moment().subtract('days', 1).endOf('day')],
+            //            "过去7天": [moment().subtract('days', 6), moment()],
+            "本周": [moment().startOf('week'), moment()],
+            //            "过去30天": [moment().subtract('days', 29), moment()],
+            "本月": [moment().startOf('month'), moment()]
+        },
+        "locale": {
+            "format": "YYYY/MM/DD HH:mm"
+        }
+    }, function (start, end, label) {
+        var startTime = start / 1000;
+        var endTime = Math.floor(end / 60000) * 60;
+        $("#system-time-selected").html(timeStamp2String(startTime, "yyyy-MM-dd hh:mm") + ' 至 ' + timeStamp2String(endTime, "yyyy-MM-dd hh:mm"));
+
+        systemDraw();
+    });
+
+function processController($scope) {
+        $scope.selectByGroupModel = [];
+
+        var device_info = [
+            {
+                "groupname": "group1",
+                "devices": [{
+                    "deviceid": 1,
+                    "devicename": "EndPoint1",
+                    "ip": "127.0.0.1",
+                    "os": "Linux",
+                    "assettag": "Lab",
+                    "status": "online",
+                    "lastcontacttime": "2017-04-06 18:05:39"
+                }, {
+                    "deviceid": 2,
+                    "devicename": "EndPoint2",
+                    "ip": "127.0.0.1",
+                    "os": "Linux",
+                    "assettag": "Lab",
+                    "status": "online",
+                    "lastcontacttime": "2017-04-06 18:05:39"
+                }]
+            },
+            {
+                "groupname": "group2",
+                "devices": [
+                    {
+                        "deviceid": 3,
+                        "devicename": "EndPoint3",
+                        "ip": "127.0.0.1",
+                        "os": "Linux",
+                        "assettag": "Lab",
+                        "status": "online",
+                        "lastcontacttime": "2017-04-06 18:05:39"
+                    }]
+            }
+        ];
+
+        $scope.selectByGroupData = [];
+        $scope.groupInfo = [];
+        for (var i = 0; i < device_info.length; i++) {
+            var devices = device_info[i].devices;
+            $scope.groupInfo.push(device_info[i].groupname);
+            for (var k = 0; k < devices.length; k++) {
+                var device = {
+                    id: devices[k].deviceid,
+                    label: devices[k].devicename,
+                    group: device_info[i].groupname
+                };
+                $scope.selectByGroupData.push(device)
+            }
+        }
+
+        $scope.selectByGroupSettings = {
+            selectByGroups: $scope.groupInfo,
+            groupByTextProvider: function (groupValue) {
+                switch (groupValue) {
+                    case 'group1':
+                        return '选择:分组一';
+                    case 'group2':
+                        return '选择:分组二';
+                }
+            },
+            scrollableHeight: '400px',
+            scrollable: true,
+            enableSearch: true
+        };
+
+        $scope.selectByGroupTexts = {
+            buttonDefaultText: "所有探针设备...",
+            selectGroup: '选择所有:',
+            allSelectedText: '全部',
+            searchPlaceholder: '检索...',
+            checkAll: '选择所有',
+            uncheckAll: '取消所有选择',
+            selectionCount: '被选中'
+        };
+    }
+
+    var processDraw = function() {
+        var dom = document.getElementById("process-chart");
+        var myChart = echarts.init(dom);
+        var app = {};
+        option = null;
+        option = {
+            tooltip: {
+                trigger: 'axis',
+                axisPointer: {
+                    type: 'cross',
+                    label: {
+                        backgroundColor: '#283b56'
+                    }
+                }
+            },
+            legend: {
+                data:['最新成交价', '预购队列']
+            },
+            toolbox: {
+                show: true,
+                feature: {
+                    dataView: {readOnly: false},
+                    restore: {},
+                    saveAsImage: {}
+                }
+            },
+            dataZoom: {
+                show: false,
+                start: 0,
+                end: 100
+            },
+            xAxis: [
+                {
+                    type: 'category',
+                    boundaryGap: true,
+                    data: (function (){
+                        var now = new Date();
+                        var res = [];
+                        var len = 10;
+                        while (len--) {
+                            res.unshift(now.toLocaleTimeString().replace(/^\D*/,''));
+                            now = new Date(now - 2000);
+                        }
+                        return res;
+                    })()
+                },
+                {
+                    type: 'category',
+                    boundaryGap: true,
+                    data: (function (){
+                        var res = [];
+                        var len = 10;
+                        while (len--) {
+                            res.push(len + 1);
+                        }
+                        return res;
+                    })()
+                }
+            ],
+            yAxis: [
+                {
+                    type: 'value',
+                    scale: true,
+                    name: '价格',
+                    max: 30,
+                    min: 0,
+                    boundaryGap: [0.2, 0.2]
+                },
+                {
+                    type: 'value',
+                    scale: true,
+                    name: '预购量',
+                    max: 1200,
+                    min: 0,
+                    boundaryGap: [0.2, 0.2]
+                }
+            ],
+            series: [
+                {
+                    name:'预购队列',
+                    type:'bar',
+                    xAxisIndex: 1,
+                    yAxisIndex: 1,
+                    data:(function (){
+                        var res = [];
+                        var len = 10;
+                        while (len--) {
+                            res.push(Math.round(Math.random() * 1000));
+                        }
+                        return res;
+                    })()
+                },
+                {
+                    name:'最新成交价',
+                    type:'line',
+                    data:(function (){
+                        var res = [];
+                        var len = 0;
+                        while (len < 10) {
+                            res.push((Math.random()*10 + 5).toFixed(1) - 0);
+                            len++;
+                        }
+                        return res;
+                    })()
+                }
+            ]
+        };
+
+        app.count = 11;
+        setInterval(function (){
+            axisData = (new Date()).toLocaleTimeString().replace(/^\D*/,'');
+
+            var data0 = option.series[0].data;
+            var data1 = option.series[1].data;
+            data0.shift();
+            data0.push(Math.round(Math.random() * 1000));
+            data1.shift();
+            data1.push((Math.random() * 10 + 5).toFixed(1) - 0);
+
+            option.xAxis[0].data.shift();
+            option.xAxis[0].data.push(axisData);
+            option.xAxis[1].data.shift();
+            option.xAxis[1].data.push(app.count++);
+
+            myChart.setOption(option);
+        }, 2100);
+        ;
+        if (option && typeof option === "object") {
+            myChart.setOption(option, true);
+        }
+    };
+
+    processDraw();
+
+    $('#process-timerange').daterangepicker({
+        "showCustomRangeLabel": false,
+        "autoApply": true,
+        "ranges": {
+            "今天": [moment().startOf('day'), moment()],
+            //            "昨天": [moment().subtract('days', 1).startOf('day'), moment().subtract('days', 1).endOf('day')],
+            //            "过去7天": [moment().subtract('days', 6), moment()],
+            "本周": [moment().startOf('week'), moment()],
+            //            "过去30天": [moment().subtract('days', 29), moment()],
+            "本月": [moment().startOf('month'), moment()]
+        },
+        "locale": {
+            "format": "YYYY/MM/DD HH:mm"
+        }
+    }, function (start, end, label) {
+        var startTime = start / 1000;
+        var endTime = Math.floor(end / 60000) * 60;
+        $("#process-time-selected").html(timeStamp2String(startTime, "yyyy-MM-dd hh:mm") + ' 至 ' + timeStamp2String(endTime, "yyyy-MM-dd hh:mm"));
+
+        processDraw();
+    });
+
+function fileController($scope) {
+        $scope.selectByGroupModel = [];
+
+        var device_info = [
+            {
+                "groupname": "group1",
+                "devices": [{
+                    "deviceid": 1,
+                    "devicename": "EndPoint1",
+                    "ip": "127.0.0.1",
+                    "os": "Linux",
+                    "assettag": "Lab",
+                    "status": "online",
+                    "lastcontacttime": "2017-04-06 18:05:39"
+                }, {
+                    "deviceid": 2,
+                    "devicename": "EndPoint2",
+                    "ip": "127.0.0.1",
+                    "os": "Linux",
+                    "assettag": "Lab",
+                    "status": "online",
+                    "lastcontacttime": "2017-04-06 18:05:39"
+                }]
+            },
+            {
+                "groupname": "group2",
+                "devices": [
+                    {
+                        "deviceid": 3,
+                        "devicename": "EndPoint3",
+                        "ip": "127.0.0.1",
+                        "os": "Linux",
+                        "assettag": "Lab",
+                        "status": "online",
+                        "lastcontacttime": "2017-04-06 18:05:39"
+                    }]
+            }
+        ];
+
+        $scope.selectByGroupData = [];
+        $scope.groupInfo = [];
+        for (var i = 0; i < device_info.length; i++) {
+            var devices = device_info[i].devices;
+            $scope.groupInfo.push(device_info[i].groupname);
+            for (var k = 0; k < devices.length; k++) {
+                var device = {
+                    id: devices[k].deviceid,
+                    label: devices[k].devicename,
+                    group: device_info[i].groupname
+                };
+                $scope.selectByGroupData.push(device)
+            }
+        }
+
+        $scope.selectByGroupSettings = {
+            selectByGroups: $scope.groupInfo,
+            groupByTextProvider: function (groupValue) {
+                switch (groupValue) {
+                    case 'group1':
+                        return '选择:分组一';
+                    case 'group2':
+                        return '选择:分组二';
+                }
+            },
+            scrollableHeight: '400px',
+            scrollable: true,
+            enableSearch: true
+        };
+
+        $scope.selectByGroupTexts = {
+            buttonDefaultText: "所有探针设备...",
+            selectGroup: '选择所有:',
+            allSelectedText: '全部',
+            searchPlaceholder: '检索...',
+            checkAll: '选择所有',
+            uncheckAll: '取消所有选择',
+            selectionCount: '被选中'
+        };
+    }
+
+    var fileDraw = function() {
+        var dom = document.getElementById("file-chart");
+        var myChart = echarts.init(dom);
+        var app = {};
+        option = null;
+        option = {
+            tooltip: {
+                trigger: 'axis',
+                axisPointer: {
+                    type: 'cross',
+                    label: {
+                        backgroundColor: '#283b56'
+                    }
+                }
+            },
+            legend: {
+                data:['最新成交价', '预购队列']
+            },
+            toolbox: {
+                show: true,
+                feature: {
+                    dataView: {readOnly: false},
+                    restore: {},
+                    saveAsImage: {}
+                }
+            },
+            dataZoom: {
+                show: false,
+                start: 0,
+                end: 100
+            },
+            xAxis: [
+                {
+                    type: 'category',
+                    boundaryGap: true,
+                    data: (function (){
+                        var now = new Date();
+                        var res = [];
+                        var len = 10;
+                        while (len--) {
+                            res.unshift(now.toLocaleTimeString().replace(/^\D*/,''));
+                            now = new Date(now - 2000);
+                        }
+                        return res;
+                    })()
+                },
+                {
+                    type: 'category',
+                    boundaryGap: true,
+                    data: (function (){
+                        var res = [];
+                        var len = 10;
+                        while (len--) {
+                            res.push(len + 1);
+                        }
+                        return res;
+                    })()
+                }
+            ],
+            yAxis: [
+                {
+                    type: 'value',
+                    scale: true,
+                    name: '价格',
+                    max: 30,
+                    min: 0,
+                    boundaryGap: [0.2, 0.2]
+                },
+                {
+                    type: 'value',
+                    scale: true,
+                    name: '预购量',
+                    max: 1200,
+                    min: 0,
+                    boundaryGap: [0.2, 0.2]
+                }
+            ],
+            series: [
+                {
+                    name:'预购队列',
+                    type:'bar',
+                    xAxisIndex: 1,
+                    yAxisIndex: 1,
+                    data:(function (){
+                        var res = [];
+                        var len = 10;
+                        while (len--) {
+                            res.push(Math.round(Math.random() * 1000));
+                        }
+                        return res;
+                    })()
+                },
+                {
+                    name:'最新成交价',
+                    type:'line',
+                    data:(function (){
+                        var res = [];
+                        var len = 0;
+                        while (len < 10) {
+                            res.push((Math.random()*10 + 5).toFixed(1) - 0);
+                            len++;
+                        }
+                        return res;
+                    })()
+                }
+            ]
+        };
+
+        app.count = 11;
+        setInterval(function (){
+            axisData = (new Date()).toLocaleTimeString().replace(/^\D*/,'');
+
+            var data0 = option.series[0].data;
+            var data1 = option.series[1].data;
+            data0.shift();
+            data0.push(Math.round(Math.random() * 1000));
+            data1.shift();
+            data1.push((Math.random() * 10 + 5).toFixed(1) - 0);
+
+            option.xAxis[0].data.shift();
+            option.xAxis[0].data.push(axisData);
+            option.xAxis[1].data.shift();
+            option.xAxis[1].data.push(app.count++);
+
+            myChart.setOption(option);
+        }, 2100);
+        ;
+        if (option && typeof option === "object") {
+            myChart.setOption(option, true);
+        }
+    };
+
+    fileDraw();
+
+    $('#file-timerange').daterangepicker({
+        "showCustomRangeLabel": false,
+        "autoApply": true,
+        "ranges": {
+            "今天": [moment().startOf('day'), moment()],
+            //            "昨天": [moment().subtract('days', 1).startOf('day'), moment().subtract('days', 1).endOf('day')],
+            //            "过去7天": [moment().subtract('days', 6), moment()],
+            "本周": [moment().startOf('week'), moment()],
+            //            "过去30天": [moment().subtract('days', 29), moment()],
+            "本月": [moment().startOf('month'), moment()]
+        },
+        "locale": {
+            "format": "YYYY/MM/DD HH:mm"
+        }
+    }, function (start, end, label) {
+        var startTime = start / 1000;
+        var endTime = Math.floor(end / 60000) * 60;
+        $("#file-time-selected").html(timeStamp2String(startTime, "yyyy-MM-dd hh:mm") + ' 至 ' + timeStamp2String(endTime, "yyyy-MM-dd hh:mm"));
+
+        fileDraw();
+    });
+
+function registryController($scope) {
+        $scope.selectByGroupModel = [];
+
+        var device_info = [
+            {
+                "groupname": "group1",
+                "devices": [{
+                    "deviceid": 1,
+                    "devicename": "EndPoint1",
+                    "ip": "127.0.0.1",
+                    "os": "Linux",
+                    "assettag": "Lab",
+                    "status": "online",
+                    "lastcontacttime": "2017-04-06 18:05:39"
+                }, {
+                    "deviceid": 2,
+                    "devicename": "EndPoint2",
+                    "ip": "127.0.0.1",
+                    "os": "Linux",
+                    "assettag": "Lab",
+                    "status": "online",
+                    "lastcontacttime": "2017-04-06 18:05:39"
+                }]
+            },
+            {
+                "groupname": "group2",
+                "devices": [
+                    {
+                        "deviceid": 3,
+                        "devicename": "EndPoint3",
+                        "ip": "127.0.0.1",
+                        "os": "Linux",
+                        "assettag": "Lab",
+                        "status": "online",
+                        "lastcontacttime": "2017-04-06 18:05:39"
+                    }]
+            }
+        ];
+
+        $scope.selectByGroupData = [];
+        $scope.groupInfo = [];
+        for (var i = 0; i < device_info.length; i++) {
+            var devices = device_info[i].devices;
+            $scope.groupInfo.push(device_info[i].groupname);
+            for (var k = 0; k < devices.length; k++) {
+                var device = {
+                    id: devices[k].deviceid,
+                    label: devices[k].devicename,
+                    group: device_info[i].groupname
+                };
+                $scope.selectByGroupData.push(device)
+            }
+        }
+
+        $scope.selectByGroupSettings = {
+            selectByGroups: $scope.groupInfo,
+            groupByTextProvider: function (groupValue) {
+                switch (groupValue) {
+                    case 'group1':
+                        return '选择:分组一';
+                    case 'group2':
+                        return '选择:分组二';
+                }
+            },
+            scrollableHeight: '400px',
+            scrollable: true,
+            enableSearch: true
+        };
+
+        $scope.selectByGroupTexts = {
+            buttonDefaultText: "所有探针设备...",
+            selectGroup: '选择所有:',
+            allSelectedText: '全部',
+            searchPlaceholder: '检索...',
+            checkAll: '选择所有',
+            uncheckAll: '取消所有选择',
+            selectionCount: '被选中'
+        };
+    }
+
+    var registryDraw = function() {
+        var dom = document.getElementById("registry-chart");
+        var myChart = echarts.init(dom);
+        var app = {};
+        option = null;
+        option = {
+            tooltip: {
+                trigger: 'axis',
+                axisPointer: {
+                    type: 'cross',
+                    label: {
+                        backgroundColor: '#283b56'
+                    }
+                }
+            },
+            legend: {
+                data:['最新成交价', '预购队列']
+            },
+            toolbox: {
+                show: true,
+                feature: {
+                    dataView: {readOnly: false},
+                    restore: {},
+                    saveAsImage: {}
+                }
+            },
+            dataZoom: {
+                show: false,
+                start: 0,
+                end: 100
+            },
+            xAxis: [
+                {
+                    type: 'category',
+                    boundaryGap: true,
+                    data: (function (){
+                        var now = new Date();
+                        var res = [];
+                        var len = 10;
+                        while (len--) {
+                            res.unshift(now.toLocaleTimeString().replace(/^\D*/,''));
+                            now = new Date(now - 2000);
+                        }
+                        return res;
+                    })()
+                },
+                {
+                    type: 'category',
+                    boundaryGap: true,
+                    data: (function (){
+                        var res = [];
+                        var len = 10;
+                        while (len--) {
+                            res.push(len + 1);
+                        }
+                        return res;
+                    })()
+                }
+            ],
+            yAxis: [
+                {
+                    type: 'value',
+                    scale: true,
+                    name: '价格',
+                    max: 30,
+                    min: 0,
+                    boundaryGap: [0.2, 0.2]
+                },
+                {
+                    type: 'value',
+                    scale: true,
+                    name: '预购量',
+                    max: 1200,
+                    min: 0,
+                    boundaryGap: [0.2, 0.2]
+                }
+            ],
+            series: [
+                {
+                    name:'预购队列',
+                    type:'bar',
+                    xAxisIndex: 1,
+                    yAxisIndex: 1,
+                    data:(function (){
+                        var res = [];
+                        var len = 10;
+                        while (len--) {
+                            res.push(Math.round(Math.random() * 1000));
+                        }
+                        return res;
+                    })()
+                },
+                {
+                    name:'最新成交价',
+                    type:'line',
+                    data:(function (){
+                        var res = [];
+                        var len = 0;
+                        while (len < 10) {
+                            res.push((Math.random()*10 + 5).toFixed(1) - 0);
+                            len++;
+                        }
+                        return res;
+                    })()
+                }
+            ]
+        };
+
+        app.count = 11;
+        setInterval(function (){
+            axisData = (new Date()).toLocaleTimeString().replace(/^\D*/,'');
+
+            var data0 = option.series[0].data;
+            var data1 = option.series[1].data;
+            data0.shift();
+            data0.push(Math.round(Math.random() * 1000));
+            data1.shift();
+            data1.push((Math.random() * 10 + 5).toFixed(1) - 0);
+
+            option.xAxis[0].data.shift();
+            option.xAxis[0].data.push(axisData);
+            option.xAxis[1].data.shift();
+            option.xAxis[1].data.push(app.count++);
+
+            myChart.setOption(option);
+        }, 2100);
+        ;
+        if (option && typeof option === "object") {
+            myChart.setOption(option, true);
+        }
+    };
+
+    registryDraw();
+
+    $('#registry-timerange').daterangepicker({
+        "showCustomRangeLabel": false,
+        "autoApply": true,
+        "ranges": {
+            "今天": [moment().startOf('day'), moment()],
+            //            "昨天": [moment().subtract('days', 1).startOf('day'), moment().subtract('days', 1).endOf('day')],
+            //            "过去7天": [moment().subtract('days', 6), moment()],
+            "本周": [moment().startOf('week'), moment()],
+            //            "过去30天": [moment().subtract('days', 29), moment()],
+            "本月": [moment().startOf('month'), moment()]
+        },
+        "locale": {
+            "format": "YYYY/MM/DD HH:mm"
+        }
+    }, function (start, end, label) {
+        var startTime = start / 1000;
+        var endTime = Math.floor(end / 60000) * 60;
+        $("#registry-time-selected").html(timeStamp2String(startTime, "yyyy-MM-dd hh:mm") + ' 至 ' + timeStamp2String(endTime, "yyyy-MM-dd hh:mm"));
+
+        registryDraw();
+    });
+
+setTimeout(volumeDraw(), 2000);
+
+</script>
 <!-- END MAIN CONTENT -->
 <!-- BEGIN MAIN JS & CSS -->
 <script>

@@ -165,12 +165,17 @@ MetronicApp.config(['$stateProvider', '$urlRouterProvider', function($stateProvi
                         insertBefore: '#ng_load_plugins_before', // load the above css files before a LINK element with this ID. Dynamic CSS files must be loaded between core and theme css files
                         files: [
                             './assets/global/plugins/morris/morris.css',
+                            './assets/global/plugins/bootstrap-daterangepicker/daterangepicker.css',
+                            './assets/global/plugins/bootstrap-daterangepicker/moment.min.js',
+                            // './assets/global/plugins/echarts-liquidfill.js',
+                            './assets/global/plugins/echarts-all.js',
                             './assets/global/plugins/morris/morris.min.js',
                             './assets/global/plugins/morris/raphael-min.js',
                             './assets/global/plugins/jquery.sparkline.min.js',
+                            './assets/global/plugins/bootstrap-daterangepicker/daterangepicker.js',
 
                             './assets/pages/scripts/dashboard.min.js',
-                            'js/controllers/DashboardController.js',
+                            'js/controllers/DashboardController.js'
                         ] 
                     });
                 }]
@@ -289,17 +294,17 @@ MetronicApp.config(['$stateProvider', '$urlRouterProvider', function($stateProvi
         .state('investigationrecord', {
             url: "/event_tree",
             templateUrl: "views/investigation_record.html",
-            data: {pageTitle: '调查记录'},
-            controller: "GeneralPageController",
+            data: {pageTitle: '事件树'},
+            controller: "EventTreeController",
             resolve: {
                 deps: ['$ocLazyLoad', function($ocLazyLoad) {
                     return $ocLazyLoad.load([{
                         name: 'MetronicApp',
                         files: [
                             'tree/d3.v3.js',
-                            'tree/mindmap.css',
                             'tree/dndTree.js',
-                            'js/controllers/EventTreeController.js'
+                            'js/controllers/EventTreeController.js',
+                            'tree/mindmap.css'
 
                         ]
                     }]);
