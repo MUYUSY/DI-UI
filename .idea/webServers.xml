@@ -5,6 +5,14 @@
       <webServer id="767afdf0-2ccd-41d9-a237-fb195fd49ccf" name="di-ui" url="http://localhost">
         <fileTransfer port="0" mountedRoot="D:\code\DI\DI2.5\server\diserver\uiservice" accessType="MOUNT" />
       </webServer>
+      <webServer id="1e3f69be-d2d4-4629-b6d2-4bf73243bf2a" name="di-server" url="http://10.21.140.111">
+        <fileTransfer host="10.21.140.111" port="22" accessType="SFTP">
+          <advancedOptions>
+            <advancedOptions dataProtectionLevel="Private" />
+          </advancedOptions>
+          <option name="port" value="22" />
+        </fileTransfer>
+      </webServer>
     </option>
   </component>
 </project>

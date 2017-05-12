@@ -1,0 +1,51 @@
+.chart-title {
+    font-size: 18px;
+    color: #363b4e;
+}
+
+.chart-border{
+    margin: 15px 0 15px 0;
+}
+
+.divider {
+    margin-left: 10px;
+    font-size: 10px;
+    text-align: center;
+    color: #979797;
+}
+
+.time-selected {
+    font-size: 12px !important;
+    color: #666666 !important;
+    margin-left: 10px !important;
+}
+
+.bar-charts {
+    margin-right: 5px;
+    margin-top: 5px;
+}
+
+.line-charts {
+    margin-right: 10px;
+    margin-top: 5px;
+}
+
+.chart-option {
+    margin-top: 20px;
+}
+
+.volume {
+    font-size: 24px;
+    color: #333333;
+    text-align: center;
+}
+
+.volume-des {
+    font-size: 12px;
+    color: #9b9b9b;
+    text-align: center;
+}
+
+.btn-manage {
+    margin-top: 20px;
+}

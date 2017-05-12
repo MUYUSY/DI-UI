@@ -2,6 +2,13 @@
 <project version="4">
   <component name="PublishConfigData" autoUpload="On explicit save action" serverName="di-ui">
     <serverData>
+      <paths name="di-server">
+        <serverdata>
+          <mappings>
+            <mapping deploy="/opt/DI2.5/server/diserver/uiservice/app" local="$PROJECT_DIR$/theme/admin_3_angularjs" web="/" />
+          </mappings>
+        </serverdata>
+      </paths>
       <paths name="di-ui">
         <serverdata>
           <mappings>

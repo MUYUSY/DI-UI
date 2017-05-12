@@ -165,14 +165,12 @@ MetronicApp.config(['$stateProvider', '$urlRouterProvider', function($stateProvi
                         insertBefore: '#ng_load_plugins_before', // load the above css files before a LINK element with this ID. Dynamic CSS files must be loaded between core and theme css files
                         files: [
                             './assets/global/plugins/morris/morris.css',
+                            './assets/pages/css/dashboard.css',
                             './assets/global/plugins/bootstrap-daterangepicker/daterangepicker.css',
-                            './assets/global/plugins/bootstrap-daterangepicker/moment.min.js',
-                            // './assets/global/plugins/echarts-liquidfill.js',
                             './assets/global/plugins/echarts-all.js',
                             './assets/global/plugins/morris/morris.min.js',
                             './assets/global/plugins/morris/raphael-min.js',
                             './assets/global/plugins/jquery.sparkline.min.js',
-                            './assets/global/plugins/bootstrap-daterangepicker/daterangepicker.js',
 
                             './assets/pages/scripts/dashboard.min.js',
                             'js/controllers/DashboardController.js'
@@ -269,8 +267,6 @@ MetronicApp.config(['$stateProvider', '$urlRouterProvider', function($stateProvi
                             './assets/global/plugins/select2/css/select2-bootstrap.min.css',
 
                             './assets/global/plugins/clockface/js/clockface.js',
-                            './assets/global/plugins/bootstrap-daterangepicker/moment.min.js',
-                            './assets/global/plugins/moment.min.js',
                             './assets/global/plugins/bootstrap-select/js/bootstrap-select.min.js',
                             './assets/global/plugins/select2/js/select2.full.min.js',
                             './assets/pages/scripts/components-bootstrap-select.min.js',
@@ -280,7 +276,6 @@ MetronicApp.config(['$stateProvider', '$urlRouterProvider', function($stateProvi
                             './assets/global/scripts/datatable.js',
                             './assets/global/plugins/datatables/datatables.all.js',
                             './assets/global/plugins/datatables/plugins/bootstrap/datatables.bootstrap.js',
-                            './assets/global/plugins/bootstrap-daterangepicker/daterangepicker.js',
 
                             'js/controllers/NewInvestigationController.js'
 
@@ -327,6 +322,7 @@ MetronicApp.config(['$stateProvider', '$urlRouterProvider', function($stateProvi
                             './assets/global/plugins/datatables/plugins/bootstrap/datatables.bootstrap.css',
                             './assets/global/plugins/DataTables-1.10.15/extensions/RowGroup/css/rowGroup.dataTables.css',
                             './assets/global/plugins/DataTables-1.10.15/extensions/Select/css/select.dataTables.css',
+                            './assets/pages/css/endpoint_management.css',
 
                             // './assets/global/plugins/DataTables-1.10.15/media/js/jquery.dataTables.js',
                             // './assets/global/plugins/DataTables-1.10.15/media/js/datatables.bootstrap.js',

@@ -32,12 +32,8 @@
                         更多操作<span class="caret" style="margin-left: 20px"></span>
                     </button>
                     <button class="btn pull-right"
-                            style="width:36px; border:1px solid #cccccc; background-color: #FFFFFF; margin-right:10px">
+                            style="width:36px; border:1px solid #cccccc; background-color: #FFFFFF; margin-right:10px" onclick="refresh()">
                         <img src="./icon/refresh.png">
-                    </button>
-                    <button class="btn pull-right"
-                            style="width:36px; border:1px solid #cccccc; background-color: #FFFFFF; margin-right:10px">
-                        <img src="./icon/search2.png">
                     </button>
                 </div>
                 <div class="col-md-12 col-sm-12 col-xs-12">
@@ -71,50 +67,87 @@
 <script>
     var dtable;
 
-    $.get("deviceinfo", function (data) {
-//        console.log(JSON.stringify(data));
-        data = data.data;
-        var devices = [];
-        for (var i = 0; i < data.length; i++) {
-            for (var k = 0; k < data[i].devices.length; k++) {
-                devices.push({
-                    group: data[i].groupname,
-                    devicename: data[i].devices[k].devicename,
-                    os: data[i].devices[k].os,
-                    ip: data[i].devices[k].ip,
-                    status: data[i].devices[k].status,
-                    lastcontacttime: data[i].devices[k].lastcontacttime,
-                    assettag: data[i].devices[k].assettag,
-                    did: data[i].devices[k].deviceid,
-                    id: ""
-                })
+    var device_info;
+
+    Date.prototype.format = function (fmt) {
+        var o = {
+            "M+": this.getMonth() + 1,                 //月份
+            "d+": this.getDate(),                    //日
+            "h+": this.getHours(),                   //小时
+            "m+": this.getMinutes(),                 //分
+            "s+": this.getSeconds(),                 //秒
+            "q+": Math.floor((this.getMonth() + 3) / 3), //季度
+            "S": this.getMilliseconds()             //毫秒
+        };
+        if (/(y+)/.test(fmt)) {
+            fmt = fmt.replace(RegExp.$1, (this.getFullYear() + "").substr(4 - RegExp.$1.length));
+        }
+        for (var k in o) {
+            if (new RegExp("(" + k + ")").test(fmt)) {
+                fmt = fmt.replace(RegExp.$1, (RegExp.$1.length == 1) ? (o[k]) : (("00" + o[k]).substr(("" + o[k]).length)));
             }
         }
+        return fmt;
+    };
 
-        var config = {
-            data: devices,
-            order: [[7, "asc"]],
-            rowGroup: {
-                dataSrc: "group"
-            },
-            select: {
-                style: 'multi',
-                selector: 'td:first-child'
-            },
-            columns: [
-//                {
-////                    "sClass": "text-center",
-////                    "data": "did",
-////                    "render": function (data, type, full, meta) {
-////                        return '<input type="checkbox" class="checkchild" value="' + data + '" />';
-////                    },
-////                    "bSortable": false
-                {
-                    orderable: false,
-                    bSortable : false,
-                    className: 'select-checkbox',
-                    data: "id",
-                    targets: 0
+    var timeStamp2String = function (time, format) {
+        if (typeof(time) == "number") {
+            time = time.toString();
+        }
+        if (time.length != 10 && time.length != 13) {
+            return time;
+        }
+        if (time.length == 10) {
+            time = time * 1000;
+        }
+        var datetime = new Date();
+        datetime.setTime(time);
+        return datetime.format(format);
+    };
+
+    var refresh = function() {
+        $.get("deviceinfo", function (data) {
+//        console.log(JSON.stringify(data));
+            device_info = data.data;
+            var devices = [];
+            for (var i = 0; i < device_info.length; i++) {
+                for (var k = 0; k < device_info[i].devices.length; k++) {
+                    devices.push({
+                        group: device_info[i].groupname,
+                        devicename: device_info[i].devices[k].devicename,
+                        os: device_info[i].devices[k].os,
+                        ip: device_info[i].devices[k].ip,
+                        status: device_info[i].devices[k].status,
+                        lastcontacttime: timeStamp2String(device_info[i].devices[k].lastcontacttime, "yyyy-MM-dd hh:mm:ss"),
+                        assettag: device_info[i].devices[k].assettag,
+                        did: device_info[i].devices[k].deviceid,
+                        id: ""
+                    })
+                }
+            }
+
+            var config = {
+                data: devices,
+                order: [[7, "asc"]],
+                rowGroup: {
+                    startRender: function(rows, group){
+                        return $('<tr/>')
+                            .append('<td><input type="checkbox" id="' + group + '" class="check-group" onclick="checkGroup(this)"></td>')
+                            .append('<td colspan="6">' + group + '</td>')
+                    },
+                    dataSrc: "group"
+                },
+                select: {
+                    style: 'multi',
+                    selector: 'td:first-child'
+                },
+                columns: [
+                    {
+                        orderable: false,
+                        bSortable : false,
+                        className: 'select-checkbox',
+                        data: "id",
+                        targets: 0
 //                    data:   "did",
 //                    render : function(data, type, row, meta) {
 //                        var content = '<label class="mt-checkbox mt-checkbox-single mt-checkbox-outline">';
@@ -122,62 +155,97 @@
 //                        content += '</label>';
 //                        return content;
 //                    }
-                },
-                {data: "devicename"},
-                {data: "os"},
-                {data: "ip"},
-                {
-                    data: "status",
-                    render: function(data, type, row, meta) {
-                        if (data == "online") {
-                            return '<img src="./icon/online.png" class="status-image">监控';
+                    },
+                    {data: "devicename"},
+                    {data: "os"},
+                    {data: "ip"},
+                    {
+                        data: "status",
+                        render: function(data, type, row, meta) {
+                            if (data == "online") {
+                                return '<img src="./icon/online.png" class="status-image">监控';
+                            }
+                            else {
+                                return '<img src="./icon/offline.png" class="status-image">离线'
+                            }
                         }
-                       else {
-                            return '<img src="./icon/offline.png" class="status-image">离线'
+                    },
+                    {data: "lastcontacttime"},
+                    {data: "assettag"},
+                    {
+                        data: "group",
+                        visible: false
+                    }
+                ],
+                rowId: "did",
+                sPaginationType: "full_numbers",
+                ordering: false,
+                language: {
+                    emptyTable: "没有探针信息",
+                    info: "显示 _TOTAL_ 个探针中的第 _START_ 至 _END_ 个",
+                    infoEmpty: "没有匹配的探针",
+                    infoFiltered: "(过滤出 filtered1 个探针，总计 _MAX_ 个探针)",
+                    lengthMenu: "每页 _MENU_ 条",
+                    search: "过滤:",
+                    zeroRecords: "没有探针信息",
+                    paginate: {
+                        last: ">>",
+                        next: ">",
+                        previous: "<",
+                        first: "<<"
+                    },
+                    select: {
+                        rows: {
+                            _: "您选择了 %d 个探针。",
+                            0: "点击选择探针!"
                         }
                     }
                 },
-                {data: "lastcontacttime"},
-                {data: "assettag"},
-                {data: "group", visible: false}
-            ],
-            rowId: "did",
-            sPaginationType: "full_numbers",
-            ordering: false,
-            language: {
-                emptyTable: "没有探针信息",
-                info: "显示 _TOTAL_ 个探针中的第 _START_ 至 _END_ 个",
-                infoEmpty: "没有匹配的探针",
-                infoFiltered: "(过滤出 filtered1 个探针，总计 _MAX_ 个探针)",
-                lengthMenu: "每页 _MENU_ 条",
-                search: "过滤:",
-                zeroRecords: "没有探针信息",
-                paginate: {
-                    last: ">>",
-                    next: ">",
-                    previous: "<",
-                    first: "<<"
-                },
-                select: {
-                    rows: {
-                        _: "您选择了 %d 个探针。",
-                        0: "点击选择探针!"
-                    }
-                }
-            },
-            displayLength: 50,
-            "dom": "<'row'<'col-md-3 col-sm-12'i><'col-md-9 col-sm-12'f>r><t><'row'<'col-md-12 col-sm-12'p>>"
-        };
+                displayLength: 50,
+                "dom": "<'row'<'col-md-3 col-sm-12'i><'col-md-9 col-sm-12'f>r><t><'row'<'col-md-12 col-sm-12'p>>"
+            };
 
-        dtable = $('#endpoint-table').DataTable(config);
-    });
+            if (dtable != null) {
+                dtable.fnClearTable();
+                dtable.fnDestroy();
+                $("tbody").remove();
+            }
+
+            dtable = $('#endpoint-table').dataTable(config);
+        });
+    };
 
     var checkAll = function(obj) {
         if( obj.checked ) {
-            dtable.rows().select();
+            dtable.api().rows().select();
+            for (var i = 0; i < device_info.length; i++) {
+                $('#' + device_info[i].groupname).attr('checked', true);
+            }
         }
         else {
-            dtable.rows().deselect();
+            dtable.api().rows().deselect();
+            for (var k = 0; k < device_info.length; k++) {
+                $('#' + device_info[k].groupname).attr('checked', false);
+            }
         }
-    }
+    };
+
+    var checkGroup = function(obj) {
+        var groupName = obj.id;
+        if( obj.checked ) {
+            for (var i = 0; i < dtable.api().rows().data().length; i++) {
+                if (dtable.api().rows().data()[i].group == groupName) {
+                    dtable.api().rows(i).select()
+                }
+            }
+        } else {
+            for (var k = 0; k < dtable.api().rows().data().length; k++) {
+                if (dtable.api().rows().data()[k].group == groupName) {
+                    dtable.api().rows(k).deselect()
+                }
+            }
+        }
+    };
+    refresh();
+
 </script>

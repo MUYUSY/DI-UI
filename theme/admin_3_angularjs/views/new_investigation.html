@@ -136,6 +136,8 @@
         </div>
     </div>
 </div>
+<script src="../assets/global/plugins/bootstrap-daterangepicker/moment.min.js" type="text/javascript"></script>
+<script src="../assets/global/plugins/bootstrap-daterangepicker/daterangepicker.js" type="text/javascript"></script>
 
 <!-- BEGIN MAIN JS -->
 <script>
@@ -146,15 +148,15 @@
     var startTime = moment().startOf('day').format('X');
     var endTime = moment().format('X');
 
-    $.fn.DataTable.ext.pager.simple_numbers_no_ellipses = function(page, pages){
+    $.fn.DataTable.ext.pager.simple_numbers_no_ellipses = function (page, pages) {
         var numbers = [];
         var buttons = $.fn.DataTable.ext.pager.numbers_length;
-        var half = Math.floor( buttons / 2 );
+        var half = Math.floor(buttons / 2);
 
-        var _range = function ( len, start ){
+        var _range = function (len, start) {
             var end;
 
-            if ( typeof start === "undefined" ){
+            if (typeof start === "undefined") {
                 start = 0;
                 end = len;
 
@@ -164,28 +166,30 @@
             }
 
             var out = [];
-            for ( var i = start ; i < end; i++ ){ out.push(i); }
+            for (var i = start; i < end; i++) {
+                out.push(i);
+            }
 
             return out;
         };
 
 
-        if ( pages <= buttons ) {
-            numbers = _range( 0, pages );
+        if (pages <= buttons) {
+            numbers = _range(0, pages);
 
-        } else if ( page <= half ) {
-            numbers = _range( 0, buttons);
+        } else if (page <= half) {
+            numbers = _range(0, buttons);
 
-        } else if ( page >= pages - 1 - half ) {
-            numbers = _range( pages - buttons, pages );
+        } else if (page >= pages - 1 - half) {
+            numbers = _range(pages - buttons, pages);
 
         } else {
-            numbers = _range( page - half, page + half + 1);
+            numbers = _range(page - half, page + half + 1);
         }
 
         numbers.DT_el = 'span';
 
-        return [ 'previous', numbers, 'next' ];
+        return ['previous', numbers, 'next'];
     };
 
     Date.prototype.format = function (fmt) {
@@ -285,6 +289,20 @@
         $("#time-selected").html(timeStamp2String(startTime, "yyyy-MM-dd hh:mm") + ' 至 ' + timeStamp2String(endTime, "yyyy-MM-dd hh:mm"));
     });
 
+    var device_info = [];
+    function getDeviceInfo() {
+        $.ajax({
+            async: false,
+            url: "deviceinfo",
+            type: "GET",
+            dataType: "json",
+            success: function (data) {
+                device_info = data.data
+            }
+        });
+        return device_info;
+    }
+    device_info = getDeviceInfo();
 
     function HighLevelToggle($scope) {
         $scope.myHide = false;
@@ -307,41 +325,7 @@
         ];
         $scope.selectByGroupModel = [];
 
-        var device_info = [
-            {
-                "groupname": "group1",
-                "devices": [{
-                    "deviceid": 1,
-                    "devicename": "EndPoint1",
-                    "ip": "127.0.0.1",
-                    "os": "Linux",
-                    "assettag": "Lab",
-                    "status": "online",
-                    "lastcontacttime": "2017-04-06 18:05:39"
-                }, {
-                    "deviceid": 2,
-                    "devicename": "EndPoint2",
-                    "ip": "127.0.0.1",
-                    "os": "Linux",
-                    "assettag": "Lab",
-                    "status": "online",
-                    "lastcontacttime": "2017-04-06 18:05:39"
-                }]
-            },
-            {
-                "groupname": "group2",
-                "devices": [
-                    {
-                        "deviceid": 3,
-                        "devicename": "EndPoint3",
-                        "ip": "127.0.0.1",
-                        "os": "Linux",
-                        "assettag": "Lab",
-                        "status": "online",
-                        "lastcontacttime": "2017-04-06 18:05:39"
-                    }]
-            }
-        ];
+        device_info = getDeviceInfo();
 
         $scope.selectByGroupData = [];
         $scope.groupInfo = [];
@@ -361,12 +345,7 @@
         $scope.selectByGroupSettings = {
             selectByGroups: $scope.groupInfo,
             groupByTextProvider: function (groupValue) {
-                switch (groupValue) {
-                    case 'group1':
-                        return '选择:分组一';
-                    case 'group2':
-                        return '选择:分组二';
-                }
+                return groupValue
             },
             scrollableHeight: '400px',
             scrollable: true,
@@ -786,11 +765,17 @@
     };
 
     var SearchResultCtrl = function (device, filter_condition, search_condition) {
+        var device_id = [];
+
         if (device.length == 0) {
-            var device_id = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20, 21, 22, 23, 24, 25, 26, 27, 28, 29, 30, 31, 32, 33, 34, 35, 36, 37, 38, 39, 40, 41, 42, 43, 44, 45];
+            device_info = getDeviceInfo();
+            for (var j = 0; j < device_info.length; j++) {
+                for (var k = 0; k < device_info[j]["devices"].length; k++){
+                    device_id.push(device_info[j]["devices"][k].deviceid)
+                }
+            }
         }
         else {
-            var device_id = [];
             for (var i = 0; i < device.length; i++) {
                 device_id.push(device[i].id)
             }
@@ -804,7 +789,7 @@
         var postJson = {
             "begin_time": startTime,
             "end_time": Math.floor(endTime / 60) * 60,
-            "device_id": ["abc123", "diclient"],
+            "device_id": device_id,
 //            "device_id": [0],
             "event_type": 0,
             "filter_condition": filter_condition
