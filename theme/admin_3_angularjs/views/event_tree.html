@@ -1,0 +1,89 @@
+<div class="row">
+    <div class="col-md-12">
+        <!-- BEGIN: ACCORDION DEMO -->
+        <div class="portlet light">
+            <div class="portlet-title">
+                <div class="caption font-dark">
+                    <span class="caption-subject bold uppercase">事件树 |</span>
+                    <span id="deviceid">{{devicename}}</span>
+                    <span id="time-selected" class="time-selected">{{start}} 至 {{end}}</span>
+                </div>
+            </div>
+
+            <div class="portlet-body">
+                <div class="col-md-12 buttonarea">
+                    <button class="btn" style="width:121px; border:1px solid #cccccc; background-color: #FFFFFF">
+                        <img src="./icon/export.png" style="margin: 0 4px 1px 0">导出图片
+                    </button>
+                    <button class="btn" style="width:121px; border:1px solid #cccccc; background-color: #FFFFFF">
+                        <img src="./icon/save.png" style="margin: 0 4px 1px 0">保存规则
+                    </button>
+                    <input type="text" id="filter" class="form-control searchField"  placeholder="检索..." >
+                </div>
+                <div id="tree-container">
+
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<div class="zoomarea" >
+<div>
+    <a id="minus" href="#">
+            <span class="glyphicon glyphicon-plus"></span>
+        </a>
+
+</div>
+    <div>
+        <a id="plus" href="#">
+            <span class="glyphicon glyphicon-minus"></span>
+        </a>
+    </div>
+</div>
+
+<div class="popover popover-mindmap ng-scope am-flip-x bottom mindmapNodePopover" role="tooltip" style="top: 337.5px; left: 201px; display: none; visibility: visible;">
+    <h3 class="popover-title">
+
+    </h3>
+    <div class="popover-content">
+        <table class="table ddes-table table-mindmap-popover">
+            <tbody><tr>
+                <td>时间:</td>
+                <td><span id="time"></span></td>
+            </tr>
+            <tr>
+                <td><span>进程ID:</span></td>
+                <td class="ng-binding"><span id="pid"></span></td>
+            </tr>
+            <tr>
+                <td><span >类型:</span></td>
+                <td>
+                    <span id="type" ></span>
+                </td>
+            </tr>
+             <tr>
+                <td><span>统计次数:</span></td>
+                <td><span id="times"></span></td>
+            </tr>
+            <tr>
+                <td><span>用户:</span></td>
+                <td>
+                    <span id="subject_user_account"></span>
+                </td>
+            </tr>
+            <tr>
+                <td><span>活动:</span></td>
+                <td>
+                    <span id="activity"></span>
+                </td>
+            </tr>
+
+            <tr>
+                <td><span>详细信息</span></td>
+                <td>
+                    <span id="detail"></span>
+                </td>
+            </tr>
+        </tbody></table>
+    </div>
+</div>

@@ -1,0 +1,1007 @@
+<!-- BEGIN MAIN CONTENT -->
+<div class="row">
+    <div class="col-md-12">
+        <!-- BEGIN: ACCORDION DEMO -->
+        <div class="portlet light">
+            <div class="portlet-title">
+                <div class="caption font-dark">
+                    <span class="caption-subject bold uppercase">新建调查</span>
+                    <span id="time-selected" class="time-selected"></span>
+                </div>
+            </div>
+
+            <div class="portlet-body" ng-controller="HighLevelToggle">
+
+                <div class="col-md-2 col-sm-6 col-xs-12 searchDatePicker">
+                    <button id="searchDateRange" class="form-control date-range btn-default">今天<span
+                            class="caret date-range-caret"></span></button>
+                </div>
+                <div class="col-md-2 col-sm-6 col-xs-12">
+                    <div class="multi-dropdown"
+                         ng-dropdown-multiselect
+                         options="selectByGroupData"
+                         selected-model="selectByGroupModel"
+                         extra-settings="selectByGroupSettings"
+                         group-by="group"
+                         translation-texts="selectByGroupTexts">
+                    </div>
+                </div>
+                <div class="col-md-1 col-sm-6 col-xs-12" style="margin-right: 22px;">
+                    <button class="btn" style="width:100px; border:1px solid #cccccc; background-color: #FFFFFF"
+                            ng-click="toggle()">高级
+                    </button>
+                </div>
+                <div class="col-md-12 col-sm-12 col-xs-12 high-level" ng-show="myHide"
+                     ng-controller="NewConditionController">
+
+                    <div class="col-xs-12 search-condition" ng-repeat="id in conditions">
+                        <div class="col-xs-2">
+                            <select class="select form-control"
+                                    ng-model="id.value" ng-init="id.value = conditionName[0]"
+                                    ng-options="x for x in conditionName" ng-change="change(id)">
+                            </select>
+                        </div>
+                        <div class="col-xs-2" ng-show="id.class1">
+                            <select class="select form-control" ng-model="id.include"
+                                    ng-options="x for x in include" ng-init="id.include = include[0]">
+                            </select>
+                        </div>
+                        <div class="col-xs-2" ng-show="id.class2">
+                            <select class="select form-control" ng-model="id.equal"
+                                    ng-options="x for x in equal" ng-init="id.equal = equal[0]">
+                            </select>
+                        </div>
+                        <div class="col-xs-4" ng-hide="id.class3">
+                            <input type="text" ng-model="id.input" placeholder="请输入关键词,输入多个时用' , '分隔"
+                                   class="search-input form-control ng-pristine ng-valid ng-touched">
+                        </div>
+                        <div class="col-xs-2" ng-show="id.class3">
+                            <select class="select form-control"
+                                    ng-model="id.father"
+                                    ng-init="id.father"
+                                    ng-change="protocolInit(id)"
+                                    ng-options="x for x in protocolFathers"></select>
+                        </div>
+                        <div class="col-xs-2" ng-show="id.class3">
+                            <select class="select form-control"
+                                    ng-model="id.child" ng-init="id.child"
+                                    ng-options="y for y in protocolChildren[id.father]">
+                            </select>
+                        </div>
+                        <button ng-show="closeable" type="button" class="close"
+                                ng-click="closeCondition($index)">
+                            <span aria-hidden="true">×</span>
+                            <span class="sr-only">关闭</span>
+                        </button>
+                    </div>
+                    <div class="col-xs-2">
+                        <button class="add-condition" ng-disabled="maxCondition" ng-click="addCondition()">
+                            +增加条件
+                        </button>
+                    </div>
+
+
+                </div>
+
+                <div class="col-md-4 col-sm-6 col-xs-12" ng-hide="myHide">
+                    <button class="btn" ng-click="search()"
+                            style="width: 121px; background-color:#0076e1; color: #ffffff; padding-right: 32px; margin-right: 10px">
+                        <img src="./icon/search.png" style="margin: 0 4px 1px 0;">搜索
+                    </button>
+                    <button class="btn" style="width:121px; border:1px solid #cccccc; background-color: #FFFFFF">
+                        <img src="./icon/save.png" style="margin: 0 4px 1px 0">保存规则
+                    </button>
+                </div>
+                <div class="col-md-6 col-sm-6 col-xs-12" ng-show="myHide">
+                    <button class="btn" ng-click="search()"
+                            style="width: 121px; background-color:#0076e1; color: #ffffff; padding-right: 32px; margin-right: 10px">
+                        <img src="./icon/search.png" style="margin: 0 4px 1px 0;">搜索
+                    </button>
+                    <button class="btn" style="width:121px; border:1px solid #cccccc; background-color: #FFFFFF">
+                        <img src="./icon/save.png" style="margin: 0 4px 1px 0">保存规则
+                    </button>
+                </div>
+
+                <div class="row">
+                    <div class="col-md-12 col-sm-12 col-xs-12">
+                        <div class="portlet light">
+                            <div class="portlet-title">
+                                <div class="caption font-dark col-md-6 col-sm-6 col-xs-12">
+                                    <span id="searchResult" class="caption-subject bold uppercase">调查结果</span>
+                                </div>
+                                <div class="col-md-6 col-sm-6 col-xs-12">
+                                    <button class="btn dark btn-outline pull-right" id="exportResult">导出结果</button>
+                                </div>
+                            </div>
+                            <div class="portlet-body">
+                                <table class="table table-striped table-bordered table-hover" width="100%"
+                                       id="search-result">
+                                    <thead>
+                                    <tr>
+                                        <th width="3%"></th>
+                                        <th width="17%">时间戳</th>
+                                        <th width="13%">探针名</th>
+                                        <th width="15%">进程用户名</th>
+                                        <th width="12%">进程ID</th>
+                                        <th width="25%">进程映像路径</th>
+                                        <th width="15%">事件类型</th>
+                                    </tr>
+                                    </thead>
+                                </table>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+<script src="../assets/global/plugins/bootstrap-daterangepicker/moment.min.js" type="text/javascript"></script>
+<script src="../assets/global/plugins/bootstrap-daterangepicker/daterangepicker.js" type="text/javascript"></script>
+
+<!-- BEGIN MAIN JS -->
+<script>
+    ComponentsSelect2.init();
+    ComponentsBootstrapSelect.init();
+
+    var dtable;
+    var startTime = moment().startOf('day').format('X');
+    var endTime = moment().format('X');
+
+    $.fn.DataTable.ext.pager.simple_numbers_no_ellipses = function (page, pages) {
+        var numbers = [];
+        var buttons = $.fn.DataTable.ext.pager.numbers_length;
+        var half = Math.floor(buttons / 2);
+
+        var _range = function (len, start) {
+            var end;
+
+            if (typeof start === "undefined") {
+                start = 0;
+                end = len;
+
+            } else {
+                end = start;
+                start = len;
+            }
+
+            var out = [];
+            for (var i = start; i < end; i++) {
+                out.push(i);
+            }
+
+            return out;
+        };
+
+
+        if (pages <= buttons) {
+            numbers = _range(0, pages);
+
+        } else if (page <= half) {
+            numbers = _range(0, buttons);
+
+        } else if (page >= pages - 1 - half) {
+            numbers = _range(pages - buttons, pages);
+
+        } else {
+            numbers = _range(page - half, page + half + 1);
+        }
+
+        numbers.DT_el = 'span';
+
+        return ['previous', numbers, 'next'];
+    };
+
+    Date.prototype.format = function (fmt) {
+        var o = {
+            "M+": this.getMonth() + 1,                 //月份
+            "d+": this.getDate(),                    //日
+            "h+": this.getHours(),                   //小时
+            "m+": this.getMinutes(),                 //分
+            "s+": this.getSeconds(),                 //秒
+            "q+": Math.floor((this.getMonth() + 3) / 3), //季度
+            "S": this.getMilliseconds()             //毫秒
+        };
+        if (/(y+)/.test(fmt)) {
+            fmt = fmt.replace(RegExp.$1, (this.getFullYear() + "").substr(4 - RegExp.$1.length));
+        }
+        for (var k in o) {
+            if (new RegExp("(" + k + ")").test(fmt)) {
+                fmt = fmt.replace(RegExp.$1, (RegExp.$1.length === 1) ? (o[k]) : (("00" + o[k]).substr(("" + o[k]).length)));
+            }
+        }
+        return fmt;
+    };
+
+    var timeStamp2String = function (time, format) {
+        if (typeof(time) === "number") {
+            time = time.toString();
+        }
+        if (time.length !== 10 && time.length !== 13) {
+            return time;
+        }
+        if (time.length === 10) {
+            time = time * 1000;
+        }
+        var datetime = new Date();
+        datetime.setTime(time);
+        return datetime.format(format);
+    };
+
+    $("#time-selected").html(timeStamp2String(startTime, "yyyy-MM-dd hh:mm") + ' 至 ' + timeStamp2String(endTime, "yyyy-MM-dd hh:mm"));
+
+    $('#exportResult').hide();
+
+    $('.searchDatePicker i').click(function () {
+        $(this).parent().find('input').click();
+    });
+
+
+    $('#searchDateRange').daterangepicker({
+        "timePicker": true,
+        "timePicker24Hour": true,
+        "maxDate": moment(),
+        "ranges": {
+            "今天": [moment().startOf('day'), moment()],
+            //            "昨天": [moment().subtract('days', 1).startOf('day'), moment().subtract('days', 1).endOf('day')],
+            //            "过去7天": [moment().subtract('days', 6), moment()],
+            "本周": [moment().startOf('week'), moment()],
+            //            "过去30天": [moment().subtract('days', 29), moment()],
+            "本月": [moment().startOf('month'), moment()]
+        },
+        "locale": {
+            "format": "YYYY/MM/DD HH:mm",
+            "separator": " 至 ",
+            "applyLabel": "应用",
+            "cancelLabel": "取消",
+            "fromLabel": "从",
+            "toLabel": "至",
+            "customRangeLabel": "自定义",
+            "weekLabel": "周",
+            "daysOfWeek": [
+                "日",
+                "一",
+                "二",
+                "三",
+                "四",
+                "五",
+                "六"
+            ],
+            "monthNames": [
+                "一月",
+                "二月",
+                "三月",
+                "四月",
+                "五月",
+                "六月",
+                "七月",
+                "八月",
+                "九月",
+                "十月",
+                "十一月",
+                "十二月"
+            ],
+            "firstDay": 1
+        }
+    }, function (start, end, label) {
+        startTime = start / 1000;
+        endTime = Math.floor(end / 60000) * 60;
+        $("#time-selected").html(timeStamp2String(startTime, "yyyy-MM-dd hh:mm") + ' 至 ' + timeStamp2String(endTime, "yyyy-MM-dd hh:mm"));
+    });
+
+    var device_info = [];
+    function getDeviceInfo() {
+        $.ajax({
+            async: false,
+            url: "deviceinfo",
+            type: "GET",
+            dataType: "json",
+            success: function (data) {
+                device_info = data.data
+            }
+        });
+        return device_info;
+    }
+    device_info = getDeviceInfo();
+
+    var getDeviceName = function(deviceID) {
+        for (var i = 0; i < device_info.length; i++) {
+            for (var k = 0; k < device_info[i]["devices"].length; k++) {
+                if (device_info[i]["devices"][k].deviceid === deviceID) {
+                    return device_info[i]["devices"][k].devicename
+                }
+            }
+        }
+    };
+
+    function HighLevelToggle($scope) {
+        $scope.myHide = false;
+        $scope.toggle = function () {
+            $scope.myHide = !$scope.myHide;
+        };
+        $scope.conditions = [
+            {
+                key: 1,
+                value: "test",
+                class1: true,
+                class2: false,
+                class3: false,
+                input: "",
+                father: "分类一",
+                child: "HTTP",
+                include: "包含",
+                equal: "等于"
+            }
+        ];
+        $scope.selectByGroupModel = [];
+
+        device_info = getDeviceInfo();
+
+        $scope.selectByGroupData = [];
+        $scope.groupInfo = [];
+        for (var i = 0; i < device_info.length; i++) {
+            var devices = device_info[i].devices;
+            $scope.groupInfo.push(device_info[i].groupname);
+            for (var k = 0; k < devices.length; k++) {
+                var device = {
+                    id: devices[k].deviceid,
+                    label: devices[k].devicename,
+                    group: device_info[i].groupname
+                };
+                $scope.selectByGroupData.push(device)
+            }
+        }
+
+        $scope.selectByGroupSettings = {
+            selectByGroups: $scope.groupInfo,
+            groupByTextProvider: function (groupValue) {
+                return groupValue
+            },
+            scrollableHeight: '400px',
+            scrollable: true,
+            enableSearch: true
+        };
+
+        $scope.selectByGroupTexts = {
+            buttonDefaultText: "所有探针设备...",
+            selectGroup: '选择所有:',
+            allSelectedText: '全部',
+            searchPlaceholder: '检索...',
+            checkAll: '选择所有',
+            uncheckAll: '取消所有选择',
+            selectionCount: '被选中'
+        };
+
+        $scope.search = function () {
+            $scope.filter_condition = {
+//                "process_user": {
+//                    "include": [],
+//                    "exclude": []
+//                },
+//                "pid": {
+//                    "include": [],
+//                    "exclude": []
+//                },
+//                "process_name": {
+//                    "include": [],
+//                    "exclude": []
+//                },
+//                "ip": {
+//                    "include": [],
+//                    "exclude": []
+//                },
+//                "net_protocol": {
+//                    "include": [],
+//                    "exclude": []
+//                },
+//                "file_name": {
+//                    "include": [],
+//                    "exclude": []
+//                },
+//                "url": {
+//                    "include": [],
+//                    "exclude": []
+//                }
+            };
+            $scope.search_condition = [];
+            for (var i = 0; i < $scope.conditions.length; i++) {
+                if ($scope.conditions[i].value === "网络协议名") {
+                    $scope.search_condition.push({key: $scope.conditions[i].value, input: $scope.conditions[i].child});
+                }
+                else {
+                    $scope.search_condition.push({key: $scope.conditions[i].value, input: $scope.conditions[i].input});
+                }
+                var input_list;
+                switch ($scope.conditions[i].value) {
+                    case "进程用户名":
+                        if ($scope.conditions[i].input === "") {
+                            break
+                        }
+                        $scope.filter_condition["process_user"] = {};
+                        input_list = $scope.conditions[i].input.split(',');
+                        for (var a = 0; a < input_list.length; a++) {
+                            if (input_list[a] === "") {
+                                continue
+                            }
+                            if ($scope.conditions[i].include === "包含") {
+                                if (!$scope.filter_condition["process_user"]["include"]) {
+                                    $scope.filter_condition["process_user"]["include"] = [];
+                                }
+                                $scope.filter_condition["process_user"]["include"].push($.trim(input_list[a]));
+                            }
+                            else {
+                                if (!$scope.filter_condition["process_user"]["exclude"]) {
+                                    $scope.filter_condition["process_user"]["exclude"] = [];
+                                }
+                                $scope.filter_condition["process_user"]["exclude"].push($.trim(input_list[a]));
+                            }
+                        }
+                        break;
+                    case "进程ID":
+                        if ($scope.conditions[i].input === "") {
+                            break
+                        }
+                        $scope.filter_condition["pid"] = {};
+                        input_list = $scope.conditions[i].input.split(',');
+                        for (var b = 0; b < input_list.length; b++) {
+                            if (input_list[b] === "") {
+                                continue
+                            }
+                            if ($scope.conditions[i].equal === "等于") {
+                                if (!$scope.filter_condition["pid"]["include"]) {
+                                    $scope.filter_condition["pid"]["include"] = [];
+                                }
+                                $scope.filter_condition["pid"]["include"].push($.trim(input_list[b]));
+                            }
+                            else {
+                                if (!$scope.filter_condition["pid"]["exclude"]) {
+                                    $scope.filter_condition["pid"]["exclude"] = [];
+                                }
+                                $scope.filter_condition["pid"]["exclude"].push($.trim(input_list[b]));
+                            }
+                        }
+                        break;
+                    case "进程名":
+                        if ($scope.conditions[i].input === "") {
+                            break
+                        }
+                        $scope.filter_condition["process_name"] = {};
+                        input_list = $scope.conditions[i].input.split(',');
+                        for (var c = 0; c < input_list.length; c++) {
+                            if (input_list[c] === "") {
+                                continue
+                            }
+                            if ($scope.conditions[i].include === "包含") {
+                                if (!$scope.filter_condition["process_name"]["include"]) {
+                                    $scope.filter_condition["process_name"]["include"] = [];
+                                }
+                                $scope.filter_condition["process_name"]["include"].push($.trim(input_list[c]));
+                            }
+                            else {
+                                if (!$scope.filter_condition["process_name"]["exclude"]) {
+                                    $scope.filter_condition["process_name"]["exclude"] = [];
+                                }
+                                $scope.filter_condition["process_name"]["exclude"].push($.trim(input_list[c]));
+                            }
+                        }
+                        break;
+                    case "IP地址":
+                        if ($scope.conditions[i].input === "") {
+                            break
+                        }
+                        $scope.filter_condition["ip"] = {};
+                        input_list = $scope.conditions[i].input.split(',');
+                        for (var d = 0; d < input_list.length; d++) {
+                            if (input_list[d] === "") {
+                                continue
+                            }
+                            if ($scope.conditions[i].equal === "等于") {
+                                if (!$scope.filter_condition["ip"]["include"]) {
+                                    $scope.filter_condition["ip"]["include"] = [];
+                                }
+                                $scope.filter_condition["ip"]["include"].push($.trim(input_list[d]));
+                            }
+                            else {
+                                if (!$scope.filter_condition["ip"]["exclude"]) {
+                                    $scope.filter_condition["ip"]["exclude"] = [];
+                                }
+                                $scope.filter_condition["ip"]["exclude"].push($.trim(input_list[d]));
+                            }
+                        }
+                        break;
+                    case "网络协议名":
+                        $scope.filter_condition["net_protocol"] = {};
+                        $scope.filter_condition["net_protocol"]["include"] = [];
+                        $scope.filter_condition["net_protocol"]["include"].push($scope.conditions[i].child);
+                        break;
+                    case "文件名":
+                        if ($scope.conditions[i].input === "") {
+                            break
+                        }
+                        $scope.filter_condition["file_name"] = {};
+                        input_list = $scope.conditions[i].input.split(',');
+                        for (var f = 0; f < input_list.length; f++) {
+                            if (input_list[f] === "") {
+                                continue
+                            }
+                            if ($scope.conditions[i].include === "包含") {
+                                if (!$scope.filter_condition["file_name"]["include"]) {
+                                    $scope.filter_condition["file_name"]["include"] = [];
+                                }
+                                $scope.filter_condition["file_name"]["include"].push($.trim(input_list[f]));
+                            }
+                            else {
+                                if (!$scope.filter_condition["file_name"]["exclude"]) {
+                                    $scope.filter_condition["file_name"]["exclude"] = [];
+                                }
+                                $scope.filter_condition["file_name"]["exclude"].push($.trim(input_list[f]));
+                            }
+                        }
+                        break;
+                    case "Url":
+                        if ($scope.conditions[i].input === "") {
+                            break
+                        }
+                        $scope.filter_condition["url"] = {};
+                        input_list = $scope.conditions[i].input.split(',');
+                        for (var g = 0; g < input_list.length; g++) {
+                            if (input_list[g] === "") {
+                                continue
+                            }
+                            if ($scope.conditions[i].include === "包含") {
+                                if (!$scope.filter_condition["url"]["include"]) {
+                                    $scope.filter_condition["url"]["include"] = [];
+                                }
+                                $scope.filter_condition["url"]["include"].push($.trim(input_list[g]));
+                            }
+                            else {
+                                if (!$scope.filter_condition["url"]["exclude"]) {
+                                    $scope.filter_condition["url"]["exclude"] = [];
+                                }
+                                $scope.filter_condition["url"]["exclude"].push($.trim(input_list[g]));
+                            }
+                        }
+                        break;
+                }
+            }
+            SearchResultCtrl($scope.selectByGroupModel, $scope.filter_condition, $scope.search_condition);
+            $('html,body').animate({scrollTop: $('#searchResult').offset().top}, 0);
+        }
+    }
+
+    var getValue = function (item) {
+        return item.split("=")[1];
+    };
+
+    var getEventType = function (eventType, subType) {
+        data = {
+            1: {
+                1: "创建文件",
+                2: "打开文件",
+                3: "读文件",
+                4: "写文件",
+                5: "删除文件",
+                6: "重命名文件",
+                7: "查询文件信息",
+                8: "修改文件信息",
+                9: "关闭文件"
+            },
+            2: {
+                1: "进程加载",
+                2: "进程终止"
+            },
+            3: {
+                1: "Web",
+                2: "邮件",
+                3: "文件传输",
+                4: "其他应用程序"
+            },
+            4: {
+                1: "系统登录",
+                2: "挂载",
+                3: "取消挂载",
+                4: "网络连接",
+                5: "断开网络连接",
+                6: "修改密码"
+            },
+            5: {
+                1: "注册表创建",
+                2: "注册表打开",
+                3: "注册表删除",
+                4: "注册表查询",
+                5: "注册表设置"
+            }
+        };
+
+        var res;
+        if (eventType in data && subType in data[eventType]) {
+            res = data[eventType][subType];
+        }
+        else {
+            res = "unknown";
+        }
+        return res;
+    };
+
+    var ipToNumber = function (ip) {
+        var num = 0;
+        if (ip === "") {
+            return num;
+        }
+        var aNum = ip.split(".");
+        if (aNum.length !== 4) {
+            return num;
+        }
+        num += parseInt(aNum[0]) << 24;
+        num += parseInt(aNum[1]) << 16;
+        num += parseInt(aNum[2]) << 8;
+        num += parseInt(aNum[3]) << 0;
+        num = num >>> 0;//这个很关键，不然可能会出现负数的情况
+        return num;
+    };
+
+    var numberToIp = function (number) {
+        var ip = "";
+        if (number <= 0) {
+            return ip;
+        }
+        var ip3 = (number << 0 ) >>> 24;
+        var ip2 = (number << 8 ) >>> 24;
+        var ip1 = (number << 16) >>> 24;
+        var ip0 = (number << 24) >>> 24;
+
+        ip += ip3 + "." + ip2 + "." + ip1 + "." + ip0;
+
+        return ip;
+    };
+
+    var highlightInclude = function (str, keyword, key) {
+        for (var i = 0; i < keyword.length; i++) {
+            if (str.indexOf(keyword[i]) < 0) {
+                continue;
+            }
+            else {
+                list = str.split($.trim(keyword[i]));
+                str = list[0];
+                for (var j = 1; j < list.length; j++) {
+                    str += '<mark-' + key + '>';
+                    str += $.trim(keyword[i]);
+                    str += '</mark-' + key + '>';
+                    str += list[j];
+                }
+            }
+        }
+        return str;
+    };
+
+    var highlightEqual = function (str, keyword, key) {
+        for (var i = 0; i < keyword.length; i++) {
+            if (str.indexOf(keyword[i]) < 0) {
+                continue;
+            }
+            else {
+                list = str.split(keyword[i]);
+                str = list[0];
+                for (var j = 1; j < list.length; j++) {
+                    str += '<mark-' + key + '>';
+                    str += keyword[i];
+                    str += '</mark-' + key + '>';
+                    str += list[j];
+                }
+            }
+        }
+        return str;
+    };
+
+    var highlightStr = function (str, condition) {
+        //TODO: pid & ip 等于，not 包含！
+        var keyValue = [];
+        var index = str.indexOf('=');
+        keyValue.push(str.slice(0, index));
+        keyValue.push(str.slice(index + 1));
+        var result = keyValue[1];
+        if (keyValue[0] === "source_ip" || keyValue[0] === "dest_ip") {
+            result = numberToIp(keyValue[1]);
+        }
+        if (keyValue[0] === "time") {
+            result = timeStamp2String(keyValue[1], "yyyy-MM-dd hh:mm:ss");
+        }
+        for (var i = 0; i < condition.length; i++) {
+            if (condition[i].input === "") {
+                continue;
+            }
+            else {
+                var keyword = condition[i].input.split(',');
+                if (keyword.length > 0) {
+                    switch (condition[i].key) {
+                        case "进程用户名":
+                            if (keyValue[0] === "subject_user_account") {
+                                result = highlightInclude(result, keyword, key = "user");
+                            }
+                            break;
+                        case "进程ID":
+                            if (keyValue[0] === "subject_proc_id") {
+                                result = highlightEqual(result, keyword, key = "pid");
+                            }
+                            break;
+                        case "进程名":
+                            if (keyValue[0] === "subject_process" || keyValue[0] === "target_file_path") {
+                                result = highlightInclude(result, keyword, key = "pname");
+                            }
+                            break;
+                        case "IP地址":
+                            if (keyValue[0] === "source_ip" || keyValue[0] === "dest_ip") {
+                                result = numberToIp(result);
+                                result = highlightEqual(result, keyword, key = "ip");
+                            }
+                            break;
+                        case "网络协议名":
+                            if (keyValue[0] === "protocol_name") {
+                                result = highlightEqual(result, keyword, key = "protocol");
+                            }
+                            break;
+                        case "Url":
+                            if (keyValue[0] === "detail_info") {
+                                result = highlightInclude(result, keyword, key = "url");
+                            }
+                            break;
+                        case "文件名":
+                            if (keyValue[0] === "file_src_path" || keyValue[0] === "file_dst_path") {
+                                result = highlightInclude(result, keyword, key = "fname");
+                            }
+                            break;
+                    }
+                }
+            }
+        }
+        return result;
+    };
+
+    var formatData = function (item, condition) {
+        var result = "";
+        for (var i = 0; i < item.length; i++) {
+            result += ' | ';
+            result += '<b>';
+            result += item[i].split("=")[0];
+            result += '</b>';
+            result += ':';
+            result += highlightStr(item[i], condition);
+        }
+        return result.substring(2);
+    };
+
+    var format = function (obj) {
+        return '<tr>' + '<td>' + obj + '</td>' + '</tr>';
+    };
+
+    var SearchResultCtrl = function (device, filter_condition, search_condition) {
+        var device_id = [];
+
+        if (device.length === 0) {
+            device_info = getDeviceInfo();
+            for (var j = 0; j < device_info.length; j++) {
+                for (var k = 0; k < device_info[j]["devices"].length; k++){
+                    device_id.push(device_info[j]["devices"][k].deviceid)
+                }
+            }
+        }
+        else {
+            for (var i = 0; i < device.length; i++) {
+                device_id.push(device[i].id)
+            }
+        }
+
+        if (dtable !== null) {
+            dtable.fnClearTable();
+            dtable.fnDestroy();
+            $("tbody").remove();
+        }
+        var postJson = {
+            "begin_time": startTime,
+            "end_time": Math.floor(endTime / 60) * 60,
+            "device_id": device_id,
+//            "device_id": [0],
+            "event_type": 0,
+            "filter_condition": filter_condition
+//            "filter_condition": {
+//                "process_user": {},
+//                "pid": {
+//                    "include": [864]
+//                }
+//
+//            }
+        };
+        $.ajax({
+            type: "POST",
+            dataType: "json",
+            url: 'logquery',
+            data: JSON.stringify(postJson),
+            success: function (data) {
+                var results = [];
+
+                if (data === "") {
+                    results = [];
+                }
+                else {
+                    for (var k = 0; k < data.data.length; k++) {
+                        var rows = data.data[k];
+                        for (var i = 0; i < rows.rows.length; i++) {
+                            if (rows.rows[i] === "") {
+                                continue
+                            }
+                            var list = rows.rows[i].split('\t');
+                            results.push({
+                                timestamp: timeStamp2String(getValue(list[0]), "yyyy-MM-dd hh:mm:ss"),
+                                deviceName: getDeviceName(getValue(list[1])),
+                                processUsername: getValue(list[2]),
+                                processId: getValue(list[3]),
+                                processPath: getValue(list[4]),
+                                eventType: getEventType(getValue(list[10]), getValue(list[5])),
+                                content: formatData(list.slice(13), search_condition),
+                                timeStamp: getValue(list[0]),
+                                deviceId: getValue(list[1])
+                            })
+                        }
+                    }
+                }
+
+                var config = {
+                    data: results,
+                    columns: [
+                        {
+                            "class": 'details-control',
+                            "orderable": false,
+                            "data": null,
+                            "defaultContent": ''
+                        },
+                        {data: "timestamp"},
+                        {data: "deviceName"},
+                        {data: "processUsername"},
+                        {
+                            data: data,
+                            render: function (data) {
+                                var passJson =
+                                    {
+                                        timeRange: {
+                                            start: startTime,
+                                            end: endTime
+                                        },
+                                        timestamp: data.timeStamp,
+                                        pid: data.processId,
+                                        deviceId: data.deviceId,
+                                        deviceName: data.deviceName,
+                                        processUsername: data.processUsername,
+                                        processPath: data.processPath
+                                    };
+                                var content = "<a target='_blank' href='#/event_tree?json=" + JSON.stringify(passJson) + "'>" + data.processId + "</a>";
+//                                console.log(content);
+//                                var content = '<span  ng-click="passJson(' + "'111'" + ')">' + data.processId + '</span>';
+                                return content;
+                            }
+                        },
+                        {data: "processPath"},
+                        {data: "eventType"}],
+                    order: [[1, "asc"]],
+//                    iDisplayStart: 50,
+                    pagingType: "simple_numbers_no_ellipses",
+                    language: {
+                        aria: {
+                            sortAscending: ": activate to sort column ascending",
+                            sortDescending: ": activate to sort column descending"
+                        },
+                        emptyTable: "无匹配的数据可显示",
+                        info: "显示 _TOTAL_ 条目中的第 _START_ 至 _END_ 条",
+                        infoEmpty: "没有匹配的条目",
+                        infoFiltered: "(过滤出 filtered1 条目，总计 _MAX_ 条目)",
+                        lengthMenu: "每页 _MENU_ 条",
+                        search: "过滤:",
+                        zeroRecords: "无匹配的数据可显示",
+                        paginate: {
+                            last: ">>",
+                            next: ">",
+                            previous: "<",
+                            first: "<<"
+                        }
+                    },
+                    lengthMenu: [
+                        [20, 50, 100],
+                        ["20", "50", "100"] // change per page values here
+                    ],
+                    "dom": "<'row'<'col-md-12'B>><'row'<'col-md-3 col-sm-12'<'pull-left'f>><'col-md-9 col-sm-12'p>r><t><'row'<'col-md-2 col-sm-12'l><'col-md-2 col-sm-12'i><'col-md-8 col-sm-12'p>>"
+                };
+
+                dtable = $('#search-result').dataTable(config);
+
+                var firstTr = $("tbody tr:first");
+                var firstRow = dtable.api().row(firstTr);
+                firstRow.child(format((firstRow.data().content))).show();
+                firstTr.addClass('shown');
+
+                $("tbody").on('click', 'td.details-control', function () {
+                    var tr = $(this).closest('tr');
+                    var row = dtable.api().row(tr);
+                    if (row.child.isShown()) {
+                        // This row is already open - close it
+                        row.child.hide();
+                        tr.removeClass('shown');
+                    }
+                    else {
+                        row.child(format((row.data().content))).show();
+                        tr.addClass('shown');
+                    }
+                });
+
+                if (dtable === null || data.data === "") {
+                    $('#exportResult').hide();
+                }
+                else {
+                    $('#exportResult').show();
+                }
+            }
+        });
+    };
+
+    function NewConditionController($scope) {
+        $scope.conditionName = ["进程用户名", "进程ID", "进程名", "IP地址", "网络协议名", "Url", "文件名"];
+        $scope.protocolFathers = ["分类一", "分类二"];
+        $scope.protocolChildren = {
+            "分类一": ["HTTP", "HTTPS"],
+            "分类二": ["FTP", "SSH"]
+        };
+        $scope.include = ["包含", "不包含"];
+        $scope.equal = ["等于", "不等于"];
+        $scope.change = function (item) {
+            if (item.value === "网络协议名") {
+                item.class1 = false;
+                item.class2 = false;
+                item.class3 = true;
+            }
+            else if (item.value === "进程ID" || item.value === "IP地址") {
+                item.class1 = false;
+                item.class2 = true;
+                item.class3 = false;
+            }
+            else {
+                item.class1 = true;
+                item.class2 = false;
+                item.class3 = false;
+            }
+        };
+
+        $scope.protocolInit = function (item) {
+            item.child = $scope.protocolChildren[item.father][0];
+        };
+        $scope.index = 2;
+        $scope.maxCondition = false;
+        $scope.closeable = false;
+        $scope.addCondition = function () {
+            $scope.conditions.push(
+                {
+                    key: $scope.index,
+                    value: "test",
+                    class1: true,
+                    class2: false,
+                    class3: false,
+                    input: "",
+                    father: "分类一",
+                    child: "HTTP",
+                    include: "包含",
+                    equal: "等于"
+                }
+            );
+            $scope.index += 1;
+            $scope.closeable = true;
+            if ($scope.conditions.length === 7) {
+                $scope.maxCondition = true;
+            }
+        };
+        $scope.closeCondition = function (index) {
+            $scope.conditions.splice(index, 1);
+            if ($scope.conditions.length === 1) {
+                $scope.closeable = false;
+            }
+            $scope.maxCondition = false;
+        };
+    }
+</script>
+<!-- END MAIN JS -->

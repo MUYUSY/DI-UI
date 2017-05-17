@@ -207,20 +207,20 @@
         }
         for (var k in o) {
             if (new RegExp("(" + k + ")").test(fmt)) {
-                fmt = fmt.replace(RegExp.$1, (RegExp.$1.length == 1) ? (o[k]) : (("00" + o[k]).substr(("" + o[k]).length)));
+                fmt = fmt.replace(RegExp.$1, (RegExp.$1.length === 1) ? (o[k]) : (("00" + o[k]).substr(("" + o[k]).length)));
             }
         }
         return fmt;
     };
 
     var timeStamp2String = function (time, format) {
-        if (typeof(time) == "number") {
+        if (typeof(time) === "number") {
             time = time.toString();
         }
-        if (time.length != 10 && time.length != 13) {
+        if (time.length !== 10 && time.length !== 13) {
             return time;
         }
-        if (time.length == 10) {
+        if (time.length === 10) {
             time = time * 1000;
         }
         var datetime = new Date();
@@ -303,6 +303,16 @@
         return device_info;
     }
     device_info = getDeviceInfo();
+
+    var getDeviceName = function(deviceID) {
+        for (var i = 0; i < device_info.length; i++) {
+            for (var k = 0; k < device_info[i]["devices"].length; k++) {
+                if (device_info[i]["devices"][k].deviceid === deviceID) {
+                    return device_info[i]["devices"][k].devicename
+                }
+            }
+        }
+    };
 
     function HighLevelToggle($scope) {
         $scope.myHide = false;
@@ -395,7 +405,7 @@
             };
             $scope.search_condition = [];
             for (var i = 0; i < $scope.conditions.length; i++) {
-                if ($scope.conditions[i].value == "网络协议名") {
+                if ($scope.conditions[i].value === "网络协议名") {
                     $scope.search_condition.push({key: $scope.conditions[i].value, input: $scope.conditions[i].child});
                 }
                 else {
@@ -404,16 +414,16 @@
                 var input_list;
                 switch ($scope.conditions[i].value) {
                     case "进程用户名":
-                        if ($scope.conditions[i].input == "") {
+                        if ($scope.conditions[i].input === "") {
                             break
                         }
                         $scope.filter_condition["process_user"] = {};
                         input_list = $scope.conditions[i].input.split(',');
                         for (var a = 0; a < input_list.length; a++) {
-                            if (input_list[a] == "") {
+                            if (input_list[a] === "") {
                                 continue
                             }
-                            if ($scope.conditions[i].include == "包含") {
+                            if ($scope.conditions[i].include === "包含") {
                                 if (!$scope.filter_condition["process_user"]["include"]) {
                                     $scope.filter_condition["process_user"]["include"] = [];
                                 }
@@ -428,16 +438,16 @@
                         }
                         break;
                     case "进程ID":
-                        if ($scope.conditions[i].input == "") {
+                        if ($scope.conditions[i].input === "") {
                             break
                         }
                         $scope.filter_condition["pid"] = {};
                         input_list = $scope.conditions[i].input.split(',');
                         for (var b = 0; b < input_list.length; b++) {
-                            if (input_list[b] == "") {
+                            if (input_list[b] === "") {
                                 continue
                             }
-                            if ($scope.conditions[i].equal == "等于") {
+                            if ($scope.conditions[i].equal === "等于") {
                                 if (!$scope.filter_condition["pid"]["include"]) {
                                     $scope.filter_condition["pid"]["include"] = [];
                                 }
@@ -452,16 +462,16 @@
                         }
                         break;
                     case "进程名":
-                        if ($scope.conditions[i].input == "") {
+                        if ($scope.conditions[i].input === "") {
                             break
                         }
                         $scope.filter_condition["process_name"] = {};
                         input_list = $scope.conditions[i].input.split(',');
                         for (var c = 0; c < input_list.length; c++) {
-                            if (input_list[c] == "") {
+                            if (input_list[c] === "") {
                                 continue
                             }
-                            if ($scope.conditions[i].include == "包含") {
+                            if ($scope.conditions[i].include === "包含") {
                                 if (!$scope.filter_condition["process_name"]["include"]) {
                                     $scope.filter_condition["process_name"]["include"] = [];
                                 }
@@ -476,16 +486,16 @@
                         }
                         break;
                     case "IP地址":
-                        if ($scope.conditions[i].input == "") {
+                        if ($scope.conditions[i].input === "") {
                             break
                         }
                         $scope.filter_condition["ip"] = {};
                         input_list = $scope.conditions[i].input.split(',');
                         for (var d = 0; d < input_list.length; d++) {
-                            if (input_list[d] == "") {
+                            if (input_list[d] === "") {
                                 continue
                             }
-                            if ($scope.conditions[i].equal == "等于") {
+                            if ($scope.conditions[i].equal === "等于") {
                                 if (!$scope.filter_condition["ip"]["include"]) {
                                     $scope.filter_condition["ip"]["include"] = [];
                                 }
@@ -505,16 +515,16 @@
                         $scope.filter_condition["net_protocol"]["include"].push($scope.conditions[i].child);
                         break;
                     case "文件名":
-                        if ($scope.conditions[i].input == "") {
+                        if ($scope.conditions[i].input === "") {
                             break
                         }
                         $scope.filter_condition["file_name"] = {};
                         input_list = $scope.conditions[i].input.split(',');
                         for (var f = 0; f < input_list.length; f++) {
-                            if (input_list[f] == "") {
+                            if (input_list[f] === "") {
                                 continue
                             }
-                            if ($scope.conditions[i].include == "包含") {
+                            if ($scope.conditions[i].include === "包含") {
                                 if (!$scope.filter_condition["file_name"]["include"]) {
                                     $scope.filter_condition["file_name"]["include"] = [];
                                 }
@@ -529,16 +539,16 @@
                         }
                         break;
                     case "Url":
-                        if ($scope.conditions[i].input == "") {
+                        if ($scope.conditions[i].input === "") {
                             break
                         }
                         $scope.filter_condition["url"] = {};
                         input_list = $scope.conditions[i].input.split(',');
                         for (var g = 0; g < input_list.length; g++) {
-                            if (input_list[g] == "") {
+                            if (input_list[g] === "") {
                                 continue
                             }
-                            if ($scope.conditions[i].include == "包含") {
+                            if ($scope.conditions[i].include === "包含") {
                                 if (!$scope.filter_condition["url"]["include"]) {
                                     $scope.filter_condition["url"]["include"] = [];
                                 }
@@ -615,11 +625,11 @@
 
     var ipToNumber = function (ip) {
         var num = 0;
-        if (ip == "") {
+        if (ip === "") {
             return num;
         }
         var aNum = ip.split(".");
-        if (aNum.length != 4) {
+        if (aNum.length !== 4) {
             return num;
         }
         num += parseInt(aNum[0]) << 24;
@@ -638,7 +648,7 @@
         var ip3 = (number << 0 ) >>> 24;
         var ip2 = (number << 8 ) >>> 24;
         var ip1 = (number << 16) >>> 24;
-        var ip0 = (number << 24) >>> 24
+        var ip0 = (number << 24) >>> 24;
 
         ip += ip3 + "." + ip2 + "." + ip1 + "." + ip0;
 
@@ -690,14 +700,14 @@
         keyValue.push(str.slice(0, index));
         keyValue.push(str.slice(index + 1));
         var result = keyValue[1];
-        if (keyValue[0] == "source_ip" || keyValue[0] == "dest_ip") {
+        if (keyValue[0] === "source_ip" || keyValue[0] === "dest_ip") {
             result = numberToIp(keyValue[1]);
         }
-        if (keyValue[0] == "time") {
+        if (keyValue[0] === "time") {
             result = timeStamp2String(keyValue[1], "yyyy-MM-dd hh:mm:ss");
         }
         for (var i = 0; i < condition.length; i++) {
-            if (condition[i].input == "") {
+            if (condition[i].input === "") {
                 continue;
             }
             else {
@@ -705,38 +715,38 @@
                 if (keyword.length > 0) {
                     switch (condition[i].key) {
                         case "进程用户名":
-                            if (keyValue[0] == "subject_user_account") {
+                            if (keyValue[0] === "subject_user_account") {
                                 result = highlightInclude(result, keyword, key = "user");
                             }
                             break;
                         case "进程ID":
-                            if (keyValue[0] == "subject_proc_id") {
+                            if (keyValue[0] === "subject_proc_id") {
                                 result = highlightEqual(result, keyword, key = "pid");
                             }
                             break;
                         case "进程名":
-                            if (keyValue[0] == "subject_process" || keyValue[0] == "target_file_path") {
+                            if (keyValue[0] === "subject_process" || keyValue[0] === "target_file_path") {
                                 result = highlightInclude(result, keyword, key = "pname");
                             }
                             break;
                         case "IP地址":
-                            if (keyValue[0] == "source_ip" || keyValue[0] == "dest_ip") {
+                            if (keyValue[0] === "source_ip" || keyValue[0] === "dest_ip") {
                                 result = numberToIp(result);
                                 result = highlightEqual(result, keyword, key = "ip");
                             }
                             break;
                         case "网络协议名":
-                            if (keyValue[0] == "protocol_name") {
+                            if (keyValue[0] === "protocol_name") {
                                 result = highlightEqual(result, keyword, key = "protocol");
                             }
                             break;
                         case "Url":
-                            if (keyValue[0] == "detail_info") {
+                            if (keyValue[0] === "detail_info") {
                                 result = highlightInclude(result, keyword, key = "url");
                             }
                             break;
                         case "文件名":
-                            if (keyValue[0] == "file_src_path" || keyValue[0] == "file_dst_path") {
+                            if (keyValue[0] === "file_src_path" || keyValue[0] === "file_dst_path") {
                                 result = highlightInclude(result, keyword, key = "fname");
                             }
                             break;
@@ -767,7 +777,7 @@
     var SearchResultCtrl = function (device, filter_condition, search_condition) {
         var device_id = [];
 
-        if (device.length == 0) {
+        if (device.length === 0) {
             device_info = getDeviceInfo();
             for (var j = 0; j < device_info.length; j++) {
                 for (var k = 0; k < device_info[j]["devices"].length; k++){
@@ -781,7 +791,7 @@
             }
         }
 
-        if (dtable != null) {
+        if (dtable !== undefined) {
             dtable.fnClearTable();
             dtable.fnDestroy();
             $("tbody").remove();
@@ -809,26 +819,27 @@
             success: function (data) {
                 var results = [];
 
-                if (data == "") {
+                if (data === "") {
                     results = [];
                 }
                 else {
                     for (var k = 0; k < data.data.length; k++) {
                         var rows = data.data[k];
                         for (var i = 0; i < rows.rows.length; i++) {
-                            if (rows.rows[i] == "") {
+                            if (rows.rows[i] === "") {
                                 continue
                             }
                             var list = rows.rows[i].split('\t');
                             results.push({
                                 timestamp: timeStamp2String(getValue(list[0]), "yyyy-MM-dd hh:mm:ss"),
-                                deviceName: getValue(list[1]),
+                                deviceName: getDeviceName(getValue(list[1])),
                                 processUsername: getValue(list[2]),
                                 processId: getValue(list[3]),
                                 processPath: getValue(list[4]),
                                 eventType: getEventType(getValue(list[10]), getValue(list[5])),
                                 content: formatData(list.slice(13), search_condition),
-                                timeStamp: getValue(list[0])
+                                timeStamp: getValue(list[0]),
+                                deviceId: getValue(list[1])
                             })
                         }
                     }
@@ -857,6 +868,7 @@
                                         },
                                         timestamp: data.timeStamp,
                                         pid: data.processId,
+                                        deviceId: data.deviceId,
                                         deviceName: data.deviceName,
                                         processUsername: data.processUsername,
                                         processPath: data.processPath
@@ -870,6 +882,7 @@
                         {data: "processPath"},
                         {data: "eventType"}],
                     order: [[1, "asc"]],
+//                    iDisplayStart: 50,
                     pagingType: "simple_numbers_no_ellipses",
                     language: {
                         aria: {
@@ -918,7 +931,7 @@
                     }
                 });
 
-                if (dtable == null || data.data == "") {
+                if (dtable === undefined || data.data === "") {
                     $('#exportResult').hide();
                 }
                 else {
@@ -926,6 +939,12 @@
                 }
             }
         });
+        $('#search-result').on('page.dt',   function () {
+            if (dtable.api().page() >= dtable.api().page.info().pages - 2) {
+                console.log('111');
+            }
+        });
+
     };
 
     function NewConditionController($scope) {
@@ -938,12 +957,12 @@
         $scope.include = ["包含", "不包含"];
         $scope.equal = ["等于", "不等于"];
         $scope.change = function (item) {
-            if (item.value == "网络协议名") {
+            if (item.value === "网络协议名") {
                 item.class1 = false;
                 item.class2 = false;
                 item.class3 = true;
             }
-            else if (item.value == "进程ID" || item.value == "IP地址") {
+            else if (item.value === "进程ID" || item.value === "IP地址") {
                 item.class1 = false;
                 item.class2 = true;
                 item.class3 = false;
@@ -978,13 +997,13 @@
             );
             $scope.index += 1;
             $scope.closeable = true;
-            if ($scope.conditions.length == 7) {
+            if ($scope.conditions.length === 7) {
                 $scope.maxCondition = true;
             }
         };
         $scope.closeCondition = function (index) {
             $scope.conditions.splice(index, 1);
-            if ($scope.conditions.length == 1) {
+            if ($scope.conditions.length === 1) {
                 $scope.closeable = false;
             }
             $scope.maxCondition = false;

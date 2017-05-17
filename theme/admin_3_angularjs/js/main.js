@@ -273,8 +273,7 @@ MetronicApp.config(['$stateProvider', '$urlRouterProvider', function($stateProvi
                             './assets/pages/scripts/components-select2.min.js',
                             './assets/global/plugins/jstree/dist/jstree.min.js',
                             './assets/pages/scripts/ui-tree.min.js',
-                            './assets/global/scripts/datatable.js',
-                            './assets/global/plugins/datatables/datatables.all.js',
+                            './assets/global/plugins/DataTables-1.10.15/media/js/jquery.dataTables.js',
                             './assets/global/plugins/datatables/plugins/bootstrap/datatables.bootstrap.js',
 
                             'js/controllers/NewInvestigationController.js'
@@ -286,9 +285,9 @@ MetronicApp.config(['$stateProvider', '$urlRouterProvider', function($stateProvi
         })
 
         // Investigation Record
-        .state('investigationrecord', {
+        .state('eventtree', {
             url: "/event_tree",
-            templateUrl: "views/investigation_record.html",
+            templateUrl: "views/event_tree.html",
             data: {pageTitle: '事件树'},
             controller: "EventTreeController",
             resolve: {

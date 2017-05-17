@@ -5,7 +5,7 @@
         </div>
     </div>
     <div ng-controller="DashboardController">
-        <div class="row">
+        <div class="row" ng-controller="statsController">
             <div class="col-md-6 col-sm-6 col-xs-12">
                 <div class="col-md-4 col-sm-4 col-xs-4 dashboard-stat white">
                     <div class="visual">
@@ -41,7 +41,7 @@
                         <i class="fa"></i>
                     </div>
                     <div class="details">
-                        <div class="number"> 70</div>
+                        <div class="number">{{totalDevice}}</div>
                         <div class="desc"> 总探针设备</div>
                     </div>
                 </div>
@@ -50,7 +50,7 @@
                         <i class="fa"></i>
                     </div>
                     <div class="details">
-                        <div class="number"> 65</div>
+                        <div class="number">{{onlineDevice}}</div>
                         <div class="desc"> 在线探针设备</div>
                     </div>
                 </div>
@@ -59,72 +59,12 @@
                         <i class="fa"></i>
                     </div>
                     <div class="details">
-                        <div class="number"> +6</div>
+                        <div class="number">{{weeklyAddDevice}}</div>
                         <div class="desc"> 近一周增加</div>
                     </div>
                 </div>
             </div>
         </div>
-        <!-- BEGIN DASHBOARD STATS -->
-        <!--<div class="row">-->
-        <!--<div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">-->
-        <!--<div class="dashboard-stat white">-->
-        <!--<div class="visual">-->
-        <!--<i class="fa fa-comments"></i>-->
-        <!--</div>-->
-        <!--<div class="details">-->
-        <!--<div class="number"> 1349 </div>-->
-        <!--<div class="desc"> New Feedbacks </div>-->
-        <!--</div>-->
-        <!--<a class="more" href="#"> View more-->
-        <!--<i class="m-icon-swapright m-icon-white"></i>-->
-        <!--</a>-->
-        <!--</div>-->
-        <!--</div>-->
-        <!--<div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">-->
-        <!--<div class="dashboard-stat red">-->
-        <!--<div class="visual">-->
-        <!--<i class="fa fa-bar-chart-o"></i>-->
-        <!--</div>-->
-        <!--<div class="details">-->
-        <!--<div class="number"> 12,5M$ </div>-->
-        <!--<div class="desc"> Total Profit </div>-->
-        <!--</div>-->
-        <!--<a class="more" href="#"> View more-->
-        <!--<i class="m-icon-swapright m-icon-white"></i>-->
-        <!--</a>-->
-        <!--</div>-->
-        <!--</div>-->
-        <!--<div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">-->
-        <!--<div class="dashboard-stat green">-->
-        <!--<div class="visual">-->
-        <!--<i class="fa fa-shopping-cart"></i>-->
-        <!--</div>-->
-        <!--<div class="details">-->
-        <!--<div class="number"> 549 </div>-->
-        <!--<div class="desc"> New Orders </div>-->
-        <!--</div>-->
-        <!--<a class="more" href="#"> View more-->
-        <!--<i class="m-icon-swapright m-icon-white"></i>-->
-        <!--</a>-->
-        <!--</div>-->
-        <!--</div>-->
-        <!--<div class="col-lg-3 col-md-3 col-sm-6 col-xs-12">-->
-        <!--<div class="dashboard-stat purple">-->
-        <!--<div class="visual">-->
-        <!--<i class="fa fa-globe"></i>-->
-        <!--</div>-->
-        <!--<div class="details">-->
-        <!--<div class="number"> +89% </div>-->
-        <!--<div class="desc"> Brand Popularity </div>-->
-        <!--</div>-->
-        <!--<a class="more" href="#"> View more-->
-        <!--<i class="m-icon-swapright m-icon-white"></i>-->
-        <!--</a>-->
-        <!--</div>-->
-        <!--</div>-->
-        <!--</div>-->
-        <!-- END DASHBOARD STATS -->
         <div class="row">
             <div class="col-md-9 col-sm-9 col-xs-9 chart-border" ng-controller="networkController">
                 <div class="col-md-12 col-sm-12 col-xs-12">
@@ -155,16 +95,16 @@
                 </div>
                 <div class="col-md-12 col-sm-12 col-xs-12" id="network-chart" style="height: 300px"></div>
             </div>
-            <div class="col-md-3 col-sm-3 col-xs-3 chart-border">
+            <div class="col-md-3 col-sm-3 col-xs-3 chart-border" ng-controller="volumeController">
                 <div class="col-md-12 col-sm-12 col-xs-12 chart-title">容量</div>
                 <div class="col-md-12 col-sm-12 col-xs-12" id="volume-chart" style="height:200px">Loading</div>
                 <div class="col-md-6 col-sm-6 col-xs-6">
-                    <span class="col-md-12 col-sm-12 col-xs-12 volume">153GB</span>
-                    <span class="col-md-12 col-sm-12 col-xs-12 volume-des">可用空间</span>
+                    <span class="col-md-12 col-sm-12 col-xs-12 volume">{{StorageUsed}}</span>
+                    <span class="col-md-12 col-sm-12 col-xs-12 volume-des">已用空间</span>
                 </div>
                 <div class="col-md-6 col-sm-6 col-xs-6">
-                    <span class="col-md-12 col-sm-12 col-xs-12 volume">1022GB</span>
-                    <span class="col-md-12 col-sm-12 col-xs-12 volume-des">已用空间</span>
+                    <span class="col-md-12 col-sm-12 col-xs-12 volume">{{StorageTotal}}</span>
+                    <span class="col-md-12 col-sm-12 col-xs-12 volume-des">总空间</span>
                 </div>
                 <div class="col-md-6 col-sm-6 col-xs-6 col-md-offset-3 col-sm-offset-3 col-xs-offset-3 btn-manage">
                     <button class="btn-default form-control">管理空间</button>
@@ -371,138 +311,361 @@
     }
     device_info = getDeviceInfo();
 
-    var networkDraw = function () {
+    function statsController($scope) {
+        var device_num;
+        $.ajax({
+            async: false,
+            url: "devicenum",
+            type: "GET",
+            dataType: "json",
+            success: function(data) {
+                device_num = data
+            }
+        });
+        $scope.totalDevice = device_num.totalnum;
+        $scope.onlineDevice = device_num.onlinenum;
+        $scope.weeklyAddDevice = device_num.weeknum;
+    };
+
+    function volumeController($scope) {
+        var formatVolume = function(volume) {
+            var index = volume.indexOf("M");
+            var volumeNum = volume.substr(0, index);
+            if ((volumeNum / 1024) >= 1) {
+                volume = Math.round((volumeNum / 1024)) + "GB";
+            }
+            return volume
+        };
+
+        var disk_info;
+
+        $.ajax({
+            async: false,
+            url: "diskinfo",
+            type: "GET",
+            dataType: "json",
+            success: function(data) {
+                disk_info = data
+            }
+        });
+
+        $scope.StorageUsed = formatVolume(disk_info.StorageUsed);
+        $scope.StorageTotal = formatVolume(disk_info.StorageTotal);
+        $scope.StorageUsedPercent = disk_info.StorageUsedPercent;
+
+        var getColor = function(value) {
+            if (value < 0.6) {
+                result = {
+                    value: value,
+                    itemStyle: {
+                        normal: {
+                            color: 'blue'
+                        }
+                    }
+                };
+                return result
+            }
+            if (value >= 0.6 && value < 0.9) {
+                result = {
+                    value: value,
+                    itemStyle: {
+                        normal: {
+                            color: 'yellow'
+                        }
+                    }
+                };
+                return result
+            }
+            if (value >= 0.9) {
+                result = {
+                    value: value,
+                    itemStyle: {
+                        normal: {
+                            color: 'red'
+                        }
+                    }
+                };
+                return result
+            }
+        };
+
+        var volumeDraw = function () {
+            var dom = document.getElementById("volume-chart");
+            var myChart = echarts.init(dom);
+            var option = {
+                series: [{
+                    type: 'liquidFill',
+                    radius: '80%',
+                    data: [
+                        getColor($scope.StorageUsedPercent)
+                    ],
+                    label: {
+                        normal: {
+                            textStyle: {
+                                color: 'red',
+                                insideColor: 'white',
+                                fontSize: 50
+                            }
+                        }
+                    }
+                }]
+            };
+            myChart.setOption(option);
+        };
+
+        setTimeout(volumeDraw(), 0);
+    }
+
+    var networkDraw = function (label) {
         var dom = document.getElementById("network-chart");
         var myChart = echarts.init(dom);
-        var app = {};
-        option = null;
-        option = {
-            tooltip: {
-                trigger: 'axis',
-                axisPointer: {
-                    type: 'cross',
-                    label: {
-                        backgroundColor: '#283b56'
+        var xData = getData(label);
+        var option = {
+            backgroundColor: "#ffffff",
+            "tooltip": {
+                "trigger": "axis",
+                "axisPointer": {
+                    "type": "shadow",
+                    textStyle: {
+                        color: "#fff"
                     }
                 }
             },
-            legend: {
-                data: ['最新成交价', '预购队列']
-            },
-            toolbox: {
-                show: true,
-                feature: {
-                    dataView: {readOnly: false},
-                    restore: {},
-                    saveAsImage: {}
+            "grid": {
+                "borderWidth": 0,
+                "top": 40,
+                "bottom": 50,
+                textStyle: {
+                    color: "#fff"
                 }
             },
-            dataZoom: {
-                show: false,
-                start: 0,
-                end: 100
+            "legend": {
+                x: '10%',
+                top: '92%',
+                textStyle: {
+                    color: '#363b4e'
+                },
+                "data": ['http请求消息', 'http响应消息', 'ftp命令信息', 'ftp应答信息']
             },
-            xAxis: [
-                {
-                    type: 'category',
-                    boundaryGap: true,
-                    data: (function () {
-                        var now = new Date();
-                        var res = [];
-                        var len = 10;
-                        while (len--) {
-                            res.unshift(now.toLocaleTimeString().replace(/^\D*/, ''));
-                            now = new Date(now - 2000);
-                        }
-                        return res;
-                    })()
+
+
+            "calculable": true,
+            "xAxis": [{
+                "type": "category",
+                "axisLine": {
+                    lineStyle: {
+                        color: '#363b4e'
+                    }
                 },
-                {
-                    type: 'category',
-                    boundaryGap: true,
-                    data: (function () {
-                        var res = [];
-                        var len = 10;
-                        while (len--) {
-                            res.push(len + 1);
-                        }
-                        return res;
-                    })()
+                "splitLine": {
+                    "show": false
+                },
+                "axisTick": {
+                    "show": false
+                },
+                "splitArea": {
+                    "show": false
+                },
+                "axisLabel": {
+                    "interval": 0
+
+                },
+                "data": xData
+            }],
+            "yAxis": [{
+                "type": "value",
+                "splitLine": {
+                    "show": false
+                },
+                "axisLine": {
+                    lineStyle: {
+                        color: '#363b4e'
+                    }
+                },
+                "axisTick": {
+                    "show": false
+                },
+                "axisLabel": {
+                    "interval": 0
+                },
+                "splitArea": {
+                    "show": false
                 }
-            ],
-            yAxis: [
-                {
-                    type: 'value',
-                    scale: true,
-                    name: '价格',
-                    max: 30,
-                    min: 0,
-                    boundaryGap: [0.2, 0.2]
-                },
-                {
-                    type: 'value',
-                    scale: true,
-                    name: '预购量',
-                    max: 1200,
-                    min: 0,
-                    boundaryGap: [0.2, 0.2]
-                }
-            ],
-            series: [
-                {
-                    name: '预购队列',
-                    type: 'bar',
-                    xAxisIndex: 1,
-                    yAxisIndex: 1,
-                    data: (function () {
-                        var res = [];
-                        var len = 10;
-                        while (len--) {
-                            res.push(Math.round(Math.random() * 1000));
+
+            }],
+            // "dataZoom": [{
+            //     "show": true,
+            //     "height": 30,
+            //     "xAxisIndex": [
+            //         0
+            //     ],
+            //     bottom: 30,
+            //     "start": 10,
+            //     "end": 80,
+            //     handleIcon: 'path://M306.1,413c0,2.2-1.8,4-4,4h-59.8c-2.2,0-4-1.8-4-4V200.8c0-2.2,1.8-4,4-4h59.8c2.2,0,4,1.8,4,4V413z',
+            //     handleSize: '110%',
+            //     handleStyle:{
+            //         color:"#d3dee5",
+
+            //     },
+            //       textStyle:{
+            //         color:"#fff"},
+            //       borderColor:"#90979c"
+
+
+            // }, {
+            //     "type": "inside",
+            //     "show": true,
+            //     "height": 15,
+            //     "start": 1,
+            //     "end": 35
+            // }],
+            "series": [{
+                "name": "http请求消息",
+                "type": "bar",
+                "stack": "总量",
+                "barWidth": 10,
+                "barGap": "10%",
+                "itemStyle": {
+                    "normal": {
+                        "color": "#ff2925",
+                        "label": {
+                            "show": false,
+                            "textStyle": {
+                                "color": "#fff"
+                            },
+                            "position": "insideTop",
+                            formatter: function (p) {
+                                return p.value > 0 ? (p.value) : '';
+                            }
                         }
-                        return res;
-                    })()
+                    }
                 },
+                "data": [
+                    198,
+                    330,
+                    151,
+                    160,
+                    222,
+                    229,
+                    128,
+                    250,
+                    224,
+                    473,
+                    126,
+                    260
+                ]
+            },
+
                 {
-                    name: '最新成交价',
-                    type: 'line',
-                    data: (function () {
-                        var res = [];
-                        var len = 0;
-                        while (len < 10) {
-                            res.push((Math.random() * 10 + 5).toFixed(1) - 0);
-                            len++;
+                    "name": "http响应消息",
+                    "type": "bar",
+                    "stack": "总量",
+                    "itemStyle": {
+                        "normal": {
+                            "color": "#7030be",
+                            "barBorderRadius": 0,
+                            "label": {
+                                "show": false,
+                                "position": "top",
+                                formatter: function (p) {
+                                    return p.value > 0 ? (p.value) : '';
+                                }
+                            }
                         }
-                        return res;
-                    })()
+                    },
+                    "data": [
+                        82,
+                        67,
+                        62,
+                        59,
+                        67,
+                        67,
+                        35,
+                        71,
+                        81,
+                        78,
+                        79,
+                        72
+                    ]
+                },
+
+                {
+                    "name": "ftp命令信息",
+                    "type": "bar",
+                    "stack": "总量",
+                    "barMaxWidth": 35,
+                    "barGap": "10%",
+                    "itemStyle": {
+                        "normal": {
+                            "color": "#0096fb",
+                            "label": {
+                                "show": false,
+                                "textStyle": {
+                                    "color": "#fff"
+                                },
+                                "position": "insideTop",
+                                formatter: function (p) {
+                                    return p.value > 0 ? (p.value) : '';
+                                }
+                            }
+                        }
+                    },
+                    "data": [
+                        198,
+                        330,
+                        151,
+                        160,
+                        222,
+                        229,
+                        128,
+                        250,
+                        224,
+                        473,
+                        126,
+                        260
+                    ]
+                },
+
+                {
+                    "name": "ftp应答信息",
+                    "type": "bar",
+                    "stack": "总量",
+                    "itemStyle": {
+                        "normal": {
+                            "color": "#c8df00",
+                            "barBorderRadius": 0,
+                            "label": {
+                                "show": false,
+                                "position": "top",
+                                formatter: function (p) {
+                                    return p.value > 0 ? (p.value) : '';
+                                }
+                            }
+                        }
+                    },
+                    "data": [
+                        82,
+                        67,
+                        62,
+                        59,
+                        67,
+                        67,
+                        35,
+                        71,
+                        81,
+                        78,
+                        79,
+                        72
+                    ]
                 }
             ]
         };
 
-        app.count = 11;
-        setInterval(function () {
-            axisData = (new Date()).toLocaleTimeString().replace(/^\D*/, '');
-
-            var data0 = option.series[0].data;
-            var data1 = option.series[1].data;
-            data0.shift();
-            data0.push(Math.round(Math.random() * 1000));
-            data1.shift();
-            data1.push((Math.random() * 10 + 5).toFixed(1) - 0);
-
-            option.xAxis[0].data.shift();
-            option.xAxis[0].data.push(axisData);
-            option.xAxis[1].data.shift();
-            option.xAxis[1].data.push(app.count++);
-
-            myChart.setOption(option);
-        }, 2100);
-        if (option && typeof option === "object") {
-            myChart.setOption(option, true);
-        }
+        myChart.setOption(option);
     };
 
-    networkDraw();
+    networkDraw("今天");
 
     $('#network-timerange').daterangepicker({
         "showCustomRangeLabel": false,
@@ -523,7 +686,7 @@
         var endTime = Math.floor(end / 60000) * 60;
         $("#network-time-selected").html(timeStamp2String(startTime, "yyyy-MM-dd hh:mm") + ' 至 ' + timeStamp2String(endTime, "yyyy-MM-dd hh:mm"));
 
-        networkDraw();
+        networkDraw(label);
     });
 
     function networkController($scope) {
@@ -547,12 +710,7 @@
         $scope.selectByGroupSettings = {
             selectByGroups: $scope.groupInfo,
             groupByTextProvider: function (groupValue) {
-                switch (groupValue) {
-                    case 'group1':
-                        return '选择:分组一';
-                    case 'group2':
-                        return '选择:分组二';
-                }
+                return groupValue
             },
             scrollableHeight: '400px',
             scrollable: true,
@@ -569,28 +727,6 @@
             selectionCount: '被选中'
         };
     }
-
-    var volumeDraw = function () {
-        var dom = document.getElementById("volume-chart");
-        var myChart = echarts.init(dom);
-        var option = {
-            series: [{
-                type: 'liquidFill',
-                radius: '80%',
-                data: [0.5],
-                label: {
-                    normal: {
-                        textStyle: {
-                            color: 'red',
-                            insideColor: 'yellow',
-                            fontSize: 50
-                        }
-                    }
-                }
-            }]
-        };
-        myChart.setOption(option);
-    };
 
     function systemController($scope) {
         $scope.selectByGroupModel = [];
@@ -613,12 +749,7 @@
         $scope.selectByGroupSettings = {
             selectByGroups: $scope.groupInfo,
             groupByTextProvider: function (groupValue) {
-                switch (groupValue) {
-                    case 'group1':
-                        return '选择:分组一';
-                    case 'group2':
-                        return '选择:分组二';
-                }
+                return groupValue
             },
             scrollableHeight: '400px',
             scrollable: true,
@@ -964,12 +1095,7 @@
         $scope.selectByGroupSettings = {
             selectByGroups: $scope.groupInfo,
             groupByTextProvider: function (groupValue) {
-                switch (groupValue) {
-                    case 'group1':
-                        return '选择:分组一';
-                    case 'group2':
-                        return '选择:分组二';
-                }
+                return groupValue
             },
             scrollableHeight: '400px',
             scrollable: true,
@@ -1250,12 +1376,7 @@
         $scope.selectByGroupSettings = {
             selectByGroups: $scope.groupInfo,
             groupByTextProvider: function (groupValue) {
-                switch (groupValue) {
-                    case 'group1':
-                        return '选择:分组一';
-                    case 'group2':
-                        return '选择:分组二';
-                }
+                return groupValue
             },
             scrollableHeight: '400px',
             scrollable: true,
@@ -1634,12 +1755,7 @@
         $scope.selectByGroupSettings = {
             selectByGroups: $scope.groupInfo,
             groupByTextProvider: function (groupValue) {
-                switch (groupValue) {
-                    case 'group1':
-                        return '选择:分组一';
-                    case 'group2':
-                        return '选择:分组二';
-                }
+                return groupValue
             },
             scrollableHeight: '400px',
             scrollable: true,
@@ -1931,8 +2047,6 @@
 
         registryDraw(label);
     });
-
-    setTimeout(volumeDraw(), 0);
 
 </script>
 <!-- END MAIN CONTENT -->

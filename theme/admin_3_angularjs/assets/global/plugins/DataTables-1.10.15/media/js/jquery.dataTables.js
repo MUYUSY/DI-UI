@@ -1048,7 +1048,7 @@
 			_fnCallbackReg( oSettings, 'aoPreDrawCallback',    oInit.fnPreDrawCallback,   'user' );
 			
 			oSettings.rowIdFn = _fnGetObjectDataFn( oInit.rowId );
-			
+
 			/* Browser support detection */
 			_fnBrowserDetect( oSettings );
 			
