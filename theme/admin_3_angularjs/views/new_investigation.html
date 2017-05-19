@@ -11,6 +11,18 @@
             </div>
 
             <div class="portlet-body" ng-controller="HighLevelToggle">
+                <script type="text/ng-template" id="myModalContent.html">
+                    <div class="modal-header">
+                        <h3 class="modal-title">请输入保存规则的名称:</h3>
+                    </div>
+                    <div class="modal-body">
+                        <input type="text" ng-model="ruleName" class="form-control">
+                    </div>
+                    <div class="modal-footer">
+                        <button class="btn btn-primary" ng-click="ok()">OK</button>
+                        <button class="btn btn-warning" ng-click="cancel()">Cancel</button>
+                    </div>
+                </script>
 
                 <div class="col-md-2 col-sm-6 col-xs-12 searchDatePicker">
                     <button id="searchDateRange" class="form-control date-range btn-default">今天<span
@@ -88,7 +100,7 @@
                             style="width: 121px; background-color:#0076e1; color: #ffffff; padding-right: 32px; margin-right: 10px">
                         <img src="./icon/search.png" style="margin: 0 4px 1px 0;">搜索
                     </button>
-                    <button class="btn" style="width:121px; border:1px solid #cccccc; background-color: #FFFFFF">
+                    <button class="btn" style="width:121px; border:1px solid #cccccc; background-color: #FFFFFF" ng-click="saveRule('sm')">
                         <img src="./icon/save.png" style="margin: 0 4px 1px 0">保存规则
                     </button>
                 </div>
@@ -98,7 +110,7 @@
                         <img src="./icon/search.png" style="margin: 0 4px 1px 0;">搜索
                     </button>
                     <button class="btn" style="width:121px; border:1px solid #cccccc; background-color: #FFFFFF">
-                        <img src="./icon/save.png" style="margin: 0 4px 1px 0">保存规则
+                        <img src="./icon/save.png" style="margin: 0 4px 1px 0" ng-click="saveRule('sm')">保存规则
                     </button>
                 </div>
 
@@ -314,7 +326,7 @@
         }
     };
 
-    function HighLevelToggle($scope) {
+    function HighLevelToggle($scope, $uibModal) {
         $scope.myHide = false;
         $scope.toggle = function () {
             $scope.myHide = !$scope.myHide;
@@ -565,8 +577,43 @@
                 }
             }
             SearchResultCtrl($scope.selectByGroupModel, $scope.filter_condition, $scope.search_condition);
-            $('html,body').animate({scrollTop: $('#searchResult').offset().top}, 0);
-        }
+        };
+
+        $scope.saveRule = function (size) {
+            var modalInstance = $uibModal.open(
+                {
+                    templateUrl: 'myModalContent.html',
+                    controller: 'ModalInstanceCtrl',
+                    size: size,
+                    resolve:
+                        {
+                            ruleName: function()
+                            {
+                                return $scope.ruleName;
+                            }
+                        }
+                });
+//            modalInstance.result.then(function(ruleName)
+//            {
+//                $scope.ruleName = ruleName;
+//            })
+        };
+
+    }
+
+    function ModalInstanceCtrl($scope, $modalInstance, ruleName)
+    {
+        $scope.ruleName = ruleName;
+
+        $scope.ok = function()
+        {
+            $modalInstance.close($scope.ruleName);
+            console.log($scope.ruleName)
+        };
+        $scope.cancel = function()
+        {
+            $modalInstance.dismiss('cancel');
+        };
     }
 
     var getValue = function (item) {
@@ -819,7 +866,7 @@
             success: function (data) {
                 var results = [];
 
-                if (data === "") {
+                if (data === "" || data === undefined) {
                     results = [];
                 }
                 else {
@@ -904,18 +951,22 @@
                         }
                     },
                     lengthMenu: [
-                        [20, 50, 100],
-                        ["20", "50", "100"] // change per page values here
+                        [100, 200, 500],
+                        ["100", "200", "500"] // change per page values here
                     ],
                     "dom": "<'row'<'col-md-12'B>><'row'<'col-md-3 col-sm-12'<'pull-left'f>><'col-md-9 col-sm-12'p>r><t><'row'<'col-md-2 col-sm-12'l><'col-md-2 col-sm-12'i><'col-md-8 col-sm-12'p>>"
                 };
 
                 dtable = $('#search-result').dataTable(config);
 
+                $('html,body').animate({scrollTop: $('#searchResult').offset().top}, 0);
+
                 var firstTr = $("tbody tr:first");
                 var firstRow = dtable.api().row(firstTr);
-                firstRow.child(format((firstRow.data().content))).show();
-                firstTr.addClass('shown');
+                if (firstRow.data()) {
+                    firstRow.child(format((firstRow.data().content))).show();
+                    firstTr.addClass('shown');
+                }
 
                 $("tbody").on('click', 'td.details-control', function () {
                     var tr = $(this).closest('tr');
@@ -939,7 +990,7 @@
                 }
             }
         });
-        $('#search-result').on('page.dt',   function () {
+        $('#search-result').on('page.dt', function () {
             if (dtable.api().page() >= dtable.api().page.info().pages - 2) {
                 console.log('111');
             }

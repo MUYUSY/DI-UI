@@ -11,11 +11,23 @@
             </div>
 
             <div class="portlet-body">
-                <div class="col-md-12 buttonarea">
+                <div class="col-md-12 buttonarea" ng-controller="ModalCtrl">
+                    <script type="text/ng-template" id="myModalContent.html">
+                        <div class="modal-header">
+                            <h3 class="modal-title">请输入保存规则的名称:</h3>
+                        </div>
+                        <div class="modal-body">
+                            <input type="text" ng-model="ruleName" class="form-control">
+                        </div>
+                        <div class="modal-footer">
+                            <button class="btn btn-primary" ng-click="ok()">OK</button>
+                            <button class="btn btn-warning" ng-click="cancel()">Cancel</button>
+                        </div>
+                    </script>
                     <button class="btn" style="width:121px; border:1px solid #cccccc; background-color: #FFFFFF">
                         <img src="./icon/export.png" style="margin: 0 4px 1px 0">导出图片
                     </button>
-                    <button class="btn" style="width:121px; border:1px solid #cccccc; background-color: #FFFFFF">
+                    <button class="btn" style="width:121px; border:1px solid #cccccc; background-color: #FFFFFF" ng-click="saveRule('sm')">
                         <img src="./icon/save.png" style="margin: 0 4px 1px 0">保存规则
                     </button>
                     <input type="text" id="filter" class="form-control searchField"  placeholder="检索..." >

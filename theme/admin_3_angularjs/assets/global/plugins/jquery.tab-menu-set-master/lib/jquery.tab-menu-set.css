@@ -1,0 +1,53 @@
+@charset "utf-8";
+
+.jqtab * {
+	margin: 0;
+	padding: 0;
+	position: relative;
+}
+
+.jqtab_title {
+	padding: 8px 15px 0 15px;
+	font-size: 16px;
+}
+
+.jqtab_title > * {
+	float: left;
+	margin-right: 8px;
+	list-style-type: none;
+}
+
+.jqtab_title > * > a {
+	cursor: pointer;
+	display: block;
+	color: #333333;
+	border: 1px solid #dddddd;
+	border-bottom: 0;
+	border-radius: 4px;
+	text-decoration: none;
+	padding: 10px 30px 10px 30px;
+	background: #f9f9f9;
+}
+
+.jqtab_title > * > a.jqtab_hover {
+	color: #333333;
+	background: #ffffff;
+}
+
+.jqtab_title > * > a.jqtab_selected {
+	color: #333333;
+	z-index: 100 !important;
+	background: #ffffff;
+	font-weight: bold;
+}
+
+.jqtab_body {
+	clear: both;
+	position: relative;
+	border-top: 1px solid #dddddd;
+}
+
+.jqtab_body > * {
+	display: none;
+	background: #ffffff;
+}

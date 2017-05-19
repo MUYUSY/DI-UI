@@ -178,33 +178,33 @@ var Layout = function () {
         // handle hover dropdown menu for desktop devices only
         var width = App.getViewPort().width;
         var menu = $(".page-header-menu");
-            
-        if (width >= resBreakpointMd && menu.data('breakpoint') !== 'desktop') { 
+
+        if (width >= resBreakpointMd && menu.data('breakpoint') !== 'desktop') {
             // reset active states
             $('.hor-menu [data-toggle="dropdown"].active').removeClass('open');
 
             menu.data('breakpoint', 'desktop');
-            $('.hor-menu [data-hover="megamenu-dropdown"]').not('.hover-initialized').each(function() {   
-                $(this).dropdownHover(); 
-                $(this).addClass('hover-initialized'); 
+            $('.hor-menu [data-hover="megamenu-dropdown"]').not('.hover-initialized').each(function() {
+                $(this).dropdownHover();
+                $(this).addClass('hover-initialized');
             });
             $('.hor-menu .navbar-nav li.open').removeClass('open');
             $(".page-header-menu").css("display", "block");
         } else if (width < resBreakpointMd && menu.data('breakpoint') !== 'mobile') {
             // set active states as open
             $('.hor-menu [data-toggle="dropdown"].active').addClass('open');
-            
+
             menu.data('breakpoint', 'mobile');
             // disable hover bootstrap dropdowns plugin
-            $('.hor-menu [data-hover="megamenu-dropdown"].hover-initialized').each(function() {   
+            $('.hor-menu [data-hover="megamenu-dropdown"].hover-initialized').each(function() {
                 $(this).unbind('hover');
                 $(this).parent().unbind('hover').find('.dropdown-submenu').each(function() {
                     $(this).unbind('hover');
                 });
-                $(this).removeClass('hover-initialized');    
+                $(this).removeClass('hover-initialized');
             });
         } else if (width < resBreakpointMd) {
-            //$(".page-header-menu").css("display", "none");  
+            //$(".page-header-menu").css("display", "none");
         }
     };
 
@@ -260,12 +260,12 @@ var Layout = function () {
         // IMPORTANT!!!: Do not modify the core handlers call order.
 
         initHeader: function() {
-            handleHeader(); // handles horizontal menu    
+            handleHeader(); // handles horizontal menu
             handleMainMenu(); // handles menu toggle for mobile
             App.addResizeHandler(handleMainMenuOnResize); // handle main menu on window resize
 
-            if (App.isAngularJsApp()) {      
-                handleMainMenuActiveLink('match'); // init sidebar active links 
+            if (App.isAngularJsApp()) {
+                handleMainMenuActiveLink('match'); // init sidebar active links
             }
         },
 
@@ -290,7 +290,7 @@ var Layout = function () {
         closeMainMenu: function() {
             $('.hor-menu').find('li.open').removeClass('open');
 
-            if (App.getViewPort().width < resBreakpointMd && $('.page-header-menu').is(":visible")) { // close the menu on mobile view while laoding a page 
+            if (App.getViewPort().width < resBreakpointMd && $('.page-header-menu').is(":visible")) { // close the menu on mobile view while laoding a page
                 $('.page-header .menu-toggler').click();
             }
         },

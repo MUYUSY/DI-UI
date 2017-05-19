@@ -6,8 +6,8 @@
     </div>
     <div ng-controller="DashboardController">
         <div class="row" ng-controller="statsController">
-            <div class="col-md-6 col-sm-6 col-xs-12">
-                <div class="col-md-4 col-sm-4 col-xs-4 dashboard-stat white">
+            <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+                <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4 dashboard-stat white">
                     <div class="visual">
                         <i class="fa"></i>
                     </div>
@@ -16,7 +16,7 @@
                         <div class="desc"> 总数据量</div>
                     </div>
                 </div>
-                <div class="col-md-4 col-sm-4 col-xs-4 dashboard-stat white">
+                <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4 dashboard-stat white">
                     <div class="visual">
                         <i class="fa"></i>
                     </div>
@@ -25,7 +25,7 @@
                         <div class="desc"> 近一月增加</div>
                     </div>
                 </div>
-                <div class="col-md-4 col-sm-4 col-xs-4 dashboard-stat white">
+                <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4 dashboard-stat white">
                     <div class="visual">
                         <i class="fa"></i>
                     </div>
@@ -35,8 +35,8 @@
                     </div>
                 </div>
             </div>
-            <div class="col-md-6 col-sm-6 col-xs-12">
-                <div class="col-md-4 col-sm-4 col-xs-4 dashboard-stat white">
+            <div class="col-lg-6 ol-md-6 col-sm-6 col-xs-12">
+                <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4 dashboard-stat white">
                     <div class="visual">
                         <i class="fa"></i>
                     </div>
@@ -45,7 +45,7 @@
                         <div class="desc"> 总探针设备</div>
                     </div>
                 </div>
-                <div class="col-md-4 col-sm-4 col-xs-4 dashboard-stat white">
+                <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4 dashboard-stat white">
                     <div class="visual">
                         <i class="fa"></i>
                     </div>
@@ -54,7 +54,7 @@
                         <div class="desc"> 在线探针设备</div>
                     </div>
                 </div>
-                <div class="col-md-4 col-sm-4 col-xs-4 dashboard-stat white">
+                <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4 dashboard-stat white">
                     <div class="visual">
                         <i class="fa"></i>
                     </div>
@@ -66,7 +66,7 @@
             </div>
         </div>
         <div class="row">
-            <div class="col-md-9 col-sm-9 col-xs-9 chart-border" ng-controller="networkController">
+            <div class="col-lg-9 col-md-9 col-sm-9 col-xs-9 chart-border" ng-controller="networkController">
                 <div class="col-md-12 col-sm-12 col-xs-12">
                     <span class="chart-title">网络操作</span>
                     <span class="divider">|</span>
@@ -74,7 +74,7 @@
                     <img class="pull-right bar-charts" src="./icon/bar_chart.png">
                     <img class="pull-right line-charts" src="./icon/line_chart.png">
                 </div>
-                <div class="col-md-12 col-sm-12 col-xs-12 chart-option">
+                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 chart-option">
                     <div class="col-md-2 col-sm-2 col-xs-2">
                         <div>
                             <button class="date-range btn-default form-control"
@@ -82,7 +82,7 @@
                             </button>
                         </div>
                     </div>
-                    <div class="col-md-3 col-sm-3 col-xs-3">
+                    <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
                         <div class="multi-dropdown"
                              ng-dropdown-multiselect
                              options="selectByGroupData"
@@ -93,40 +93,40 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-md-12 col-sm-12 col-xs-12" id="network-chart" style="height: 300px"></div>
+                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12" id="network-chart" style="height: 300px"></div>
             </div>
-            <div class="col-md-3 col-sm-3 col-xs-3 chart-border" ng-controller="volumeController">
-                <div class="col-md-12 col-sm-12 col-xs-12 chart-title">容量</div>
-                <div class="col-md-12 col-sm-12 col-xs-12" id="volume-chart" style="height:200px">Loading</div>
-                <div class="col-md-6 col-sm-6 col-xs-6">
-                    <span class="col-md-12 col-sm-12 col-xs-12 volume">{{StorageUsed}}</span>
-                    <span class="col-md-12 col-sm-12 col-xs-12 volume-des">已用空间</span>
+            <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3 chart-border" ng-controller="volumeController">
+                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 chart-title">容量</div>
+                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12" id="volume-chart" style="height:200px">Loading</div>
+                <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
+                    <span class="col-lg-12 col-md-12 col-sm-12 col-xs-12 volume">{{StorageUsed}}</span>
+                    <span class="col-lg-12 col-md-12 col-sm-12 col-xs-12 volume-des">已用空间</span>
                 </div>
-                <div class="col-md-6 col-sm-6 col-xs-6">
-                    <span class="col-md-12 col-sm-12 col-xs-12 volume">{{StorageTotal}}</span>
-                    <span class="col-md-12 col-sm-12 col-xs-12 volume-des">总空间</span>
+                <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
+                    <span class="col-lg-12 col-md-12 col-sm-12 col-xs-12 volume">{{StorageTotal}}</span>
+                    <span class="col-lg-12 col-md-12 col-sm-12 col-xs-12 volume-des">总空间</span>
                 </div>
-                <div class="col-md-6 col-sm-6 col-xs-6 col-md-offset-3 col-sm-offset-3 col-xs-offset-3 btn-manage">
+                <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 col-md-offset-3 col-sm-offset-3 col-xs-offset-3 btn-manage">
                     <button class="btn-default form-control">管理空间</button>
                 </div>
             </div>
-            <div class="col-md-6 col-sm-6 col-xs-12 chart-border" ng-controller="systemController">
-                <div class="col-md-12 col-sm-12 col-xs-12">
+            <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12 chart-border" ng-controller="systemController">
+                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                     <span class="chart-title">系统操作</span>
                     <span class="divider">|</span>
                     <span class="time-selected" id="system-time-selected"></span>
                     <img class="pull-right bar-charts" src="./icon/bar_chart.png">
                     <img class="pull-right line-charts" src="./icon/line_chart.png">
                 </div>
-                <div class="col-md-12 col-sm-12 col-xs-12 chart-option">
-                    <div class="col-md-3 col-sm-3 col-xs-3">
+                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 chart-option">
+                    <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
                         <div>
                             <button class="date-range btn-default form-control"
                                     id="system-timerange">今天<span class="caret date-range-caret"></span>
                             </button>
                         </div>
                     </div>
-                    <div class="col-md-3 col-sm-3 col-xs-3">
+                    <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
                         <div class="multi-dropdown"
                              ng-dropdown-multiselect
                              options="selectByGroupData"
@@ -137,25 +137,25 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-md-12 col-sm-12 col-xs-12" id="system-chart" style="height: 300px"></div>
+                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12" id="system-chart" style="height: 300px"></div>
             </div>
-            <div class="col-md-6 col-sm-6 col-xs-12 chart-border" ng-controller="processController">
-                <div class="col-md-12 col-sm-12 col-xs-12">
+            <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12 chart-border" ng-controller="processController">
+                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                     <span class="chart-title">进程操作</span>
                     <span class="divider">|</span>
                     <span class="time-selected" id="process-time-selected"></span>
                     <img class="pull-right bar-charts" src="./icon/bar_chart.png">
                     <img class="pull-right line-charts" src="./icon/line_chart.png">
                 </div>
-                <div class="col-md-12 col-sm-12 col-xs-12 chart-option">
-                    <div class="col-md-3 col-sm-3 col-xs-3">
+                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 chart-option">
+                    <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
                         <div>
                             <button class="date-range btn-default form-control"
                                     id="process-timerange">今天<span class="caret date-range-caret"></span>
                             </button>
                         </div>
                     </div>
-                    <div class="col-md-3 col-sm-3 col-xs-3">
+                    <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
                         <div class="multi-dropdown"
                              ng-dropdown-multiselect
                              options="selectByGroupData"
@@ -166,25 +166,25 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-md-12 col-sm-12 col-xs-12" id="process-chart" style="height: 300px"></div>
+                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12" id="process-chart" style="height: 300px"></div>
             </div>
-            <div class="col-md-6 col-sm-6 col-xs-12 chart-border" ng-controller="fileController">
-                <div class="col-md-12 col-sm-12 col-xs-12">
+            <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12 chart-border" ng-controller="fileController">
+                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                     <span class="chart-title">文件操作</span>
                     <span class="divider">|</span>
                     <span class="time-selected" id="file-time-selected"></span>
                     <img class="pull-right bar-charts" src="./icon/bar_chart.png">
                     <img class="pull-right line-charts" src="./icon/line_chart.png">
                 </div>
-                <div class="col-md-12 col-sm-12 col-xs-12 chart-option">
-                    <div class="col-md-3 col-sm-3 col-xs-3">
+                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 chart-option">
+                    <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
                         <div>
                             <button class="date-range btn-default form-control"
                                     id="file-timerange">今天<span class="caret date-range-caret"></span>
                             </button>
                         </div>
                     </div>
-                    <div class="col-md-3 col-sm-3 col-xs-3">
+                    <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
                         <div class="multi-dropdown"
                              ng-dropdown-multiselect
                              options="selectByGroupData"
@@ -195,17 +195,17 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-md-12 col-sm-12 col-xs-12" id="file-chart" style="height: 300px"></div>
+                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12" id="file-chart" style="height: 300px"></div>
             </div>
-            <div class="col-md-6 col-sm-6 col-xs-12 chart-border" ng-controller="registryController">
-                <div class="col-md-12 col-sm-12 col-xs-12">
+            <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12 chart-border" ng-controller="registryController">
+                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                     <span class="chart-title">注册表操作</span>
                     <span class="divider">|</span>
                     <span class="time-selected" id="registry-time-selected"></span>
                     <img class="pull-right bar-charts" src="./icon/bar_chart.png">
                     <img class="pull-right line-charts" src="./icon/line_chart.png">
                 </div>
-                <div class="col-md-12 col-sm-12 col-xs-12 chart-option">
+                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 chart-option">
                     <div class="col-md-3 col-sm-3 col-xs-3">
                         <div>
                             <button class="date-range btn-default form-control"
@@ -213,7 +213,7 @@
                             </button>
                         </div>
                     </div>
-                    <div class="col-md-3 col-sm-3 col-xs-3">
+                    <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
                         <div class="multi-dropdown"
                              ng-dropdown-multiselect
                              options="selectByGroupData"
@@ -224,7 +224,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-md-12 col-sm-12 col-xs-12" id="registry-chart" style="height: 300px"></div>
+                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12" id="registry-chart" style="height: 300px"></div>
             </div>
         </div>
 
@@ -284,7 +284,8 @@
     var getData = function (label) {
         var data = [];
         if (label == "今天") {
-            data = ['00:00', '02:00', '04:00', '06:00', '08:00', '10:00', '12:00', '14:00', '16:00', '18:00', '20:00', '22:00']
+            data = ['00:00', '01:00', '02:00', '03:00', '04:00', '05:00', '06:00', '07:00', '08:00', '09:00', '10:00',
+                '11:00', '12:00', '13:00', '14:00', '15:00', '16:00', '17:00', '18:00', '19:00', '20:00', '12:00', '22:00', '23:00' ]
         }
         if (label == "本周") {
             data = ['周一', '周二', '周三', '周四', '周五', '周六', '周日']
@@ -467,8 +468,7 @@
                     "show": false
                 },
                 "axisLabel": {
-                    "interval": 0
-
+                    "interval": "auto"
                 },
                 "data": xData
             }],
@@ -486,7 +486,7 @@
                     "show": false
                 },
                 "axisLabel": {
-                    "interval": 0
+                    "interval": "auto"
                 },
                 "splitArea": {
                     "show": false
@@ -553,6 +553,18 @@
                     224,
                     473,
                     126,
+                    260,
+                    198,
+                    330,
+                    151,
+                    160,
+                    222,
+                    229,
+                    128,
+                    250,
+                    224,
+                    473,
+                    126,
                     260
                 ]
             },
@@ -575,6 +587,18 @@
                         }
                     },
                     "data": [
+                        82,
+                        67,
+                        62,
+                        59,
+                        67,
+                        67,
+                        35,
+                        71,
+                        81,
+                        78,
+                        79,
+                        72,
                         82,
                         67,
                         62,
@@ -623,7 +647,19 @@
                         224,
                         473,
                         126,
-                        260
+                        260,
+                        82,
+                        67,
+                        62,
+                        59,
+                        67,
+                        67,
+                        35,
+                        71,
+                        81,
+                        78,
+                        79,
+                        72
                     ]
                 },
 
@@ -656,7 +692,19 @@
                         81,
                         78,
                         79,
-                        72
+                        72,
+                        198,
+                        330,
+                        151,
+                        160,
+                        222,
+                        229,
+                        128,
+                        250,
+                        224,
+                        473,
+                        126,
+                        260
                     ]
                 }
             ]
@@ -818,7 +866,7 @@
                     "show": false
                 },
                 "axisLabel": {
-                    "interval": 0
+                    "interval": "auto"
 
                 },
                 "data": xData
@@ -837,7 +885,7 @@
                     "show": false
                 },
                 "axisLabel": {
-                    "interval": 0
+                    "interval": "auto"
                 },
                 "splitArea": {
                     "show": false
@@ -1166,7 +1214,7 @@
                     "show": false
                 },
                 "axisLabel": {
-                    "interval": 0
+                    "interval": "auto"
 
                 },
                 "data": xData
@@ -1185,7 +1233,7 @@
                     "show": false
                 },
                 "axisLabel": {
-                    "interval": 0
+                    "interval": "auto"
                 },
                 "splitArea": {
                     "show": false
@@ -1446,7 +1494,7 @@
                     "show": false
                 },
                 "axisLabel": {
-                    "interval": 0
+                    "interval": "auto"
 
                 },
                 "data": xData
@@ -1465,7 +1513,7 @@
                     "show": false
                 },
                 "axisLabel": {
-                    "interval": 0
+                    "interval": "auto"
                 },
                 "splitArea": {
                     "show": false
@@ -1826,7 +1874,7 @@
                     "show": false
                 },
                 "axisLabel": {
-                    "interval": 0
+                    "interval": "auto"
 
                 },
                 "data": xData
@@ -1845,7 +1893,7 @@
                     "show": false
                 },
                 "axisLabel": {
-                    "interval": 0
+                    "interval": "auto"
                 },
                 "splitArea": {
                     "show": false

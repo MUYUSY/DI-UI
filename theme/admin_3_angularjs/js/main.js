@@ -261,7 +261,7 @@ MetronicApp.config(['$stateProvider', '$urlRouterProvider', function($stateProvi
                             './assets/global/plugins/bootstrap-colorpicker/css/colorpicker.css',
                             './assets/global/plugins/bootstrap-daterangepicker/daterangepicker.css',
                             './assets/global/plugins/datatables/datatables.min.css',
-                            './assets/global/plugins/datatables/plugins/bootstrap/datatables.bootstrap.css',
+                            // './assets/global/plugins/datatables/plugins/bootstrap/datatables.bootstrap.css',
                             './assets/global/plugins/bootstrap-select/css/bootstrap-select.min.css',
                             './assets/global/plugins/select2/css/select2.min.css',
                             './assets/global/plugins/select2/css/select2-bootstrap.min.css',
@@ -274,7 +274,7 @@ MetronicApp.config(['$stateProvider', '$urlRouterProvider', function($stateProvi
                             './assets/global/plugins/jstree/dist/jstree.min.js',
                             './assets/pages/scripts/ui-tree.min.js',
                             './assets/global/plugins/DataTables-1.10.15/media/js/jquery.dataTables.js',
-                            './assets/global/plugins/datatables/plugins/bootstrap/datatables.bootstrap.js',
+                            './assets/global/plugins/DataTables-1.10.15/extensions/Select/js/dataTables.select.js',
 
                             'js/controllers/NewInvestigationController.js'
 
@@ -285,6 +285,27 @@ MetronicApp.config(['$stateProvider', '$urlRouterProvider', function($stateProvi
         })
 
         // Investigation Record
+        .state('investigationrecord', {
+            url: "/investigation_record",
+            templateUrl: "views/investigation_record.html",
+            data: {pageTitle: '调查记录'},
+            controller: "GeneralPageController",
+            resolve: {
+                deps: ['$ocLazyLoad', function($ocLazyLoad) {
+                    return $ocLazyLoad.load([{
+                        name: 'MetronicApp',
+                        files: [
+                            './assets/global/plugins/jquery.tab-menu-set-master/lib/jquery.tab-menu-set.css',
+
+                            './assets/global/plugins/jquery.tab-menu-set-master/lib/jquery.tab-menu-set.js',
+                            'js/controllers/GeneralPageController.js'
+                        ]
+                    }]);
+                }]
+            }
+        })
+
+        // Event Tree
         .state('eventtree', {
             url: "/event_tree",
             templateUrl: "views/event_tree.html",

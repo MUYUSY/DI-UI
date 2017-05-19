@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="ja">
+	<head>
+		<meta charset="utf-8">
+		<title>jquery.tab-menu-set</title>
+		<link rel="stylesheet" href="lib/jquery.tab-menu-set.css">
+		<style>
+			.jqtab {
+				border: 2px solid #aaa;
+				padding: 4px;
+				margin-bottom: 1em;
+				width: 480px;
+			}
+			p {
+				line-height: 1.4;
+			}
+			section {
+				margin-bottom: 4em;
+			}
+			h3 {
+				border-left: 8px solid #497;
+				border-bottom: 2px solid #497;
+				padding: 4px;
+				width: 640px;
+			}
+			.green {
+				color: #6f6;
+			}
+			.red {
+				color: #f66;
+			}
+			pre {
+				width: 640px;
+				padding: 8px;
+				background: #666;
+				color: #fff;
+				word-wrap: break-word;
+				font-size: 16px;
+			}
+		</style>
+	</head>
+	<body>
+		<h1>jquery.tab-menu-set</h1>
+		<time>version: 1.1.2 (2014-08-08)</time>
+		<section>
+			<h3>例1: 基本</h3>
+			<pre>$('#tabset1').tabMenuSet();</pre>
+			<p>
+				オプションを指定せずにプラグインを設定しています。<br>
+				最もシンプルな記述例です。
+			</p>
+			<div id="tabset1">
+				<ol>
+					<li><a>御子神 リコ</a></li>
+					<li><a>御子神 リム</a></li>
+					<li><a>御子神 ナギサ</a></li>
+				</ol>
+				<div>
+					<div>
+						（みこがみ リコ） 声 - 悠木碧 カトレア学園初等部5年生。明るく楽観的、いたずら好きな性格で、ユニークな発想もできるが、気まぐれで飽きやすいという一面もある。クラスメイトのケンとは幼馴染で、頻繁に喧嘩になり、スポーツで張り合うことも多い。
+					</div>
+					<div>
+						（みこがみ リム） 声 - 佐藤聡美 リコの双子の姉妹で、同じくカトレア学園初等部5年生。いつもリコと一緒に行動し、クラスも同じ。読書と空想が好きで、手芸、編み物を得意とする。
+					</div>
+					<div>
+						（みこがみ ナギサ） 声 - 安済知佳 御子神三姉妹の長女でカトレア学園中等部2年生。神浜市一の美少女とされる。優しく機転も利くが、少し抜けたところもある。家を空けることが多い母親の代わりを務める。
+					</div>
+				</div>
+			</div>
+		</section>
+
+
+		<section>
+			<h3>例2: 初期状態で開いているタブを指定する</h3>
+			<pre>$('#tabset2').tabMenuSet({<span class="green">init_tab</span>:<span class="red">1</span>});</pre>
+			<p>
+				"init_tab"オプションに<span style="font-weight:bold; text-decoration:underline">ゼロから始まる番号</span>を指定することで、<br>
+				初期状態で開いているタブを指定することができます。
+			</p>
+			<div id="tabset2">
+				<ol>
+					<li><a href="#about">概要</a></li>
+					<li><a href="#explain">作品解説</a></li>
+					<li><a href="#outline">あらすじ</a></li>
+				</ol>
+				<div>
+					<div id="about">
+						架空の町「神浜市」を舞台に、動物に変身できる道具「キルミン」を手に入れた主人公たちが、動物とのコミュニケーションを図りながらさまざまな事件に挑む姿をコメディタッチで描いた作品。
+					</div>
+					<div id="explain">
+						「魔法少女もの」を一度作ってみたいと考えていたという河森は、多数の作品が作られている当該ジャンルにおいて自分がやることの意味について考えている中でふと「動物」をモチーフにすることを思いつき、動物の作画が困難であることから「人間が動物に変身する」というアイディアに至ったとしている。
+					</div>
+					<div id="outline">
+						豊かな自然に恵まれた神浜市に住む御子神家の双子の姉妹リコとリムはある日、生物の研究をしていた祖父のユウキ博士が残した屋根裏の研究室で、動物に変身できるアイテム「キルミン」を手に入れる。
+					</div>
+				</div>
+			</div>
+		</section>
+		
+		
+		<section>
+			<h3>例3: マウスオーバーでタブ切り替え</h3>
+			<pre>$('#tabset3').tabMenuSet({<span class="green">chg_by_hover</span>:<span class="red">true</span>});</pre>
+			<div id="tabset3">
+				<ol>
+					<li><a href="//bit.ly/H41tdP" target="_blank">Wikipedia</a></li>
+					<li><a href="//www.kirumin.com/" target="_blank">公式サイト</a></li>
+					<li><a href="//www.b-ch.com/ttl/index.php?ttl_c=2707" target="_blank">バンダイチャンネル</a></li>
+				</ol>
+				<div>
+					<div>
+						Wikipedia内のページへ移動します。<br>
+						(http://bit.ly/H41tdP)
+					</div>
+					<div>
+						公式サイトへ移動します。<br>
+						(http://www.kirumin.com/)
+					</div>
+					<div>
+						バンダイチャンネルのページへ移動します。<br>
+						※ 第1話を無料で視聴できます。<br>
+						(http://www.b-ch.com/ttl/index.php?ttl_c=2707)
+					</div>
+				</div>
+			</div>
+		</section>
+		<footer>
+			※文章引用: <a href="//bit.ly/H41tdP" target="_blank">あにゃまる探偵 キルミンずぅ - Wikipedia</a>
+			<address>
+				Yuusaku Miyazaki (toumin.m7@gmail.com) / <a href="https://github.com/sutara79/jquery.tab-menu-set">GitHub</a>
+			</address>
+		</footer>
+
+		<!-- JavaScript -->
+		<script src="//code.jquery.com/jquery.min.js"></script>
+		<script src="lib/jquery.tab-menu-set.js"></script>
+		<script>
+			$('#tabset1').tabMenuSet();
+			$('#tabset2').tabMenuSet({init_tab: 1});
+			$('#tabset3').tabMenuSet({chg_by_hover: true});
+		</script>
+	</body>
+</html>
