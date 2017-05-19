@@ -6,13 +6,13 @@
     </div>
     <div ng-controller="DashboardController">
         <div class="row" ng-controller="statsController">
-            <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12">
+            <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
                 <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4 dashboard-stat white">
                     <div class="visual">
                         <i class="fa"></i>
                     </div>
                     <div class="details">
-                        <div class="number"> 5430万</div>
+                        <div class="number"> {{totalCount}} </div>
                         <div class="desc"> 总数据量</div>
                     </div>
                 </div>
@@ -21,7 +21,7 @@
                         <i class="fa"></i>
                     </div>
                     <div class="details">
-                        <div class="number"> +1630</div>
+                        <div class="number"> +{{monthCount}} </div>
                         <div class="desc"> 近一月增加</div>
                     </div>
                 </div>
@@ -30,12 +30,12 @@
                         <i class="fa"></i>
                     </div>
                     <div class="details">
-                        <div class="number"> +740</div>
+                        <div class="number"> +{{weekCount}} </div>
                         <div class="desc"> 近一周增加</div>
                     </div>
                 </div>
             </div>
-            <div class="col-lg-6 ol-md-6 col-sm-6 col-xs-12">
+            <div class="col-lg-6 ol-md-6 col-sm-6 col-xs-6">
                 <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4 dashboard-stat white">
                     <div class="visual">
                         <i class="fa"></i>
@@ -59,7 +59,7 @@
                         <i class="fa"></i>
                     </div>
                     <div class="details">
-                        <div class="number">{{weeklyAddDevice}}</div>
+                        <div class="number">+{{weeklyAddDevice}}</div>
                         <div class="desc"> 近一周增加</div>
                     </div>
                 </div>
@@ -110,7 +110,7 @@
                     <button class="btn-default form-control">管理空间</button>
                 </div>
             </div>
-            <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12 chart-border" ng-controller="systemController">
+            <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 chart-border" ng-controller="systemController">
                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                     <span class="chart-title">系统操作</span>
                     <span class="divider">|</span>
@@ -139,7 +139,7 @@
                 </div>
                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12" id="system-chart" style="height: 300px"></div>
             </div>
-            <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12 chart-border" ng-controller="processController">
+            <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 chart-border" ng-controller="processController">
                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                     <span class="chart-title">进程操作</span>
                     <span class="divider">|</span>
@@ -168,7 +168,7 @@
                 </div>
                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12" id="process-chart" style="height: 300px"></div>
             </div>
-            <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12 chart-border" ng-controller="fileController">
+            <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 chart-border" ng-controller="fileController">
                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                     <span class="chart-title">文件操作</span>
                     <span class="divider">|</span>
@@ -197,7 +197,7 @@
                 </div>
                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12" id="file-chart" style="height: 300px"></div>
             </div>
-            <div class="col-lg-6 col-md-6 col-sm-6 col-xs-12 chart-border" ng-controller="registryController">
+            <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 chart-border" ng-controller="registryController">
                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
                     <span class="chart-title">注册表操作</span>
                     <span class="divider">|</span>
@@ -323,10 +323,49 @@
                 device_num = data
             }
         });
+        var dashboard_sum;
+        $.ajax({
+            async: false,
+            url: "dashboardsum",
+            type: "GET",
+            dataType: "json",
+            success: function(data) {
+                dashboard_sum = data
+            }
+        });
         $scope.totalDevice = device_num.totalnum;
         $scope.onlineDevice = device_num.onlinenum;
         $scope.weeklyAddDevice = device_num.weeknum;
-    };
+        var formatCount = function(count) {
+            if (count < 10000) {
+                return count
+            }
+            else {
+                return Math.floor(count / 10000) + "万"
+            }
+        };
+        $scope.totalCount = formatCount(dashboard_sum["total"]);
+        $scope.monthCount = formatCount(dashboard_sum["30D"]);
+        $scope.weekCount = formatCount(dashboard_sum["7D"]);
+    }
+
+    $.ajax({
+        async: false,
+        url: "dashboardquery",
+        type: "POST",
+        dataType: "json",
+        data: JSON.stringify({
+            "eventtype": "3",
+            "period": "24H",
+            "begintime": "1495098000",
+            "endtime": "1495188000",
+            "devices": ["all"]
+        }),
+        success: function(data) {
+            console.log('query');
+            console.log(JSON.stringify(data));
+        }
+    });
 
     function volumeController($scope) {
         var formatVolume = function(volume) {

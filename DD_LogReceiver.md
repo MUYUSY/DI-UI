@@ -32,14 +32,12 @@ Headers
 ----
 Body
 
-事件1\n事件2\n事件N\n
+事件1\n事件2\n事件N\n(gzip压缩)
 
 ```
 rsp_code=200    sip=46.70.93.173    event_type=2    current_process_name=nihil.png  timestamp=1315342279    current_porcess_sha1=6d651f7e14cb597bb4a68df624ba400e8939634d   current_porcess_pid=6663    current_process_user=Nick Tang  dport=33218 sport=44218 dip=75.227.37.198
 rsp_code=200    sip=195.73.78.156   event_type=2    current_process_name=numquam.wav    timestamp=992819740 current_porcess_sha1=557dec57e13ee033b3e51d7c50ffcb66b1220f21   current_porcess_pid=4426    current_process_user=Nick Tang  dport=50126 sport=42393 dip=215.120.253.182
 ```
-
-body 使用zlib 
 
 ### Response
 Headers
@@ -65,14 +63,28 @@ Body
 ## Event Definition
 ### Event header
 
-- Event_Time
-- Device_ID
-- Event_Type
-- 当前进程用户
-- 当前进程PID
-- 当前进程文件名
-- ~~当前进程MD5/SHA1~~
-- ~~当前进程数字签名~~
+```
+# for UI header display and backend search
+clf_event_time=847527367\t
+clf_device_name=Harrison-Acevedo\t
+clf_user=Guest\t
+clf_pid=7493\t
+clf_processname=C:\\Program Files\\Internet Explorer\\iexplore.exe\t
+clf_subtype=9\t
+
+# for backend search
+clf_file=|culpa.mp3|culpa.mp3|\t
+clf_url=/pconline/pconline?jsonpcallback=jQuery18307218839768167717_1491463836016\t
+clf_ip=|127.0.0.1|192.168.128.1|\t
+clf_netprotocol=HTTP\t
+clf_eventtype=2\t
+clf_all_pid=|7493|123|\t
+clf_all_process=|iexplore.exe|calc.exe|\t
+
+# original rawlog
+...
+```
+zia吗?
 
 ### Event Detail
 see endpoint's design
@@ -91,3 +103,4 @@ see endpoint's design
 days = int(timestamp)/86400
 ts = int(timestamp/60*60)
 ```
+

@@ -44,7 +44,7 @@ Headers
 Content-Type: application/json
 ```  
 ```
-"X-DI-DEVICEID": "095e39b5-839a-428f-8809-b82ebe5e289d"
+"X-DI-DEVICEID": "095e39b5839a428f8809b82ebe5e289d"
 ```
 
 Body
@@ -70,7 +70,7 @@ Headers
 Content-Type: application/json
 ```  
 ```
-"X-DI-DEVICEID": "095e39b5-839a-428f-8809-b82ebe5e289d"  
+"X-DI-DEVICEID": "095e39b5839a428f8809b82ebe5e289d"  
 "X-DI-TOKEN": "xxxxxx"
 ```
 
@@ -98,7 +98,7 @@ Headers
 Content-Type: application/json
 ```  
 ```
-"X-DI-DEVICEID": "095e39b5-839a-428f-8809-b82ebe5e289d"
+"X-DI-DEVICEID": "095e39b5839a428f8809b82ebe5e289d"
 "X-DI-TOKEN": "xxxxxx"
 ```
 
