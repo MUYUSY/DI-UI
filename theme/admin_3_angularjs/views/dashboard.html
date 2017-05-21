@@ -89,7 +89,8 @@
                              selected-model="selectByGroupModel"
                              extra-settings="selectByGroupSettings"
                              group-by="group"
-                             translation-texts="selectByGroupTexts">
+                             translation-texts="selectByGroupTexts"
+                             events="groupChange">
                         </div>
                     </div>
                 </div>
@@ -133,7 +134,8 @@
                              selected-model="selectByGroupModel"
                              extra-settings="selectByGroupSettings"
                              group-by="group"
-                             translation-texts="selectByGroupTexts">
+                             translation-texts="selectByGroupTexts"
+                             events="groupChange">
                         </div>
                     </div>
                 </div>
@@ -162,7 +164,8 @@
                              selected-model="selectByGroupModel"
                              extra-settings="selectByGroupSettings"
                              group-by="group"
-                             translation-texts="selectByGroupTexts">
+                             translation-texts="selectByGroupTexts"
+                             events="groupChange">
                         </div>
                     </div>
                 </div>
@@ -191,7 +194,8 @@
                              selected-model="selectByGroupModel"
                              extra-settings="selectByGroupSettings"
                              group-by="group"
-                             translation-texts="selectByGroupTexts">
+                             translation-texts="selectByGroupTexts"
+                             events="groupChange">
                         </div>
                     </div>
                 </div>
@@ -220,7 +224,8 @@
                              selected-model="selectByGroupModel"
                              extra-settings="selectByGroupSettings"
                              group-by="group"
-                             translation-texts="selectByGroupTexts">
+                             translation-texts="selectByGroupTexts"
+                             events="groupChange">
                         </div>
                     </div>
                 </div>
@@ -779,6 +784,15 @@
             clearInterval(networkInterval);
             loopNetwork();
             networkInterval = setInterval(loopNetwork, 60000)
+        };
+
+        $scope.groupChange = {
+            'onSelectionChanged': function () { // This event is not firing on selection of max limit
+                console.log('111');
+                clearInterval(networkInterval);
+                loopNetwork();
+                networkInterval = setInterval(loopNetwork, 60000)
+            }
         }
     }
 
@@ -851,9 +865,9 @@
                 "format": "YYYY/MM/DD HH:mm"
             }
         }, function (start, end, label) {
-            var startTime = start / 1000;
-            var endTime = Math.floor(end / 60000) * 60;
-            $("#system-time-selected").html(timeStamp2String(startTime, "yyyy-MM-dd hh:mm") + ' 至 ' + timeStamp2String(endTime, "yyyy-MM-dd hh:mm"));
+            $scope.startTime = start / 1000;
+            $scope.endTime = Math.floor(end / 60000) * 60;
+            $("#system-time-selected").html(timeStamp2String($scope.startTime, "yyyy-MM-dd hh:mm") + ' 至 ' + timeStamp2String($scope.endTime, "yyyy-MM-dd hh:mm"));
             $scope.label = label;
 
             clearInterval(systemInterval);
@@ -867,6 +881,14 @@
             clearInterval(systemInterval);
             loopSystem();
             systemInterval = setInterval(loopSystem, 60000)
+        };
+
+        $scope.groupChange = {
+            'onSelectionChanged': function () { // This event is not firing on selection of max limit
+                clearInterval(systemInterval);
+                loopSystem();
+                systemInterval = setInterval(loopSystem, 60000)
+            }
         }
     }
 
@@ -1224,9 +1246,9 @@
                 "format": "YYYY/MM/DD HH:mm"
             }
         }, function (start, end, label) {
-            var startTime = start / 1000;
-            var endTime = Math.floor(end / 60000) * 60;
-            $("#network-time-selected").html(timeStamp2String(startTime, "yyyy-MM-dd hh:mm") + ' 至 ' + timeStamp2String(endTime, "yyyy-MM-dd hh:mm"));
+            $scope.startTime = start / 1000;
+            $scope.endTime = Math.floor(end / 60000) * 60;
+            $("#network-time-selected").html(timeStamp2String($scope.startTime, "yyyy-MM-dd hh:mm") + ' 至 ' + timeStamp2String($scope.endTime, "yyyy-MM-dd hh:mm"));
             $scope.label = label;
 
             clearInterval(processInterval);
@@ -1241,6 +1263,14 @@
             clearInterval(processInterval);
             loopProcess();
             processInterval = setInterval(loopProcess, 60000)
+        };
+
+        $scope.groupChange = {
+            'onSelectionChanged': function () { // This event is not firing on selection of max limit
+                clearInterval(processInterval);
+                loopProcess();
+                processInterval = setInterval(loopProcess, 60000)
+            }
         }
     }
 
@@ -1533,9 +1563,9 @@
                 "format": "YYYY/MM/DD HH:mm"
             }
         }, function (start, end, label) {
-            var startTime = start / 1000;
-            var endTime = Math.floor(end / 60000) * 60;
-            $("#file-time-selected").html(timeStamp2String(startTime, "yyyy-MM-dd hh:mm") + ' 至 ' + timeStamp2String(endTime, "yyyy-MM-dd hh:mm"));
+            $scope.startTime = start / 1000;
+            $scope.endTime = Math.floor(end / 60000) * 60;
+            $("#file-time-selected").html(timeStamp2String($scope.startTime, "yyyy-MM-dd hh:mm") + ' 至 ' + timeStamp2String($scope.endTime, "yyyy-MM-dd hh:mm"));
             $scope.label = label;
 
             clearInterval(fileInterval);
@@ -1549,6 +1579,14 @@
             clearInterval(fileInterval);
             loopFile();
             fileInterval = setInterval(loopFile, 60000)
+        };
+
+        $scope.groupChange = {
+            'onSelectionChanged': function () { // This event is not firing on selection of max limit
+                clearInterval(fileInterval);
+                loopFile();
+                fileInterval = setInterval(loopFile, 60000)
+            }
         }
     }
 
@@ -1939,9 +1977,9 @@
                 "format": "YYYY/MM/DD HH:mm"
             }
         }, function (start, end, label) {
-            var startTime = start / 1000;
-            var endTime = Math.floor(end / 60000) * 60;
-            $("#registry-time-selected").html(timeStamp2String(startTime, "yyyy-MM-dd hh:mm") + ' 至 ' + timeStamp2String(endTime, "yyyy-MM-dd hh:mm"));
+            $scope.startTime = start / 1000;
+            $scope.endTime = Math.floor(end / 60000) * 60;
+            $("#registry-time-selected").html(timeStamp2String($scope.startTime, "yyyy-MM-dd hh:mm") + ' 至 ' + timeStamp2String($scope.endTime, "yyyy-MM-dd hh:mm"));
             $scope.label = label;
 
             clearInterval(registryInterval);
@@ -1955,6 +1993,14 @@
             clearInterval(registryInterval);
             loopRegistry();
             registryInterval = setInterval(loopRegistry, 60000)
+        };
+
+        $scope.groupChange = {
+            'onSelectionChanged': function () { // This event is not firing on selection of max limit
+                clearInterval(registryInterval);
+                loopRegistry();
+                registryInterval = setInterval(loopRegistry, 60000)
+            }
         }
     }
 
