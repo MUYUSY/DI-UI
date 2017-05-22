@@ -3350,7 +3350,8 @@ a.btn.disabled, fieldset[disabled] a.btn {
 .btn-default {
     color: #333;
     background-color: #fff;
-    border-color: #ccc
+    border-color: #ccc;
+    word-break: keep-all;
 }
 
 .btn-default.active, .btn-default.focus, .btn-default:active, .btn-default:focus, .btn-default:hover, .open > .btn-default.dropdown-toggle {

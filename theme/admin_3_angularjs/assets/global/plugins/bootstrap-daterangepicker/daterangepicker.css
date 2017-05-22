@@ -171,6 +171,10 @@
       color: #ccc;
       cursor: not-allowed; }
 
+.btn-hide {
+  display: none;
+}
+
 .ranges {
   font-size: 11px;
   float: none;

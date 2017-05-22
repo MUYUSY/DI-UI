@@ -75,10 +75,10 @@
                     <img class="pull-right line-charts" src="./icon/line_chart.png" ng-click="chartChange('line')">
                 </div>
                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 chart-option">
-                    <div class="col-md-2 col-sm-2 col-xs-2">
+                    <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
                         <div>
                             <button class="date-range btn-default form-control"
-                                    id="network-timerange">今天<span class="caret date-range-caret"></span>
+                                    id="network-timerange">{{label}}<span class="caret date-range-caret"></span>
                             </button>
                         </div>
                     </div>
@@ -94,7 +94,7 @@
                         </div>
                     </div>
                 </div>
-                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12" id="network-chart" style="height: 300px"></div>
+                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12" id="network-chart" style="height: 300px;"></div>
             </div>
             <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3 chart-border" ng-controller="volumeController">
                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 chart-title">容量</div>
@@ -107,7 +107,7 @@
                     <span class="col-lg-12 col-md-12 col-sm-12 col-xs-12 volume">{{StorageTotal}}</span>
                     <span class="col-lg-12 col-md-12 col-sm-12 col-xs-12 volume-des">总空间</span>
                 </div>
-                <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 col-md-offset-3 col-sm-offset-3 col-xs-offset-3 btn-manage">
+                <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 col-lg-offset-3 col-md-offset-3 col-sm-offset-3 col-xs-offset-3 btn-manage">
                     <button class="btn-default form-control">管理空间</button>
                 </div>
             </div>
@@ -120,10 +120,10 @@
                     <img class="pull-right line-charts" src="./icon/line_chart.png" ng-click="chartChange('line')">
                 </div>
                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 chart-option">
-                    <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
+                    <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
                         <div>
                             <button class="date-range btn-default form-control"
-                                    id="system-timerange">今天<span class="caret date-range-caret"></span>
+                                    id="system-timerange">{{label}}<span class="caret date-range-caret"></span>
                             </button>
                         </div>
                     </div>
@@ -150,10 +150,10 @@
                     <img class="pull-right line-charts" src="./icon/line_chart.png" ng-click="chartChange('line')">
                 </div>
                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 chart-option">
-                    <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
+                    <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
                         <div>
                             <button class="date-range btn-default form-control"
-                                    id="process-timerange">今天<span class="caret date-range-caret"></span>
+                                    id="process-timerange">{{label}}<span class="caret date-range-caret"></span>
                             </button>
                         </div>
                     </div>
@@ -180,10 +180,10 @@
                     <img class="pull-right line-charts" src="./icon/line_chart.png" ng-click="chartChange('line')">
                 </div>
                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 chart-option">
-                    <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
+                    <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
                         <div>
                             <button class="date-range btn-default form-control"
-                                    id="file-timerange">今天<span class="caret date-range-caret"></span>
+                                    id="file-timerange">{{label}}<span class="caret date-range-caret"></span>
                             </button>
                         </div>
                     </div>
@@ -210,10 +210,10 @@
                     <img class="pull-right line-charts" src="./icon/line_chart.png" ng-click="chartChange('line')">
                 </div>
                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 chart-option">
-                    <div class="col-md-3 col-sm-3 col-xs-3">
+                    <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
                         <div>
                             <button class="date-range btn-default form-control"
-                                    id="registry-timerange">今天<span class="caret date-range-caret"></span>
+                                    id="registry-timerange">{{label}}<span class="caret date-range-caret"></span>
                             </button>
                         </div>
                     </div>
@@ -239,9 +239,6 @@
 <script src="./assets/global/plugins/bootstrap-daterangepicker/daterangepicker.js" type="text/javascript"></script>
 <!-- BEGIN MAIN CONTENT -->
 <script>
-    var initialStartTime = moment().startOf('day').format('X');
-    var initialEndTime = moment().format('X');
-
     Date.prototype.format = function (fmt) {
         var o = {
             "M+": this.getMonth() + 1,                 //月份
@@ -277,6 +274,9 @@
         datetime.setTime(time);
         return datetime.format(format);
     };
+
+    var initialStartTime = Math.floor((moment().subtract('hours', 24).unix() / 3600) + 1) * 3600;
+    var initialEndTime = moment().unix();
 
     $('#network-time-selected').html(timeStamp2String(initialStartTime, "yyyy-MM-dd hh:mm") + ' 至 ' + timeStamp2String(initialEndTime, "yyyy-MM-dd hh:mm"));
     $('#system-time-selected').html(timeStamp2String(initialStartTime, "yyyy-MM-dd hh:mm") + ' 至 ' + timeStamp2String(initialEndTime, "yyyy-MM-dd hh:mm"));
@@ -359,8 +359,18 @@
     };
 
     var getBarColor = function(index) {
-        var colorSet = ['#ff2925', '#7030be', '#0096fb', '#c8df00', '#f8aa27', '#795548'];
-        return colorSet[index]
+        var colorSet = ['#ff2925', '#7030be', '#0096fb', '#c8df00', '#f8aa27', '#795548', '#48cc48', '#fd9cb9', '#bbbcf9'];
+        return colorSet[(index - 1)]
+    };
+
+    var getBoundaryGap = function(chartType) {
+        if (chartType === "bar") {
+            return true
+        }
+        else {
+            return false
+
+        }
     };
 
     var queryDashboard = function (label, eventType, beginTime, endTime, device, chartType, myChart) {
@@ -377,9 +387,13 @@
         };
         var getLegendData = function(yData, eventType) {
             var legendData = [];
-            for (var i = 0 ; i < yData.length; i++) {
-                legendData.push(getSubtype(eventType, yData[i]))
+            for (var item in yData) {
+                legendData.push(getSubtype(eventType, item))
             }
+            if (legendData.length > 5) {
+                legendData.splice(5, 0, "")
+            }
+            return legendData
         };
         var seriesFormat = function (yData, type, eventType) {
             var seriesData = [];
@@ -392,6 +406,7 @@
                         "barWidth": 10,
                         "barGap": "10%",
                         "barMinHeight": 1,
+                        "smooth": true,
                         "itemStyle": {
                             "normal": {
                                 "color": getBarColor(item),
@@ -437,6 +452,121 @@
                 myChart.setOption(option)
             }
         });
+    };
+
+    var chartDraw = function (label, eventType, beginTime, endTime, device, chartType, myChart) {
+        label = getLabel(label);
+        var option = {
+            backgroundColor: "#ffffff",
+            "tooltip": {
+                "trigger": "axis",
+                "axisPointer": {
+                    "type": "shadow",
+                    textStyle: {
+                        color: "#fff"
+                    }
+                }
+            },
+            "toolbox": {
+                show : true,
+                right: "10%",
+                feature : {
+                    mark : {show: true},
+                    dataView : {show: true, readOnly: true},
+                    dataZoom : {show: true, yAxisIndex: false},
+//                    magicType : {show: true, type: ['tiled']},
+                    restore : {show: true},
+                    saveAsImage : {show: true}
+                }
+            },
+            "grid": {
+                "borderWidth": 0,
+                "top": 20,
+                "bottom": 80,
+                textStyle: {
+                    color: "#fff"
+                }
+            },
+            "legend": {
+                x: '10%',
+                top: '80%',
+                textStyle: {
+                    color: '#363b4e'
+                }
+            },
+            "calculable": true,
+            "xAxis": [{
+                "type": "category",
+                "axisLine": {
+                    lineStyle: {
+                        color: '#363b4e'
+                    }
+                },
+                "splitLine": {
+                    "show": false
+                },
+                "axisTick": {
+                    "show": false
+                },
+                "splitArea": {
+                    "show": false
+                },
+                "axisLabel": {
+                    "interval": "auto"
+                },
+                boundaryGap: getBoundaryGap(chartType)
+            }],
+            "yAxis": [{
+                "type": "value",
+                "splitLine": {
+                    "show": false
+                },
+                "axisLine": {
+                    lineStyle: {
+                        color: '#363b4e'
+                    }
+                },
+                "axisTick": {
+                    "show": false
+                },
+                "axisLabel": {
+                    "interval": "auto"
+                },
+                "splitArea": {
+                    "show": false
+                }
+
+            }]
+            // "dataZoom": [{
+            //     "show": true,
+            //     "height": 30,
+            //     "xAxisIndex": [
+            //         0
+            //     ],
+            //     bottom: 30,
+            //     "start": 10,
+            //     "end": 80,
+            //     handleIcon: 'path://M306.1,413c0,2.2-1.8,4-4,4h-59.8c-2.2,0-4-1.8-4-4V200.8c0-2.2,1.8-4,4-4h59.8c2.2,0,4,1.8,4,4V413z',
+            //     handleSize: '110%',
+            //     handleStyle:{
+            //         color:"#d3dee5",
+
+            //     },
+            //       textStyle:{
+            //         color:"#fff"},
+            //       borderColor:"#90979c"
+
+
+            // }, {
+            //     "type": "inside",
+            //     "show": true,
+            //     "height": 15,
+            //     "start": 1,
+            //     "end": 35
+            // }],
+        };
+        myChart.setOption(option);
+        queryDashboard(label, eventType, beginTime, endTime, device, chartType, myChart)
     };
 
     function statsController($scope) {
@@ -491,7 +621,7 @@
 
     var selectDevice = function (model) {
         if (model.length == 0) {
-            return "all"
+            return ["all"]
         }
         else {
             var res = [];
@@ -595,108 +725,6 @@
         setInterval(volumeDraw, 60000);
     }
 
-    var chartDraw = function (label, eventType, beginTime, endTime, device, chartType, myChart) {
-        label = getLabel(label);
-        var option = {
-            backgroundColor: "#ffffff",
-            "tooltip": {
-                "trigger": "axis",
-                "axisPointer": {
-                    "type": "shadow",
-                    textStyle: {
-                        color: "#fff"
-                    }
-                }
-            },
-            "grid": {
-                "borderWidth": 0,
-                "top": 40,
-                "bottom": 50,
-                textStyle: {
-                    color: "#fff"
-                }
-            },
-            "legend": {
-                x: '10%',
-                top: '92%',
-                textStyle: {
-                    color: '#363b4e'
-                }
-            },
-            "calculable": true,
-            "xAxis": [{
-                "type": "category",
-                "axisLine": {
-                    lineStyle: {
-                        color: '#363b4e'
-                    }
-                },
-                "splitLine": {
-                    "show": false
-                },
-                "axisTick": {
-                    "show": false
-                },
-                "splitArea": {
-                    "show": false
-                },
-                "axisLabel": {
-                    "interval": "auto"
-                }
-            }],
-            "yAxis": [{
-                "type": "value",
-                "splitLine": {
-                    "show": false
-                },
-                "axisLine": {
-                    lineStyle: {
-                        color: '#363b4e'
-                    }
-                },
-                "axisTick": {
-                    "show": false
-                },
-                "axisLabel": {
-                    "interval": "auto"
-                },
-                "splitArea": {
-                    "show": false
-                }
-
-            }]
-            // "dataZoom": [{
-            //     "show": true,
-            //     "height": 30,
-            //     "xAxisIndex": [
-            //         0
-            //     ],
-            //     bottom: 30,
-            //     "start": 10,
-            //     "end": 80,
-            //     handleIcon: 'path://M306.1,413c0,2.2-1.8,4-4,4h-59.8c-2.2,0-4-1.8-4-4V200.8c0-2.2,1.8-4,4-4h59.8c2.2,0,4,1.8,4,4V413z',
-            //     handleSize: '110%',
-            //     handleStyle:{
-            //         color:"#d3dee5",
-
-            //     },
-            //       textStyle:{
-            //         color:"#fff"},
-            //       borderColor:"#90979c"
-
-
-            // }, {
-            //     "type": "inside",
-            //     "show": true,
-            //     "height": 15,
-            //     "start": 1,
-            //     "end": 35
-            // }],
-        };
-        myChart.setOption(option);
-        queryDashboard(label, eventType, beginTime, endTime, device, chartType, myChart)
-    };
-
     function networkController($scope) {
         $scope.selectByGroupModel = [];
         $scope.selectByGroupData = [];
@@ -734,8 +762,8 @@
             selectionCount: '被选中'
         };
 
-        $scope.startTime = Math.floor((moment().subtract('hours', 24).unix() / 3600) + 1) * 3600;
-        $scope.endTime = moment().unix();
+        $scope.startTime = initialStartTime;
+        $scope.endTime = initialEndTime;
         $scope.label = "过去24小时";
         $scope.chartType = 'bar';
 
@@ -754,19 +782,26 @@
         $('#network-timerange').daterangepicker({
             "showCustomRangeLabel": false,
             "autoApply": true,
+            "timePicker": true,
+            "applyClass": "btn-hide",
+            "cancelClass": "btn-hide",
+            "startDate": moment().startOf('hour').subtract('hours', 23),
+            "endDate": moment().endOf('minute'),
             "ranges": {
-                "过去24小时": [moment().subtract('hours', 24), moment()],
-                //"昨天": [moment().subtract('days', 1).startOf('day'), moment().subtract('days', 1).endOf('day')],
-                "过去7天": [moment().subtract('days', 6), moment()],
-                //"本周": [moment().startOf('week'), moment()],
-                "过去30天": [moment().subtract('days', 29), moment()]
-                //"本月": [moment().startOf('month'), moment()]
+                "过去24小时": [moment().startOf('hour').subtract('hours', 23), moment().endOf('minute')],
+                "过去7天": [moment().subtract('days', 7), moment()],
+                "过去30天": [moment().subtract('days', 30), moment()]
             },
             "locale": {
                 "format": "YYYY/MM/DD HH:mm"
             }
         }, function (start, end, label) {
-            $scope.startTime = start / 1000;
+            if (label === "过去24小时") {
+                $scope.startTime = Math.ceil(start / 3600000) * 3600;
+            }
+            else {
+                $scope.startTime = Math.ceil(start / 86400000) * 86400 - 28800;
+            }
             $scope.endTime = Math.floor(end / 60000) * 60;
             $("#network-time-selected").html(timeStamp2String($scope.startTime, "yyyy-MM-dd hh:mm") + ' 至 ' + timeStamp2String($scope.endTime, "yyyy-MM-dd hh:mm"));
             $scope.label = label;
@@ -833,8 +868,8 @@
             uncheckAll: '取消所有选择',
             selectionCount: '被选中'
         };
-        $scope.startTime = Math.floor((moment().subtract('hours', 24).unix() / 3600) + 1) * 3600;
-        $scope.endTime = moment().unix();
+        $scope.startTime = initialStartTime;
+        $scope.endTime = initialEndTime;
         $scope.label = "过去24小时";
         $scope.chartType = 'bar';
 
@@ -853,20 +888,26 @@
         $('#system-timerange').daterangepicker({
             "showCustomRangeLabel": false,
             "autoApply": true,
+            "timePicker": true,
+            "applyClass": "btn-hide",
+            "cancelClass": "btn-hide",
+            "startDate": moment().subtract('hours', 24),
+            "endDate": moment(),
             "ranges": {
                 "过去24小时": [moment().subtract('hours', 24), moment()],
-                //"昨天": [moment().subtract('days', 1).startOf('day'), moment().subtract('days', 1).endOf('day')],
-                "过去7天": [moment().subtract('days', 6), moment()],
-                //"本周": [moment().startOf('week'), moment()],
-                "过去30天": [moment().subtract('days', 29), moment()]
-                //"本月": [moment().startOf('month'), moment()]
+                "过去7天": [moment().subtract('days', 7), moment()],
+                "过去30天": [moment().subtract('days', 30), moment()]
             },
             "locale": {
                 "format": "YYYY/MM/DD HH:mm"
             }
         }, function (start, end, label) {
-            $scope.startTime = start / 1000;
-            $scope.endTime = Math.floor(end / 60000) * 60;
+            if (label === "过去24小时") {
+                $scope.startTime = Math.ceil(start / 3600000) * 3600;
+            }
+            else {
+                $scope.startTime = Math.ceil(start / 86400000) * 86400 - 28800;
+            }
             $("#system-time-selected").html(timeStamp2String($scope.startTime, "yyyy-MM-dd hh:mm") + ' 至 ' + timeStamp2String($scope.endTime, "yyyy-MM-dd hh:mm"));
             $scope.label = label;
 
@@ -1214,8 +1255,8 @@
             uncheckAll: '取消所有选择',
             selectionCount: '被选中'
         };
-        $scope.startTime = Math.floor((moment().subtract('hours', 24).unix() / 3600) + 1) * 3600;
-        $scope.endTime = moment().unix();
+        $scope.startTime = initialStartTime;
+        $scope.endTime = initialEndTime;
         $scope.label = "过去24小时";
         $scope.chartType = 'bar';
 
@@ -1234,21 +1275,27 @@
         $('#process-timerange').daterangepicker({
             "showCustomRangeLabel": false,
             "autoApply": true,
+            "timePicker": true,
+            "applyClass": "btn-hide",
+            "cancelClass": "btn-hide",
+            "startDate": moment().subtract('hours', 24),
+            "endDate": moment(),
             "ranges": {
                 "过去24小时": [moment().subtract('hours', 24), moment()],
-                //"昨天": [moment().subtract('days', 1).startOf('day'), moment().subtract('days', 1).endOf('day')],
-                "过去7天": [moment().subtract('days', 6), moment()],
-                //"本周": [moment().startOf('week'), moment()],
-                "过去30天": [moment().subtract('days', 29), moment()]
-                //"本月": [moment().startOf('month'), moment()]
+                "过去7天": [moment().subtract('days', 7), moment()],
+                "过去30天": [moment().subtract('days', 30), moment()]
             },
             "locale": {
                 "format": "YYYY/MM/DD HH:mm"
             }
         }, function (start, end, label) {
-            $scope.startTime = start / 1000;
-            $scope.endTime = Math.floor(end / 60000) * 60;
-            $("#network-time-selected").html(timeStamp2String($scope.startTime, "yyyy-MM-dd hh:mm") + ' 至 ' + timeStamp2String($scope.endTime, "yyyy-MM-dd hh:mm"));
+            if (label === "过去24小时") {
+                $scope.startTime = Math.ceil(start / 3600000) * 3600;
+            }
+            else {
+                $scope.startTime = Math.ceil(start / 86400000) * 86400 - 28800;
+            }
+            $("#process-time-selected").html(timeStamp2String($scope.startTime, "yyyy-MM-dd hh:mm") + ' 至 ' + timeStamp2String($scope.endTime, "yyyy-MM-dd hh:mm"));
             $scope.label = label;
 
             clearInterval(processInterval);
@@ -1531,8 +1578,8 @@
             uncheckAll: '取消所有选择',
             selectionCount: '被选中'
         };
-        $scope.startTime = Math.floor((moment().subtract('hours', 24).unix() / 3600) + 1) * 3600;
-        $scope.endTime = moment().unix();
+        $scope.startTime = initialStartTime;
+        $scope.endTime = initialEndTime;
         $scope.label = "过去24小时";
         $scope.chartType = 'bar';
 
@@ -1551,20 +1598,26 @@
         $('#file-timerange').daterangepicker({
             "showCustomRangeLabel": false,
             "autoApply": true,
+            "timePicker": true,
+            "applyClass": "btn-hide",
+            "cancelClass": "btn-hide",
+            "startDate": moment().subtract('hours', 24),
+            "endDate": moment(),
             "ranges": {
                 "过去24小时": [moment().subtract('hours', 24), moment()],
-                //"昨天": [moment().subtract('days', 1).startOf('day'), moment().subtract('days', 1).endOf('day')],
-                "过去7天": [moment().subtract('days', 6), moment()],
-                //"本周": [moment().startOf('week'), moment()],
-                "过去30天": [moment().subtract('days', 29), moment()]
-                //"本月": [moment().startOf('month'), moment()]
+                "过去7天": [moment().subtract('days', 7), moment()],
+                "过去30天": [moment().subtract('days', 30), moment()]
             },
             "locale": {
                 "format": "YYYY/MM/DD HH:mm"
             }
         }, function (start, end, label) {
-            $scope.startTime = start / 1000;
-            $scope.endTime = Math.floor(end / 60000) * 60;
+            if (label === "过去24小时") {
+                $scope.startTime = Math.ceil(start / 3600000) * 3600;
+            }
+            else {
+                $scope.startTime = Math.ceil(start / 86400000) * 86400 - 28800;
+            }
             $("#file-time-selected").html(timeStamp2String($scope.startTime, "yyyy-MM-dd hh:mm") + ' 至 ' + timeStamp2String($scope.endTime, "yyyy-MM-dd hh:mm"));
             $scope.label = label;
 
@@ -1945,8 +1998,8 @@
             uncheckAll: '取消所有选择',
             selectionCount: '被选中'
         };
-        $scope.startTime = Math.floor((moment().subtract('hours', 24).unix() / 3600) + 1) * 3600;
-        $scope.endTime = moment().unix();
+        $scope.startTime = initialStartTime;
+        $scope.endTime = initialEndTime;
         $scope.label = "过去24小时";
         $scope.chartType = 'bar';
 
@@ -1965,20 +2018,26 @@
         $('#registry-timerange').daterangepicker({
             "showCustomRangeLabel": false,
             "autoApply": true,
+            "timePicker": true,
+            "applyClass": "btn-hide",
+            "cancelClass": "btn-hide",
+            "startDate": moment().subtract('hours', 24),
+            "endDate": moment(),
             "ranges": {
                 "过去24小时": [moment().subtract('hours', 24), moment()],
-                //"昨天": [moment().subtract('days', 1).startOf('day'), moment().subtract('days', 1).endOf('day')],
                 "过去7天": [moment().subtract('days', 6), moment()],
-                //"本周": [moment().startOf('week'), moment()],
                 "过去30天": [moment().subtract('days', 29), moment()]
-                //"本月": [moment().startOf('month'), moment()]
             },
             "locale": {
                 "format": "YYYY/MM/DD HH:mm"
             }
         }, function (start, end, label) {
-            $scope.startTime = start / 1000;
-            $scope.endTime = Math.floor(end / 60000) * 60;
+            if (label === "过去24小时") {
+                $scope.startTime = Math.ceil(start / 3600000) * 3600;
+            }
+            else {
+                $scope.startTime = Math.ceil(start / 86400000) * 86400 - 28800;
+            }
             $("#registry-time-selected").html(timeStamp2String($scope.startTime, "yyyy-MM-dd hh:mm") + ' 至 ' + timeStamp2String($scope.endTime, "yyyy-MM-dd hh:mm"));
             $scope.label = label;
 
