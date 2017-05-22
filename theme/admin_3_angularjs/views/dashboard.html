@@ -347,25 +347,7 @@
         $scope.totalCount = formatCount(dashboard_sum["total"]);
         $scope.monthCount = formatCount(dashboard_sum["30D"]);
         $scope.weekCount = formatCount(dashboard_sum["7D"]);
-    }
-
-    $.ajax({
-        async: false,
-        url: "dashboardquery",
-        type: "POST",
-        dataType: "json",
-        data: JSON.stringify({
-            "eventtype": "3",
-            "period": "24H",
-            "begintime": "1495098000",
-            "endtime": "1495188000",
-            "devices": ["all"]
-        }),
-        success: function(data) {
-            console.log('query');
-            console.log(JSON.stringify(data));
-        }
-    });
+    };
 
     function volumeController($scope) {
         var formatVolume = function(volume) {
