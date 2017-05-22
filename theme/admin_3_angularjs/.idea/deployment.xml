@@ -5,7 +5,7 @@
       <paths name="di-ui">
         <serverdata>
           <mappings>
-            <mapping deploy="\" local="$PROJECT_DIR$" web="/" />
+            <mapping deploy="/opt/DI2.5/server/diserver/uiservice/app" local="$PROJECT_DIR$" web="/" />
           </mappings>
         </serverdata>
       </paths>

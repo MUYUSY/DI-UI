@@ -71,8 +71,8 @@
                     <span class="chart-title">网络操作</span>
                     <span class="divider">|</span>
                     <span class="time-selected" id="network-time-selected"></span>
-                    <img class="pull-right bar-charts" src="./icon/bar_chart.png">
-                    <img class="pull-right line-charts" src="./icon/line_chart.png">
+                    <img class="pull-right bar-charts" src="./icon/bar_chart.png" ng-click="chartChange('bar')">
+                    <img class="pull-right line-charts" src="./icon/line_chart.png" ng-click="chartChange('line')">
                 </div>
                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 chart-option">
                     <div class="col-md-2 col-sm-2 col-xs-2">
@@ -89,7 +89,8 @@
                              selected-model="selectByGroupModel"
                              extra-settings="selectByGroupSettings"
                              group-by="group"
-                             translation-texts="selectByGroupTexts">
+                             translation-texts="selectByGroupTexts"
+                             events="groupChange">
                         </div>
                     </div>
                 </div>
@@ -115,8 +116,8 @@
                     <span class="chart-title">系统操作</span>
                     <span class="divider">|</span>
                     <span class="time-selected" id="system-time-selected"></span>
-                    <img class="pull-right bar-charts" src="./icon/bar_chart.png">
-                    <img class="pull-right line-charts" src="./icon/line_chart.png">
+                    <img class="pull-right bar-charts" src="./icon/bar_chart.png" ng-click="chartChange('bar')">
+                    <img class="pull-right line-charts" src="./icon/line_chart.png" ng-click="chartChange('line')">
                 </div>
                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 chart-option">
                     <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
@@ -133,7 +134,8 @@
                              selected-model="selectByGroupModel"
                              extra-settings="selectByGroupSettings"
                              group-by="group"
-                             translation-texts="selectByGroupTexts">
+                             translation-texts="selectByGroupTexts"
+                             events="groupChange">
                         </div>
                     </div>
                 </div>
@@ -144,8 +146,8 @@
                     <span class="chart-title">进程操作</span>
                     <span class="divider">|</span>
                     <span class="time-selected" id="process-time-selected"></span>
-                    <img class="pull-right bar-charts" src="./icon/bar_chart.png">
-                    <img class="pull-right line-charts" src="./icon/line_chart.png">
+                    <img class="pull-right bar-charts" src="./icon/bar_chart.png" ng-click="chartChange('bar')">
+                    <img class="pull-right line-charts" src="./icon/line_chart.png" ng-click="chartChange('line')">
                 </div>
                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 chart-option">
                     <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
@@ -162,7 +164,8 @@
                              selected-model="selectByGroupModel"
                              extra-settings="selectByGroupSettings"
                              group-by="group"
-                             translation-texts="selectByGroupTexts">
+                             translation-texts="selectByGroupTexts"
+                             events="groupChange">
                         </div>
                     </div>
                 </div>
@@ -173,8 +176,8 @@
                     <span class="chart-title">文件操作</span>
                     <span class="divider">|</span>
                     <span class="time-selected" id="file-time-selected"></span>
-                    <img class="pull-right bar-charts" src="./icon/bar_chart.png">
-                    <img class="pull-right line-charts" src="./icon/line_chart.png">
+                    <img class="pull-right bar-charts" src="./icon/bar_chart.png" ng-click="chartChange('bar')">
+                    <img class="pull-right line-charts" src="./icon/line_chart.png" ng-click="chartChange('line')">
                 </div>
                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 chart-option">
                     <div class="col-lg-3 col-md-3 col-sm-3 col-xs-3">
@@ -191,7 +194,8 @@
                              selected-model="selectByGroupModel"
                              extra-settings="selectByGroupSettings"
                              group-by="group"
-                             translation-texts="selectByGroupTexts">
+                             translation-texts="selectByGroupTexts"
+                             events="groupChange">
                         </div>
                     </div>
                 </div>
@@ -202,8 +206,8 @@
                     <span class="chart-title">注册表操作</span>
                     <span class="divider">|</span>
                     <span class="time-selected" id="registry-time-selected"></span>
-                    <img class="pull-right bar-charts" src="./icon/bar_chart.png">
-                    <img class="pull-right line-charts" src="./icon/line_chart.png">
+                    <img class="pull-right bar-charts" src="./icon/bar_chart.png" ng-click="chartChange('bar')">
+                    <img class="pull-right line-charts" src="./icon/line_chart.png" ng-click="chartChange('line')">
                 </div>
                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 chart-option">
                     <div class="col-md-3 col-sm-3 col-xs-3">
@@ -220,7 +224,8 @@
                              selected-model="selectByGroupModel"
                              extra-settings="selectByGroupSettings"
                              group-by="group"
-                             translation-texts="selectByGroupTexts">
+                             translation-texts="selectByGroupTexts"
+                             events="groupChange">
                         </div>
                     </div>
                 </div>
@@ -276,26 +281,8 @@
     $('#network-time-selected').html(timeStamp2String(initialStartTime, "yyyy-MM-dd hh:mm") + ' 至 ' + timeStamp2String(initialEndTime, "yyyy-MM-dd hh:mm"));
     $('#system-time-selected').html(timeStamp2String(initialStartTime, "yyyy-MM-dd hh:mm") + ' 至 ' + timeStamp2String(initialEndTime, "yyyy-MM-dd hh:mm"));
     $('#process-time-selected').html(timeStamp2String(initialStartTime, "yyyy-MM-dd hh:mm") + ' 至 ' + timeStamp2String(initialEndTime, "yyyy-MM-dd hh:mm"));
-
-    //    $('.networkDatePicker i').click(function () {
-    //        $(this).parent().find('input').click();
-    //    });
-
-    var getData = function (label) {
-        var data = [];
-        if (label == "今天") {
-            data = ['00:00', '01:00', '02:00', '03:00', '04:00', '05:00', '06:00', '07:00', '08:00', '09:00', '10:00',
-                '11:00', '12:00', '13:00', '14:00', '15:00', '16:00', '17:00', '18:00', '19:00', '20:00', '12:00', '22:00', '23:00' ]
-        }
-        if (label == "本周") {
-            data = ['周一', '周二', '周三', '周四', '周五', '周六', '周日']
-        }
-        if (label == "本月") {
-            data = ['1', '2', '3', '4', '5', '6', '7', '8', '9', '10', '11', '12', '13', '14', '15',
-                '16', '17', '18', '19', '20', '21', '22', '23', '24', '25', '26', '27', '28', '29', '30', '31']
-        }
-        return data;
-    };
+    $('#file-time-selected').html(timeStamp2String(initialStartTime, "yyyy-MM-dd hh:mm") + ' 至 ' + timeStamp2String(initialEndTime, "yyyy-MM-dd hh:mm"));
+    $('#registry-time-selected').html(timeStamp2String(initialStartTime, "yyyy-MM-dd hh:mm") + ' 至 ' + timeStamp2String(initialEndTime, "yyyy-MM-dd hh:mm"));
 
     var device_info = [];
     function getDeviceInfo() {
@@ -311,6 +298,146 @@
         return device_info;
     }
     device_info = getDeviceInfo();
+
+    var getSubtype = function(eventType, subType) {
+        data = {
+            1: {
+                1: "创建文件",
+                2: "打开文件",
+                3: "读文件",
+                4: "写文件",
+                5: "删除文件",
+                6: "重命名文件",
+                7: "查询文件信息",
+                8: "修改文件信息",
+                9: "关闭文件"
+            },
+            2: {
+                1: "进程加载",
+                2: "进程终止"
+            },
+            3: {
+                1: "Web",
+                2: "邮件",
+                3: "文件传输",
+                4: "其他应用程序"
+            },
+            4: {
+                1: "系统登录",
+                2: "挂载",
+                3: "取消挂载",
+                4: "网络连接",
+                5: "断开网络连接",
+                6: "修改密码"
+            },
+            5: {
+                1: "注册表创建",
+                2: "注册表打开",
+                3: "注册表删除",
+                4: "注册表查询",
+                5: "注册表设置"
+            }
+        };
+
+        var res;
+        if (eventType in data && subType in data[eventType]) {
+            res = data[eventType][subType];
+        }
+        else {
+            res = "unknown";
+        }
+        return res;
+    };
+
+    var getStack = function(type, stack) {
+        if (type === 'bar') {
+            return "total"
+        }
+        else {
+            return stack
+        }
+    };
+
+    var getBarColor = function(index) {
+        var colorSet = ['#ff2925', '#7030be', '#0096fb', '#c8df00', '#f8aa27', '#795548'];
+        return colorSet[index]
+    };
+
+    var queryDashboard = function (label, eventType, beginTime, endTime, device, chartType, myChart) {
+        var xAxisFormat = function (xData) {
+            for (var i = 0; i < xData.length; i++) {
+                if (label === "24H") {
+                    xData[i] = timeStamp2String(xData[i], "yyyy-MM-dd hh:mm")
+                }
+                else {
+                    xData[i] = timeStamp2String(xData[i], "yyyy-MM-dd");
+                }
+            }
+            return xData;
+        };
+        var getLegendData = function(yData, eventType) {
+            var legendData = [];
+            for (var i = 0 ; i < yData.length; i++) {
+                legendData.push(getSubtype(eventType, yData[i]))
+            }
+        };
+        var seriesFormat = function (yData, type, eventType) {
+            var seriesData = [];
+            for (var item in yData) {
+                seriesData.push(
+                    {
+                        "name": getSubtype(eventType, item),
+                        "type": type,
+                        "stack": getStack(type, item),
+                        "barWidth": 10,
+                        "barGap": "10%",
+                        "barMinHeight": 1,
+                        "itemStyle": {
+                            "normal": {
+                                "color": getBarColor(item),
+                                "label": {
+                                    "show": false,
+                                    "textStyle": {
+                                        "color": "#fff"
+                                    },
+                                    "position": "insideTop",
+                                    formatter: function (p) {
+                                        return p.value > 0 ? (p.value) : '';
+                                    }
+                                }
+                            }
+                        },
+                        "data": yData[item]
+                    });
+            }
+            return seriesData
+        };
+        $.ajax({
+            async: false,
+            url: "dashboardquery",
+            type: "POST",
+            dataType: "json",
+            data: JSON.stringify({
+                "eventtype": eventType,
+                "period": label,
+                "begintime": beginTime,
+                "endtime": endTime,
+                "devices": device
+            }),
+            success: function (data) {
+                option = {
+                    xAxis: {
+                        data: xAxisFormat(data.xData)
+                    },
+                    legend: {
+                        data: getLegendData(data.yData, eventType)
+                    },
+                    series: seriesFormat(data.yData, chartType, eventType)
+                };
+                myChart.setOption(option)
+            }
+        });
+    };
 
     function statsController($scope) {
         var device_num;
@@ -347,9 +474,55 @@
         $scope.totalCount = formatCount(dashboard_sum["total"]);
         $scope.monthCount = formatCount(dashboard_sum["30D"]);
         $scope.weekCount = formatCount(dashboard_sum["7D"]);
+    }
+
+    var getLabel = function(label) {
+        if (label === "过去24小时") {
+            return "24H"
+        }
+        if (label === "过去7天") {
+            return "7D"
+        }
+        if (label === "过去30天") {
+            return "30D"
+        }
+        return label
+    };
+
+    var selectDevice = function (model) {
+        if (model.length == 0) {
+            return "all"
+        }
+        else {
+            var res = [];
+            for (var i = 0; i < model.length; i++) {
+                res.push(model[i].id)
+            }
+            return res
+        }
     };
 
     function volumeController($scope) {
+        var dom = document.getElementById("volume-chart");
+        var myChart = echarts.init(dom);
+
+        var option = {
+            series: [{
+                type: 'liquidFill',
+                radius: '80%',
+                label: {
+                    normal: {
+                        textStyle: {
+                            color: 'red',
+                            insideColor: 'white',
+                            fontSize: 50
+                        }
+                    }
+                }
+            }]
+        };
+        myChart.setOption(option);
+
         var formatVolume = function(volume) {
             var index = volume.indexOf("M");
             var volumeNum = volume.substr(0, index);
@@ -358,22 +531,6 @@
             }
             return volume
         };
-
-        var disk_info;
-
-        $.ajax({
-            async: false,
-            url: "diskinfo",
-            type: "GET",
-            dataType: "json",
-            success: function(data) {
-                disk_info = data
-            }
-        });
-
-        $scope.StorageUsed = formatVolume(disk_info.StorageUsed);
-        $scope.StorageTotal = formatVolume(disk_info.StorageTotal);
-        $scope.StorageUsedPercent = disk_info.StorageUsedPercent;
 
         var getColor = function(value) {
             if (value < 0.6) {
@@ -412,36 +569,34 @@
         };
 
         var volumeDraw = function () {
-            var dom = document.getElementById("volume-chart");
-            var myChart = echarts.init(dom);
-            var option = {
-                series: [{
-                    type: 'liquidFill',
-                    radius: '80%',
-                    data: [
-                        getColor($scope.StorageUsedPercent)
-                    ],
-                    label: {
-                        normal: {
-                            textStyle: {
-                                color: 'red',
-                                insideColor: 'white',
-                                fontSize: 50
+            myChart.showLoading();
+            $.ajax({
+                async: false,
+                url: "diskinfo",
+                type: "GET",
+                dataType: "json",
+                success: function(data) {
+                    $scope.StorageUsed = formatVolume(data.StorageUsed);
+                    $scope.StorageTotal = formatVolume(data.StorageTotal);
+                    myChart.hideLoading();
+                    myChart.setOption(
+                        {
+                            series: {
+                                data: [
+                                    data.StorageUsedPercent
+                                ]
                             }
-                        }
-                    }
-                }]
-            };
-            myChart.setOption(option);
+                        })
+                }
+            });
         };
 
-        setTimeout(volumeDraw(), 0);
+        volumeDraw();
+        setInterval(volumeDraw, 60000);
     }
 
-    var networkDraw = function (label) {
-        var dom = document.getElementById("network-chart");
-        var myChart = echarts.init(dom);
-        var xData = getData(label);
+    var chartDraw = function (label, eventType, beginTime, endTime, device, chartType, myChart) {
+        label = getLabel(label);
         var option = {
             backgroundColor: "#ffffff",
             "tooltip": {
@@ -466,11 +621,8 @@
                 top: '92%',
                 textStyle: {
                     color: '#363b4e'
-                },
-                "data": ['http请求消息', 'http响应消息', 'ftp命令信息', 'ftp应答信息']
+                }
             },
-
-
             "calculable": true,
             "xAxis": [{
                 "type": "category",
@@ -490,8 +642,7 @@
                 },
                 "axisLabel": {
                     "interval": "auto"
-                },
-                "data": xData
+                }
             }],
             "yAxis": [{
                 "type": "value",
@@ -513,7 +664,7 @@
                     "show": false
                 }
 
-            }],
+            }]
             // "dataZoom": [{
             //     "show": true,
             //     "height": 30,
@@ -541,226 +692,13 @@
             //     "start": 1,
             //     "end": 35
             // }],
-            "series": [{
-                "name": "http请求消息",
-                "type": "bar",
-                "stack": "总量",
-                "barWidth": 10,
-                "barGap": "10%",
-                "itemStyle": {
-                    "normal": {
-                        "color": "#ff2925",
-                        "label": {
-                            "show": false,
-                            "textStyle": {
-                                "color": "#fff"
-                            },
-                            "position": "insideTop",
-                            formatter: function (p) {
-                                return p.value > 0 ? (p.value) : '';
-                            }
-                        }
-                    }
-                },
-                "data": [
-                    198,
-                    330,
-                    151,
-                    160,
-                    222,
-                    229,
-                    128,
-                    250,
-                    224,
-                    473,
-                    126,
-                    260,
-                    198,
-                    330,
-                    151,
-                    160,
-                    222,
-                    229,
-                    128,
-                    250,
-                    224,
-                    473,
-                    126,
-                    260
-                ]
-            },
-
-                {
-                    "name": "http响应消息",
-                    "type": "bar",
-                    "stack": "总量",
-                    "itemStyle": {
-                        "normal": {
-                            "color": "#7030be",
-                            "barBorderRadius": 0,
-                            "label": {
-                                "show": false,
-                                "position": "top",
-                                formatter: function (p) {
-                                    return p.value > 0 ? (p.value) : '';
-                                }
-                            }
-                        }
-                    },
-                    "data": [
-                        82,
-                        67,
-                        62,
-                        59,
-                        67,
-                        67,
-                        35,
-                        71,
-                        81,
-                        78,
-                        79,
-                        72,
-                        82,
-                        67,
-                        62,
-                        59,
-                        67,
-                        67,
-                        35,
-                        71,
-                        81,
-                        78,
-                        79,
-                        72
-                    ]
-                },
-
-                {
-                    "name": "ftp命令信息",
-                    "type": "bar",
-                    "stack": "总量",
-                    "barMaxWidth": 35,
-                    "barGap": "10%",
-                    "itemStyle": {
-                        "normal": {
-                            "color": "#0096fb",
-                            "label": {
-                                "show": false,
-                                "textStyle": {
-                                    "color": "#fff"
-                                },
-                                "position": "insideTop",
-                                formatter: function (p) {
-                                    return p.value > 0 ? (p.value) : '';
-                                }
-                            }
-                        }
-                    },
-                    "data": [
-                        198,
-                        330,
-                        151,
-                        160,
-                        222,
-                        229,
-                        128,
-                        250,
-                        224,
-                        473,
-                        126,
-                        260,
-                        82,
-                        67,
-                        62,
-                        59,
-                        67,
-                        67,
-                        35,
-                        71,
-                        81,
-                        78,
-                        79,
-                        72
-                    ]
-                },
-
-                {
-                    "name": "ftp应答信息",
-                    "type": "bar",
-                    "stack": "总量",
-                    "itemStyle": {
-                        "normal": {
-                            "color": "#c8df00",
-                            "barBorderRadius": 0,
-                            "label": {
-                                "show": false,
-                                "position": "top",
-                                formatter: function (p) {
-                                    return p.value > 0 ? (p.value) : '';
-                                }
-                            }
-                        }
-                    },
-                    "data": [
-                        82,
-                        67,
-                        62,
-                        59,
-                        67,
-                        67,
-                        35,
-                        71,
-                        81,
-                        78,
-                        79,
-                        72,
-                        198,
-                        330,
-                        151,
-                        160,
-                        222,
-                        229,
-                        128,
-                        250,
-                        224,
-                        473,
-                        126,
-                        260
-                    ]
-                }
-            ]
         };
-
         myChart.setOption(option);
+        queryDashboard(label, eventType, beginTime, endTime, device, chartType, myChart)
     };
-
-    networkDraw("今天");
-
-    $('#network-timerange').daterangepicker({
-        "showCustomRangeLabel": false,
-        "autoApply": true,
-        "ranges": {
-            "今天": [moment().startOf('day'), moment()],
-            //            "昨天": [moment().subtract('days', 1).startOf('day'), moment().subtract('days', 1).endOf('day')],
-            //            "过去7天": [moment().subtract('days', 6), moment()],
-            "本周": [moment().startOf('week'), moment()],
-            //            "过去30天": [moment().subtract('days', 29), moment()],
-            "本月": [moment().startOf('month'), moment()]
-        },
-        "locale": {
-            "format": "YYYY/MM/DD HH:mm"
-        }
-    }, function (start, end, label) {
-        var startTime = start / 1000;
-        var endTime = Math.floor(end / 60000) * 60;
-        $("#network-time-selected").html(timeStamp2String(startTime, "yyyy-MM-dd hh:mm") + ' 至 ' + timeStamp2String(endTime, "yyyy-MM-dd hh:mm"));
-
-        networkDraw(label);
-    });
 
     function networkController($scope) {
         $scope.selectByGroupModel = [];
-
         $scope.selectByGroupData = [];
         $scope.groupInfo = [];
         for (var i = 0; i < device_info.length; i++) {
@@ -795,6 +733,67 @@
             uncheckAll: '取消所有选择',
             selectionCount: '被选中'
         };
+
+        $scope.startTime = Math.floor((moment().subtract('hours', 24).unix() / 3600) + 1) * 3600;
+        $scope.endTime = moment().unix();
+        $scope.label = "过去24小时";
+        $scope.chartType = 'bar';
+
+        var dom = document.getElementById("network-chart");
+        var myChart = echarts.init(dom);
+
+        var networkInterval;
+
+        var loopNetwork = function() {
+            chartDraw($scope.label, 3, $scope.startTime, $scope.endTime, selectDevice($scope.selectByGroupModel), $scope.chartType, myChart);
+
+        };
+        loopNetwork();
+        networkInterval = setInterval(loopNetwork, 60000);
+
+        $('#network-timerange').daterangepicker({
+            "showCustomRangeLabel": false,
+            "autoApply": true,
+            "ranges": {
+                "过去24小时": [moment().subtract('hours', 24), moment()],
+                //"昨天": [moment().subtract('days', 1).startOf('day'), moment().subtract('days', 1).endOf('day')],
+                "过去7天": [moment().subtract('days', 6), moment()],
+                //"本周": [moment().startOf('week'), moment()],
+                "过去30天": [moment().subtract('days', 29), moment()]
+                //"本月": [moment().startOf('month'), moment()]
+            },
+            "locale": {
+                "format": "YYYY/MM/DD HH:mm"
+            }
+        }, function (start, end, label) {
+            $scope.startTime = start / 1000;
+            $scope.endTime = Math.floor(end / 60000) * 60;
+            $("#network-time-selected").html(timeStamp2String($scope.startTime, "yyyy-MM-dd hh:mm") + ' 至 ' + timeStamp2String($scope.endTime, "yyyy-MM-dd hh:mm"));
+            $scope.label = label;
+
+            clearInterval(networkInterval);
+//            var loopNetworkDraw = function() {
+//                chartDraw($scope.label, 3, startTime, moment().unix(), selectDevice($scope.selectByGroupModel), 'bar', myChart);
+//            };
+            loopNetwork();
+            networkInterval = setInterval(loopNetwork, 60000)
+        });
+
+        $scope.chartChange = function(type) {
+            $scope.chartType = type;
+            clearInterval(networkInterval);
+            loopNetwork();
+            networkInterval = setInterval(loopNetwork, 60000)
+        };
+
+        $scope.groupChange = {
+            'onSelectionChanged': function () { // This event is not firing on selection of max limit
+                console.log('111');
+                clearInterval(networkInterval);
+                loopNetwork();
+                networkInterval = setInterval(loopNetwork, 60000)
+            }
+        }
     }
 
     function systemController($scope) {
@@ -834,314 +833,349 @@
             uncheckAll: '取消所有选择',
             selectionCount: '被选中'
         };
-    }
+        $scope.startTime = Math.floor((moment().subtract('hours', 24).unix() / 3600) + 1) * 3600;
+        $scope.endTime = moment().unix();
+        $scope.label = "过去24小时";
+        $scope.chartType = 'bar';
 
-    var systemDraw = function (label) {
         var dom = document.getElementById("system-chart");
         var myChart = echarts.init(dom);
-        var xData = getData(label);
-        var option = {
-            backgroundColor: "#ffffff",
-            "tooltip": {
-                "trigger": "axis",
-                "axisPointer": {
-                    "type": "shadow",
-                    textStyle: {
-                        color: "#fff"
-                    }
-                }
+
+        var systemInterval;
+
+        var loopSystem = function() {
+            chartDraw($scope.label, 4, $scope.startTime, $scope.endTime, selectDevice($scope.selectByGroupModel), $scope.chartType, myChart);
+
+        };
+        loopSystem();
+        systemInterval = setInterval(loopSystem, 60000);
+
+        $('#system-timerange').daterangepicker({
+            "showCustomRangeLabel": false,
+            "autoApply": true,
+            "ranges": {
+                "过去24小时": [moment().subtract('hours', 24), moment()],
+                //"昨天": [moment().subtract('days', 1).startOf('day'), moment().subtract('days', 1).endOf('day')],
+                "过去7天": [moment().subtract('days', 6), moment()],
+                //"本周": [moment().startOf('week'), moment()],
+                "过去30天": [moment().subtract('days', 29), moment()]
+                //"本月": [moment().startOf('month'), moment()]
             },
-            "grid": {
-                "borderWidth": 0,
-                "top": 40,
-                "bottom": 50,
-                textStyle: {
-                    color: "#fff"
-                }
-            },
-            "legend": {
-                x: '4%',
-                top: '92%',
-                textStyle: {
-                    color: '#363b4e'
-                },
-                "data": ['登录', '注销', '修改密码', '移动设备接入', '移动设备拔出']
-            },
+            "locale": {
+                "format": "YYYY/MM/DD HH:mm"
+            }
+        }, function (start, end, label) {
+            $scope.startTime = start / 1000;
+            $scope.endTime = Math.floor(end / 60000) * 60;
+            $("#system-time-selected").html(timeStamp2String($scope.startTime, "yyyy-MM-dd hh:mm") + ' 至 ' + timeStamp2String($scope.endTime, "yyyy-MM-dd hh:mm"));
+            $scope.label = label;
 
+            clearInterval(systemInterval);
 
-            "calculable": true,
-            "xAxis": [{
-                "type": "category",
-                "axisLine": {
-                    lineStyle: {
-                        color: '#363b4e'
-                    }
-                },
-                "splitLine": {
-                    "show": false
-                },
-                "axisTick": {
-                    "show": false
-                },
-                "splitArea": {
-                    "show": false
-                },
-                "axisLabel": {
-                    "interval": "auto"
+            loopSystem();
+            systemInterval = setInterval(loopSystem, 60000)
+        });
 
-                },
-                "data": xData
-            }],
-            "yAxis": [{
-                "type": "value",
-                "splitLine": {
-                    "show": false
-                },
-                "axisLine": {
-                    lineStyle: {
-                        color: '#363b4e'
-                    }
-                },
-                "axisTick": {
-                    "show": false
-                },
-                "axisLabel": {
-                    "interval": "auto"
-                },
-                "splitArea": {
-                    "show": false
-                }
-
-            }],
-            // "dataZoom": [{
-            //     "show": true,
-            //     "height": 30,
-            //     "xAxisIndex": [
-            //         0
-            //     ],
-            //     bottom: 30,
-            //     "start": 10,
-            //     "end": 80,
-            //     handleIcon: 'path://M306.1,413c0,2.2-1.8,4-4,4h-59.8c-2.2,0-4-1.8-4-4V200.8c0-2.2,1.8-4,4-4h59.8c2.2,0,4,1.8,4,4V413z',
-            //     handleSize: '110%',
-            //     handleStyle:{
-            //         color:"#d3dee5",
-
-            //     },
-            //       textStyle:{
-            //         color:"#fff"},
-            //       borderColor:"#90979c"
-
-
-            // }, {
-            //     "type": "inside",
-            //     "show": true,
-            //     "height": 15,
-            //     "start": 1,
-            //     "end": 35
-            // }],
-            "series": [{
-                "name": "登录",
-                "type": "bar",
-                "stack": "总量",
-                "barWidth": 10,
-                "barGap": "10%",
-                "itemStyle": {
-                    "normal": {
-                        "color": "#ff2925",
-                        "label": {
-                            "show": false,
-                            "textStyle": {
-                                "color": "#fff"
-                            },
-                            "position": "insideTop",
-                            formatter: function (p) {
-                                return p.value > 0 ? (p.value) : '';
-                            }
-                        }
-                    }
-                },
-                "data": [
-                    198,
-                    330,
-                    151,
-                    160,
-                    222,
-                    229,
-                    128,
-                    250,
-                    224,
-                    473,
-                    126,
-                    260
-                ]
-            },
-
-                {
-                    "name": "注销",
-                    "type": "bar",
-                    "stack": "总量",
-                    "itemStyle": {
-                        "normal": {
-                            "color": "#7030be",
-                            "barBorderRadius": 0,
-                            "label": {
-                                "show": false,
-                                "position": "top",
-                                formatter: function (p) {
-                                    return p.value > 0 ? (p.value) : '';
-                                }
-                            }
-                        }
-                    },
-                    "data": [
-                        82,
-                        67,
-                        62,
-                        59,
-                        67,
-                        67,
-                        35,
-                        71,
-                        81,
-                        78,
-                        79,
-                        72
-                    ]
-                },
-
-                {
-                    "name": "修改密码",
-                    "type": "bar",
-                    "stack": "总量",
-                    "barMaxWidth": 35,
-                    "barGap": "10%",
-                    "itemStyle": {
-                        "normal": {
-                            "color": "#0096fb",
-                            "label": {
-                                "show": false,
-                                "textStyle": {
-                                    "color": "#fff"
-                                },
-                                "position": "insideTop",
-                                formatter: function (p) {
-                                    return p.value > 0 ? (p.value) : '';
-                                }
-                            }
-                        }
-                    },
-                    "data": [
-                        198,
-                        330,
-                        151,
-                        160,
-                        222,
-                        229,
-                        128,
-                        250,
-                        224,
-                        473,
-                        126,
-                        260
-                    ]
-                },
-
-                {
-                    "name": "移动设备接入",
-                    "type": "bar",
-                    "stack": "总量",
-                    "itemStyle": {
-                        "normal": {
-                            "color": "#c8df00",
-                            "barBorderRadius": 0,
-                            "label": {
-                                "show": false,
-                                "position": "top",
-                                formatter: function (p) {
-                                    return p.value > 0 ? (p.value) : '';
-                                }
-                            }
-                        }
-                    },
-                    "data": [
-                        82,
-                        67,
-                        62,
-                        59,
-                        67,
-                        67,
-                        35,
-                        71,
-                        81,
-                        78,
-                        79,
-                        72
-                    ]
-                },
-
-                {
-                    "name": "移动设备拔出",
-                    "type": "bar",
-                    "stack": "总量",
-                    "itemStyle": {
-                        "normal": {
-                            "color": "#f8aa27",
-                            "barBorderRadius": 0,
-                            "label": {
-                                "show": false,
-                                "position": "top",
-                                formatter: function (p) {
-                                    return p.value > 0 ? (p.value) : '';
-                                }
-                            }
-                        }
-                    },
-                    "data": [
-                        82,
-                        67,
-                        62,
-                        59,
-                        67,
-                        67,
-                        35,
-                        71,
-                        81,
-                        78,
-                        79,
-                        72
-                    ]
-                }
-            ]
+        $scope.chartChange = function(type) {
+            $scope.chartType = type;
+            clearInterval(systemInterval);
+            loopSystem();
+            systemInterval = setInterval(loopSystem, 60000)
         };
 
-        myChart.setOption(option);
-
-    };
-
-    systemDraw("今天");
-
-    $('#system-timerange').daterangepicker({
-        "showCustomRangeLabel": false,
-        "autoApply": true,
-        "ranges": {
-            "今天": [moment().startOf('day'), moment()],
-            //            "昨天": [moment().subtract('days', 1).startOf('day'), moment().subtract('days', 1).endOf('day')],
-            //            "过去7天": [moment().subtract('days', 6), moment()],
-            "本周": [moment().startOf('week'), moment()],
-            //            "过去30天": [moment().subtract('days', 29), moment()],
-            "本月": [moment().startOf('month'), moment()]
-        },
-        "locale": {
-            "format": "YYYY/MM/DD HH:mm"
+        $scope.groupChange = {
+            'onSelectionChanged': function () { // This event is not firing on selection of max limit
+                clearInterval(systemInterval);
+                loopSystem();
+                systemInterval = setInterval(loopSystem, 60000)
+            }
         }
-    }, function (start, end, label) {
-        var startTime = start / 1000;
-        var endTime = Math.floor(end / 60000) * 60;
-        $("#system-time-selected").html(timeStamp2String(startTime, "yyyy-MM-dd hh:mm") + ' 至 ' + timeStamp2String(endTime, "yyyy-MM-dd hh:mm"));
+    }
 
-        systemDraw(label);
-    });
+//    var systemDraw = function (label) {
+//        var dom = document.getElementById("system-chart");
+//        var myChart = echarts.init(dom);
+//        var xData = getData(label);
+//        var option = {
+//            backgroundColor: "#ffffff",
+//            "tooltip": {
+//                "trigger": "axis",
+//                "axisPointer": {
+//                    "type": "shadow",
+//                    textStyle: {
+//                        color: "#fff"
+//                    }
+//                }
+//            },
+//            "grid": {
+//                "borderWidth": 0,
+//                "top": 40,
+//                "bottom": 50,
+//                textStyle: {
+//                    color: "#fff"
+//                }
+//            },
+//            "legend": {
+//                x: '4%',
+//                top: '92%',
+//                textStyle: {
+//                    color: '#363b4e'
+//                },
+//                "data": ['登录', '注销', '修改密码', '移动设备接入', '移动设备拔出']
+//            },
+//
+//
+//            "calculable": true,
+//            "xAxis": [{
+//                "type": "category",
+//                "axisLine": {
+//                    lineStyle: {
+//                        color: '#363b4e'
+//                    }
+//                },
+//                "splitLine": {
+//                    "show": false
+//                },
+//                "axisTick": {
+//                    "show": false
+//                },
+//                "splitArea": {
+//                    "show": false
+//                },
+//                "axisLabel": {
+//                    "interval": "auto"
+//
+//                },
+//                "data": xData
+//            }],
+//            "yAxis": [{
+//                "type": "value",
+//                "splitLine": {
+//                    "show": false
+//                },
+//                "axisLine": {
+//                    lineStyle: {
+//                        color: '#363b4e'
+//                    }
+//                },
+//                "axisTick": {
+//                    "show": false
+//                },
+//                "axisLabel": {
+//                    "interval": "auto"
+//                },
+//                "splitArea": {
+//                    "show": false
+//                }
+//
+//            }],
+//            // "dataZoom": [{
+//            //     "show": true,
+//            //     "height": 30,
+//            //     "xAxisIndex": [
+//            //         0
+//            //     ],
+//            //     bottom: 30,
+//            //     "start": 10,
+//            //     "end": 80,
+//            //     handleIcon: 'path://M306.1,413c0,2.2-1.8,4-4,4h-59.8c-2.2,0-4-1.8-4-4V200.8c0-2.2,1.8-4,4-4h59.8c2.2,0,4,1.8,4,4V413z',
+//            //     handleSize: '110%',
+//            //     handleStyle:{
+//            //         color:"#d3dee5",
+//
+//            //     },
+//            //       textStyle:{
+//            //         color:"#fff"},
+//            //       borderColor:"#90979c"
+//
+//
+//            // }, {
+//            //     "type": "inside",
+//            //     "show": true,
+//            //     "height": 15,
+//            //     "start": 1,
+//            //     "end": 35
+//            // }],
+//            "series": [{
+//                "name": "登录",
+//                "type": "bar",
+//                "stack": "总量",
+//                "barWidth": 10,
+//                "barGap": "10%",
+//                "itemStyle": {
+//                    "normal": {
+//                        "color": "#ff2925",
+//                        "label": {
+//                            "show": false,
+//                            "textStyle": {
+//                                "color": "#fff"
+//                            },
+//                            "position": "insideTop",
+//                            formatter: function (p) {
+//                                return p.value > 0 ? (p.value) : '';
+//                            }
+//                        }
+//                    }
+//                },
+//                "data": [
+//                    198,
+//                    330,
+//                    151,
+//                    160,
+//                    222,
+//                    229,
+//                    128,
+//                    250,
+//                    224,
+//                    473,
+//                    126,
+//                    260
+//                ]
+//            },
+//
+//                {
+//                    "name": "注销",
+//                    "type": "bar",
+//                    "stack": "总量",
+//                    "itemStyle": {
+//                        "normal": {
+//                            "color": "#7030be",
+//                            "barBorderRadius": 0,
+//                            "label": {
+//                                "show": false,
+//                                "position": "top",
+//                                formatter: function (p) {
+//                                    return p.value > 0 ? (p.value) : '';
+//                                }
+//                            }
+//                        }
+//                    },
+//                    "data": [
+//                        82,
+//                        67,
+//                        62,
+//                        59,
+//                        67,
+//                        67,
+//                        35,
+//                        71,
+//                        81,
+//                        78,
+//                        79,
+//                        72
+//                    ]
+//                },
+//
+//                {
+//                    "name": "修改密码",
+//                    "type": "bar",
+//                    "stack": "总量",
+//                    "barMaxWidth": 35,
+//                    "barGap": "10%",
+//                    "itemStyle": {
+//                        "normal": {
+//                            "color": "#0096fb",
+//                            "label": {
+//                                "show": false,
+//                                "textStyle": {
+//                                    "color": "#fff"
+//                                },
+//                                "position": "insideTop",
+//                                formatter: function (p) {
+//                                    return p.value > 0 ? (p.value) : '';
+//                                }
+//                            }
+//                        }
+//                    },
+//                    "data": [
+//                        198,
+//                        330,
+//                        151,
+//                        160,
+//                        222,
+//                        229,
+//                        128,
+//                        250,
+//                        224,
+//                        473,
+//                        126,
+//                        260
+//                    ]
+//                },
+//
+//                {
+//                    "name": "移动设备接入",
+//                    "type": "bar",
+//                    "stack": "总量",
+//                    "itemStyle": {
+//                        "normal": {
+//                            "color": "#c8df00",
+//                            "barBorderRadius": 0,
+//                            "label": {
+//                                "show": false,
+//                                "position": "top",
+//                                formatter: function (p) {
+//                                    return p.value > 0 ? (p.value) : '';
+//                                }
+//                            }
+//                        }
+//                    },
+//                    "data": [
+//                        82,
+//                        67,
+//                        62,
+//                        59,
+//                        67,
+//                        67,
+//                        35,
+//                        71,
+//                        81,
+//                        78,
+//                        79,
+//                        72
+//                    ]
+//                },
+//
+//                {
+//                    "name": "移动设备拔出",
+//                    "type": "bar",
+//                    "stack": "总量",
+//                    "itemStyle": {
+//                        "normal": {
+//                            "color": "#f8aa27",
+//                            "barBorderRadius": 0,
+//                            "label": {
+//                                "show": false,
+//                                "position": "top",
+//                                formatter: function (p) {
+//                                    return p.value > 0 ? (p.value) : '';
+//                                }
+//                            }
+//                        }
+//                    },
+//                    "data": [
+//                        82,
+//                        67,
+//                        62,
+//                        59,
+//                        67,
+//                        67,
+//                        35,
+//                        71,
+//                        81,
+//                        78,
+//                        79,
+//                        72
+//                    ]
+//                }
+//            ]
+//        };
+//
+//        myChart.setOption(option);
+//
+//    };
+//
+//    systemDraw("今天");
 
     function processController($scope) {
         $scope.selectByGroupModel = [];
@@ -1180,249 +1214,285 @@
             uncheckAll: '取消所有选择',
             selectionCount: '被选中'
         };
-    }
+        $scope.startTime = Math.floor((moment().subtract('hours', 24).unix() / 3600) + 1) * 3600;
+        $scope.endTime = moment().unix();
+        $scope.label = "过去24小时";
+        $scope.chartType = 'bar';
 
-    var processDraw = function (label) {
         var dom = document.getElementById("process-chart");
         var myChart = echarts.init(dom);
-        var xData = getData(label);
 
-        var option = {
-            backgroundColor: "#ffffff",
-            "tooltip": {
-                "trigger": "axis",
-                "axisPointer": {
-                    "type": "shadow",
-                    textStyle: {
-                        color: "#fff"
-                    }
-                }
+        var processInterval;
+
+        var loopProcess = function() {
+            chartDraw($scope.label, 2, $scope.startTime, $scope.endTime, selectDevice($scope.selectByGroupModel), $scope.chartType, myChart);
+
+        };
+        loopProcess();
+        processInterval = setInterval(loopProcess, 60000);
+
+        $('#process-timerange').daterangepicker({
+            "showCustomRangeLabel": false,
+            "autoApply": true,
+            "ranges": {
+                "过去24小时": [moment().subtract('hours', 24), moment()],
+                //"昨天": [moment().subtract('days', 1).startOf('day'), moment().subtract('days', 1).endOf('day')],
+                "过去7天": [moment().subtract('days', 6), moment()],
+                //"本周": [moment().startOf('week'), moment()],
+                "过去30天": [moment().subtract('days', 29), moment()]
+                //"本月": [moment().startOf('month'), moment()]
             },
-            "grid": {
-                "borderWidth": 0,
-                "top": 40,
-                "bottom": 50,
-                textStyle: {
-                    color: "#fff"
-                }
-            },
-            "legend": {
-                x: '4%',
-                top: '92%',
-                left: '25%',
-                textStyle: {
-                    color: '#363b4e'
-                },
-                "data": ['创建进程', '终止进程', '加载模块']
-            },
+            "locale": {
+                "format": "YYYY/MM/DD HH:mm"
+            }
+        }, function (start, end, label) {
+            $scope.startTime = start / 1000;
+            $scope.endTime = Math.floor(end / 60000) * 60;
+            $("#network-time-selected").html(timeStamp2String($scope.startTime, "yyyy-MM-dd hh:mm") + ' 至 ' + timeStamp2String($scope.endTime, "yyyy-MM-dd hh:mm"));
+            $scope.label = label;
 
+            clearInterval(processInterval);
 
-            "calculable": true,
-            "xAxis": [{
-                "type": "category",
-                "axisLine": {
-                    lineStyle: {
-                        color: '#363b4e'
-                    }
-                },
-                "splitLine": {
-                    "show": false
-                },
-                "axisTick": {
-                    "show": false
-                },
-                "splitArea": {
-                    "show": false
-                },
-                "axisLabel": {
-                    "interval": "auto"
+            loopProcess();
+            processInterval = setInterval(loopProcess, 60000)
 
-                },
-                "data": xData
-            }],
-            "yAxis": [{
-                "type": "value",
-                "splitLine": {
-                    "show": false
-                },
-                "axisLine": {
-                    lineStyle: {
-                        color: '#363b4e'
-                    }
-                },
-                "axisTick": {
-                    "show": false
-                },
-                "axisLabel": {
-                    "interval": "auto"
-                },
-                "splitArea": {
-                    "show": false
-                }
+        });
 
-            }],
-            // "dataZoom": [{
-            //     "show": true,
-            //     "height": 30,
-            //     "xAxisIndex": [
-            //         0
-            //     ],
-            //     bottom: 30,
-            //     "start": 10,
-            //     "end": 80,
-            //     handleIcon: 'path://M306.1,413c0,2.2-1.8,4-4,4h-59.8c-2.2,0-4-1.8-4-4V200.8c0-2.2,1.8-4,4-4h59.8c2.2,0,4,1.8,4,4V413z',
-            //     handleSize: '110%',
-            //     handleStyle:{
-            //         color:"#d3dee5",
-
-            //     },
-            //       textStyle:{
-            //         color:"#fff"},
-            //       borderColor:"#90979c"
-
-
-            // }, {
-            //     "type": "inside",
-            //     "show": true,
-            //     "height": 15,
-            //     "start": 1,
-            //     "end": 35
-            // }],
-            "series": [{
-                "name": "创建进程",
-                "type": "bar",
-                "stack": "总量",
-                "barWidth": 10,
-                "barGap": "10%",
-                "itemStyle": {
-                    "normal": {
-                        "color": "#ff2925",
-                        "label": {
-                            "show": false,
-                            "textStyle": {
-                                "color": "#fff"
-                            },
-                            "position": "insideTop",
-                            formatter: function (p) {
-                                return p.value > 0 ? (p.value) : '';
-                            }
-                        }
-                    }
-                },
-                "data": [
-                    198,
-                    330,
-                    151,
-                    160,
-                    222,
-                    229,
-                    128,
-                    250,
-                    224,
-                    473,
-                    126,
-                    260
-                ]
-            },
-
-                {
-                    "name": "终止进程",
-                    "type": "bar",
-                    "stack": "总量",
-                    "itemStyle": {
-                        "normal": {
-                            "color": "#7030be",
-                            "barBorderRadius": 0,
-                            "label": {
-                                "show": false,
-                                "position": "top",
-                                formatter: function (p) {
-                                    return p.value > 0 ? (p.value) : '';
-                                }
-                            }
-                        }
-                    },
-                    "data": [
-                        82,
-                        67,
-                        62,
-                        59,
-                        67,
-                        67,
-                        35,
-                        71,
-                        81,
-                        78,
-                        79,
-                        72
-                    ]
-                },
-
-                {
-                    "name": "加载模块",
-                    "type": "bar",
-                    "stack": "总量",
-                    "barMaxWidth": 35,
-                    "barGap": "10%",
-                    "itemStyle": {
-                        "normal": {
-                            "color": "#0096fb",
-                            "label": {
-                                "show": false,
-                                "textStyle": {
-                                    "color": "#fff"
-                                },
-                                "position": "insideTop",
-                                formatter: function (p) {
-                                    return p.value > 0 ? (p.value) : '';
-                                }
-                            }
-                        }
-                    },
-                    "data": [
-                        198,
-                        330,
-                        151,
-                        160,
-                        222,
-                        229,
-                        128,
-                        250,
-                        224,
-                        473,
-                        126,
-                        260
-                    ]
-                }
-            ]
+        $scope.chartChange = function(type) {
+            $scope.chartType = type;
+            clearInterval(processInterval);
+            loopProcess();
+            processInterval = setInterval(loopProcess, 60000)
         };
 
-        myChart.setOption(option);
-    };
-
-    processDraw("今天");
-
-    $('#process-timerange').daterangepicker({
-        "showCustomRangeLabel": false,
-        "autoApply": true,
-        "ranges": {
-            "今天": [moment().startOf('day'), moment()],
-            //            "昨天": [moment().subtract('days', 1).startOf('day'), moment().subtract('days', 1).endOf('day')],
-            //            "过去7天": [moment().subtract('days', 6), moment()],
-            "本周": [moment().startOf('week'), moment()],
-            //            "过去30天": [moment().subtract('days', 29), moment()],
-            "本月": [moment().startOf('month'), moment()]
-        },
-        "locale": {
-            "format": "YYYY/MM/DD HH:mm"
+        $scope.groupChange = {
+            'onSelectionChanged': function () { // This event is not firing on selection of max limit
+                clearInterval(processInterval);
+                loopProcess();
+                processInterval = setInterval(loopProcess, 60000)
+            }
         }
-    }, function (start, end, label) {
-        var startTime = start / 1000;
-        var endTime = Math.floor(end / 60000) * 60;
-        $("#process-time-selected").html(timeStamp2String(startTime, "yyyy-MM-dd hh:mm") + ' 至 ' + timeStamp2String(endTime, "yyyy-MM-dd hh:mm"));
+    }
 
-        processDraw(label);
-    });
+//    var processDraw = function (label) {
+//        var dom = document.getElementById("process-chart");
+//        var myChart = echarts.init(dom);
+//        var xData = getData(label);
+//
+//        var option = {
+//            backgroundColor: "#ffffff",
+//            "tooltip": {
+//                "trigger": "axis",
+//                "axisPointer": {
+//                    "type": "shadow",
+//                    textStyle: {
+//                        color: "#fff"
+//                    }
+//                }
+//            },
+//            "grid": {
+//                "borderWidth": 0,
+//                "top": 40,
+//                "bottom": 50,
+//                textStyle: {
+//                    color: "#fff"
+//                }
+//            },
+//            "legend": {
+//                x: '4%',
+//                top: '92%',
+//                left: '25%',
+//                textStyle: {
+//                    color: '#363b4e'
+//                },
+//                "data": ['创建进程', '终止进程', '加载模块']
+//            },
+//
+//
+//            "calculable": true,
+//            "xAxis": [{
+//                "type": "category",
+//                "axisLine": {
+//                    lineStyle: {
+//                        color: '#363b4e'
+//                    }
+//                },
+//                "splitLine": {
+//                    "show": false
+//                },
+//                "axisTick": {
+//                    "show": false
+//                },
+//                "splitArea": {
+//                    "show": false
+//                },
+//                "axisLabel": {
+//                    "interval": "auto"
+//
+//                },
+//                "data": xData
+//            }],
+//            "yAxis": [{
+//                "type": "value",
+//                "splitLine": {
+//                    "show": false
+//                },
+//                "axisLine": {
+//                    lineStyle: {
+//                        color: '#363b4e'
+//                    }
+//                },
+//                "axisTick": {
+//                    "show": false
+//                },
+//                "axisLabel": {
+//                    "interval": "auto"
+//                },
+//                "splitArea": {
+//                    "show": false
+//                }
+//
+//            }],
+//            // "dataZoom": [{
+//            //     "show": true,
+//            //     "height": 30,
+//            //     "xAxisIndex": [
+//            //         0
+//            //     ],
+//            //     bottom: 30,
+//            //     "start": 10,
+//            //     "end": 80,
+//            //     handleIcon: 'path://M306.1,413c0,2.2-1.8,4-4,4h-59.8c-2.2,0-4-1.8-4-4V200.8c0-2.2,1.8-4,4-4h59.8c2.2,0,4,1.8,4,4V413z',
+//            //     handleSize: '110%',
+//            //     handleStyle:{
+//            //         color:"#d3dee5",
+//
+//            //     },
+//            //       textStyle:{
+//            //         color:"#fff"},
+//            //       borderColor:"#90979c"
+//
+//
+//            // }, {
+//            //     "type": "inside",
+//            //     "show": true,
+//            //     "height": 15,
+//            //     "start": 1,
+//            //     "end": 35
+//            // }],
+//            "series": [{
+//                "name": "创建进程",
+//                "type": "bar",
+//                "stack": "总量",
+//                "barWidth": 10,
+//                "barGap": "10%",
+//                "itemStyle": {
+//                    "normal": {
+//                        "color": "#ff2925",
+//                        "label": {
+//                            "show": false,
+//                            "textStyle": {
+//                                "color": "#fff"
+//                            },
+//                            "position": "insideTop",
+//                            formatter: function (p) {
+//                                return p.value > 0 ? (p.value) : '';
+//                            }
+//                        }
+//                    }
+//                },
+//                "data": [
+//                    198,
+//                    330,
+//                    151,
+//                    160,
+//                    222,
+//                    229,
+//                    128,
+//                    250,
+//                    224,
+//                    473,
+//                    126,
+//                    260
+//                ]
+//            },
+//
+//                {
+//                    "name": "终止进程",
+//                    "type": "bar",
+//                    "stack": "总量",
+//                    "itemStyle": {
+//                        "normal": {
+//                            "color": "#7030be",
+//                            "barBorderRadius": 0,
+//                            "label": {
+//                                "show": false,
+//                                "position": "top",
+//                                formatter: function (p) {
+//                                    return p.value > 0 ? (p.value) : '';
+//                                }
+//                            }
+//                        }
+//                    },
+//                    "data": [
+//                        82,
+//                        67,
+//                        62,
+//                        59,
+//                        67,
+//                        67,
+//                        35,
+//                        71,
+//                        81,
+//                        78,
+//                        79,
+//                        72
+//                    ]
+//                },
+//
+//                {
+//                    "name": "加载模块",
+//                    "type": "bar",
+//                    "stack": "总量",
+//                    "barMaxWidth": 35,
+//                    "barGap": "10%",
+//                    "itemStyle": {
+//                        "normal": {
+//                            "color": "#0096fb",
+//                            "label": {
+//                                "show": false,
+//                                "textStyle": {
+//                                    "color": "#fff"
+//                                },
+//                                "position": "insideTop",
+//                                formatter: function (p) {
+//                                    return p.value > 0 ? (p.value) : '';
+//                                }
+//                            }
+//                        }
+//                    },
+//                    "data": [
+//                        198,
+//                        330,
+//                        151,
+//                        160,
+//                        222,
+//                        229,
+//                        128,
+//                        250,
+//                        224,
+//                        473,
+//                        126,
+//                        260
+//                    ]
+//                }
+//            ]
+//        };
+//
+//        myChart.setOption(option);
+//    };
+//
+//    processDraw("今天");
 
     function fileController($scope) {
         $scope.selectByGroupModel = [];
@@ -1461,347 +1531,382 @@
             uncheckAll: '取消所有选择',
             selectionCount: '被选中'
         };
-    }
+        $scope.startTime = Math.floor((moment().subtract('hours', 24).unix() / 3600) + 1) * 3600;
+        $scope.endTime = moment().unix();
+        $scope.label = "过去24小时";
+        $scope.chartType = 'bar';
 
-    var fileDraw = function (label) {
         var dom = document.getElementById("file-chart");
         var myChart = echarts.init(dom);
-        var xData = getData(label);
 
-        var option = {
-            backgroundColor: "#ffffff",
-            "tooltip": {
-                "trigger": "axis",
-                "axisPointer": {
-                    "type": "shadow",
-                    textStyle: {
-                        color: "#fff"
-                    }
-                }
+        var fileInterval;
+
+        var loopFile = function() {
+            chartDraw($scope.label, 1, $scope.startTime, $scope.endTime, selectDevice($scope.selectByGroupModel), $scope.chartType, myChart);
+
+        };
+        loopFile();
+        fileInterval = setInterval(loopFile, 60000);
+
+        $('#file-timerange').daterangepicker({
+            "showCustomRangeLabel": false,
+            "autoApply": true,
+            "ranges": {
+                "过去24小时": [moment().subtract('hours', 24), moment()],
+                //"昨天": [moment().subtract('days', 1).startOf('day'), moment().subtract('days', 1).endOf('day')],
+                "过去7天": [moment().subtract('days', 6), moment()],
+                //"本周": [moment().startOf('week'), moment()],
+                "过去30天": [moment().subtract('days', 29), moment()]
+                //"本月": [moment().startOf('month'), moment()]
             },
-            "grid": {
-                "borderWidth": 0,
-                "top": 40,
-                "bottom": 50,
-                textStyle: {
-                    color: "#fff"
-                }
-            },
-            "legend": {
-                x: '4%',
-                top: '92%',
-                textStyle: {
-                    color: '#363b4e'
-                },
-                "data": ['文件打开', '文件关闭', '文件创建', '读文件', '写文件', '删除文件']
-            },
+            "locale": {
+                "format": "YYYY/MM/DD HH:mm"
+            }
+        }, function (start, end, label) {
+            $scope.startTime = start / 1000;
+            $scope.endTime = Math.floor(end / 60000) * 60;
+            $("#file-time-selected").html(timeStamp2String($scope.startTime, "yyyy-MM-dd hh:mm") + ' 至 ' + timeStamp2String($scope.endTime, "yyyy-MM-dd hh:mm"));
+            $scope.label = label;
 
+            clearInterval(fileInterval);
 
-            "calculable": true,
-            "xAxis": [{
-                "type": "category",
-                "axisLine": {
-                    lineStyle: {
-                        color: '#363b4e'
-                    }
-                },
-                "splitLine": {
-                    "show": false
-                },
-                "axisTick": {
-                    "show": false
-                },
-                "splitArea": {
-                    "show": false
-                },
-                "axisLabel": {
-                    "interval": "auto"
+            loopFile();
+            fileInterval = setInterval(loopFile, 60000)
+        });
 
-                },
-                "data": xData
-            }],
-            "yAxis": [{
-                "type": "value",
-                "splitLine": {
-                    "show": false
-                },
-                "axisLine": {
-                    lineStyle: {
-                        color: '#363b4e'
-                    }
-                },
-                "axisTick": {
-                    "show": false
-                },
-                "axisLabel": {
-                    "interval": "auto"
-                },
-                "splitArea": {
-                    "show": false
-                }
-
-            }],
-            // "dataZoom": [{
-            //     "show": true,
-            //     "height": 30,
-            //     "xAxisIndex": [
-            //         0
-            //     ],
-            //     bottom: 30,
-            //     "start": 10,
-            //     "end": 80,
-            //     handleIcon: 'path://M306.1,413c0,2.2-1.8,4-4,4h-59.8c-2.2,0-4-1.8-4-4V200.8c0-2.2,1.8-4,4-4h59.8c2.2,0,4,1.8,4,4V413z',
-            //     handleSize: '110%',
-            //     handleStyle:{
-            //         color:"#d3dee5",
-
-            //     },
-            //       textStyle:{
-            //         color:"#fff"},
-            //       borderColor:"#90979c"
-
-
-            // }, {
-            //     "type": "inside",
-            //     "show": true,
-            //     "height": 15,
-            //     "start": 1,
-            //     "end": 35
-            // }],
-            "series": [{
-                "name": "文件打开",
-                "type": "bar",
-                "stack": "总量",
-                "barWidth": 10,
-                "barGap": "10%",
-                "itemStyle": {
-                    "normal": {
-                        "color": "#ff2925",
-                        "label": {
-                            "show": false,
-                            "textStyle": {
-                                "color": "#fff"
-                            },
-                            "position": "insideTop",
-                            formatter: function (p) {
-                                return p.value > 0 ? (p.value) : '';
-                            }
-                        }
-                    }
-                },
-                "data": [
-                    198,
-                    330,
-                    151,
-                    160,
-                    222,
-                    229,
-                    128,
-                    250,
-                    224,
-                    473,
-                    126,
-                    260
-                ]
-            },
-
-                {
-                    "name": "文件关闭",
-                    "type": "bar",
-                    "stack": "总量",
-                    "itemStyle": {
-                        "normal": {
-                            "color": "#7030be",
-                            "barBorderRadius": 0,
-                            "label": {
-                                "show": false,
-                                "position": "top",
-                                formatter: function (p) {
-                                    return p.value > 0 ? (p.value) : '';
-                                }
-                            }
-                        }
-                    },
-                    "data": [
-                        82,
-                        67,
-                        62,
-                        59,
-                        67,
-                        67,
-                        35,
-                        71,
-                        81,
-                        78,
-                        79,
-                        72
-                    ]
-                },
-
-                {
-                    "name": "文件创建",
-                    "type": "bar",
-                    "stack": "总量",
-                    "barMaxWidth": 35,
-                    "barGap": "10%",
-                    "itemStyle": {
-                        "normal": {
-                            "color": "#0096fb",
-                            "label": {
-                                "show": false,
-                                "textStyle": {
-                                    "color": "#fff"
-                                },
-                                "position": "insideTop",
-                                formatter: function (p) {
-                                    return p.value > 0 ? (p.value) : '';
-                                }
-                            }
-                        }
-                    },
-                    "data": [
-                        198,
-                        330,
-                        151,
-                        160,
-                        222,
-                        229,
-                        128,
-                        250,
-                        224,
-                        473,
-                        126,
-                        260
-                    ]
-                },
-
-                {
-                    "name": "读文件",
-                    "type": "bar",
-                    "stack": "总量",
-                    "itemStyle": {
-                        "normal": {
-                            "color": "#c8df00",
-                            "barBorderRadius": 0,
-                            "label": {
-                                "show": false,
-                                "position": "top",
-                                formatter: function (p) {
-                                    return p.value > 0 ? (p.value) : '';
-                                }
-                            }
-                        }
-                    },
-                    "data": [
-                        82,
-                        67,
-                        62,
-                        59,
-                        67,
-                        67,
-                        35,
-                        71,
-                        81,
-                        78,
-                        79,
-                        72
-                    ]
-                },
-
-                {
-                    "name": "写文件",
-                    "type": "bar",
-                    "stack": "总量",
-                    "itemStyle": {
-                        "normal": {
-                            "color": "#f8aa27",
-                            "barBorderRadius": 0,
-                            "label": {
-                                "show": false,
-                                "position": "top",
-                                formatter: function (p) {
-                                    return p.value > 0 ? (p.value) : '';
-                                }
-                            }
-                        }
-                    },
-                    "data": [
-                        82,
-                        67,
-                        62,
-                        59,
-                        67,
-                        67,
-                        35,
-                        71,
-                        81,
-                        78,
-                        79,
-                        72
-                    ]
-                },
-
-                {
-                    "name": "删除文件",
-                    "type": "bar",
-                    "stack": "总量",
-                    "itemStyle": {
-                        "normal": {
-                            "color": "#795548",
-                            "barBorderRadius": 0,
-                            "label": {
-                                "show": false,
-                                "position": "top",
-                                formatter: function (p) {
-                                    return p.value > 0 ? (p.value) : '';
-                                }
-                            }
-                        }
-                    },
-                    "data": [
-                        82,
-                        67,
-                        62,
-                        59,
-                        67,
-                        67,
-                        35,
-                        71,
-                        81,
-                        78,
-                        79,
-                        72
-                    ]
-                }
-            ]
+        $scope.chartChange = function(type) {
+            $scope.chartType = type;
+            clearInterval(fileInterval);
+            loopFile();
+            fileInterval = setInterval(loopFile, 60000)
         };
 
-        myChart.setOption(option);
-    };
-
-    fileDraw("今天");
-
-    $('#file-timerange').daterangepicker({
-        "showCustomRangeLabel": false,
-        "autoApply": true,
-        "ranges": {
-            "今天": [moment().startOf('day'), moment()],
-            //            "昨天": [moment().subtract('days', 1).startOf('day'), moment().subtract('days', 1).endOf('day')],
-            //            "过去7天": [moment().subtract('days', 6), moment()],
-            "本周": [moment().startOf('week'), moment()],
-            //            "过去30天": [moment().subtract('days', 29), moment()],
-            "本月": [moment().startOf('month'), moment()]
-        },
-        "locale": {
-            "format": "YYYY/MM/DD HH:mm"
+        $scope.groupChange = {
+            'onSelectionChanged': function () { // This event is not firing on selection of max limit
+                clearInterval(fileInterval);
+                loopFile();
+                fileInterval = setInterval(loopFile, 60000)
+            }
         }
-    }, function (start, end, label) {
-        var startTime = start / 1000;
-        var endTime = Math.floor(end / 60000) * 60;
-        $("#file-time-selected").html(timeStamp2String(startTime, "yyyy-MM-dd hh:mm") + ' 至 ' + timeStamp2String(endTime, "yyyy-MM-dd hh:mm"));
+    }
 
-        fileDraw(label);
-    });
+//    var fileDraw = function (label) {
+//        var dom = document.getElementById("file-chart");
+//        var myChart = echarts.init(dom);
+//        var xData = getData(label);
+//
+//        var option = {
+//            backgroundColor: "#ffffff",
+//            "tooltip": {
+//                "trigger": "axis",
+//                "axisPointer": {
+//                    "type": "shadow",
+//                    textStyle: {
+//                        color: "#fff"
+//                    }
+//                }
+//            },
+//            "grid": {
+//                "borderWidth": 0,
+//                "top": 40,
+//                "bottom": 50,
+//                textStyle: {
+//                    color: "#fff"
+//                }
+//            },
+//            "legend": {
+//                x: '4%',
+//                top: '92%',
+//                textStyle: {
+//                    color: '#363b4e'
+//                },
+//                "data": ['文件打开', '文件关闭', '文件创建', '读文件', '写文件', '删除文件']
+//            },
+//
+//
+//            "calculable": true,
+//            "xAxis": [{
+//                "type": "category",
+//                "axisLine": {
+//                    lineStyle: {
+//                        color: '#363b4e'
+//                    }
+//                },
+//                "splitLine": {
+//                    "show": false
+//                },
+//                "axisTick": {
+//                    "show": false
+//                },
+//                "splitArea": {
+//                    "show": false
+//                },
+//                "axisLabel": {
+//                    "interval": "auto"
+//
+//                },
+//                "data": xData
+//            }],
+//            "yAxis": [{
+//                "type": "value",
+//                "splitLine": {
+//                    "show": false
+//                },
+//                "axisLine": {
+//                    lineStyle: {
+//                        color: '#363b4e'
+//                    }
+//                },
+//                "axisTick": {
+//                    "show": false
+//                },
+//                "axisLabel": {
+//                    "interval": "auto"
+//                },
+//                "splitArea": {
+//                    "show": false
+//                }
+//
+//            }],
+//            // "dataZoom": [{
+//            //     "show": true,
+//            //     "height": 30,
+//            //     "xAxisIndex": [
+//            //         0
+//            //     ],
+//            //     bottom: 30,
+//            //     "start": 10,
+//            //     "end": 80,
+//            //     handleIcon: 'path://M306.1,413c0,2.2-1.8,4-4,4h-59.8c-2.2,0-4-1.8-4-4V200.8c0-2.2,1.8-4,4-4h59.8c2.2,0,4,1.8,4,4V413z',
+//            //     handleSize: '110%',
+//            //     handleStyle:{
+//            //         color:"#d3dee5",
+//
+//            //     },
+//            //       textStyle:{
+//            //         color:"#fff"},
+//            //       borderColor:"#90979c"
+//
+//
+//            // }, {
+//            //     "type": "inside",
+//            //     "show": true,
+//            //     "height": 15,
+//            //     "start": 1,
+//            //     "end": 35
+//            // }],
+//            "series": [{
+//                "name": "文件打开",
+//                "type": "bar",
+//                "stack": "总量",
+//                "barWidth": 10,
+//                "barGap": "10%",
+//                "itemStyle": {
+//                    "normal": {
+//                        "color": "#ff2925",
+//                        "label": {
+//                            "show": false,
+//                            "textStyle": {
+//                                "color": "#fff"
+//                            },
+//                            "position": "insideTop",
+//                            formatter: function (p) {
+//                                return p.value > 0 ? (p.value) : '';
+//                            }
+//                        }
+//                    }
+//                },
+//                "data": [
+//                    198,
+//                    330,
+//                    151,
+//                    160,
+//                    222,
+//                    229,
+//                    128,
+//                    250,
+//                    224,
+//                    473,
+//                    126,
+//                    260
+//                ]
+//            },
+//
+//                {
+//                    "name": "文件关闭",
+//                    "type": "bar",
+//                    "stack": "总量",
+//                    "itemStyle": {
+//                        "normal": {
+//                            "color": "#7030be",
+//                            "barBorderRadius": 0,
+//                            "label": {
+//                                "show": false,
+//                                "position": "top",
+//                                formatter: function (p) {
+//                                    return p.value > 0 ? (p.value) : '';
+//                                }
+//                            }
+//                        }
+//                    },
+//                    "data": [
+//                        82,
+//                        67,
+//                        62,
+//                        59,
+//                        67,
+//                        67,
+//                        35,
+//                        71,
+//                        81,
+//                        78,
+//                        79,
+//                        72
+//                    ]
+//                },
+//
+//                {
+//                    "name": "文件创建",
+//                    "type": "bar",
+//                    "stack": "总量",
+//                    "barMaxWidth": 35,
+//                    "barGap": "10%",
+//                    "itemStyle": {
+//                        "normal": {
+//                            "color": "#0096fb",
+//                            "label": {
+//                                "show": false,
+//                                "textStyle": {
+//                                    "color": "#fff"
+//                                },
+//                                "position": "insideTop",
+//                                formatter: function (p) {
+//                                    return p.value > 0 ? (p.value) : '';
+//                                }
+//                            }
+//                        }
+//                    },
+//                    "data": [
+//                        198,
+//                        330,
+//                        151,
+//                        160,
+//                        222,
+//                        229,
+//                        128,
+//                        250,
+//                        224,
+//                        473,
+//                        126,
+//                        260
+//                    ]
+//                },
+//
+//                {
+//                    "name": "读文件",
+//                    "type": "bar",
+//                    "stack": "总量",
+//                    "itemStyle": {
+//                        "normal": {
+//                            "color": "#c8df00",
+//                            "barBorderRadius": 0,
+//                            "label": {
+//                                "show": false,
+//                                "position": "top",
+//                                formatter: function (p) {
+//                                    return p.value > 0 ? (p.value) : '';
+//                                }
+//                            }
+//                        }
+//                    },
+//                    "data": [
+//                        82,
+//                        67,
+//                        62,
+//                        59,
+//                        67,
+//                        67,
+//                        35,
+//                        71,
+//                        81,
+//                        78,
+//                        79,
+//                        72
+//                    ]
+//                },
+//
+//                {
+//                    "name": "写文件",
+//                    "type": "bar",
+//                    "stack": "总量",
+//                    "itemStyle": {
+//                        "normal": {
+//                            "color": "#f8aa27",
+//                            "barBorderRadius": 0,
+//                            "label": {
+//                                "show": false,
+//                                "position": "top",
+//                                formatter: function (p) {
+//                                    return p.value > 0 ? (p.value) : '';
+//                                }
+//                            }
+//                        }
+//                    },
+//                    "data": [
+//                        82,
+//                        67,
+//                        62,
+//                        59,
+//                        67,
+//                        67,
+//                        35,
+//                        71,
+//                        81,
+//                        78,
+//                        79,
+//                        72
+//                    ]
+//                },
+//
+//                {
+//                    "name": "删除文件",
+//                    "type": "bar",
+//                    "stack": "总量",
+//                    "itemStyle": {
+//                        "normal": {
+//                            "color": "#795548",
+//                            "barBorderRadius": 0,
+//                            "label": {
+//                                "show": false,
+//                                "position": "top",
+//                                formatter: function (p) {
+//                                    return p.value > 0 ? (p.value) : '';
+//                                }
+//                            }
+//                        }
+//                    },
+//                    "data": [
+//                        82,
+//                        67,
+//                        62,
+//                        59,
+//                        67,
+//                        67,
+//                        35,
+//                        71,
+//                        81,
+//                        78,
+//                        79,
+//                        72
+//                    ]
+//                }
+//            ]
+//        };
+//
+//        myChart.setOption(option);
+//    };
+//
+//    fileDraw("今天");
 
     function registryController($scope) {
         $scope.selectByGroupModel = [];
@@ -1840,282 +1945,317 @@
             uncheckAll: '取消所有选择',
             selectionCount: '被选中'
         };
-    }
+        $scope.startTime = Math.floor((moment().subtract('hours', 24).unix() / 3600) + 1) * 3600;
+        $scope.endTime = moment().unix();
+        $scope.label = "过去24小时";
+        $scope.chartType = 'bar';
 
-    var registryDraw = function (label, type) {
         var dom = document.getElementById("registry-chart");
         var myChart = echarts.init(dom);
-        var xData = getData(label);
 
-        var option = {
-            backgroundColor: "#ffffff",
-            "tooltip": {
-                "trigger": "axis",
-                "axisPointer": {
-                    "type": "shadow",
-                    textStyle: {
-                        color: "#fff"
-                    }
-                }
+        var registryInterval;
+
+        var loopRegistry = function() {
+            chartDraw($scope.label, 5, $scope.startTime, $scope.endTime, selectDevice($scope.selectByGroupModel), $scope.chartType, myChart);
+
+        };
+        loopRegistry();
+        registryInterval = setInterval(loopRegistry, 60000);
+
+        $('#registry-timerange').daterangepicker({
+            "showCustomRangeLabel": false,
+            "autoApply": true,
+            "ranges": {
+                "过去24小时": [moment().subtract('hours', 24), moment()],
+                //"昨天": [moment().subtract('days', 1).startOf('day'), moment().subtract('days', 1).endOf('day')],
+                "过去7天": [moment().subtract('days', 6), moment()],
+                //"本周": [moment().startOf('week'), moment()],
+                "过去30天": [moment().subtract('days', 29), moment()]
+                //"本月": [moment().startOf('month'), moment()]
             },
-            "grid": {
-                "borderWidth": 0,
-                "top": 40,
-                "bottom": 50,
-                textStyle: {
-                    color: "#fff"
-                }
-            },
-            "legend": {
-                x: '4%',
-                top: '92%',
-                left: '20%',
-                textStyle: {
-                    color: '#363b4e'
-                },
-                "data": ['设置键值', '读取键值', '创建键', '删除键']
-            },
+            "locale": {
+                "format": "YYYY/MM/DD HH:mm"
+            }
+        }, function (start, end, label) {
+            $scope.startTime = start / 1000;
+            $scope.endTime = Math.floor(end / 60000) * 60;
+            $("#registry-time-selected").html(timeStamp2String($scope.startTime, "yyyy-MM-dd hh:mm") + ' 至 ' + timeStamp2String($scope.endTime, "yyyy-MM-dd hh:mm"));
+            $scope.label = label;
 
+            clearInterval(registryInterval);
 
-            "calculable": true,
-            "xAxis": [{
-                "type": "category",
-                "axisLine": {
-                    lineStyle: {
-                        color: '#363b4e'
-                    }
-                },
-                "splitLine": {
-                    "show": false
-                },
-                "axisTick": {
-                    "show": false
-                },
-                "splitArea": {
-                    "show": false
-                },
-                "axisLabel": {
-                    "interval": "auto"
+            loopRegistry();
+            registryInterval = setInterval(loopRegistry, 60000)
+        });
 
-                },
-                "data": xData
-            }],
-            "yAxis": [{
-                "type": "value",
-                "splitLine": {
-                    "show": false
-                },
-                "axisLine": {
-                    lineStyle: {
-                        color: '#363b4e'
-                    }
-                },
-                "axisTick": {
-                    "show": false
-                },
-                "axisLabel": {
-                    "interval": "auto"
-                },
-                "splitArea": {
-                    "show": false
-                }
-
-            }],
-            // "dataZoom": [{
-            //     "show": true,
-            //     "height": 30,
-            //     "xAxisIndex": [
-            //         0
-            //     ],
-            //     bottom: 30,
-            //     "start": 10,
-            //     "end": 80,
-            //     handleIcon: 'path://M306.1,413c0,2.2-1.8,4-4,4h-59.8c-2.2,0-4-1.8-4-4V200.8c0-2.2,1.8-4,4-4h59.8c2.2,0,4,1.8,4,4V413z',
-            //     handleSize: '110%',
-            //     handleStyle:{
-            //         color:"#d3dee5",
-
-            //     },
-            //       textStyle:{
-            //         color:"#fff"},
-            //       borderColor:"#90979c"
-
-
-            // }, {
-            //     "type": "inside",
-            //     "show": true,
-            //     "height": 15,
-            //     "start": 1,
-            //     "end": 35
-            // }],
-            "series": [{
-                "name": "设置键值",
-                "type": type,
-                "stack": "总量1",
-                "barWidth": 10,
-                "barGap": "10%",
-                "itemStyle": {
-                    "normal": {
-                        "color": "#ff2925",
-                        "label": {
-                            "show": false,
-                            "textStyle": {
-                                "color": "#fff"
-                            },
-                            "position": "insideTop",
-                            formatter: function (p) {
-                                return p.value > 0 ? (p.value) : '';
-                            }
-                        }
-                    }
-                },
-                "data": [
-                    198,
-                    330,
-                    151,
-                    160,
-                    222,
-                    229,
-                    128,
-                    250,
-                    224,
-                    473,
-                    126,
-                    260
-                ]
-            },
-
-                {
-                    "name": "读取键值",
-                    "type": type,
-                    "stack": "总量2",
-                    "itemStyle": {
-                        "normal": {
-                            "color": "#7030be",
-                            "barBorderRadius": 0,
-                            "label": {
-                                "show": false,
-                                "position": "top",
-                                formatter: function (p) {
-                                    return p.value > 0 ? (p.value) : '';
-                                }
-                            }
-                        }
-                    },
-                    "data": [
-                        82,
-                        67,
-                        62,
-                        59,
-                        67,
-                        67,
-                        35,
-                        71,
-                        81,
-                        78,
-                        79,
-                        72
-                    ]
-                },
-
-                {
-                    "name": "创建键",
-                    "type": type,
-                    "stack": "总量3",
-                    "barMaxWidth": 35,
-                    "barGap": "10%",
-                    "itemStyle": {
-                        "normal": {
-                            "color": "#0096fb",
-                            "label": {
-                                "show": false,
-                                "textStyle": {
-                                    "color": "#fff"
-                                },
-                                "position": "insideTop",
-                                formatter: function (p) {
-                                    return p.value > 0 ? (p.value) : '';
-                                }
-                            }
-                        }
-                    },
-                    "data": [
-                        198,
-                        330,
-                        151,
-                        160,
-                        222,
-                        229,
-                        128,
-                        250,
-                        224,
-                        473,
-                        126,
-                        260
-                    ]
-                },
-
-                {
-                    "name": "删除键",
-                    "type": type,
-                    "stack": "总量4",
-                    "itemStyle": {
-                        "normal": {
-                            "color": "#c8df00",
-                            "barBorderRadius": 0,
-                            "label": {
-                                "show": false,
-                                "position": "top",
-                                formatter: function (p) {
-                                    return p.value > 0 ? (p.value) : '';
-                                }
-                            }
-                        }
-                    },
-                    "data": [
-                        82,
-                        67,
-                        62,
-                        59,
-                        67,
-                        67,
-                        35,
-                        71,
-                        81,
-                        78,
-                        79,
-                        72
-                    ]
-                }
-            ]
+        $scope.chartChange = function(type) {
+            $scope.chartType = type;
+            clearInterval(registryInterval);
+            loopRegistry();
+            registryInterval = setInterval(loopRegistry, 60000)
         };
 
-            myChart.setOption(option);
-    };
-
-    registryDraw("今天", "line");
-
-    $('#registry-timerange').daterangepicker({
-        "showCustomRangeLabel": false,
-        "autoApply": true,
-        "ranges": {
-            "今天": [moment().startOf('day'), moment()],
-            //            "昨天": [moment().subtract('days', 1).startOf('day'), moment().subtract('days', 1).endOf('day')],
-            //            "过去7天": [moment().subtract('days', 6), moment()],
-            "本周": [moment().startOf('week'), moment()],
-            //            "过去30天": [moment().subtract('days', 29), moment()],
-            "本月": [moment().startOf('month'), moment()]
-        },
-        "locale": {
-            "format": "YYYY/MM/DD HH:mm"
+        $scope.groupChange = {
+            'onSelectionChanged': function () { // This event is not firing on selection of max limit
+                clearInterval(registryInterval);
+                loopRegistry();
+                registryInterval = setInterval(loopRegistry, 60000)
+            }
         }
-    }, function (start, end, label) {
-        var startTime = start / 1000;
-        var endTime = Math.floor(end / 60000) * 60;
-        $("#registry-time-selected").html(timeStamp2String(startTime, "yyyy-MM-dd hh:mm") + ' 至 ' + timeStamp2String(endTime, "yyyy-MM-dd hh:mm"));
+    }
 
-        registryDraw(label);
-    });
+//    var registryDraw = function (label, type) {
+//        var dom = document.getElementById("registry-chart");
+//        var myChart = echarts.init(dom);
+//        var xData = getData(label);
+//
+//        var option = {
+//            backgroundColor: "#ffffff",
+//            "tooltip": {
+//                "trigger": "axis",
+//                "axisPointer": {
+//                    "type": "shadow",
+//                    textStyle: {
+//                        color: "#fff"
+//                    }
+//                }
+//            },
+//            "grid": {
+//                "borderWidth": 0,
+//                "top": 40,
+//                "bottom": 50,
+//                textStyle: {
+//                    color: "#fff"
+//                }
+//            },
+//            "legend": {
+//                x: '4%',
+//                top: '92%',
+//                left: '20%',
+//                textStyle: {
+//                    color: '#363b4e'
+//                },
+//                "data": ['设置键值', '读取键值', '创建键', '删除键']
+//            },
+//
+//
+//            "calculable": true,
+//            "xAxis": [{
+//                "type": "category",
+//                "axisLine": {
+//                    lineStyle: {
+//                        color: '#363b4e'
+//                    }
+//                },
+//                "splitLine": {
+//                    "show": false
+//                },
+//                "axisTick": {
+//                    "show": false
+//                },
+//                "splitArea": {
+//                    "show": false
+//                },
+//                "axisLabel": {
+//                    "interval": "auto"
+//
+//                },
+//                "data": xData
+//            }],
+//            "yAxis": [{
+//                "type": "value",
+//                "splitLine": {
+//                    "show": false
+//                },
+//                "axisLine": {
+//                    lineStyle: {
+//                        color: '#363b4e'
+//                    }
+//                },
+//                "axisTick": {
+//                    "show": false
+//                },
+//                "axisLabel": {
+//                    "interval": "auto"
+//                },
+//                "splitArea": {
+//                    "show": false
+//                }
+//
+//            }],
+//            // "dataZoom": [{
+//            //     "show": true,
+//            //     "height": 30,
+//            //     "xAxisIndex": [
+//            //         0
+//            //     ],
+//            //     bottom: 30,
+//            //     "start": 10,
+//            //     "end": 80,
+//            //     handleIcon: 'path://M306.1,413c0,2.2-1.8,4-4,4h-59.8c-2.2,0-4-1.8-4-4V200.8c0-2.2,1.8-4,4-4h59.8c2.2,0,4,1.8,4,4V413z',
+//            //     handleSize: '110%',
+//            //     handleStyle:{
+//            //         color:"#d3dee5",
+//
+//            //     },
+//            //       textStyle:{
+//            //         color:"#fff"},
+//            //       borderColor:"#90979c"
+//
+//
+//            // }, {
+//            //     "type": "inside",
+//            //     "show": true,
+//            //     "height": 15,
+//            //     "start": 1,
+//            //     "end": 35
+//            // }],
+//            "series": [{
+//                "name": "设置键值",
+//                "type": type,
+//                "stack": "总量1",
+//                "barWidth": 10,
+//                "barGap": "10%",
+//                "itemStyle": {
+//                    "normal": {
+//                        "color": "#ff2925",
+//                        "label": {
+//                            "show": false,
+//                            "textStyle": {
+//                                "color": "#fff"
+//                            },
+//                            "position": "insideTop",
+//                            formatter: function (p) {
+//                                return p.value > 0 ? (p.value) : '';
+//                            }
+//                        }
+//                    }
+//                },
+//                "data": [
+//                    198,
+//                    330,
+//                    151,
+//                    160,
+//                    222,
+//                    229,
+//                    128,
+//                    250,
+//                    224,
+//                    473,
+//                    126,
+//                    260
+//                ]
+//            },
+//
+//                {
+//                    "name": "读取键值",
+//                    "type": type,
+//                    "stack": "总量2",
+//                    "itemStyle": {
+//                        "normal": {
+//                            "color": "#7030be",
+//                            "barBorderRadius": 0,
+//                            "label": {
+//                                "show": false,
+//                                "position": "top",
+//                                formatter: function (p) {
+//                                    return p.value > 0 ? (p.value) : '';
+//                                }
+//                            }
+//                        }
+//                    },
+//                    "data": [
+//                        82,
+//                        67,
+//                        62,
+//                        59,
+//                        67,
+//                        67,
+//                        35,
+//                        71,
+//                        81,
+//                        78,
+//                        79,
+//                        72
+//                    ]
+//                },
+//
+//                {
+//                    "name": "创建键",
+//                    "type": type,
+//                    "stack": "总量3",
+//                    "barMaxWidth": 35,
+//                    "barGap": "10%",
+//                    "itemStyle": {
+//                        "normal": {
+//                            "color": "#0096fb",
+//                            "label": {
+//                                "show": false,
+//                                "textStyle": {
+//                                    "color": "#fff"
+//                                },
+//                                "position": "insideTop",
+//                                formatter: function (p) {
+//                                    return p.value > 0 ? (p.value) : '';
+//                                }
+//                            }
+//                        }
+//                    },
+//                    "data": [
+//                        198,
+//                        330,
+//                        151,
+//                        160,
+//                        222,
+//                        229,
+//                        128,
+//                        250,
+//                        224,
+//                        473,
+//                        126,
+//                        260
+//                    ]
+//                },
+//
+//                {
+//                    "name": "删除键",
+//                    "type": type,
+//                    "stack": "总量4",
+//                    "itemStyle": {
+//                        "normal": {
+//                            "color": "#c8df00",
+//                            "barBorderRadius": 0,
+//                            "label": {
+//                                "show": false,
+//                                "position": "top",
+//                                formatter: function (p) {
+//                                    return p.value > 0 ? (p.value) : '';
+//                                }
+//                            }
+//                        }
+//                    },
+//                    "data": [
+//                        82,
+//                        67,
+//                        62,
+//                        59,
+//                        67,
+//                        67,
+//                        35,
+//                        71,
+//                        81,
+//                        78,
+//                        79,
+//                        72
+//                    ]
+//                }
+//            ]
+//        };
+//
+//            myChart.setOption(option);
+//    };
+//
+//    registryDraw("今天", "line");
 
 </script>
 <!-- END MAIN CONTENT -->
