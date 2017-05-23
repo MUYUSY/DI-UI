@@ -5503,7 +5503,15 @@ li [class*=" fa-"].icon-large, li [class*=" glyphicon-"].icon-large, li [class*=
 }
 
 .checkbox, .form-horizontal .checkbox {
-    padding: 0
+    padding: 0;
+    margin-top: 0 !important;
+    margin-bottom: 0 !important;
+    margin-left: 10px;
+}
+
+.group-title > label{
+    font-size: 16px;
+    font-weight: 800;
 }
 
 .checkbox-list > label {
