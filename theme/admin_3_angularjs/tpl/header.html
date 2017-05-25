@@ -1,11 +1,11 @@
 <!-- BEGIN HEADER MENU -->
-<div class="page-header-menu">
-    <div class="container">
-        <div class="user-info">
-            <span class="divider"></span>
-            <span class="menu-dropdown mega-menu-dropdown">
+<div class="no-radius page-header-menu">
+    <div class="no-radius container">
+        <div class="no-radius user-info">
+            <span class="no-radius divider"></span>
+            <span class="no-radius menu-dropdown mega-menu-dropdown">
                 <a data-hover="megamenu-dropdown" data-close-others="true" data-toggle="dropdown" href="#"
-                   class="dropdown-toggle u-user-text"> admin <span class="caret"></span></a>
+                   class="no-radius dropdown-toggle u-user-text"> admin <span class="caret"></span></a>
                 <span class="dropdown-menu">
                     <span ng-click="$root.redirectToLoginPage()" class="mega-menu-submenu">
                         <a href="/logout">注销</a></span>
@@ -15,69 +15,85 @@
         <!-- BEGIN MEGA MENU -->
         <!-- DOC: Apply "hor-menu-light" class after the "hor-menu" class below to have a horizontal menu with white background -->
         <!-- DOC: Remove dropdown-menu-hover and data-close-others="true" attributes below to disable the dropdown opening on mouse hover -->
-        <div class="hor-menu">
-            <ul class="nav navbar-nav">
-                <li class="header-logo">
+        <div class="no-radius hor-menu">
+            <ul class="no-radius nav navbar-nav">
+                <li class="no-radius header-logo">
                     <img src="./icon/logo_title.png">
                 </li>
-                <li class="dashboard">
+                <li class="no-radius dashboard">
                     <a href="#/dashboard">仪表盘</a>
                 </li>
-                <li class="menu-dropdown classic-menu-dropdown">
+                <li class="no-radius menu-dropdown classic-menu-dropdown">
                     <a data-hover="megamenu-dropdown" data-close-others="true" data-toggle="modal" href="#"
-                       class="dropdown-toggle">调查取证<span class="caret"></span>
+                       class="no-radius dropdown-toggle">调查取证<span class="caret"></span>
                     </a>
-                    <ul class="dropdown-menu pull-left">
+                    <ul class="no-radius dropdown-menu pull-left">
                         <li>
-                            <a href="#/new_investigation" class="iconify">新建调查</a>
+                            <a href="#/new_investigation" class="no-radius iconify">新建调查</a>
                         </li>
                         <li>
-                            <a href="#/investigation_record" class="iconify">调查记录</a>
+                            <a href="#/investigation_record" class="no-radius iconify">调查记录</a>
                         </li>
                     </ul>
                 </li>
-                <li class="menu-dropdown classic-menu-dropdown">
+                <li class="no-radius menu-dropdown classic-menu-dropdown">
                     <a href="#/endpoint_management">探针管理</a>
                 </li>
-                <li class="menu-dropdown classic-menu-dropdown">
+                <li class="no-radius menu-dropdown classic-menu-dropdown">
                     <a data-hover="megamenu-dropdown" data-close-others="true" data-toggle="modal" href="#"
-                       class="dropdown-toggle">数据管理<span class="caret"></span>
+                       class="no-radius dropdown-toggle">数据管理<span class="caret"></span>
                     </a>
-                    <ul class="dropdown-menu pull-left">
+                    <ul class="no-radius dropdown-menu pull-left">
                         <li>
-                            <a href="#/back_up" class="iconify">备份</a>
+                            <a href="#/back_up" class="no-radius iconify">备份</a>
                         </li>
                         <li>
-                            <a href="#/storage_maintainance" class="iconify">存储维护</a>
+                            <a href="#/storage_maintainance" class="no-radius iconify">存储维护</a>
                         </li>
                     </ul>
                 </li>
-                <li class="menu-dropdown classic-menu-dropdown ">
+                <li class="no-radius menu-dropdown classic-menu-dropdown ">
                     <a data-hover="megamenu-dropdown" data-close-others="true" data-toggle="dropdown"
-                       href="javascript:;">管理
+                       href="javascript:;" class="no-radius">管理
                         <span class="caret"></span>
                     </a>
-                    <ul class="dropdown-menu pull-left">
+                    <ul class="no-radius dropdown-menu pull-left">
                         <li>
-                            <a href="#/profile/dashboard"> 账户 </a>
+                            <a href="#/profile/dashboard" class="no-radius"> 账户 </a>
                         </li>
                         <li>
-                            <a href="#/todo"> 系统日志 </a>
+                            <a href="#/todo" class="no-radius"> 系统日志 </a>
                         </li>
                         <li>
-                            <a href="javascript:;"> 系统维护 </a>
+                            <a href="javascript:;" class="no-radius"> 系统维护 </a>
                         </li>
                         <li>
-                            <a href="javascript:;"> 关于 </a>
+                            <a href="javascript:;" class="no-radius"> 关于 </a>
                         </li>
                         <li>
-                            <a href="javascript:;"> 使用授权 </a>
+                            <a href="javascript:;" class="no-radius"> 使用授权 </a>
                         </li>
                     </ul>
                 </li>
             </ul>
         </div>
         <!-- END MEGA MENU -->
+        <div class="no-radius alert alert-info display-hide margin-top-50">
+            <span class="alert-message"> alert-info </span>
+            <button class="close pull-right margin-top-5 margin-bottom-10 margin-right-10" data-close="alert"></button>
+        </div>
+        <div class="no-radius alert alert-danger display-hide margin-top-50">
+            <span class="alert-message"> alert-danger </span>
+            <button class="close pull-right margin-top-5 margin-bottom-10 margin-right-10" data-close="alert"></button>
+        </div>
+        <div class="no-radius alert alert-success display-hide margin-top-50">
+            <span class="alert-message"> alert-success </span>
+            <button class="close pull-right margin-top-5 margin-bottom-10 margin-right-10" data-close="alert"></button>
+        </div>
+        <div class="no-radius alert alert-warning display-hide margin-top-50">
+            <span class="alert-message"> alert-warning </span>
+            <button class="close pull-right margin-top-5 margin-bottom-10 margin-right-10" data-close="alert"></button>
+        </div>
     </div>
 </div>
 

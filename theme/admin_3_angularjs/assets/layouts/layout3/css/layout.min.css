@@ -511,7 +511,7 @@
 
 .page-header .page-header-menu {
     display: block;
-    height: 65px;
+    height: 51px;
     clear: both
 }
 
@@ -915,7 +915,7 @@
 
 .page-content {
     background: #ffffff;
-    padding: 15px 0;
+    /*padding: 15px 0;*/
     min-height: 830px;
 }
 
@@ -1179,7 +1179,7 @@
     float: right
 }
 
-@media (max-width: 767px) {
+@media (max-width: z) {
     .theme-panel {
         left: 20px;
         right: 20px;

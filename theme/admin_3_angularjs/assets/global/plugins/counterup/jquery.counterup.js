@@ -24,15 +24,18 @@
         var $settings = settings;
 
         var counterUpper = function() {
+            var nums = [];
             var divisions = $settings.time / $settings.delay;
-            var num = $this.attr('data-value');
-            var nums = [num];
+            var num = $settings.value;
             var isComma = /[0-9]+,[0-9]+/.test(num);
-            num = num.replace(/,/g, '');
+            // num = num.replace(/,/g, '');
             var isInt = /^[0-9]+$/.test(num);
             var isFloat = /^[0-9]+\.[0-9]+$/.test(num);
             var decimalPlaces = isFloat ? (num.split('.')[1] || []).length : 0;
 
+            if (num >= 1000000) {
+                num = Math.floor(num / 10000)
+            }
             // Generate list of incremental numbers to display
             for (var i = divisions; i >= 1; i--) {
 
@@ -57,21 +60,47 @@
             $this.data('counterup-nums', nums);
             $this.text('0');
 
-            // Updates the number until we're done
-            var f = function() {
-                $this.text($this.data('counterup-nums').shift());
-                if ($this.data('counterup-nums').length) {
-                    setTimeout($this.data('counterup-func'), $settings.delay);
-                } else {
-                    delete $this.data('counterup-nums');
-                    $this.data('counterup-nums', null);
-                    $this.data('counterup-func', null);
-                }
-            };
-            $this.data('counterup-func', f);
 
-            // Start the count up
-            setTimeout($this.data('counterup-func'), $settings.delay);
+            if (settings.value < 10000000) {
+                // Updates the number until we're done
+                var f = function() {
+                    if (settings.needAdd)
+                        $this.text("+" + $this.data('counterup-nums').shift());
+                    else
+                        $this.text($this.data('counterup-nums').shift());
+                    if ($this.data('counterup-nums').length) {
+                        setTimeout($this.data('counterup-func'), $settings.delay);
+                    } else {
+                        delete $this.data('counterup-nums');
+                        $this.data('counterup-nums', null);
+                        $this.data('counterup-func', null);
+                    }
+                };
+                $this.data('counterup-func', f);
+
+                // Start the count up
+                setTimeout($this.data('counterup-func'), $settings.delay);
+            } else {
+                // Updates the number until we're done
+                var f = function() {
+                    if (settings.needAdd)
+                        $this.text("+" + $this.data('counterup-nums').shift() + "万");
+                    else
+                        $this.text($this.data('counterup-nums').shift() + "万");
+                    if ($this.data('counterup-nums').length) {
+                        setTimeout($this.data('counterup-func'), $settings.delay);
+                    } else {
+                        delete $this.data('counterup-nums');
+                        $this.data('counterup-nums', null);
+                        $this.data('counterup-func', null);
+                    }
+                };
+                $this.data('counterup-func', f);
+
+                // Start the count up
+                setTimeout($this.data('counterup-func'), $settings.delay);
+            }
+
         };
 
         // Perform counts when the element gets into view

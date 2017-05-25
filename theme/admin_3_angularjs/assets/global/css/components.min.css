@@ -17,7 +17,11 @@ body, h1, h2, h3, h4, h5, h6 {
 a, button, code, div, img, input, label, li, p, pre, select, span, svg, table, td, textarea, th, ul {
     -webkit-border-radius: 0 !important;
     -moz-border-radius: 0 !important;
-    /*border-radius: 4px !important*/
+    border-radius: 4px !important
+}
+
+.no-radius {
+    border-radius: 0px !important
 }
 
 .img-circle {
@@ -1187,6 +1191,14 @@ code {
     margin-bottom: 10px !important
 }
 
+.margin-top-5 {
+    margin-top: 5px !important
+}
+
+.margin-top-50 {
+    margin-top: 51px !important
+}
+
 .margin-top-10 {
     margin-top: 10px !important
 }
@@ -1229,6 +1241,10 @@ code {
 
 .margin-right-10 {
     margin-right: 10px !important
+}
+
+.margin-right-70 {
+    margin-right: 70px !important
 }
 
 .visible-ie8 {
@@ -4898,12 +4914,15 @@ li [class*=" fa-"].icon-large, li [class*=" glyphicon-"].icon-large, li [class*=
     transition: all .3s
 }
 
+.alert-message {
+    font-size: 14px;
+    /*margin-left: 70px;*/
+}
+
 .close {
     display: inline-block;
-    margin-top: 12px;
-    margin-right: 0;
-    width: 9px;
-    height: 9px;
+    width: 12px;
+    height: 12px;
     background-repeat: no-repeat !important;
     text-indent: -10000px;
     outline: 0;
@@ -7276,7 +7295,7 @@ body[ng-controller] .modal {
 }
 
 .portlet {
-    margin-top: 10px;
+    /*margin-top: 10px;*/
     margin-bottom: 25px;
     padding: 0;
     border-radius: 4px
@@ -7622,7 +7641,7 @@ body[ng-controller] .modal {
 }
 
 .portlet.light {
-    padding: 12px 20px 15px;
+    /*padding: 12px 20px 15px;*/
     background-color: #fff
 }
 
@@ -11319,11 +11338,6 @@ body[ng-controller] .modal {
 
 .progress-bar.dark {
     background: #2f353b !important;
-    color: #FFF !important
-}
-
-.progress-bar.blue {
-    background: #3598dc !important;
     color: #FFF !important
 }
 

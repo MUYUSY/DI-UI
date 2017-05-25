@@ -167,6 +167,8 @@ MetronicApp.config(['$stateProvider', '$urlRouterProvider', function($stateProvi
                             './assets/global/plugins/morris/morris.css',
                             './assets/pages/css/dashboard.css',
                             './assets/global/plugins/bootstrap-daterangepicker/daterangepicker.css',
+                            './assets/global/plugins/counterup/jquery.counterup.js',
+                            './assets/global/plugins/counterup/jquery.waypoints.min.js',
                             './assets/global/plugins/echarts-all.js',
                             './assets/global/plugins/morris/morris.min.js',
                             './assets/global/plugins/morris/raphael-min.js',
@@ -265,6 +267,7 @@ MetronicApp.config(['$stateProvider', '$urlRouterProvider', function($stateProvi
                             './assets/global/plugins/bootstrap-select/css/bootstrap-select.min.css',
                             './assets/global/plugins/select2/css/select2.min.css',
                             './assets/global/plugins/select2/css/select2-bootstrap.min.css',
+                            './assets/pages/css/process-bar.css',
 
                             './assets/global/plugins/clockface/js/clockface.js',
                             './assets/global/plugins/bootstrap-select/js/bootstrap-select.min.js',
@@ -618,3 +621,13 @@ MetronicApp.run(["$rootScope", "settings", "$state", function($rootScope, settin
     $rootScope.$state = $state; // state to be accessed from view
     $rootScope.$settings = settings; // state to be accessed from view
 }]);
+
+var DIalert = function (type, message) {
+    $('.alert-message', $('.alert-' + type)).html(message);
+    $('.alert-' + type).show();
+    var alertClose = function() {
+        $('.alert-' + type).hide();
+    };
+    setTimeout(alertClose, 10000)
+
+};

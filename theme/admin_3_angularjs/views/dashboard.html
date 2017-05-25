@@ -12,7 +12,7 @@
                         <i class="fa"></i>
                     </div>
                     <div class="details">
-                        <div class="number"> {{totalCount}} </div>
+                        <div class="number counter-totalCount">  </div>
                         <div class="desc"> 总数据量</div>
                     </div>
                 </div>
@@ -21,7 +21,7 @@
                         <i class="fa"></i>
                     </div>
                     <div class="details">
-                        <div class="number"> +{{monthCount}} </div>
+                        <div class="number counter-monthCount">  </div>
                         <div class="desc"> 近一月增加</div>
                     </div>
                 </div>
@@ -30,7 +30,7 @@
                         <i class="fa"></i>
                     </div>
                     <div class="details">
-                        <div class="number"> +{{weekCount}} </div>
+                        <div class="number counter-weekCount"> </div>
                         <div class="desc"> 近一周增加</div>
                     </div>
                 </div>
@@ -41,16 +41,17 @@
                         <i class="fa"></i>
                     </div>
                     <div class="details">
-                        <div class="number">{{totalDevice}}</div>
+                        <div class="number counter-totalDevice"> </div>
                         <div class="desc"> 总探针设备</div>
                     </div>
+
                 </div>
                 <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4 dashboard-stat white">
                     <div class="visual">
                         <i class="fa"></i>
                     </div>
                     <div class="details">
-                        <div class="number">{{onlineDevice}}</div>
+                        <div class="number counter-onlineDevice"></div>
                         <div class="desc"> 在线探针设备</div>
                     </div>
                 </div>
@@ -59,7 +60,7 @@
                         <i class="fa"></i>
                     </div>
                     <div class="details">
-                        <div class="number">+{{weeklyAddDevice}}</div>
+                        <div class="number counter-weeklyAddDevice"></div>
                         <div class="desc"> 近一周增加</div>
                     </div>
                 </div>
@@ -569,7 +570,7 @@
         queryDashboard(label, eventType, beginTime, endTime, device, chartType, myChart)
     };
 
-    function statsController($scope) {
+    function statsController() {
         var device_num;
         $.ajax({
             async: false,
@@ -590,21 +591,49 @@
                 dashboard_sum = data
             }
         });
-        $scope.totalDevice = device_num.totalnum;
-        $scope.onlineDevice = device_num.onlinenum;
-        $scope.weeklyAddDevice = device_num.weeknum;
-        var formatCount = function(count) {
-            if (count < 10000) {
-                return count
-            }
-            else {
-                return Math.floor(count / 10000) + "万"
-            }
-        };
-        $scope.totalCount = formatCount(dashboard_sum["total"]);
-        $scope.monthCount = formatCount(dashboard_sum["30D"]);
-        $scope.weekCount = formatCount(dashboard_sum["7D"]);
+
+        $('.counter-totalDevice').counterUp({
+            delay: 10,
+            time: 100,
+            value: device_num.totalnum
+        });
+
+        $('.counter-onlineDevice').counterUp({
+            delay: 10,
+            time: 100,
+            value: device_num.onlinenum
+        });
+
+        $('.counter-weeklyAddDevice').counterUp({
+            delay: 10,
+            time: 100,
+            value: device_num.weeknum,
+            needAdd: 1
+        });
+
+        $('.counter-totalCount').counterUp({
+            delay: 10,
+            time: 400,
+            value: dashboard_sum["total"]
+        });
+
+        $('.counter-monthCount').counterUp({
+            delay: 10,
+            time: 400,
+            value: dashboard_sum["30D"],
+            needAdd: 1
+        });
+
+        $('.counter-weekCount').counterUp({
+            delay: 10,
+            time: 400,
+            value: dashboard_sum["7D"],
+            needAdd: 1
+        });
+
     }
+
+    setInterval(statsController, 60000);
 
     var getLabel = function(label) {
         if (label === "过去24小时") {
@@ -2315,6 +2344,8 @@
 //    };
 //
 //    registryDraw("今天", "line");
+
+
 
 </script>
 <!-- END MAIN CONTENT -->
