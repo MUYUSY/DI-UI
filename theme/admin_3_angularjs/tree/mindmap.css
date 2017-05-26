@@ -1,40 +1,144 @@
 
-
-	.node {
+.node {
     cursor: pointer;
-  }
+}
 
-  .overlay{
-      background-color:#EEE;
-  }
+.overlay {
+    background-color: #FFFF;
+}
 
-  .node circle {
+.node circle {
     fill: #fff;
     stroke: steelblue;
     stroke-width: 1.5px;
-  }
+}
 
-  .node text {
-    font-size:10px;
-    font-family:sans-serif;
-  }
+.node text {
+    font-size: 10px;
+    font-family: sans-serif;
+}
 
-  .link {
+.link {
     fill: none;
     stroke: #ccc;
     stroke-width: 1.5px;
-  }
+}
 
-  .templink {
+.templink {
     fill: none;
     stroke: red;
     stroke-width: 3px;
-  }
+}
 
-  .ghostCircle.show{
-      display:block;
-  }
+.ghostCircle.show {
+    display: block;
+}
 
-  .ghostCircle, .activeDrag .ghostCircle{
-       display: none;
-  }
+.ghostCircle, .activeDrag .ghostCircle {
+    display: none;
+}
+
+.zoomarea {
+    display: block;
+    float: left;
+    position: fixed;
+    bottom: 20px;
+    width: 10px;
+    margin-left: 30px;
+}
+
+.zoomarea a {
+    color: #180d0d;
+}
+
+.searchField {
+    width: 192px;
+    float: right;
+    height: 35px;
+    border-color: #CCCCCC;
+    border-radius: 4px;
+    background: url(/icon/search2.png) no-repeat scroll 170px 10px;
+    padding-right:30px;
+}
+
+.searchField::placeholder {
+    color: #BBBBBB;
+    font-size: 14px;
+}
+
+.buttonarea {
+    margin-bottom: 10px;
+}
+
+.table-mindmap-popover tbody tr td:nth-child(1) {
+    width: 18%;
+    color: #222222;
+}
+
+.table-mindmap-popover tbody tr td:nth-child(2) {
+    color: #666666;
+}
+
+.table-mindmap-popover tbody tr td {
+    font-size: 12px;
+    padding: 4px;
+
+}
+
+#rulename {
+    width: 100px;
+    display: none;
+}
+
+#confirm {
+    width: 80px;
+    border: 1px solid #cccccc;
+    display: none;
+}
+
+#cancel {
+    display: none;
+}
+
+#plus img {
+    z-index: 1;
+    position: absolute;
+    bottom: 60px;
+    left: 34px
+}
+
+#minus img {
+    z-index: 1;
+    position: absolute;
+    bottom: 40px;
+    left: 34px
+}
+
+.table > tbody > tr > td {
+    border: none;
+    height: 75%;
+}
+
+.table > tbody > tr {
+
+}
+
+.di-table {
+    height: 51px;
+    font-weight: 500;
+    background: #f6f6f6;
+    padding-top: 15px;
+}
+
+.discription {
+    font-size: 12px;
+    color: #666666;
+    font-weight: lighter;
+}
+
+
+
+
+
+
+

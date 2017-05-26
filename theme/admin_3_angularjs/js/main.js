@@ -325,6 +325,7 @@ MetronicApp.config(['$stateProvider', '$urlRouterProvider', function($stateProvi
                         files: [
                             'tree/d3.v3.js',
                             'tree/dndTree.js',
+                            'tree/FileSaver.js',
                             'js/controllers/EventTreeController.js',
                             'tree/mindmap.css'
 

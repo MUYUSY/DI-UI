@@ -6,7 +6,7 @@ var Login = function () {
 	            errorClass: 'help-block', // default input error message class
 	            focusInvalid: false, // do not focus the last invalid input
 	            rules: {
-	                username: {
+	                login: {
 	                    required: true
 	                },
 	                password: {
@@ -18,7 +18,7 @@ var Login = function () {
 	            },
 
 	            messages: {
-	                username: {
+	                login: {
 	                    required: "请输入用户名!"
 	                },
 	                password: {
@@ -26,7 +26,8 @@ var Login = function () {
 	                }
 	            },
 
-	            invalidHandler: function (event, validator) { //display error alert on form submit   
+	            invalidHandler: function (event, validator) { //display error alert on form submit
+					$('span', $('.alert-danger')).html('请输入用户名和密码!');
 	                $('.alert-danger', $('.login-form')).show();
 	            },
 
@@ -61,6 +62,10 @@ var Login = function () {
         init: function () {
         	
             handleLogin();
+
+            if ($('span', $('.alert-danger')).html() != '') {
+            	$('.alert-danger', $('.login-form')).show();
+            }
 
             // init background slide images
 		    $.backstretch([

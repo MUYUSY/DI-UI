@@ -26,9 +26,9 @@
  EVEN IF ADVISED OF THE POSSIBILITY OF SUCH DAMAGE.*/
 
 
-function renderTree(error, treeData) {
+function renderTree(error, treeData, req) {
 
-    var COLOR_DEFAULT = "#337ab7";
+    var COLOR_DEFAULT = "#4A4A4A";
     var COLOR_HIGHLIGHT = "#d64541";
     var COLOR_HOVER = "#26a3d3";
     var COLOR_SUSPICIOUS = "#f7ca18";
@@ -52,7 +52,7 @@ function renderTree(error, treeData) {
     var viewerHeight = $(document).height();
 
     var tree = d3.layout.tree()
-        .size([viewerHeight, viewerWidth]);
+        .size([72, 240]);
 
     // define a d3 diagonal projection for use by the node paths later on.
     var diagonal = d3.svg.diagonal()
@@ -82,8 +82,39 @@ function renderTree(error, treeData) {
         maxLabelLength = Math.max(d.name.length, maxLabelLength);
 
     }, function (d) {
+        if (d.pid == req.pid && d.children) {
+            d.children.forEach(collapse)
+        }
+        if (d.children && d.children.length > 2 && d.children[0].sub_type != d.children[1].sub_type) {
+            d.children = d.children.filter(function (value) {
+                result = showFunction(value.event_type, value.sub_type);
+                console.info(result);
+                return result;
+            })
+        }
+
         return d.children && d.children.length > 0 ? d.children : null;
     });
+
+    function showFunction(type, sub_type) {
+
+        if (type == 1 && (sub_type == 3 || sub_type == 4)) {
+            return true;
+        } else if (type == 2) {
+            return true;
+        } else if (type == 3) {
+            return true;
+
+        } else if (type == 4) {
+            return true;
+
+        } else if (type == 5 && (sub_type == 1 || sub_type == 8 || sub_type == 7)) {
+            return true;
+        } else {
+            return false;
+        }
+
+    }
 
 
     // sort the tree according to the node names
@@ -132,7 +163,7 @@ function renderTree(error, treeData) {
 
 
     // define the zoomListener which calls the zoom function on the "zoom" event constrained within the scaleExtents
-    var zoomListener = d3.behavior.zoom().scaleExtent([0.1, 3]).on("zoom", zoom);
+    var zoomListener = d3.behavior.zoom().scaleExtent([0.5, 3]).on("zoom", zoom);
 
     function initiateDrag(d, domNode) {
         draggingNode = d;
@@ -177,16 +208,18 @@ function renderTree(error, treeData) {
     }
 
     // define the baseSvg, attaching a class for styling and the zoomListener
-    var baseSvg = d3.select("#tree-container").append("svg")
+    var baseSvg = d3.select("#tree-container svg")
         .attr("width", viewerWidth)
         .attr("height", viewerHeight)
         .attr("class", "overlay")
         .call(zoomListener);
 
+
+
     var OBJECT_DEF = {"type": ['file', 'user']}
     // Create icon masks
-    var svgDef = baseSvg.append("defs");
-    var iconTypes = ["collapse", "expand", "file", "user", "process", "ip", "service", "registry"];
+    //var svgDef = baseSvg.append("defs");
+    var iconTypes = ["collapse", "file", "user", "process", "ip", "service", "registry"];
     var mapping = {
         "1": "file",
         "2": "process",
@@ -209,36 +242,54 @@ function renderTree(error, treeData) {
         foo.pid = d.pid;
         foo.times = 1;
 
-        if (d.event_type == 2){
-            foo.activity = "创建";
-        }else {
 
-        }
-
-        if ( d.times )
-            foo.ties = d.times;
+        if (d.times)
+            foo.times = d.times;
 
         if (d.begin_time)
             foo.time = d.begin_time
 
-
-        if (d.raw_log){
+        var detailArray = [];
+        var keyMap = {
+            "subject_user_account": "用户名",
+            "subject_process": "进程",
+            "file_src_path": "源文件路径",
+            "file_dst_path": "目标文件",
+            "subject_proc_id": "进程ID"
+        }
+        if (d.raw_log) {
             console.log(d.raw_log)
-            for(x in d.raw_log[0]){
-                var pair = d.raw_log[0][x].split("=");
+            for (item in d.raw_log) {
+                var pair = d.raw_log[item].split("=");
                 var key = pair[0];
                 console.info(key + ":" + pair[1]);
                 foo[key] = pair[1];
-            }
+                if (keyMap[key]) {
+                    detailArray.push(keyMap[key] + "=" + pair[1])
+                } else {
+                    detailArray.push(keyMap[key] + "=" + pair[1])
+                }
 
+            }
+            foo.detail = d.raw_log.filter(function (value) {
+                return value.indexOf("version") < 0
+                    && value.indexOf("type=") < 0
+                    && value.indexOf("status=") < 0
+                    && value.indexOf("time=") < 0 && value.length > 0
+            }).join(" </br> ")
+
+        } else {
+            foo.detail = ""
         }
         foo.type = unicodeDiscription[d.event_type];
+
+        foo.activity = getEventType(d.event_type, d.sub_type)
         console.log(foo)
         return foo
 
     }
 
-    for (var x in OBJECT_DEF.TYPE) {
+   /* for (var x in OBJECT_DEF.TYPE) {
         iconTypes.push(OBJECT_DEF.TYPE[x]);
     }
     for (var x in iconTypes) {
@@ -246,15 +297,29 @@ function renderTree(error, treeData) {
             .attr("id", "mask_" + iconTypes[x])
             .attr("x", "0")
             .attr("y", "0")
-            .attr("width", "12")
-            .attr("height", "12")
+            .attr("width", "20")
+            .attr("height", "20")
             .append("image")
             .attr("x", "0")
             .attr("y", "0")
-            .attr("width", "12")
-            .attr("height", "12")
-            .attr("xlink:href", 'tree\\mask_' + iconTypes[x] + ".png");
+            .attr("width", "20")
+            .attr("height", "20")
+            .attr("xlink:href", 'tree\\mask_' + iconTypes[x] + ".svg");
     }
+*/
+/*    svgDef.append("mask")
+        .attr("id", "mask_expand")
+        .attr("x", "0")
+        .attr("y", "0")
+        .attr("width", "10")
+        .attr("height", "10")
+        .append("image")
+        .attr("x", "0")
+        .attr("y", "0")
+        .attr("width", "10")
+        .attr("height", "10")
+        .attr("xlink:href", 'tree\\mask_expand.svg')*/
+
     // Define the drag listeners for drag/drop behaviour of nodes.
     dragListener = d3.behavior.drag()
         .on("dragstart", function (d) {
@@ -421,7 +486,7 @@ function renderTree(error, treeData) {
         x = -source.y0;
         y = -source.x0;
         x = x * scale + viewerWidth / 3;
-        y = y * scale + viewerHeight / 5;
+        y = y * scale + viewerHeight / 2;
         d3.select('g').transition()
             .duration(duration)
             .attr("transform", "translate(" + x + "," + y + ")scale(" + scale + ")");
@@ -430,6 +495,7 @@ function renderTree(error, treeData) {
 
 
     }
+
 
     // Toggle children function
 
@@ -470,248 +536,19 @@ function renderTree(error, treeData) {
             }
         };
         childCount(0, root);
-        var newHeight = d3.max(levelWidth) * 25; // 25 pixels per line
-        tree = tree.size([newHeight, viewerWidth]);
+        var newHeight = d3.max(levelWidth) * 30; // 25 pixels per line
+        console.info(newHeight)
+        if (newHeight < 200)
+            newHeight = 200
 
-        // Compute the new tree layout.
-        var nodes = tree.nodes(root).reverse(),
-            links = tree.links(nodes);
-
-        // Set widths between levels based on maxLabelLength.
-        nodes.forEach(function (d) {
-            d.y = d.depth * 200; //maxLabelLength * 10px
-            // alternatively to keep a fixed scale one can set a fixed depth per level
-            // Normalize for fixed-depth by commenting out below line
-            // d.y = (d.depth * 500); //500px per level.
-        });
-
-        // Update the nodes…
-        node = svgGroup.selectAll("g.node")
-            .data(nodes, function (d) {
-                return d.id || (d.id = ++i);
-            });
-
-        // Enter any new nodes at the parent's previous position.
-        var nodeEnter = node.enter().append("g")
-            .call(dragListener)
-            .attr("class", "node")
-            .attr("transform", function (d) {
-                return "translate(" + source.y0 + "," + source.x0 + ")";
-            });
-
-
-        nodeEnter.append("rect")
-            .attr('class', 'nodeCircle')
-            .attr("r", 0)
-            .attr("x", "0")
-            .attr("y", "0")
-            .attr("width", "12")
-            .attr("height", "12")
-            // .attr("bs-dropdown", function(d) {
-            //     return "{objectId: '" + d.objectId + "', pageSource: '" + $scope.mindmapParam.pageSource + "'}";
-            // })
-            //.attr("data-template", "shared/mindmap/mindmapNodeDropdownTemplate.html")
-            // .attr("container", "body")
-            // .attr("data-animation", "am-flip-x")
-            // .attr("placement", "right-bottom")
-            //.attr("data-toggle", "popover")
-            //.attr("data-trigger", "hover")
-            //.attr("data-content","test")
-
-            //.attr("data-placement", "bottom")
-            //.attr("data-animation", "am-flip-x")
-            //.attr("bs-popover", "popover")
-            //.attr("data-content", "顶部的 Popover 中的一些内容 —— hide 方法")
-            .style("fill", "#000000")
-            .style("opacity", 1)
-            .attr("transform", "translate(-6, -6)")
-            .attr("mask", function (d) {
-                var mask = "url('#mask_%s')".replace("%s", mapping[d.event_type])
-                console.info(mask)
-                return mask;
-            })
-            .on('click', click)
-            .style("fill", function (d) {
-                return d._children ? "black" : "#5DA9EE";
-            })
-        ;
-
-        nodeEnter.append("text")
-            .attr("x", function (d) {
-                return d.children || d._children ? -10 : 10;
-            })
-            .attr("dy", ".35em")
-            .attr('class', 'nodeText')
-            .attr("text-anchor", function (d) {
-                return d.children || d._children ? "end" : "start";
-            })
-            .text(function (d) {
-                return d.name;
-            })
-            //TODO for the mouse over
-            .on("mouseover", function (d) {
-                console.log(d)
-                var info = getDescription(d)
-                d3.select(".popover-mindmap").style('top', (d3.event.layerY + 100) + 'px')
-                    .style('left', (d3.event.layerX + 50) + 'px');
-                d3.select(".popover-mindmap").transition().style("display", "block");
-                d3.select(".popover-mindmap").style("width", "500px");
-                d3.select(".popover-mindmap").style("max-width", "500px");
-                //$(".popover-mindmap").css("width", 500);
-                $(".popover-title").html(info.name)
-                if (info.time ){
-                    timesting =timeStamp2String(info.time, "yyyy-MM-dd hh:mm:ss")
-                }else{
-                    timesting = "NA";
-                }
-                $("#time").html(timesting)
-                $("#name").html(info.name)
-                $("#type").html(info.type)
-                $("#pid").html(info.pid)
-                $("#times").html(info.times)
-                $("#subject_user_account").html(info.subject_user_account)
-                $("#activity").html(info.activity)
-                $("#detail").html(info.detail)
-                //getDescription(d);
-
-
-            })
-            .on("mouseout", function (d) {
-                //d3.select(".popover-mindmap").transition().style("display", "none");
-            })
-            .style("fill-opacity", 0);
-        /*
-         // phantom node to give us mouseover in a radius around it
-         nodeEnter.append("rect")
-         .attr('class', 'ghostCircle')
-         .attr("r", 30)
-         .attr("opacity", 0.2) // change this to zero to hide the target area
-         .style("fill", "red")
-         .attr('pointer-events', 'mouseover')
-         .on("mouseover", function(node) {
-         overCircle(node);
-         })
-         .on("mouseout", function(node) {
-         outCircle(node);
-         });
-         */
-
-        // Update the text to reflect whether node has children or not.
-        node.select('text')
-            .attr("x", function (d) {
-                return d.children || d._children ? -10 : 10;
-            })
-            .attr("text-anchor", function (d) {
-                return d.children || d._children ? "end" : "start";
-            })
-            .text(function (d) {
-                return d.name;
-            });
-
-        // Change the circle fill depending on whether it has children and is collapsed
-        node.select("rect.nodeCircle")
-            .attr("r", 4.5)
-            .style("fill", function (d) {
-                return d._children ? COLOR_HIGHLIGHT : COLOR_DEFAULT;
-            });
-
-        // Transition nodes to their new position.
-        var nodeUpdate = node.transition()
-            .duration(duration)
-            .attr("transform", function (d) {
-                return "translate(" + d.y + "," + d.x + ")";
-            });
-
-        // Fade the text in
-        nodeUpdate.select("text")
-            .style("fill-opacity", 1);
-
-        // Transition exiting nodes to the parent's new position.
-        var nodeExit = node.exit().transition()
-            .duration(duration)
-            .attr("transform", function (d) {
-                return "translate(" + source.y + "," + source.x + ")";
-            })
-            .remove();
-
-        nodeExit.select("circle")
-            .attr("r", 0);
-
-        nodeExit.select("text")
-            .style("fill-opacity", 0);
-
-        // Update the links…
-        var link = svgGroup.selectAll("path.link")
-            .data(links, function (d) {
-                return d.target.id;
-            });
-
-        // Enter any new links at the parent's previous position.
-        link.enter().insert("path", "g")
-            .attr("class", "link")
-            .attr("d", function (d) {
-                var o = {
-                    x: source.x0,
-                    y: source.y0
-                };
-                return diagonal({
-                    source: o,
-                    target: o
-                });
-            });
-
-        // Transition links to their new position.
-        link.transition()
-            .duration(duration)
-            .attr("d", diagonal);
-
-        // Transition exiting nodes to the parent's new position.
-        link.exit().transition()
-            .duration(duration)
-            .attr("d", function (d) {
-                var o = {
-                    x: source.x,
-                    y: source.y
-                };
-                return diagonal({
-                    source: o,
-                    target: o
-                });
-            })
-            .remove();
-
-        // Stash the old positions for transition.
-        nodes.forEach(function (d) {
-            d.x0 = d.x;
-            d.y0 = d.y;
-        });
-    }
-
-    function update2(source) {
-        // Compute the new height, function counts total children of root node and sets tree height accordingly.
-        // This prevents the layout looking squashed when new nodes are made visible or looking sparse when nodes are removed
-        // This makes the layout more consistent.
-        var levelWidth = [1];
-        var childCount = function (level, n) {
-
-            if (n.children && n.children.length > 0) {
-                if (levelWidth.length <= level + 1) levelWidth.push(0);
-                levelWidth[level + 1] += n.children.length;
-                n.level = level ;
-                console.info("父节点");
-                console.info(n)
-                console.info("子节点：");
-                console.info(n.children)
-
-                n.children.forEach(function (d) {
-                    console.info(d)
-                    childCount(level + 1, d);
-                });
+        tree = tree.size([newHeight, viewerWidth]).separation(function (a, b) {
+            if (a.children || a._children) {
+                return 30
+            } else {
+                return (a.parent == b.parent ? 20 : 15);
             }
-        };
-        childCount(0, root);
-        var newHeight = d3.max(levelWidth) * 25; // 25 pixels per line
-        tree = tree.size([newHeight, viewerWidth]);
+
+        });//设置相隔节点的
 
         // Compute the new tree layout.
         var nodes = tree.nodes(root).reverse(),
@@ -719,7 +556,8 @@ function renderTree(error, treeData) {
 
         // Set widths between levels based on maxLabelLength.
         nodes.forEach(function (d) {
-            d.y = d.depth * 200; //maxLabelLength * 10px
+            d.y = d.depth * 150; //maxLabelLength * 10px
+            //d.y = (d.depth * (maxLabelLength * 10)); //maxLabelLength * 10px
             // alternatively to keep a fixed scale one can set a fixed depth per level
             // Normalize for fixed-depth by commenting out below line
             // d.y = (d.depth * 500); //500px per level.
@@ -745,29 +583,14 @@ function renderTree(error, treeData) {
             .attr("r", 0)
             .attr("x", "0")
             .attr("y", "0")
-            .attr("width", "12")
-            .attr("height", "12")
-            // .attr("bs-dropdown", function(d) {
-            //     return "{objectId: '" + d.objectId + "', pageSource: '" + $scope.mindmapParam.pageSource + "'}";
-            // })
-            //.attr("data-template", "shared/mindmap/mindmapNodeDropdownTemplate.html")
-            // .attr("container", "body")
-            // .attr("data-animation", "am-flip-x")
-            // .attr("placement", "right-bottom")
-            //.attr("data-toggle", "popover")
-            //.attr("data-trigger", "hover")
-            //.attr("data-content","test")
-
-            //.attr("data-placement", "bottom")
-            //.attr("data-animation", "am-flip-x")
-            //.attr("bs-popover", "popover")
-            //.attr("data-content", "顶部的 Popover 中的一些内容 —— hide 方法")
-            .style("fill", "#000000")
+            .attr("width", "20")
+            .attr("height", "20")
+            // .style("fill", "#000000")
             .style("opacity", 1)
-            .attr("transform", "translate(-6, -6)")
+            .attr("transform", "translate(-10, -10)")
             .attr("mask", function (d) {
                 var mask = "url('#mask_%s')".replace("%s", mapping[d.event_type])
-                console.info(mask)
+                //console.info(mask)
                 return mask;
             })
             .on('click', click)
@@ -776,32 +599,39 @@ function renderTree(error, treeData) {
             })
         ;
 
+
+
         nodeEnter.append("text")
             .attr("x", function (d) {
-                return d.children || d._children ? -10 : 10;
+                return d.children || d._children ? 0 : 15;
             })
-            .attr("dy", ".35em")
+            .attr("y", function (d) {
+                return d.children || d._children ? 20 : 3;
+            })
+
             .attr('class', 'nodeText')
             .attr("text-anchor", function (d) {
-                return d.children || d._children ? "end" : "start";
+                return d.children || d._children ? "middle" : "start";
             })
             .text(function (d) {
-                return d.name;
+                return d.name = d.name.substring(d.name.lastIndexOf("\\") + 1);
+                //console.info("name:" + d.name.substring(d.name.lastIndexOf("\\")));
+                //return d.name.substring(d.name.lastIndexOf("\\"))
             })
             //TODO for the mouse over
             .on("mouseover", function (d) {
                 console.log(d)
                 var info = getDescription(d)
                 d3.select(".popover-mindmap").style('top', (d3.event.layerY + 100) + 'px')
-                    .style('left', (d3.event.layerX + 50) + 'px');
+                    .style('left', (d3.event.layerX + 0) + 'px');
                 d3.select(".popover-mindmap").transition().style("display", "block");
-                d3.select(".popover-mindmap").style("width", "500px");
-                d3.select(".popover-mindmap").style("max-width", "500px");
+                d3.select(".popover-mindmap").style("width", "400px");
+                d3.select(".popover-mindmap").style("max-width", "400px");
                 //$(".popover-mindmap").css("width", 500);
-                $(".popover-title").html(info.name)
-                if (info.time ){
-                    timesting =timeStamp2String(info.time, "yyyy-MM-dd hh:mm:ss")
-                }else{
+                $(".popover-title").html("[" + info.name + "]" + "  详细信息")
+                if (info.time) {
+                    timesting = timeStamp2String(info.time, "yyyy-MM-dd hh:mm:ss")
+                } else {
                     timesting = "NA";
                 }
                 $("#time").html(timesting)
@@ -820,33 +650,54 @@ function renderTree(error, treeData) {
                 d3.select(".popover-mindmap").transition().style("display", "none");
             })
             .style("fill-opacity", 0);
-        /*
-         // phantom node to give us mouseover in a radius around it
-         nodeEnter.append("rect")
-         .attr('class', 'ghostCircle')
-         .attr("r", 30)
-         .attr("opacity", 0.2) // change this to zero to hide the target area
-         .style("fill", "red")
-         .attr('pointer-events', 'mouseover')
-         .on("mouseover", function(node) {
-         overCircle(node);
-         })
-         .on("mouseout", function(node) {
-         outCircle(node);
-         });
-         */
 
-        // Update the text to reflect whether node has children or not.
-        node.select('text')
-            .attr("x", function (d) {
-                return d.children || d._children ? -10 : 10;
+        // phantom node to give us mouseover in a radius around it
+        nodeEnter.append("rect")
+            .attr("x", "0")
+            .attr("y", "0")
+            .attr("width", "10")
+            .attr("height", "10")
+            .style("fill", "#000000")
+            .attr("mask", "url(#mask_expand)")
+            .attr("transform", function (d) {
+                if (d._children) {
+                    //return "translate(10, -5)"
+                    return "translate(30,-5)";
+                } else if (d.children) {
+                    return "translate(30,5)rotate(180)";
+                }
             })
-            .attr("text-anchor", function (d) {
-                return d.children || d._children ? "end" : "start";
+            .style("opacity", function (d) {
+                if (d._children || d.children) {
+                    return "1";
+                } else {
+                    return "0"
+                }
             })
-            .text(function (d) {
-                return d.name;
+            //.attr("transform", "translate(10 -12)")
+            .attr("mask", function (d) {
+                var mask = "url('#mask_expand')"
+                //console.info(mask)
+                return mask;
+            })
+            .attr('class', 'nodeCircle')
+            .attr("class", "node-expand-icon")
+            .on('click', click)
+        //.style("fill", COLOR_DEFAULT)
+
+        ;
+
+        node.select(".node-expand-icon")
+            .attr("opacity", function (d) {
+                if (d.children || d._children)
+                    return "1";
+                else
+                    return "0";
+            })
+            .style("fill", function (d) {
+                return COLOR_DEFAULT;
             });
+
 
         // Change the circle fill depending on whether it has children and is collapsed
         node.select("rect.nodeCircle")
@@ -865,6 +716,25 @@ function renderTree(error, treeData) {
         // Fade the text in
         nodeUpdate.select("text")
             .style("fill-opacity", 1);
+
+        nodeUpdate.select(".node-expand-icon")
+            .attr("opacity", function (d) {
+                if (d.children || d._children)
+                    return "1";
+                else
+                    return "0";
+            })
+            .attr("transform", function (d) {
+                if (d._children) {
+                    //return "translate(10, -6)"
+                    return "translate(20,-5)";
+                } else if (d.children) {
+                    return "translate(30,5)rotate(180)";
+                }
+            })
+            .style("fill", function (d) {
+                return COLOR_DEFAULT;
+            });
 
         // Transition exiting nodes to the parent's new position.
         var nodeExit = node.exit().transition()
@@ -889,6 +759,9 @@ function renderTree(error, treeData) {
         // Enter any new links at the parent's previous position.
         link.enter().insert("path", "g")
             .attr("class", "link")
+            .style("fill", "none")
+            .style("stroke", "#ccc")
+            .style("stroke-width", "1.5px")
             .attr("d", function (d) {
                 var o = {
                     x: source.x0,
@@ -927,6 +800,7 @@ function renderTree(error, treeData) {
         });
     }
 
+
     // Append a group which holds all nodes and which the zoom Listener can act upon.
     var svgGroup = baseSvg.append("g");
 
@@ -934,18 +808,168 @@ function renderTree(error, treeData) {
     root = treeData;
     root.x0 = viewerHeight / 2;
     root.y0 = 0;
-    root.children.forEach(collapse);
+    //root.children.forEach(collapse);
     // Layout the tree initially and center on the root node.
     update(root);
+    zoomListener.scale(1);
     centerNode(root);
+    var temp = root;
+
+    var filteredNode;
+
+    function filter(filtervalue) {
+        var visitNode = function (level, dataNode) {
+
+            if (dataNode.children && dataNode.children.length > 0) {
+                console.info("过滤前：" + dataNode.name);
+                console.info(dataNode);
+
+                //find out the
+                if ((!dataNode.raw_log || dataNode.row_log.length == 0)) {
+                    if (dataNode.children_old) {
+                        dataNode.children = dataNode.children_old;
+                    } else {
+                        dataNode.children_old = dataNode.children;
+                    }
+                    dataNode.children = dataNode.children.filter(function (value) {
+                        return value._children || value.children || value.name.indexOf(filtervalue) > -1;
+                    })
+
+                    if (dataNode.children.length < dataNode.children_old.length) {
+                        filteredNode = dataNode;
+                    }
+
+                    if (dataNode.children.length == 0) {
+                        dataNode.children = dataNode.children_old;
+                    }
+                    console.info("过滤后：" + dataNode.name);
+                    console.info(dataNode);
+                }
+
+                dataNode.children.forEach(function (d) {
+                    visitNode(level + 1, d);
+                });
+            } else if (dataNode.children) {
+
+            }
+        };
+        visitNode(0, root);
+    }
+
     $('#filter').bind('input propertychange', function () {
         $('#content').html($(this).val().length + ' characters');
-        if (($(this).val().length > 5 )){
-            update2();
-            //centerNode(root.children)
+        if (($(this).val().length >= 0)) {
+            root = temp;
+            filter($(this).val())
+            update(root)
+            centerNode(filteredNode)
+            /*
+             $.ajax({
+             method: "POST",
+             url: "hard.json",
+             data: JSON.stringify({
+             "timestamp": "1493098320",
+             "pid": "2308",
+             "device_guid": "diclient",
+             "processname": "calc.exe"
+             }),
+             }).success(function (data) {
+             var error = "";
+             root = data;
+             update2(data)
+             centerNode(root)
+             }).done(function (msg) {
+             //alert( "Data Saved: " + msg );
+             });
+             */
+
         }
 
 
     });
+
+//TODO
+    var scale = zoomListener.scale();
+    d3.select("#plus").on("click", function () {
+        scale = zoomListener.scale()
+        scale += 0.1
+        x = -root.y0;
+        y = -root.x0;
+        x = x * scale + viewerWidth / 3;
+        y = y * scale + viewerHeight / 5;
+        svgGroup.attr("transform", "translate(" + x + "," + y + ")scale(" + scale + ")");
+        zoomListener.scale(scale)
+    })
+
+    d3.select("#minus").on("click", function () {
+        scale = zoomListener.scale()
+        scale -= 0.1
+        x = -root.y0;
+        y = -root.x0;
+        x = x * scale + viewerWidth / 3;
+        y = y * scale + viewerHeight / 5;
+        svgGroup.attr("transform", "translate(" + x + "," + y + ")scale(" + scale + ")");
+        zoomListener.scale(scale)
+
+    })
+
+    var getEventType = function (eventType, subType) {
+        data = {
+            1: {
+                1: "创建文件",
+                2: "打开文件",
+                3: "读文件",
+                4: "写文件",
+                5: "删除文件",
+                6: "重命名文件",
+                7: "查询文件信息",
+                8: "修改文件信息",
+                9: "关闭文件"
+            },
+            2: {
+                1: "进程创建",
+                2: "进程加载",
+                3: "进程终止"
+            },
+            3: {
+                1: "Web",
+                2: "邮件",
+                3: "文件传输",
+                4: "其他应用程序"
+            },
+            4: {
+                1: "系统登录",
+                2: "挂载",
+                3: "取消挂载",
+                4: "网络连接",
+                5: "断开网络连接",
+                6: "修改密码"
+            },
+            5: {
+                1: "注册表创建",
+                2: "注册表打开",
+                3: "注册表删除",
+                4: "注册表查询",
+                5: "注册表重命名",
+                6: "配置key查询value",
+                7: "配置key设置value",
+                8: "配置key删除value",
+                9: "配置key关闭"
+            }
+        };
+
+
+        var res;
+        if (eventType in data && subType in data[eventType]) {
+            res = data[eventType][subType];
+        }
+        else if (eventType = 2 && !subType) {
+            res = "进程创建";
+        } else {
+            res = "unknown";
+        }
+        return res;
+    };
+
 
 }

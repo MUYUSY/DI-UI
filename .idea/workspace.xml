@@ -2,12 +2,12 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="a672439e-4cd3-4004-919f-310f18dd76c3" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/theme/admin_3_angularjs/js/controllers/EventTreeController.js" afterPath="$PROJECT_DIR$/theme/admin_3_angularjs/js/controllers/EventTreeController.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/theme/admin_3_angularjs/views/dashboard.html" afterPath="$PROJECT_DIR$/theme/admin_3_angularjs/views/dashboard.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/theme/admin_3_angularjs/views/event_tree.html" afterPath="$PROJECT_DIR$/theme/admin_3_angularjs/views/event_tree.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/theme/admin_3_angularjs/views/investigation_record.html" afterPath="$PROJECT_DIR$/theme/admin_3_angularjs/views/investigation_record.html" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/theme/admin_3_angularjs/views/new_investigation.html" afterPath="$PROJECT_DIR$/theme/admin_3_angularjs/views/new_investigation.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/theme/admin_3_angularjs/assets/global/plugins/angularjs/plugins/angularjs-dropdown-multiselect/src/angularjs-dropdown-multiselect.js" afterPath="$PROJECT_DIR$/theme/admin_3_angularjs/assets/global/plugins/angularjs/plugins/angularjs-dropdown-multiselect/src/angularjs-dropdown-multiselect.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/theme/admin_3_angularjs/assets/global/plugins/counterup/jquery.counterup.min.js" afterPath="$PROJECT_DIR$/theme/admin_3_angularjs/assets/global/plugins/counterup/jquery.counterup.min.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/theme/admin_3_angularjs/assets/pages/scripts/login-4.js" afterPath="$PROJECT_DIR$/theme/admin_3_angularjs/assets/pages/scripts/login-4.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/theme/admin_3_angularjs/js/main.js" afterPath="$PROJECT_DIR$/theme/admin_3_angularjs/js/main.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/theme/admin_3_angularjs/tree/dndTree.js" afterPath="$PROJECT_DIR$/theme/admin_3_angularjs/tree/dndTree.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/theme/admin_3_angularjs/tree/mindmap.css" afterPath="$PROJECT_DIR$/theme/admin_3_angularjs/tree/mindmap.css" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -73,13 +73,13 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="angularjs-dropdown-multiselect.js" pinned="false" current-in-tab="false">
+      <file leaf-file-name="angularjs-dropdown-multiselect.js" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/theme/admin_3_angularjs/assets/global/plugins/angularjs/plugins/angularjs-dropdown-multiselect/src/angularjs-dropdown-multiselect.js">
           <provider selected="true" editor-type-id="text-editor">
             <state relative-caret-position="288">
-              <caret line="152" column="49" lean-forward="false" selection-start-line="152" selection-start-column="42" selection-end-line="152" selection-end-column="49" />
+              <caret line="152" column="45" lean-forward="false" selection-start-line="152" selection-start-column="45" selection-end-line="152" selection-end-column="45" />
               <folding>
-                <marker date="1495788730168" expanded="true" signature="1148:1154" ph=" " />
+                <marker date="1495790514331" expanded="true" signature="1148:1154" ph=" " />
               </folding>
             </state>
           </provider>
@@ -114,11 +114,11 @@
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="EventTreeController.js" pinned="false" current-in-tab="true">
+      <file leaf-file-name="EventTreeController.js" pinned="false" current-in-tab="false">
         <entry file="file://$PROJECT_DIR$/theme/admin_3_angularjs/js/controllers/EventTreeController.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="126">
-              <caret line="130" column="0" lean-forward="false" selection-start-line="130" selection-start-column="0" selection-end-line="130" selection-end-column="0" />
+            <state relative-caret-position="594">
+              <caret line="156" column="36" lean-forward="true" selection-start-line="156" selection-start-column="36" selection-end-line="156" selection-end-column="36" />
               <folding>
                 <element signature="n#!!doc" expanded="true" />
                 <marker date="1495790161116" expanded="true" signature="1639:1658" ph="..." />
@@ -163,6 +163,80 @@
                 <element signature="e#402#480#0" expanded="false" />
                 <element signature="e#3623#3733#0" expanded="false" />
                 <element signature="e#3855#4033#0" expanded="false" />
+                <marker date="1495781307900" expanded="true" signature="4761:27317" ph="[...]" />
+                <marker date="1495781307900" expanded="true" signature="4847:27316" ph="{...}" />
+                <marker date="1495781307900" expanded="true" signature="12630:13360" ph="{&quot;url&quot;: &quot;/event_tree&quot;...}" />
+                <marker date="1495781307900" expanded="true" signature="12820:13350" ph="{...}" />
+                <marker date="1495781307900" expanded="true" signature="12844:13336" ph="[...]" />
+                <marker date="1495781307900" expanded="true" signature="12882:13335" ph="{...}" />
+                <marker date="1495781307900" expanded="true" signature="12928:13315" ph="[...]" />
+                <marker date="1495781307900" expanded="true" signature="12929:13314" ph="{&quot;name&quot;: 'MetronicApp'...}" />
+                <marker date="1495781307900" expanded="true" signature="13007:13292" ph="[...]" />
+                <marker date="1495781307900" expanded="true" signature="13431:14962" ph="{&quot;url&quot;: &quot;/endpoint_management&quot;...}" />
+                <marker date="1495781307900" expanded="true" signature="13642:14952" ph="{...}" />
+                <marker date="1495781307900" expanded="true" signature="13666:14938" ph="[...]" />
+                <marker date="1495781307900" expanded="true" signature="13704:14937" ph="{...}" />
+                <marker date="1495781307900" expanded="true" signature="13750:14917" ph="[...]" />
+                <marker date="1495781307900" expanded="true" signature="13751:14916" ph="{&quot;name&quot;: 'MetronicApp'...}" />
+                <marker date="1495781307900" expanded="true" signature="13829:14894" ph="[...]" />
+                <marker date="1495781307900" expanded="true" signature="14368:14798" ph="//..." />
+                <marker date="1495781307900" expanded="true" signature="15009:15929" ph="{&quot;url&quot;: &quot;/tree&quot;...}" />
+                <marker date="1495781307900" expanded="true" signature="15202:15919" ph="{...}" />
+                <marker date="1495781307900" expanded="true" signature="15226:15904" ph="[...]" />
+                <marker date="1495781307900" expanded="true" signature="15264:15903" ph="{...}" />
+                <marker date="1495781307900" expanded="true" signature="15310:15883" ph="[...]" />
+                <marker date="1495781307900" expanded="true" signature="15311:15882" ph="{&quot;name&quot;: 'MetronicApp'...}" />
+                <marker date="1495781307900" expanded="true" signature="15515:15859" ph="[...]" />
+                <marker date="1495781307900" expanded="true" signature="15982:18086" ph="{&quot;url&quot;: &quot;/form-tools&quot;...}" />
+                <marker date="1495781307900" expanded="true" signature="16181:18076" ph="{...}" />
+                <marker date="1495781307900" expanded="true" signature="16205:18061" ph="[...]" />
+                <marker date="1495781307900" expanded="true" signature="16243:18060" ph="{...}" />
+                <marker date="1495781307900" expanded="true" signature="16289:18040" ph="[...]" />
+                <marker date="1495781307900" expanded="true" signature="16290:18039" ph="{&quot;name&quot;: 'MetronicApp'...}" />
+                <marker date="1495781307900" expanded="true" signature="16494:18016" ph="[...]" />
+                <marker date="1495781307900" expanded="true" signature="18154:20234" ph="{&quot;url&quot;: &quot;/pickers&quot;...}" />
+                <marker date="1495781307900" expanded="true" signature="18356:20224" ph="{...}" />
+                <marker date="1495781307900" expanded="true" signature="18380:20209" ph="[...]" />
+                <marker date="1495781307900" expanded="true" signature="18418:20208" ph="{...}" />
+                <marker date="1495781307900" expanded="true" signature="18464:20188" ph="[...]" />
+                <marker date="1495781307900" expanded="true" signature="18465:20187" ph="{&quot;name&quot;: 'MetronicApp'...}" />
+                <marker date="1495781307900" expanded="true" signature="18669:20164" ph="[...]" />
+                <marker date="1495781307900" expanded="true" signature="20293:21610" ph="{&quot;url&quot;: &quot;/dropdowns&quot;...}" />
+                <marker date="1495781307900" expanded="true" signature="20496:21600" ph="{...}" />
+                <marker date="1495781307900" expanded="true" signature="20520:21585" ph="[...]" />
+                <marker date="1495781307900" expanded="true" signature="20558:21584" ph="{...}" />
+                <marker date="1495781307900" expanded="true" signature="20604:21564" ph="[...]" />
+                <marker date="1495781307900" expanded="true" signature="20605:21563" ph="{&quot;name&quot;: 'MetronicApp'...}" />
+                <marker date="1495781307900" expanded="true" signature="20809:21540" ph="[...]" />
+                <marker date="1495781307900" expanded="true" signature="21682:22787" ph="{&quot;url&quot;: &quot;/datatables/managed.html&quot;...}" />
+                <marker date="1495781307900" expanded="true" signature="21911:22777" ph="{...}" />
+                <marker date="1495781307900" expanded="true" signature="21935:22763" ph="[...]" />
+                <marker date="1495781307900" expanded="true" signature="21973:22762" ph="{...}" />
+                <marker date="1495781307900" expanded="true" signature="22019:22742" ph="{&quot;name&quot;: 'MetronicApp'...}" />
+                <marker date="1495781307900" expanded="true" signature="22223:22720" ph="[...]" />
+                <marker date="1495781307900" expanded="true" signature="22850:24174" ph="{&quot;url&quot;: &quot;/datatables/ajax.html&quot;...}" />
+                <marker date="1495781307900" expanded="true" signature="23069:24164" ph="{...}" />
+                <marker date="1495781307900" expanded="true" signature="23093:24150" ph="[...]" />
+                <marker date="1495781307900" expanded="true" signature="23131:24149" ph="{...}" />
+                <marker date="1495781307900" expanded="true" signature="23177:24129" ph="{&quot;name&quot;: 'MetronicApp'...}" />
+                <marker date="1495781307900" expanded="true" signature="23381:24107" ph="[...]" />
+                <marker date="1495781307900" expanded="true" signature="24227:25363" ph="{&quot;url&quot;: &quot;/profile&quot;...}" />
+                <marker date="1495781307900" expanded="true" signature="24427:25353" ph="{...}" />
+                <marker date="1495781307900" expanded="true" signature="24451:25339" ph="[...]" />
+                <marker date="1495781307900" expanded="true" signature="24489:25338" ph="{...}" />
+                <marker date="1495781307900" expanded="true" signature="24535:25318" ph="{&quot;name&quot;: 'MetronicApp'...}" />
+                <marker date="1495781307900" expanded="true" signature="24741:25276" ph="[...]" />
+                <marker date="1495781307900" expanded="true" signature="25436:25581" ph="{&quot;url&quot;: &quot;/dashboard&quot;...}" />
+                <marker date="1495781307900" expanded="true" signature="25650:25791" ph="{&quot;url&quot;: &quot;/account&quot;...}" />
+                <marker date="1495781307900" expanded="true" signature="25854:25992" ph="{&quot;url&quot;: &quot;/help&quot;...}" />
+                <marker date="1495781307900" expanded="true" signature="26034:27312" ph="{&quot;url&quot;: &quot;/todo&quot;...}" />
+                <marker date="1495781307900" expanded="true" signature="26208:27302" ph="{...}" />
+                <marker date="1495781307900" expanded="true" signature="26232:27288" ph="[...]" />
+                <marker date="1495781307900" expanded="true" signature="26270:27287" ph="{...}" />
+                <marker date="1495781307900" expanded="true" signature="26316:27267" ph="{&quot;name&quot;: 'MetronicApp'...}" />
+                <marker date="1495781307900" expanded="true" signature="26523:27225" ph="[...]" />
+                <marker date="1495781307900" expanded="true" signature="27321:27363" ph="/*...*/" />
+                <marker date="1495781307900" expanded="true" signature="27380:27597" ph="[...]" />
               </folding>
             </state>
           </provider>
@@ -217,10 +291,10 @@
       <find>d</find>
       <find>saveRule</find>
       <find>eventtype</find>
-      <find>console</find>
       <find>event</find>
-      <find>checked</find>
       <find>dtable</find>
+      <find>console</find>
+      <find>checked</find>
     </findStrings>
     <dirStrings>
       <dir>D:\code\DI\DI-UI\_resources</dir>
@@ -286,9 +360,9 @@
         <option value="$PROJECT_DIR$/theme/admin_3_angularjs/views/dashboard.html" />
         <option value="$PROJECT_DIR$/theme/admin_3_angularjs/views/new_investigation.html" />
         <option value="$PROJECT_DIR$/theme/admin_3_angularjs/views/investigation_record.html" />
-        <option value="$PROJECT_DIR$/theme/admin_3_angularjs/assets/global/plugins/angularjs/plugins/angularjs-dropdown-multiselect/src/angularjs-dropdown-multiselect.js" />
         <option value="$PROJECT_DIR$/theme/admin_3_angularjs/views/event_tree.html" />
         <option value="$PROJECT_DIR$/theme/admin_3_angularjs/js/controllers/EventTreeController.js" />
+        <option value="$PROJECT_DIR$/theme/admin_3_angularjs/assets/global/plugins/angularjs/plugins/angularjs-dropdown-multiselect/src/angularjs-dropdown-multiselect.js" />
       </list>
     </option>
   </component>
@@ -641,12 +715,12 @@
       <workItem from="1494818091190" duration="20044000" />
       <workItem from="1494931620235" duration="4953000" />
       <workItem from="1494985784317" duration="87154000" />
-      <workItem from="1495504357417" duration="95535000" />
+      <workItem from="1495504357417" duration="95949000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="698646000" />
+    <option name="totallyTimeSpent" value="699060000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -714,7 +788,7 @@
       <breakpoints>
         <line-breakpoint enabled="true" type="javascript">
           <url>file://$PROJECT_DIR$/theme/admin_3_angularjs/js/main.js</url>
-          <line>549</line>
+          <line>550</line>
           <option name="timeStamp" value="20" />
         </line-breakpoint>
         <line-breakpoint enabled="true" type="javascript">
@@ -1237,6 +1311,80 @@
             <element signature="e#402#480#0" expanded="false" />
             <element signature="e#3623#3733#0" expanded="false" />
             <element signature="e#3855#4033#0" expanded="false" />
+            <marker date="1495781307900" expanded="true" signature="4761:27317" ph="[...]" />
+            <marker date="1495781307900" expanded="true" signature="4847:27316" ph="{...}" />
+            <marker date="1495781307900" expanded="true" signature="12630:13360" ph="{&quot;url&quot;: &quot;/event_tree&quot;...}" />
+            <marker date="1495781307900" expanded="true" signature="12820:13350" ph="{...}" />
+            <marker date="1495781307900" expanded="true" signature="12844:13336" ph="[...]" />
+            <marker date="1495781307900" expanded="true" signature="12882:13335" ph="{...}" />
+            <marker date="1495781307900" expanded="true" signature="12928:13315" ph="[...]" />
+            <marker date="1495781307900" expanded="true" signature="12929:13314" ph="{&quot;name&quot;: 'MetronicApp'...}" />
+            <marker date="1495781307900" expanded="true" signature="13007:13292" ph="[...]" />
+            <marker date="1495781307900" expanded="true" signature="13431:14962" ph="{&quot;url&quot;: &quot;/endpoint_management&quot;...}" />
+            <marker date="1495781307900" expanded="true" signature="13642:14952" ph="{...}" />
+            <marker date="1495781307900" expanded="true" signature="13666:14938" ph="[...]" />
+            <marker date="1495781307900" expanded="true" signature="13704:14937" ph="{...}" />
+            <marker date="1495781307900" expanded="true" signature="13750:14917" ph="[...]" />
+            <marker date="1495781307900" expanded="true" signature="13751:14916" ph="{&quot;name&quot;: 'MetronicApp'...}" />
+            <marker date="1495781307900" expanded="true" signature="13829:14894" ph="[...]" />
+            <marker date="1495781307900" expanded="true" signature="14368:14798" ph="//..." />
+            <marker date="1495781307900" expanded="true" signature="15009:15929" ph="{&quot;url&quot;: &quot;/tree&quot;...}" />
+            <marker date="1495781307900" expanded="true" signature="15202:15919" ph="{...}" />
+            <marker date="1495781307900" expanded="true" signature="15226:15904" ph="[...]" />
+            <marker date="1495781307900" expanded="true" signature="15264:15903" ph="{...}" />
+            <marker date="1495781307900" expanded="true" signature="15310:15883" ph="[...]" />
+            <marker date="1495781307900" expanded="true" signature="15311:15882" ph="{&quot;name&quot;: 'MetronicApp'...}" />
+            <marker date="1495781307900" expanded="true" signature="15515:15859" ph="[...]" />
+            <marker date="1495781307900" expanded="true" signature="15982:18086" ph="{&quot;url&quot;: &quot;/form-tools&quot;...}" />
+            <marker date="1495781307900" expanded="true" signature="16181:18076" ph="{...}" />
+            <marker date="1495781307900" expanded="true" signature="16205:18061" ph="[...]" />
+            <marker date="1495781307900" expanded="true" signature="16243:18060" ph="{...}" />
+            <marker date="1495781307900" expanded="true" signature="16289:18040" ph="[...]" />
+            <marker date="1495781307900" expanded="true" signature="16290:18039" ph="{&quot;name&quot;: 'MetronicApp'...}" />
+            <marker date="1495781307900" expanded="true" signature="16494:18016" ph="[...]" />
+            <marker date="1495781307900" expanded="true" signature="18154:20234" ph="{&quot;url&quot;: &quot;/pickers&quot;...}" />
+            <marker date="1495781307900" expanded="true" signature="18356:20224" ph="{...}" />
+            <marker date="1495781307900" expanded="true" signature="18380:20209" ph="[...]" />
+            <marker date="1495781307900" expanded="true" signature="18418:20208" ph="{...}" />
+            <marker date="1495781307900" expanded="true" signature="18464:20188" ph="[...]" />
+            <marker date="1495781307900" expanded="true" signature="18465:20187" ph="{&quot;name&quot;: 'MetronicApp'...}" />
+            <marker date="1495781307900" expanded="true" signature="18669:20164" ph="[...]" />
+            <marker date="1495781307900" expanded="true" signature="20293:21610" ph="{&quot;url&quot;: &quot;/dropdowns&quot;...}" />
+            <marker date="1495781307900" expanded="true" signature="20496:21600" ph="{...}" />
+            <marker date="1495781307900" expanded="true" signature="20520:21585" ph="[...]" />
+            <marker date="1495781307900" expanded="true" signature="20558:21584" ph="{...}" />
+            <marker date="1495781307900" expanded="true" signature="20604:21564" ph="[...]" />
+            <marker date="1495781307900" expanded="true" signature="20605:21563" ph="{&quot;name&quot;: 'MetronicApp'...}" />
+            <marker date="1495781307900" expanded="true" signature="20809:21540" ph="[...]" />
+            <marker date="1495781307900" expanded="true" signature="21682:22787" ph="{&quot;url&quot;: &quot;/datatables/managed.html&quot;...}" />
+            <marker date="1495781307900" expanded="true" signature="21911:22777" ph="{...}" />
+            <marker date="1495781307900" expanded="true" signature="21935:22763" ph="[...]" />
+            <marker date="1495781307900" expanded="true" signature="21973:22762" ph="{...}" />
+            <marker date="1495781307900" expanded="true" signature="22019:22742" ph="{&quot;name&quot;: 'MetronicApp'...}" />
+            <marker date="1495781307900" expanded="true" signature="22223:22720" ph="[...]" />
+            <marker date="1495781307900" expanded="true" signature="22850:24174" ph="{&quot;url&quot;: &quot;/datatables/ajax.html&quot;...}" />
+            <marker date="1495781307900" expanded="true" signature="23069:24164" ph="{...}" />
+            <marker date="1495781307900" expanded="true" signature="23093:24150" ph="[...]" />
+            <marker date="1495781307900" expanded="true" signature="23131:24149" ph="{...}" />
+            <marker date="1495781307900" expanded="true" signature="23177:24129" ph="{&quot;name&quot;: 'MetronicApp'...}" />
+            <marker date="1495781307900" expanded="true" signature="23381:24107" ph="[...]" />
+            <marker date="1495781307900" expanded="true" signature="24227:25363" ph="{&quot;url&quot;: &quot;/profile&quot;...}" />
+            <marker date="1495781307900" expanded="true" signature="24427:25353" ph="{...}" />
+            <marker date="1495781307900" expanded="true" signature="24451:25339" ph="[...]" />
+            <marker date="1495781307900" expanded="true" signature="24489:25338" ph="{...}" />
+            <marker date="1495781307900" expanded="true" signature="24535:25318" ph="{&quot;name&quot;: 'MetronicApp'...}" />
+            <marker date="1495781307900" expanded="true" signature="24741:25276" ph="[...]" />
+            <marker date="1495781307900" expanded="true" signature="25436:25581" ph="{&quot;url&quot;: &quot;/dashboard&quot;...}" />
+            <marker date="1495781307900" expanded="true" signature="25650:25791" ph="{&quot;url&quot;: &quot;/account&quot;...}" />
+            <marker date="1495781307900" expanded="true" signature="25854:25992" ph="{&quot;url&quot;: &quot;/help&quot;...}" />
+            <marker date="1495781307900" expanded="true" signature="26034:27312" ph="{&quot;url&quot;: &quot;/todo&quot;...}" />
+            <marker date="1495781307900" expanded="true" signature="26208:27302" ph="{...}" />
+            <marker date="1495781307900" expanded="true" signature="26232:27288" ph="[...]" />
+            <marker date="1495781307900" expanded="true" signature="26270:27287" ph="{...}" />
+            <marker date="1495781307900" expanded="true" signature="26316:27267" ph="{&quot;name&quot;: 'MetronicApp'...}" />
+            <marker date="1495781307900" expanded="true" signature="26523:27225" ph="[...]" />
+            <marker date="1495781307900" expanded="true" signature="27321:27363" ph="/*...*/" />
+            <marker date="1495781307900" expanded="true" signature="27380:27597" ph="[...]" />
           </folding>
         </state>
       </provider>
@@ -1296,16 +1444,6 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/theme/admin_3_angularjs/assets/global/plugins/angularjs/plugins/angularjs-dropdown-multiselect/src/angularjs-dropdown-multiselect.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="288">
-          <caret line="152" column="49" lean-forward="false" selection-start-line="152" selection-start-column="42" selection-end-line="152" selection-end-column="49" />
-          <folding>
-            <marker date="1495788730168" expanded="true" signature="1148:1154" ph=" " />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/theme/admin_3_angularjs/views/investigation_record.html">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="198">
@@ -1339,11 +1477,21 @@
     </entry>
     <entry file="file://$PROJECT_DIR$/theme/admin_3_angularjs/js/controllers/EventTreeController.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="126">
-          <caret line="130" column="0" lean-forward="false" selection-start-line="130" selection-start-column="0" selection-end-line="130" selection-end-column="0" />
+        <state relative-caret-position="594">
+          <caret line="156" column="36" lean-forward="true" selection-start-line="156" selection-start-column="36" selection-end-line="156" selection-end-column="36" />
           <folding>
             <element signature="n#!!doc" expanded="true" />
             <marker date="1495790161116" expanded="true" signature="1639:1658" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/theme/admin_3_angularjs/assets/global/plugins/angularjs/plugins/angularjs-dropdown-multiselect/src/angularjs-dropdown-multiselect.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="288">
+          <caret line="152" column="45" lean-forward="false" selection-start-line="152" selection-start-column="45" selection-end-line="152" selection-end-column="45" />
+          <folding>
+            <marker date="1495790514331" expanded="true" signature="1148:1154" ph=" " />
           </folding>
         </state>
       </provider>
