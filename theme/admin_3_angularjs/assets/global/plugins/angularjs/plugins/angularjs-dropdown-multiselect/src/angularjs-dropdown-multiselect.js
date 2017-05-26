@@ -45,11 +45,11 @@ directiveModule.directive('ngDropdownMultiselect', ['$filter', '$document', '$co
 
 			if (groups) {
 				// modify group checkbox and select mode!! --by Tim
-                //template += '<li ng-repeat-start="option in orderedItems | filter:getFilter(input.searchFilter)" ng-show="getPropertyForObject(option, settings.groupBy) !== getPropertyForObject(orderedItems[$index - 1], settings.groupBy)" role="presentation" ng-click="selectCurrentGroup(getPropertyForObject(option, settings.groupBy))"><a ng-class="{\'dropdown-selected-group\': selectedGroup === getPropertyForObject(option, settings.groupBy)}" tabindex="-1">{{ getGroupLabel(getPropertyForObject(option, settings.groupBy)) }}</a></li>';
+                template += '<li ng-repeat-start="option in orderedItems | filter:getFilter(input.searchFilter)" ng-show="getPropertyForObject(option, settings.groupBy) !== getPropertyForObject(orderedItems[$index - 1], settings.groupBy)" role="presentation" ng-click="selectCurrentGroup(getPropertyForObject(option, settings.groupBy))"><a ng-class="{\'dropdown-selected-group\': selectedGroup === getPropertyForObject(option, settings.groupBy)}" tabindex="-1">{{ getGroupLabel(getPropertyForObject(option, settings.groupBy)) }}</a></li>';
                 //previous edition
-				template += '<li ng-repeat-start="option in orderedItems | filter:getFilter(input.searchFilter)" ng-show="getPropertyForObject(option, settings.groupBy) !== getPropertyForObject(orderedItems[$index - 1], settings.groupBy)" role="presentation">' +
-					'<a ng-class="{\'dropdown-selected-group\': selectedGroup === getPropertyForObject(option, settings.groupBy)}" class="group-title" tabindex="-1" >' +
-					'<div class="checkbox"><label><input class="checkboxInput" type="checkbox" ng-click="checkboxClick($event, selectCurrentGroup(getPropertyForObject(option, settings.groupBy)))" />{{ getGroupLabel(getPropertyForObject(option, settings.groupBy)) }}</a></li>';
+                // template += '<li ng-repeat-start="option in orderedItems | filter:getFilter(input.searchFilter)" ng-show="getPropertyForObject(option, settings.groupBy) !== getPropertyForObject(orderedItems[$index - 1], settings.groupBy)" role="presentation">' +
+					// '<a ng-class="{\'dropdown-selected-group\': selectedGroup === getPropertyForObject(option, settings.groupBy)}" class="group-title" tabindex="-1" >' +
+					// '<div class="checkbox"><label><input class="checkboxInput" type="checkbox" ng-click="checkboxClick($event, selectCurrentGroup(getPropertyForObject(option, settings.groupBy)))" />{{ getGroupLabel(getPropertyForObject(option, settings.groupBy)) }}</a></li>';
 				template += '<li ng-class="{\'active\': isChecked(getPropertyForObject(option,settings.idProp)) && settings.styleActive}" class="dropdown-header" ng-repeat-end role="presentation">';
 			} else {
 				template += '<li ng-class="{\'active\': isChecked(getPropertyForObject(option,settings.idProp)) && settings.styleActive}" role="presentation" ng-repeat="option in options | filter:getFilter(input.searchFilter)">';

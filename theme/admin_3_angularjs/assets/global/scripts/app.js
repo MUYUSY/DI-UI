@@ -760,6 +760,7 @@ var App = function() {
 
         // wrApper function to  block element(indicate loading)
         blockUI: function(options) {
+
             options = $.extend(true, {}, options);
             var html = '';
             if (options.animate) {

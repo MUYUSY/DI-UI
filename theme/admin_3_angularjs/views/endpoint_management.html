@@ -16,7 +16,7 @@
                         <img src="./icon/add.png" style="margin: 0 10px 1px 0;">创建新组
                     </button>
                     <button class="btn"
-                            style="width:100px; border:1px solid #cccccc; background-color: #FFFFFF; margin-right:10px">
+                            style="width:100px; border:1px solid #cccccc; background-color: #FFFFFF; margin-right:10px" onclick="refresh()">
                         <img src="./icon/update.png" style="margin: 0 10px 1px 0">更新
                     </button>
                     <button class="btn"
@@ -30,10 +30,6 @@
                     <button class="btn"
                             style="width:120px; border:1px solid #cccccc; background-color: #FFFFFF; margin-right:10px">
                         更多操作<span class="caret" style="margin-left: 20px"></span>
-                    </button>
-                    <button class="btn pull-right"
-                            style="width:36px; border:1px solid #cccccc; background-color: #FFFFFF; margin-right:10px" onclick="refresh()">
-                        <img src="./icon/refresh.png">
                     </button>
                 </div>
                 <div class="col-md-12 col-sm-12 col-xs-12">
@@ -234,13 +230,13 @@
         var groupName = obj.id;
         if( obj.checked ) {
             for (var i = 0; i < dtable.api().rows().data().length; i++) {
-                if (dtable.api().rows().data()[i].group == groupName) {
+                if (dtable.api().rows().data()[i].group === groupName) {
                     dtable.api().rows(i).select()
                 }
             }
         } else {
             for (var k = 0; k < dtable.api().rows().data().length; k++) {
-                if (dtable.api().rows().data()[k].group == groupName) {
+                if (dtable.api().rows().data()[k].group === groupName) {
                     dtable.api().rows(k).deselect()
                 }
             }

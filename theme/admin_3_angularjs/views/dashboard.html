@@ -633,7 +633,7 @@
 
     }
 
-    setInterval(statsController, 60000);
+    var statsInterval = setInterval(statsController, 60000);
 
     var getLabel = function(label) {
         if (label === "过去24小时") {
@@ -660,6 +660,13 @@
             return res
         }
     };
+
+    var volumeInterval;
+    var networkInterval;
+    var systemInterval;
+    var processInterval;
+    var fileInterval;
+    var registryInterval;
 
     function volumeController($scope) {
         var dom = document.getElementById("volume-chart");
@@ -751,7 +758,7 @@
         };
 
         volumeDraw();
-        setInterval(volumeDraw, 60000);
+        volumeInterval = setInterval(volumeDraw, 60000);
     }
 
     function networkController($scope) {
@@ -798,8 +805,6 @@
 
         var dom = document.getElementById("network-chart");
         var myChart = echarts.init(dom);
-
-        var networkInterval;
 
         var loopNetwork = function() {
             chartDraw($scope.label, 3, $scope.startTime, $scope.endTime, selectDevice($scope.selectByGroupModel), $scope.chartType, myChart);
@@ -904,8 +909,6 @@
 
         var dom = document.getElementById("system-chart");
         var myChart = echarts.init(dom);
-
-        var systemInterval;
 
         var loopSystem = function() {
             chartDraw($scope.label, 4, $scope.startTime, $scope.endTime, selectDevice($scope.selectByGroupModel), $scope.chartType, myChart);
@@ -1292,8 +1295,6 @@
         var dom = document.getElementById("process-chart");
         var myChart = echarts.init(dom);
 
-        var processInterval;
-
         var loopProcess = function() {
             chartDraw($scope.label, 2, $scope.startTime, $scope.endTime, selectDevice($scope.selectByGroupModel), $scope.chartType, myChart);
 
@@ -1614,8 +1615,6 @@
 
         var dom = document.getElementById("file-chart");
         var myChart = echarts.init(dom);
-
-        var fileInterval;
 
         var loopFile = function() {
             chartDraw($scope.label, 1, $scope.startTime, $scope.endTime, selectDevice($scope.selectByGroupModel), $scope.chartType, myChart);
@@ -2035,8 +2034,6 @@
         var dom = document.getElementById("registry-chart");
         var myChart = echarts.init(dom);
 
-        var registryInterval;
-
         var loopRegistry = function() {
             chartDraw($scope.label, 5, $scope.startTime, $scope.endTime, selectDevice($scope.selectByGroupModel), $scope.chartType, myChart);
 
@@ -2344,13 +2341,8 @@
 //    };
 //
 //    registryDraw("今天", "line");
-
-
-
 </script>
 <!-- END MAIN CONTENT -->
 <!-- BEGIN MAIN JS & CSS -->
-<script>
-    Dashboard.init();
-</script>
+
 <!-- BEGIN MAIN JS & CSS -->

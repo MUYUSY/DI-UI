@@ -156,7 +156,7 @@ MetronicApp.config(['$stateProvider', '$urlRouterProvider', function($stateProvi
         .state('dashboard', {
             url: "/dashboard",
             templateUrl: "views/dashboard.html",
-            data: {pageTitle: 'Admin Dashboard Template'},
+            data: {pageTitle: 'Dashboard'},
             controller: "DashboardController",
             resolve: {
                 deps: ['$ocLazyLoad', function($ocLazyLoad) {
@@ -278,6 +278,7 @@ MetronicApp.config(['$stateProvider', '$urlRouterProvider', function($stateProvi
                             './assets/pages/scripts/ui-tree.min.js',
                             './assets/global/plugins/DataTables-1.10.15/media/js/jquery.dataTables.js',
                             './assets/global/plugins/DataTables-1.10.15/extensions/Select/js/dataTables.select.js',
+                            './assets/global/plugins/jquery.pulsate.min.js',
 
                             'js/controllers/NewInvestigationController.js'
 
@@ -298,9 +299,12 @@ MetronicApp.config(['$stateProvider', '$urlRouterProvider', function($stateProvi
                     return $ocLazyLoad.load([{
                         name: 'MetronicApp',
                         files: [
-                            './assets/global/plugins/jquery.tab-menu-set-master/lib/jquery.tab-menu-set.css',
+                            './assets/global/plugins/datatables/datatables.min.css',
+                            './assets/global/plugins/datatables/plugins/bootstrap/datatables.bootstrap.css',
+                            './assets/global/plugins/DataTables-1.10.15/extensions/RowGroup/css/rowGroup.dataTables.css',
+                            './assets/global/plugins/DataTables-1.10.15/extensions/Select/css/select.dataTables.css',
+                            './assets/pages/css/endpoint_management.css',
 
-                            './assets/global/plugins/jquery.tab-menu-set-master/lib/jquery.tab-menu-set.js',
                             'js/controllers/GeneralPageController.js'
                         ]
                     }]);
@@ -341,7 +345,7 @@ MetronicApp.config(['$stateProvider', '$urlRouterProvider', function($stateProvi
                     return $ocLazyLoad.load([{
                         name: 'MetronicApp',
                         files: [
-                            './assets/global/plugins/DataTables-1.10.15/media/css/jquery.dataTables.css',
+                            './assets/global/plugins/datatables/datatables.min.css',
                             './assets/global/plugins/datatables/plugins/bootstrap/datatables.bootstrap.css',
                             './assets/global/plugins/DataTables-1.10.15/extensions/RowGroup/css/rowGroup.dataTables.css',
                             './assets/global/plugins/DataTables-1.10.15/extensions/Select/css/select.dataTables.css',

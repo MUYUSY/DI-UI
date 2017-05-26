@@ -116,42 +116,43 @@
                         <img src="./icon/save.png" style="margin: 0 4px 1px 0">保存规则
                     </button>
                 </div>
-
-                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
-                    <div class="portlet light">
-                        <div class="portlet-title margin-top-5">
-                            <div class="caption font-dark col-xs-2">
-                                <span id="searchResult" class="caption-subject bold uppercase">调查结果</span>
-                            </div>
-                            <div id="progressbar" class="progress-bar blue shine">
-                                <span style="width: 55%; text-align: right">0%</span>
-                            </div>
-                            <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1 pull-right">
-                                <button class="btn dark btn-outline" id="exportResult">导出结果</button>
-                            </div>
-                        </div>
-
-                        <div class="portlet-body">
-                            <table class="table table-striped table-bordered table-hover" width="100%"
-                                   id="search-result">
-                                <thead>
-                                <tr>
-                                    <th width="3%"></th>
-                                    <th width="17%">时间戳</th>
-                                    <th width="13%">探针名</th>
-                                    <th width="15%">进程用户名</th>
-                                    <th width="12%">进程ID</th>
-                                    <th width="25%">进程映像路径</th>
-                                    <th width="15%">事件类型</th>
-                                </tr>
-                                </thead>
-                            </table>
-                        </div>
+            </div>
+        </div>
+        <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+            <div class="portlet light" id="investigation">
+                <div class="portlet-title margin-top-5">
+                    <div class="caption font-dark col-xs-2">
+                        <span id="searchResult" class="caption-subject bold uppercase">调查结果</span>
                     </div>
+                    <div id="progressbar" class="progress-bar blue shine" hidden>
+                        <span style="width: 0; text-align: right">0%</span>
+                    </div>
+                    <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1 pull-right">
+                        <button class="btn dark btn-outline" id="exportResult">导出结果</button>
+                    </div>
+                </div>
+
+                <div class="portlet-body">
+                    <table class="table table-striped table-bordered table-hover" width="100%"
+                           id="search-result">
+                        <thead>
+                        <tr>
+                            <th width="3%"></th>
+                            <th width="17%">时间戳</th>
+                            <th width="13%">探针名</th>
+                            <th width="15%">进程用户名</th>
+                            <th width="12%">进程ID</th>
+                            <th width="25%">进程映像路径</th>
+                            <th width="15%">事件类型</th>
+                        </tr>
+                        </thead>
+                    </table>
                 </div>
             </div>
         </div>
     </div>
+</div>
+</div>
 </div>
 
 <script src="../assets/global/plugins/bootstrap-daterangepicker/moment.min.js" type="text/javascript"></script>
@@ -787,6 +788,9 @@
                 data: JSON.stringify(saveJson),
                 success: function (data) {
                     DIalert("success", "保存成功!")
+                },
+                error: function(data) {
+                    DIalert("warning", "保存失败!")
                 }
             });
         };
@@ -1001,6 +1005,8 @@
     };
 
     var SearchResultCtrl = function (device, filter_condition, search_condition) {
+//        $('#investigation').append('<div class="loading-message ' + '">' + '<div class="block-spinner-bar"><div class="bounce1"></div><div class="bounce2"></div><div class="bounce3"></div></div>' + '</div>');
+
         var device_id = [];
 
         if (device.length === 0) {
@@ -1026,76 +1032,113 @@
         var skip = 0;
         var task_id;
         var total_count = 0;
-        var count;
-//        while (total_count < 250000) {
+        var row_log;
+        var pos = 0;
+        var count = 0;
         var postJson = {
             "begin_time": startTime,
             "end_time": Math.floor(endTime / 60) * 60,
-//            "begin_time": 1493194920,
-//            "end_time": 1493251200,
             "device_id": device_id,
-//            "device_id": ["diclient"],
             "count": 1000,
             "skip": skip,
             "filter_condition": filter_condition
-//            "filter_condition": {
-//                "process_user": {},
-//                "pid": {
-//                    "include": [864]
-//                }
-//
-//            }
+        };
+        var getTableData = function () {
+            var results = [];
+            if (count >= (pos + 1000)) {
+                for (var i = pos; i < (pos + 1000); i++) {
+                    if (row_log[i] === "") {
+                        continue
+                    }
+                    var list = row_log[i].split('\t');
+                    results.push({
+                        timestamp: timeStamp2String(getValue(list[0]), "yyyy-MM-dd hh:mm:ss"),
+                        deviceName: getDeviceName(getValue(list[1])),
+                        //                            deviceName: getValue(list[1]),
+                        processUsername: getValue(list[2]),
+                        processId: getValue(list[3]),
+                        processPath: getValue(list[4]),
+                        eventType: getEventType(getValue(list[10]), getValue(list[5])),
+                        content: list.slice(13),
+                        timeStamp: getValue(list[0]),
+                        deviceId: getValue(list[1])
+                    })
+                    //                        results.push({
+                    //                            timestamp: list[0],
+                    //                            deviceName: list[1],
+                    //                            processUsername: list[2],
+                    //                            processId: list[3],
+                    //                            processPath: list[4],
+                    //                            eventType: list[5],
+                    //                            content: list.slice(13),
+                    //                            timeStamp: list[0],
+                    //                            deviceId: list[1]
+                    //                        })
+                }
+                pos += 1000;
+            }
+            else {
+                for (var k = pos; k < count; k++) {
+                    if (row_log[k] === "") {
+                        continue
+                    }
+                    var list = row_log[k].split('\t');
+                    results.push({
+                        timestamp: timeStamp2String(getValue(list[0]), "yyyy-MM-dd hh:mm:ss"),
+                        deviceName: getDeviceName(getValue(list[1])),
+                        //                            deviceName: getValue(list[1]),
+                        processUsername: getValue(list[2]),
+                        processId: getValue(list[3]),
+                        processPath: getValue(list[4]),
+                        eventType: getEventType(getValue(list[10]), getValue(list[5])),
+                        content: list.slice(13),
+                        timeStamp: getValue(list[0]),
+                        deviceId: getValue(list[1])
+                    })
+                    //                        results.push({
+                    //                            timestamp: list[0],
+                    //                            deviceName: list[1],
+                    //                            processUsername: list[2],
+                    //                            processId: list[3],
+                    //                            processPath: list[4],
+                    //                            eventType: list[5],
+                    //                            content: list.slice(13),
+                    //                            timeStamp: list[0],
+                    //                            deviceId: list[1]
+                    //                        })
+                }
+                pos = 0;
+                count = 0
+            }
+            return results
         };
         console.log(moment().valueOf());
+
         $.ajax({
-            async: false,
+            async: true,
             type: "POST",
             dataType: "json",
             url: 'logquery',
+            beforeSend: function(){
+                App.blockUI({
+                    target: '#investigation',
+                    animate: true
+                });
+            },
             data: JSON.stringify(postJson),
             success: function (data) {
                 console.log(moment().valueOf());
-                var results = [];
-
+                var results;
                 if (data === "" || data === undefined) {
                     results = [];
-                    count = 0;
                 }
                 else {
                     task_id = data.tid;
                     skip = data.skip;
-                    var row_log = data.data.split('\n');
+                    row_log = data.data.split('\n');
                     count = row_log.length;
                     total_count += count;
-                    for (var i = 0; i < count; i++) {
-                        if (row_log[i] === "") {
-                            continue
-                        }
-                        var list = row_log[i].split('\t');
-                        results.push({
-                            timestamp: timeStamp2String(getValue(list[0]), "yyyy-MM-dd hh:mm:ss"),
-                            deviceName: getDeviceName(getValue(list[1])),
-//                            deviceName: getValue(list[1]),
-                            processUsername: getValue(list[2]),
-                            processId: getValue(list[3]),
-                            processPath: getValue(list[4]),
-                            eventType: getEventType(getValue(list[10]), getValue(list[5])),
-                            content: list.slice(13),
-                            timeStamp: getValue(list[0]),
-                            deviceId: getValue(list[1])
-                        })
-//                        results.push({
-//                            timestamp: list[0],
-//                            deviceName: list[1],
-//                            processUsername: list[2],
-//                            processId: list[3],
-//                            processPath: list[4],
-//                            eventType: list[5],
-//                            content: list.slice(13),
-//                            timeStamp: list[0],
-//                            deviceId: list[1]
-//                        })
-                    }
+                    results = getTableData();
                 }
                 console.log(moment().valueOf());
                 var config = {
@@ -1107,11 +1150,21 @@
                             "data": null,
                             "defaultContent": ''
                         },
-                        {data: "timestamp"},
-                        {data: "deviceName"},
-                        {data: "processUsername"},
+                        {
+                            "data": "timestamp",
+                            "orderable": false
+                        },
+                        {
+                            "data": "deviceName",
+                            "orderable": false
+                        },
+                        {
+                            "data": "processUsername",
+                            "orderable": false
+                        },
                         {
                             data: data,
+                            orderable: false,
                             render: function (data) {
                                 var passJson =
                                     {
@@ -1132,21 +1185,28 @@
                                 return content;
                             }
                         },
-                        {data: "processPath"},
-                        {data: "eventType"}],
+                        {
+                            data: "processPath",
+                            orderable: false
+                        },
+                        {
+                            data: "eventType",
+                            orderable: false
+                        }],
                     order: [[1, "asc"]],
                     pagingType: "simple_numbers_no_ellipses",
                     processing: true,
                     language: {
-                        aria: {
-                            sortAscending: ": activate to sort column ascending",
-                            sortDescending: ": activate to sort column descending"
-                        },
+//                        aria: {
+//                            sortAscending: ": activate to sort column ascending",
+//                            sortDescending: ": activate to sort column descending"
+//                        },
                         emptyTable: "无匹配的数据可显示",
                         info: "显示 _TOTAL_ 条目中的第 _START_ 至 _END_ 条",
                         infoEmpty: "没有匹配的条目",
                         infoFiltered: "(过滤出 filtered1 条目，总计 _MAX_ 条目)",
                         lengthMenu: "每页 _MENU_ 条",
+                        processing: '<div class="loading-message ' + '">' + '<div class="block-spinner-bar"><div class="bounce1"></div><div class="bounce2"></div><div class="bounce3"></div></div>' + '</div>',
                         search: "过滤:",
                         zeroRecords: "无匹配的数据可显示",
                         paginate: {
@@ -1157,20 +1217,21 @@
                         }
                     },
                     lengthMenu: [
-                        [200, 500],
-                        ["200", "500"] // change per page values here
+                        [50, 100, 200, 500],
+                        ["50", "100", "200", "500"] // change per page values here
                     ],
                     "dom": "<'row'<'col-md-12'B>><'row'<'col-md-3 col-sm-12'<'pull-left'f>><'col-md-9 col-sm-12'p>r><t><'row'<'col-md-2 col-sm-12'l><'col-md-2 col-sm-12'i><'col-md-8 col-sm-12'p>>"
                 };
 
                 dtable = $('#search-result').dataTable(config);
+                App.unblockUI('#investigation');
                 console.log(moment().valueOf());
                 $('html,body').animate({scrollTop: $('#searchResult').offset().top}, 0);
 
                 var firstTr = $("tbody tr:first");
                 var firstRow = dtable.api().row(firstTr);
                 if (firstRow.data()) {
-                    firstRow.child(format((firstRow.data().content))).show();
+                    firstRow.child(format(formatData((firstRow.data().content), search_condition))).show();
                     firstTr.addClass('shown');
                 }
                 $("tbody").on('click', 'td.details-control', function () {
@@ -1182,8 +1243,8 @@
                         tr.removeClass('shown');
                     }
                     else {
-                        content = formatData(content, search_condition);
-                        row.child(format((row.data().content))).show();
+                        var data = formatData((row.data().content), search_condition);
+                        row.child(format(data)).show();
                         tr.addClass('shown');
                     }
                 });
@@ -1194,79 +1255,110 @@
                 else {
                     $('#exportResult').show();
                 }
+                var processQuery = function () {
+                    $.ajax({
+                        async: false,
+                        url: '/processquery',
+                        type: 'POST',
+                        dataType: "json",
+                        data: JSON.stringify({'taskid': task_id}),
+                        success: function (result) {
+                            if (result < 0.5 && result >= 0) {
+                                value = result * 100 + "%";
+                                $('#progressbar').show();
+                                $('#progressbar').addClass("progress-bar");
+                                $('#progressbar').addClass("blue");
+                                $('#progressbar').addClass("shine");
+                                $('#progressbar').children('span').css('width', value);
+                                $('#progressbar').children('span').html(value);
+                            }
+                            else if (result >= 0.5 && result < 1) {
+                                value = result * 100 + "%";
+                                $('#progressbar').show();
+                                $('#progressbar').removeClass("shine");
+                                $('#progressbar').addClass("glow");
+                                $('#progressbar').children('span').css('width', value);
+                                $('#progressbar').children('span').html(value);
+                            }
+                            else if (result === 1) {
+                                $('#progressbar').show();
+                                $('#progressbar').removeClass("shine");
+                                $('#progressbar').addClass("glow");
+                                $('#progressbar').children('span').css('width', "100%");
+                                $('#progressbar').children('span').html("数据查询结束,排序功能已就绪");
+//                                $('#progressbar').children('span').css('font-color', "#ff2507");
+                                clearInterval(processQueryInterval);
+                                $('#progressbar').pulsate({
+                                    color: "#bf1c56",
+                                    repeat: 5
+                                });
+//                        setTimeout(function(){
+//                            console.log('1111');
+//                            $('#progressbar').removeClass("progress-bar");
+//                            $('#progressbar').removeClass("glow");
+//                            $('#progressbar').removeClass("blue");
+//                            $('#progressbar').children('span').css('font-color', "blue");
+//                        }, 5000)
+
+                            }
+                            else {
+                                $('#progressbar').hide();
+                                clearInterval(processQueryInterval)
+                            }
+                        }
+                    })
+                };
+
+                var processQueryInterval = setInterval(processQuery, 1000);
             }
         });
-        
-        var processQuery = function () {
-            $.get('/processquery?taskid=' + task_id, function (result) {
-                if (result < 1) {
-                    value = result * 100 + "%";
-                    $('#progressbar').children('span').css('width', value)
-                }
-                else {
-                    clearInterval(processQueryInterval)
-                }
-            })
-        }
-
-        var processQueryInterval = setInterval(processQuery, 1000);
 
         $('#search-result').off('page.dt');
         $('#search-result').on('page.dt', function () {
             if (dtable.api().page() >= dtable.api().page.info().pages - 2) {
-                postJson = {
-                    "begin_time": startTime,
-                    "end_time": Math.floor(endTime / 60) * 60,
+                var results;
+                if (count > 0) {
+                    results = getTableData();
+                    dtable.api().rows.add(results).draw(false);
+                }
+                else {
+                    postJson = {
+                        "begin_time": startTime,
+                        "end_time": Math.floor(endTime / 60) * 60,
 //                    "begin_time": 1493194920,
 //                    "end_time": 1493251200,
-                    "taskid": task_id,
-                    "device_id": device_id,
-                    "count": 1000,
-                    "skip": skip,
-                    "filter_condition": filter_condition
-                };
-                $.ajax({
-                    async: false,
-                    type: "POST",
-                    dataType: "json",
-                    url: 'logquery',
-                    data: JSON.stringify(postJson),
-                    success: function (data) {
-                        var results = [];
-                        var count;
-
-                        if (data === "" || data === undefined) {
-                            count = 0
-                        }
-                        else {
-                            task_id = data.tid;
-                            skip = data.skip;
-                            var row_log = data.data.split('\n');
-                            count = row_log.length;
-                            total_count += count;
-                            for (var i = 0; i < count; i++) {
-                                if (row_log[i] === "") {
-                                    continue
-                                }
-                                var list = row_log[i].split('\t');
-                                results.push({
-                                    timestamp: timeStamp2String(getValue(list[0]), "yyyy-MM-dd hh:mm:ss"),
-                                    deviceName: getDeviceName(getValue(list[1])),
-//                                    deviceName: getValue(list[1]),
-                                    processUsername: getValue(list[2]),
-                                    processId: getValue(list[3]),
-                                    processPath: getValue(list[4]),
-                                    eventType: getEventType(getValue(list[10]), getValue(list[5])),
-                                    content: formatData(list.slice(13), search_condition),
-                                    timeStamp: getValue(list[0]),
-                                    deviceId: getValue(list[1])
-                                })
+                        "taskid": task_id,
+                        "device_id": device_id,
+                        "count": 1000,
+                        "skip": skip,
+                        "filter_condition": filter_condition
+                    };
+                    App.blockUI({
+                        target: '#investigation',
+                        animate: true
+                    });
+                    $.ajax({
+                        type: "POST",
+                        dataType: "json",
+                        url: 'logquery',
+                        data: JSON.stringify(postJson),
+                        success: function (data) {
+                            if (data === "" || data === undefined) {
+                                $('#search-result').off('page.dt');
                             }
+                            else {
+                                task_id = data.tid;
+                                skip = data.skip;
+                                row_log = data.data.split('\n');
+                                count = row_log.length;
+                                total_count += count;
+                                results = getTableData();
+                            }
+                            dtable.api().rows.add(results).draw(false);
+                            App.unblockUI('#investigation');
                         }
-
-                        dtable.api().rows.add(results).draw(false);
-                    }
-                });
+                    });
+                }
             }
         });
     };
