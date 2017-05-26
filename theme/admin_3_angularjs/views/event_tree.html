@@ -5,8 +5,8 @@
             <div class="portlet-title">
                 <div class="caption font-dark">
                     <span class="caption-subject bold uppercase">事件树 |</span>
-                    <span id="deviceid">{{devicename}}</span>
-                    <span id="time-selected" class="time-selected">{{start}} 至 {{end}}</span>
+                    <span id="deviceid" class="discription">{{devicename}}</span>
+                    <span id="time-selected" class="time-selected discription">{{start}} 至 {{end}}</span>
                 </div>
             </div>
 
@@ -24,42 +24,181 @@
                             <button class="btn btn-warning" ng-click="cancel()">Cancel</button>
                         </div>
                     </script>
-                    <button class="btn" style="width:121px; border:1px solid #cccccc; background-color: #FFFFFF">
+                    <button class="btn" id="export" style="width:121px; border:1px solid #cccccc; background-color: #FFFFFF">
                         <img src="./icon/export.png" style="margin: 0 4px 1px 0">导出图片
                     </button>
-                    <button class="btn" style="width:121px; border:1px solid #cccccc; background-color: #FFFFFF" ng-click="saveRule('sm')">
+                    <button class="btn" style="width:121px; border:1px solid #cccccc; background-color: #FFFFFF"
+                            ng-click="saveRule('sm')">
                         <img src="./icon/save.png" style="margin: 0 4px 1px 0">保存规则
                     </button>
-                    <input type="text" id="filter" class="form-control searchField"  placeholder="检索..." >
+                    <input type="text" id="filter" class="searchField form-control " placeholder="搜索">
                 </div>
-                <div id="tree-container">
+ <div id="tree-container">
+                    <svg width="2000" height="2000" xmlns="http://www.w3.org/2000/svg"
+                         xmlns:xlink="http://www.w3.org/1999/xlink">
+                        <defs>
 
+                            <mask id="mask_registry2">
+                                <svg width="20px" height="20px" viewBox="0 0 26 26" version="1.1"
+                                     xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                                    <!-- Generator: Sketch 42 (36781) - http://www.bohemiancoding.com/sketch -->
+                                    <title>collocation</title>
+                                    <desc>Created with Sketch.</desc>
+                                    <defs></defs>
+                                    <g id="关联分析-事件树" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+                                        <g id="调查取证-关联分析-hover上去显示详情-点击展开-右键可以表格形式展示"
+                                           transform="translate(-935.000000, -403.000000)" fill="#848484">
+                                            <g id="event-tree" transform="translate(9.000000, 186.000000)">
+                                                <g id="icon" transform="translate(38.000000, 0.000000)">
+                                                    <g id="collocation" transform="translate(888.000000, 217.071429)">
+                                                        <path d="M12.1456961,7.62641176 C12.6402059,5.61829412 12.1032549,3.40816667 10.5342059,1.8392451 C8.81540196,0.120441176 6.32730392,-0.359921569 4.17822549,0.397392157 L7.89533333,4.1145 C8.40819608,4.6274902 8.40819608,5.45910784 7.89533333,5.97222549 L7.09073529,6.77682353 C7.04498039,6.81760784 6.99795098,6.85648039 6.95410784,6.90032353 C6.91026471,6.94416667 6.87151961,6.99106863 6.83086275,7.03669608 L6.0260098,7.84154902 C5.51301961,8.35453922 4.68114706,8.35453922 4.16828431,7.84154902 L0.45104902,4.12444118 C-0.306392157,6.27364706 0.173843137,8.76161765 1.89277451,10.480549 C3.46182353,12.049598 5.67207843,12.5866765 7.68019608,12.0921667 L20.5428039,24.9546471 C21.7758922,26.1877353 23.7750882,26.1877353 25.0083039,24.9546471 C26.2415196,23.7214314 26.2415196,21.7221078 25.0083039,20.4890196 L12.1456961,7.62641176 Z M23.6217647,23.5681078 C23.054098,24.135902 22.1333922,24.135902 21.565598,23.5682353 C20.9980588,23.0005686 20.9980588,22.0798627 21.5658529,21.5121961 C22.1336471,20.9442745 23.054098,20.944402 23.6218922,21.5120686 C24.1895588,22.0797353 24.1895588,23.0001863 23.6217647,23.5681078 Z"
+                                                              id="Shape"></path>
+                                                        <path d="M14.9130392,9.10293137 L21.8953137,2.12078431 C22.0652059,1.95076471 22.3406275,1.95063725 22.5107745,2.12065686 C22.6806667,2.29067647 22.6806667,2.56648039 22.5107745,2.73637255 L15.5286275,9.71851961 L16.5357451,10.7256373 L23.5177647,3.7434902 C23.6879118,3.57347059 23.9635882,3.57359804 24.1334804,3.7434902 C24.3035,3.9135098 24.3035,4.18905882 24.1334804,4.35907843 L17.1513333,11.3412255 L17.1513333,11.3413529 L18.265,12.4550196 L25.0562255,5.66379412 C26.2893137,4.43070588 26.2893137,2.43138235 25.0562255,1.19816667 C23.8230098,-0.0349215686 21.8236863,-0.0350490196 20.590598,1.19816667 L13.7993725,7.98939216 L14.9130392,9.10293137 L14.9130392,9.10293137 Z"
+                                                              id="Shape"></path>
+                                                        <polygon id="Shape"
+                                                                 points="9.2817451 15.1755882 5.15526471 19.4573039 3.09756863 20.0086569 0.33022549 24.2910098 1.84561765 25.8062745 6.12784314 23.0391863 6.67932353 20.9814902 10.9607843 16.8547549"></polygon>
+                                                    </g>
+                                                </g>
+                                            </g>
+                                        </g>
+                                    </g>
+                                </svg>
+                            </mask>
+                            <mask id="mask_registry">
+                                <svg width="20px" height="20px" viewBox="0 0 26 26" version="1.1"
+                                     xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                                    <!-- Generator: Sketch 42 (36781) - http://www.bohemiancoding.com/sketch -->
+                                    <title>collocation</title>
+                                    <desc>Created with Sketch.</desc>
+                                    <defs></defs>
+                                    <g id="关联分析-事件树" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+                                        <g id="调查取证-关联分析-hover上去显示详情-点击展开-右键可以表格形式展示"
+                                           transform="translate(-935.000000, -403.000000)" fill="#848484">
+                                            <g id="event-tree" transform="translate(9.000000, 186.000000)">
+                                                <g id="icon" transform="translate(38.000000, 0.000000)">
+                                                    <g id="collocation" transform="translate(888.000000, 217.071429)">
+                                                        <path d="M12.1456961,7.62641176 C12.6402059,5.61829412 12.1032549,3.40816667 10.5342059,1.8392451 C8.81540196,0.120441176 6.32730392,-0.359921569 4.17822549,0.397392157 L7.89533333,4.1145 C8.40819608,4.6274902 8.40819608,5.45910784 7.89533333,5.97222549 L7.09073529,6.77682353 C7.04498039,6.81760784 6.99795098,6.85648039 6.95410784,6.90032353 C6.91026471,6.94416667 6.87151961,6.99106863 6.83086275,7.03669608 L6.0260098,7.84154902 C5.51301961,8.35453922 4.68114706,8.35453922 4.16828431,7.84154902 L0.45104902,4.12444118 C-0.306392157,6.27364706 0.173843137,8.76161765 1.89277451,10.480549 C3.46182353,12.049598 5.67207843,12.5866765 7.68019608,12.0921667 L20.5428039,24.9546471 C21.7758922,26.1877353 23.7750882,26.1877353 25.0083039,24.9546471 C26.2415196,23.7214314 26.2415196,21.7221078 25.0083039,20.4890196 L12.1456961,7.62641176 Z M23.6217647,23.5681078 C23.054098,24.135902 22.1333922,24.135902 21.565598,23.5682353 C20.9980588,23.0005686 20.9980588,22.0798627 21.5658529,21.5121961 C22.1336471,20.9442745 23.054098,20.944402 23.6218922,21.5120686 C24.1895588,22.0797353 24.1895588,23.0001863 23.6217647,23.5681078 Z"
+                                                              id="Shape"></path>
+                                                        <path d="M14.9130392,9.10293137 L21.8953137,2.12078431 C22.0652059,1.95076471 22.3406275,1.95063725 22.5107745,2.12065686 C22.6806667,2.29067647 22.6806667,2.56648039 22.5107745,2.73637255 L15.5286275,9.71851961 L16.5357451,10.7256373 L23.5177647,3.7434902 C23.6879118,3.57347059 23.9635882,3.57359804 24.1334804,3.7434902 C24.3035,3.9135098 24.3035,4.18905882 24.1334804,4.35907843 L17.1513333,11.3412255 L17.1513333,11.3413529 L18.265,12.4550196 L25.0562255,5.66379412 C26.2893137,4.43070588 26.2893137,2.43138235 25.0562255,1.19816667 C23.8230098,-0.0349215686 21.8236863,-0.0350490196 20.590598,1.19816667 L13.7993725,7.98939216 L14.9130392,9.10293137 L14.9130392,9.10293137 Z"
+                                                              id="Shape"></path>
+                                                        <polygon id="Shape"
+                                                                 points="9.2817451 15.1755882 5.15526471 19.4573039 3.09756863 20.0086569 0.33022549 24.2910098 1.84561765 25.8062745 6.12784314 23.0391863 6.67932353 20.9814902 10.9607843 16.8547549"></polygon>
+                                                    </g>
+                                                </g>
+                                            </g>
+                                        </g>
+                                    </g>
+                                </svg>
+                            </mask>
+                            <mask id="mask_file" height="20" width="20">
+                                <svg width="20px" height="20px" viewBox="0 0 26 28" version="1.1"
+                                     xmlns="http://www.w3.org/2000/svg"
+                                     xmlns:xlink="http://www.w3.org/1999/xlink">
+                                    <!-- Generator: Sketch 42 (36781) - http://www.bohemiancoding.com/sketch -->
+                                    <title>document</title>
+                                    <desc>Created with Sketch.</desc>
+                                    <defs></defs>
+                                    <g id="关联分析-事件树" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+                                        <g id="调查取证-关联分析-hover上去显示详情-点击展开-右键可以表格形式展示"
+                                           transform="translate(-935.000000, -474.000000)"
+                                           fill="#848484">
+                                            <g id="event-tree" transform="translate(9.000000, 186.000000)">
+                                                <g id="icon" transform="translate(38.000000, 0.000000)">
+                                                    <g id="document" transform="translate(888.000000, 288.000000)">
+                                                        <path d="M22.9679348,0.315978261 L2.58619565,0.315978261 C1.32163043,0.315978261 0.29673913,1.34086957 0.29673913,2.60576087 L0.29673913,25.4141304 C0.29673913,26.6793478 1.32195652,27.703913 2.58619565,27.703913 L22.9679348,27.703913 C24.2331522,27.703913 25.2573913,26.6790217 25.2573913,25.4141304 L25.2573913,2.60576087 C25.2573913,1.34086957 24.2328261,0.315978261 22.9679348,0.315978261 Z M23.5275,24.5956522 C23.5275,25.438913 22.8446739,26.1220652 22.0017391,26.1220652 L3.5523913,26.1220652 C2.70913043,26.1220652 2.02597826,25.438913 2.02597826,24.5956522 L2.02597826,3.42456522 C2.02597826,2.58163043 2.70913043,1.89847826 3.5523913,1.89847826 L22.0020652,1.89847826 C22.845,1.89847826 23.5278261,2.58163043 23.5278261,3.42456522 L23.5278261,26.5956522 L23.5275,24.5956522 Z"
+                                                              id="Shape"></path>
+                                                        <rect id="Rectangle-path" x="4.10967391" y="8.12641304"
+                                                              width="17.3683696"
+                                                              height="1.89815217"></rect>
+                                                        <rect id="Rectangle-path" x="4.10967391" y="4.17619565"
+                                                              width="17.3683696"
+                                                              height="1.89847826"></rect>
+                                                        <rect id="Rectangle-path" x="4.10967391" y="12.0769565"
+                                                              width="17.3683696"
+                                                              height="1.89815217"></rect>
+                                                        <rect id="Rectangle-path" x="4.10967391" y="16.0268478"
+                                                              width="8.26467391"
+                                                              height="1.89815217"></rect>
+                                                    </g>
+                                                </g>
+                                            </g>
+                                        </g>
+                                    </g>
+                                </svg>
+                            </mask>
+
+                            <mask id="mask_process">
+                                <svg width="20px" height="20px" viewBox="0 0 25 27" version="1.1"
+                                     xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                                    <!-- Generator: Sketch 42 (36781) - http://www.bohemiancoding.com/sketch -->
+                                    <title>Shape</title>
+                                    <desc>Created with Sketch.</desc>
+                                    <defs></defs>
+                                    <g id="关联分析-事件树" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+                                        <g id="调查取证-关联分析-hover上去显示详情-点击展开-右键可以表格形式展示"
+                                           transform="translate(-936.000000, -258.000000)" fill="#848484">
+                                            <g id="event-tree" transform="translate(9.000000, 186.000000)">
+                                                <g id="icon" transform="translate(38.000000, 0.000000)">
+                                                    <path d="M899.62522,72.3571429 C898.934515,72.3571429 898.385108,72.9145837 898.385108,73.6070033 L898.385108,75.3255614 C896.792598,75.8155286 895.361727,76.6718268 894.186389,77.7959888 L892.682619,76.9562388 C892.079843,76.6182046 891.330552,76.8303997 890.993371,77.434701 L889.157638,80.7058201 C888.820426,81.3101183 889.043057,82.0765858 889.645865,82.4146137 L891.139854,83.2543637 C890.986746,83.9730929 890.905505,84.716138 890.905505,85.4806839 C890.905505,86.2451923 890.986746,86.9882656 891.139854,87.7069979 L889.645865,88.5467478 C889.043057,88.8847726 888.820426,89.6512495 889.157638,90.2555258 L890.993371,93.5266606 C891.330552,94.1309681 892.079874,94.3431632 892.682619,94.0051072 L894.186389,93.1653572 C895.361727,94.2894817 896.792598,95.1458236 898.385108,95.6358001 L898.385108,97.3543583 C898.385108,98.046781 898.934515,98.6042187 899.62522,98.6042187 L903.374801,98.6042187 C904.065474,98.6042187 904.614913,98.046781 904.614913,97.3543583 L904.614913,95.6358001 C906.207422,95.1458236 907.638294,94.2894817 908.813631,93.1653572 L910.317401,94.0051072 C910.920209,94.3431632 911.669437,94.1309681 912.00665,93.5266606 L913.842382,90.2555258 C914.179563,89.6512495 913.956932,88.8847726 913.354156,88.5467478 L911.860166,87.7069979 C912.013274,86.9882656 912.094515,86.2451923 912.094515,85.4806839 C912.094515,84.716138 912.013274,83.9730929 911.860166,83.2543637 L913.354156,82.4146137 C913.956932,82.0765858 914.179563,81.3101183 913.842382,80.7058201 L912.00665,77.434701 C911.669437,76.8303966 910.920209,76.6182109 910.317401,76.9562388 L908.813631,77.7959888 C907.638294,76.6718268 906.207422,75.8155286 904.614913,75.3255614 L904.614913,73.6070033 C904.614913,72.9145837 904.065474,72.3571429 903.374801,72.3571429 L899.62522,72.3571429 L899.62522,72.3571429 Z M901.50001,79.2313754 C904.944001,79.2313754 907.749313,82.036659 907.749313,85.4806839 C907.749313,88.9246432 904.944001,91.7299862 901.50001,91.7299862 C898.05602,91.7299862 895.250708,88.9246744 895.250708,85.4806839 C895.250708,82.0366559 898.05602,79.2313754 901.50001,79.2313754 Z"
+                                                          id="Shape"></path>
+                                                </g>
+                                            </g>
+                                        </g>
+                                    </g>
+                                </svg>
+                            </mask>
+
+                            <mask id="mask_expand">
+                                <svg width="10px" height="10px" viewBox="0 0 5 8" version="1.1"
+                                     xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink">
+                                    <!-- Generator: Sketch 42 (36781) - http://www.bohemiancoding.com/sketch -->
+                                    <title>Path 3</title>
+                                    <desc>Created with Sketch.</desc>
+                                    <defs></defs>
+                                    <g id="关联分析-事件树" stroke="none" stroke-width="1" fill="none" fill-rule="evenodd">
+                                        <g id="调查取证-关联分析-hover上去显示详情-点击展开-右键可以表格形式展示"
+                                           transform="translate(-969.000000, -558.000000)" fill="#717171">
+                                            <g id="event-tree" transform="translate(9.000000, 186.000000)">
+                                                <polygon id="Path-3"
+                                                         points="960 372 964.486084 375.690002 960 379.369995 960 377.581909 962.243042 375.68634 960 373.790771"></polygon>
+                                            </g>
+                                        </g>
+                                    </g>
+                                </svg>
+                            </mask>
+
+
+                        </defs>
+
+                    </svg>
                 </div>
             </div>
         </div>
     </div>
 </div>
-<div class="zoomarea" >
-<div>
-    <a id="minus" href="#">
-            <span class="glyphicon glyphicon-plus"></span>
-        </a>
 
-</div>
-    <div>
+<div class="zoomarea">
+    <div style="margin-left: 20px">
         <a id="plus" href="#">
-            <span class="glyphicon glyphicon-minus"></span>
+            <img src="./icon/zoom_in.png">
         </a>
+        <a id="minus" href="#">
+            <img src="./icon/zoom_out.png">
+        </a>
+        <img src="./icon/zoom.png" style=";z-index: -1;position: absolute;bottom: 20px">
     </div>
 </div>
 
-<div class="popover popover-mindmap ng-scope am-flip-x bottom mindmapNodePopover" role="tooltip" style="top: 337.5px; left: 201px; display: none; visibility: visible;">
-    <h3 class="popover-title">
+
+<div class="popover popover-mindmap ng-scope am-flip-x bottom mindmapNodePopover" role="tooltip"
+     style="top: 337.5px; left: 201px; display: none; visibility: visible;">
+    <h3 class="popover-title di-table">
 
     </h3>
     <div class="popover-content">
         <table class="table ddes-table table-mindmap-popover">
-            <tbody><tr>
+            <tbody>
+            <tr>
                 <td>时间:</td>
                 <td><span id="time"></span></td>
             </tr>
@@ -68,12 +207,12 @@
                 <td class="ng-binding"><span id="pid"></span></td>
             </tr>
             <tr>
-                <td><span >类型:</span></td>
+                <td><span>类型:</span></td>
                 <td>
-                    <span id="type" ></span>
+                    <span id="type"></span>
                 </td>
             </tr>
-             <tr>
+            <tr>
                 <td><span>统计次数:</span></td>
                 <td><span id="times"></span></td>
             </tr>
@@ -96,6 +235,8 @@
                     <span id="detail"></span>
                 </td>
             </tr>
-        </tbody></table>
+            </tbody>
+        </table>
     </div>
 </div>
+<script src="../assets/global/plugins/bootstrap-daterangepicker/moment.min.js" type="text/javascript"></script>

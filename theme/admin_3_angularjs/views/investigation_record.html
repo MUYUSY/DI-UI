@@ -24,12 +24,12 @@
                                        id="investigation">
                                     <thead>
                                     <tr>
-                                        <th width="5%">
+                                        <th style="width: 20px">
                                             <!--<input type="checkbox" id="checkall" onclick="checkAll(this)">-->
                                         </th>
-                                        <th width="10%"></th>
-                                        <th width="10%"></th>
-                                        <th width="75%"></th>
+                                        <th style="width: 70px"></th>
+                                        <th style="width: 70px"></th>
+                                        <th></th>
                                         <th></th>
                                     </tr>
                                     </thead>
@@ -38,7 +38,31 @@
                         </div>
                     </tab>
                     <tab heading="历史事件树">
-                        <div>历史事件树</div>
+                        <div class="portlet-body">
+                            <div class="col-md-12 col-sm-12 col-xs-12">
+                                <button class="btn"
+                                        style="width:100px; border:1px solid #cccccc; background-color: #FFFFFF; margin-right:10px">
+                                    <img src="./icon/delete.png" style="margin: 0 10px 1px 0">删除
+                                </button>
+                            </div>
+                            <div class="col-md-12 col-sm-12 col-xs-12">
+                                <table class="table table-striped table-bordered table-hover endpoint-table"
+                                       width="100%"
+                                       id="eventtree">
+                                    <thead>
+                                    <tr>
+                                        <th style="width: 20px !important;">
+                                            <!--<input type="checkbox" id="checkall" onclick="checkAll(this)">-->
+                                        </th>
+                                        <th style="width: 70px !important;"></th>
+                                        <th style="width: 70px !important;"></th>
+                                        <th></th>
+                                        <th></th>
+                                    </tr>
+                                    </thead>
+                                </table>
+                            </div>
+                        </div>
                     </tab>
                 </tabset>
             </div>
@@ -204,13 +228,106 @@
                 "dom": "<'row'<'col-md-3 col-sm-12'i><'col-md-9 col-sm-12'f>r><t><'row'<'col-md-12 col-sm-12'p>>"
             };
 
-            if (investigationTable != null) {
-                investigationTable.fnClearTable();
-                investigationTable.fnDestroy();
-                $("tbody").remove();
-            }
+//            if (investigationTable != null) {
+//                investigationTable.fnClearTable();
+//                investigationTable.fnDestroy();
+//                $("tbody").remove();
+//            }
 
             investigationTable = $('#investigation').dataTable(investigationConfig);
+
+            // For Event Tree Record
+            var eventTreeRecord;
+            var eventTreeTableContent = [];
+            if (data.type2) {
+                eventTreeRecord = data.type2;
+                for (var i = 0; i < eventTreeRecord.length; i++) {
+                    eventTreeTableContent.push({
+                        group: timeStamp2String(eventTreeRecord[i].time, "yyyy-MM-dd"),
+                        time: timeStamp2String(eventTreeRecord[i].time, "hh:mm"),
+                        user: eventTreeRecord[i].user,
+                        name: {name: eventTreeRecord[i].name, content: eventTreeRecord[i].data},
+                        content: eventTreeRecord[i].data,
+                        rowid: eventTreeRecord[i].id,
+                        id: ""
+                    })
+                }
+            } else {
+                eventTreeTableContent = [];
+            }
+
+            var eventTreeConfig = {
+                data: eventTreeTableContent,
+                order: [[4, "asc"]],
+                rowGroup: {
+                    startRender: function (rows, group) {
+                        return $('<tr/>')
+                            .append('<td><input type="checkbox" id="' + group + '" class="check-group" onclick="checkGroup(this, 2)"></td>')
+                            .append('<td colspan="6">' + group + '</td>')
+                    },
+                    dataSrc: "group"
+                },
+                select: {
+                    style: 'multi',
+                    selector: 'td:first-child'
+                },
+                columns: [
+                    {
+                        orderable: false,
+                        bSortable: false,
+                        className: 'select-checkbox',
+                        data: "id",
+                        targets: 0
+                    },
+                    {data: "time"},
+                    {data: "user"},
+                    {
+                        data: "name",
+                        render: function (data) {
+                            return "<a target='_blank' href='#/event_tree?json=" + JSON.stringify(data.content) + "'>" + data.name + "</a>";
+
+                        }
+                    },
+                    {
+                        data: "group",
+                        visible: false
+                    }
+                ],
+                rowId: "rowid",
+                sPaginationType: "full_numbers",
+                ordering: false,
+                language: {
+                    emptyTable: "没有事件树记录",
+                    info: "显示 _TOTAL_ 个记录中的第 _START_ 至 _END_ 个",
+                    infoEmpty: "没有匹配的事件树记录",
+                    infoFiltered: "(过滤出 filtered1 个事件树记录，总计 _MAX_ 个事件树记录)",
+                    lengthMenu: "每页 _MENU_ 条事件树记录",
+                    search: "过滤:",
+                    zeroRecords: "没有事件树记录",
+                    paginate: {
+                        last: ">>",
+                        next: ">",
+                        previous: "<",
+                        first: "<<"
+                    },
+                    select: {
+                        rows: {
+                            _: "您选择了 %d 个事件树记录。",
+                            0: "点击选择事件树记录!"
+                        }
+                    }
+                },
+                displayLength: 20,
+                "dom": "<'row'<'col-md-3 col-sm-12'i><'col-md-9 col-sm-12'f>r><t><'row'<'col-md-12 col-sm-12'p>>"
+            };
+
+//            if (eventtreeTable != null) {
+//                eventtreeTable.fnClearTable();
+//                eventtreeTable.fnDestroy();
+//                $("tbody").remove();
+//            }
+
+            eventtreeTable = $('#eventtree').dataTable(eventTreeConfig);
         }
     })
 

@@ -212,8 +212,26 @@
         return ['previous', numbers, 'next'];
     };
 
-    //Progress Bar
+    //get url json
+    var getUrlParameter = function getUrlParameter(sParam) {
+        var sPageURL = decodeURIComponent(window.location.search.substring(1)),
+            sURLVariables = sPageURL.split('&'),
+            sParameterName,
+            i;
 
+        for (i = 0; i < sURLVariables.length; i++) {
+            sParameterName = sURLVariables[i].split('=');
+
+            if (sParameterName[0] === sParam) {
+                return sParameterName[1] === undefined ? true : sParameterName[1];
+            }
+        }
+    };
+
+    $.urlParam = function (name) {
+        var results = new RegExp('[\?&]' + name + '=([^&#]*)').exec(window.location.href);
+        return results[1] || 0;
+    };
 
     Date.prototype.format = function (fmt) {
         var o = {
@@ -772,11 +790,8 @@
                 "data": {
                     "begin_time": startTime,
                     "end_time": Math.floor(endTime / 60) * 60,
-//            "begin_time": 1493078400,
-//            "end_time": 1493251200,
                     "device_id": device_id,
                     "filter_condition": $scope.filter_condition
-//            "device_id": ["diclient"],
                 }
             };
             $modalInstance.close($scope.ruleName);
@@ -817,8 +832,9 @@
                 9: "关闭文件"
             },
             2: {
-                1: "进程加载",
-                2: "进程终止"
+                1: "进程创建",
+                2: "进程加载",
+                3: "进程终止"
             },
             3: {
                 1: "Web",
@@ -828,18 +844,23 @@
             },
             4: {
                 1: "系统登录",
-                2: "挂载",
-                3: "取消挂载",
-                4: "网络连接",
-                5: "断开网络连接",
-                6: "修改密码"
+                2: "系统登出",
+                3: "挂载",
+                4: "取消挂载",
+                5: "网络连接",
+                6: "断开网络连接",
+                7: "修改密码"
             },
             5: {
-                1: "注册表创建",
-                2: "注册表打开",
-                3: "注册表删除",
-                4: "注册表查询",
-                5: "注册表设置"
+                1: "注册表键创建",
+                2: "注册表键打开",
+                3: "注册表键删除",
+                4: "注册表键查询",
+                5: "注册表键重命名",
+                6: "注册表值查询",
+                7: "注册表值设置",
+                8: "注册表值删除",
+                9: "注册表键关闭"
             }
         };
 
@@ -1425,5 +1446,7 @@
             $scope.maxCondition = false;
         };
     }
+
+
 </script>
 <!-- END MAIN JS -->
