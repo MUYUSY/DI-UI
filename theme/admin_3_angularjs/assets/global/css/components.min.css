@@ -13874,6 +13874,18 @@ body[ng-controller] .modal {
     font-size: 14px
 }
 
+.sort_asc {
+    background: url(../plugins/datatables/images/sort_asc.png) center right no-repeat
+}
+
+.sort_desc {
+    background: url(../plugins/datatables/images/sort_desc.png) center right no-repeat
+}
+
+.sort_both {
+    background: url(../plugins/datatables/images/sort_both.png) center right no-repeat
+}
+
 .flip-scroll table, .table td .img-responsive {
     width: 100%
 }

@@ -13,22 +13,22 @@
                     <tab heading="所有调查记录">
                         <div class="portlet-body">
                             <div class="col-md-12 col-sm-12 col-xs-12">
-                                <button class="btn"
+                                <button class="btn" onclick="deleteInvestigation()"
                                         style="width:100px; border:1px solid #cccccc; background-color: #FFFFFF; margin-right:10px">
                                     <img src="./icon/delete.png" style="margin: 0 10px 1px 0">删除
                                 </button>
                             </div>
                             <div class="col-md-12 col-sm-12 col-xs-12">
                                 <table class="table table-striped table-bordered table-hover endpoint-table"
-                                       width="100%"
                                        id="investigation">
                                     <thead>
                                     <tr>
-                                        <th style="width: 20px">
+                                        <th style="min-width: 20px !important;">
                                             <!--<input type="checkbox" id="checkall" onclick="checkAll(this)">-->
                                         </th>
-                                        <th style="width: 70px"></th>
-                                        <th style="width: 70px"></th>
+                                        <th style="min-width: 40px !important;"></th>
+                                        <th style="min-width: 70px !important;"></th>
+                                        <th style="min-width: 840px !important;"></th>
                                         <th></th>
                                         <th></th>
                                     </tr>
@@ -40,22 +40,22 @@
                     <tab heading="历史事件树">
                         <div class="portlet-body">
                             <div class="col-md-12 col-sm-12 col-xs-12">
-                                <button class="btn"
+                                <button class="btn" onclick="deleteEventTree()"
                                         style="width:100px; border:1px solid #cccccc; background-color: #FFFFFF; margin-right:10px">
                                     <img src="./icon/delete.png" style="margin: 0 10px 1px 0">删除
                                 </button>
                             </div>
                             <div class="col-md-12 col-sm-12 col-xs-12">
                                 <table class="table table-striped table-bordered table-hover endpoint-table"
-                                       width="100%"
                                        id="eventtree">
                                     <thead>
                                     <tr>
-                                        <th style="width: 20px !important;">
+                                        <th style="min-width: 20px !important;">
                                             <!--<input type="checkbox" id="checkall" onclick="checkAll(this)">-->
                                         </th>
-                                        <th style="width: 70px !important;"></th>
-                                        <th style="width: 70px !important;"></th>
+                                        <th style="min-width: 40px !important;"></th>
+                                        <th style="min-width: 70px !important;"></th>
+                                        <th style="min-width: 840px !important;"></th>
                                         <th></th>
                                         <th></th>
                                     </tr>
@@ -114,7 +114,7 @@
         return datetime.format(format);
     };
 
-    var checkGroup = function(obj, table) {
+    var checkGroup = function (obj, table) {
         if (table === 1) {
             dtable = investigationTable;
         }
@@ -122,7 +122,7 @@
             dtable = eventtreeTable;
         }
         var groupName = obj.id;
-        if( obj.checked ) {
+        if (obj.checked) {
             for (var i = 0; i < dtable.api().rows().data().length; i++) {
                 if (dtable.api().rows().data()[i].group === groupName) {
                     dtable.api().rows(i).select()
@@ -186,28 +186,36 @@
                         data: "id",
                         targets: 0
                     },
-                    {data: "time"},
-                    {data: "user"},
+                    {
+                        data: "time"
+                    },
+                    {
+                        data: "user"
+                    },
                     {
                         data: "name",
                         render: function (data) {
-                            return "<a target='_blank' href='#/new_investigation?json=" + JSON.stringify(data.content) + "'>" + data.name + "</a>";
 
+                            return "<a target='_blank' href='#/new_investigation?json=" + JSON.stringify(data.content) + "'>"
+                                + data.name + "</a>";
                         }
                     },
                     {
                         data: "group",
                         visible: false
+                    },
+                    {
+                        data: "rowid",
+                        visible: false
                     }
                 ],
-                rowId: "rowid",
                 sPaginationType: "full_numbers",
                 ordering: false,
                 language: {
                     emptyTable: "没有调查记录",
                     info: "显示 _TOTAL_ 个记录中的第 _START_ 至 _END_ 个",
                     infoEmpty: "没有匹配的调查记录",
-                    infoFiltered: "(过滤出 filtered1 个调查记录，总计 _MAX_ 个调查记录)",
+                    infoFiltered: "(过滤出 _TOTAL_ 个调查记录，总计 _MAX_ 个调查记录)",
                     lengthMenu: "每页 _MENU_ 条调查记录",
                     search: "过滤:",
                     zeroRecords: "没有调查记录",
@@ -279,17 +287,33 @@
                         data: "id",
                         targets: 0
                     },
-                    {data: "time"},
-                    {data: "user"},
+                    {
+                        data: "time"
+                    },
+                    {
+                        data: "user"
+                    },
                     {
                         data: "name",
                         render: function (data) {
-                            return "<a target='_blank' href='#/event_tree?json=" + JSON.stringify(data.content) + "'>" + data.name + "</a>";
+                            var detail = "  探针:";
+                            detail += data.content.deviceName;
+                            detail += " | 时间:";
+                            detail += timeStamp2String(data.content.timestamp, "yyyy-MM-dd hh:mm:ss");
+                            detail += " | 进程ID:";
+                            detail += data.content.pid;
+
+                            return "<a target='_blank' href='#/event_tree?json=" + JSON.stringify(data.content) + "'>"
+                                + data.name + "<span style='color: #0a7505; font-size: 12px;'>" + detail + "</span>" + "</a>";
 
                         }
                     },
                     {
                         data: "group",
+                        visible: false
+                    },
+                    {
+                        data: "rowid",
                         visible: false
                     }
                 ],
@@ -300,7 +324,7 @@
                     emptyTable: "没有事件树记录",
                     info: "显示 _TOTAL_ 个记录中的第 _START_ 至 _END_ 个",
                     infoEmpty: "没有匹配的事件树记录",
-                    infoFiltered: "(过滤出 filtered1 个事件树记录，总计 _MAX_ 个事件树记录)",
+                    infoFiltered: "(过滤出 _TOTAL_ 个事件树记录，总计 _MAX_ 个事件树记录)",
                     lengthMenu: "每页 _MENU_ 条事件树记录",
                     search: "过滤:",
                     zeroRecords: "没有事件树记录",
@@ -329,7 +353,54 @@
 
             eventtreeTable = $('#eventtree').dataTable(eventTreeConfig);
         }
-    })
+    });
 
+    var deleteInvestigation = function () {
+        var selectId = [];
+        for (var i = 0; i < investigationTable.api().rows({selected: true}).data().length; i++) {
+            selectId.push(investigationTable.api().rows({selected: true}).data()[i].rowid);
+        }
+
+        $.ajax({
+            type: "POST",
+            dataType: "JSON",
+            url: "investigationrecord",
+            data: JSON.stringify({
+                "action": "del",
+                "recordids": selectId
+            }),
+            success: function(data) {
+                investigationTable.api().rows({selected: true}).remove().draw(false);
+                DIalert("success", "记录删除成功")
+            },
+            error: function() {
+                DIalert("warning", "记录删除失败")
+            }
+        });
+    };
+
+    var deleteEventTree = function () {
+        var selectId = [];
+        for (var i = 0; i < eventtreeTable.api().rows({selected: true}).data().length; i++) {
+            selectId.push(eventtreeTable.api().rows({selected: true}).data()[i].rowid);
+        }
+
+        $.ajax({
+            type: "POST",
+            dataType: "JSON",
+            url: "investigationrecord",
+            data: JSON.stringify({
+                "action": "del",
+                "recordids": selectId
+            }),
+            success: function(data) {
+                eventtreeTable.api().rows({selected: true}).remove().draw(false);
+                DIalert("success", "记录删除成功")
+            },
+            error: function() {
+                DIalert("warning", "记录删除失败")
+            }
+        });
+    };
 
 </script>

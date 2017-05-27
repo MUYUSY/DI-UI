@@ -305,6 +305,8 @@ MetronicApp.config(['$stateProvider', '$urlRouterProvider', function($stateProvi
                             './assets/global/plugins/DataTables-1.10.15/extensions/Select/css/select.dataTables.css',
                             './assets/pages/css/endpoint_management.css',
 
+                            './assets/global/plugins/bootstrap-tabdrop/js/bootstrap-tabdrop.js',
+
                             'js/controllers/GeneralPageController.js'
                         ]
                     }]);

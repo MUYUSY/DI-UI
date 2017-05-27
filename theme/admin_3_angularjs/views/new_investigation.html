@@ -97,7 +97,7 @@
                 </div>
 
                 <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4" ng-hide="myHide">
-                    <button class="btn" ng-click="search()"
+                    <button class="btn" ng-click="search(0)"
                             style="width: 121px; background-color:#0076e1; color: #ffffff; padding-right: 32px; margin-right: 10px">
                         <img src="./icon/search.png" style="margin: 0 4px 1px 0;">搜索
                     </button>
@@ -107,7 +107,7 @@
                     </button>
                 </div>
                 <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6" ng-show="myHide">
-                    <button class="btn" ng-click="search()"
+                    <button class="btn" ng-click="search(0)"
                             style="width: 121px; background-color:#0076e1; color: #ffffff; padding-right: 32px; margin-right: 10px">
                         <img src="./icon/search.png" style="margin: 0 4px 1px 0;">搜索
                     </button>
@@ -138,12 +138,12 @@
                         <thead>
                         <tr>
                             <th width="3%"></th>
-                            <th width="17%">时间戳</th>
-                            <th width="13%">探针名</th>
-                            <th width="15%">进程用户名</th>
-                            <th width="12%">进程ID</th>
-                            <th width="25%">进程映像路径</th>
-                            <th width="15%">事件类型</th>
+                            <th id="column0" width="17%">时间戳</th>
+                            <th id="column1" width="13%" onclick="sortedSearch(1)">探针名</th>
+                            <th id="column2" width="15%" onclick="sortedSearch(2)">进程用户名</th>
+                            <th id="column3" width="12%" onclick="sortedSearch(3)">进程ID</th>
+                            <th id="column4" width="25%" onclick="sortedSearch(4)">进程映像路径</th>
+                            <th id="column5" width="15%" onclick="sortedSearch(5)">事件类型</th>
                         </tr>
                         </thead>
                     </table>
@@ -166,6 +166,10 @@
     var dtable;
     var startTime = moment().startOf('day').format('X');
     var endTime = moment().format('X');
+    var last_tid = "";
+    var selectedGroup;
+    var filterCondition;
+    var searchCondtion;
 
     //Simple Numbers Pages
     $.fn.DataTable.ext.pager.simple_numbers_no_ellipses = function (page, pages) {
@@ -209,7 +213,15 @@
 
         numbers.DT_el = 'span';
 
-        return ['previous', numbers, 'next'];
+        return ['first', 'previous', numbers, 'next'];
+
+//        if (numbers[0] !== 0) {
+//            return ['first', 'previous', numbers, 'next'];
+//        } else {
+//            return ['previous', numbers, 'next'];
+//        }
+
+
     };
 
     //get url json
@@ -413,8 +425,7 @@
             selectionCount: '被选中'
         };
 
-
-        $scope.search = function () {
+        $scope.search = function (sortedNum) {
             $scope.filter_condition = {};
             $scope.search_condition = [];
             for (var i = 0; i < $scope.conditions.length; i++) {
@@ -577,7 +588,11 @@
                         break;
                 }
             }
-            $scope.event = SearchResultCtrl($scope.selectByGroupModel, $scope.filter_condition, $scope.search_condition);
+
+            selectedGroup = $scope.selectByGroupModel;
+            filterCondition = $scope.filter_condition;
+            searchCondtion = $scope.search_condition;
+            $scope.event = SearchResultCtrl($scope.selectByGroupModel, $scope.filter_condition, $scope.search_condition, sortedNum, "");
         };
 
         $scope.saveRule = function (size) {
@@ -760,7 +775,6 @@
         };
 
     }
-    DIalert("info", "tim is here!//This is for test");
     function ModalInstanceCtrl($scope, $modalInstance, ruleName, device, filter_condition) {
         $scope.ruleName = ruleName;
         $scope.filter_condition = filter_condition;
@@ -1025,9 +1039,27 @@
         return '<tr>' + '<td>' + obj + '</td>' + '</tr>';
     };
 
-    var SearchResultCtrl = function (device, filter_condition, search_condition) {
+    var sortedSearch = function (sortedNum) {
+        var currentClass = $('#column'+sortedNum).attr('class');
+        if (currentClass === "sort_both" || currentClass === "sort_desc") {
+            SearchResultCtrl(selectedGroup, filterCondition, searchCondtion, sortedNum, last_tid);
+            $('#column'+sortedNum).removeClass(currentClass);
+            $('#column'+sortedNum).addClass("sort_asc");
+        }
+        else if (currentClass === "sort_asc") {
+            console.log("Now is not support");
+            $('#column'+sortedNum).removeClass(currentClass);
+            $('#column'+sortedNum).addClass("sort_desc");
+        }
+
+    };
+
+    var SearchResultCtrl = function (device, filter_condition, search_condition, sortedNum, tid) {
 //        $('#investigation').append('<div class="loading-message ' + '">' + '<div class="block-spinner-bar"><div class="bounce1"></div><div class="bounce2"></div><div class="bounce3"></div></div>' + '</div>');
 
+        if (typeof(processQueryInterval) !== "undefined") {
+            clearInterval(processQueryInterval);
+        }
         var device_id = [];
 
         if (device.length === 0) {
@@ -1051,7 +1083,7 @@
         }
 
         var skip = 0;
-        var task_id;
+        var task_id = tid;
         var total_count = 0;
         var row_log;
         var pos = 0;
@@ -1059,9 +1091,11 @@
         var postJson = {
             "begin_time": startTime,
             "end_time": Math.floor(endTime / 60) * 60,
+            "taskid": task_id,
             "device_id": device_id,
             "count": 1000,
             "skip": skip,
+            "sortedby": sortedNum,
             "filter_condition": filter_condition
         };
         var getTableData = function () {
@@ -1155,6 +1189,7 @@
                 }
                 else {
                     task_id = data.tid;
+                    last_tid = task_id;
                     skip = data.skip;
                     row_log = data.data.split('\n');
                     count = row_log.length;
@@ -1225,7 +1260,7 @@
                         emptyTable: "无匹配的数据可显示",
                         info: "显示 _TOTAL_ 条目中的第 _START_ 至 _END_ 条",
                         infoEmpty: "没有匹配的条目",
-                        infoFiltered: "(过滤出 filtered1 条目，总计 _MAX_ 条目)",
+                        infoFiltered: "(过滤出 _TOTAL_ 条目，总计 _MAX_ 条目)",
                         lengthMenu: "每页 _MENU_ 条",
                         processing: '<div class="loading-message ' + '">' + '<div class="block-spinner-bar"><div class="bounce1"></div><div class="bounce2"></div><div class="bounce3"></div></div>' + '</div>',
                         search: "过滤:",
@@ -1278,7 +1313,6 @@
                 }
                 var processQuery = function () {
                     $.ajax({
-                        async: false,
                         url: '/processquery',
                         type: 'POST',
                         dataType: "json",
@@ -1313,14 +1347,14 @@
                                     color: "#bf1c56",
                                     repeat: 5
                                 });
-//                        setTimeout(function(){
-//                            console.log('1111');
-//                            $('#progressbar').removeClass("progress-bar");
-//                            $('#progressbar').removeClass("glow");
-//                            $('#progressbar').removeClass("blue");
-//                            $('#progressbar').children('span').css('font-color', "blue");
-//                        }, 5000)
 
+                                $('#column0').removeClass("sorting_asc");
+                                $('#column0').addClass("sort_asc");
+                                $('#column1').addClass("sort_both");
+                                $('#column2').addClass("sort_both");
+                                $('#column3').addClass("sort_both");
+                                $('#column4').addClass("sort_both");
+                                $('#column5').addClass("sort_both");
                             }
                             else {
                                 $('#progressbar').hide();
@@ -1331,6 +1365,8 @@
                 };
 
                 var processQueryInterval = setInterval(processQuery, 1000);
+
+                setTimeout(function(){clearInterval(processQueryInterval)}, 60000);
             }
         });
 
@@ -1346,12 +1382,11 @@
                     postJson = {
                         "begin_time": startTime,
                         "end_time": Math.floor(endTime / 60) * 60,
-//                    "begin_time": 1493194920,
-//                    "end_time": 1493251200,
                         "taskid": task_id,
                         "device_id": device_id,
                         "count": 1000,
                         "skip": skip,
+                        "sortedby": sortedNum,
                         "filter_condition": filter_condition
                     };
                     App.blockUI({

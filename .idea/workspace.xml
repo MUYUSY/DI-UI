@@ -2,12 +2,13 @@
 <project version="4">
   <component name="ChangeListManager">
     <list default="true" id="a672439e-4cd3-4004-919f-310f18dd76c3" name="Default" comment="">
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/theme/admin_3_angularjs/assets/global/plugins/angularjs/plugins/angularjs-dropdown-multiselect/src/angularjs-dropdown-multiselect.js" afterPath="$PROJECT_DIR$/theme/admin_3_angularjs/assets/global/plugins/angularjs/plugins/angularjs-dropdown-multiselect/src/angularjs-dropdown-multiselect.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/theme/admin_3_angularjs/assets/global/plugins/counterup/jquery.counterup.min.js" afterPath="$PROJECT_DIR$/theme/admin_3_angularjs/assets/global/plugins/counterup/jquery.counterup.min.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/theme/admin_3_angularjs/assets/pages/scripts/login-4.js" afterPath="$PROJECT_DIR$/theme/admin_3_angularjs/assets/pages/scripts/login-4.js" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/.idea/workspace.xml" afterPath="$PROJECT_DIR$/.idea/workspace.xml" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/theme/admin_3_angularjs/assets/global/css/components.min.css" afterPath="$PROJECT_DIR$/theme/admin_3_angularjs/assets/global/css/components.min.css" />
       <change type="MODIFICATION" beforePath="$PROJECT_DIR$/theme/admin_3_angularjs/js/main.js" afterPath="$PROJECT_DIR$/theme/admin_3_angularjs/js/main.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/theme/admin_3_angularjs/tree/dndTree.js" afterPath="$PROJECT_DIR$/theme/admin_3_angularjs/tree/dndTree.js" />
-      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/theme/admin_3_angularjs/tree/mindmap.css" afterPath="$PROJECT_DIR$/theme/admin_3_angularjs/tree/mindmap.css" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/theme/admin_3_angularjs/views/endpoint_management.html" afterPath="$PROJECT_DIR$/theme/admin_3_angularjs/views/endpoint_management.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/theme/admin_3_angularjs/views/investigation_record.html" afterPath="$PROJECT_DIR$/theme/admin_3_angularjs/views/investigation_record.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/theme/admin_3_angularjs/views/new_investigation.html" afterPath="$PROJECT_DIR$/theme/admin_3_angularjs/views/new_investigation.html" />
+      <change type="MODIFICATION" beforePath="$PROJECT_DIR$/theme/admin_3_angularjs/views/ui_bootstrap.html" afterPath="$PROJECT_DIR$/theme/admin_3_angularjs/views/ui_bootstrap.html" />
     </list>
     <option name="EXCLUDED_CONVERTED_TO_IGNORED" value="true" />
     <option name="TRACKING_ENABLED" value="true" />
@@ -19,234 +20,96 @@
   <component name="CreatePatchCommitExecutor">
     <option name="PATCH_PATH" value="" />
   </component>
+  <component name="DatabaseView">
+    <option name="SHOW_INTERMEDIATE" value="true" />
+    <option name="GROUP_SCHEMA" value="true" />
+    <option name="GROUP_CONTENTS" value="false" />
+    <option name="SORT_POSITIONED" value="false" />
+    <option name="SHOW_TABLE_DETAILS" value="true" />
+    <option name="SHOW_EMPTY_GROUPS" value="false" />
+    <option name="AUTO_SCROLL_FROM_SOURCE" value="false" />
+  </component>
   <component name="ExecutionTargetManager" SELECTED_TARGET="default_target" />
   <component name="FileEditorManager">
     <leaf SIDE_TABS_SIZE_LIMIT_KEY="300">
-      <file leaf-file-name="new_investigation.html" pinned="false" current-in-tab="false">
+      <file leaf-file-name="new_investigation.html" pinned="false" current-in-tab="true">
         <entry file="file://$PROJECT_DIR$/theme/admin_3_angularjs/views/new_investigation.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="612">
-              <caret line="412" column="32" lean-forward="false" selection-start-line="412" selection-start-column="29" selection-end-line="412" selection-end-column="32" />
+            <state relative-caret-position="487">
+              <caret line="1067" column="73" lean-forward="true" selection-start-line="1067" selection-start-column="73" selection-end-line="1067" selection-end-column="73" />
               <folding>
-                <element signature="n#div#1;n#div#0;n#div#0;n#div#0;n#!!top" expanded="false" />
                 <element signature="n#script#0;n#div#1;n#div#0;n#div#0;n#div#0;n#!!top" expanded="false" />
                 <element signature="n#div#0;n#div#1;n#div#0;n#div#0;n#div#0;n#!!top" expanded="false" />
                 <element signature="n#div#0;n#div#1;n#div#1;n#div#0;n#div#0;n#div#0;n#!!top" expanded="false" />
                 <element signature="n#style#0;n#span#0;n#div#1;n#div#0;n#div#0;n#div#1;n#div#0;n#div#0;n#!!top" expanded="true" />
-                <element signature="e#8802#9782#0" expanded="false" />
-                <element signature="e#9863#10310#0" expanded="false" />
-                <element signature="e#10346#10476#0" expanded="false" />
-                <element signature="e#10522#11358#0" expanded="false" />
-                <element signature="e#11412#11780#0" expanded="false" />
-                <element signature="e#12100#13491#0" expanded="false" />
-                <element signature="e#13809#14078#0" expanded="false" />
-                <element signature="e#14159#14477#0" expanded="false" />
-                <element signature="e#14682#15016#0" expanded="false" />
-                <element signature="e#15222#15664#0" expanded="false" />
-                <element signature="e#16458#25356#0" expanded="false" />
-                <element signature="e#25640#34177#0" expanded="false" />
-                <element signature="e#35315#35611#0" expanded="false" />
-                <element signature="e#35625#35749#0" expanded="false" />
-                <element signature="e#36984#38034#0" expanded="false" />
-                <element signature="e#38288#38699#0" expanded="false" />
-                <element signature="e#39128#39677#0" expanded="false" />
-                <element signature="e#39734#40267#0" expanded="false" />
-                <element signature="e#40319#43172#0" expanded="false" />
-                <element signature="e#44495#44606#0" expanded="false" />
-                <element signature="e#45050#48689#0" expanded="false" />
-                <element signature="e#46078#46118#0" expanded="false" />
-                <element signature="e#47838#47878#0" expanded="false" />
-                <element signature="e#58730#59192#0" expanded="false" />
-                <element signature="e#60443#62485#0" expanded="false" />
+                <element signature="e#10358#10805#0" expanded="false" />
+                <element signature="e#10841#10971#0" expanded="false" />
+                <element signature="e#11017#11853#0" expanded="false" />
+                <element signature="e#11907#12275#0" expanded="false" />
+                <element signature="e#12595#13986#0" expanded="false" />
+                <element signature="e#14304#14573#0" expanded="false" />
+                <element signature="e#14654#14972#0" expanded="false" />
+                <element signature="e#15177#15511#0" expanded="false" />
+                <element signature="e#15717#16159#0" expanded="false" />
+                <element signature="e#16961#25859#0" expanded="false" />
+                <element signature="e#26323#34860#0" expanded="false" />
+                <element signature="e#35790#37460#0" expanded="false" />
+                <element signature="e#35943#36239#0" expanded="false" />
+                <element signature="e#36253#36377#0" expanded="false" />
+                <element signature="e#37595#38878#0" expanded="false" />
+                <element signature="e#37612#38662#0" expanded="false" />
+                <element signature="e#38916#39327#0" expanded="false" />
+                <element signature="e#39756#40305#0" expanded="false" />
+                <element signature="e#40362#40895#0" expanded="false" />
+                <element signature="e#40947#43800#0" expanded="false" />
+                <element signature="e#45907#46018#0" expanded="false" />
+                <element signature="e#46534#50173#0" expanded="false" />
+                <element signature="e#47562#47602#0" expanded="false" />
+                <element signature="e#49322#49362#0" expanded="false" />
+                <element signature="e#51217#55268#0" expanded="false" />
+                <element signature="e#55669#55843#0" expanded="false" />
+                <element signature="e#55917#56501#0" expanded="false" />
+                <element signature="e#56567#56633#0" expanded="false" />
+                <element signature="e#62010#64052#0" expanded="false" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="index.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/theme/admin_3_angularjs/index.html">
+      <file leaf-file-name="jquery.dataTables.js" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/theme/admin_3_angularjs/assets/global/plugins/DataTables-1.10.15/media/js/jquery.dataTables.js">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="-416">
-              <caret line="54" column="51" lean-forward="false" selection-start-line="54" selection-start-column="35" selection-end-line="54" selection-end-column="51" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="angularjs-dropdown-multiselect.js" pinned="false" current-in-tab="true">
-        <entry file="file://$PROJECT_DIR$/theme/admin_3_angularjs/assets/global/plugins/angularjs/plugins/angularjs-dropdown-multiselect/src/angularjs-dropdown-multiselect.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="288">
-              <caret line="152" column="45" lean-forward="false" selection-start-line="152" selection-start-column="45" selection-end-line="152" selection-end-column="45" />
+            <state relative-caret-position="730">
+              <caret line="14529" column="43" lean-forward="false" selection-start-line="14529" selection-start-column="35" selection-end-line="14529" selection-end-column="43" />
               <folding>
-                <marker date="1495790514331" expanded="true" signature="1148:1154" ph=" " />
+                <element signature="e#36174#36840#0" expanded="false" />
+                <element signature="e#36852#36923#0" expanded="false" />
+                <marker date="1495677036257" expanded="true" signature="157861:157886" ph="..." />
+                <marker date="1495677036257" expanded="true" signature="158108:158133" ph="..." />
+                <marker date="1495677036257" expanded="true" signature="426469:426477" ph="..." />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="process-bar.css" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/theme/admin_3_angularjs/assets/pages/css/process-bar.css">
+      <file leaf-file-name="endpoint_management.html" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/theme/admin_3_angularjs/views/endpoint_management.html">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="126">
-              <caret line="7" column="12" lean-forward="true" selection-start-line="7" selection-start-column="12" selection-end-line="7" selection-end-column="13" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="investigation_record.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/theme/admin_3_angularjs/views/investigation_record.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="198">
-              <caret line="11" column="16" lean-forward="true" selection-start-line="11" selection-start-column="16" selection-end-line="11" selection-end-column="24" />
+            <state relative-caret-position="18">
+              <caret line="182" column="47" lean-forward="false" selection-start-line="182" selection-start-column="47" selection-end-line="182" selection-end-column="47" />
               <folding>
-                <element signature="n#style#0;n#th#0;n#tr#0;n#thead#0;n#table#0;n#div#1;n#div#0;n#tab#0;n#tabset#0;n#div#1;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#th#1;n#tr#0;n#thead#0;n#table#0;n#div#1;n#div#0;n#tab#0;n#tabset#0;n#div#1;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#th#2;n#tr#0;n#thead#0;n#table#0;n#div#1;n#div#0;n#tab#0;n#tabset#0;n#div#1;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#th#0;n#tr#0;n#thead#0;n#table#0;n#div#1;n#div#0;n#tab#1;n#tabset#0;n#div#1;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#th#1;n#tr#0;n#thead#0;n#table#0;n#div#1;n#div#0;n#tab#1;n#tabset#0;n#div#1;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#th#2;n#tr#0;n#thead#0;n#table#0;n#div#1;n#div#0;n#tab#1;n#tabset#0;n#div#1;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
-                <element signature="e#4190#5025#0" expanded="false" />
-                <element signature="e#5079#5443#0" expanded="false" />
+                <element signature="e#3393#4228#0" expanded="false" />
+                <element signature="e#4282#4646#0" expanded="false" />
               </folding>
             </state>
           </provider>
         </entry>
       </file>
-      <file leaf-file-name="EventTreeController.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/theme/admin_3_angularjs/js/controllers/EventTreeController.js">
+      <file leaf-file-name="components.min.css" pinned="false" current-in-tab="false">
+        <entry file="file://$PROJECT_DIR$/theme/admin_3_angularjs/assets/global/css/components.min.css">
           <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="594">
-              <caret line="156" column="36" lean-forward="true" selection-start-line="156" selection-start-column="36" selection-end-line="156" selection-end-column="36" />
-              <folding>
-                <element signature="n#!!doc" expanded="true" />
-                <marker date="1495790161116" expanded="true" signature="1639:1658" ph="..." />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="EcmaScript.js" pinned="false" current-in-tab="false">
-        <entry file="jar://$APPLICATION_HOME_DIR$/plugins/JavaScriptLanguage/lib/JavaScriptLanguage.jar!/com/intellij/lang/javascript/index/predefined/EcmaScript.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="298">
-              <caret line="45" column="0" lean-forward="false" selection-start-line="45" selection-start-column="0" selection-end-line="45" selection-end-column="0" />
-              <folding />
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="event_tree.html" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/theme/admin_3_angularjs/views/event_tree.html">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="779">
-              <caret line="241" column="111" lean-forward="false" selection-start-line="241" selection-start-column="111" selection-end-line="241" selection-end-column="111" />
-              <folding>
-                <element signature="n#style#0;n#div#0;n#div#1;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#img#0;n#div#0;n#div#1;n#!!top" expanded="true" />
-                <element signature="n#style#0;n#div#2;n#!!top" expanded="true" />
-                <marker date="1495790030164" expanded="false" signature="1387:1451" ph="..." />
-                <marker date="1495790030164" expanded="false" signature="1617:1681" ph="..." />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="main.js" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/theme/admin_3_angularjs/js/main.js">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="1204">
-              <caret line="305" column="28" lean-forward="true" selection-start-line="305" selection-start-column="28" selection-end-line="305" selection-end-column="73" />
-              <folding>
-                <element signature="n#!!doc" expanded="true" />
-                <element signature="e#402#480#0" expanded="false" />
-                <element signature="e#3623#3733#0" expanded="false" />
-                <element signature="e#3855#4033#0" expanded="false" />
-                <marker date="1495781307900" expanded="true" signature="4761:27317" ph="[...]" />
-                <marker date="1495781307900" expanded="true" signature="4847:27316" ph="{...}" />
-                <marker date="1495781307900" expanded="true" signature="12630:13360" ph="{&quot;url&quot;: &quot;/event_tree&quot;...}" />
-                <marker date="1495781307900" expanded="true" signature="12820:13350" ph="{...}" />
-                <marker date="1495781307900" expanded="true" signature="12844:13336" ph="[...]" />
-                <marker date="1495781307900" expanded="true" signature="12882:13335" ph="{...}" />
-                <marker date="1495781307900" expanded="true" signature="12928:13315" ph="[...]" />
-                <marker date="1495781307900" expanded="true" signature="12929:13314" ph="{&quot;name&quot;: 'MetronicApp'...}" />
-                <marker date="1495781307900" expanded="true" signature="13007:13292" ph="[...]" />
-                <marker date="1495781307900" expanded="true" signature="13431:14962" ph="{&quot;url&quot;: &quot;/endpoint_management&quot;...}" />
-                <marker date="1495781307900" expanded="true" signature="13642:14952" ph="{...}" />
-                <marker date="1495781307900" expanded="true" signature="13666:14938" ph="[...]" />
-                <marker date="1495781307900" expanded="true" signature="13704:14937" ph="{...}" />
-                <marker date="1495781307900" expanded="true" signature="13750:14917" ph="[...]" />
-                <marker date="1495781307900" expanded="true" signature="13751:14916" ph="{&quot;name&quot;: 'MetronicApp'...}" />
-                <marker date="1495781307900" expanded="true" signature="13829:14894" ph="[...]" />
-                <marker date="1495781307900" expanded="true" signature="14368:14798" ph="//..." />
-                <marker date="1495781307900" expanded="true" signature="15009:15929" ph="{&quot;url&quot;: &quot;/tree&quot;...}" />
-                <marker date="1495781307900" expanded="true" signature="15202:15919" ph="{...}" />
-                <marker date="1495781307900" expanded="true" signature="15226:15904" ph="[...]" />
-                <marker date="1495781307900" expanded="true" signature="15264:15903" ph="{...}" />
-                <marker date="1495781307900" expanded="true" signature="15310:15883" ph="[...]" />
-                <marker date="1495781307900" expanded="true" signature="15311:15882" ph="{&quot;name&quot;: 'MetronicApp'...}" />
-                <marker date="1495781307900" expanded="true" signature="15515:15859" ph="[...]" />
-                <marker date="1495781307900" expanded="true" signature="15982:18086" ph="{&quot;url&quot;: &quot;/form-tools&quot;...}" />
-                <marker date="1495781307900" expanded="true" signature="16181:18076" ph="{...}" />
-                <marker date="1495781307900" expanded="true" signature="16205:18061" ph="[...]" />
-                <marker date="1495781307900" expanded="true" signature="16243:18060" ph="{...}" />
-                <marker date="1495781307900" expanded="true" signature="16289:18040" ph="[...]" />
-                <marker date="1495781307900" expanded="true" signature="16290:18039" ph="{&quot;name&quot;: 'MetronicApp'...}" />
-                <marker date="1495781307900" expanded="true" signature="16494:18016" ph="[...]" />
-                <marker date="1495781307900" expanded="true" signature="18154:20234" ph="{&quot;url&quot;: &quot;/pickers&quot;...}" />
-                <marker date="1495781307900" expanded="true" signature="18356:20224" ph="{...}" />
-                <marker date="1495781307900" expanded="true" signature="18380:20209" ph="[...]" />
-                <marker date="1495781307900" expanded="true" signature="18418:20208" ph="{...}" />
-                <marker date="1495781307900" expanded="true" signature="18464:20188" ph="[...]" />
-                <marker date="1495781307900" expanded="true" signature="18465:20187" ph="{&quot;name&quot;: 'MetronicApp'...}" />
-                <marker date="1495781307900" expanded="true" signature="18669:20164" ph="[...]" />
-                <marker date="1495781307900" expanded="true" signature="20293:21610" ph="{&quot;url&quot;: &quot;/dropdowns&quot;...}" />
-                <marker date="1495781307900" expanded="true" signature="20496:21600" ph="{...}" />
-                <marker date="1495781307900" expanded="true" signature="20520:21585" ph="[...]" />
-                <marker date="1495781307900" expanded="true" signature="20558:21584" ph="{...}" />
-                <marker date="1495781307900" expanded="true" signature="20604:21564" ph="[...]" />
-                <marker date="1495781307900" expanded="true" signature="20605:21563" ph="{&quot;name&quot;: 'MetronicApp'...}" />
-                <marker date="1495781307900" expanded="true" signature="20809:21540" ph="[...]" />
-                <marker date="1495781307900" expanded="true" signature="21682:22787" ph="{&quot;url&quot;: &quot;/datatables/managed.html&quot;...}" />
-                <marker date="1495781307900" expanded="true" signature="21911:22777" ph="{...}" />
-                <marker date="1495781307900" expanded="true" signature="21935:22763" ph="[...]" />
-                <marker date="1495781307900" expanded="true" signature="21973:22762" ph="{...}" />
-                <marker date="1495781307900" expanded="true" signature="22019:22742" ph="{&quot;name&quot;: 'MetronicApp'...}" />
-                <marker date="1495781307900" expanded="true" signature="22223:22720" ph="[...]" />
-                <marker date="1495781307900" expanded="true" signature="22850:24174" ph="{&quot;url&quot;: &quot;/datatables/ajax.html&quot;...}" />
-                <marker date="1495781307900" expanded="true" signature="23069:24164" ph="{...}" />
-                <marker date="1495781307900" expanded="true" signature="23093:24150" ph="[...]" />
-                <marker date="1495781307900" expanded="true" signature="23131:24149" ph="{...}" />
-                <marker date="1495781307900" expanded="true" signature="23177:24129" ph="{&quot;name&quot;: 'MetronicApp'...}" />
-                <marker date="1495781307900" expanded="true" signature="23381:24107" ph="[...]" />
-                <marker date="1495781307900" expanded="true" signature="24227:25363" ph="{&quot;url&quot;: &quot;/profile&quot;...}" />
-                <marker date="1495781307900" expanded="true" signature="24427:25353" ph="{...}" />
-                <marker date="1495781307900" expanded="true" signature="24451:25339" ph="[...]" />
-                <marker date="1495781307900" expanded="true" signature="24489:25338" ph="{...}" />
-                <marker date="1495781307900" expanded="true" signature="24535:25318" ph="{&quot;name&quot;: 'MetronicApp'...}" />
-                <marker date="1495781307900" expanded="true" signature="24741:25276" ph="[...]" />
-                <marker date="1495781307900" expanded="true" signature="25436:25581" ph="{&quot;url&quot;: &quot;/dashboard&quot;...}" />
-                <marker date="1495781307900" expanded="true" signature="25650:25791" ph="{&quot;url&quot;: &quot;/account&quot;...}" />
-                <marker date="1495781307900" expanded="true" signature="25854:25992" ph="{&quot;url&quot;: &quot;/help&quot;...}" />
-                <marker date="1495781307900" expanded="true" signature="26034:27312" ph="{&quot;url&quot;: &quot;/todo&quot;...}" />
-                <marker date="1495781307900" expanded="true" signature="26208:27302" ph="{...}" />
-                <marker date="1495781307900" expanded="true" signature="26232:27288" ph="[...]" />
-                <marker date="1495781307900" expanded="true" signature="26270:27287" ph="{...}" />
-                <marker date="1495781307900" expanded="true" signature="26316:27267" ph="{&quot;name&quot;: 'MetronicApp'...}" />
-                <marker date="1495781307900" expanded="true" signature="26523:27225" ph="[...]" />
-                <marker date="1495781307900" expanded="true" signature="27321:27363" ph="/*...*/" />
-                <marker date="1495781307900" expanded="true" signature="27380:27597" ph="[...]" />
-              </folding>
-            </state>
-          </provider>
-        </entry>
-      </file>
-      <file leaf-file-name="datatables.min.css" pinned="false" current-in-tab="false">
-        <entry file="file://$PROJECT_DIR$/theme/admin_3_angularjs/assets/global/plugins/datatables/datatables.min.css">
-          <provider selected="true" editor-type-id="text-editor">
-            <state relative-caret-position="165">
-              <caret line="197" column="0" lean-forward="false" selection-start-line="197" selection-start-column="2" selection-end-line="199" selection-end-column="3" />
+            <state relative-caret-position="249786">
+              <caret line="13877" column="85" lean-forward="false" selection-start-line="13877" selection-start-column="62" selection-end-line="13877" selection-end-column="85" />
               <folding />
             </state>
           </provider>
@@ -265,36 +128,36 @@
   </component>
   <component name="FindInProjectRecents">
     <findStrings>
-      <find>$.aj</find>
-      <find>console.log(JSON.stringify(oInit));</find>
-      <find>counter</find>
-      <find>replace</find>
-      <find>clearInterval</find>
-      <find>MetronicApp</find>
-      <find />
-      <find>dashboard</find>
-      <find>dashboard</find>
-      <find>dashboardcontro</find>
-      <find>progress-bar</find>
-      <find>content</find>
-      <find>process-b</find>
-      <find>startPageLoading</find>
-      <find>page-spinner-bar</find>
-      <find>investigation</find>
-      <find>console.log</find>
-      <find>setInterval</find>
-      <find>conso</find>
-      <find>blockui_sample_1_3</find>
-      <find>shine</find>
-      <find>保存成功</find>
-      <find>ng-spinner-bar</find>
-      <find>d</find>
-      <find>saveRule</find>
       <find>eventtype</find>
-      <find>event</find>
+      <find>t</find>
+      <find>ta</find>
+      <find>tab</find>
+      <find>Static content</find>
       <find>dtable</find>
-      <find>console</find>
+      <find>tabset</find>
       <find>checked</find>
+      <find>UibTabsetController</find>
+      <find>element.style {</find>
+      <find>element .style</find>
+      <find>element .styl</find>
+      <find>element .sty</find>
+      <find>element .st</find>
+      <find>element .s</find>
+      <find>element .</find>
+      <find>element</find>
+      <find>event</find>
+      <find>bootstrap</find>
+      <find>width: 0</find>
+      <find>ui_boot</find>
+      <find>console</find>
+      <find>TabsDemoCtrl</find>
+      <find>r</find>
+      <find>row</find>
+      <find>rowId</find>
+      <find>length</find>
+      <find>config</find>
+      <find>th</find>
+      <find>simple_numbers</find>
     </findStrings>
     <dirStrings>
       <dir>D:\code\DI\DI-UI\_resources</dir>
@@ -306,13 +169,9 @@
   <component name="Git.Settings">
     <option name="RECENT_GIT_ROOT_PATH" value="$PROJECT_DIR$" />
   </component>
-  <component name="HighlightingSettingsPerFile">
-    <setting file="mock:///Dummy.txt" root0="SKIP_INSPECTION" />
-  </component>
   <component name="IdeDocumentHistory">
     <option name="CHANGED_PATHS">
       <list>
-        <option value="$PROJECT_DIR$/theme/admin_3_angularjs/assets/global/plugins/datatables/plugins/bootstrap/dataTables.bootstrap.css" />
         <option value="$PROJECT_DIR$/theme/admin_3_angularjs/views/profile/endpoint_management.html" />
         <option value="$PROJECT_DIR$/theme/admin_3_angularjs/views/endpoint.js" />
         <option value="$PROJECT_DIR$/theme/admin_3_angularjs/assets/global/plugins/DataTables-1.10.15/media/css/jquery.dataTables.css" />
@@ -331,7 +190,6 @@
         <option value="$PROJECT_DIR$/theme/admin_3_angularjs/views/new_investigation - 副本.html" />
         <option value="$PROJECT_DIR$/theme/admin_3_angularjs/assets/global/plugins/css3-responsive-tab-menu/css/style.css" />
         <option value="$PROJECT_DIR$/theme/admin_3_angularjs/assets/global/plugins/jquery.tab-menu-set-master/lib/jquery.tab-menu-set.css" />
-        <option value="$PROJECT_DIR$/theme/admin_3_angularjs/views/ui_bootstrap.html" />
         <option value="$PROJECT_DIR$/theme/admin_3_angularjs/views/event_tree_record.js" />
         <option value="$PROJECT_DIR$/theme/admin_3_angularjs/assets/global/plugins/bootstrap-daterangepicker/daterangepicker.js" />
         <option value="$PROJECT_DIR$/theme/admin_3_angularjs/assets/global/plugins/owl-carousel/assets/css/custom.css" />
@@ -346,23 +204,25 @@
         <option value="$PROJECT_DIR$/theme/admin_3_angularjs/assets/layouts/layout3/css/layout.min.css" />
         <option value="$PROJECT_DIR$/theme/admin_3_angularjs/tpl/header.html" />
         <option value="$PROJECT_DIR$/theme/admin_3_angularjs/assets/global/plugins/counterup/jquery.counterup.js" />
-        <option value="$PROJECT_DIR$/theme/admin_3_angularjs/assets/global/css/components.min.css" />
         <option value="$PROJECT_DIR$/theme/admin_3_angularjs/assets/global/plugins/DataTables-1.10.15/media/js/jquery.dataTables.js" />
         <option value="$PROJECT_DIR$/theme/admin_3_angularjs/js/controllers/DashboardController.js" />
-        <option value="$PROJECT_DIR$/theme/admin_3_angularjs/index.html" />
         <option value="$PROJECT_DIR$/theme/admin_3_angularjs/assets/pages/scripts/ui-blockui.js" />
         <option value="$PROJECT_DIR$/theme/admin_3_angularjs/assets/global/scripts/app.js" />
         <option value="$PROJECT_DIR$/theme/admin_3_angularjs/assets/global/plugins/jquery.pulsate.min.js" />
         <option value="$PROJECT_DIR$/theme/admin_3_angularjs/assets/pages/css/process-bar.css" />
-        <option value="$PROJECT_DIR$/theme/admin_3_angularjs/js/main.js" />
         <option value="$PROJECT_DIR$/theme/admin_3_angularjs/assets/global/plugins/datatables/datatables.min.css" />
-        <option value="$PROJECT_DIR$/theme/admin_3_angularjs/views/endpoint_management.html" />
         <option value="$PROJECT_DIR$/theme/admin_3_angularjs/views/dashboard.html" />
-        <option value="$PROJECT_DIR$/theme/admin_3_angularjs/views/new_investigation.html" />
-        <option value="$PROJECT_DIR$/theme/admin_3_angularjs/views/investigation_record.html" />
         <option value="$PROJECT_DIR$/theme/admin_3_angularjs/views/event_tree.html" />
         <option value="$PROJECT_DIR$/theme/admin_3_angularjs/js/controllers/EventTreeController.js" />
         <option value="$PROJECT_DIR$/theme/admin_3_angularjs/assets/global/plugins/angularjs/plugins/angularjs-dropdown-multiselect/src/angularjs-dropdown-multiselect.js" />
+        <option value="$PROJECT_DIR$/theme/admin_3_angularjs/js/main.js" />
+        <option value="$PROJECT_DIR$/theme/admin_3_angularjs/assets/global/plugins/angularjs/plugins/ui-bootstrap-tpls.min.js" />
+        <option value="$PROJECT_DIR$/theme/admin_3_angularjs/views/ui_bootstrap.html" />
+        <option value="$PROJECT_DIR$/theme/admin_3_angularjs/index.html" />
+        <option value="$PROJECT_DIR$/theme/admin_3_angularjs/views/endpoint_management.html" />
+        <option value="$PROJECT_DIR$/theme/admin_3_angularjs/views/investigation_record.html" />
+        <option value="$PROJECT_DIR$/theme/admin_3_angularjs/assets/global/css/components.min.css" />
+        <option value="$PROJECT_DIR$/theme/admin_3_angularjs/views/new_investigation.html" />
       </list>
     </option>
   </component>
@@ -394,7 +254,6 @@
       <foldersAlwaysOnTop value="true" />
     </navigator>
     <panes>
-      <pane id="Scratches" />
       <pane id="ProjectPane">
         <subPane>
           <PATH>
@@ -407,185 +266,10 @@
               <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
             </PATH_ELEMENT>
           </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="DI-UI" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="DI-UI" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="theme" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="DI-UI" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="DI-UI" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="theme" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="admin_3_angularjs" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="DI-UI" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="DI-UI" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="theme" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="admin_3_angularjs" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="views" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="DI-UI" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="DI-UI" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="theme" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="admin_3_angularjs" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="js" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="DI-UI" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="DI-UI" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="theme" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="admin_3_angularjs" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="js" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="scripts" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="DI-UI" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="DI-UI" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="theme" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="admin_3_angularjs" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="js" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="controllers" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="DI-UI" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="DI-UI" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="theme" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="admin_3_angularjs" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="assets" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-          </PATH>
-          <PATH>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="DI-UI" />
-              <option name="myItemType" value="com.intellij.ide.projectView.impl.nodes.ProjectViewProjectNode" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="DI-UI" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="theme" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="admin_3_angularjs" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="assets" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-            <PATH_ELEMENT>
-              <option name="myItemId" value="global" />
-              <option name="myItemType" value="com.jetbrains.php.projectView.PhpTreeStructureProvider$1" />
-            </PATH_ELEMENT>
-          </PATH>
         </subPane>
       </pane>
       <pane id="Scope" />
+      <pane id="Scratches" />
     </panes>
   </component>
   <component name="PropertiesComponent">
@@ -715,12 +399,13 @@
       <workItem from="1494818091190" duration="20044000" />
       <workItem from="1494931620235" duration="4953000" />
       <workItem from="1494985784317" duration="87154000" />
-      <workItem from="1495504357417" duration="95949000" />
+      <workItem from="1495504357417" duration="113614000" />
+      <workItem from="1495869534290" duration="8885000" />
     </task>
     <servers />
   </component>
   <component name="TimeTrackingManager">
-    <option name="totallyTimeSpent" value="699060000" />
+    <option name="totallyTimeSpent" value="725610000" />
   </component>
   <component name="TodoView">
     <todo-panel id="selected-file">
@@ -735,23 +420,23 @@
     <frame x="-8" y="-8" width="1936" height="1056" extended-state="6" />
     <editor active="true" />
     <layout>
+      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.2185501" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
       <window_info id="TODO" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32936078" sideWeight="0.5" order="6" side_tool="false" content_ui="tabs" />
       <window_info id="Event Log" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32936078" sideWeight="0.5" order="7" side_tool="true" content_ui="tabs" />
-      <window_info id="Command Line Tools Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.329718" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
-      <window_info id="File Transfer" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.30368763" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
-      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32936078" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
-      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32936078" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
-      <window_info id="Project" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="true" show_stripe_button="true" weight="0.21641791" sideWeight="0.5" order="0" side_tool="false" content_ui="combo" />
-      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Database" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32995737" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
       <window_info id="Find" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.3286334" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
+      <window_info id="File Transfer" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.30368763" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
+      <window_info id="Run" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="false" content_ui="tabs" />
+      <window_info id="Version Control" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32936078" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Structure" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
-      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
+      <window_info id="Terminal" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.32936078" sideWeight="0.5" order="7" side_tool="false" content_ui="tabs" />
       <window_info id="Debug" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="3" side_tool="false" content_ui="tabs" />
+      <window_info id="Favorites" active="false" anchor="left" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="2" side_tool="true" content_ui="tabs" />
       <window_info id="Cvs" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="4" side_tool="false" content_ui="tabs" />
       <window_info id="Message" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.33" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Commander" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="0" side_tool="false" content_ui="tabs" />
       <window_info id="Inspection" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.4" sideWeight="0.5" order="5" side_tool="false" content_ui="tabs" />
+      <window_info id="Command Line Tools Console" active="false" anchor="bottom" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.329718" sideWeight="0.5" order="8" side_tool="false" content_ui="tabs" />
       <window_info id="Hierarchy" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="2" side_tool="false" content_ui="combo" />
       <window_info id="Ant Build" active="false" anchor="right" auto_hide="false" internal_type="DOCKED" type="DOCKED" visible="false" show_stripe_button="true" weight="0.25" sideWeight="0.5" order="1" side_tool="false" content_ui="tabs" />
     </layout>
@@ -785,174 +470,15 @@
   </component>
   <component name="XDebuggerManager">
     <breakpoint-manager>
-      <breakpoints>
-        <line-breakpoint enabled="true" type="javascript">
-          <url>file://$PROJECT_DIR$/theme/admin_3_angularjs/js/main.js</url>
-          <line>550</line>
-          <option name="timeStamp" value="20" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="javascript">
-          <url>file://$PROJECT_DIR$/theme/admin_3_angularjs/views/new_investigation.html</url>
-          <line>333</line>
-          <option name="timeStamp" value="22" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="javascript">
-          <url>file://$PROJECT_DIR$/theme/admin_3_angularjs/views/dashboard.html</url>
-          <line>1348</line>
-          <option name="timeStamp" value="23" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="javascript">
-          <url>file://$PROJECT_DIR$/theme/admin_3_angularjs/views/new_investigation.html</url>
-          <line>235</line>
-          <option name="timeStamp" value="25" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="javascript">
-          <url>file://$PROJECT_DIR$/theme/admin_3_angularjs/js/main.js</url>
-          <line>70</line>
-          <option name="timeStamp" value="26" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="javascript">
-          <url>file://$PROJECT_DIR$/theme/admin_3_angularjs/views/dashboard.html</url>
-          <line>302</line>
-          <option name="timeStamp" value="27" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="javascript">
-          <url>file://$PROJECT_DIR$/theme/admin_3_angularjs/views/dashboard.html</url>
-          <line>358</line>
-          <option name="timeStamp" value="28" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="javascript">
-          <url>file://$PROJECT_DIR$/theme/admin_3_angularjs/views/new_investigation.html</url>
-          <line>1155</line>
-          <properties />
-          <option name="timeStamp" value="32" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="javascript">
-          <url>file://$PROJECT_DIR$/theme/admin_3_angularjs/js/main.js</url>
-          <line>14</line>
-          <properties />
-          <option name="timeStamp" value="33" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="javascript">
-          <url>file://$PROJECT_DIR$/theme/admin_3_angularjs/assets/global/plugins/counterup/jquery.counterup.js</url>
-          <line>25</line>
-          <properties />
-          <option name="timeStamp" value="35" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="javascript">
-          <url>file://$PROJECT_DIR$/theme/admin_3_angularjs/views/dashboard.html</url>
-          <line>580</line>
-          <properties />
-          <option name="timeStamp" value="36" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="javascript">
-          <url>file://$PROJECT_DIR$/theme/admin_3_angularjs/views/new_investigation.html</url>
-          <line>1166</line>
-          <properties />
-          <option name="timeStamp" value="37" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="javascript">
-          <url>file://$PROJECT_DIR$/theme/admin_3_angularjs/js/directives.js</url>
-          <line>5</line>
-          <properties />
-          <option name="timeStamp" value="40" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="javascript">
-          <url>file://$PROJECT_DIR$/theme/admin_3_angularjs/views/new_investigation.html</url>
-          <line>820</line>
-          <properties />
-          <option name="timeStamp" value="41" />
-        </line-breakpoint>
-        <line-breakpoint enabled="true" type="javascript">
-          <url>file://$PROJECT_DIR$/theme/admin_3_angularjs/js/controllers/EventTreeController.js</url>
-          <line>9</line>
-          <properties />
-          <option name="timeStamp" value="42" />
-        </line-breakpoint>
-      </breakpoints>
-      <option name="time" value="43" />
+      <option name="time" value="45" />
     </breakpoint-manager>
     <watches-manager />
   </component>
   <component name="editorHistoryManager">
-    <entry file="file://$PROJECT_DIR$/theme/admin_3_angularjs/views/data1.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="1501220" lean-forward="false" selection-start-line="0" selection-start-column="1501220" selection-end-line="0" selection-end-column="1501220" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/theme/admin_3_angularjs/views/new_investigation - 副本.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="529">
-          <caret line="1006" column="20" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="1006" selection-end-column="20" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/theme/admin_3_angularjs/assets/global/plugins/css3-responsive-tab-menu/css/style.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1008">
-          <caret line="56" column="14" lean-forward="false" selection-start-line="56" selection-start-column="14" selection-end-line="56" selection-end-column="14" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/theme/admin_3_angularjs/views/ui_bootstrap.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="412">
-          <caret line="1558" column="5" lean-forward="true" selection-start-line="1516" selection-start-column="4" selection-end-line="1558" selection-end-column="5" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/theme/admin_3_angularjs/assets/global/plugins/jquery.tab-menu-set-master/lib/jquery.tab-menu-set.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="432">
-          <caret line="27" column="32" lean-forward="false" selection-start-line="27" selection-start-column="32" selection-end-line="27" selection-end-column="32" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/theme/admin_3_angularjs/views/page_user_login_4.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-29">
-          <caret line="88" column="32" lean-forward="false" selection-start-line="88" selection-start-column="32" selection-end-line="88" selection-end-column="32" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/theme/admin_3_angularjs/views/dropdowns.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/theme/admin_3_angularjs/assets/global/plugins/owl-carousel/assets/css/responsive.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="196">
-          <caret line="55" column="42" lean-forward="false" selection-start-line="55" selection-start-column="42" selection-end-line="55" selection-end-column="42" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/theme/admin_3_angularjs/assets/global/plugins/owl-carousel/assets/css/custom.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="229">
-          <caret line="305" column="5" lean-forward="true" selection-start-line="305" selection-start-column="5" selection-end-line="305" selection-end-column="5" />
-          <folding>
-            <element signature="e#4625#5308#0" expanded="false" />
-            <element signature="e#5311#5505#0" expanded="false" />
-            <element signature="e#5533#6173#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/theme/admin_3_angularjs/assets/layouts/layout3/scripts/layout.min.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="5364" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -994,9 +520,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="252">
           <caret line="14" column="9" lean-forward="false" selection-start-line="14" selection-start-column="7" selection-end-line="14" selection-end-column="9" />
-          <folding>
-            <element signature="e#634#4461#0" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1049,14 +572,7 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/theme/admin_3_angularjs/assets/pages/css/ui.progress-bar.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="0">
-          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
+    <entry file="file://$PROJECT_DIR$/theme/admin_3_angularjs/assets/pages/css/ui.progress-bar.css" />
     <entry file="file://$PROJECT_DIR$/theme/admin_3_angularjs/assets/global/plugins/datatables/datatables.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
@@ -1069,7 +585,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="622">
           <caret line="53" column="21" lean-forward="true" selection-start-line="53" selection-start-column="21" selection-end-line="53" selection-end-column="21" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1078,20 +593,6 @@
         <state relative-caret-position="177">
           <caret line="5116" column="40" lean-forward="true" selection-start-line="5116" selection-start-column="40" selection-end-line="5116" selection-end-column="40" />
           <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/theme/admin_3_angularjs/assets/global/plugins/DataTables-1.10.15/media/js/jquery.dataTables.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="112">
-          <caret line="1034" column="67" lean-forward="true" selection-start-line="1034" selection-start-column="67" selection-end-line="1034" selection-end-column="67" />
-          <folding>
-            <element signature="e#36174#36840#0" expanded="false" />
-            <element signature="e#36852#36923#0" expanded="false" />
-            <marker date="1495677036257" expanded="true" signature="157861:157886" ph="..." />
-            <marker date="1495677036257" expanded="true" signature="158108:158133" ph="..." />
-            <marker date="1495677036257" expanded="true" signature="426469:426477" ph="..." />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1107,29 +608,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/theme/admin_3_angularjs/tpl/header.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="391">
-          <caret line="94" column="88" lean-forward="false" selection-start-line="94" selection-start-column="88" selection-end-line="94" selection-end-column="88" />
-          <folding>
-            <element signature="n#div#0;n#div#0;n#div#0;n#!!top" expanded="false" />
-            <element signature="n#div#1;n#div#0;n#div#0;n#!!top" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/theme/admin_3_angularjs/assets/pages/scripts/dashboard.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="165">
           <caret line="1374" column="35" lean-forward="true" selection-start-line="1374" selection-start-column="35" selection-end-line="1374" selection-end-column="35" />
-          <folding>
-            <marker date="1489653098190" expanded="true" signature="20403:20409" ph=" " />
-            <marker date="1489653098190" expanded="true" signature="46401:46416" ph="..." />
-            <marker date="1489653098190" expanded="true" signature="46461:46476" ph="..." />
-            <marker date="1489653098190" expanded="true" signature="46841:46856" ph="..." />
-            <marker date="1489653098190" expanded="true" signature="46901:46916" ph="..." />
-            <marker date="1489653098190" expanded="true" signature="48956:48970" ph="..." />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1137,15 +619,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="72">
           <caret line="4" column="7" lean-forward="false" selection-start-line="4" selection-start-column="7" selection-end-line="4" selection-end-column="7" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/theme/admin_3_angularjs/assets/global/css/components.min.css">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="61">
-          <caret line="11328" column="13" lean-forward="false" selection-start-line="11328" selection-start-column="1" selection-end-line="11328" selection-end-column="13" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1153,7 +626,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="197">
           <caret line="2484" column="10" lean-forward="false" selection-start-line="2484" selection-start-column="10" selection-end-line="2484" selection-end-column="10" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1161,9 +633,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="86">
           <caret line="42" column="2" lean-forward="true" selection-start-line="42" selection-start-column="2" selection-end-line="42" selection-end-column="2" />
-          <folding>
-            <element signature="e#125#1767#0" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1171,34 +640,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="349">
           <caret line="785" column="31" lean-forward="false" selection-start-line="785" selection-start-column="31" selection-end-line="785" selection-end-column="31" />
-          <folding>
-            <element signature="e#686#1164#0" expanded="false" />
-            <element signature="e#1273#1465#0" expanded="false" />
-            <element signature="e#1563#2566#0" expanded="false" />
-            <element signature="e#2648#7277#0" expanded="false" />
-            <element signature="e#7385#7893#0" expanded="false" />
-            <element signature="e#8120#8752#0" expanded="false" />
-            <element signature="e#8800#10077#0" expanded="false" />
-            <element signature="e#10145#10306#0" expanded="false" />
-            <element signature="e#10394#10440#0" expanded="false" />
-            <element signature="e#10525#10571#0" expanded="false" />
-            <element signature="e#10875#11739#0" expanded="false" />
-            <element signature="e#11819#11937#0" expanded="false" />
-            <element signature="e#12028#12253#0" expanded="false" />
-            <element signature="e#12539#13190#0" expanded="false" />
-            <element signature="e#13260#14340#0" expanded="false" />
-            <element signature="e#14414#15262#0" expanded="false" />
-            <element signature="e#15337#15522#0" expanded="false" />
-            <element signature="e#15559#16085#0" expanded="false" />
-            <element signature="e#16159#16347#0" expanded="false" />
-            <marker date="1495763937518" expanded="true" signature="13119:13125" ph=" " />
-            <marker date="1495763937518" expanded="true" signature="28935:28941" ph=" " />
-            <marker date="1495763937518" expanded="true" signature="28941:28947" ph=" " />
-            <marker date="1495763937518" expanded="true" signature="29232:29238" ph=" " />
-            <marker date="1495763937518" expanded="true" signature="29238:29244" ph=" " />
-            <marker date="1495763937518" expanded="true" signature="31810:31816" ph=" " />
-            <marker date="1495763937518" expanded="true" signature="31816:31822" ph=" " />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1206,9 +647,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="54">
           <caret line="3" column="79" lean-forward="true" selection-start-line="3" selection-start-column="79" selection-end-line="3" selection-end-column="79" />
-          <folding>
-            <marker date="1489653094103" expanded="true" signature="372:383" ph="..." />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1216,7 +654,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="360">
           <caret line="20" column="12" lean-forward="true" selection-start-line="20" selection-start-column="12" selection-end-line="22" selection-end-column="21" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1224,7 +661,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="0">
           <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1232,7 +668,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="126">
           <caret line="7" column="12" lean-forward="true" selection-start-line="7" selection-start-column="12" selection-end-line="7" selection-end-column="13" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1252,23 +687,10 @@
         </state>
       </provider>
     </entry>
-    <entry file="file://$PROJECT_DIR$/theme/admin_3_angularjs/views/endpoint_management.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="545">
-          <caret line="235" column="13" lean-forward="true" selection-start-line="235" selection-start-column="13" selection-end-line="235" selection-end-column="13" />
-          <folding>
-            <element signature="e#3393#4228#0" expanded="false" />
-            <element signature="e#4282#4646#0" expanded="false" />
-            <element signature="e#5691#8942#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
     <entry file="file://$PROJECT_DIR$/theme/admin_3_angularjs/views/event_tree_record.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="180">
           <caret line="12" column="1" lean-forward="true" selection-start-line="12" selection-start-column="1" selection-end-line="12" selection-end-column="1" />
-          <folding />
         </state>
       </provider>
     </entry>
@@ -1276,116 +698,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="299">
           <caret line="346" column="10" lean-forward="false" selection-start-line="346" selection-start-column="10" selection-end-line="346" selection-end-column="10" />
-          <folding>
-            <element signature="n#style#0;n#div#2;n#div#0;n#div#1;n#div#1;n#div#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#1;n#div#1;n#div#1;n#div#1;n#div#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#2;n#div#2;n#div#1;n#div#1;n#div#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#2;n#div#3;n#div#1;n#div#1;n#div#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#2;n#div#4;n#div#1;n#div#1;n#div#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#2;n#div#5;n#div#1;n#div#1;n#div#0;n#!!top" expanded="true" />
-            <element signature="e#13697#14532#0" expanded="false" />
-            <element signature="e#15932#16201#0" expanded="false" />
-            <element signature="e#16305#17355#0" expanded="false" />
-            <element signature="e#17615#17739#0" expanded="false" />
-            <element signature="e#18227#21135#0" expanded="false" />
-            <element signature="e#21234#24650#0" expanded="false" />
-            <element signature="e#24725#24933#0" expanded="false" />
-            <element signature="e#24978#25192#0" expanded="false" />
-            <element signature="e#26241#26472#0" expanded="false" />
-            <element signature="e#26515#26771#0" expanded="false" />
-            <element signature="e#27870#28835#0" expanded="false" />
-            <element signature="e#37243#37284#0" expanded="false" />
-            <element signature="e#50117#50159#0" expanded="false" />
-            <element signature="e#60654#60693#0" expanded="false" />
-            <element signature="e#74692#74741#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/theme/admin_3_angularjs/js/main.js">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="1204">
-          <caret line="305" column="28" lean-forward="true" selection-start-line="305" selection-start-column="28" selection-end-line="305" selection-end-column="73" />
-          <folding>
-            <element signature="n#!!doc" expanded="true" />
-            <element signature="e#402#480#0" expanded="false" />
-            <element signature="e#3623#3733#0" expanded="false" />
-            <element signature="e#3855#4033#0" expanded="false" />
-            <marker date="1495781307900" expanded="true" signature="4761:27317" ph="[...]" />
-            <marker date="1495781307900" expanded="true" signature="4847:27316" ph="{...}" />
-            <marker date="1495781307900" expanded="true" signature="12630:13360" ph="{&quot;url&quot;: &quot;/event_tree&quot;...}" />
-            <marker date="1495781307900" expanded="true" signature="12820:13350" ph="{...}" />
-            <marker date="1495781307900" expanded="true" signature="12844:13336" ph="[...]" />
-            <marker date="1495781307900" expanded="true" signature="12882:13335" ph="{...}" />
-            <marker date="1495781307900" expanded="true" signature="12928:13315" ph="[...]" />
-            <marker date="1495781307900" expanded="true" signature="12929:13314" ph="{&quot;name&quot;: 'MetronicApp'...}" />
-            <marker date="1495781307900" expanded="true" signature="13007:13292" ph="[...]" />
-            <marker date="1495781307900" expanded="true" signature="13431:14962" ph="{&quot;url&quot;: &quot;/endpoint_management&quot;...}" />
-            <marker date="1495781307900" expanded="true" signature="13642:14952" ph="{...}" />
-            <marker date="1495781307900" expanded="true" signature="13666:14938" ph="[...]" />
-            <marker date="1495781307900" expanded="true" signature="13704:14937" ph="{...}" />
-            <marker date="1495781307900" expanded="true" signature="13750:14917" ph="[...]" />
-            <marker date="1495781307900" expanded="true" signature="13751:14916" ph="{&quot;name&quot;: 'MetronicApp'...}" />
-            <marker date="1495781307900" expanded="true" signature="13829:14894" ph="[...]" />
-            <marker date="1495781307900" expanded="true" signature="14368:14798" ph="//..." />
-            <marker date="1495781307900" expanded="true" signature="15009:15929" ph="{&quot;url&quot;: &quot;/tree&quot;...}" />
-            <marker date="1495781307900" expanded="true" signature="15202:15919" ph="{...}" />
-            <marker date="1495781307900" expanded="true" signature="15226:15904" ph="[...]" />
-            <marker date="1495781307900" expanded="true" signature="15264:15903" ph="{...}" />
-            <marker date="1495781307900" expanded="true" signature="15310:15883" ph="[...]" />
-            <marker date="1495781307900" expanded="true" signature="15311:15882" ph="{&quot;name&quot;: 'MetronicApp'...}" />
-            <marker date="1495781307900" expanded="true" signature="15515:15859" ph="[...]" />
-            <marker date="1495781307900" expanded="true" signature="15982:18086" ph="{&quot;url&quot;: &quot;/form-tools&quot;...}" />
-            <marker date="1495781307900" expanded="true" signature="16181:18076" ph="{...}" />
-            <marker date="1495781307900" expanded="true" signature="16205:18061" ph="[...]" />
-            <marker date="1495781307900" expanded="true" signature="16243:18060" ph="{...}" />
-            <marker date="1495781307900" expanded="true" signature="16289:18040" ph="[...]" />
-            <marker date="1495781307900" expanded="true" signature="16290:18039" ph="{&quot;name&quot;: 'MetronicApp'...}" />
-            <marker date="1495781307900" expanded="true" signature="16494:18016" ph="[...]" />
-            <marker date="1495781307900" expanded="true" signature="18154:20234" ph="{&quot;url&quot;: &quot;/pickers&quot;...}" />
-            <marker date="1495781307900" expanded="true" signature="18356:20224" ph="{...}" />
-            <marker date="1495781307900" expanded="true" signature="18380:20209" ph="[...]" />
-            <marker date="1495781307900" expanded="true" signature="18418:20208" ph="{...}" />
-            <marker date="1495781307900" expanded="true" signature="18464:20188" ph="[...]" />
-            <marker date="1495781307900" expanded="true" signature="18465:20187" ph="{&quot;name&quot;: 'MetronicApp'...}" />
-            <marker date="1495781307900" expanded="true" signature="18669:20164" ph="[...]" />
-            <marker date="1495781307900" expanded="true" signature="20293:21610" ph="{&quot;url&quot;: &quot;/dropdowns&quot;...}" />
-            <marker date="1495781307900" expanded="true" signature="20496:21600" ph="{...}" />
-            <marker date="1495781307900" expanded="true" signature="20520:21585" ph="[...]" />
-            <marker date="1495781307900" expanded="true" signature="20558:21584" ph="{...}" />
-            <marker date="1495781307900" expanded="true" signature="20604:21564" ph="[...]" />
-            <marker date="1495781307900" expanded="true" signature="20605:21563" ph="{&quot;name&quot;: 'MetronicApp'...}" />
-            <marker date="1495781307900" expanded="true" signature="20809:21540" ph="[...]" />
-            <marker date="1495781307900" expanded="true" signature="21682:22787" ph="{&quot;url&quot;: &quot;/datatables/managed.html&quot;...}" />
-            <marker date="1495781307900" expanded="true" signature="21911:22777" ph="{...}" />
-            <marker date="1495781307900" expanded="true" signature="21935:22763" ph="[...]" />
-            <marker date="1495781307900" expanded="true" signature="21973:22762" ph="{...}" />
-            <marker date="1495781307900" expanded="true" signature="22019:22742" ph="{&quot;name&quot;: 'MetronicApp'...}" />
-            <marker date="1495781307900" expanded="true" signature="22223:22720" ph="[...]" />
-            <marker date="1495781307900" expanded="true" signature="22850:24174" ph="{&quot;url&quot;: &quot;/datatables/ajax.html&quot;...}" />
-            <marker date="1495781307900" expanded="true" signature="23069:24164" ph="{...}" />
-            <marker date="1495781307900" expanded="true" signature="23093:24150" ph="[...]" />
-            <marker date="1495781307900" expanded="true" signature="23131:24149" ph="{...}" />
-            <marker date="1495781307900" expanded="true" signature="23177:24129" ph="{&quot;name&quot;: 'MetronicApp'...}" />
-            <marker date="1495781307900" expanded="true" signature="23381:24107" ph="[...]" />
-            <marker date="1495781307900" expanded="true" signature="24227:25363" ph="{&quot;url&quot;: &quot;/profile&quot;...}" />
-            <marker date="1495781307900" expanded="true" signature="24427:25353" ph="{...}" />
-            <marker date="1495781307900" expanded="true" signature="24451:25339" ph="[...]" />
-            <marker date="1495781307900" expanded="true" signature="24489:25338" ph="{...}" />
-            <marker date="1495781307900" expanded="true" signature="24535:25318" ph="{&quot;name&quot;: 'MetronicApp'...}" />
-            <marker date="1495781307900" expanded="true" signature="24741:25276" ph="[...]" />
-            <marker date="1495781307900" expanded="true" signature="25436:25581" ph="{&quot;url&quot;: &quot;/dashboard&quot;...}" />
-            <marker date="1495781307900" expanded="true" signature="25650:25791" ph="{&quot;url&quot;: &quot;/account&quot;...}" />
-            <marker date="1495781307900" expanded="true" signature="25854:25992" ph="{&quot;url&quot;: &quot;/help&quot;...}" />
-            <marker date="1495781307900" expanded="true" signature="26034:27312" ph="{&quot;url&quot;: &quot;/todo&quot;...}" />
-            <marker date="1495781307900" expanded="true" signature="26208:27302" ph="{...}" />
-            <marker date="1495781307900" expanded="true" signature="26232:27288" ph="[...]" />
-            <marker date="1495781307900" expanded="true" signature="26270:27287" ph="{...}" />
-            <marker date="1495781307900" expanded="true" signature="26316:27267" ph="{&quot;name&quot;: 'MetronicApp'...}" />
-            <marker date="1495781307900" expanded="true" signature="26523:27225" ph="[...]" />
-            <marker date="1495781307900" expanded="true" signature="27321:27363" ph="/*...*/" />
-            <marker date="1495781307900" expanded="true" signature="27380:27597" ph="[...]" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1393,71 +705,6 @@
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="298">
           <caret line="45" column="0" lean-forward="false" selection-start-line="45" selection-start-column="0" selection-end-line="45" selection-end-column="0" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/theme/admin_3_angularjs/views/new_investigation.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="612">
-          <caret line="412" column="32" lean-forward="false" selection-start-line="412" selection-start-column="29" selection-end-line="412" selection-end-column="32" />
-          <folding>
-            <element signature="n#div#1;n#div#0;n#div#0;n#div#0;n#!!top" expanded="false" />
-            <element signature="n#script#0;n#div#1;n#div#0;n#div#0;n#div#0;n#!!top" expanded="false" />
-            <element signature="n#div#0;n#div#1;n#div#0;n#div#0;n#div#0;n#!!top" expanded="false" />
-            <element signature="n#div#0;n#div#1;n#div#1;n#div#0;n#div#0;n#div#0;n#!!top" expanded="false" />
-            <element signature="n#style#0;n#span#0;n#div#1;n#div#0;n#div#0;n#div#1;n#div#0;n#div#0;n#!!top" expanded="true" />
-            <element signature="e#8802#9782#0" expanded="false" />
-            <element signature="e#9863#10310#0" expanded="false" />
-            <element signature="e#10346#10476#0" expanded="false" />
-            <element signature="e#10522#11358#0" expanded="false" />
-            <element signature="e#11412#11780#0" expanded="false" />
-            <element signature="e#12100#13491#0" expanded="false" />
-            <element signature="e#13809#14078#0" expanded="false" />
-            <element signature="e#14159#14477#0" expanded="false" />
-            <element signature="e#14682#15016#0" expanded="false" />
-            <element signature="e#15222#15664#0" expanded="false" />
-            <element signature="e#16458#25356#0" expanded="false" />
-            <element signature="e#25640#34177#0" expanded="false" />
-            <element signature="e#35315#35611#0" expanded="false" />
-            <element signature="e#35625#35749#0" expanded="false" />
-            <element signature="e#36984#38034#0" expanded="false" />
-            <element signature="e#38288#38699#0" expanded="false" />
-            <element signature="e#39128#39677#0" expanded="false" />
-            <element signature="e#39734#40267#0" expanded="false" />
-            <element signature="e#40319#43172#0" expanded="false" />
-            <element signature="e#44495#44606#0" expanded="false" />
-            <element signature="e#45050#48689#0" expanded="false" />
-            <element signature="e#46078#46118#0" expanded="false" />
-            <element signature="e#47838#47878#0" expanded="false" />
-            <element signature="e#58730#59192#0" expanded="false" />
-            <element signature="e#60443#62485#0" expanded="false" />
-          </folding>
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/theme/admin_3_angularjs/index.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="-416">
-          <caret line="54" column="51" lean-forward="false" selection-start-line="54" selection-start-column="35" selection-end-line="54" selection-end-column="51" />
-          <folding />
-        </state>
-      </provider>
-    </entry>
-    <entry file="file://$PROJECT_DIR$/theme/admin_3_angularjs/views/investigation_record.html">
-      <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="198">
-          <caret line="11" column="16" lean-forward="true" selection-start-line="11" selection-start-column="16" selection-end-line="11" selection-end-column="24" />
-          <folding>
-            <element signature="n#style#0;n#th#0;n#tr#0;n#thead#0;n#table#0;n#div#1;n#div#0;n#tab#0;n#tabset#0;n#div#1;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#th#1;n#tr#0;n#thead#0;n#table#0;n#div#1;n#div#0;n#tab#0;n#tabset#0;n#div#1;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#th#2;n#tr#0;n#thead#0;n#table#0;n#div#1;n#div#0;n#tab#0;n#tabset#0;n#div#1;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#th#0;n#tr#0;n#thead#0;n#table#0;n#div#1;n#div#0;n#tab#1;n#tabset#0;n#div#1;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#th#1;n#tr#0;n#thead#0;n#table#0;n#div#1;n#div#0;n#tab#1;n#tabset#0;n#div#1;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#th#2;n#tr#0;n#thead#0;n#table#0;n#div#1;n#div#0;n#tab#1;n#tabset#0;n#div#1;n#div#0;n#div#0;n#div#0;n#!!top" expanded="true" />
-            <element signature="e#4190#5025#0" expanded="false" />
-            <element signature="e#5079#5443#0" expanded="false" />
-          </folding>
         </state>
       </provider>
     </entry>
@@ -1466,9 +713,9 @@
         <state relative-caret-position="779">
           <caret line="241" column="111" lean-forward="false" selection-start-line="241" selection-start-column="111" selection-end-line="241" selection-end-column="111" />
           <folding>
-            <element signature="n#style#0;n#div#0;n#div#1;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#img#0;n#div#0;n#div#1;n#!!top" expanded="true" />
-            <element signature="n#style#0;n#div#2;n#!!top" expanded="true" />
+            <element signature="n#style#0;n#div#0;n#div#1;n#!!top" expanded="false" />
+            <element signature="n#style#0;n#img#0;n#div#0;n#div#1;n#!!top" expanded="false" />
+            <element signature="n#style#0;n#div#2;n#!!top" expanded="false" />
             <marker date="1495790030164" expanded="false" signature="1387:1451" ph="..." />
             <marker date="1495790030164" expanded="false" signature="1617:1681" ph="..." />
           </folding>
@@ -1478,20 +725,183 @@
     <entry file="file://$PROJECT_DIR$/theme/admin_3_angularjs/js/controllers/EventTreeController.js">
       <provider selected="true" editor-type-id="text-editor">
         <state relative-caret-position="594">
-          <caret line="156" column="36" lean-forward="true" selection-start-line="156" selection-start-column="36" selection-end-line="156" selection-end-column="36" />
+          <caret line="156" column="36" lean-forward="false" selection-start-line="156" selection-start-column="36" selection-end-line="156" selection-end-column="36" />
           <folding>
-            <element signature="n#!!doc" expanded="true" />
+            <element signature="n#!!doc" expanded="false" />
             <marker date="1495790161116" expanded="true" signature="1639:1658" ph="..." />
           </folding>
         </state>
       </provider>
     </entry>
+    <entry file="file://$PROJECT_DIR$/theme/admin_3_angularjs/tpl/header.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="1422">
+          <caret line="94" column="88" lean-forward="false" selection-start-line="94" selection-start-column="88" selection-end-line="94" selection-end-column="88" />
+        </state>
+      </provider>
+    </entry>
     <entry file="file://$PROJECT_DIR$/theme/admin_3_angularjs/assets/global/plugins/angularjs/plugins/angularjs-dropdown-multiselect/src/angularjs-dropdown-multiselect.js">
       <provider selected="true" editor-type-id="text-editor">
-        <state relative-caret-position="288">
-          <caret line="152" column="45" lean-forward="false" selection-start-line="152" selection-start-column="45" selection-end-line="152" selection-end-column="45" />
+        <state relative-caret-position="684">
+          <caret line="174" column="24" lean-forward="true" selection-start-line="174" selection-start-column="24" selection-end-line="174" selection-end-column="24" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/theme/admin_3_angularjs/assets/global/plugins/bootstrap-tabdrop/js/bootstrap-tabdrop.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-180">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/theme/admin_3_angularjs/assets/pages/scripts/ui-bootstrap-growl.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="0">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/theme/admin_3_angularjs/assets/global/plugins/angularjs/plugins/ui-bootstrap-tpls.min.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="18">
+          <caret line="9" column="17932" lean-forward="false" selection-start-line="9" selection-start-column="17932" selection-end-line="9" selection-end-column="17932" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/theme/admin_3_angularjs/js/main.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="108">
+          <caret line="6" column="17" lean-forward="false" selection-start-line="6" selection-start-column="8" selection-end-line="6" selection-end-column="17" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/theme/admin_3_angularjs/views/ui_bootstrap.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="765">
+          <caret line="231" column="33" lean-forward="false" selection-start-line="231" selection-start-column="28" selection-end-line="231" selection-end-column="33" />
           <folding>
-            <marker date="1495790514331" expanded="true" signature="1148:1154" ph=" " />
+            <element signature="e#96536#97177#0" expanded="false" />
+            <element signature="e#97243#97832#0" expanded="false" />
+            <element signature="e#97898#98092#0" expanded="false" />
+            <element signature="e#106334#113785#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/theme/admin_3_angularjs/assets/global/plugins/DataTables-1.10.15/extensions/Buttons/js/dataTables.buttons.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="-3510">
+          <caret line="0" column="0" lean-forward="false" selection-start-line="0" selection-start-column="0" selection-end-line="0" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/theme/admin_3_angularjs/assets/global/plugins/DataTables-1.10.15/extensions/Select/js/dataTables.select.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="205">
+          <caret line="531" column="22" lean-forward="false" selection-start-line="531" selection-start-column="22" selection-end-line="531" selection-end-column="22" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/theme/admin_3_angularjs/index.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="527">
+          <caret line="103" column="45" lean-forward="false" selection-start-line="103" selection-start-column="0" selection-end-line="104" selection-end-column="0" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/theme/admin_3_angularjs/assets/global/plugins/datatables/images/sort_asc.png">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/theme/admin_3_angularjs/assets/global/plugins/datatables/images/sort_desc.png">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/theme/admin_3_angularjs/views/investigation_record.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="186">
+          <caret line="326" column="47" lean-forward="false" selection-start-line="326" selection-start-column="47" selection-end-line="326" selection-end-column="47" />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/theme/admin_3_angularjs/assets/global/plugins/datatables/images/sort_asc_disabled.png">
+      <provider selected="true" editor-type-id="images">
+        <state />
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/theme/admin_3_angularjs/assets/global/css/components.min.css">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="249786">
+          <caret line="13877" column="85" lean-forward="false" selection-start-line="13877" selection-start-column="62" selection-end-line="13877" selection-end-column="85" />
+          <folding />
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/theme/admin_3_angularjs/views/endpoint_management.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="18">
+          <caret line="182" column="47" lean-forward="false" selection-start-line="182" selection-start-column="47" selection-end-line="182" selection-end-column="47" />
+          <folding>
+            <element signature="e#3393#4228#0" expanded="false" />
+            <element signature="e#4282#4646#0" expanded="false" />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/theme/admin_3_angularjs/assets/global/plugins/DataTables-1.10.15/media/js/jquery.dataTables.js">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="730">
+          <caret line="14529" column="43" lean-forward="false" selection-start-line="14529" selection-start-column="35" selection-end-line="14529" selection-end-column="43" />
+          <folding>
+            <element signature="e#36174#36840#0" expanded="false" />
+            <element signature="e#36852#36923#0" expanded="false" />
+            <marker date="1495677036257" expanded="true" signature="157861:157886" ph="..." />
+            <marker date="1495677036257" expanded="true" signature="158108:158133" ph="..." />
+            <marker date="1495677036257" expanded="true" signature="426469:426477" ph="..." />
+          </folding>
+        </state>
+      </provider>
+    </entry>
+    <entry file="file://$PROJECT_DIR$/theme/admin_3_angularjs/views/new_investigation.html">
+      <provider selected="true" editor-type-id="text-editor">
+        <state relative-caret-position="487">
+          <caret line="1067" column="73" lean-forward="true" selection-start-line="1067" selection-start-column="73" selection-end-line="1067" selection-end-column="73" />
+          <folding>
+            <element signature="n#script#0;n#div#1;n#div#0;n#div#0;n#div#0;n#!!top" expanded="false" />
+            <element signature="n#div#0;n#div#1;n#div#0;n#div#0;n#div#0;n#!!top" expanded="false" />
+            <element signature="n#div#0;n#div#1;n#div#1;n#div#0;n#div#0;n#div#0;n#!!top" expanded="false" />
+            <element signature="n#style#0;n#span#0;n#div#1;n#div#0;n#div#0;n#div#1;n#div#0;n#div#0;n#!!top" expanded="true" />
+            <element signature="e#10358#10805#0" expanded="false" />
+            <element signature="e#10841#10971#0" expanded="false" />
+            <element signature="e#11017#11853#0" expanded="false" />
+            <element signature="e#11907#12275#0" expanded="false" />
+            <element signature="e#12595#13986#0" expanded="false" />
+            <element signature="e#14304#14573#0" expanded="false" />
+            <element signature="e#14654#14972#0" expanded="false" />
+            <element signature="e#15177#15511#0" expanded="false" />
+            <element signature="e#15717#16159#0" expanded="false" />
+            <element signature="e#16961#25859#0" expanded="false" />
+            <element signature="e#26323#34860#0" expanded="false" />
+            <element signature="e#35790#37460#0" expanded="false" />
+            <element signature="e#35943#36239#0" expanded="false" />
+            <element signature="e#36253#36377#0" expanded="false" />
+            <element signature="e#37595#38878#0" expanded="false" />
+            <element signature="e#37612#38662#0" expanded="false" />
+            <element signature="e#38916#39327#0" expanded="false" />
+            <element signature="e#39756#40305#0" expanded="false" />
+            <element signature="e#40362#40895#0" expanded="false" />
+            <element signature="e#40947#43800#0" expanded="false" />
+            <element signature="e#45907#46018#0" expanded="false" />
+            <element signature="e#46534#50173#0" expanded="false" />
+            <element signature="e#47562#47602#0" expanded="false" />
+            <element signature="e#49322#49362#0" expanded="false" />
+            <element signature="e#51217#55268#0" expanded="false" />
+            <element signature="e#55669#55843#0" expanded="false" />
+            <element signature="e#55917#56501#0" expanded="false" />
+            <element signature="e#56567#56633#0" expanded="false" />
+            <element signature="e#62010#64052#0" expanded="false" />
           </folding>
         </state>
       </provider>
