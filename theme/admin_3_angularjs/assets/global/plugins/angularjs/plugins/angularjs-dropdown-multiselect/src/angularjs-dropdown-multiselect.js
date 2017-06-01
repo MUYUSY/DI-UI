@@ -150,7 +150,7 @@ directiveModule.directive('ngDropdownMultiselect', ['$filter', '$document', '$co
 				selectionOf: '/',
 				searchPlaceholder: 'Search...',
 				buttonDefaultText: 'Select',
-				dynamicButtonTextSuffix: '被选中',
+				dynamicButtonTextSuffix: '个探针被选中',
 				disableSearch: 'Disable search',
 				enableSearch: 'Enable search',
 				selectGroup: 'Select all:',

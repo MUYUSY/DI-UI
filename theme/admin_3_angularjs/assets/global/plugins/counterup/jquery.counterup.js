@@ -60,8 +60,7 @@
             $this.data('counterup-nums', nums);
             $this.text('0');
 
-
-            if (settings.value < 10000000) {
+            if ($settings.value < 1000000) {
                 // Updates the number until we're done
                 var f = function() {
                     if (settings.needAdd)
@@ -83,8 +82,9 @@
             } else {
                 // Updates the number until we're done
                 var f = function() {
-                    if (settings.needAdd)
+                    if (settings.needAdd) {
                         $this.text("+" + $this.data('counterup-nums').shift() + "万");
+                    }
                     else
                         $this.text($this.data('counterup-nums').shift() + "万");
                     if ($this.data('counterup-nums').length) {

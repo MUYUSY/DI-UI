@@ -19,7 +19,7 @@
                                 </button>
                             </div>
                             <div class="col-md-12 col-sm-12 col-xs-12">
-                                <table class="table table-striped table-bordered table-hover endpoint-table"
+                                <table class="no-header no-footer table-hover endpoint-table"
                                        id="investigation">
                                     <thead>
                                     <tr>
@@ -46,7 +46,7 @@
                                 </button>
                             </div>
                             <div class="col-md-12 col-sm-12 col-xs-12">
-                                <table class="table table-striped table-bordered table-hover endpoint-table"
+                                <table class="no-header no-footer table-hover endpoint-table"
                                        id="eventtree">
                                     <thead>
                                     <tr>
@@ -354,6 +354,9 @@
             eventtreeTable = $('#eventtree').dataTable(eventTreeConfig);
         }
     });
+
+//    $('#eventtree').css('border', '0');
+//    $('#eventtree').children('tbody').children('tr').children('td').css('border', '0');
 
     var deleteInvestigation = function () {
         var selectId = [];

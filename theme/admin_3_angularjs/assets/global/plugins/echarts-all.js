@@ -74315,7 +74315,7 @@ return /******/ (function(modules) { // webpackBootstrap
 	                var defaultVal = (data.get('value', 0) * 100);
 	                var defaultLabel = data.getName(0) || seriesModel.name;
 	                if (!isNaN(defaultVal)) {
-	                    defaultLabel = defaultVal + '%';
+	                    defaultLabel = defaultVal.toFixed(1) + '%';
 	                }
 	                return formatted == null ? defaultLabel : formatted;
 	            }
