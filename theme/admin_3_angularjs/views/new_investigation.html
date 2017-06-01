@@ -1603,7 +1603,7 @@
                         data: JSON.stringify({'taskid': task_id}),
                         success: function (result) {
                             if (result < 0.5 && result >= 0) {
-                                value = result * 100 + "%";
+                                value = result.toFixed(2) * 100 + "%";
                                 $('#progressbar').show();
                                 $('#progressbar').addClass("progress-bar");
                                 $('#progressbar').addClass("blue");
