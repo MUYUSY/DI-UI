@@ -69,6 +69,7 @@
         </div>
     </div>
 </div>
+<script src="../assets/global/plugins/bootstrap-daterangepicker/moment.min.js" type="text/javascript"></script>
 <script src="../assets/global/plugins/DataTables-1.10.15/media/js/jquery.dataTables.js" type="text/javascript"></script>
 <script src="../assets/global/plugins/DataTables-1.10.15/extensions/RowGroup/js/dataTables.rowGroup.js"
         type="text/javascript"></script>
@@ -137,6 +138,14 @@
         }
     };
 
+    var getGroupname = function(time) {
+        var today = timeStamp2String(moment().unix(), "yyyy-MM-dd")
+        if (today === time)
+            return "今天"
+        else
+            return time
+    };
+
     $.ajax({
         url: "investigationrecord",
         type: "POST",
@@ -147,10 +156,10 @@
             var investigationRecord;
             var investigationTableContent = [];
             if (data.type1) {
-                investigationRecord = data.type1;
+                investigationRecord = data.type1.sort(function(a, b){return b.time - a.time});
                 for (var i = 0; i < investigationRecord.length; i++) {
                     investigationTableContent.push({
-                        group: timeStamp2String(investigationRecord[i].time, "yyyy-MM-dd"),
+                        group: getGroupname(timeStamp2String(investigationRecord[i].time, "yyyy-MM-dd")),
                         time: timeStamp2String(investigationRecord[i].time, "hh:mm"),
                         user: investigationRecord[i].user,
                         name: {name: investigationRecord[i].name, content: investigationRecord[i].data},
@@ -247,11 +256,12 @@
             // For Event Tree Record
             var eventTreeRecord;
             var eventTreeTableContent = [];
+
             if (data.type2) {
-                eventTreeRecord = data.type2;
+                eventTreeRecord = data.type2.sort(function(a, b){return b.time - a.time});
                 for (var i = 0; i < eventTreeRecord.length; i++) {
                     eventTreeTableContent.push({
-                        group: timeStamp2String(eventTreeRecord[i].time, "yyyy-MM-dd"),
+                        group: getGroupname(timeStamp2String(eventTreeRecord[i].time, "yyyy-MM-dd")),
                         time: timeStamp2String(eventTreeRecord[i].time, "hh:mm"),
                         user: eventTreeRecord[i].user,
                         name: {name: eventTreeRecord[i].name, content: eventTreeRecord[i].data},

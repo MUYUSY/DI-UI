@@ -482,6 +482,24 @@
         $scope.include = ["包含", "不包含"];
         $scope.equal = ["等于", "不等于"];
         $scope.change = function (item) {
+            var existValue = [];
+            for (var i = 0; i < $scope.conditions.length; i++) {
+                if (existValue.indexOf($scope.conditions[i].value) >= 0) {
+                    DIalert("warning", "该条件已经存在");
+                    for (var k = 0; k < $scope.conditionName.length; k++) {
+                        if (existValue.indexOf($scope.conditionName[k]) >= 0) {
+                            continue
+                        }
+                        else {
+                            item.value = $scope.conditionName[k];
+                            break
+                        }
+                    }
+                    return
+                } else {
+                    existValue.push($scope.conditions[i].value)
+                }
+            }
             if (item.value === "网络协议名") {
                 item.class1 = false;
                 item.class2 = false;
@@ -502,18 +520,50 @@
         $scope.protocolInit = function (item) {
             item.child = $scope.protocolChildren[item.father][0];
         };
-//        $scope.index = 2;
         $scope.maxCondition = false;
         $scope.closeable = false;
 
+        var getConditionValue = function() {
+            var existValue = [];
+            for (var i = 0; i < $scope.conditions.length; i++) {
+                existValue.push($scope.conditions[i].value);
+            }
+            for (var k = 0; k < $scope.conditionName.length; k++) {
+                if (existValue.indexOf($scope.conditionName[k]) >= 0) {
+                    continue
+                }
+                else {
+                    return $scope.conditionName[k]
+                }
+            }
+        };
+
         $scope.addCondition = function () {
+            var value = getConditionValue();
+            var getClass1 = function(value) {
+                if (value === "进程用户名" || value === "文件名" || value === "Url" || value === "进程名")
+                    return true;
+                else
+                    return false;
+            };
+            var getClass2 = function(value) {
+                if (value === "IP地址" || value === "进程ID")
+                    return true;
+                else
+                    return false;
+            };
+            var getClass3 = function(value) {
+                if (value === "网络协议名" )
+                    return true;
+                else
+                    return false;
+            };
             $scope.conditions.push(
                 {
-//                    key: $scope.index,
-                    value: "网络协议名",
-                    class1: true,
-                    class2: false,
-                    class3: false,
+                    value: value,
+                    class1: getClass1(value),
+                    class2: getClass2(value),
+                    class3: getClass3(value),
                     input: "",
                     father: "分类一",
                     child: "HTTP",
@@ -521,7 +571,6 @@
                     equal: "等于"
                 }
             );
-//            $scope.index += 1;
             $scope.closeable = true;
             if ($scope.conditions.length === 7) {
                 $scope.maxCondition = true;
@@ -588,7 +637,7 @@
         };
         var parseInput = function(item) {
             for (var i in item) {
-                return item[i];
+                return item[i].toString();
             }
         };
         var parseFather = function(item) {
@@ -614,7 +663,7 @@
             $scope.conditions = [
                 {
 //                    key: 1,
-                    value: "test",
+                    value: "进程用户名",
                     class1: true,
                     class2: false,
                     class3: false,
@@ -660,7 +709,7 @@
                     search_condition.push({key: $scope.conditions[i].value, input: $scope.conditions[i].input});
                 }
             }
-            SearchResultCtrl($scope.selectByGroupModel, filterCondition, $scope.search_condition, 0, "", 0);
+            SearchResultCtrl($scope.selectByGroupModel, filterCondition, search_condition, 0, "", 0);
         }
 
 
@@ -1226,7 +1275,7 @@
                             }
                             break;
                         case "进程ID":
-                            if (keyValue[0] === "subject_proc_id") {
+                            if (keyValue[0] === "subject_proc_id" || keyValue[0] === "target_pid") {
                                 result = highlightEqual(result, keyword, key = "pid");
                             }
                             break;
@@ -1459,6 +1508,10 @@
                     last_tid = task_id;
                     skip = data.skip;
                     row_log = data.data.split('\n');
+                    if (reversed === 0)
+                        row_log = row_log.sort(function(a,b){return a[sortedNum]-b[sortedNum]});
+                    else
+                        row_log = row_log.sort(function(a,b){return b[sortedNum]-a[sortedNum]});
                     count = row_log.length;
                     total_count += count;
                     results = getTableData();
@@ -1612,7 +1665,7 @@
                                 $('#progressbar').children('span').html(value);
                             }
                             else if (result >= 0.5 && result < 1) {
-                                value = result * 100 + "%";
+                                value = result.toFixed(2) * 100 + "%";
                                 $('#progressbar').show();
                                 $('#progressbar').removeClass("shine");
                                 $('#progressbar').addClass("glow");

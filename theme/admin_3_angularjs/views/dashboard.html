@@ -115,13 +115,14 @@
                     <button class="btn-default form-control">管理空间</button>
                 </div>
             </div>
-            <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 chart-border" ng-controller="systemController">
-                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+            <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 chart-border portlet light" ng-controller="systemController">
+                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 portlet-title">
                     <span class="chart-title">系统操作</span>
                     <span class="divider">|</span>
                     <span class="time-selected" id="system-time-selected"></span>
-                    <img class="pull-right bar-charts" src="./icon/bar_chart.png" ng-click="chartChange('bar')">
-                    <img class="pull-right line-charts" src="./icon/line_chart.png" ng-click="chartChange('line')">
+                    <div class="tools">
+                        <a href="" class="fullscreen"> </a>
+                    </div>
                 </div>
                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 chart-option">
                     <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
@@ -142,16 +143,19 @@
                              events="groupChange">
                         </div>
                     </div>
+                    <img class="pull-right bar-charts" src="./icon/bar_chart.png" ng-click="chartChange('bar')">
+                    <img class="pull-right line-charts" src="./icon/line_chart.png" ng-click="chartChange('line')">
                 </div>
                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12" id="system-chart" style="height: 300px"></div>
             </div>
-            <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 chart-border" ng-controller="processController">
-                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+            <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 chart-border portlet light" ng-controller="processController">
+                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 portlet-title">
                     <span class="chart-title">进程操作</span>
                     <span class="divider">|</span>
                     <span class="time-selected" id="process-time-selected"></span>
-                    <img class="pull-right bar-charts" src="./icon/bar_chart.png" ng-click="chartChange('bar')">
-                    <img class="pull-right line-charts" src="./icon/line_chart.png" ng-click="chartChange('line')">
+                    <div class="tools">
+                        <a href="" class="fullscreen"> </a>
+                    </div>
                 </div>
                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 chart-option">
                     <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
@@ -172,16 +176,19 @@
                              events="groupChange">
                         </div>
                     </div>
+                    <img class="pull-right bar-charts" src="./icon/bar_chart.png" ng-click="chartChange('bar')">
+                    <img class="pull-right line-charts" src="./icon/line_chart.png" ng-click="chartChange('line')">
                 </div>
                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12" id="process-chart" style="height: 300px"></div>
             </div>
-            <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 chart-border" ng-controller="fileController">
-                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+            <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 chart-border portlet light" ng-controller="fileController">
+                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 portlet-title">
                     <span class="chart-title">文件操作</span>
                     <span class="divider">|</span>
                     <span class="time-selected" id="file-time-selected"></span>
-                    <img class="pull-right bar-charts" src="./icon/bar_chart.png" ng-click="chartChange('bar')">
-                    <img class="pull-right line-charts" src="./icon/line_chart.png" ng-click="chartChange('line')">
+                    <div class="tools">
+                        <a href="" class="fullscreen"> </a>
+                    </div>
                 </div>
                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 chart-option">
                     <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
@@ -202,16 +209,19 @@
                              events="groupChange">
                         </div>
                     </div>
+                    <img class="pull-right bar-charts" src="./icon/bar_chart.png" ng-click="chartChange('bar')">
+                    <img class="pull-right line-charts" src="./icon/line_chart.png" ng-click="chartChange('line')">
                 </div>
                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12" id="file-chart" style="height: 300px"></div>
             </div>
-            <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 chart-border" ng-controller="registryController">
-                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12">
+            <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 chart-border portlet light" ng-controller="registryController">
+                <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 portlet-title">
                     <span class="chart-title">注册表操作</span>
                     <span class="divider">|</span>
                     <span class="time-selected" id="registry-time-selected"></span>
-                    <img class="pull-right bar-charts" src="./icon/bar_chart.png" ng-click="chartChange('bar')">
-                    <img class="pull-right line-charts" src="./icon/line_chart.png" ng-click="chartChange('line')">
+                    <div class="tools">
+                        <a href="" class="fullscreen"> </a>
+                    </div>
                 </div>
                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 chart-option">
                     <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4">
@@ -232,6 +242,8 @@
                              events="groupChange">
                         </div>
                     </div>
+                    <img class="pull-right bar-charts" src="./icon/bar_chart.png" ng-click="chartChange('bar')">
+                    <img class="pull-right line-charts" src="./icon/line_chart.png" ng-click="chartChange('line')">
                 </div>
                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12" id="registry-chart" style="height: 300px"></div>
             </div>
@@ -278,15 +290,6 @@
         datetime.setTime(time);
         return datetime.format(format);
     };
-
-    var initialStartTime = Math.floor((moment().subtract('hours', 24).unix() / 3600) + 1) * 3600;
-    var initialEndTime = moment().unix();
-
-    $('#network-time-selected').html(timeStamp2String(initialStartTime, "yyyy-MM-dd hh:mm") + ' 至 ' + timeStamp2String(initialEndTime, "yyyy-MM-dd hh:mm"));
-    $('#system-time-selected').html(timeStamp2String(initialStartTime, "yyyy-MM-dd hh:mm") + ' 至 ' + timeStamp2String(initialEndTime, "yyyy-MM-dd hh:mm"));
-    $('#process-time-selected').html(timeStamp2String(initialStartTime, "yyyy-MM-dd hh:mm") + ' 至 ' + timeStamp2String(initialEndTime, "yyyy-MM-dd hh:mm"));
-    $('#file-time-selected').html(timeStamp2String(initialStartTime, "yyyy-MM-dd hh:mm") + ' 至 ' + timeStamp2String(initialEndTime, "yyyy-MM-dd hh:mm"));
-    $('#registry-time-selected').html(timeStamp2String(initialStartTime, "yyyy-MM-dd hh:mm") + ' 至 ' + timeStamp2String(initialEndTime, "yyyy-MM-dd hh:mm"));
 
     var device_info = [];
     function getDeviceInfo() {
@@ -446,7 +449,7 @@
                 "eventtype": eventType,
                 "period": label,
                 "begintime": beginTime,
-                "endtime": endTime,
+                "endtime": moment().unix(),
                 "devices": device
             }),
             success: function (data) {
@@ -807,8 +810,13 @@
             selectionCount: '被选中'
         };
 
-        $scope.startTime = initialStartTime;
-        $scope.endTime = initialEndTime;
+        var refreshTime = function() {
+            $scope.startTime = Math.floor((moment().subtract('hours', 24).unix() / 3600) + 1) * 3600;
+            $scope.endTime = moment().unix();
+            $('#network-time-selected').html(timeStamp2String($scope.startTime, "yyyy-MM-dd hh:mm") + ' 至 ' + timeStamp2String($scope.endTime, "yyyy-MM-dd hh:mm"));
+        };
+        refreshTime();
+        var networkRefresh = setInterval(refreshTime, 60000);
         $scope.label = "过去24小时";
         $scope.chartType = 'bar';
 
@@ -839,15 +847,32 @@
                 "format": "YYYY/MM/DD HH:mm"
             }
         }, function (start, end, label) {
+            clearInterval(networkRefresh);
             if (label === "过去24小时") {
-                $scope.startTime = Math.ceil(start / 3600000) * 3600;
+                $scope.startTime = Math.ceil(moment().startOf('hour').subtract('hours', 23).unix() / 3600) * 3600;
+            }
+            else if(label === "过去7天") {
+                $scope.startTime = Math.ceil(moment().subtract('days', 7).unix() / 86400) * 86400 - 28800;
             }
             else {
-                $scope.startTime = Math.ceil(start / 86400000) * 86400 - 28800;
+                $scope.startTime = Math.ceil(moment().subtract('days', 30).unix() / 86400) * 86400 - 28800;
             }
-            $scope.endTime = Math.floor(end / 60000) * 60;
+            $scope.endTime = moment().unix();
             $("#network-time-selected").html(timeStamp2String($scope.startTime, "yyyy-MM-dd hh:mm") + ' 至 ' + timeStamp2String($scope.endTime, "yyyy-MM-dd hh:mm"));
             $scope.label = label;
+            networkRefresh = setInterval(function(){
+                if (label === "过去24小时") {
+                    $scope.startTime = Math.ceil(moment().startOf('hour').subtract('hours', 23).unix() / 3600) * 3600;
+                }
+                else if(label === "过去7天") {
+                    $scope.startTime = Math.ceil(moment().subtract('days', 7).unix() / 86400) * 86400 - 28800;
+                }
+                else {
+                    $scope.startTime = Math.ceil(moment().subtract('days', 30).unix() / 86400) * 86400 - 28800;
+                }
+                $scope.endTime = moment().unix();
+                $("#network-time-selected").html(timeStamp2String($scope.startTime, "yyyy-MM-dd hh:mm") + ' 至 ' + timeStamp2String($scope.endTime, "yyyy-MM-dd hh:mm"));
+            }, 60000);
 
             clearInterval(networkInterval);
 //            var loopNetworkDraw = function() {
@@ -911,8 +936,13 @@
             uncheckAll: '取消所有选择',
             selectionCount: '被选中'
         };
-        $scope.startTime = initialStartTime;
-        $scope.endTime = initialEndTime;
+        var refreshTime = function() {
+            $scope.startTime = Math.floor((moment().subtract('hours', 24).unix() / 3600) + 1) * 3600;
+            $scope.endTime = moment().unix();
+            $('#system-time-selected').html(timeStamp2String($scope.startTime, "yyyy-MM-dd hh:mm") + ' 至 ' + timeStamp2String($scope.endTime, "yyyy-MM-dd hh:mm"));
+        };
+        refreshTime();
+        var systemRefresh = setInterval(refreshTime, 60000);
         $scope.label = "过去24小时";
         $scope.chartType = 'bar';
 
@@ -924,7 +954,7 @@
 
         };
         loopSystem();
-        systemInterval = setInterval(loopSystem, 60000);
+        var systemInterval = setInterval(loopSystem, 60000);
 
         $('#system-timerange').daterangepicker({
             "showCustomRangeLabel": false,
@@ -943,14 +973,32 @@
                 "format": "YYYY/MM/DD HH:mm"
             }
         }, function (start, end, label) {
+            clearInterval(systemRefresh);
             if (label === "过去24小时") {
-                $scope.startTime = Math.ceil(start / 3600000) * 3600;
+                $scope.startTime = Math.ceil(moment().startOf('hour').subtract('hours', 23).unix() / 3600) * 3600;
+            }
+            else if(label === "过去7天") {
+                $scope.startTime = Math.ceil(moment().subtract('days', 7).unix() / 86400) * 86400 - 28800;
             }
             else {
-                $scope.startTime = Math.ceil(start / 86400000) * 86400 - 28800;
+                $scope.startTime = Math.ceil(moment().subtract('days', 30).unix() / 86400) * 86400 - 28800;
             }
+            $scope.endTime = moment().unix();
             $("#system-time-selected").html(timeStamp2String($scope.startTime, "yyyy-MM-dd hh:mm") + ' 至 ' + timeStamp2String($scope.endTime, "yyyy-MM-dd hh:mm"));
             $scope.label = label;
+            systemRefresh = setInterval(function(){
+                if (label === "过去24小时") {
+                    $scope.startTime = Math.ceil(moment().startOf('hour').subtract('hours', 23).unix() / 3600) * 3600;
+                }
+                else if(label === "过去7天") {
+                    $scope.startTime = Math.ceil(moment().subtract('days', 7).unix() / 86400) * 86400 - 28800;
+                }
+                else {
+                    $scope.startTime = Math.ceil(moment().subtract('days', 30).unix() / 86400) * 86400 - 28800;
+                }
+                $scope.endTime = moment().unix();
+                $("#system-time-selected").html(timeStamp2String($scope.startTime, "yyyy-MM-dd hh:mm") + ' 至 ' + timeStamp2String($scope.endTime, "yyyy-MM-dd hh:mm"));
+            }, 60000);
 
             clearInterval(systemInterval);
 
@@ -1296,8 +1344,13 @@
             uncheckAll: '取消所有选择',
             selectionCount: '被选中'
         };
-        $scope.startTime = initialStartTime;
-        $scope.endTime = initialEndTime;
+        var refreshTime = function() {
+            $scope.startTime = Math.floor((moment().subtract('hours', 24).unix() / 3600) + 1) * 3600;
+            $scope.endTime = moment().unix();
+            $('#process-time-selected').html(timeStamp2String($scope.startTime, "yyyy-MM-dd hh:mm") + ' 至 ' + timeStamp2String($scope.endTime, "yyyy-MM-dd hh:mm"));
+        };
+        refreshTime();
+        var processRefresh = setInterval(refreshTime, 60000);
         $scope.label = "过去24小时";
         $scope.chartType = 'bar';
 
@@ -1309,7 +1362,7 @@
 
         };
         loopProcess();
-        processInterval = setInterval(loopProcess, 60000);
+        var processInterval = setInterval(loopProcess, 60000);
 
         $('#process-timerange').daterangepicker({
             "showCustomRangeLabel": false,
@@ -1328,14 +1381,32 @@
                 "format": "YYYY/MM/DD HH:mm"
             }
         }, function (start, end, label) {
+            clearInterval(processInterval);
             if (label === "过去24小时") {
-                $scope.startTime = Math.ceil(start / 3600000) * 3600;
+                $scope.startTime = Math.ceil(moment().startOf('hour').subtract('hours', 23).unix() / 3600) * 3600;
+            }
+            else if(label === "过去7天") {
+                $scope.startTime = Math.ceil(moment().subtract('days', 7).unix() / 86400) * 86400 - 28800;
             }
             else {
-                $scope.startTime = Math.ceil(start / 86400000) * 86400 - 28800;
+                $scope.startTime = Math.ceil(moment().subtract('days', 30).unix() / 86400) * 86400 - 28800;
             }
+            $scope.endTime = moment().unix();
             $("#process-time-selected").html(timeStamp2String($scope.startTime, "yyyy-MM-dd hh:mm") + ' 至 ' + timeStamp2String($scope.endTime, "yyyy-MM-dd hh:mm"));
             $scope.label = label;
+            processInterval =setInterval(function(){
+                if (label === "过去24小时") {
+                    $scope.startTime = Math.ceil(moment().startOf('hour').subtract('hours', 23).unix() / 3600) * 3600;
+                }
+                else if(label === "过去7天") {
+                    $scope.startTime = Math.ceil(moment().subtract('days', 7).unix() / 86400) * 86400 - 28800;
+                }
+                else {
+                    $scope.startTime = Math.ceil(moment().subtract('days', 30).unix() / 86400) * 86400 - 28800;
+                }
+                $scope.endTime = moment().unix();
+                $("#process-time-selected").html(timeStamp2String($scope.startTime, "yyyy-MM-dd hh:mm") + ' 至 ' + timeStamp2String($scope.endTime, "yyyy-MM-dd hh:mm"));
+            }, 60000);
 
             clearInterval(processInterval);
 
@@ -1617,8 +1688,13 @@
             uncheckAll: '取消所有选择',
             selectionCount: '被选中'
         };
-        $scope.startTime = initialStartTime;
-        $scope.endTime = initialEndTime;
+        var refreshTime = function() {
+            $scope.startTime = Math.floor((moment().subtract('hours', 24).unix() / 3600) + 1) * 3600;
+            $scope.endTime = moment().unix();
+            $('#file-time-selected').html(timeStamp2String($scope.startTime, "yyyy-MM-dd hh:mm") + ' 至 ' + timeStamp2String($scope.endTime, "yyyy-MM-dd hh:mm"));
+        };
+        refreshTime();
+        var fileRefresh = setInterval(refreshTime, 60000);
         $scope.label = "过去24小时";
         $scope.chartType = 'bar';
 
@@ -1649,14 +1725,32 @@
                 "format": "YYYY/MM/DD HH:mm"
             }
         }, function (start, end, label) {
+            clearInterval(fileRefresh);
             if (label === "过去24小时") {
-                $scope.startTime = Math.ceil(start / 3600000) * 3600;
+                $scope.startTime = Math.ceil(moment().startOf('hour').subtract('hours', 23).unix() / 3600) * 3600;
+            }
+            else if(label === "过去7天") {
+                $scope.startTime = Math.ceil(moment().subtract('days', 7).unix() / 86400) * 86400 - 28800;
             }
             else {
-                $scope.startTime = Math.ceil(start / 86400000) * 86400 - 28800;
+                $scope.startTime = Math.ceil(moment().subtract('days', 30).unix() / 86400) * 86400 - 28800;
             }
+            $scope.endTime = moment().unix();
             $("#file-time-selected").html(timeStamp2String($scope.startTime, "yyyy-MM-dd hh:mm") + ' 至 ' + timeStamp2String($scope.endTime, "yyyy-MM-dd hh:mm"));
             $scope.label = label;
+            fileRefresh = setInterval(function(){
+                if (label === "过去24小时") {
+                    $scope.startTime = Math.ceil(moment().startOf('hour').subtract('hours', 23).unix() / 3600) * 3600;
+                }
+                else if(label === "过去7天") {
+                    $scope.startTime = Math.ceil(moment().subtract('days', 7).unix() / 86400) * 86400 - 28800;
+                }
+                else {
+                    $scope.startTime = Math.ceil(moment().subtract('days', 30).unix() / 86400) * 86400 - 28800;
+                }
+                $scope.endTime = moment().unix();
+                $("#file-time-selected").html(timeStamp2String($scope.startTime, "yyyy-MM-dd hh:mm") + ' 至 ' + timeStamp2String($scope.endTime, "yyyy-MM-dd hh:mm"));
+            }, 60000);
 
             clearInterval(fileInterval);
 
@@ -2035,8 +2129,13 @@
             uncheckAll: '取消所有选择',
             selectionCount: '被选中'
         };
-        $scope.startTime = initialStartTime;
-        $scope.endTime = initialEndTime;
+        var refreshTime = function() {
+            $scope.startTime = Math.floor((moment().subtract('hours', 24).unix() / 3600) + 1) * 3600;
+            $scope.endTime = moment().unix();
+            $('#registry-time-selected').html(timeStamp2String($scope.startTime, "yyyy-MM-dd hh:mm") + ' 至 ' + timeStamp2String($scope.endTime, "yyyy-MM-dd hh:mm"));
+        };
+        refreshTime();
+        var registryRefresh = setInterval(refreshTime, 60000);
         $scope.label = "过去24小时";
         $scope.chartType = 'bar';
 
@@ -2067,14 +2166,32 @@
                 "format": "YYYY/MM/DD HH:mm"
             }
         }, function (start, end, label) {
+            clearInterval(registryRefresh);
             if (label === "过去24小时") {
-                $scope.startTime = Math.ceil(start / 3600000) * 3600;
+                $scope.startTime = Math.ceil(moment().startOf('hour').subtract('hours', 23).unix() / 3600) * 3600;
+            }
+            else if(label === "过去7天") {
+                $scope.startTime = Math.ceil(moment().subtract('days', 7).unix() / 86400) * 86400 - 28800;
             }
             else {
-                $scope.startTime = Math.ceil(start / 86400000) * 86400 - 28800;
+                $scope.startTime = Math.ceil(moment().subtract('days', 30).unix() / 86400) * 86400 - 28800;
             }
+            $scope.endTime = moment().unix();
             $("#registry-time-selected").html(timeStamp2String($scope.startTime, "yyyy-MM-dd hh:mm") + ' 至 ' + timeStamp2String($scope.endTime, "yyyy-MM-dd hh:mm"));
             $scope.label = label;
+            registryRefresh = setInterval(function(){
+                if (label === "过去24小时") {
+                    $scope.startTime = Math.ceil(moment().startOf('hour').subtract('hours', 23).unix() / 3600) * 3600;
+                }
+                else if(label === "过去7天") {
+                    $scope.startTime = Math.ceil(moment().subtract('days', 7).unix() / 86400) * 86400 - 28800;
+                }
+                else {
+                    $scope.startTime = Math.ceil(moment().subtract('days', 30).unix() / 86400) * 86400 - 28800;
+                }
+                $scope.endTime = moment().unix();
+                $("#registry-time-selected").html(timeStamp2String($scope.startTime, "yyyy-MM-dd hh:mm") + ' 至 ' + timeStamp2String($scope.endTime, "yyyy-MM-dd hh:mm"));
+            }, 60000);
 
             clearInterval(registryInterval);
 
