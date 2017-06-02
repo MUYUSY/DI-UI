@@ -104,11 +104,11 @@
                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12 chart-title">容量</div>
                 <div class="col-lg-12 col-md-12 col-sm-12 col-xs-12" id="volume-chart" style="height:200px">Loading</div>
                 <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
-                    <span class="col-lg-12 col-md-12 col-sm-12 col-xs-12 volume">{{StorageUsed}}</span>
+                    <span class="col-lg-12 col-md-12 col-sm-12 col-xs-12 volume" ng-bind="StorageUsed"></span>
                     <span class="col-lg-12 col-md-12 col-sm-12 col-xs-12 volume-des">已用空间</span>
                 </div>
                 <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6">
-                    <span class="col-lg-12 col-md-12 col-sm-12 col-xs-12 volume">{{StorageTotal}}</span>
+                    <span class="col-lg-12 col-md-12 col-sm-12 col-xs-12 volume" ng-bind="StorageTotal"></span>
                     <span class="col-lg-12 col-md-12 col-sm-12 col-xs-12 volume-des">总空间</span>
                 </div>
                 <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6 col-lg-offset-3 col-md-offset-3 col-sm-offset-3 col-xs-offset-3 btn-manage">
@@ -756,6 +756,7 @@
                 success: function(data) {
                     $scope.StorageUsed = formatVolume(data.StorageUsed);
                     $scope.StorageTotal = formatVolume(data.StorageTotal);
+                    console.log($scope.StorageUsed = formatVolume(data.StorageUsed));
                     myChart.hideLoading();
                     myChart.setOption(
                         {
@@ -954,7 +955,7 @@
 
         };
         loopSystem();
-        var systemInterval = setInterval(loopSystem, 60000);
+        systemInterval = setInterval(loopSystem, 60000);
 
         $('#system-timerange').daterangepicker({
             "showCustomRangeLabel": false,
@@ -1362,7 +1363,7 @@
 
         };
         loopProcess();
-        var processInterval = setInterval(loopProcess, 60000);
+        processInterval = setInterval(loopProcess, 60000);
 
         $('#process-timerange').daterangepicker({
             "showCustomRangeLabel": false,
