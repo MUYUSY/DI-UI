@@ -1286,7 +1286,6 @@
                             break;
                         case "IP地址":
                             if (keyValue[0] === "source_ip" || keyValue[0] === "dest_ip") {
-                                result = numberToIp(result);
                                 result = highlightEqual(result, keyword, key = "ip");
                             }
                             break;

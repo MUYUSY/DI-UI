@@ -966,7 +966,7 @@
             "startDate": moment().startOf('hour').subtract('hours', 23),
             "endDate": moment().endOf('minute'),
             "ranges": {
-                "过去24小时": [moment().subtract('hours', 24), moment()],
+                "过去24小时": [moment().startOf('hour').subtract('hours', 23), moment().endOf('minute')],
                 "过去7天": [moment().subtract('days', 7), moment()],
                 "过去30天": [moment().subtract('days', 30), moment()]
             },
@@ -1374,7 +1374,7 @@
             "startDate": moment().startOf('hour').subtract('hours', 23),
             "endDate": moment().endOf('minute'),
             "ranges": {
-                "过去24小时": [moment().subtract('hours', 24), moment()],
+                "过去24小时": [moment().startOf('hour').subtract('hours', 23), moment().endOf('minute')],
                 "过去7天": [moment().subtract('days', 7), moment()],
                 "过去30天": [moment().subtract('days', 30), moment()]
             },
@@ -1718,7 +1718,7 @@
             "startDate": moment().startOf('hour').subtract('hours', 23),
             "endDate": moment().endOf('minute'),
             "ranges": {
-                "过去24小时": [moment().subtract('hours', 24), moment()],
+                "过去24小时": [moment().startOf('hour').subtract('hours', 23), moment().endOf('minute')],
                 "过去7天": [moment().subtract('days', 7), moment()],
                 "过去30天": [moment().subtract('days', 30), moment()]
             },
@@ -2159,9 +2159,9 @@
             "startDate": moment().startOf('hour').subtract('hours', 23),
             "endDate": moment().endOf('minute'),
             "ranges": {
-                "过去24小时": [moment().subtract('hours', 24), moment()],
-                "过去7天": [moment().subtract('days', 6), moment()],
-                "过去30天": [moment().subtract('days', 29), moment()]
+                "过去24小时": [moment().startOf('hour').subtract('hours', 23), moment().endOf('minute')],
+                "过去7天": [moment().subtract('days', 7), moment()],
+                "过去30天": [moment().subtract('days', 30), moment()]
             },
             "locale": {
                 "format": "YYYY/MM/DD HH:mm"
