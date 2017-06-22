@@ -1009,6 +1009,7 @@
 				"aaSortingFixed",
 				"aLengthMenu",
 				"sPaginationType",
+				"sPageType",
 				"sAjaxSource",
 				"sAjaxDataProp",
 				"iStateDuration",
@@ -1815,6 +1816,7 @@
 		_fnCompatMap( init, 'orderFixed',    'aaSortingFixed' );
 		_fnCompatMap( init, 'paging',        'bPaginate' );
 		_fnCompatMap( init, 'pagingType',    'sPaginationType' );
+        _fnCompatMap( init, 'pageType',      'sPageType' );
 		_fnCompatMap( init, 'pageLength',    'iDisplayLength' );
 		_fnCompatMap( init, 'searching',     'bFilter' );
 	
@@ -3661,6 +3663,11 @@
 				/* Filter */
 				featureNode = _fnFeatureHtmlFilter( oSettings );
 			}
+            else if ( cOption == 'k' && features.bFilter )
+            {
+                /* 自己添加的,用于调查取证过滤 */
+                featureNode = _fnFeatureHtmlFilter2( oSettings );
+            }
 			else if ( cOption == 'r' && features.bProcessing )
 			{
 				/* pRocessing */
@@ -3677,10 +3684,15 @@
 				featureNode = _fnFeatureHtmlInfo( oSettings );
 			}
 			else if ( cOption == 'p' && features.bPaginate )
-			{
-				/* Pagination */
-				featureNode = _fnFeatureHtmlPaginate( oSettings );
-			}
+            {
+                /* Pagination */
+                featureNode = _fnFeatureHtmlPaginate( oSettings );
+            }
+            else if ( cOption == 's' && features.bPaginate )
+            {
+                /* 自己添加的,用于调查取证分页 */
+                featureNode = _fnFeatureHtmlPaginate2( oSettings );
+            }
 			else if ( DataTable.ext.feature.length !== 0 )
 			{
 				/* Plug-in features */
@@ -4182,82 +4194,163 @@
 	 *  @param {object} oSettings dataTables settings object
 	 *  @memberof DataTable#oApi
 	 */
-	function _fnFeatureHtmlFilter ( settings )
+    function _fnFeatureHtmlFilter ( settings )
+    {
+        var classes = settings.oClasses;
+        var tableId = settings.sTableId;
+        var language = settings.oLanguage;
+        var previousSearch = settings.oPreviousSearch;
+        var features = settings.aanFeatures;
+        var input = '<input type="search" class="'+classes.sFilterInput+'"/>';
+
+        var str = language.sSearch;
+        str = str.match(/_INPUT_/) ?
+            str.replace('_INPUT_', input) :
+            str+input;
+
+        var filter = $('<div/>', {
+            'id': ! features.f ? tableId+'_filter' : null,
+            'class': classes.sFilter
+        } )
+            .append( $('<label/>' ).append( str ) );
+
+        var searchFn = function() {
+			/* Update all other filter input elements for the new display */
+            var n = features.f;
+            var val = !this.value ? "" : this.value; // mental IE8 fix :-(
+
+			/* Now do the filter */
+            if ( val != previousSearch.sSearch ) {
+                _fnFilterComplete( settings, {
+                    "sSearch": val,
+                    "bRegex": previousSearch.bRegex,
+                    "bSmart": previousSearch.bSmart ,
+                    "bCaseInsensitive": previousSearch.bCaseInsensitive
+                } );
+
+                // Need to redraw, without resorting
+                settings._iDisplayStart = 0;
+                _fnDraw( settings );
+            }
+        };
+
+        var searchDelay = settings.searchDelay !== null ?
+            settings.searchDelay :
+            _fnDataSource( settings ) === 'ssp' ?
+                400 :
+                0;
+
+        var jqFilter = $('input', filter)
+            .val( previousSearch.sSearch )
+            .attr( 'placeholder', language.sSearchPlaceholder )
+            .on(
+                'keyup.DT search.DT input.DT paste.DT cut.DT',
+                searchDelay ?
+                    _fnThrottle( searchFn, searchDelay ) :
+                    searchFn
+            )
+            .on( 'keypress.DT', function(e) {
+				/* Prevent form submission */
+                if ( e.keyCode == 13 ) {
+                    return false;
+                }
+            } )
+            .attr('aria-controls', tableId);
+
+        // Update the input elements whenever the table is filtered
+        $(settings.nTable).on( 'search.dt.DT', function ( ev, s ) {
+            if ( settings === s ) {
+                // IE9 throws an 'unknown error' if document.activeElement is used
+                // inside an iframe or frame...
+                try {
+                    if ( jqFilter[0] !== document.activeElement ) {
+                        jqFilter.val( previousSearch.sSearch );
+                    }
+                }
+                catch ( e ) {}
+            }
+        } );
+
+        return filter[0];
+    }
+
+	function _fnFeatureHtmlFilter2 ( settings )
 	{
 		var classes = settings.oClasses;
 		var tableId = settings.sTableId;
 		var language = settings.oLanguage;
 		var previousSearch = settings.oPreviousSearch;
 		var features = settings.aanFeatures;
-		var input = '<input type="search" class="'+classes.sFilterInput+'"/>';
+		var input = '<input type="search" id="keyword" class="'+classes.sFilterInput+'"/>';
 	
 		var str = language.sSearch;
-		str = str.match(/_INPUT_/) ?
-			str.replace('_INPUT_', input) :
-			str+input;
+		var btn = '<button onclick="filterSearch()">过滤</button>';
+		// str = str.match(/_INPUT_/) ?
+		// 	str.replace('_INPUT_', input) :
+		// 	str+input;
 	
 		var filter = $('<div/>', {
-				'id': ! features.f ? tableId+'_filter' : null,
+				'id': 'filter',
 				'class': classes.sFilter
 			} )
-			.append( $('<label/>' ).append( str ) );
+			.append( $('<label/>' ).append( input ).append( btn ) );
 	
-		var searchFn = function() {
-			/* Update all other filter input elements for the new display */
-			var n = features.f;
-			var val = !this.value ? "" : this.value; // mental IE8 fix :-(
-	
-			/* Now do the filter */
-			if ( val != previousSearch.sSearch ) {
-				_fnFilterComplete( settings, {
-					"sSearch": val,
-					"bRegex": previousSearch.bRegex,
-					"bSmart": previousSearch.bSmart ,
-					"bCaseInsensitive": previousSearch.bCaseInsensitive
-				} );
-	
-				// Need to redraw, without resorting
-				settings._iDisplayStart = 0;
-				_fnDraw( settings );
-			}
-		};
-	
-		var searchDelay = settings.searchDelay !== null ?
-			settings.searchDelay :
-			_fnDataSource( settings ) === 'ssp' ?
-				400 :
-				0;
-	
-		var jqFilter = $('input', filter)
-			.val( previousSearch.sSearch )
-			.attr( 'placeholder', language.sSearchPlaceholder )
-			.on(
-				'keyup.DT search.DT input.DT paste.DT cut.DT',
-				searchDelay ?
-					_fnThrottle( searchFn, searchDelay ) :
-					searchFn
-			)
-			.on( 'keypress.DT', function(e) {
-				/* Prevent form submission */
-				if ( e.keyCode == 13 ) {
-					return false;
-				}
-			} )
-			.attr('aria-controls', tableId);
-	
-		// Update the input elements whenever the table is filtered
-		$(settings.nTable).on( 'search.dt.DT', function ( ev, s ) {
-			if ( settings === s ) {
-				// IE9 throws an 'unknown error' if document.activeElement is used
-				// inside an iframe or frame...
-				try {
-					if ( jqFilter[0] !== document.activeElement ) {
-						jqFilter.val( previousSearch.sSearch );
-					}
-				}
-				catch ( e ) {}
-			}
-		} );
+		// var searchFn = function() {
+		// 	/* Update all other filter input elements for the new display */
+		// 	var n = features.f;
+		// 	var val = !this.value ? "" : this.value; // mental IE8 fix :-(
+        //
+		// 	/* Now do the filter */
+		// 	if ( val != previousSearch.sSearch ) {
+		// 		_fnFilterComplete( settings, {
+		// 			"sSearch": val,
+		// 			"bRegex": previousSearch.bRegex,
+		// 			"bSmart": previousSearch.bSmart ,
+		// 			"bCaseInsensitive": previousSearch.bCaseInsensitive
+		// 		} );
+        //
+		// 		// Need to redraw, without resorting
+		// 		settings._iDisplayStart = 0;
+		// 		_fnDraw( settings );
+		// 	}
+		// };
+        //
+		// var searchDelay = settings.searchDelay !== null ?
+		// 	settings.searchDelay :
+		// 	_fnDataSource( settings ) === 'ssp' ?
+		// 		400 :
+		// 		0;
+        //
+		// var jqFilter = $('input', filter)
+		// 	.val( previousSearch.sSearch )
+		// 	.attr( 'placeholder', language.sSearchPlaceholder )
+		// 	.on(
+		// 		'keyup.DT search.DT input.DT paste.DT cut.DT',
+		// 		searchDelay ?
+		// 			_fnThrottle( searchFn, searchDelay ) :
+		// 			searchFn
+		// 	)
+		// 	.on( 'keypress.DT', function(e) {
+		// 		/* Prevent form submission */
+		// 		if ( e.keyCode == 13 ) {
+		// 			return false;
+		// 		}
+		// 	} )
+		// 	.attr('aria-controls', tableId);
+        //
+		// // Update the input elements whenever the table is filtered
+		// $(settings.nTable).on( 'search.dt.DT', function ( ev, s ) {
+		// 	if ( settings === s ) {
+		// 		// IE9 throws an 'unknown error' if document.activeElement is used
+		// 		// inside an iframe or frame...
+		// 		try {
+		// 			if ( jqFilter[0] !== document.activeElement ) {
+		// 				jqFilter.val( previousSearch.sSearch );
+		// 			}
+		// 		}
+		// 		catch ( e ) {}
+		// 	}
+		// } );
 	
 		return filter[0];
 	}
@@ -4922,11 +5015,60 @@
 				"sName": "pagination"
 			} );
 		}
-	
+
 		return node;
 	}
-	
-	
+
+    function _fnFeatureHtmlPaginate2 ( settings )
+    {
+        var
+            type   = settings.sPageType,
+            plugin = DataTable.ext.pager[ type ],
+            modern = typeof plugin === 'function',
+            redraw = function( settings ) {
+                _fnDraw( settings );
+            },
+            node = $('<div/>').addClass( settings.oClasses.sPaging + type )[0],
+            features = settings.aanFeatures;
+
+        if ( ! modern ) {
+            plugin.fnInit( settings, node, redraw );
+        }
+
+        /* Add a draw callback for the pagination on first instance, to update the paging display */
+        if ( ! features.s )
+        {
+            node.id = settings.sTableId+'_paginate';
+
+            settings.aoDrawCallback.push( {
+                "fn": function( settings ) {
+                    if ( modern ) {
+                        var
+                            start      = settings._iDisplayStart,
+                            len        = settings._iDisplayLength,
+                            visRecords = settings.fnRecordsDisplay(),
+                            all        = len === -1,
+                            page = all ? 0 : Math.ceil( start / len ),
+                            pages = all ? 1 : Math.ceil( visRecords / len ),
+                            buttons = plugin(page, pages),
+                            i, ien;
+
+                        for ( i=0, ien=features.s.length ; i<ien ; i++ ) {
+                            _fnRenderer( settings, 'pageButton' )(
+                                settings, features.s[i], i, buttons, page, pages
+                            );
+                        }
+                    }
+                    else {
+                        plugin.fnUpdate( settings, redraw );
+                    }
+                },
+                "sName": "pagination"
+            } );
+        }
+
+        return node;
+    }
 	/**
 	 * Alter the display settings to change the page
 	 *  @param {object} settings DataTables settings object
@@ -13000,6 +13142,7 @@
 			 *  @type boolean
 			 */
 			"bPaginate": null,
+            "bPage": null,
 	
 			/**
 			 * Processing indicator enable flag whenever DataTables is enacting a
@@ -13173,6 +13316,7 @@
 		 *     <li>'i' - Information</li>
 		 *     <li>'p' - Pagination</li>
 		 *     <li>'r' - pRocessing</li>
+         *     <li>'s' - Pagination2</li>
 		 *   </ul>
 		 *  @type array
 		 *  @default []
@@ -13462,6 +13606,7 @@
 		 *  @default two_button
 		 */
 		"sPaginationType": "two_button",
+        "sPageType": "listbox",
 	
 		/**
 		 * The state duration (for `stateSave`) in seconds.
@@ -14380,7 +14525,8 @@
 		aoFeatures:   _ext.feature,
 		oApi:         _ext.internal,
 		oStdClasses:  _ext.classes,
-		oPagination:  _ext.pager
+		oPagination:  _ext.pager,
+        oPage:        _ext.pager
 	} );
 	
 	
@@ -15104,6 +15250,7 @@
 		_fnDetectHeader: _fnDetectHeader,
 		_fnGetUniqueThs: _fnGetUniqueThs,
 		_fnFeatureHtmlFilter: _fnFeatureHtmlFilter,
+        _fnFeatureHtmlFilter2: _fnFeatureHtmlFilter2,
 		_fnFilterComplete: _fnFilterComplete,
 		_fnFilterCustom: _fnFilterCustom,
 		_fnFilterColumn: _fnFilterColumn,
@@ -15119,6 +15266,7 @@
 		_fnLengthChange: _fnLengthChange,
 		_fnFeatureHtmlLength: _fnFeatureHtmlLength,
 		_fnFeatureHtmlPaginate: _fnFeatureHtmlPaginate,
+        _fnFeatureHtmlPage: _fnFeatureHtmlPaginate2,
 		_fnPageChange: _fnPageChange,
 		_fnFeatureHtmlProcessing: _fnFeatureHtmlProcessing,
 		_fnProcessingDisplay: _fnProcessingDisplay,

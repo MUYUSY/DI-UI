@@ -1493,6 +1493,10 @@ dt, kbd kbd, label {
     background-color: #f9cda8;
 }
 
+.mark, mark-filter {
+    background-color: #F4FF26;
+}
+
 .list-inline, .list-unstyled {
     padding-left: 0;
     list-style: none

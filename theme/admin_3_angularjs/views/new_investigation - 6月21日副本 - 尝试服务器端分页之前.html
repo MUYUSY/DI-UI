@@ -123,8 +123,8 @@
                         <span id="searchResult" class="caption-subject bold uppercase">调查结果</span>
                     </div>
                     <!--<div class="col-xs-3" id="filter">-->
-                    <!--<input type="text" id="keyword">-->
-                    <!--<button onclick="filterSearch()">过滤</button>-->
+                        <!--<input type="text" id="keyword">-->
+                        <!--<button onclick="filterSearch()">过滤</button>-->
                     <!--</div>-->
                     <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1 pull-right">
                         <button class="btn dark btn-outline" id="exportResult">导出结果</button>
@@ -230,8 +230,9 @@
          *             node:nPaging - the DIV which contains this pagination control
          *             function:fnCallbackDraw - draw function which must be called on update
          */
-
         "fnInit": function (oSettings, nPaging, fnCallbackDraw) {
+            if (oSettings.oInit.data.length === 0)
+                return;
             var nInput = document.createElement('select');
             var nPage = document.createElement('span');
             var nOf = document.createElement('span');
@@ -260,8 +261,7 @@
                 }
                 oSettings._iDisplayStart = iNewStart;
                 fnCallbackDraw(oSettings);
-            });
-            /* Take the brutal approach to cancelling text selection */
+            }); /* Take the brutal approach to cancelling text selection */
             $('span', nPaging).bind('mousedown', function () {
                 return false;
             });
@@ -281,22 +281,16 @@
             if (!oSettings.aanFeatures.s) {
                 return;
             }
-            var iPages = Math.ceil((oSettings.fnRecordsDisplay()) / oSettings._iDisplayLength);
-            if (iPages === 0) {
-                var an = oSettings.aanFeatures.s;
-                for (var i = 0, iLen = an.length; i < iLen; i++) {
-                    an[i].style.visibility = "hidden";
-                }
+            if (oSettings.oInit.data.length === 0)
                 return;
-            }
-            var iCurrentPage = Math.ceil(oSettings._iDisplayStart / oSettings._iDisplayLength) + 1;
-            /* Loop over each instance of the pager */
+            var iPages = Math.ceil((oSettings.fnRecordsDisplay()) / oSettings._iDisplayLength);
+            var iCurrentPage = Math.ceil(oSettings._iDisplayStart / oSettings._iDisplayLength) + 1; /* Loop over each instance of the pager */
             var an = oSettings.aanFeatures.s;
             for (var i = 0, iLen = an.length; i < iLen; i++) {
                 var spans = an[i].getElementsByTagName('span');
                 var inputs = an[i].getElementsByTagName('select');
                 var elSel = inputs[0];
-                if (elSel.options.length != iPages) {
+                if(elSel.options.length != iPages) {
                     elSel.options.length = 0; //clear the listbox contents
                     for (var j = 0; j < iPages; j++) { //add the pages
                         var oOption = document.createElement('option');
@@ -314,6 +308,7 @@
             }
         }
     };
+
     //get url json
 
     var urlParam = function (name) {
@@ -433,10 +428,10 @@
             $("#time-selected").html(timeStamp2String(startTime, "yyyy-MM-dd hh:mm") + ' 至 ' + timeStamp2String(endTime, "yyyy-MM-dd hh:mm"));
         });
     } else {
-        $('#searchDateRange').html("自定义" + '<span class="caret date-range-caret"></span>');
+        $('#searchDateRange').html("自定义"+'<span class="caret date-range-caret"></span>');
         $('#searchDateRange').daterangepicker({
-            "startDate": moment(startTime * 1000),
-            "endDate": moment(endTime * 1000),
+            "startDate": moment(startTime*1000),
+            "endDate": moment(endTime*1000),
             "timePicker": true,
             "timePicker24Hour": true,
             "maxDate": moment(),
@@ -614,7 +609,7 @@
         $scope.maxCondition = false;
         $scope.closeable = false;
 
-        var getConditionValue = function () {
+        var getConditionValue = function() {
             var existValue = [];
             for (var i = 0; i < $scope.conditions.length; i++) {
                 existValue.push($scope.conditions[i].value);
@@ -631,20 +626,20 @@
 
         $scope.addCondition = function () {
             var value = getConditionValue();
-            var getClass1 = function (value) {
+            var getClass1 = function(value) {
                 if (value === "进程用户名" || value === "文件名" || value === "Url" || value === "进程名")
                     return true;
                 else
                     return false;
             };
-            var getClass2 = function (value) {
+            var getClass2 = function(value) {
                 if (value === "IP地址" || value === "进程ID")
                     return true;
                 else
                     return false;
             };
-            var getClass3 = function (value) {
-                if (value === "网络协议名")
+            var getClass3 = function(value) {
+                if (value === "网络协议名" )
                     return true;
                 else
                     return false;
@@ -675,7 +670,7 @@
             $scope.maxCondition = false;
         };
 
-        var parseCondition = function (item) {
+        var parseCondition = function(item) {
             var value;
             if (item === "process_user")
                 value = "进程用户名";
@@ -694,44 +689,44 @@
 
             return value
         };
-        var parseClass1 = function (item) {
+        var parseClass1 = function(item) {
             if (item === "process_user" || item === "process_name" || item === "url" || item === "file_name")
                 return true;
             else
                 return false;
         };
-        var parseClass2 = function (item) {
+        var parseClass2 = function(item) {
             if (item === "pid" || item === "ip")
                 return true;
             else
                 return false;
         };
-        var parseClass3 = function (item) {
+        var parseClass3 = function(item) {
             if (item === "net_protocol")
                 return true;
             else
                 return false;
         };
-        var parseInclude = function (item) {
+        var parseInclude = function(item) {
             if ("include" in item) {
                 return "包含"
             } else {
                 return "不包含"
             }
         };
-        var parseEqual = function (item) {
+        var parseEqual = function(item) {
             if ("include" in item) {
                 return "等于"
             } else {
                 return "不等于"
             }
         };
-        var parseInput = function (item) {
+        var parseInput = function(item) {
             for (var i in item) {
                 return item[i].toString();
             }
         };
-        var parseFather = function (item) {
+        var parseFather = function(item) {
             var family = {
                 "分类一": ["HTTP", "HTTPS"],
                 "分类二": ["FTP", "SSH"]
@@ -745,7 +740,7 @@
                 }
             }
         };
-        var parseChild = function (item) {
+        var parseChild = function(item) {
             for (var i in item) {
                 return item[i];
             }
@@ -802,6 +797,7 @@
             }
             SearchResultCtrl($scope.selectByGroupModel, filterCondition, search_condition, 0, "", 0, "");
         }
+
 
 
         $scope.search = function (sortedNum) {
@@ -971,6 +967,7 @@
             selectedGroup = $scope.selectByGroupModel;
             filterCondition = $scope.filter_condition;
             searchCondtion = $scope.search_condition;
+            console.log(JSON.stringify($scope.search_condition));
             $scope.event = SearchResultCtrl($scope.selectByGroupModel, $scope.filter_condition, $scope.search_condition, sortedNum, "", 0, "");
         };
 
@@ -1197,7 +1194,7 @@
                 success: function (data) {
                     DIalert("success", "保存成功!")
                 },
-                error: function (data) {
+                error: function(data) {
                     DIalert("warning", "保存失败!")
                 }
             });
@@ -1417,7 +1414,7 @@
         return '<tr>' + '<td>' + obj + '</td>' + '</tr>';
     };
 
-    var filterSearch = function () {
+    var filterSearch = function() {
         var keyword = $('#keyword').val();
         if (keyword.length === 0) {
             DIalert("info", "请输入需要过滤的条件")
@@ -1428,18 +1425,18 @@
     };
 
     var sortedSearch = function (sortedNum) {
-        var currentClass = $('#column' + sortedNum).attr('class');
+        var currentClass = $('#column'+sortedNum).attr('class');
         if (currentClass.indexOf("sort_both") >= 0 || currentClass.indexOf("sort_desc") >= 0) {
             SearchResultCtrl(selectedGroup, filterCondition, searchCondtion, sortedNum, last_tid, 0, "");
             for (var i = 0; i < 6; i++) {
                 if (i === sortedNum) {
-                    $('#column' + i).removeClass(currentClass);
-                    $('#column' + i).addClass("sort_asc");
+                    $('#column'+i).removeClass(currentClass);
+                    $('#column'+i).addClass("sort_asc");
                 }
                 else {
-                    var columnClass = $('#column' + i).attr('class');
-                    $('#column' + i).removeClass(columnClass);
-                    $('#column' + i).addClass("sort_both");
+                    var columnClass = $('#column'+i).attr('class');
+                    $('#column'+i).removeClass(columnClass);
+                    $('#column'+i).addClass("sort_both");
                 }
             }
         }
@@ -1447,14 +1444,14 @@
             SearchResultCtrl(selectedGroup, filterCondition, searchCondtion, sortedNum, last_tid, 1, "");
             for (var i = 0; i < 6; i++) {
                 if (i === sortedNum) {
-                    $('#column' + i).removeClass(currentClass);
-                    $('#column' + i).addClass("sort_desc");
+                    $('#column'+i).removeClass(currentClass);
+                    $('#column'+i).addClass("sort_desc");
                     console.log('222');
                 }
                 else {
-                    var columnClass = $('#column' + i).attr('class');
-                    $('#column' + i).removeClass(columnClass);
-                    $('#column' + i).addClass("sort_both");
+                    var columnClass = $('#column'+i).attr('class');
+                    $('#column'+i).removeClass(columnClass);
+                    $('#column'+i).addClass("sort_both");
                 }
             }
         }
@@ -1463,9 +1460,10 @@
 
     var SearchResultCtrl = function (device, filter_condition, search_condition, sortedNum, tid, reversed, keyword) {
 //        $('#investigation').append('<div class="loading-message ' + '">' + '<div class="block-spinner-bar"><div class="bounce1"></div><div class="bounce2"></div><div class="bounce3"></div></div>' + '</div>');
+
         for (var i = 0; i < 6; i++) {
-            var columnClass = $('#column' + i).attr('class');
-            $('#column' + i).removeClass(columnClass);
+            var columnClass = $('#column'+i).attr('class');
+            $('#column'+i).removeClass(columnClass);
         }
 
 //        if (typeof(processQueryInterval) !== "undefined") {
@@ -1489,7 +1487,7 @@
         }
 
         if (dtable !== undefined) {
-//            dtable.fnClearTable();
+            dtable.fnClearTable();
             dtable.fnDestroy();
             $("tbody").remove();
         }
@@ -1583,582 +1581,373 @@
         };
         console.log(moment().valueOf());
 
-        var config = {
-            serverSide: true,
-            ajax: {
-                async: true,
-                url: 'logquery',
-                type: 'POST',
-                data: function (d) {
-                    return JSON.stringify($.extend({}, d, {
-                        "begin_time": startTime,
-                        "end_time": Math.floor(endTime / 60) * 60,
-                        "taskid": task_id,
-                        "device_id": device_id,
-                        "sortedby": sortedNum,
-                        "reversed": reversed,
-                        "keyword": keyword,
-                        "filter_condition": filter_condition
-                    }))
-                },
-                dataSrc: function (data) {
-                    console.log(moment().valueOf());
-                    var results = [];
-                    if (data === "" || data === undefined) {
-                        results = [];
-                    }
-                    else {
-                        task_id = data.tid;
-                        last_tid = task_id;
-                        row_log = data.data.split('\n');
-                        for (var i = 0; i < row_log.length; i++) {
-                            if (row_log[i] === "")
-                                continue;
-                            //todo: 如果用户输入的词包含\t
-                            if (keyword.length !== 0) {
-                                var keySplit = row_log[i].split($.trim(keyword));
-                                str = keySplit[0];
-                                for (var j = 1; j < keySplit.length; j++) {
-                                    str += '<mark-filter>';
-                                    str += $.trim(keyword);
-                                    str += '</mark-filter>';
-                                    str += keySplit[j];
-                                }
-                            } else {
-                                str = row_log[i]
-                            }
-                            var list = str.split('\t');
-                            results.push({
-                                timestamp: timeStamp2String(getValue(list[0]), "yyyy-MM-dd hh:mm:ss"),
-                                deviceName: getDeviceName(getValue(list[1])),
-                                processUsername: getValue(list[2]),
-                                processId: getValue(list[3]),
-                                processPath: getValue(list[4]),
-                                eventType: getEventType(getValue(list[10]), getValue(list[5])),
-                                content: list.slice(13),
-                                timeStamp: getValue(list[0]),
-                                deviceId: getValue(list[1]),
-                                rowlog: {
-                                    timestamp: timeStamp2String(getValue(list[0]), "yyyy-MM-dd hh:mm:ss"),
-                                    deviceName: getDeviceName(getValue(list[1])),
-                                    processUsername: getValue(list[2]),
-                                    processId: getValue(list[3]),
-                                    processPath: getValue(list[4]),
-                                    eventType: getEventType(getValue(list[10]), getValue(list[5])),
-                                    content: list.slice(13),
-                                    timeStamp: getValue(list[0]),
-                                    deviceId: getValue(list[1])
-                                }
-                            })
-                        }
-                    }
-                    return results;
-                },
-                complete: function (data) {
-                    if (keyword.length !== 0) {
-                        for (var i = 0; i < 6; i++) {
-                            var columnClass = $('#column' + i).attr('class');
-                            $('#column' + i).removeClass(columnClass);
-                        }
-                        $('#keyword').val(keyword);
-                    }
-                    else {
-                        for (var i = 0; i < 6; i++) {
-                            if (i === sortedNum) {
-                                var columnClass = $('#column' + i).attr('class');
-                                $('#column' + i).removeClass(columnClass);
-                                $('#column' + i).addClass("sort_asc");
-                            }
-                            else {
-                                $('#column' + i).addClass("sort_both");
-                            }
-                        }
-                    }
-
-                    var firstTr = $("tbody tr:first");
-                    var firstRow = dtable.api().row(firstTr);
-                    if (firstRow.data()) {
-                        firstRow.child(format(formatData((firstRow.data().content), search_condition))).show();
-                        firstTr.addClass('shown');
-                    }
-                    $('html,body').animate({scrollTop: $('#searchResult').offset().top}, 0);
-                    if (dtable === undefined || dtable.api().data().length === 0) {
-                        $('#exportResult').hide();
-                        $('#filter').hide();
-                    }
-                    else {
-                        $('#exportResult').show();
-                        $('#filter').show();
-                    }
-                }
+        $.ajax({
+            async: true,
+            type: "POST",
+            dataType: "json",
+            url: 'logquery',
+            beforeSend: function(){
+                App.blockUI({
+                    target: '#investigation',
+                    animate: true
+                });
             },
-            order: false,
-            columns: [
-                {
-                    "class": 'details-control',
-                    "orderable": false,
-                    "data": null,
-                    "defaultContent": ''
-                },
-                {
-                    "data": "timestamp",
-                    "orderable": false
-                },
-                {
-                    "data": "deviceName",
-                    "orderable": false
-                },
-                {
-                    "data": "processUsername",
-                    "orderable": false
-                },
-                {
-                    "data": "rowlog",
-                    orderable: false,
-                    render: function (data) {
-                        var passJson =
-                            {
-                                timeRange: {
-                                    start: startTime,
-                                    end: endTime
-                                },
-                                timestamp: data.timeStamp,
-                                pid: data.processId,
-                                deviceId: data.deviceId,
-                                deviceName: data.deviceName,
-                                processUsername: data.processUsername,
-                                processPath: data.processPath
-                            };
-                        return "<a target='_blank' href='#/event_tree?json=" + JSON.stringify(passJson) + "'>" + data.processId + "</a>";
+            data: JSON.stringify(postJson),
+            success: function (data) {
+                console.log(moment().valueOf());
+                var results;
+                if (data === "" || data === undefined) {
+                    results = [];
+                }
+                else {
+                    task_id = data.tid;
+                    last_tid = task_id;
+                    skip = data.skip;
+                    row_log = data.data.split('\n');
+                    if (reversed === 0)
+                        row_log = row_log.sort(function(a,b){return a[sortedNum]-b[sortedNum]});
+                    else
+                        row_log = row_log.sort(function(a,b){return b[sortedNum]-a[sortedNum]});
+                    count = row_log.length;
+                    total_count += count;
+                    results = getTableData();
+                }
+                console.log(moment().valueOf());
+                var orderParam = function (sortedNum, reversed) {
+                    if (reversed === 0) {
+                        reversed = "asc"
+                    } else {
+                        reversed = "desc"
+                    }
+                    if (sortedNum === 0 && reversed === 0) {
+                        return [[1, "asc"]]
+                    }
+                    else {
+                        sortedNum = sortedNum + 1;
+                        return [[sortedNum, reversed]]
+                    }
+                };
+                var config = {
+                    data: results,
+                    order: false,
+                    columns: [
+                        {
+                            "class": 'details-control',
+                            "orderable": false,
+                            "data": null,
+                            "defaultContent": ''
+                        },
+                        {
+                            "data": "timestamp",
+                            "orderable": false
+                        },
+                        {
+                            "data": "deviceName",
+                            "orderable": false
+                        },
+                        {
+                            "data": "processUsername",
+                            "orderable": false
+                        },
+                        {
+                            data: data,
+                            orderable: false,
+                            render: function (data) {
+                                var passJson =
+                                    {
+                                        timeRange: {
+                                            start: startTime,
+                                            end: endTime
+                                        },
+                                        timestamp: data.timeStamp,
+                                        pid: data.processId,
+                                        deviceId: data.deviceId,
+                                        deviceName: data.deviceName,
+                                        processUsername: data.processUsername,
+                                        processPath: data.processPath
+                                    };
+                                var content = "<a target='_blank' href='#/event_tree?json=" + JSON.stringify(passJson) + "'>" + data.processId + "</a>";
 //                                console.log(content);
 //                                var content = '<span  ng-click="passJson(' + "'111'" + ')">' + data.processId + '</span>';
-                    }
-                },
-                {
-                    data: "processPath",
-                    orderable: false
+                                return content;
+                            }
+                        },
+                        {
+                            data: "processPath",
+                            orderable: false
 //                            className: "dt-body-justify"
-                },
-                {
-                    data: "eventType",
-                    orderable: false
-                }],
+                        },
+                        {
+                            data: "eventType",
+                            orderable: false
+                        }],
 //                    order: orderParam(sortedNum, reversed),
-            pagingType: "simple_numbers_no_ellipses",
-            pageType: "listbox",
-            processing: true,
-            language: {
+                    pagingType: "simple_numbers_no_ellipses",
+                    pageType: "listbox",
+                    processing: true,
+                    language: {
 //                        aria: {
 //                            sortAscending: ": activate to sort column ascending",
 //                            sortDescending: ": activate to sort column descending"
 //                        },
-                emptyTable: "无匹配的数据可显示",
-                info: "显示 _TOTAL_ 条目中的第 _START_ 至 _END_ 条",
-                infoEmpty: "没有匹配的条目",
-                infoFiltered: "(过滤出 _TOTAL_ 条目，总计 _MAX_ 条目)",
-                lengthMenu: "每页 _MENU_ 条",
-                processing: '<div class="loading-message ' + '">' + '<div class="block-spinner-bar"><div class="bounce1"></div><div class="bounce2"></div><div class="bounce3"></div></div>' + '</div>',
-                search: "过滤",
-                zeroRecords: "无匹配的数据可显示",
-                paginate: {
-                    last: ">>",
-                    next: ">",
-                    previous: "<",
-                    first: "<<"
-                }
-            },
-            lengthMenu: [
-                [50, 100, 200],
-                ["50", "100", "200"] // change per page values here
-            ],
-            "dom": "<'row'<'col-md-12'B>><'row'<'col-md-3 col-sm-12'<'pull-left'k>><'col-md-9 col-sm-12'ps>r><t><'row'<'col-md-2 col-sm-12'l><'col-md-2 col-sm-12'i><'col-md-8 col-sm-12'ps>>"
+                        emptyTable: "无匹配的数据可显示",
+                        info: "显示 _TOTAL_ 条目中的第 _START_ 至 _END_ 条",
+                        infoEmpty: "没有匹配的条目",
+                        infoFiltered: "(过滤出 _TOTAL_ 条目，总计 _MAX_ 条目)",
+                        lengthMenu: "每页 _MENU_ 条",
+                        processing: '<div class="loading-message ' + '">' + '<div class="block-spinner-bar"><div class="bounce1"></div><div class="bounce2"></div><div class="bounce3"></div></div>' + '</div>',
+                        search: "过滤",
+                        zeroRecords: "无匹配的数据可显示",
+                        paginate: {
+                            last: ">>",
+                            next: ">",
+                            previous: "<",
+                            first: "<<"
+                        }
+                    },
+                    lengthMenu: [
+                        [50, 100, 200],
+                        ["50", "100", "200"] // change per page values here
+                    ],
+                    "dom": "<'row'<'col-md-12'B>><'row'<'col-md-3 col-sm-12'<'pull-left'f>><'col-md-9 col-sm-12'ps>r><t><'row'<'col-md-2 col-sm-12'l><'col-md-2 col-sm-12'i><'col-md-8 col-sm-12'ps>>"
 //                    "dom": "<'row'<'col-md-12'B>><'row'<'col-md-12 col-sm-12'p>r><t><'row'<'col-md-2 col-sm-12'l><'col-md-2 col-sm-12'i><'col-md-8 col-sm-12'p>>"
-        };
+                };
 
-        dtable = $('#search-result').dataTable(config);
+                dtable = $('#search-result').dataTable(config);
+                App.unblockUI('#investigation');
 
-        $("tbody").on('click', 'td.details-control', function () {
-            var tr = $(this).closest('tr');
-            var row = dtable.api().row(tr);
-            if (row.child.isShown()) {
-                // This row is already open - close it
-                row.child.hide();
-                tr.removeClass('shown');
-            }
-            else {
-                var data = formatData((row.data().content), search_condition);
-                row.child(format(data)).show();
-                tr.addClass('shown');
+                console.log(moment().valueOf());
+                $('html,body').animate({scrollTop: $('#searchResult').offset().top}, 0);
+
+                if (keyword.length !== 0) {
+                    for (var i = 0; i < 6; i++) {
+                        var columnClass = $('#column'+i).attr('class');
+                        $('#column'+i).removeClass(columnClass);
+                    }
+                    console.log(keyword);
+                    $('#keyword').val(keyword);
+                }
+                else {
+                    for (var i = 0; i < 6; i++) {
+                        if (i === sortedNum) {
+                            var columnClass = $('#column'+i).attr('class');
+                            $('#column'+i).removeClass(columnClass);
+                            $('#column'+i).addClass("sort_asc");
+                        }
+                        else {
+                            $('#column'+i).addClass("sort_both");
+                        }
+                    }
+                }
+
+                var firstTr = $("tbody tr:first");
+                var firstRow = dtable.api().row(firstTr);
+                if (firstRow.data()) {
+                    firstRow.child(format(formatData((firstRow.data().content), search_condition))).show();
+                    firstTr.addClass('shown');
+                }
+                $("tbody").on('click', 'td.details-control', function () {
+                    var tr = $(this).closest('tr');
+                    var row = dtable.api().row(tr);
+                    if (row.child.isShown()) {
+                        // This row is already open - close it
+                        row.child.hide();
+                        tr.removeClass('shown');
+                    }
+                    else {
+                        var data = formatData((row.data().content), search_condition);
+                        row.child(format(data)).show();
+                        tr.addClass('shown');
+                    }
+                });
+
+                if (dtable === undefined || data.data === "") {
+                    $('#exportResult').hide();
+                    $('#filter').hide();
+                }
+                else {
+                    $('#exportResult').show();
+                    $('#filter').show();
+                }
+
+//                var processQuery = function () {
+//                    $.ajax({
+//                        url: '/processquery',
+//                        type: 'POST',
+//                        dataType: "json",
+//                        data: JSON.stringify({'taskid': task_id}),
+//                        success: function (result) {
+//                            if (result < 0.5 && result >= 0) {
+//                                value = result.toFixed(2) * 100 + "%";
+//                                $('#progressbar').show();
+//                                $('#progressbar').addClass("progress-bar");
+//                                $('#progressbar').addClass("blue");
+//                                $('#progressbar').addClass("shine");
+//                                $('#progressbar').children('span').css('width', value);
+//                                $('#progressbar').children('span').html(value);
+//                            }
+//                            else if (result >= 0.5 && result < 1) {
+//                                value = result.toFixed(2) * 100 + "%";
+//                                $('#progressbar').show();
+//                                $('#progressbar').removeClass("shine");
+//                                $('#progressbar').addClass("glow");
+//                                $('#progressbar').children('span').css('width', value);
+//                                $('#progressbar').children('span').html(value);
+//                            }
+//                            else if (result === 1) {
+//                                $('#progressbar').show();
+//                                $('#progressbar').removeClass("shine");
+//                                $('#progressbar').addClass("glow");
+//                                $('#progressbar').children('span').css('width', "100%");
+//                                $('#progressbar').children('span').html("数据查询结束,排序功能已就绪");
+////                                $('#progressbar').children('span').css('font-color', "#ff2507");
+//                                clearInterval(processQueryInterval);
+//                                $('#progressbar').pulsate({
+//                                    color: "#bf1c56",
+//                                    repeat: 5
+//                                });
+//
+//                                if (tid === "") {
+//                                    var column0Class = $('#column0').attr('class');
+//                                    $('#column0').removeClass(column0Class);
+//                                    $('#column0').addClass("sort_asc");
+//
+//                                }
+//                                $('#column1').addClass("sort_both");
+//                                $('#column2').addClass("sort_both");
+//                                $('#column3').addClass("sort_both");
+//                                $('#column4').addClass("sort_both");
+//                                $('#column5').addClass("sort_both");
+//                            }
+//                            else {
+//                                $('#progressbar').hide();
+//                                clearInterval(processQueryInterval)
+//                            }
+//                        }
+//                    })
+//                };
+
+//                if (tid === "" && filter_condition !== {})  {
+//                    var processQueryInterval = setInterval(processQuery, 1000);
+//                }
+//
+//                setTimeout(function(){clearInterval(processQueryInterval)}, 60000);
             }
         });
 
-//        $.ajax({
-//            async: true,
-//            type: "POST",
-//            dataType: "json",
-//            url: 'logquery',
-//            beforeSend: function(){
-//                App.blockUI({
-//                    target: '#investigation',
-//                    animate: true
-//                });
-//            },
-//            data: JSON.stringify(postJson),
-//            success: function (data) {
-//                console.log(moment().valueOf());
-//                var results;
-//                if (data === "" || data === undefined) {
-//                    results = [];
-//                }
-//                else {
-//                    task_id = data.tid;
-//                    last_tid = task_id;
-//                    skip = data.skip;
-//                    row_log = data.data.split('\n');
-//                    if (reversed === 0)
-//                        row_log = row_log.sort(function(a,b){return a[sortedNum]-b[sortedNum]});
-//                    else
-//                        row_log = row_log.sort(function(a,b){return b[sortedNum]-a[sortedNum]});
-//                    count = row_log.length;
-//                    total_count += count;
-//                    results = getTableData();
-//                }
-//                console.log(moment().valueOf());
-//                var orderParam = function (sortedNum, reversed) {
-//                    if (reversed === 0) {
-//                        reversed = "asc"
-//                    } else {
-//                        reversed = "desc"
-//                    }
-//                    if (sortedNum === 0 && reversed === 0) {
-//                        return [[1, "asc"]]
-//                    }
-//                    else {
-//                        sortedNum = sortedNum + 1;
-//                        return [[sortedNum, reversed]]
-//                    }
-//                };
-//                var config = {
-//                    data: results,
-//                    order: false,
-//                    columns: [
-//                        {
-//                            "class": 'details-control',
-//                            "orderable": false,
-//                            "data": null,
-//                            "defaultContent": ''
-//                        },
-//                        {
-//                            "data": "timestamp",
-//                            "orderable": false
-//                        },
-//                        {
-//                            "data": "deviceName",
-//                            "orderable": false
-//                        },
-//                        {
-//                            "data": "processUsername",
-//                            "orderable": false
-//                        },
-//                        {
-//                            data: data,
-//                            orderable: false,
-//                            render: function (data) {
-//                                var passJson =
-//                                    {
-//                                        timeRange: {
-//                                            start: startTime,
-//                                            end: endTime
-//                                        },
-//                                        timestamp: data.timeStamp,
-//                                        pid: data.processId,
-//                                        deviceId: data.deviceId,
-//                                        deviceName: data.deviceName,
-//                                        processUsername: data.processUsername,
-//                                        processPath: data.processPath
-//                                    };
-//                                var content = "<a target='_blank' href='#/event_tree?json=" + JSON.stringify(passJson) + "'>" + data.processId + "</a>";
-////                                console.log(content);
-////                                var content = '<span  ng-click="passJson(' + "'111'" + ')">' + data.processId + '</span>';
-//                                return content;
-//                            }
-//                        },
-//                        {
-//                            data: "processPath",
-//                            orderable: false
-////                            className: "dt-body-justify"
-//                        },
-//                        {
-//                            data: "eventType",
-//                            orderable: false
-//                        }],
-////                    order: orderParam(sortedNum, reversed),
-//                    pagingType: "simple_numbers_no_ellipses",
-//                    pageType: "listbox",
-//                    processing: true,
-//                    language: {
-////                        aria: {
-////                            sortAscending: ": activate to sort column ascending",
-////                            sortDescending: ": activate to sort column descending"
-////                        },
-//                        emptyTable: "无匹配的数据可显示",
-//                        info: "显示 _TOTAL_ 条目中的第 _START_ 至 _END_ 条",
-//                        infoEmpty: "没有匹配的条目",
-//                        infoFiltered: "(过滤出 _TOTAL_ 条目，总计 _MAX_ 条目)",
-//                        lengthMenu: "每页 _MENU_ 条",
-//                        processing: '<div class="loading-message ' + '">' + '<div class="block-spinner-bar"><div class="bounce1"></div><div class="bounce2"></div><div class="bounce3"></div></div>' + '</div>',
-//                        search: "过滤",
-//                        zeroRecords: "无匹配的数据可显示",
-//                        paginate: {
-//                            last: ">>",
-//                            next: ">",
-//                            previous: "<",
-//                            first: "<<"
-//                        }
-//                    },
-//                    lengthMenu: [
-//                        [50, 100, 200],
-//                        ["50", "100", "200"] // change per page values here
-//                    ],
-//                    "dom": "<'row'<'col-md-12'B>><'row'<'col-md-3 col-sm-12'<'pull-left'f>><'col-md-9 col-sm-12'ps>r><t><'row'<'col-md-2 col-sm-12'l><'col-md-2 col-sm-12'i><'col-md-8 col-sm-12'ps>>"
-////                    "dom": "<'row'<'col-md-12'B>><'row'<'col-md-12 col-sm-12'p>r><t><'row'<'col-md-2 col-sm-12'l><'col-md-2 col-sm-12'i><'col-md-8 col-sm-12'p>>"
-//                };
-//
-//                dtable = $('#search-result').dataTable(config);
-//                App.unblockUI('#investigation');
-//
-//                console.log(moment().valueOf());
-//                $('html,body').animate({scrollTop: $('#searchResult').offset().top}, 0);
-//
-//                if (keyword.length !== 0) {
-//                    for (var i = 0; i < 6; i++) {
-//                        var columnClass = $('#column'+i).attr('class');
-//                        $('#column'+i).removeClass(columnClass);
-//                    }
-//                    console.log(keyword);
-//                    $('#keyword').val(keyword);
-//                }
-//                else {
-//                    for (var i = 0; i < 6; i++) {
-//                        if (i === sortedNum) {
-//                            var columnClass = $('#column'+i).attr('class');
-//                            $('#column'+i).removeClass(columnClass);
-//                            $('#column'+i).addClass("sort_asc");
-//                        }
-//                        else {
-//                            $('#column'+i).addClass("sort_both");
-//                        }
-//                    }
-//                }
-//
-//                var firstTr = $("tbody tr:first");
-//                var firstRow = dtable.api().row(firstTr);
-//                if (firstRow.data()) {
-//                    firstRow.child(format(formatData((firstRow.data().content), search_condition))).show();
-//                    firstTr.addClass('shown');
-//                }
-//                $("tbody").on('click', 'td.details-control', function () {
-//                    var tr = $(this).closest('tr');
-//                    var row = dtable.api().row(tr);
-//                    if (row.child.isShown()) {
-//                        // This row is already open - close it
-//                        row.child.hide();
-//                        tr.removeClass('shown');
-//                    }
-//                    else {
-//                        var data = formatData((row.data().content), search_condition);
-//                        row.child(format(data)).show();
-//                        tr.addClass('shown');
-//                    }
-//                });
-//
-//                if (dtable === undefined || data.data === "") {
-//                    $('#exportResult').hide();
-//                    $('#filter').hide();
-//                }
-//                else {
-//                    $('#exportResult').show();
-//                    $('#filter').show();
-//                }
-//
-////                var processQuery = function () {
-////                    $.ajax({
-////                        url: '/processquery',
-////                        type: 'POST',
-////                        dataType: "json",
-////                        data: JSON.stringify({'taskid': task_id}),
-////                        success: function (result) {
-////                            if (result < 0.5 && result >= 0) {
-////                                value = result.toFixed(2) * 100 + "%";
-////                                $('#progressbar').show();
-////                                $('#progressbar').addClass("progress-bar");
-////                                $('#progressbar').addClass("blue");
-////                                $('#progressbar').addClass("shine");
-////                                $('#progressbar').children('span').css('width', value);
-////                                $('#progressbar').children('span').html(value);
-////                            }
-////                            else if (result >= 0.5 && result < 1) {
-////                                value = result.toFixed(2) * 100 + "%";
-////                                $('#progressbar').show();
-////                                $('#progressbar').removeClass("shine");
-////                                $('#progressbar').addClass("glow");
-////                                $('#progressbar').children('span').css('width', value);
-////                                $('#progressbar').children('span').html(value);
-////                            }
-////                            else if (result === 1) {
-////                                $('#progressbar').show();
-////                                $('#progressbar').removeClass("shine");
-////                                $('#progressbar').addClass("glow");
-////                                $('#progressbar').children('span').css('width', "100%");
-////                                $('#progressbar').children('span').html("数据查询结束,排序功能已就绪");
-//////                                $('#progressbar').children('span').css('font-color', "#ff2507");
-////                                clearInterval(processQueryInterval);
-////                                $('#progressbar').pulsate({
-////                                    color: "#bf1c56",
-////                                    repeat: 5
-////                                });
-////
-////                                if (tid === "") {
-////                                    var column0Class = $('#column0').attr('class');
-////                                    $('#column0').removeClass(column0Class);
-////                                    $('#column0').addClass("sort_asc");
-////
-////                                }
-////                                $('#column1').addClass("sort_both");
-////                                $('#column2').addClass("sort_both");
-////                                $('#column3').addClass("sort_both");
-////                                $('#column4').addClass("sort_both");
-////                                $('#column5').addClass("sort_both");
-////                            }
-////                            else {
-////                                $('#progressbar').hide();
-////                                clearInterval(processQueryInterval)
-////                            }
-////                        }
-////                    })
-////                };
-//
-////                if (tid === "" && filter_condition !== {})  {
-////                    var processQueryInterval = setInterval(processQuery, 1000);
-////                }
-////
-////                setTimeout(function(){clearInterval(processQueryInterval)}, 60000);
-//            }
-//        });
-
-//        $('#search-result').off('page.dt');
-//        $('#search-result').on('page.dt', function () {
-//            if (dtable.api().page() >= (dtable.api().page.info().pages - 2)) {
-//                var results;
-//                if (count > 0) {
-//                    results = getTableData();
-//                    dtable.api().rows.add(results).draw(false);
-//                }
-//                else {
-//                    postJson = {
-//                        "begin_time": startTime,
-//                        "end_time": Math.floor(endTime / 60) * 60,
-//                        "taskid": task_id,
-//                        "device_id": device_id,
-//                        "count": 5000,
-//                        "skip": skip,
-//                        "sortedby": sortedNum,
-//                        "reversed": reversed,
-//                        "filter_condition": filter_condition
-//                    };
-//                    App.blockUI({
-//                        target: '#investigation',
-//                        animate: true
-//                    });
-//                    $.ajax({
-//                        type: "POST",
-//                        dataType: "json",
-//                        url: 'logquery',
-//                        data: JSON.stringify(postJson),
-//                        success: function (data) {
-//                            if (data === "" || data === undefined) {
-//                                $('#search-result').off('page.dt');
-//                            }
-//                            else {
-//                                task_id = data.tid;
-//                                skip = data.skip;
-//                                row_log = data.data.split('\n');
-//                                count = row_log.length;
-//                                total_count += count;
-//                                results = getTableData();
-//                            }
-//                            dtable.api().rows.add(results).draw(false);
-//                            App.unblockUI('#investigation');
-//                        }
-//                    });
-//                }
-//            }
-//        });
+        $('#search-result').off('page.dt');
+        $('#search-result').on('page.dt', function () {
+            if (dtable.api().page() >= dtable.api().page.info().pages - 2) {
+                var results;
+                if (count > 0) {
+                    results = getTableData();
+                    dtable.api().rows.add(results).draw(false);
+                }
+                else {
+                    postJson = {
+                        "begin_time": startTime,
+                        "end_time": Math.floor(endTime / 60) * 60,
+                        "taskid": task_id,
+                        "device_id": device_id,
+                        "count": 5000,
+                        "skip": skip,
+                        "sortedby": sortedNum,
+                        "reversed": reversed,
+                        "filter_condition": filter_condition
+                    };
+                    App.blockUI({
+                        target: '#investigation',
+                        animate: true
+                    });
+                    $.ajax({
+                        type: "POST",
+                        dataType: "json",
+                        url: 'logquery',
+                        data: JSON.stringify(postJson),
+                        success: function (data) {
+                            if (data === "" || data === undefined) {
+                                $('#search-result').off('page.dt');
+                            }
+                            else {
+                                task_id = data.tid;
+                                skip = data.skip;
+                                row_log = data.data.split('\n');
+                                count = row_log.length;
+                                total_count += count;
+                                results = getTableData();
+                            }
+                            dtable.api().rows.add(results).draw(false);
+                            App.unblockUI('#investigation');
+                        }
+                    });
+                }
+            }
+        });
     };
 
-    //    function NewConditionController($scope) {
-    //        $scope.conditionName = ["进程用户名", "进程ID", "进程名", "IP地址", "网络协议名", "Url", "文件名"];
-    //        $scope.protocolFathers = ["分类一", "分类二"];
-    //        $scope.protocolChildren = {
-    //            "分类一": ["HTTP", "HTTPS"],
-    //            "分类二": ["FTP", "SSH"]
-    //        };
-    //        $scope.include = ["包含", "不包含"];
-    //        $scope.equal = ["等于", "不等于"];
-    //        $scope.change = function (item) {
-    //            if (item.value === "网络协议名") {
-    //                item.class1 = false;
-    //                item.class2 = false;
-    //                item.class3 = true;
-    //            }
-    //            else if (item.value === "进程ID" || item.value === "IP地址") {
-    //                item.class1 = false;
-    //                item.class2 = true;
-    //                item.class3 = false;
-    //            }
-    //            else {
-    //                item.class1 = true;
-    //                item.class2 = false;
-    //                item.class3 = false;
-    //            }
-    //        };
-    //
-    //        $scope.protocolInit = function (item) {
-    //            item.child = $scope.protocolChildren[item.father][0];
-    //        };
-    ////        $scope.index = 2;
-    //        $scope.maxCondition = false;
-    //        $scope.closeable = false;
-    //
-    //        $scope.addCondition = function () {
-    //            $scope.conditions.push(
-    //                {
-    ////                    key: $scope.index,
-    //                    value: "网络协议名",
-    //                    class1: true,
-    //                    class2: false,
-    //                    class3: false,
-    //                    input: "",
-    //                    father: "分类一",
-    //                    child: "HTTP",
-    //                    include: "包含",
-    //                    equal: "等于"
-    //                }
-    //            );
-    ////            $scope.index += 1;
-    //            $scope.closeable = true;
-    //            if ($scope.conditions.length === 7) {
-    //                $scope.maxCondition = true;
-    //            }
-    //        };
-    //        $scope.closeCondition = function (index) {
-    //            $scope.conditions.splice(index, 1);
-    //            if ($scope.conditions.length === 1) {
-    //                $scope.closeable = false;
-    //            }
-    //            $scope.maxCondition = false;
-    //        };
-    //    }
+//    function NewConditionController($scope) {
+//        $scope.conditionName = ["进程用户名", "进程ID", "进程名", "IP地址", "网络协议名", "Url", "文件名"];
+//        $scope.protocolFathers = ["分类一", "分类二"];
+//        $scope.protocolChildren = {
+//            "分类一": ["HTTP", "HTTPS"],
+//            "分类二": ["FTP", "SSH"]
+//        };
+//        $scope.include = ["包含", "不包含"];
+//        $scope.equal = ["等于", "不等于"];
+//        $scope.change = function (item) {
+//            if (item.value === "网络协议名") {
+//                item.class1 = false;
+//                item.class2 = false;
+//                item.class3 = true;
+//            }
+//            else if (item.value === "进程ID" || item.value === "IP地址") {
+//                item.class1 = false;
+//                item.class2 = true;
+//                item.class3 = false;
+//            }
+//            else {
+//                item.class1 = true;
+//                item.class2 = false;
+//                item.class3 = false;
+//            }
+//        };
+//
+//        $scope.protocolInit = function (item) {
+//            item.child = $scope.protocolChildren[item.father][0];
+//        };
+////        $scope.index = 2;
+//        $scope.maxCondition = false;
+//        $scope.closeable = false;
+//
+//        $scope.addCondition = function () {
+//            $scope.conditions.push(
+//                {
+////                    key: $scope.index,
+//                    value: "网络协议名",
+//                    class1: true,
+//                    class2: false,
+//                    class3: false,
+//                    input: "",
+//                    father: "分类一",
+//                    child: "HTTP",
+//                    include: "包含",
+//                    equal: "等于"
+//                }
+//            );
+////            $scope.index += 1;
+//            $scope.closeable = true;
+//            if ($scope.conditions.length === 7) {
+//                $scope.maxCondition = true;
+//            }
+//        };
+//        $scope.closeCondition = function (index) {
+//            $scope.conditions.splice(index, 1);
+//            if ($scope.conditions.length === 1) {
+//                $scope.closeable = false;
+//            }
+//            $scope.maxCondition = false;
+//        };
+//    }
 
 
 </script>
