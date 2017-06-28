@@ -14711,7 +14711,7 @@
 		_numbers: _numbers,
 	
 		// Number of number buttons (including ellipsis) to show. _Must be odd!_
-		numbers_length: 7
+		numbers_length: 5
 	} );
 	
 	

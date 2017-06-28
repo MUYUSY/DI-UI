@@ -1,0 +1,177 @@
+/* Cubic Bezier Transition */
+/***
+New Profile Page
+***/
+
+
+.account-container{
+font-family:PingFangSC-Regular;
+color:#333333;
+letter-spacing:0;
+text-align:left;
+/*margin-left:5px;*/
+}
+
+.account-title{
+font-size:16px;
+line-height:22px;
+text-align:left;
+font-weight:600;
+margin:28px 0 5px 0px;
+    padding-left:10px;
+
+}
+
+.account-title>.account-title-apd{
+    font-weight: 500;
+
+}
+
+.borderdiv{
+  border-bottom:1px solid #e5e5e5;
+
+}
+
+.bottomdiv{
+    margin:14px 0 30px 10px;
+}
+
+.name-text{
+    /*font-weight: ;*/
+font-family:PingFangSC-Light;
+font-size:26px;
+color:#333333;
+/*text-align:center;*/
+}
+
+.edit-botton{
+
+background:#ffffff;
+border:1px solid #cccccc;
+border-radius:4px;
+width:118px;
+height:33px;
+}
+
+.account-div{
+
+
+background:#ffffff;
+border:1px solid #dddddd;
+border-radius:4px;
+width:308px;
+height:118px;
+margin-bottom:20px;
+    margin-left:10px;
+}
+
+.operator-div{
+background:#ffffff;
+border:1px solid #dddddd;
+border-radius:4px;
+width:308px;
+height:118px;
+margin-bottom:20px;
+float:left;
+margin-right:17px;
+    margin-left:10px;
+}
+
+
+.account-image{
+width:65px;
+height:65px;
+margin:20px 15px 0 20px;
+float:left;
+}
+
+
+.margin-right-10{
+  margin-right:10px;
+}
+
+.selected{
+    background-color:#bcf;
+}
+
+.notselected{
+    background-color:#fffcfb;
+}
+
+.modal-all{
+    border-radius: 0px !important;
+}
+
+.modal-title{
+    maigin-left:21px;
+    font-size: 16px;
+    color: #FFF;
+    background-color:#343434;
+    vertical-align: middle;
+    border-radius: 0px !important;
+    /*line-height: 40px;*/
+    padding:8px 0 10px 20px ;
+}
+
+.modal-label{
+    margin-left:30px;
+    text-align: left !important;
+    width:100px;
+}
+
+.modal-input{
+    width:242px;
+    height:35px;
+}
+
+.modal-button{
+    width:120px;
+    height:35px;
+}
+
+.change-form{
+    border:1px solid #cccccc;
+    border-radius: 0 !important;
+    padding: 0 20px;
+    width:98%;
+    margin:15px 40px 15px 10px;
+}
+
+.change-label{
+    text-align: left !important;
+    width:120px
+}
+
+.change-form-inner{
+    padding:27px 0 12px 0;
+}
+
+.change-form-title {
+    background: #f6f6f6;
+    margin: 0 -20px;
+    border-radius: 0px !important;
+    height:52px;
+    padding: 14px 0 18px 20px;
+    font-weight: 600;
+}
+
+.margin-bottom-26{
+    margin-bottom:26px !important;
+}
+
+/*@keyframes slideInUp {
+    from {
+        transform:translateY(100%);
+    }
+    to {
+        transform: translateX(0);
+    }
+}
+*/
+/*.ng-enter {
+    z-index: 8888;
+}*/
+
+/*.account-container{
+    animation:slideInUp 0.5s both ease-in;
+}*/

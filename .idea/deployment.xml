@@ -16,6 +16,13 @@
           </mappings>
         </serverdata>
       </paths>
+      <paths name="di-yifeng">
+        <serverdata>
+          <mappings>
+            <mapping deploy="server\diserver\uiservice\app" local="$PROJECT_DIR$/theme/admin_3_angularjs" web="/" />
+          </mappings>
+        </serverdata>
+      </paths>
     </serverData>
     <option name="myAutoUpload" value="ON_EXPLICIT_SAVE" />
   </component>

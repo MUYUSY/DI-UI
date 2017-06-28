@@ -39,11 +39,11 @@
                          checkboxes="true">
                     </div>
                 </div>
-                <div class="col-lg-1 col-md-1 col-sm-1 col-xs-1" style="margin-right: 22px;">
-                    <button class="btn" style="width:100px; border:1px solid #cccccc; background-color: #FFFFFF"
-                            ng-click="toggle()">高级
-                    </button>
-                </div>
+                <!--<div class="col-lg-1 col-md-1 col-sm-1 col-xs-1" style="margin-right: 22px;">-->
+                <!--<button class="btn" style="width:100px; border:1px solid #cccccc; background-color: #FFFFFF"-->
+                <!--ng-click="toggle()">高级-->
+                <!--</button>-->
+                <!--</div>-->
                 <div class="col-md-12 col-sm-12 col-xs-12 high-level" ng-show="myHide">
 
                     <div class="col-xs-12 search-condition" ng-repeat="id in conditions">
@@ -69,18 +69,42 @@
                                    class="search-input form-control ng-pristine ng-valid ng-touched">
                         </div>
                         <div class="col-xs-2" ng-show="id.class3">
-                            <select class="select form-control"
-                                    ng-model="id.father"
-                                    ng-init="id.father"
-                                    ng-change="protocolInit(id)"
-                                    ng-options="x for x in protocolFathers"></select>
+                            <span class="form-control">源IP</span>
+                            <span class="form-control">源端口</span>
+                            <span class="form-control">目的IP</span>
+                            <span class="form-control">目的端口</span>
+                            <span class="form-control">网络协议</span>
                         </div>
-                        <div class="col-xs-2" ng-show="id.class3">
-                            <select class="select form-control"
-                                    ng-model="id.child" ng-init="id.child"
-                                    ng-options="y for y in protocolChildren[id.father]">
-                            </select>
+                        <div class="col-xs-4" ng-show="id.class3">
+                            <input type="text" ng-model="id.sip" placeholder="请输入关键词,输入多个时用' , '分隔"
+                                   class="search-input form-control ng-pristine ng-valid ng-touched">
+                            <input type="text" ng-model="id.sport" placeholder="请输入关键词,输入多个时用' , '分隔"
+                                   class="search-input form-control ng-pristine ng-valid ng-touched">
+                            <input type="text" ng-model="id.dip" placeholder="请输入关键词,输入多个时用' , '分隔"
+                                   class="search-input form-control ng-pristine ng-valid ng-touched">
+                            <input type="text" ng-model="id.dport" placeholder="请输入关键词,输入多个时用' , '分隔"
+                                   class="search-input form-control ng-pristine ng-valid ng-touched">
+                            <ui-select multiple ng-model="id.selectedProtocol" theme="bootstrap" remove-selected="false" close-on-select="false">
+                                <ui-select-match placeholder="选择或搜索协议...">{{$item.name}}</ui-select-match>
+                                <ui-select-choices repeat="p in protocol | propsFilter: {name: $select.search}">
+                                    {{p.name}}
+                                </ui-select-choices>
+                            </ui-select>
+                            <p>{{id.selectedProtocol}}</p>
                         </div>
+                        <!--<div class="col-xs-2" ng-show="id.class3">-->
+                        <!--<select class="select form-control"-->
+                        <!--ng-model="id.father"-->
+                        <!--ng-init="id.father"-->
+                        <!--ng-change="protocolInit(id)"-->
+                        <!--ng-options="x for x in protocolFathers"></select>-->
+                        <!--</div>-->
+                        <!--<div class="col-xs-2" ng-show="id.class3">-->
+                        <!--<select class="select form-control"-->
+                        <!--ng-model="id.child" ng-init="id.child"-->
+                        <!--ng-options="y for y in protocolChildren[id.father]">-->
+                        <!--</select>-->
+                        <!--</div>-->
                         <button ng-show="closeable" type="button" class="close margin-top-10"
                                 ng-click="closeCondition($index)">
                             <span aria-hidden="true">×</span>
@@ -94,16 +118,16 @@
                     </div>
                 </div>
 
-                <div class="col-lg-4 col-md-4 col-sm-4 col-xs-4" ng-hide="myHide">
-                    <button class="btn" ng-click="search(0)"
-                            style="width: 121px; background-color:#0076e1; color: #ffffff; padding-right: 32px; margin-right: 10px">
-                        <img src="./icon/search.png" style="margin: 0 4px 1px 0;">搜索
-                    </button>
-                    <button class="btn" style="width:121px; border:1px solid #cccccc; background-color: #FFFFFF"
-                            ng-click="saveRule('sm')">
-                        <img src="./icon/save.png" style="margin: 0 4px 1px 0">保存规则
-                    </button>
-                </div>
+                <!--<div class="col-lg-4 col-md-4 col-sm-4 col-xs-4" ng-hide="myHide">-->
+                <!--<button class="btn" ng-click="search(0)"-->
+                <!--style="width: 121px; background-color:#0076e1; color: #ffffff; padding-right: 32px; margin-right: 10px">-->
+                <!--<img src="./icon/search.png" style="margin: 0 4px 1px 0;">搜索-->
+                <!--</button>-->
+                <!--<button class="btn" style="width:121px; border:1px solid #cccccc; background-color: #FFFFFF"-->
+                <!--ng-click="saveRule('sm')">-->
+                <!--<img src="./icon/save.png" style="margin: 0 4px 1px 0">保存规则-->
+                <!--</button>-->
+                <!--</div>-->
                 <div class="col-lg-6 col-md-6 col-sm-6 col-xs-6" ng-show="myHide">
                     <button class="btn" ng-click="search(0)"
                             style="width: 121px; background-color:#0076e1; color: #ffffff; padding-right: 32px; margin-right: 10px">
@@ -157,9 +181,6 @@
 
 <!-- BEGIN MAIN JS -->
 <script>
-    ComponentsSelect2.init();
-    ComponentsBootstrapSelect.init();
-
     var dtable;
     var startTime = moment().startOf('day').format('X');
     var endTime = moment().format('X');
@@ -282,6 +303,8 @@
                 return;
             }
             var iPages = Math.ceil((oSettings.fnRecordsDisplay()) / oSettings._iDisplayLength);
+            console.log(oSettings.fnRecordsDisplay());
+            console.log(oSettings._iDisplayLength);
             if (iPages === 0) {
                 var an = oSettings.aanFeatures.s;
                 for (var i = 0, iLen = an.length; i < iLen; i++) {
@@ -515,10 +538,10 @@
     };
 
     function HighLevelToggle($scope, $uibModal) {
-        $scope.myHide = false;
-        $scope.toggle = function () {
-            $scope.myHide = !$scope.myHide;
-        };
+        $scope.myHide = true;
+//        $scope.toggle = function () {
+//            $scope.myHide = !$scope.myHide;
+//        };
 
         //TODO: 这里需要处理一个问题,如果保存了一个规则,里面选择的探针被删除了,怎么办
         $scope.selectByGroupModel = [];
@@ -565,13 +588,16 @@
         };
 
         $scope.conditionName = ["进程用户名", "进程ID", "进程名", "IP地址", "网络协议名", "Url", "文件名"];
-        $scope.protocolFathers = ["分类一", "分类二"];
-        $scope.protocolChildren = {
-            "分类一": ["HTTP", "HTTPS"],
-            "分类二": ["FTP", "SSH"]
-        };
+        $scope.protocol = [
+            {name: "HTTP"},
+            {name: "FTP"},
+            {name: "SMTP"},
+            {name: "SMB"}
+        ];
         $scope.include = ["包含", "不包含"];
         $scope.equal = ["等于", "不等于"];
+
+
         $scope.change = function (item) {
             var existValue = [];
             for (var i = 0; i < $scope.conditions.length; i++) {
@@ -659,7 +685,12 @@
                     father: "分类一",
                     child: "HTTP",
                     include: "包含",
-                    equal: "等于"
+                    equal: "等于",
+                    sip: "",
+                    sport: "",
+                    dip: "",
+                    dport: "",
+                    selectedProtocol: {}
                 }
             );
             $scope.closeable = true;
@@ -759,10 +790,13 @@
                     class2: false,
                     class3: false,
                     input: "",
-                    father: "分类一",
-                    child: "HTTP",
                     include: "包含",
-                    equal: "等于"
+                    equal: "等于",
+                    sip: "",
+                    sport: "",
+                    dip: "",
+                    dport: "",
+                    selectedProtocol: {}
                 }
             ];
         } else {
@@ -1421,6 +1455,7 @@
         var keyword = $('#keyword').val();
         if (keyword.length === 0) {
             DIalert("info", "请输入需要过滤的条件")
+            SearchResultCtrl(selectedGroup, filterCondition, searchCondtion, 0, last_tid, 0, keyword)
         }
         else {
             SearchResultCtrl(selectedGroup, filterCondition, searchCondtion, 0, last_tid, 0, keyword)
@@ -1431,32 +1466,34 @@
         var currentClass = $('#column' + sortedNum).attr('class');
         if (currentClass.indexOf("sort_both") >= 0 || currentClass.indexOf("sort_desc") >= 0) {
             SearchResultCtrl(selectedGroup, filterCondition, searchCondtion, sortedNum, last_tid, 0, "");
-            for (var i = 0; i < 6; i++) {
-                if (i === sortedNum) {
-                    $('#column' + i).removeClass(currentClass);
-                    $('#column' + i).addClass("sort_asc");
-                }
-                else {
-                    var columnClass = $('#column' + i).attr('class');
-                    $('#column' + i).removeClass(columnClass);
-                    $('#column' + i).addClass("sort_both");
-                }
-            }
+//            for (var i = 0; i < 6; i++) {
+//                if (i === sortedNum) {
+//                    $('#column' + i).removeClass(currentClass);
+//                    $('#column' + i).addClass("sort_asc");
+//                }
+//                else {
+//                    var columnClass = $('#column' + i).attr('class');
+//                    $('#column' + i).removeClass(columnClass);
+//                    $('#column' + i).addClass("sort_both");
+//                }
+//            }
         }
         else if (currentClass.indexOf("sort_asc") >= 0) {
             SearchResultCtrl(selectedGroup, filterCondition, searchCondtion, sortedNum, last_tid, 1, "");
-            for (var i = 0; i < 6; i++) {
-                if (i === sortedNum) {
-                    $('#column' + i).removeClass(currentClass);
-                    $('#column' + i).addClass("sort_desc");
-                    console.log('222');
-                }
-                else {
-                    var columnClass = $('#column' + i).attr('class');
-                    $('#column' + i).removeClass(columnClass);
-                    $('#column' + i).addClass("sort_both");
-                }
-            }
+//            for (var j = 0; j < 6; j++) {
+//                if (j === sortedNum) {
+//                    console.log($('#column' + j).attr('class'));
+//                    $('#column' + j).removeClass($('#column' + j).attr('class'));
+//                    $('#column' + j).addClass("sort_desc");
+//                    console.log($('#column' + j).attr('class'));
+//                }
+////                else {
+////                    console.log(j);
+////                    var columnClass = $('#column' + j).attr('class');
+////                    $('#column' + j).removeClass(columnClass);
+////                    $('#column' + j).addClass("sort_both");
+////                }
+//            }
         }
 
     };
@@ -1667,7 +1704,12 @@
                             if (i === sortedNum) {
                                 var columnClass = $('#column' + i).attr('class');
                                 $('#column' + i).removeClass(columnClass);
-                                $('#column' + i).addClass("sort_asc");
+                                if (reversed === 0) {
+                                    $('#column' + i).addClass("sort_asc");
+                                }
+                                else {
+                                    $('#column' + i).addClass("sort_desc");
+                                }
                             }
                             else {
                                 $('#column' + i).addClass("sort_both");
@@ -1684,7 +1726,11 @@
                     $('html,body').animate({scrollTop: $('#searchResult').offset().top}, 0);
                     if (dtable === undefined || dtable.api().data().length === 0) {
                         $('#exportResult').hide();
-                        $('#filter').hide();
+                        if (keyword === "") {
+                            $('#filter').hide();
+                        } else {
+                            $('#filter').show();
+                        }
                     }
                     else {
                         $('#exportResult').show();

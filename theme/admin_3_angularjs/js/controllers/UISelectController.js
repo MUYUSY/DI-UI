@@ -204,11 +204,20 @@ angular.module('MetronicApp').controller('UISelectController', function($scope, 
         country: 'Colombia'
     }];
 
+    $scope.protocol = [
+        {name: "HTTP"},
+        {name: "FTP"},
+        {name: "SMTP"},
+        {name: "SMB"}
+    ];
+
+    $scope.selectdProtocol = [];
+
     $scope.availableColors = ['Red', 'Green', 'Blue', 'Yellow', 'Magenta', 'Maroon', 'Umbra', 'Turquoise'];
 
     $scope.multipleDemo = {};
     $scope.multipleDemo.colors = ['Blue', 'Red'];
-    $scope.multipleDemo.selectedPeople = [$scope.people[5], $scope.people[4]];
+    $scope.multipleDemo.selectedPeople = [];
     $scope.multipleDemo.selectedPeopleWithGroupBy = [$scope.people[8], $scope.people[6]];
     $scope.multipleDemo.selectedPeopleSimple = ['samantha@email.com', 'wladimir@email.com'];
 

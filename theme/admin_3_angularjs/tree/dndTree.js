@@ -28,7 +28,7 @@
 
 function renderTree(error, treeData, req) {
 
-    var COLOR_DEFAULT = "#4A4A4A";
+    var COLOR_DEFAULT = "#050505";
     var COLOR_HIGHLIGHT = "#d64541";
     var COLOR_HOVER = "#26a3d3";
     var COLOR_SUSPICIOUS = "#f7ca18";
@@ -49,7 +49,7 @@ function renderTree(error, treeData, req) {
 
     // size of the diagram
     var viewerWidth = 1100;
-    var viewerHeight = $(document).height();
+    var viewerHeight =2000;
 
     var tree = d3.layout.tree()
         .size([72, 240]);
@@ -482,16 +482,20 @@ function renderTree(error, treeData, req) {
      zoomListener.translate([x, y]);
      }*/
     function centerNode(source) {
+
         scale = zoomListener.scale();
         x = -source.y0;
         y = -source.x0;
         x = x * scale + viewerWidth / 3;
         y = y * scale + viewerHeight / 2;
-        d3.select('g').transition()
+
+        y =20;
+
+        d3.select('#tree').transition()
             .duration(duration)
-            .attr("transform", "translate(" + x + "," + y + ")scale(" + scale + ")");
+            .attr("transform", "translate(" + 200 + "," + y + ")scale(" + scale + ")");
         zoomListener.scale(scale);
-        zoomListener.translate([x, y]);
+        zoomListener.translate([200, y]);
 
 
     }
@@ -537,9 +541,15 @@ function renderTree(error, treeData, req) {
         };
         childCount(0, root);
         var newHeight = d3.max(levelWidth) * 30; // 25 pixels per line
-        console.info(newHeight)
+        console.info("height:"+newHeight)
+
+        viewerHeight = newHeight;
+
+
         if (newHeight < 200)
             newHeight = 200
+
+
 
         tree = tree.size([newHeight, viewerWidth]).separation(function (a, b) {
             if (a.children || a._children) {
@@ -574,7 +584,7 @@ function renderTree(error, treeData, req) {
             .call(dragListener)
             .attr("class", "node")
             .attr("transform", function (d) {
-                return "translate(" + source.y0 + "," + source.x0 + ")";
+                return "translate(" + source.y0+ "," + source.x0 + ")";
             });
 
 
@@ -625,8 +635,8 @@ function renderTree(error, treeData, req) {
                 d3.select(".popover-mindmap").style('top', (d3.event.layerY + 100) + 'px')
                     .style('left', (d3.event.layerX + 0) + 'px');
                 d3.select(".popover-mindmap").transition().style("display", "block");
-                d3.select(".popover-mindmap").style("width", "400px");
-                d3.select(".popover-mindmap").style("max-width", "400px");
+                d3.select(".popover-mindmap").style("width", "600px");
+                d3.select(".popover-mindmap").style("max-width", "600px");
                 //$(".popover-mindmap").css("width", 500);
                 $(".popover-title").html("[" + info.name + "]" + "  详细信息")
                 if (info.time) {
@@ -802,12 +812,14 @@ function renderTree(error, treeData, req) {
 
 
     // Append a group which holds all nodes and which the zoom Listener can act upon.
-    var svgGroup = baseSvg.append("g");
+    var svgGroup = baseSvg.append("g").attr("id", "tree")
 
     // Define the root
     root = treeData;
+
     root.x0 = viewerHeight / 2;
-    root.y0 = 0;
+    root.y0 = 200;
+
     //root.children.forEach(collapse);
     // Layout the tree initially and center on the root node.
     update(root);
@@ -893,23 +905,15 @@ function renderTree(error, treeData, req) {
     d3.select("#plus").on("click", function () {
         scale = zoomListener.scale()
         scale += 0.1
-        x = -root.y0;
-        y = -root.x0;
-        x = x * scale + viewerWidth / 3;
-        y = y * scale + viewerHeight / 5;
-        svgGroup.attr("transform", "translate(" + x + "," + y + ")scale(" + scale + ")");
         zoomListener.scale(scale)
+        centerNode(root)
     })
 
     d3.select("#minus").on("click", function () {
         scale = zoomListener.scale()
         scale -= 0.1
-        x = -root.y0;
-        y = -root.x0;
-        x = x * scale + viewerWidth / 3;
-        y = y * scale + viewerHeight / 5;
-        svgGroup.attr("transform", "translate(" + x + "," + y + ")scale(" + scale + ")");
         zoomListener.scale(scale)
+        centerNode(root)
 
     })
 

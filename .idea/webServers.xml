@@ -13,6 +13,9 @@
           <option name="port" value="22" />
         </fileTransfer>
       </webServer>
+      <webServer id="9eb1e7b5-024c-45cc-bc5b-19e6d28ee350" name="di-yifeng" url="http://localhost">
+        <fileTransfer port="0" mountedRoot="D:\code\DI\UIService" accessType="MOUNT" />
+      </webServer>
     </option>
   </component>
 </project>

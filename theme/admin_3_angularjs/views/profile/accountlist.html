@@ -1,0 +1,190 @@
+<!--accountList-->
+
+<div class="" >
+    <div class="title">
+        <div class="account-title">账户
+            <!--<input type="checkbox" ng-click="change()">-->
+            <!--<div >选中账户编号为：{{accountSelect.username}}{{accountSelect.username}}</div>-->
+        </div><div class="borderdiv"></div>
+    </div>
+    <div class="bottomdiv">
+        <button type="button" class="edit-botton margin-right-10" aria-label="Left Align" ng-disabled="!manager" type="button" data-toggle="modal" data-target=".add">
+            <span class="glyphicon glyphicon-plus margin-right-10" aria-hidden="true"></span><span class="inner-text margin-left-10" >新增用户</span>
+        </button>
+        <button type="button" class="margin-right-10 edit-botton" aria-label="Left Align" ng-disabled="!(manager&&accountSelect&&(accountSelect.role!='admin'))" data-toggle="modal" data-target="#delAccount">
+            <span class="glyphicon glyphicon-trash margin-right-10" aria-hidden="true"></span><span class="inner-text margin-left-10">删除</span>
+        </button>
+        <button type="button" class="edit-botton" aria-label="Left Align" ng-click="gotoEdit()" ng-disabled="!accountSelect" >
+            <span class="glyphicon glyphicon-edit margin-right-10" aria-hidden="true"></span><span class="inner-text margin-left-10"  >编辑</span>
+        </button>
+    </div>
+</div>
+<div>
+    <div class="account-div " ng-show="manager" ng-click="manageSelect(accountSelect)" ng-class="{'selected':manager.username==accountSelect.username,'notselected':!manager.username==accountSelect.username}">
+        <!-- <div class="account-inner"> -->
+        <image class="account-image" src="./icon/admin.png"/>
+        <div>
+            <div style="padding-top: 20px;"><span class="name-text margin-right-10">{{manager.username}}</span><span >管理员</span>
+            </div>
+            <div><span style="font-size: 12px">创建时间: {{manager.createTime|date:"yyyy-MM-dd hh:mm:ss"}}</span>
+            </div>
+            <div> <span style="font-size: 12px">修改时间: {{manager.updateTime|date:"yyyy-MM-dd hh:mm:ss"}}</span>
+            </div>
+        </div>
+    </div>
+</div>
+<account class="">
+    <accountselect  ng-repeat="user in users" username="user.username" ng-class="{'selected':user.username==accountSelect.username,'notselected':!user.username==accountSelect.username}">
+        <image class="account-image" src="./icon/operator.png"/>
+        <div>
+            <div style="padding-top: 20px;"><span class="name-text margin-right-10">{{user.username}}</span><span >操作员</span></div>
+            <div><span style="font-size: 12px">创建时间: {{user.createTime|date:"yyyy-MM-dd hh:mm:ss"}}</span></div>
+            <div> <span style="font-size: 12px">修改时间: {{user.updateTime|date:"yyyy-MM-dd hh:mm:ss"}}</span>
+            </div>
+        </div>
+    </accountselect>
+</account>
+
+
+<div class="modal fade" id="delAccount" >
+    <div class="modal-dialog modal-sm" style="margin: 300px auto;width:300px;height:200px">
+        <div class="modal-content">
+            <div class="modal-header">
+                <strong>警告</strong>
+            </div>
+            <div class="modal-body center-block">
+                <p>确认删除该账户吗</p></div>
+            <div class="modal-footer">
+                <a ng-click="remove()" class="btn btn-success" data-dismiss="modal">确认</a>
+                <a href="##" class="btn btn-danger" type="button" data-dismiss="modal" >取消</a>
+            </div>
+        </div>
+    </div>
+</div>
+
+<div class="modal fade add">
+    <div class="modal-dialog modal-sm" style="margin: 300px auto;width: 537px;height:332px">
+        <div class="modal-content modal-all">
+            <div class="modal-header modal-title" >
+                <div>新增用户</div>
+            </div>
+            <div class="row medal-body" >
+                <div class="col-md-12">
+                    <form ng-submit="postAccountData()" class="form-horizontal" name="addform" style="margin-top: 30px" role="form">
+                        <div class="form-group margin-bottom-26" >
+                            <label  class="col-md-3 control-label modal-label">
+                                账户名称：
+                            </label>
+                            <div class="col-md-5">
+                                <input type="text" class="form-control modal-input" placeholder="创建一个账户名称" name="addaccount" ng-model="newAccount.username"/>
+                            </div>
+                        </div>
+
+                        <div class="form-group margin-bottom-26">
+                            <label  class="col-md-3 control-label modal-label" >
+                                密码：
+                            </label>
+                            <div class="col-md-5">
+                                <input type="password" class="form-control modal-input" placeholder="密码" name="newAccountPassword" ng-model="newAccount.password"/>
+                            </div>
+                        </div>
+                        <div class="form-group margin-bottom-26">
+                            <label  class="col-md-3 control-label modal-label" >
+                                验证：
+                            </label>
+                            <div class="col-md-5">
+                                <input type="password" class="form-control modal-input" placeholder="验证" name="newusernameen" ng-model="newAccount.identify" />
+                            </div>
+
+                        </div>
+                        <div class="form-group margin-bottom-26" ng-show="newAccount.identify && newAccount.identify!=newAccount.password">
+                            <div class="col-md-5">
+                                两次输入的密码不一致
+                            </div>
+                        </div>
+                        <div style="border-bottom:1px solid #e5e5e5;margin:31px 19px 15px 20px;"></div>
+                        <div class="form-group" style="margin-right: -20px">
+                            <div class="col-md-offset-5 col-md-7">
+                                <button href="##" class="col-md-offset-1 btn btn-default col-md-5 margin-right-10 modal-button"  name="newAccountSubmit" ng-click="getFormData" style="background-color: #0076e1;color: #fff">创建账户</button>
+                                <button class="btn btn-default col-md-5 modal-button" type="submit" data-dismiss="modal" style="margin-right:-5px">取消</button>
+                            </div>
+                        </div>
+                    </form>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+
+<script type="text/javascript">
+
+//$(function(){
+//
+//    var ok1=false;
+//    var ok2=false;
+//    var ok3=false;
+//    var ok4=false;
+//    // 验证用户名
+//    $('input[name="newAccountName"]').focus(function(){
+//        $(this).next().text('用户名应该为3-20位之间');
+//    }).blur(function(){
+//        if($(this).val().length >= 3 && $(this).val().length <=12 && $(this).val()!=''){
+//            $(this).next().text('输入成功').removeClass('state1').addClass('state4');
+//            ok1=true;
+//        }else{
+//            $(this).next().text('用户名应该为3-20位之间').removeClass('state1').addClass('state3');
+//        }
+//
+//    });
+//
+//    //验证密码
+//    $('input[name="newAccountPassword"]').focus(function(){
+//        $(this).next().text('密码应该为6-20位之间').removeClass('state1').addClass('state2');
+//    }).blur(function(){
+//        if($(this).val().length >= 6 && $(this).val().length <=20 && $(this).val()!=''){
+//            $(this).next().text('输入成功').removeClass('state1').addClass('state4');
+//            ok2=true;
+//        }else{
+//            $(this).next().text('密码应该为6-20位之间').removeClass('state1').addClass('state3');
+//        }
+//
+//    });
+//
+//    //验证确认密码
+//    $('input[name="newusernameen"]').focus(function(){
+//        $(this).next().text('输入的确认密码要和上面的密码一致,规则也要相同').removeClass('state1').addClass('state2');
+//    }).blur(function(){
+//        if($(this).val().length >= 6 && $(this).val().length <=20 && $(this).val()!='' && $(this).val() == $('input[name="password"]').val()){
+//            $(this).next().text('输入成功').removeClass('state1').addClass('state4');
+//            ok3=true;
+//        }else{
+//            $(this).next().text('输入的确认密码要和上面的密码一致,规则也要相同').removeClass('state1').addClass('state3');
+//        }
+//
+//    });
+//
+////    //验证邮箱
+////    $('input[name="email"]').focus(function(){
+////        $(this).next().text('请输入正确的EMAIL格式').removeClass('state1').addClass('state2');
+////    }).blur(function(){
+////        if($(this).val().search(/\w+([-+.]\w+)*@\w+([-.]\w+)*\.\w+([-.]\w+)*/)==-1){
+////            $(this).next().text('请输入正确的EMAIL格式').removeClass('state1').addClass('state3');
+////        }else{
+////            $(this).next().text('输入成功').removeClass('state1').addClass('state4');
+////            ok4=true;
+////        }
+////
+////    });
+//
+//    //提交按钮,所有验证通过方可提交
+//
+//    $("button[name='newAccountSubmit']").click(function(){
+//        if(ok1 && ok2 && ok3){
+//            $('form').submit();
+//        }else{
+//            return false;
+//        }
+//    });
+//
+//});
+</script>
