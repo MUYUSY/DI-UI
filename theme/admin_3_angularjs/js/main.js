@@ -267,7 +267,10 @@ MetronicApp.config(['$stateProvider', '$urlRouterProvider', function($stateProvi
                             './assets/global/plugins/select2/dist/css/select2.min.css',
                             './assets/pages/css/process-bar.css',
                             './assets/global/plugins/angularjs/plugins/ui-select/select.min.css',
+                            './assets/global/plugins/kendo_ui/kendo_common.css',
+                            './assets/global/plugins/kendo_ui/kendo_default.css',
 
+                            './assets/global/plugins/kendo_ui/kendo_ui.js',
                             './assets/global/plugins/angularjs/plugins/ui-select/select.min.js',
                             './assets/global/plugins/clockface/js/clockface.js',
                             './assets/global/plugins/select2/dist/js/select2.full.js',
